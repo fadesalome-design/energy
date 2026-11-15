@@ -14,7 +14,7 @@ export function Booked() {
   const headingRef = useRef<HTMLHeadingElement>(null);
 
   useEffect(() => {
-    document.title = 'Booked · Read the room before you go';
+    document.title = 'Booked · Urban Sports Clue';
     window.scrollTo(0, 0);
     headingRef.current?.focus();
   }, []);
@@ -34,6 +34,7 @@ export function Booked() {
       <div className="booked">
         <span className="booked__icon"><Icon name="check" size={32} /></span>
         <h1 tabIndex={-1} ref={headingRef}>Booked ✓</h1>
+        <p className="booked__clue">You've got the clue. See you there.</p>
         <p className="booked__what">
           <strong>{c.name}</strong>
           <br />

@@ -101,6 +101,12 @@ const paths: Record<string, ReactElement> = {
       <circle cx="13" cy="12.5" r=".9" fill="currentColor" stroke="none" />
     </>
   ),
+  clue: (
+    <>
+      <circle cx="10.5" cy="10.5" r="6" />
+      <path d="M15 15l5.5 5.5" />
+    </>
+  ),
   check: <path d="M5 12.5l4.5 4.5L19 7.5" />,
   x: <path d="M6.5 6.5l11 11M17.5 6.5l-11 11" />,
   minus: <path d="M6 12h12" />,

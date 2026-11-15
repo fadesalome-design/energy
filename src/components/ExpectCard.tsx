@@ -112,10 +112,13 @@ export function ExpectCard({ c, studio }: { c: ClassInfo; studio: Studio }) {
   const peak = Math.max(...x.flow.map((s) => s.intensity)) as 1 | 2 | 3 | 4 | 5;
 
   return (
-    <section className="card expect" aria-labelledby="expect-title">
+    <section className="card expect" id="read-the-room" aria-labelledby="expect-title" tabIndex={-1}>
       <header className="expect__head">
-        <p className="eyebrow">Read the room before you go</p>
+        <p className="eyebrow">
+          <Icon name="clue" size={16} /> Read the Room
+        </p>
         <h2 id="expect-title">What to expect</h2>
+        <p className="tagline">Read the room before you go.</p>
         {/* Trust signal: say where the info comes from */}
         <p className="muted small">Based on {c.reports} member check-ins · updated weekly</p>
       </header>

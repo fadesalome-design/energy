@@ -2,6 +2,7 @@ import { useEffect, useRef } from 'react';
 import { useLocation } from 'react-router-dom';
 import { classes } from '../data/classes';
 import { ClassRow } from '../components/ClassRow';
+import { Icon } from '../components/Icon';
 
 /** Today's date in English, e.g. "Sunday, 15 November" */
 function todayLabel() {
@@ -14,7 +15,7 @@ export function ClassList() {
   const statusRef = useRef<HTMLParagraphElement>(null);
 
   useEffect(() => {
-    document.title = 'Classes today · Read the room before you go';
+    document.title = 'Classes today · Urban Sports Clue';
     if (skipped) statusRef.current?.focus();
   }, [skipped]);
 
@@ -25,6 +26,10 @@ export function ClassList() {
       <header className="list-head">
         <p className="eyebrow">Berlin · {todayLabel()}</p>
         <h1>Classes today</h1>
+        {/* Playful copy on the app name. Research: F-UNSURE (tell people the clue is one tap away) */}
+        <p className="list-hint">
+          <Icon name="clue" size={18} /> Tap a class to read the room before you go.
+        </p>
       </header>
 
       {/* Research: F-NOT-TODAY ("not for me today" is about today, so we confirm kindly without judging) */}

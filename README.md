@@ -1,8 +1,10 @@
-# Read the room before you go
+# Urban Sports Clue · Read the Room
+
+*"Read the room before you go."*
 
 A clickable prototype for a UX/product case study. Before booking a fitness class, every class shows a short **"What to expect"** card with sensory and practical information: crowd, cleanliness, honest level, sound, light, trainer style, flow, facilities, what to bring and whether you can leave quietly.
 
-This is a **concept feature for the Urban Sports Club app**, built into its normal booking flow (class list → class detail → book). It is not affiliated with or endorsed by Urban Sports Club. The prototype uses the app name as plain text only, with no USC logo, colours or visual identity. All studios, trainers and data are made up.
+**Urban Sports Clue** is a playful, fictional multi-studio class-booking app. The "clue" is that you know what a class is like before you go. **Read the Room** is the feature: the "What to expect" card on every class, inside the familiar flow (class list → class detail → book). It has its own logo and visual identity, and doesn't reuse any real app's logo, colours, fonts or screens. All studios, trainers and data are made up.
 
 - Research behind every decision: [`docs/research.md`](docs/research.md). Code comments like `// Research: F-CROWD` point to it.
 - Mock data: [`src/data/classes.ts`](src/data/classes.ts). Edit it freely; it has a typed `ClassInfo` model.

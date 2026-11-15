@@ -17,7 +17,7 @@ export function ClassDetail() {
   // Research: F-CARD (metrics: booking rate after a card view, time to decide)
   useEffect(() => {
     if (!c) return;
-    document.title = `${c.name} · Read the room before you go`;
+    document.title = `${c.name} · Urban Sports Clue`;
     window.scrollTo(0, 0);
     outcome.current = 'left';
     const started = performance.now();

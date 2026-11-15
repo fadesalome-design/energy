@@ -1,5 +1,5 @@
 /**
- * Mock data for the "Read the room before you go" prototype.
+ * Mock data for the Urban Sports Clue / Read the Room prototype.
  *
  * Everything here is fictional: studios, trainers, addresses and numbers.
  * Edit freely. The UI reads only from this file.
