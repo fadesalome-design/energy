@@ -14,7 +14,7 @@ export function Booked() {
   const headingRef = useRef<HTMLHeadingElement>(null);
 
   useEffect(() => {
-    document.title = 'Booked · Klassly';
+    document.title = 'Booked · Read the room before you go';
     window.scrollTo(0, 0);
     headingRef.current?.focus();
   }, []);

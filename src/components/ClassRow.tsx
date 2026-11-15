@@ -6,7 +6,7 @@ import { Icon } from './Icon';
 /**
  * One row in the class list.
  * Research: F-LOCATION (district, time and duration up front)
- * Research: F-INSIDE (looks like a normal booking-app list, Read the Room lives on the detail screen)
+ * Research: F-INSIDE (looks like a normal booking-app list, "Read the room before you go" lives on the detail screen)
  */
 export function ClassRow({ c }: { c: ClassInfo }) {
   const studio = getStudio(c.studioId);

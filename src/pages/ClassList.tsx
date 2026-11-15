@@ -14,7 +14,7 @@ export function ClassList() {
   const statusRef = useRef<HTMLParagraphElement>(null);
 
   useEffect(() => {
-    document.title = 'Classes today · Klassly';
+    document.title = 'Classes today · Read the room before you go';
     if (skipped) statusRef.current?.focus();
   }, [skipped]);
 

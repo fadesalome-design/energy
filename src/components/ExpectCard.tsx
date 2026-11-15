@@ -114,7 +114,7 @@ export function ExpectCard({ c, studio }: { c: ClassInfo; studio: Studio }) {
   return (
     <section className="card expect" aria-labelledby="expect-title">
       <header className="expect__head">
-        <p className="eyebrow">Read the Room</p>
+        <p className="eyebrow">Read the room before you go</p>
         <h2 id="expect-title">What to expect</h2>
         {/* Trust signal: say where the info comes from */}
         <p className="muted small">Based on {c.reports} member check-ins · updated weekly</p>

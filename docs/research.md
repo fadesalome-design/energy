@@ -128,7 +128,7 @@ In the code, look for comments like `// Research: F-CROWD`.
 ### F-INSIDE: don't build another app
 - "The world doesn't need another Urban Sports Club app… all my friends use USC and we book together. Maybe try to improve that app."
 
-**Design:** Read the Room is built as a feature *inside* an existing booking flow (class list → class detail → book), shown in a fictional booking app called **Klassly**. It is not a standalone app.
+**Design:** "Read the room before you go" is a concept feature *inside the Urban Sports Club app*, in its existing booking flow (class list → class detail → book). It is not a standalone app. The prototype uses the app name as plain text only, with no USC logo, colours or visual identity, and is labelled "Concept". Studios and data are fictional.
 
 ### F-NOT-TODAY: a soft way to say no
 - Follows from F-PROBLEM and F-ENERGY. People often decide against a class, and the decision is about *today*, not the class forever.

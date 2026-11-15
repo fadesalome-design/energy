@@ -1,5 +1,6 @@
 /*
- * Klassly · Read the Room
+ * "Read the room before you go": concept feature for the Urban Sports Club app.
+ * Own calm styling; no USC logo, colours or visual identity are copied.
  * Calm, trustworthy, lots of whitespace. One accent colour (deep teal).
  * All text/background pairs meet WCAG AA. No flashing, minimal motion.
  */
@@ -139,6 +140,7 @@ code {
 .appbar {
   display: flex;
   align-items: center;
+  gap: 10px;
   padding: 16px var(--gutter) 8px;
 }
 
@@ -153,21 +155,6 @@ code {
   min-height: var(--tap);
 }
 
-.brand__mark {
-  width: 26px;
-  height: 26px;
-  border-radius: 8px;
-  background: var(--accent);
-  position: relative;
-}
-
-.brand__mark::after {
-  content: '';
-  position: absolute;
-  inset: 7px;
-  border: 2.5px solid var(--bg);
-  border-radius: 50%;
-}
 
 .page {
   padding: 8px var(--gutter) 40px;
@@ -183,6 +170,15 @@ code {
   text-decoration: none;
   margin-left: -4px;
   padding: 0 4px;
+}
+
+.concept-tag {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--muted);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 2px 9px;
 }
 
 /* ---------- Dev bar ---------- */
@@ -955,5 +951,6 @@ code {
 
 .xrow__value .badge {
   display: flex;
+  width: fit-content;
   margin: 6px 0 0;
 }

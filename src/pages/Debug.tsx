@@ -55,7 +55,7 @@ export function Debug() {
   const [familiar, setFamiliar] = useState<string[]>(() => readJSON<string[]>(FAMILIAR_KEY, []));
 
   useEffect(() => {
-    document.title = 'Debug · Klassly';
+    document.title = 'Debug · Read the room before you go';
   }, []);
 
   const byVariant = useMemo(

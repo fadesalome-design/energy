@@ -6,8 +6,9 @@ import { Debug } from './pages/Debug';
 import { DevToggle } from './components/DevToggle';
 
 /**
- * Klassly is a fictional multi-studio booking app.
- * Research: F-INSIDE ("don't build another app"), so Read the Room is a feature inside its normal flow.
+ * Concept: "Read the room before you go" as a feature inside the Urban Sports Club app.
+ * Research: F-INSIDE ("don't build another app… improve that app"), so it lives in the normal booking flow.
+ * Only the app name is used as plain text: no USC logo, colours or visual identity are copied.
  */
 export default function App() {
   return (
@@ -15,10 +16,10 @@ export default function App() {
       <a href="#main" className="skip">Skip to content</a>
       <DevToggle />
       <header className="appbar">
-        <Link to="/" className="brand" aria-label="Klassly, home">
-          <span className="brand__mark" aria-hidden="true" />
-          Klassly
+        <Link to="/" className="brand">
+          Urban Sports Club
         </Link>
+        <span className="concept-tag">Concept</span>
       </header>
       <Routes>
         <Route path="/" element={<ClassList />} />
