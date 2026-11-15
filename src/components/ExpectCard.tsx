@@ -80,9 +80,16 @@ function ExpandRow({
   );
 }
 
+// PRD: "It never guesses": missing details show as "Not described yet"
+const MISSING = 'Not described yet';
+
+function Missing() {
+  return <span className="missing">{MISSING}</span>;
+}
+
 function YesNo({ yes, label, na }: { yes: boolean | null; label: string; na?: string }) {
   const icon = yes === null ? 'minus' : yes ? 'check' : 'x';
-  const word = yes === null ? na ?? 'Not applicable' : yes ? 'Yes' : 'No';
+  const word = yes === null ? na ?? MISSING : yes ? 'Yes' : 'No';
   return (
     <li className="fact">
       <Icon name={icon} size={18} />
@@ -119,12 +126,27 @@ export function ExpectCard({ c, studio }: { c: ClassInfo; studio: Studio }) {
         </p>
         <h2 id="expect-title">What to expect</h2>
         <p className="tagline">Read the room before you go.</p>
-        {/* Trust signal: say where the info comes from */}
-        <p className="muted small">Based on {c.reports} member check-ins · updated weekly</p>
+        {/* PRD (Responsible AI: transparent): name the sources */}
+        <p className="muted small">
+          From {c.studioChecklist ? "the studio's checklist and " : ''}
+          {c.reports} member answers (last 30 days)
+        </p>
       </header>
 
-      {/* Research: F-VIBE (atmosphere is the #1 factor, 18/22) */}
-      <p className="vibe">{c.vibe}</p>
+      {/* PRD: recent feedback differs from the description → say so, in words */}
+      {c.recentReport && (
+        <p className="report-note">
+          <Icon name="info" size={18} />
+          <span>{c.recentReport}</span>
+        </p>
+      )}
+
+      {/* Research: F-VIBE (atmosphere is the #1 factor, 18/22)
+          PRD (transparent): the one-line summary is labelled as written by AI */}
+      <div className="vibe">
+        <span className="ai-tag">AI summary</span>
+        <p>{c.vibe}</p>
+      </div>
 
       <ul className="xrows">
         {/* Research: F-CROWD (dealbreaker for 9/22, too crowded = #1 reason to leave) */}
@@ -147,9 +169,12 @@ export function ExpectCard({ c, studio }: { c: ClassInfo; studio: Studio }) {
         {/* Research: F-CLEAN (strongest dealbreaker, 10/22; "not clean" made 7 leave) */}
         <Row icon="sparkle" label="Clean & air" value={x.clean.lastCleaned}>
           <ul className="facts">
-            <Fact icon="sparkle">Members rate cleanliness <strong>{x.clean.rating.toFixed(1)} / 5</strong></Fact>
-            <Fact icon="calm">{x.clean.ventilation}</Fact>
-            <Fact icon="sun">{x.clean.temperature}</Fact>
+            <Fact icon="sparkle">
+              Member cleanliness rating:{' '}
+              {x.clean.rating != null ? <strong>{x.clean.rating.toFixed(1)} / 5</strong> : <Missing />}
+            </Fact>
+            <Fact icon="calm">Air: {x.clean.ventilation ?? <Missing />}</Fact>
+            <Fact icon="sun">Temperature: {x.clean.temperature ?? <Missing />}</Fact>
           </ul>
         </Row>
 
@@ -310,12 +335,83 @@ export function ExpectCard({ c, studio }: { c: ClassInfo; studio: Studio }) {
         >
           <ul className="facts">
             <Fact icon={x.leaving.quietExitOk ? 'check' : 'info'}>{x.leaving.note}</Fact>
+            {/* PRD: "quiet space" field */}
+            <Fact icon="calm">Quiet space: {x.quietSpace ?? <Missing />}</Fact>
             {x.social.map((s) => (
               <Fact key={s} icon="person">{s}</Fact>
             ))}
           </ul>
         </ExpandRow>
       </ul>
+
+      {/* PRD (human review): members can report a mistake */}
+      <ReportMistake classId={c.id} />
     </section>
+  );
+}
+
+// ---------------------------------------------------------------------------
+// Report a mistake (PRD: "Report a mistake" goes to the partner team, answer within 48 h)
+// ---------------------------------------------------------------------------
+
+const REPORT_OPTIONS = [
+  'Music was louder',
+  'Light was brighter',
+  'More people',
+  'There was partner work',
+  'Something else',
+];
+
+function ReportMistake({ classId }: { classId: string }) {
+  const [open, setOpen] = useState(false);
+  const [choice, setChoice] = useState<string | null>(null);
+  const [sent, setSent] = useState(false);
+  const panelId = useId();
+
+  if (sent) {
+    return (
+      <p className="report__done" role="status">
+        <Icon name="check" size={18} />
+        <span>Thanks! The partner team checks reports within 48 hours.</span>
+      </p>
+    );
+  }
+
+  return (
+    <div className="report">
+      <button
+        type="button"
+        className="report__toggle"
+        aria-expanded={open}
+        aria-controls={panelId}
+        onClick={() => setOpen(!open)}
+      >
+        Something not right? Report a mistake
+      </button>
+      <form
+        id={panelId}
+        hidden={!open}
+        className="report__form"
+        onSubmit={(e) => {
+          e.preventDefault();
+          if (!choice) return;
+          logEvent('mistake_reported', { classId, data: { reason: choice } });
+          setSent(true);
+        }}
+      >
+        <fieldset>
+          <legend>What was different? Pick one.</legend>
+          {REPORT_OPTIONS.map((o) => (
+            <label key={o} className="radio">
+              <input type="radio" name={`report-${classId}`} value={o} checked={choice === o} onChange={() => setChoice(o)} />
+              <span>{o}</span>
+            </label>
+          ))}
+        </fieldset>
+        <button type="submit" className="btn btn--secondary" disabled={!choice}>
+          Send
+        </button>
+      </form>
+    </div>
   );
 }

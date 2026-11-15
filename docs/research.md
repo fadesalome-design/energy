@@ -134,3 +134,43 @@ In the code, look for comments like `// Research: F-CROWD`.
 - Follows from F-PROBLEM and F-ENERGY. People often decide against a class, and the decision is about *today*, not the class forever.
 
 **Design:** A quieter "Not for me today" button next to "Book". In A it logs the decision and returns kindly to the list; in B it suggests 2 better-fitting classes.
+
+---
+
+## From the PRD (Calm Mode / Read the Room)
+
+The PRD adds design and Responsible-AI principles. Code comments marked `PRD:` point here. The PRD may still be refined.
+
+### PRD-SOURCES: name the sources, label AI text
+- The card is written by AI from a short studio checklist plus anonymous member answers from the last 30 days.
+
+**Design:** The card header says where the information comes from ("From the studio's checklist and 38 member answers (last 30 days)"). The one-line summary carries an "AI summary" label.
+
+### PRD-NO-GUESS: never guess
+- Missing details show as "Not described yet"; any value not in the input is blocked.
+
+**Design:** Missing fields show "Not described yet" in muted italics, never a made-up value. The mock data leaves some fields empty on purpose (e.g. HIIT Express is new, with no studio checklist and no cleanliness rating yet).
+
+### PRD-RECENT: recent feedback can differ
+- When recent member feedback differs from the studio's description, the card shows a note such as "Recently reported as louder".
+
+**Design:** A note at the top of the card with an info icon and plain words (Dance Cardio in the mock data).
+
+### PRD-REPORT: human review
+- "Report a mistake" goes to the partner team, who answer within 48 hours.
+
+**Design:** A quiet "Something not right? Report a mistake" link at the bottom of the card, with one-tap reasons. Logged as `mistake_reported`, an extra event that is not one of the A/B metrics.
+
+### PRD-QUIET: quiet space
+- "Quiet space" is one of the card's fields.
+
+**Design:** Shown in "Leaving early & comfort" (e.g. "Quiet space: Tea corner by the entrance").
+
+### PRD-CALM-UI: calm interface principles
+- Muted colours, no flashing, no auto-playing video, animations respect "reduce motion".
+- Labels always name the reason in words, never colour alone.
+- Text contrast of at least 4.5:1 (WCAG AA), touch targets of at least 44 px, plain language, no medical words, never call a class "safe".
+
+**Design:** Already applied throughout (see Accessibility in the README).
+
+**Note on brand:** The PRD says Calm Mode uses the USC app's own look. This prototype instead uses the generic **Urban Sports Clue** identity, as agreed for the case study.

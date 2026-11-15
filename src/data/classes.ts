@@ -69,12 +69,13 @@ export interface ExpectInfo {
     note?: string;
   };
   // Research: F-CLEAN (strongest dealbreaker, 10/22)
+  // PRD: "never guess": null = not described yet
   clean: {
     lastCleaned: string;
-    /** Member rating 1–5, one decimal */
-    rating: number;
-    ventilation: string;
-    temperature: string;
+    /** Member rating 1–5, one decimal. null = not enough ratings yet */
+    rating: number | null;
+    ventilation: string | null;
+    temperature: string | null;
   };
   // Research: F-LEVEL (labels are not honest)
   level: {
@@ -85,7 +86,8 @@ export interface ExpectInfo {
     firstTimerMatchPct: number;
   };
   // Research: F-SOUND
-  sound: { volume: Volume; mic: boolean; note?: string };
+  /** mic: null = not described yet */
+  sound: { volume: Volume; mic: boolean | null; note?: string };
   // Research: F-LIGHT
   light: { level: LightLevel; note?: string };
   // Research: F-TRAINER
@@ -106,6 +108,8 @@ export interface ExpectInfo {
   // Research: F-SOCIAL
   leaving: { quietExitOk: boolean; note: string };
   social: string[];
+  // PRD: "quiet space" field (a place to step out or arrive calmly). null = not described yet
+  quietSpace: string | null;
 }
 
 export interface ClassInfo {
@@ -119,8 +123,12 @@ export interface ClassInfo {
   trainer: string;
   // Research: F-VIBE (atmosphere is the top factor, 18/22)
   vibe: string;
-  /** How many member check-ins the card is based on (trust signal) */
+  /** Anonymous member answers from the last 30 days the card is based on (PRD: name the sources) */
   reports: number;
+  /** Does the studio's own checklist exist for this class? (PRD: studio checklist + member answers) */
+  studioChecklist: boolean;
+  /** PRD: when recent feedback differs from the description, e.g. "Recently reported as louder" */
+  recentReport?: string;
   expect: ExpectInfo;
 }
 
@@ -223,10 +231,11 @@ export const classes: ClassInfo[] = [
     durationMin: 30,
     trainer: 'Jonas',
     vibe: 'Short, fast and loud. A quick wake-up for people who like a push.',
-    reports: 48,
+    reports: 9,
+    studioChecklist: false,
     expect: {
       crowd: { typicalMin: 12, typicalMax: 16, capacity: 18, roomSize: 'medium', busyness: 'busy', note: 'Stations are close together' },
-      clean: { lastCleaned: 'Equipment wiped after every class', rating: 4.1, ventilation: 'Large fans, no AC', temperature: 'Cool at first, warm by the end' },
+      clean: { lastCleaned: 'Equipment wiped after every class', rating: null, ventilation: 'Large fans, no AC', temperature: null },
       level: { official: 'All levels', reality: 'Fast pace, but every move has an easier option', priorKnowledge: 'None. Moves are shown before each round', firstTimerMatchPct: 78 },
       sound: { volume: 4, mic: true },
       light: { level: 'bright', note: 'White ceiling lights, full brightness' },
@@ -241,6 +250,7 @@ export const classes: ClassInfo[] = [
       arrival: '10 min early to grab a station',
       leaving: { quietExitOk: true, note: 'Fine to step out, the door is at the back' },
       social: ['Mirrors on one wall', 'Phones stay in lockers'],
+      quietSpace: null,
     },
   },
   {
@@ -253,6 +263,7 @@ export const classes: ClassInfo[] = [
     trainer: 'Mira',
     vibe: 'A steady morning ride with soft lights. Energising, but not a party.',
     reports: 36,
+    studioChecklist: true,
     expect: {
       crowd: { typicalMin: 10, typicalMax: 14, capacity: 32, roomSize: 'spacious', busyness: 'calm', note: 'Lots of free bikes, you can pick a spot at the side' },
       clean: { lastCleaned: 'Bikes wiped after every ride', rating: 4.6, ventilation: 'AC and fresh-air system', temperature: 'Cool, about 19 °C' },
@@ -270,6 +281,7 @@ export const classes: ClassInfo[] = [
       arrival: '10 min early for bike setup on your first ride',
       leaving: { quietExitOk: true, note: 'Fine to leave, the door is at the side' },
       social: ['No mirrors', 'Room stays dim, nobody watches'],
+      quietSpace: 'Chill-out lounge by reception',
     },
   },
   {
@@ -282,6 +294,7 @@ export const classes: ClassInfo[] = [
     trainer: 'Lea',
     vibe: 'Quiet, slow and gentle. Good for easing into the day.',
     reports: 71,
+    studioChecklist: true,
     expect: {
       crowd: { typicalMin: 6, typicalMax: 9, capacity: 16, roomSize: 'spacious', busyness: 'calm', note: 'Plenty of space between mats' },
       clean: { lastCleaned: 'Floor cleaned before every class', rating: 4.8, ventilation: 'Windows opened between classes', temperature: 'Warm, about 23 °C' },
@@ -299,6 +312,7 @@ export const classes: ClassInfo[] = [
       arrival: '5–10 min early, the door closes at start time',
       leaving: { quietExitOk: true, note: 'Fine to leave quietly, the door is at the back' },
       social: ['No mirrors', 'Filming not allowed'],
+      quietSpace: 'Tea corner by the entrance',
     },
   },
   {
@@ -311,6 +325,7 @@ export const classes: ClassInfo[] = [
     trainer: 'Sophie',
     vibe: 'Small, calm group. Slow, careful work on your core.',
     reports: 42,
+    studioChecklist: true,
     expect: {
       crowd: { typicalMin: 6, typicalMax: 8, capacity: 10, roomSize: 'medium', busyness: 'calm' },
       clean: { lastCleaned: 'Mats and props cleaned after every class', rating: 4.7, ventilation: 'AC', temperature: 'Comfortable, about 21 °C' },
@@ -328,6 +343,7 @@ export const classes: ClassInfo[] = [
       arrival: '5 min early',
       leaving: { quietExitOk: true, note: 'Fine to leave, just roll up your mat' },
       social: ['Mirror at the front', 'Small group, friendly regulars'],
+      quietSpace: 'Small waiting area with seats',
     },
   },
   {
@@ -340,11 +356,12 @@ export const classes: ClassInfo[] = [
     trainer: 'Amara',
     vibe: 'Relaxed and playful. Nobody expects you to be good at it.',
     reports: 29,
+    studioChecklist: true,
     expect: {
       crowd: { typicalMin: 8, typicalMax: 12, capacity: 20, roomSize: 'spacious', busyness: 'calm', note: 'Space to move freely' },
       clean: { lastCleaned: 'Floor mopped daily', rating: 4.3, ventilation: 'Open windows', temperature: 'Can be cool, bring a layer' },
       level: { official: 'Beginner', reality: 'Choreography is taught from scratch every week', priorKnowledge: 'None', firstTimerMatchPct: 91 },
-      sound: { volume: 2, mic: false, note: 'Music varies, from piano to soft electronic' },
+      sound: { volume: 2, mic: null, note: 'Music varies, from piano to soft electronic' },
       light: { level: 'natural' },
       trainer: { style: 1, handsOn: false, asksBeforeTouch: null },
       partner: { work: 'optional', note: 'One short partner exercise, you can watch instead' },
@@ -357,6 +374,7 @@ export const classes: ClassInfo[] = [
       arrival: '10 min early, change in the hallway if the room is full',
       leaving: { quietExitOk: true, note: 'Fine to leave quietly, the door is at the side' },
       social: ['Mirrors on one wall, curtain can be closed', 'Filming only at the end, if everyone agrees'],
+      quietSpace: null,
     },
   },
   {
@@ -369,6 +387,7 @@ export const classes: ClassInfo[] = [
     trainer: 'Karim',
     vibe: 'Calm midday swim with tips on technique. Echoey, warm and humid.',
     reports: 54,
+    studioChecklist: true,
     expect: {
       crowd: { typicalMin: 6, typicalMax: 10, capacity: 16, roomSize: 'spacious', busyness: 'calm', note: 'Usually 2–3 people per lane, sorted by speed' },
       clean: { lastCleaned: 'Pool area cleaned every morning', rating: 4.5, ventilation: 'Air system, a bit humid', temperature: 'Water 28 °C, air warm and humid' },
@@ -386,6 +405,7 @@ export const classes: ClassInfo[] = [
       arrival: '15 min early, you need to shower before the pool',
       leaving: { quietExitOk: true, note: 'Fine to get out any time, nobody minds' },
       social: ['Private changing cabins', 'Filming not allowed in the pool area'],
+      quietSpace: 'Rest area with benches by the pool',
     },
   },
   {
@@ -398,9 +418,10 @@ export const classes: ClassInfo[] = [
     trainer: 'Deniz',
     vibe: 'Tiny group, lots of attention. Learn the main lifts without pressure.',
     reports: 23,
+    studioChecklist: true,
     expect: {
       crowd: { typicalMin: 4, typicalMax: 6, capacity: 8, roomSize: 'small', busyness: 'calm', note: 'Corner of the gym floor, the gym itself is quiet at lunchtime' },
-      clean: { lastCleaned: 'Equipment wiped after use', rating: 4.2, ventilation: 'Large fans, no AC', temperature: 'Comfortable at lunchtime' },
+      clean: { lastCleaned: 'Equipment wiped after use', rating: 4.2, ventilation: null, temperature: 'Comfortable at lunchtime' },
       level: { official: 'Beginner', reality: 'Real beginner class, light weights to start', priorKnowledge: 'None', firstTimerMatchPct: 89 },
       sound: { volume: 2, mic: false, note: 'Gym music in the background' },
       light: { level: 'bright' },
@@ -415,6 +436,7 @@ export const classes: ClassInfo[] = [
       arrival: '5 min early',
       leaving: { quietExitOk: true, note: 'Fine to leave, you are on the open gym floor' },
       social: ['Mirrors everywhere (it is a gym)', 'Some gym members film themselves'],
+      quietSpace: 'Stretching corner away from the weights',
     },
   },
   {
@@ -427,6 +449,7 @@ export const classes: ClassInfo[] = [
     trainer: 'Valentina',
     vibe: 'Loud and sweaty, with a strong team feeling. Pad work in pairs.',
     reports: 61,
+    studioChecklist: true,
     expect: {
       crowd: { typicalMin: 16, typicalMax: 22, capacity: 24, roomSize: 'medium', busyness: 'busy', note: 'Gets packed after work' },
       clean: { lastCleaned: 'Mats cleaned daily, gloves sprayed after use', rating: 3.6, ventilation: 'Fans only, gets stuffy', temperature: 'Hot by the end' },
@@ -445,6 +468,7 @@ export const classes: ClassInfo[] = [
       arrival: '10 min early to borrow gloves',
       leaving: { quietExitOk: true, note: 'You can leave, but your partner will need a new one' },
       social: ['Mirror wall', 'Regulars sometimes film sparring'],
+      quietSpace: null,
     },
   },
   {
@@ -457,6 +481,8 @@ export const classes: ClassInfo[] = [
     trainer: 'Nico',
     vibe: 'High-energy party feeling. Regulars know the routine.',
     reports: 38,
+    studioChecklist: true,
+    recentReport: 'Recently reported as louder than described. The partner team is checking',
     expect: {
       crowd: { typicalMin: 20, typicalMax: 26, capacity: 28, roomSize: 'medium', busyness: 'busy', note: 'Little space to move freely' },
       clean: { lastCleaned: 'Floor mopped daily', rating: 3.9, ventilation: 'Open windows, gets warm', temperature: 'Warm' },
@@ -474,6 +500,7 @@ export const classes: ClassInfo[] = [
       arrival: '10 min early to find a spot',
       leaving: { quietExitOk: false, note: 'The door is at the front, so leaving mid-class is noticeable' },
       social: ['Mirror wall', 'Some people film the routine for practice'],
+      quietSpace: null,
     },
   },
   {
@@ -486,6 +513,7 @@ export const classes: ClassInfo[] = [
     trainer: 'Tomás',
     vibe: 'Strong, flowing and full. Feels more like a workout than relaxation.',
     reports: 83,
+    studioChecklist: true,
     expect: {
       crowd: { typicalMin: 18, typicalMax: 22, capacity: 24, roomSize: 'medium', busyness: 'busy', note: 'Mats nearly touching' },
       clean: { lastCleaned: 'Floor cleaned before every class', rating: 4.7, ventilation: 'Windows opened between classes', temperature: 'Warm, about 25 °C with a full room' },
@@ -503,6 +531,7 @@ export const classes: ClassInfo[] = [
       arrival: '10–15 min early, it fills up',
       leaving: { quietExitOk: true, note: 'Fine to leave quietly, the door is at the back' },
       social: ['No mirrors', 'Filming not allowed'],
+      quietSpace: 'Tea corner by the entrance',
     },
   },
   {
@@ -515,6 +544,7 @@ export const classes: ClassInfo[] = [
     trainer: 'Greta',
     vibe: 'Focused and precise. Only 8 machines, so it never feels packed.',
     reports: 47,
+    studioChecklist: true,
     expect: {
       crowd: { typicalMin: 7, typicalMax: 8, capacity: 8, roomSize: 'medium', busyness: 'moderate', note: 'Usually fully booked, but each machine has its own space' },
       clean: { lastCleaned: 'Machines wiped after every class', rating: 4.8, ventilation: 'AC', temperature: 'Comfortable, about 21 °C' },
@@ -532,6 +562,7 @@ export const classes: ClassInfo[] = [
       arrival: '10 min early, changing room gets tight before 19:00',
       leaving: { quietExitOk: true, note: 'Fine to leave, just tell the trainer' },
       social: ['Mirror at the front', 'Filming not allowed'],
+      quietSpace: 'Small waiting area with seats',
     },
   },
   {
@@ -544,6 +575,7 @@ export const classes: ClassInfo[] = [
     trainer: 'Mira',
     vibe: 'Club night on a bike. Dark, very loud and packed. Some people love it.',
     reports: 95,
+    studioChecklist: true,
     expect: {
       crowd: { typicalMin: 28, typicalMax: 32, capacity: 32, roomSize: 'medium', busyness: 'busy', note: 'Always fully booked, bikes close together' },
       clean: { lastCleaned: 'Bikes wiped after every ride', rating: 4.4, ventilation: 'AC, gets warm in a full room', temperature: 'Warm' },
@@ -561,6 +593,7 @@ export const classes: ClassInfo[] = [
       arrival: '15 min early, the changing room is busy',
       leaving: { quietExitOk: false, note: 'Bikes are in tight rows and the door is at the front' },
       social: ['Dark room, nobody can really see you', 'Phones not allowed in the room'],
+      quietSpace: 'Chill-out lounge by reception',
     },
   },
 ];

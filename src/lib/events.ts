@@ -15,7 +15,8 @@ export type EventName =
   | 'not_for_me_clicked'
   | 'energy_selected'
   | 'preference_set'
-  | 'alternative_clicked';
+  | 'alternative_clicked'
+  | 'mistake_reported'; // extra, from the PRD (not an A/B metric)
 
 export interface LoggedEvent {
   event: EventName;
