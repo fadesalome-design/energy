@@ -2,11 +2,12 @@ import { useNavigate } from 'react-router-dom';
 import { getClass } from '../data/classes';
 import { useFeedbackState, type Booking } from '../lib/feedback';
 import { attendAndReopen, isTesterMode } from '../lib/tester';
-import { isDevMode } from '../lib/variant';
+import { getVariant, isDevMode } from '../lib/variant';
 import { Icon } from './Icon';
 
 /**
- * Prototype-only step (tester link or test mode): stands in for scanning the QR code
+ * Prototype-only step (Versions B and E on any link; Version A only with the tester link
+ * or test mode): stands in for scanning the QR code
  * at the studio, doing the class, and opening the app again afterwards.
  * Styled as clearly "not part of the app" (dashed frame + label), so testers don't
  * mistake it for a real feature.
@@ -37,10 +38,20 @@ export function SimulateVisit({ booking, compact = false }: { booking: Booking; 
   );
 }
 
+/**
+ * Whether the "I went to this class" step shows. B and E always show it, so the rating
+ * can be reached from the plain ?variant=b / ?variant=e links too (before, only
+ * ?tester=1 or ?dev=1 showed it, so testers on the plain links never got to the rating).
+ */
+export function showsVisitStep(): boolean {
+  const v = getVariant();
+  return v === 'b' || v === 'e' || isTesterMode() || isDevMode();
+}
+
 /** The newest booking that hasn't been "attended" yet, if the prototype step should show. */
 export function useOpenBooking(classId?: string): Booking | null {
   const { bookings } = useFeedbackState();
-  if (!isTesterMode() && !isDevMode()) return null;
+  if (!showsVisitStep()) return null;
   const open = bookings
     .filter((b) => !b.checkedIn && b.feedback === 'open' && (!classId || b.classId === classId))
     .sort((a, b) => b.bookedAt.localeCompare(a.bookedAt));
