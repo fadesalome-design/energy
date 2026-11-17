@@ -3,7 +3,8 @@ import { createPortal } from 'react-dom';
 import { classes } from '../data/classes';
 import { logEvent } from '../lib/events';
 import {
-  applyFilters, MOODS, SENSORY, setMood, setPrefs, useFilters, type Mood, type SensoryId,
+  applyFilters, GOALS, MOODS, SENSORY, setGoal, setMood, setPrefs, useFilters, type Mood, type SensoryId,
+  type StressGoal,
 } from '../lib/filters';
 import { Icon } from './Icon';
 
@@ -14,9 +15,16 @@ import { Icon } from './Icon';
  * Active sensory filters show as removable chips, so nothing is hidden silently.
  */
 export function ClassFilters() {
-  const { mood, prefs } = useFilters();
+  const { mood, goal, prefs } = useFilters();
   const [open, setOpen] = useState(false);
   const moodInfo = MOODS.find((m) => m.id === mood);
+  const goalInfo = GOALS.find((g) => g.id === goal);
+  const explain = mood === 'stressed' ? goalInfo?.explain : moodInfo?.explain;
+
+  const pickGoal = (g: StressGoal) => {
+    setGoal(g);
+    logEvent('energy_selected', { data: { mood: 'stressed', goal: goal === g ? 'cleared' : g } });
+  };
 
   const pickMood = (m: Mood) => {
     const next = mood === m ? null : m;
@@ -48,7 +56,28 @@ export function ClassFilters() {
           </button>
         ))}
       </div>
-      {moodInfo && <p className="filters__explain">{moodInfo.explain}</p>}
+      {/* Same follow-up as Version E, inline and smaller, so it reads as part of "Stressed" */}
+      {mood === 'stressed' && (
+        <div className="stressfu" role="group" aria-labelledby="goal-q">
+          <p className="stressfu__q" id="goal-q">{moodInfo?.explain}</p>
+          <div className="stressfu__opts">
+            {GOALS.map((g) => (
+              <button
+                key={g.id}
+                type="button"
+                className={goal === g.id ? 'pill pill--sub pill--on' : 'pill pill--sub'}
+                aria-pressed={goal === g.id}
+                onClick={() => pickGoal(g.id)}
+              >
+                <Icon name={g.icon} size={16} />
+                {g.label}
+              </button>
+            ))}
+          </div>
+        </div>
+      )}
+      {explain && mood !== 'stressed' && <p className="filters__explain">{explain}</p>}
+      {mood === 'stressed' && goalInfo && <p className="filters__explain" role="status">{goalInfo.explain}</p>}
 
       <div className="filters__row">
         <button

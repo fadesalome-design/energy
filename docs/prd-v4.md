@@ -1,4 +1,4 @@
-# Energy Match: PRD v4.1
+# Energy Match: PRD v4.2
 
 Ironhack AI Product Management capstone. Energy Match is an unofficial, **optional** new feature
 concept for the Urban Sports Club app. In the prototype it is **Version E** (`?variant=e`).
@@ -7,7 +7,7 @@ concept for the Urban Sports Club app. In the prototype it is **Version E** (`?v
 - Tester link (clean session, full loop): https://fadesalome-design.github.io/energy/?tester=1&variant=e
 - Admin: https://fadesalome-design.github.io/energy/admin
 
-v4 final: 2026-11-17 · **v4.1: 2026-11-17** (see the change log at the end).
+v4 final: 2026-11-17 · v4.1 · **v4.2: 2026-11-17** (see the change log at the end).
 
 ## Product summary
 
@@ -23,12 +23,12 @@ v4 final: 2026-11-17 · **v4.1: 2026-11-17** (see the change log at the end).
 ## Priority 1: needed for user tests
 
 **A. Energy check-in** above the class list: "How much energy do you have today?"
-Options: Drained / Stressed / Normal / Energized + a visible "Skip".
+Options: Tired / Stressed / Normal / Energetic + a visible "Skip".
 If Stressed → one follow-up: "Burn it off" / "Calm down". Can be changed or cleared any time.
 
 **B. The list re-sorts at once** (nothing hidden by the check-in itself):
-Drained → low intensity, quiet, small first · Stressed + Calm down → quiet, low intensity, small first ·
-Stressed + Burn it off → high intensity first · Normal → default · Energized → high intensity first.
+Tired → low intensity, quiet, small first · Stressed + Calm down → quiet, low intensity, small first ·
+Stressed + Burn it off → high intensity first · Normal → default · Energetic → high intensity first.
 Each class shows one short reason line, e.g. "Fits: calm, small group".
 
 **C. Quiet & dim:** optional. Off by default; switches ON automatically with Stressed → Calm down;
@@ -115,6 +115,12 @@ use sensory filters to move fitting classes up → open a new studio's card → 
 Works at 375 px (phone) and on desktop.
 
 ## Change log
+
+**v4.2 (2026-11-17)**
+- Energy labels match Version B: "Drained" → **Tired**, "Energized" → **Energetic**.
+- Version B gets the same "Stressed" follow-up (Burn it off / Calm down). In B, "Calm down"
+  turns on the Quiet music and Soft light filters (B's Quiet & dim); undoing it turns off only
+  the ones it added.
 
 **v4.1 (2026-11-17)**
 - Added **C2. Sensory filters** (from Version B): re-sort instead of hide, remembered between visits.

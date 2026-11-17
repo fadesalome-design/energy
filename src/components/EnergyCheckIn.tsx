@@ -13,10 +13,10 @@ import { Icon } from './Icon';
  * list works the same without it. Nothing here is saved after the session.
  */
 const OPTIONS: { id: Energy; label: string; icon: string }[] = [
-  { id: 'drained', label: 'Drained', icon: 'dim' },
+  { id: 'drained', label: 'Tired', icon: 'dim' },
   { id: 'stressed', label: 'Stressed', icon: 'calm' },
   { id: 'normal', label: 'Normal', icon: 'minus' },
-  { id: 'energized', label: 'Energized', icon: 'flash' },
+  { id: 'energized', label: 'Energetic', icon: 'flash' },
 ];
 
 const EXPLAIN: Record<string, string> = {
