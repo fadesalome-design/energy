@@ -65,6 +65,16 @@ export function Booked() {
         </p>
       </section>
 
+      {/* Feedback flow: say up front what happens after the class (predictability matters in calm mode) */}
+      <p className="after-note">
+        <Icon name="stamp" size={22} />
+        <span>
+          <strong>At the studio:</strong> scan the QR code at reception.{' '}
+          <strong>After class:</strong> next time you open the app, we'll ask 3 quick questions about
+          the room. Answer them to collect a stamp.
+        </span>
+      </p>
+
       <Link to="/" className="btn btn--secondary btn--block">Back to classes</Link>
     </main>
   );

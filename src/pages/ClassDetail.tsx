@@ -3,6 +3,7 @@ import { Link, useNavigate, useParams } from 'react-router-dom';
 import { endTime, getClass, getStudio } from '../data/classes';
 import { typeLabel } from '../lib/labels';
 import { logEvent } from '../lib/events';
+import { addBooking } from '../lib/feedback';
 import { ExpectCard } from '../components/ExpectCard';
 import { Icon } from '../components/Icon';
 
@@ -54,6 +55,7 @@ export function ClassDetail() {
   const book = () => {
     outcome.current = 'book';
     logEvent('book_clicked', { classId: c.id, classType: c.type });
+    addBooking(c);
     navigate(`/class/${c.id}/booked`);
   };
 

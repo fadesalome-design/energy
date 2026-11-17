@@ -9,6 +9,7 @@ import type { ClassType } from '../data/classes';
 import { clearEvents, getEvents, getSession, startNewSession, type LoggedEvent } from '../lib/events';
 import { typeLabel } from '../lib/labels';
 import { readJSON, writeJSON } from '../lib/storage';
+import { getSubmissions, QUESTION_POOL } from '../lib/feedback';
 
 const FAMILIAR_KEY = 'rtr.familiarTypes';
 
@@ -144,6 +145,9 @@ export function Debug() {
         </p>
       </section>
 
+      {/* After-class feedback: shown in both variants, so it's reported once, not per variant */}
+      <FeedbackResults events={events} />
+
       <section className="card">
         <h2>Types the participant already knows</h2>
         <p className="muted small">Tick these before the session. Bookings of other types count as "new".</p>
@@ -169,5 +173,53 @@ export function Debug() {
         </ol>
       </section>
     </main>
+  );
+}
+
+function FeedbackResults({ events }: { events: LoggedEvent[] }) {
+  const count = (n: string) => events.filter((e) => e.event === n).length;
+  const shown = count('feedback_shown');
+  const submitted = events.filter((e) => e.event === 'feedback_submitted');
+  const msg = (k: string) => submitted.filter((e) => e.data?.message === k).length;
+  const subs = getSubmissions();
+  const rows: [string, string | number][] = [
+    ['Times shown', shown],
+    ['Started', count('feedback_started')],
+    ['"Not now"', count('feedback_dismissed')],
+    ['Sent (stamp earned)', submitted.length],
+    ['Sent per time shown', pct(submitted.length, shown)],
+    ['With a written message', msg('text')],
+    ['With a voice message', msg('voice')],
+  ];
+  return (
+    <section className="card">
+      <h2>After-class feedback</h2>
+      <table className="table">
+        <tbody>
+          {rows.map(([label, v]) => (
+            <tr key={label}><th scope="row">{label}</th><td>{v}</td></tr>
+          ))}
+        </tbody>
+      </table>
+      {subs.length > 0 && (
+        <table className="table">
+          <thead>
+            <tr><th scope="col">Question</th><th scope="col">Low</th><th scope="col">Med</th><th scope="col">High</th></tr>
+          </thead>
+          <tbody>
+            {QUESTION_POOL.map((q) => {
+              const n = (l: string) => subs.filter((x) => x.answers[q.id] === l).length;
+              if (!n('low') && !n('medium') && !n('high')) return null;
+              return (
+                <tr key={q.id}>
+                  <th scope="row">{q.prompt}</th><td>{n('low')}</td><td>{n('medium')}</td><td>{n('high')}</td>
+                </tr>
+              );
+            })}
+          </tbody>
+        </table>
+      )}
+      <p className="muted small">Voice messages are never stored in this prototype; only their length is logged.</p>
+    </section>
   );
 }

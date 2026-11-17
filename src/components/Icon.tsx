@@ -107,6 +107,48 @@ const paths: Record<string, ReactElement> = {
       <path d="M15 15l5.5 5.5" />
     </>
   ),
+  wind: (
+    <>
+      <path d="M3.5 9h11a2.5 2.5 0 10-2.5-2.5" />
+      <path d="M3.5 13h15a2.5 2.5 0 11-2.5 2.5" />
+      <path d="M3.5 17h7" />
+    </>
+  ),
+  scent: (
+    <>
+      <path d="M8 20c-2-2.5 2-4.5 0-7s2-4.5 0-7" />
+      <path d="M12.5 20c-2-2.5 2-4.5 0-7s2-4.5 0-7" />
+      <path d="M17 20c-2-2.5 2-4.5 0-7s2-4.5 0-7" />
+    </>
+  ),
+  stamp: (
+    <>
+      <circle cx="12" cy="12" r="8.5" />
+      <circle cx="12" cy="12" r="5.8" strokeDasharray="1.6 1.9" />
+      <path d="M9.6 12.2l1.7 1.7 3.2-3.4" />
+    </>
+  ),
+  sliders: (
+    <>
+      <path d="M4 7h9M17 7h3M4 17h3M11 17h9" />
+      <circle cx="15" cy="7" r="2" />
+      <circle cx="9" cy="17" r="2" />
+    </>
+  ),
+  stop: <rect x="7" y="7" width="10" height="10" rx="2" />,
+  trash: (
+    <>
+      <path d="M4.5 7h15" />
+      <path d="M9.5 7V5h5v2" />
+      <path d="M6.5 7l1 12.5h9l1-12.5" />
+    </>
+  ),
+  pen: (
+    <>
+      <path d="M15.5 4.5l4 4L9 19H5v-4z" />
+      <path d="M13 7l4 4" />
+    </>
+  ),
   check: <path d="M5 12.5l4.5 4.5L19 7.5" />,
   x: <path d="M6.5 6.5l11 11M17.5 6.5l-11 11" />,
   minus: <path d="M6 12h12" />,

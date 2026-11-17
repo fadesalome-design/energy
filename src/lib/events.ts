@@ -16,7 +16,15 @@ export type EventName =
   | 'energy_selected'
   | 'preference_set'
   | 'alternative_clicked'
-  | 'mistake_reported'; // extra, from the PRD (not an A/B metric)
+  | 'mistake_reported' // extra, from the PRD (not an A/B metric)
+  // After-class feedback (shown in both variants, not part of the A/B comparison)
+  | 'booking_created'
+  | 'feedback_shown'
+  | 'feedback_started'
+  | 'feedback_answered'
+  | 'feedback_dismissed'
+  | 'feedback_voice_recorded'
+  | 'feedback_submitted';
 
 export interface LoggedEvent {
   event: EventName;

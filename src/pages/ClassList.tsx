@@ -3,6 +3,9 @@ import { useLocation } from 'react-router-dom';
 import { classes } from '../data/classes';
 import { ClassRow } from '../components/ClassRow';
 import { Icon } from '../components/Icon';
+import { ClassFilters } from '../components/ClassFilters';
+import { applyFilters, setMood, setPrefs, useFilters } from '../lib/filters';
+import { useVariant } from '../lib/variant';
 
 /** Today's date in English, e.g. "Sunday, 15 November" */
 function todayLabel() {
@@ -19,7 +22,12 @@ export function ClassList() {
     if (skipped) statusRef.current?.focus();
   }, [skipped]);
 
+  const variant = useVariant();
+  const { mood, prefs } = useFilters();
   const sorted = [...classes].sort((a, b) => a.start.localeCompare(b.start));
+  // Version B: mood + sensory filters. Version A shows every class.
+  const filtering = variant === 'b' && (mood !== null || prefs.length > 0);
+  const shown = variant === 'b' ? applyFilters(sorted, mood, prefs) : sorted;
 
   return (
     <main className="page" id="main">
@@ -39,11 +47,36 @@ export function ClassList() {
         </p>
       )}
 
-      <ul className="rows" aria-label="Classes">
-        {sorted.map((c) => (
-          <ClassRow key={c.id} c={c} />
-        ))}
-      </ul>
+      {variant === 'b' && <ClassFilters />}
+
+      {filtering && (
+        <p className="filter-count" role="status">
+          Showing {shown.length} of {sorted.length} classes
+          <button
+            type="button"
+            className="linkbtn"
+            onClick={() => {
+              setMood(null);
+              setPrefs([]);
+            }}
+          >
+            Clear all
+          </button>
+        </p>
+      )}
+
+      {shown.length > 0 ? (
+        <ul className="rows" aria-label="Classes">
+          {shown.map((c) => (
+            <ClassRow key={c.id} c={c} />
+          ))}
+        </ul>
+      ) : (
+        <div className="empty">
+          <p><strong>No classes fit all of these today.</strong></p>
+          <p className="muted">Try turning off one filter. Every class still has a "What to expect" card.</p>
+        </div>
+      )}
     </main>
   );
 }
