@@ -1930,6 +1930,51 @@ code {
   color: var(--accent-ink);
 }
 
+/* Version B: "Skip" on the Energy Match line. Light and secondary so it doesn't compete with
+   the mood chips; the visual pill is 32 px but the tap area is 44 px. */
+.filters__head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  min-height: 32px;
+}
+
+.filters__skip {
+  position: relative;
+  min-height: 32px;
+  padding: 0 12px;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  background: var(--bg);
+  color: var(--muted);
+  font: inherit;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.filters__skip::after {
+  content: '';
+  position: absolute;
+  inset: -6px -4px;
+}
+
+.filters__skip:hover {
+  color: var(--ink);
+  border-color: var(--accent);
+}
+
+.filters__off {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  font-size: 0.9375rem;
+  color: var(--muted);
+}
+
 /* Version B: "Stressed" follow-up. Indented under the chips with a thin accent line so it
    reads as part of "Stressed"; smaller than the main chips but still 44 px tap targets. */
 .stressfu {

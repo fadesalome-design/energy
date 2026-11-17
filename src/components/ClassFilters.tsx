@@ -3,7 +3,8 @@ import { createPortal } from 'react-dom';
 import { classes } from '../data/classes';
 import { logEvent } from '../lib/events';
 import {
-  applyFilters, GOALS, MOODS, SENSORY, setGoal, setMood, setPrefs, useFilters, type Mood, type SensoryId,
+  applyFilters, GOALS, MOODS, reopenMood, SENSORY, setGoal, setMood, setPrefs, skipMood, useFilters,
+  type Mood, type SensoryId,
   type StressGoal,
 } from '../lib/filters';
 import { Icon } from './Icon';
@@ -15,7 +16,7 @@ import { Icon } from './Icon';
  * Active sensory filters show as removable chips, so nothing is hidden silently.
  */
 export function ClassFilters() {
-  const { mood, goal, prefs } = useFilters();
+  const { mood, goal, prefs, skipped } = useFilters();
   const [open, setOpen] = useState(false);
   const moodInfo = MOODS.find((m) => m.id === mood);
   const goalInfo = GOALS.find((g) => g.id === goal);
@@ -40,7 +41,30 @@ export function ClassFilters() {
 
   return (
     <section className="filters" aria-label="Filter classes">
-      <p className="eyebrow">Energy Match · optional</p>
+      <div className="filters__head">
+        <p className="eyebrow">Energy Match · optional</p>
+        {!skipped && (
+          <button
+            type="button"
+            className="filters__skip"
+            onClick={() => { skipMood(); logEvent('energy_selected', { data: { mood: 'skipped' } }); }}
+          >
+            Skip
+          </button>
+        )}
+      </div>
+      {skipped ? (
+        <p className="filters__off">
+          <span>Energy Match is off.</span>
+          <button
+            type="button"
+            className="filters__skip"
+            onClick={() => { reopenMood(); logEvent('energy_selected', { data: { mood: 'reopened' } }); }}
+          >
+            Set my energy
+          </button>
+        </p>
+      ) : (<>
       <p className="filters__q" id="mood-q">How are you today?</p>
       <div className="pills" role="group" aria-labelledby="mood-q">
         {MOODS.map((m) => (
@@ -78,6 +102,7 @@ export function ClassFilters() {
       )}
       {explain && mood !== 'stressed' && <p className="filters__explain">{explain}</p>}
       {mood === 'stressed' && goalInfo && <p className="filters__explain" role="status">{goalInfo.explain}</p>}
+      </>)}
 
       <div className="filters__row">
         <button

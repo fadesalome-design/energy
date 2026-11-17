@@ -187,9 +187,26 @@ export function setSortB(v: SortB) {
   emit();
 }
 
+// "Skip" (same as Version E): clears the mood and folds the question away for this session.
+const SKIP_KEY = 'rtr.moodSkipped';
+export function getMoodSkipped(): boolean {
+  try { return sessionStorage.getItem(SKIP_KEY) === '1'; } catch { return false; }
+}
+function writeSkipped(on: boolean) {
+  try { if (on) sessionStorage.setItem(SKIP_KEY, '1'); else sessionStorage.removeItem(SKIP_KEY); } catch { /* ignore */ }
+}
+export function skipMood() {
+  writeSkipped(true);
+  setMood(null); // also turns off filters that "Calm down" added
+}
+export function reopenMood() {
+  writeSkipped(false);
+  emit();
+}
+
 export function useFilters() {
   useSyncExternalStore(subscribe, () => version, () => version);
-  return { mood: getMood(), goal: getGoal(), prefs: getPrefs(), sort: getSortB() };
+  return { mood: getMood(), goal: getGoal(), prefs: getPrefs(), sort: getSortB(), skipped: getMoodSkipped() };
 }
 
 export function applyFilters(
