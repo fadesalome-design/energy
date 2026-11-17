@@ -63,6 +63,7 @@ export function Debug() {
     () => ({
       a: metrics(events.filter((e) => e.variant === 'a'), familiar),
       b: metrics(events.filter((e) => e.variant === 'b'), familiar),
+      e: metrics(events.filter((e) => e.variant === 'e'), familiar),
     }),
     [events, familiar],
   );
@@ -128,7 +129,7 @@ export function Debug() {
         <h2>Metrics by variant</h2>
         <table className="table">
           <thead>
-            <tr><th scope="col">Metric</th><th scope="col">A</th><th scope="col">B</th></tr>
+            <tr><th scope="col">Metric</th><th scope="col">A</th><th scope="col">B</th><th scope="col">E</th></tr>
           </thead>
           <tbody>
             {rows.map(([label, key]) => (
@@ -136,6 +137,7 @@ export function Debug() {
                 <th scope="row">{label}</th>
                 <td>{byVariant.a[key]}</td>
                 <td>{byVariant.b[key]}</td>
+                <td>{byVariant.e[key]}</td>
               </tr>
             ))}
           </tbody>

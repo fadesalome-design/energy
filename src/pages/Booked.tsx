@@ -3,6 +3,7 @@ import { Link, useParams } from 'react-router-dom';
 import { endTime, getClass, getStudio } from '../data/classes';
 import { Icon } from '../components/Icon';
 import { SimulateVisit, useOpenBooking } from '../components/SimulateVisit';
+import { useVariant } from '../lib/variant';
 
 /**
  * Simple confirmation with a tickable "What to bring" checklist.
@@ -14,6 +15,7 @@ export function Booked() {
   const [checked, setChecked] = useState<Record<string, boolean>>({});
   const headingRef = useRef<HTMLHeadingElement>(null);
   const openBooking = useOpenBooking(id);
+  const variant = useVariant();
 
   useEffect(() => {
     document.title = 'Booked · Urban Sports Clue';
@@ -75,8 +77,12 @@ export function Booked() {
         <Icon name="stamp" size={22} />
         <span>
           <strong>At the studio:</strong> scan the QR code at reception.{' '}
-          <strong>After class:</strong> next time you open the app, we'll ask 3 quick questions about
-          the room. Answer them to collect a stamp.
+          {variant === 'e' ? (
+            <><strong>After class:</strong> next time you open the app, you can rate the class in about 15 seconds, or skip. Each rating earns a stamp.</>
+          ) : (
+            <><strong>After class:</strong> next time you open the app, we'll ask 3 quick questions about
+            the room. Answer them to collect a stamp.</>
+          )}
         </span>
       </p>
 

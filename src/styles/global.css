@@ -2807,3 +2807,125 @@ code {
 .proto .btn .icon {
   margin-left: 6px;
 }
+
+/* ---------- Version E: Energy Match ---------- */
+
+.row__reason {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--accent-ink);
+}
+
+.energy {
+  display: grid;
+  gap: 10px;
+  margin: 4px 0 12px;
+  padding: 16px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+}
+
+.energy__head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: -8px 0 -6px;
+}
+
+.energy__name {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.8125rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--accent-ink);
+}
+
+.energy--skipped {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 6px 16px;
+  color: var(--muted);
+  font-size: 0.9375rem;
+}
+
+/* 4 options: 2 × 2 on phones, one row when there is room */
+.epills {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px;
+}
+
+@media (min-width: 440px) {
+  .epills {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
+.epills .pill {
+  justify-content: center;
+  padding: 0 8px;
+}
+
+.egoal {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px;
+}
+
+.egoal .pill {
+  justify-content: center;
+}
+
+.qd {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 6px 12px;
+  margin: 0 0 16px;
+}
+
+/* Card sources */
+.xrow--v4 .xrow__body {
+  gap: 2px;
+}
+
+.xrow--v4 .xrow__value + .src,
+.xrow--v4 .src + .xrow__value {
+  margin-top: 2px;
+}
+
+.src {
+  font-size: 0.8125rem;
+  color: var(--muted);
+  margin-bottom: 6px;
+}
+
+.src::before {
+  content: '';
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  margin-right: 6px;
+  border-radius: 50%;
+  background: var(--accent);
+  vertical-align: middle;
+}
+
+.src--none {
+  font-style: italic;
+}
+
+.src--none::before {
+  background: transparent;
+  border: 1.5px solid var(--muted);
+}
+
+.expect__studio {
+  padding: 0 20px 16px;
+}

@@ -118,7 +118,7 @@ export interface Booking {
   endsAt: string;
   /** From the studio's QR scan */
   checkedIn: boolean;
-  feedback: 'open' | 'submitted';
+  feedback: 'open' | 'submitted' | 'skipped';
 }
 
 export type MatchAnswer = 'yes' | 'partly' | 'no';
@@ -236,6 +236,19 @@ export function dismissFeedback() {
 export function submitFeedback(s: Submission): number {
   writeJSON(SUBMISSIONS_KEY, [...getSubmissions(), s]);
   saveBookings(getBookings().map((b) => (b.id === s.bookingId ? { ...b, feedback: 'submitted' } : b)));
+  const stamps = getStamps() + 1;
+  writeJSON(STAMPS_KEY, stamps);
+  emit();
+  return stamps;
+}
+
+/**
+ * Energy Match (Version E): "Skip" means don't ask about this class again (no reminders),
+ * and a finished rating earns a stamp like in the other versions.
+ */
+export function closeBooking(bookingId: string, status: 'submitted' | 'skipped'): number {
+  saveBookings(getBookings().map((b) => (b.id === bookingId ? { ...b, feedback: status } : b)));
+  if (status === 'skipped') return getStamps();
   const stamps = getStamps() + 1;
   writeJSON(STAMPS_KEY, stamps);
   emit();

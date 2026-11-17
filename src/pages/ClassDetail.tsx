@@ -5,6 +5,8 @@ import { typeLabel } from '../lib/labels';
 import { logEvent } from '../lib/events';
 import { addBooking } from '../lib/feedback';
 import { ExpectCard } from '../components/ExpectCard';
+import { ExpectCardV4 } from '../components/ExpectCardV4';
+import { useVariant } from '../lib/variant';
 import { Icon } from '../components/Icon';
 
 type Outcome = 'book' | 'not_for_me' | 'left';
@@ -14,6 +16,7 @@ export function ClassDetail() {
   const navigate = useNavigate();
   const c = getClass(id);
   const outcome = useRef<Outcome>('left');
+  const variant = useVariant();
 
   // Research: F-CARD (metrics: booking rate after a card view, time to decide)
   useEffect(() => {
@@ -96,7 +99,7 @@ export function ClassDetail() {
         </header>
 
         {/* Research: F-PROBLEM (info must come before "Book", on the detail screen) */}
-        <ExpectCard c={c} studio={studio} />
+        {variant === 'e' ? <ExpectCardV4 c={c} studio={studio} /> : <ExpectCard c={c} studio={studio} />}
       </main>
 
       <div className="actions">

@@ -28,7 +28,7 @@ export function DevToggle() {
       <div className="devbar__row">
         <span>Test mode</span>
         <div className="devbar__seg" role="group" aria-label="Variant">
-          {(['a', 'b'] as const).map((v) => (
+          {(['a', 'b', 'e'] as const).map((v) => (
             <button key={v} type="button" aria-pressed={variant === v} onClick={() => setVariant(v)}>
               {v.toUpperCase()}
             </button>

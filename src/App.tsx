@@ -8,6 +8,8 @@ import { AdminPicker, AdminStudio } from './pages/Admin';
 import { DevToggle } from './components/DevToggle';
 import { LogoMark } from './components/Logo';
 import { FeedbackModal } from './components/FeedbackModal';
+import { RateClassV4 } from './components/RateClassV4';
+import { useVariant } from './lib/variant';
 import { StampCounter } from './components/StampCounter';
 import { pendingFeedback, shouldShowFeedback, useFeedbackState, type Booking } from './lib/feedback';
 
@@ -21,6 +23,7 @@ export default function App() {
   const { launchId } = useFeedbackState();
   const { pathname } = useLocation();
   const navigate = useNavigate();
+  const variant = useVariant();
   // Held in state so the "Stamp collected" screen stays up after the booking is marked answered.
   const [active, setActive] = useState<Booking | null>(null);
 
@@ -53,7 +56,17 @@ export default function App() {
         <Route path="/admin/:studioId" element={<AdminStudio />} />
         <Route path="*" element={<ClassList />} />
       </Routes>
-      {active && (
+      {active && variant === 'e' && (
+        <RateClassV4
+          key={active.id}
+          booking={active}
+          onClose={() => {
+            setActive(null);
+            navigate('/', { replace: true });
+          }}
+        />
+      )}
+      {active && variant !== 'e' && (
         <FeedbackModal
           key={active.id}
           booking={active}

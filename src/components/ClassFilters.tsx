@@ -32,6 +32,7 @@ export function ClassFilters() {
 
   return (
     <section className="filters" aria-label="Filter classes">
+      <p className="eyebrow">Energy Match · optional</p>
       <p className="filters__q" id="mood-q">How are you today?</p>
       <div className="pills" role="group" aria-labelledby="mood-q">
         {MOODS.map((m) => (

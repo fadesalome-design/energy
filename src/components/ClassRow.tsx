@@ -8,7 +8,7 @@ import { Icon } from './Icon';
  * Research: F-LOCATION (district, time and duration up front)
  * Research: F-INSIDE (looks like a normal booking-app list, Read the Room lives on the detail screen)
  */
-export function ClassRow({ c }: { c: ClassInfo }) {
+export function ClassRow({ c, reason }: { c: ClassInfo; reason?: string }) {
   const studio = getStudio(c.studioId);
   return (
     <li>
@@ -22,6 +22,7 @@ export function ClassRow({ c }: { c: ClassInfo }) {
           <span className="row__studio">
             {studio.name} · {studio.district}
           </span>
+          {reason && <span className="row__reason">{reason}</span>}
           <span className="chip">
             <Icon name={c.type} size={16} />
             {typeLabel[c.type]}

@@ -34,6 +34,7 @@ npm run preview    # serves dist/ on http://localhost:4173
 | --- | --- |
 | `/?variant=a` | Version A: "What to expect" card, same for everyone (default) |
 | `/?variant=b` | Version B: card + "How's your energy today?" personalisation *(coming next)* |
+| `/?variant=e` | **Version E: Energy Match (PRD v4 preview).** Energy check-in that re-sorts the list (Drained / Stressed → Burn it off or Calm down / Normal / Energized, plus Skip), a reason line per class, the Quiet & dim chip, the six-section card with sources, and "Rate your class". Energy is kept for the session only. Versions A and B are unchanged. |
 | `/?tester=1` | **Tester link:** clean session for a new participant, then the full loop with no test bar: book → "I went to this class" (prototype step) → rate the class → stamp. Combine with `&variant=a` or `&variant=b`. |
 | `/?dev=1` | Shows a thin **test-mode bar** with an A/B toggle and a link to `/debug` |
 | `/?dev=0` | Hides the test-mode bar again |
