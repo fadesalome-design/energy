@@ -22,7 +22,12 @@ export function ClassRow({ c, reason }: { c: ClassInfo; reason?: string }) {
           <span className="row__studio">
             {studio.name} · {studio.district}
           </span>
-          {reason && <span className="row__reason">{reason}</span>}
+          {reason && (
+            <span className="row__reason">
+              <Icon name="sparkle" size={14} />
+              {reason}
+            </span>
+          )}
           <span className="chip">
             <Icon name={c.type} size={16} />
             {typeLabel[c.type]}

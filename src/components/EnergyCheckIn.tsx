@@ -30,9 +30,9 @@ export function EnergyCheckIn() {
 
   if (s.skipped) {
     return (
-      <div className="energy energy--skipped">
-        <span>Energy Match is off.</span>
-        <button type="button" className="linkbtn" onClick={() => { reopenEnergy(); logEvent('energy_selected', { data: { energy: 'reopened' } }); }}>
+      <div className="em-off">
+        <span className="em-off__text"><Icon name="sparkle" size={16} /> Energy Match is off.</span>
+        <button type="button" className="em-off__btn" onClick={() => { reopenEnergy(); logEvent('energy_selected', { data: { energy: 'reopened' } }); }}>
           Set my energy
         </button>
       </div>
@@ -40,73 +40,93 @@ export function EnergyCheckIn() {
   }
 
   return (
-    <section className="energy" aria-labelledby="energy-q">
-      <div className="energy__head">
-        <p className="energy__name"><Icon name="sparkle" size={16} /> Energy Match</p>
+    <section className="em" aria-labelledby="energy-q">
+      <div className="em__head">
+        <p className="em__name">
+          <span className="em__badge"><Icon name="sparkle" size={14} /></span>
+          Energy Match
+        </p>
         <button
           type="button"
-          className="linkbtn"
+          className="em__skip"
           onClick={() => { skipEnergy(); logEvent('energy_selected', { data: { energy: 'skipped' } }); }}
         >
           Skip
         </button>
       </div>
-      <p className="filters__q" id="energy-q">How much energy do you have today?</p>
-      <div className="epills" role="group" aria-labelledby="energy-q">
-        {OPTIONS.map((o) => (
-          <button
-            key={o.id}
-            type="button"
-            className={s.energy === o.id ? 'pill pill--on' : 'pill'}
-            aria-pressed={s.energy === o.id}
-            onClick={() => { chooseEnergy(o.id); logEvent('energy_selected', { data: { energy: s.energy === o.id ? 'cleared' : o.id } }); }}
-          >
-            <Icon name={o.icon} size={18} />
-            {o.label}
-          </button>
-        ))}
+
+      <h2 className="em__q" id="energy-q">How much energy do you have today?</h2>
+
+      <div className="em__grid" role="group" aria-labelledby="energy-q">
+        {OPTIONS.map((o) => {
+          const on = s.energy === o.id;
+          return (
+            <button
+              key={o.id}
+              type="button"
+              className={on ? 'em-tile em-tile--on' : 'em-tile'}
+              aria-pressed={on}
+              onClick={() => { chooseEnergy(o.id); logEvent('energy_selected', { data: { energy: on ? 'cleared' : o.id } }); }}
+            >
+              <span className="em-tile__icon"><Icon name={o.icon} size={20} /></span>
+              <span className="em-tile__label">{o.label}</span>
+              {on && <Icon name="check" size={18} className="em-tile__check" />}
+            </button>
+          );
+        })}
       </div>
 
       {s.energy === 'stressed' && (
-        <div className="egoal" role="group" aria-label="Stressed: what do you want?">
-          {([['burn', 'Burn it off'], ['calm', 'Calm down']] as const).map(([g, label]) => (
-            <button
-              key={g}
-              type="button"
-              className={s.goal === g ? 'pill pill--outline pill--on' : 'pill pill--outline'}
-              aria-pressed={s.goal === g}
-              onClick={() => { chooseGoal(g); logEvent('energy_selected', { data: { energy: 'stressed', goal: g } }); }}
-            >
-              {label}
-            </button>
-          ))}
+        <div className="em__follow" role="group" aria-labelledby="goal-q">
+          <p className="em__followq" id="goal-q">{EXPLAIN['stressed-']}</p>
+          <div className="em__seg">
+            {([['burn', 'Burn it off', 'flash'], ['calm', 'Calm down', 'wind']] as const).map(([g, label, icon]) => (
+              <button
+                key={g}
+                type="button"
+                className={s.goal === g ? 'em-seg em-seg--on' : 'em-seg'}
+                aria-pressed={s.goal === g}
+                onClick={() => { chooseGoal(g); logEvent('energy_selected', { data: { energy: 'stressed', goal: g } }); }}
+              >
+                <Icon name={icon} size={18} />
+                {label}
+              </button>
+            ))}
+          </div>
         </div>
       )}
 
-      {key && <p className="filters__explain" role="status">{EXPLAIN[key]}</p>}
+      {key && key !== 'stressed-' && (
+        <p className="em__explain" role="status">
+          <Icon name="sparkle" size={16} />
+          {EXPLAIN[key]}
+        </p>
+      )}
     </section>
   );
 }
 
-/** One optional chip on the class list. */
+/** One optional switch on the class list. */
 export function QuietDimChip({ hidden }: { hidden: number }) {
   const s = useEnergy();
   return (
-    <div className="qd">
-      <button
-        type="button"
-        className={s.quietDim ? 'pill pill--outline pill--on' : 'pill pill--outline'}
-        aria-pressed={s.quietDim}
-        onClick={() => { toggleQuietDim(); logEvent('preference_set', { data: { preference: 'quietDim', on: !s.quietDim } }); }}
-      >
-        <Icon name={s.quietDim ? 'check' : 'dim'} size={18} />
-        Quiet &amp; dim
-      </button>
-      <span className="qd__note muted small">
-        {s.quietDim
-          ? `Leaving out ${hidden} ${hidden === 1 ? 'class' : 'classes'} members rate loud or bright.`
-          : 'Leave out classes members rate loud or bright.'}
+    <button
+      type="button"
+      role="switch"
+      aria-checked={s.quietDim}
+      className={s.quietDim ? 'qd2 qd2--on' : 'qd2'}
+      onClick={() => { toggleQuietDim(); logEvent('preference_set', { data: { preference: 'quietDim', on: !s.quietDim } }); }}
+    >
+      <span className="qd2__icon"><Icon name="dim" size={20} /></span>
+      <span className="qd2__text">
+        <span className="qd2__title">Quiet &amp; dim</span>
+        <span className="qd2__note">
+          {s.quietDim
+            ? `Leaving out ${hidden} ${hidden === 1 ? 'class' : 'classes'} members rate loud or bright.`
+            : 'Leave out classes members rate loud or bright.'}
+        </span>
       </span>
-    </div>
+      <span className="qd2__switch" aria-hidden="true"><span className="qd2__knob" /></span>
+    </button>
   );
 }

@@ -2929,3 +2929,535 @@ code {
 .expect__studio {
   padding: 0 20px 16px;
 }
+
+/* =====================================================================
+ * Version E: visual refresh (Energy Match)
+ * Scoped to .shell--e so Versions A and B look exactly as before.
+ * Same palette and tokens; softer cards, clear tiles, one switch.
+ * ===================================================================== */
+
+.shell--e {
+  --e-shadow: 0 1px 2px rgba(30, 42, 45, 0.05), 0 6px 20px rgba(30, 42, 45, 0.06);
+  --e-shadow-hover: 0 2px 4px rgba(30, 42, 45, 0.06), 0 10px 28px rgba(30, 42, 45, 0.1);
+  --e-line: #ebe6dc;
+  --e-tint: #eaf3f0;
+}
+
+.shell--e .list-head {
+  padding: 8px 0 18px;
+}
+
+.shell--e .list-head h1 {
+  font-size: 2rem;
+  letter-spacing: -0.02em;
+}
+
+/* ---------- Energy Match check-in ---------- */
+
+.em {
+  display: grid;
+  gap: 14px;
+  margin: 0 0 12px;
+  padding: 18px;
+  border-radius: 24px;
+  background: linear-gradient(180deg, var(--e-tint) 0%, var(--surface) 85%);
+  border: 1px solid #dce8e4;
+  box-shadow: var(--e-shadow);
+}
+
+.em__head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.em__name {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent-ink);
+}
+
+.em__badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: var(--accent);
+  color: #fff;
+}
+
+.em__skip {
+  min-height: 36px;
+  padding: 0 14px;
+  border-radius: 999px;
+  border: 1px solid var(--e-line);
+  background: rgba(255, 255, 255, 0.8);
+  color: var(--muted);
+  font-size: 0.875rem;
+  font-weight: 600;
+  cursor: pointer;
+  /* keeps a 48px tap area around a smaller visual button */
+  position: relative;
+}
+
+.em__skip::after {
+  content: '';
+  position: absolute;
+  inset: -6px -4px;
+}
+
+.em__skip:hover {
+  color: var(--ink);
+  border-color: var(--accent);
+}
+
+.em__q {
+  font-size: 1.25rem;
+  line-height: 1.25;
+  letter-spacing: -0.01em;
+  font-weight: 650;
+  color: var(--ink);
+}
+
+/* 2 × 2 tiles on every width: never squeezed into one row */
+.em__grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.em-tile {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 60px;
+  padding: 10px 12px;
+  border-radius: 16px;
+  border: 1.5px solid var(--e-line);
+  background: var(--surface);
+  color: var(--ink);
+  font-weight: 600;
+  text-align: left;
+  cursor: pointer;
+  transition: border-color 0.15s ease, background-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.em-tile:hover {
+  border-color: var(--accent);
+}
+
+.em-tile__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--accent-soft);
+  color: var(--accent-ink);
+  flex-shrink: 0;
+}
+
+.em-tile__label {
+  flex: 1;
+  min-width: 0;
+}
+
+.em-tile--on {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #fff;
+  box-shadow: 0 6px 16px rgba(29, 106, 102, 0.28);
+}
+
+.em-tile--on .em-tile__icon {
+  background: rgba(255, 255, 255, 0.18);
+  color: #fff;
+}
+
+.em-tile__check {
+  color: #fff;
+}
+
+/* Stressed → burn it off / calm down */
+.em__follow {
+  display: grid;
+  gap: 10px;
+  padding: 14px;
+  border-radius: 18px;
+  background: var(--bg);
+}
+
+.em__followq {
+  font-weight: 650;
+  color: var(--accent-ink);
+}
+
+.em__seg {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px;
+}
+
+.em-seg {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 52px;
+  padding: 0 10px;
+  border-radius: 14px;
+  border: 1.5px solid var(--e-line);
+  background: var(--surface);
+  color: var(--ink);
+  font-weight: 650;
+  cursor: pointer;
+  transition: border-color 0.15s ease, background-color 0.15s ease;
+}
+
+.em-seg .icon {
+  color: var(--accent);
+}
+
+.em-seg:hover {
+  border-color: var(--accent);
+}
+
+.em-seg--on {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #fff;
+}
+
+.em-seg--on .icon {
+  color: #fff;
+}
+
+.em__explain {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  padding: 10px 12px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.85);
+  border: 1px solid #dce8e4;
+  font-size: 0.9375rem;
+  color: var(--accent-ink);
+}
+
+.em__explain .icon {
+  margin-top: 3px;
+}
+
+/* Skipped: one quiet line */
+.em-off {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin: 0 0 12px;
+  padding: 8px 8px 8px 16px;
+  border-radius: 999px;
+  background: var(--surface);
+  border: 1px solid var(--e-line);
+  color: var(--muted);
+  font-size: 0.9375rem;
+}
+
+.em-off__text {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.em-off__text .icon {
+  color: var(--accent);
+}
+
+.em-off__btn {
+  min-height: 40px;
+  padding: 0 16px;
+  border-radius: 999px;
+  border: 0;
+  background: var(--accent-soft);
+  color: var(--accent-ink);
+  font-weight: 650;
+  cursor: pointer;
+}
+
+/* ---------- Quiet & dim switch ---------- */
+
+.qd2 {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  margin: 0 0 20px;
+  padding: 12px 14px;
+  border-radius: 18px;
+  border: 1px solid var(--e-line);
+  background: var(--surface);
+  color: var(--ink);
+  text-align: left;
+  cursor: pointer;
+  box-shadow: var(--e-shadow);
+}
+
+.qd2__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: var(--bg);
+  color: var(--accent-ink);
+  flex-shrink: 0;
+}
+
+.qd2__text {
+  display: grid;
+  gap: 1px;
+  flex: 1;
+  min-width: 0;
+}
+
+.qd2__title {
+  font-weight: 650;
+}
+
+.qd2__note {
+  font-size: 0.8125rem;
+  color: var(--muted);
+  line-height: 1.35;
+}
+
+.qd2__switch {
+  position: relative;
+  width: 46px;
+  height: 28px;
+  border-radius: 999px;
+  background: #cfc9bd;
+  flex-shrink: 0;
+  transition: background-color 0.15s ease;
+}
+
+.qd2__knob {
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: #fff;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+  transition: transform 0.15s ease;
+}
+
+.qd2--on {
+  border-color: #cfe2dd;
+  background: var(--e-tint);
+}
+
+.qd2--on .qd2__icon {
+  background: var(--accent);
+  color: #fff;
+}
+
+.qd2--on .qd2__switch {
+  background: var(--accent);
+}
+
+.qd2--on .qd2__knob {
+  transform: translateX(18px);
+}
+
+/* ---------- Class rows ---------- */
+
+.shell--e .rows {
+  gap: 12px;
+}
+
+.shell--e .row {
+  gap: 14px;
+  padding: 12px 12px 12px 12px;
+  border-radius: 20px;
+  border-color: transparent;
+  box-shadow: var(--e-shadow);
+  transition: box-shadow 0.15s ease, border-color 0.15s ease;
+}
+
+.shell--e .row:hover {
+  border-color: transparent;
+  box-shadow: var(--e-shadow-hover);
+}
+
+.shell--e .row__time {
+  place-items: center;
+  align-content: center;
+  min-width: 66px;
+  align-self: center;
+  padding: 12px 4px;
+  border-radius: 14px;
+  background: var(--e-tint);
+  text-align: center;
+}
+
+.shell--e .row__start {
+  color: var(--accent-ink);
+}
+
+.shell--e .row__dur {
+  font-size: 0.75rem;
+}
+
+.shell--e .row__name {
+  font-size: 1.0625rem;
+}
+
+/* Class type as a quiet line, so the energy reason is the one highlight */
+.shell--e .row__main .chip {
+  order: 2;
+  margin-top: 0;
+  padding: 0;
+  background: none;
+  color: var(--muted);
+  font-weight: 500;
+}
+
+.shell--e .row__reason {
+  order: 3;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  width: fit-content;
+  max-width: 100%;
+  margin-top: 6px;
+  padding: 4px 10px 4px 8px;
+  border-radius: 999px;
+  background: var(--accent-soft);
+  color: var(--accent-ink);
+  font-size: 0.8125rem;
+  font-weight: 650;
+}
+
+.shell--e .row__chev {
+  width: 32px;
+  height: 32px;
+  padding: 6px;
+  border-radius: 50%;
+  background: var(--bg);
+}
+
+/* ---------- Detail + What to expect card ---------- */
+
+.shell--e .detail-head h1 {
+  font-size: 1.875rem;
+  letter-spacing: -0.02em;
+}
+
+.shell--e .expect {
+  border: 0;
+  border-radius: 24px;
+  box-shadow: var(--e-shadow);
+}
+
+.shell--e .expect__head {
+  padding: 20px 20px 18px;
+  gap: 4px;
+  background: linear-gradient(180deg, var(--e-tint) 0%, var(--surface) 100%);
+  border-bottom: 1px solid var(--e-line);
+}
+
+.shell--e .expect__head h2 {
+  font-size: 1.375rem;
+  letter-spacing: -0.01em;
+}
+
+.shell--e .expect__head .eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.shell--e .xrow--v4 {
+  gap: 14px;
+  padding: 16px 20px;
+  border-top-color: var(--e-line);
+}
+
+.shell--e .xrow--v4:first-child {
+  border-top: 0;
+}
+
+.shell--e .xrow--v4 .xrow__icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--accent-soft);
+}
+
+.shell--e .xrow--v4 .xrow__label {
+  margin-bottom: 4px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--accent-ink);
+}
+
+.shell--e .xrow--v4 .xrow__value {
+  font-weight: 500;
+}
+
+.shell--e .xrow--v4 .xrow__value strong {
+  font-weight: 700;
+}
+
+/* Source as a small tag under each fact */
+.shell--e .src {
+  display: inline-flex;
+  align-items: center;
+  width: fit-content;
+  margin: 4px 0 8px;
+  padding: 2px 10px 2px 8px;
+  border-radius: 999px;
+  background: var(--bg);
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.shell--e .src::before {
+  margin-right: 6px;
+}
+
+.shell--e .src--none {
+  background: transparent;
+  border: 1px dashed #cfc9bd;
+  font-weight: 500;
+}
+
+.shell--e .xrow--v4 .xrow__body > :last-child {
+  margin-bottom: 0;
+}
+
+.shell--e .expect__studio {
+  padding: 4px 20px 18px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .em-tile,
+  .em-seg,
+  .qd2__switch,
+  .qd2__knob,
+  .shell--e .row {
+    transition: none;
+  }
+}

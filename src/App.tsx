@@ -37,7 +37,7 @@ export default function App() {
   }, [launchId]); // eslint-disable-line react-hooks/exhaustive-deps
 
   return (
-    <div className={isAdmin ? 'shell shell--wide' : 'shell'}>
+    <div className={isAdmin ? 'shell shell--wide' : variant === 'e' ? 'shell shell--e' : 'shell'}>
       <a href="#main" className="skip">Skip to content</a>
       <DevToggle />
       <header className="appbar">
