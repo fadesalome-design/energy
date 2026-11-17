@@ -269,6 +269,26 @@ export function devCheckIn() {
   saveBookings(getBookings().map((x) => (x.id === b.id ? { ...x, checkedIn: true } : x)));
 }
 
+/**
+ * Tester mode: mark one specific booking as attended (QR check-in) and move the
+ * clock to just after it ends, so it becomes the class we ask about.
+ */
+export function simulateAttended(bookingId: string) {
+  const b = getBookings().find((x) => x.id === bookingId);
+  if (!b) return;
+  const needed = Date.parse(b.endsAt) + 60_000 - Date.now();
+  writeJSON(OFFSET_KEY, Math.max(needed, readJSON<number>(OFFSET_KEY, 0)));
+  // The simulated visit "just ended", so it is always the most recent class we ask about,
+  // even if an earlier-in-the-day class was booked after a later one.
+  const endedAt = new Date(now() - 60_000).toISOString();
+  saveBookings(getBookings().map((x) => (x.id === bookingId ? { ...x, checkedIn: true, endsAt: endedAt } : x)));
+}
+
+/** The newest booking for a class (by when it was made). */
+export function latestBookingFor(classId: string): Booking | undefined {
+  return [...getBookings()].filter((b) => b.classId === classId).sort((a, b) => b.bookedAt.localeCompare(a.bookedAt))[0];
+}
+
 /** Fast-forwards the clock to 1 minute after the latest booked class ends. */
 export function devEndClass() {
   const b = latestBooking();

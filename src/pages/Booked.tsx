@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import { endTime, getClass, getStudio } from '../data/classes';
 import { Icon } from '../components/Icon';
+import { SimulateVisit, useOpenBooking } from '../components/SimulateVisit';
 
 /**
  * Simple confirmation with a tickable "What to bring" checklist.
@@ -12,6 +13,7 @@ export function Booked() {
   const c = getClass(id);
   const [checked, setChecked] = useState<Record<string, boolean>>({});
   const headingRef = useRef<HTMLHeadingElement>(null);
+  const openBooking = useOpenBooking(id);
 
   useEffect(() => {
     document.title = 'Booked · Urban Sports Clue';
@@ -64,6 +66,9 @@ export function Booked() {
           <span><strong>Best arrival:</strong> {c.expect.arrival}</span>
         </p>
       </section>
+
+      {/* Tester link / test mode only: skip to after the class to try the rating */}
+      {openBooking && <SimulateVisit booking={openBooking} />}
 
       {/* Feedback flow: say up front what happens after the class (predictability matters in calm mode) */}
       <p className="after-note">

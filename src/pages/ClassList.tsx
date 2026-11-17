@@ -4,6 +4,7 @@ import { classes } from '../data/classes';
 import { ClassRow } from '../components/ClassRow';
 import { Icon } from '../components/Icon';
 import { ClassFilters } from '../components/ClassFilters';
+import { SimulateVisit, useOpenBooking } from '../components/SimulateVisit';
 import { applyFilters, setMood, setPrefs, useFilters } from '../lib/filters';
 import { useVariant } from '../lib/variant';
 
@@ -23,6 +24,7 @@ export function ClassList() {
   }, [skipped]);
 
   const variant = useVariant();
+  const openBooking = useOpenBooking();
   const { mood, prefs } = useFilters();
   const sorted = [...classes].sort((a, b) => a.start.localeCompare(b.start));
   // Version B: mood + sensory filters. Version A shows every class.
@@ -46,6 +48,9 @@ export function ClassList() {
           Okay, {skipped} isn't for today. Good to know what suits you.
         </p>
       )}
+
+      {/* Tester link: a booked class waiting for its "visit" */}
+      {openBooking && <SimulateVisit booking={openBooking} compact />}
 
       {variant === 'b' && <ClassFilters />}
 

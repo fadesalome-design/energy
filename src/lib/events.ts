@@ -24,7 +24,8 @@ export type EventName =
   | 'feedback_answered'
   | 'feedback_dismissed'
   | 'feedback_voice_recorded'
-  | 'feedback_submitted';
+  | 'feedback_submitted'
+  | 'visit_simulated'; // tester mode: "I went to this class"
 
 export interface LoggedEvent {
   event: EventName;
