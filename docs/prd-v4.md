@@ -45,7 +45,7 @@ opened from a "Sensory filters" pill on the class list:
 | Light | Soft or low light | dim or daylight |
 | Light | No flashing lights | no strobe or flashing effects |
 | Sound | Quiet or soft music | background level |
-| Space | Not crowded | usually calm |
+| Space | Not crowded | usually calm **and** a small group (≤ 10), so it agrees with the reason line *(v4.2; Version B keeps "usually calm")* |
 | Touch & people | Touch only if I agree | no hands-on corrections, or the trainer asks first |
 | Touch & people | No required partner work | partner work is none or optional |
 | Leaving early | Easy to step out | fine to leave quietly |
@@ -118,6 +118,9 @@ Works at 375 px (phone) and on desktop.
 
 **v4.2 (2026-11-17)**
 - Energy labels match Version B: "Drained" → **Tired**, "Energized" → **Energetic**.
+- Clarified: "Stressed" without a follow-up keeps time order; only "Burn it off" puts high intensity first.
+- E's "Not crowded" now also needs a small group, so a "medium group" class can't appear under
+  "matches all your filters".
 - Version B gets the same "Stressed" follow-up (Burn it off / Calm down). In B, "Calm down"
   turns on the Quiet music and Soft light filters (B's Quiet & dim); undoing it turns off only
   the ones it added.

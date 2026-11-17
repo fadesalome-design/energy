@@ -290,6 +290,8 @@ export function clearEnergySession() { setState(EMPTY); }
 // ---------------------------------------------------------------------------
 
 type Mode = 'gentle' | 'calm' | 'high' | 'default';
+// "Stressed" with no follow-up yet is 'default' (time order): it never pushes high intensity
+// up until the member picks "Burn it off".
 export function sortMode(s: EnergyState): Mode {
   if (s.energy === 'drained') return 'gentle';
   if (s.energy === 'stressed' && s.goal === 'calm') return 'calm';
@@ -322,9 +324,19 @@ const WORD = {
   crowd: { small: 'small group', medium: 'medium group', large: 'large group' },
 } as const;
 
-/** Active sensory filters this class doesn't meet (studio data, like Version B). */
+/**
+ * E's rule for each filter: the same as Version B, except "Not crowded", which must also
+ * agree with the group size the reason line shows. Otherwise a "medium group" class (e.g.
+ * Sunrise Spin: usually calm, but 10–14 people) landed in "matches all your filters".
+ */
+function passesE(f: (typeof SENSORY)[number], c: ClassInfo): boolean {
+  if (f.id === 'notCrowded') return f.test(c) && profile(c).crowd === 'small';
+  return f.test(c);
+}
+
+/** Active sensory filters this class doesn't meet (studio data). */
 export function sensoryMisses(c: ClassInfo, prefs: SensoryId[]) {
-  return SENSORY.filter((f) => prefs.includes(f.id) && !f.test(c));
+  return SENSORY.filter((f) => prefs.includes(f.id) && !passesE(f, c));
 }
 
 /** One short reason line per class (plain words, never "safe"). */
