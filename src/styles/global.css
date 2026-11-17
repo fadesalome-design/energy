@@ -3482,3 +3482,85 @@ code {
   gap: 8px;
   margin-top: 8px;
 }
+
+/* ---------- Location (Versions B and E) ---------- */
+
+.near {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 2px;
+  font-size: 0.9375rem;
+  color: var(--muted);
+}
+
+.near .icon {
+  color: var(--accent);
+}
+
+.near strong {
+  color: var(--ink);
+}
+
+/* Sort switch: segmented control, options ≥ 44 px, selected = fill + tick + bold text */
+.sortsw {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 0 0 12px;
+}
+
+.sortsw__label {
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: var(--muted);
+}
+
+.sortsw__seg {
+  display: inline-flex;
+  padding: 3px;
+  gap: 3px;
+  background: var(--line);
+  border-radius: 12px;
+}
+
+.sortsw__opt {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  min-height: 44px;
+  padding: 0 14px;
+  border: 0;
+  border-radius: 9px;
+  background: transparent;
+  color: var(--muted);
+  font: inherit;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.sortsw__opt--on {
+  background: var(--surface);
+  color: var(--accent-ink);
+  font-weight: 700;
+  box-shadow: 0 1px 2px rgba(30, 42, 45, 0.12);
+}
+
+/* Version E look: rounded pill segments, selected filled with the accent colour */
+.shell--e .sortsw__seg {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+}
+
+.shell--e .sortsw__opt {
+  border-radius: 999px;
+  padding: 0 16px;
+}
+
+.shell--e .sortsw__opt--on {
+  background: var(--accent);
+  color: #fff;
+  box-shadow: none;
+}

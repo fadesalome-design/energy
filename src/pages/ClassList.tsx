@@ -7,6 +7,11 @@ import { ClassFilters } from '../components/ClassFilters';
 import { SimulateVisit, useOpenBooking } from '../components/SimulateVisit';
 import { applyFilters, setMood, setPrefs, useFilters } from '../lib/filters';
 import { useVariant } from '../lib/variant';
+import { NearLine, SortSwitch } from '../components/SortSwitch';
+import { byDistance } from '../lib/location';
+import { setSortB, type SortB } from '../lib/filters';
+import { setSortE } from '../lib/energy';
+import { logEvent } from '../lib/events';
 import { EnergyCheckIn, SensoryFiltersE } from '../components/EnergyCheckIn';
 import { energyList, reasonLine, useEnergy } from '../lib/energy';
 
@@ -27,8 +32,11 @@ export function ClassList() {
 
   const variant = useVariant();
   const openBooking = useOpenBooking();
-  const { mood, prefs } = useFilters();
-  const sorted = [...classes].sort((a, b) => a.start.localeCompare(b.start));
+  const { mood, prefs, sort: sortB } = useFilters();
+  const byTime = [...classes].sort((a, b) => a.start.localeCompare(b.start));
+  // Version B: "Nearest" sorts by distance (ties keep time order). Sorting never hides.
+  const sorted = variant === 'b' && sortB === 'nearest' ? byDistance(byTime) : byTime;
+  const withLocation = variant === 'b' || variant === 'e';
   // Version B: mood + sensory filters. Version A shows every class.
   const filtering = variant === 'b' && (mood !== null || prefs.length > 0);
   // Version E (Energy Match): the check-in re-sorts (never hides); only Quiet & dim leaves classes out.
@@ -41,6 +49,8 @@ export function ClassList() {
       <header className="list-head">
         <p className="eyebrow">Berlin · {todayLabel()}</p>
         <h1>Classes today</h1>
+        {/* Research: F-LOCATION (location stops 8/22 from booking). One fixed demo location. */}
+        {withLocation && <NearLine />}
         {/* Playful copy on the app name. Research: F-UNSURE (tell people the clue is one tap away) */}
         {/* Version E: a hand, not a magnifier (testers read the magnifier as search and tapped it) */}
         <p className="list-hint">
@@ -82,10 +92,28 @@ export function ClassList() {
         </p>
       )}
 
+      {variant === 'b' && (
+        <SortSwitch<SortB>
+          options={[{ id: 'time', label: 'Time' }, { id: 'nearest', label: 'Nearest' }]}
+          value={sortB}
+          onChange={(v) => { setSortB(v); logEvent('sort_changed', { data: { sort: v } }); }}
+        />
+      )}
+      {variant === 'e' && (
+        <SortSwitch<'match' | 'nearest'>
+          options={[{ id: 'match', label: energy.energy ? 'Energy match' : 'Time' }, { id: 'nearest', label: 'Nearest' }]}
+          value={energy.sort}
+          onChange={(v) => {
+            setSortE(v);
+            logEvent('sort_changed', { data: { sort: v === 'match' ? (energy.energy ? 'energy_match' : 'time') : 'nearest' } });
+          }}
+        />
+      )}
+
       {shown.length > 0 ? (
         <ul className="rows" aria-label="Classes">
           {shown.map((c) => (
-            <ClassRow key={c.id} c={c} reason={e ? reasonLine(c, energy, energy.sensory) : undefined} />
+            <ClassRow key={c.id} c={c} reason={e ? reasonLine(c, energy, energy.sensory) : undefined} distance={withLocation} />
           ))}
         </ul>
       ) : (

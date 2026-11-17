@@ -49,6 +49,9 @@ export interface Studio {
   name: string;
   district: string;
   address: string;
+  // Research: F-LOCATION (location stops 8/22 from booking). DEMO: from the fixed demo location, Kreuzberg.
+  distanceKm: number;
+  travelMin: number;
   facilities: Facilities;
 }
 
@@ -134,6 +137,8 @@ export interface ClassInfo {
 
 // ---------------------------------------------------------------------------
 // Studios (6, fictional, Berlin)
+// distanceKm / travelMin are DEMO values measured from one fixed demo location
+// ("You're near: Kreuzberg"). No GPS, no routing.
 // ---------------------------------------------------------------------------
 
 export const studios: Studio[] = [
@@ -142,6 +147,8 @@ export const studios: Studio[] = [
     name: 'Stillwerk Yoga',
     district: 'Neukölln',
     address: 'Weserhof 14',
+    distanceKm: 2.1, // demo data
+    travelMin: 10, // demo data
     facilities: {
       showers: 'private',
       lockers: 'free',
@@ -155,6 +162,8 @@ export const studios: Studio[] = [
     name: 'Hafen Pilates Loft',
     district: 'Kreuzberg',
     address: 'Uferweg 3, 2nd floor',
+    distanceKm: 0.8, // demo data
+    travelMin: 4, // demo data
     facilities: {
       showers: 'shared',
       lockers: 'free',
@@ -168,6 +177,8 @@ export const studios: Studio[] = [
     name: 'Eisenhalle',
     district: 'Wedding',
     address: 'Gerichtshof 22',
+    distanceKm: 7.5, // demo data
+    travelMin: 28, // demo data
     facilities: {
       showers: 'shared',
       lockers: 'bring-padlock',
@@ -181,6 +192,8 @@ export const studios: Studio[] = [
     name: 'Pulse Cycle House',
     district: 'Friedrichshain',
     address: 'Lichtenberger Bogen 8',
+    distanceKm: 3.0, // demo data
+    travelMin: 14, // demo data
     facilities: {
       showers: 'shared-and-private',
       lockers: 'free',
@@ -194,6 +207,8 @@ export const studios: Studio[] = [
     name: 'Tanzraum Schöneberg',
     district: 'Schöneberg',
     address: 'Akazienhof 5',
+    distanceKm: 3.4, // demo data
+    travelMin: 15, // demo data
     facilities: {
       showers: 'none',
       lockers: 'free',
@@ -207,6 +222,8 @@ export const studios: Studio[] = [
     name: 'Nordbad Aquatics',
     district: 'Prenzlauer Berg',
     address: 'Wasserturmweg 2',
+    distanceKm: 5.5, // demo data
+    travelMin: 22, // demo data
     facilities: {
       showers: 'shared-and-private',
       lockers: 'free',

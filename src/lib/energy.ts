@@ -12,6 +12,7 @@ import { useSyncExternalStore } from 'react';
 import { classes, getStudio, type ClassInfo } from '../data/classes';
 import { readJSON, writeJSON } from './storage';
 import { SENSORY, type SensoryId } from './filters';
+import { distanceKm } from './location';
 
 // ---------------------------------------------------------------------------
 // Class profile (the simple fields from the PRD, derived from sample data)
@@ -223,10 +224,10 @@ export function pickQuestionsV4(c: ClassInfo): QuestionV4[] {
 export type Energy = 'drained' | 'stressed' | 'normal' | 'energized';
 export type StressGoal = 'burn' | 'calm';
 
-export interface EnergyState { energy: Energy | null; goal: StressGoal | null; skipped: boolean; quietDim: boolean }
+export interface EnergyState { energy: Energy | null; goal: StressGoal | null; skipped: boolean; quietDim: boolean; sort: 'match' | 'nearest' }
 
 const SESSION_KEY = 'rtr.energySession';
-const EMPTY: EnergyState = { energy: null, goal: null, skipped: false, quietDim: false };
+const EMPTY: EnergyState = { energy: null, goal: null, skipped: false, quietDim: false, sort: 'match' };
 
 function readSession(): EnergyState {
   try {
@@ -279,6 +280,8 @@ export function chooseGoal(g: StressGoal) {
 }
 export function skipEnergy() { setState({ ...state, energy: null, goal: null, skipped: true }); }
 export function reopenEnergy() { setState({ ...state, skipped: false }); }
+/** "Sort: Energy match · Nearest" (or "Time · Nearest" with no energy). Session only. */
+export function setSortE(sort: EnergyState['sort']) { setState({ ...state, sort }); }
 export function toggleQuietDim() { setState({ ...state, quietDim: !state.quietDim }); }
 export function clearEnergySession() { setState(EMPTY); }
 
@@ -363,8 +366,13 @@ export function quietDimHides(c: ClassInfo): boolean {
  */
 export function energyList(s: EnergyState, prefs: SensoryId[] = []) {
   const byEnergy = sortClasses(classes, s);
-  const sorted = prefs.length
-    ? [...byEnergy].sort((a, b) => sensoryMisses(a, prefs).length - sensoryMisses(b, prefs).length)
+  // "Nearest": by distance; ties keep the energy order (stable sort). Sensory filters still
+  // bring fully matching classes first. Sorting never hides anything.
+  const nearest = s.sort === 'nearest';
+  const sorted = prefs.length || nearest
+    ? [...byEnergy].sort((a, b) =>
+        (sensoryMisses(a, prefs).length - sensoryMisses(b, prefs).length)
+        || (nearest ? distanceKm(a) - distanceKm(b) : 0))
     : byEnergy;
   const shown = s.quietDim ? sorted.filter((c) => !quietDimHides(c)) : sorted;
   const matchAll = shown.filter((c) => sensoryMisses(c, prefs).length === 0).length;

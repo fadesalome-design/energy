@@ -119,9 +119,20 @@ export function setPrefs(p: SensoryId[]) {
   emit();
 }
 
+// Version B sort ("Sort: Time · Nearest"), remembered like the other B filters.
+export type SortB = 'time' | 'nearest';
+const SORT_KEY = 'rtr.sortB';
+export function getSortB(): SortB {
+  return readJSON<SortB>(SORT_KEY, 'time') === 'nearest' ? 'nearest' : 'time';
+}
+export function setSortB(v: SortB) {
+  writeJSON(SORT_KEY, v);
+  emit();
+}
+
 export function useFilters() {
   useSyncExternalStore(subscribe, () => version, () => version);
-  return { mood: getMood(), prefs: getPrefs() };
+  return { mood: getMood(), prefs: getPrefs(), sort: getSortB() };
 }
 
 export function applyFilters(list: ClassInfo[], mood: Mood | null, prefs: SensoryId[]): ClassInfo[] {

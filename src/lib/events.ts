@@ -25,7 +25,8 @@ export type EventName =
   | 'feedback_dismissed'
   | 'feedback_voice_recorded'
   | 'feedback_submitted'
-  | 'visit_simulated'; // tester mode: "I went to this class"
+  | 'visit_simulated' // tester mode: "I went to this class"
+  | 'sort_changed'; // B and E: Time / Energy match / Nearest
 
 export interface LoggedEvent {
   event: EventName;

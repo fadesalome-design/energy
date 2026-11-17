@@ -2,13 +2,14 @@ import { Link } from 'react-router-dom';
 import { type ClassInfo, getStudio } from '../data/classes';
 import { typeLabel } from '../lib/labels';
 import { Icon } from './Icon';
+import { km } from '../lib/location';
 
 /**
  * One row in the class list.
  * Research: F-LOCATION (district, time and duration up front)
  * Research: F-INSIDE (looks like a normal booking-app list, Read the Room lives on the detail screen)
  */
-export function ClassRow({ c, reason }: { c: ClassInfo; reason?: string }) {
+export function ClassRow({ c, reason, distance = false }: { c: ClassInfo; reason?: string; distance?: boolean }) {
   const studio = getStudio(c.studioId);
   return (
     <li>
@@ -20,7 +21,7 @@ export function ClassRow({ c, reason }: { c: ClassInfo; reason?: string }) {
         <span className="row__main">
           <span className="row__name">{c.name}</span>
           <span className="row__studio">
-            {studio.name} · {studio.district}
+            {studio.name} · {studio.district}{distance && <> · {km(studio.distanceKm)}</>}
           </span>
           {reason && (
             <span className="row__reason">
