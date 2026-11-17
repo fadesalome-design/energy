@@ -46,15 +46,16 @@ export function ClassList() {
 
   return (
     <main className="page" id="main">
-      <header className="list-head">
+      <header className={withLocation ? 'list-head list-head--plain' : 'list-head'}>
         <p className="eyebrow">Berlin · {todayLabel()}</p>
         <h1>Classes today</h1>
         {/* Research: F-LOCATION (location stops 8/22 from booking). One fixed demo location. */}
         {withLocation && <NearLine />}
         {/* Playful copy on the app name. Research: F-UNSURE (tell people the clue is one tap away) */}
-        {/* Version E: a hand, not a magnifier (testers read the magnifier as search and tapped it) */}
+        {/* B and E: plain helper text, no icon. Testers read the magnifier (and then the hand) as a
+            button and tapped it. Version A keeps its original header. */}
         <p className="list-hint">
-          <Icon name={variant === 'e' ? 'hand' : 'clue'} size={18} /> Tap a class to read the room before you go.
+          {!withLocation && <><Icon name="clue" size={18} />{' '}</>}Tap a class to read the room before you go.
         </p>
       </header>
 
