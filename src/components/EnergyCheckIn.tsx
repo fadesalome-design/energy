@@ -1,7 +1,11 @@
+import { useState } from 'react';
 import { logEvent } from '../lib/events';
 import {
-  chooseEnergy, chooseGoal, reopenEnergy, skipEnergy, toggleQuietDim, useEnergy, type Energy,
+  chooseEnergy, chooseGoal, clearSensoryE, reopenEnergy, skipEnergy, toggleQuietDim, toggleSensoryE,
+  useEnergy, type Energy,
 } from '../lib/energy';
+import { SENSORY } from '../lib/filters';
+import { SensorySheet } from './ClassFilters';
 import { Icon } from './Icon';
 
 /**
@@ -106,27 +110,93 @@ export function EnergyCheckIn() {
   );
 }
 
-/** One optional switch on the class list. */
-export function QuietDimChip({ hidden }: { hidden: number }) {
+/**
+ * Sensory filters in Version E (PRD v4.1): the same 7 filters as Version B in the same
+ * sheet, with Quiet & dim as the first switch. They re-sort (matching classes first)
+ * instead of hiding; only Quiet & dim leaves classes out. Filters are remembered,
+ * Quiet & dim is for this session (it follows the energy check-in).
+ */
+export function SensoryFiltersE({ shown, hidden, matchAll }: { shown: number; hidden: number; matchAll: number }) {
   const s = useEnergy();
+  const [open, setOpen] = useState(false);
+  const active = s.sensory.length + (s.quietDim ? 1 : 0);
+
+  const toggle = (id: (typeof SENSORY)[number]['id']) => {
+    logEvent('preference_set', { data: { preference: id, on: !s.sensory.includes(id) } });
+    toggleSensoryE(id);
+  };
+  const toggleQD = () => {
+    logEvent('preference_set', { data: { preference: 'quietDim', on: !s.quietDim } });
+    toggleQuietDim();
+  };
+  const clearAll = () => {
+    clearSensoryE();
+    if (s.quietDim) toggleQuietDim();
+    logEvent('preference_set', { data: { preference: 'all', on: false } });
+  };
+
   return (
-    <button
-      type="button"
-      role="switch"
-      aria-checked={s.quietDim}
-      className={s.quietDim ? 'qd2 qd2--on' : 'qd2'}
-      onClick={() => { toggleQuietDim(); logEvent('preference_set', { data: { preference: 'quietDim', on: !s.quietDim } }); }}
-    >
-      <span className="qd2__icon"><Icon name="dim" size={20} /></span>
-      <span className="qd2__text">
-        <span className="qd2__title">Quiet &amp; dim</span>
-        <span className="qd2__note">
-          {s.quietDim
-            ? `Leaving out ${hidden} ${hidden === 1 ? 'class' : 'classes'} members rate loud or bright.`
-            : 'Leave out classes members rate loud or bright.'}
-        </span>
-      </span>
-      <span className="qd2__switch" aria-hidden="true"><span className="qd2__knob" /></span>
-    </button>
+    <div className="sfe">
+      <div className="filters__row sfe__row">
+        <button
+          type="button"
+          className={active ? 'pill pill--outline pill--on' : 'pill pill--outline'}
+          onClick={() => setOpen(true)}
+          aria-haspopup="dialog"
+        >
+          <Icon name="sliders" size={18} />
+          Sensory filters{active ? ` · ${active}` : ''}
+        </button>
+        {s.quietDim && (
+          <button type="button" className="chip chip--remove" onClick={toggleQD} aria-label="Turn off Quiet & dim">
+            Quiet &amp; dim
+            <Icon name="x" size={14} />
+          </button>
+        )}
+        {SENSORY.filter((f) => s.sensory.includes(f.id)).map((f) => (
+          <button key={f.id} type="button" className="chip chip--remove" onClick={() => toggle(f.id)} aria-label={`Remove filter: ${f.label}`}>
+            {f.label}
+            <Icon name="x" size={14} />
+          </button>
+        ))}
+      </div>
+
+      {active > 0 && (
+        <p className="filter-count" role="status">
+          <span>
+            {s.sensory.length > 0 && <>{matchAll} {matchAll === 1 ? 'class matches' : 'classes match'} all your filters, shown first. </>}
+            {s.quietDim && <>Quiet &amp; dim leaves out {hidden}.</>}
+          </span>
+          <button type="button" className="linkbtn" onClick={clearAll}>Clear all</button>
+        </p>
+      )}
+
+      {open && (
+        <SensorySheet
+          prefs={s.sensory}
+          count={shown}
+          canClear={active > 0}
+          subtitle="Classes that fit move to the top. We'll remember these for next time."
+          footLabel={`Show ${shown} ${shown === 1 ? 'class' : 'classes'}`}
+          onToggle={toggle}
+          onClear={clearAll}
+          onClose={() => setOpen(false)}
+          top={
+            <fieldset className="sgroup">
+              <legend>Quick switch</legend>
+              <label className="toggle">
+                <span className="toggle__icon"><Icon name="dim" size={20} /></span>
+                <span className="toggle__text">
+                  <span className="toggle__label">Quiet &amp; dim</span>
+                  <span className="toggle__hint">Leaves out classes members rate loud or bright. Turns on with Stressed → Calm down.</span>
+                </span>
+                <input type="checkbox" role="switch" checked={s.quietDim} onChange={toggleQD} />
+                <span className="toggle__switch" aria-hidden="true" />
+              </label>
+            </fieldset>
+          }
+        />
+      )}
+    </div>
   );
 }

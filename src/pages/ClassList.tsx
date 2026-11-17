@@ -7,7 +7,7 @@ import { ClassFilters } from '../components/ClassFilters';
 import { SimulateVisit, useOpenBooking } from '../components/SimulateVisit';
 import { applyFilters, setMood, setPrefs, useFilters } from '../lib/filters';
 import { useVariant } from '../lib/variant';
-import { EnergyCheckIn, QuietDimChip } from '../components/EnergyCheckIn';
+import { EnergyCheckIn, SensoryFiltersE } from '../components/EnergyCheckIn';
 import { energyList, reasonLine, useEnergy } from '../lib/energy';
 
 /** Today's date in English, e.g. "Sunday, 15 November" */
@@ -33,7 +33,7 @@ export function ClassList() {
   const filtering = variant === 'b' && (mood !== null || prefs.length > 0);
   // Version E (Energy Match): the check-in re-sorts (never hides); only Quiet & dim leaves classes out.
   const energy = useEnergy();
-  const e = variant === 'e' ? energyList(energy) : null;
+  const e = variant === 'e' ? energyList(energy, energy.sensory) : null;
   const shown = e ? e.shown : variant === 'b' ? applyFilters(sorted, mood, prefs) : sorted;
 
   return (
@@ -62,7 +62,7 @@ export function ClassList() {
       {variant === 'e' && (
         <>
           <EnergyCheckIn />
-          <QuietDimChip hidden={e!.hidden} />
+          <SensoryFiltersE shown={e!.shown.length} hidden={e!.hidden} matchAll={e!.matchAll} />
         </>
       )}
 
@@ -85,7 +85,7 @@ export function ClassList() {
       {shown.length > 0 ? (
         <ul className="rows" aria-label="Classes">
           {shown.map((c) => (
-            <ClassRow key={c.id} c={c} reason={e ? reasonLine(c, energy) : undefined} />
+            <ClassRow key={c.id} c={c} reason={e ? reasonLine(c, energy, energy.sensory) : undefined} />
           ))}
         </ul>
       ) : (

@@ -11,6 +11,7 @@
 import { useSyncExternalStore } from 'react';
 import { classes, getStudio, type ClassInfo } from '../data/classes';
 import { readJSON, writeJSON } from './storage';
+import { SENSORY, type SensoryId } from './filters';
 
 // ---------------------------------------------------------------------------
 // Class profile (the simple fields from the PRD, derived from sample data)
@@ -245,9 +246,24 @@ function setState(next: EnergyState) {
   emit();
 }
 
-export function useEnergy() {
+// Sensory filters (same 7 as Version B). Unlike energy, these are remembered between visits
+// (PRD v4.1). Stored apart from Version B's so the two versions don't affect each other.
+const SENSORY_KEY = 'rtr.sensoryPrefsE';
+let sensory: SensoryId[] = readJSON<SensoryId[]>(SENSORY_KEY, []);
+export function toggleSensoryE(id: SensoryId) {
+  sensory = sensory.includes(id) ? sensory.filter((x) => x !== id) : [...sensory, id];
+  writeJSON(SENSORY_KEY, sensory);
+  emit();
+}
+export function clearSensoryE() {
+  sensory = [];
+  writeJSON(SENSORY_KEY, sensory);
+  emit();
+}
+
+export function useEnergy(): EnergyState & { sensory: SensoryId[] } {
   useSyncExternalStore((cb) => { listeners.add(cb); return () => listeners.delete(cb); }, () => version, () => version);
-  return state;
+  return { ...state, sensory };
 }
 
 export function chooseEnergy(e: Energy | null) {
@@ -303,8 +319,16 @@ const WORD = {
   crowd: { small: 'small group', medium: 'medium group', large: 'large group' },
 } as const;
 
+/** Active sensory filters this class doesn't meet (studio data, like Version B). */
+export function sensoryMisses(c: ClassInfo, prefs: SensoryId[]) {
+  return SENSORY.filter((f) => prefs.includes(f.id) && !f.test(c));
+}
+
 /** One short reason line per class (plain words, never "safe"). */
-export function reasonLine(c: ClassInfo, s: EnergyState): string {
+export function reasonLine(c: ClassInfo, s: EnergyState, prefs: SensoryId[] = []): string {
+  // Sensory filters re-sort; a class that misses one says which, so the order is explained.
+  const misses = sensoryMisses(c, prefs);
+  if (misses.length) return `Misses your filter: ${misses[0].label.toLowerCase()}${misses.length > 1 ? ` +${misses.length - 1}` : ''}`;
   const p = profile(c);
   const mode = sortMode(s);
   const traits = (want: { intensity?: Intensity[]; music?: Music[]; crowd?: Crowd[] }) => {
@@ -332,8 +356,17 @@ export function quietDimHides(c: ClassInfo): boolean {
   return loud || bright;
 }
 
-export function energyList(s: EnergyState) {
-  const sorted = sortClasses(classes, s);
+/**
+ * The Version E list: energy order, then sensory filters move classes that meet all
+ * of them to the top (fewest misses first; nothing hidden). Quiet & dim still leaves
+ * out classes members rate loud or bright (PRD C).
+ */
+export function energyList(s: EnergyState, prefs: SensoryId[] = []) {
+  const byEnergy = sortClasses(classes, s);
+  const sorted = prefs.length
+    ? [...byEnergy].sort((a, b) => sensoryMisses(a, prefs).length - sensoryMisses(b, prefs).length)
+    : byEnergy;
   const shown = s.quietDim ? sorted.filter((c) => !quietDimHides(c)) : sorted;
-  return { shown, hidden: sorted.length - shown.length };
+  const matchAll = shown.filter((c) => sensoryMisses(c, prefs).length === 0).length;
+  return { shown, hidden: sorted.length - shown.length, matchAll };
 }

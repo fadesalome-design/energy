@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState, type ReactNode } from 'react';
 import { createPortal } from 'react-dom';
 import { classes } from '../data/classes';
 import { logEvent } from '../lib/events';
@@ -90,17 +90,27 @@ export function ClassFilters() {
   );
 }
 
-function SensorySheet({
-  prefs, mood, onToggle, onClear, onClose,
+/**
+ * The sensory filters sheet. Version B uses it as is; Version E passes its own
+ * count, wording and an extra group on top (Quiet & dim), because in E the
+ * filters re-sort the list instead of hiding classes.
+ */
+export function SensorySheet({
+  prefs, mood = null, count: countOverride, subtitle, footLabel, top, canClear, onToggle, onClear, onClose,
 }: {
   prefs: SensoryId[];
-  mood: Mood | null;
+  mood?: Mood | null;
+  count?: number;
+  subtitle?: string;
+  footLabel?: string;
+  top?: ReactNode;
+  canClear?: boolean;
   onToggle: (id: SensoryId) => void;
   onClear: () => void;
   onClose: () => void;
 }) {
   const headingRef = useRef<HTMLHeadingElement>(null);
-  const count = applyFilters(classes, mood, prefs).length;
+  const count = countOverride ?? applyFilters(classes, mood, prefs).length;
   const groups = [...new Set(SENSORY.map((s) => s.group))];
   const closeRef = useRef(onClose);
   closeRef.current = onClose;
@@ -130,9 +140,10 @@ function SensorySheet({
             <Icon name="x" size={22} />
           </button>
         </div>
-        <p className="muted small">Only show classes that fit. We'll remember these for next time.</p>
+        <p className="muted small">{subtitle ?? "Only show classes that fit. We'll remember these for next time."}</p>
 
         <div className="sheet__body">
+          {top}
           {groups.map((g) => (
             <fieldset key={g} className="sgroup">
               <legend>{g}</legend>
@@ -157,13 +168,13 @@ function SensorySheet({
         </div>
 
         <div className="sheet__foot">
-          {prefs.length > 0 && (
+          {(canClear ?? prefs.length > 0) && (
             <button type="button" className="btn btn--quiet" onClick={onClear}>
               Clear all
             </button>
           )}
           <button type="button" className="btn btn--primary" onClick={onClose} disabled={count === 0}>
-            {count === 0 ? 'No classes match' : `Show ${count} ${count === 1 ? 'class' : 'classes'}`}
+            {footLabel ?? (count === 0 ? 'No classes match' : `Show ${count} ${count === 1 ? 'class' : 'classes'}`)}
           </button>
         </div>
       </div>

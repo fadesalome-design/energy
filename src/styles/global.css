@@ -3467,3 +3467,18 @@ code {
   font-size: 0.875rem;
   color: var(--muted);
 }
+
+/* Version E: sensory filters row (reuses Version B pill, chips and sheet) */
+.sfe {
+  margin: 0 0 12px;
+}
+
+.sfe__row {
+  border-top: 0;
+  padding-top: 0;
+}
+
+.sfe .filter-count {
+  gap: 8px;
+  margin-top: 8px;
+}
