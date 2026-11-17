@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc --noEmit && vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "build:pages": "npm run build && cp dist/index.html dist/404.html"
   },
   "dependencies": {
     "react": "^18.3.1",

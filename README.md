@@ -53,7 +53,9 @@ Logged events (each with `variant`, `timestamp`, `session`, and `classId` / `cla
 
 ## Deploy
 
-It's a static single-page app. SPA fallbacks are included for both hosts:
+It's a static single-page app (no server needed). SPA fallbacks are included for each host:
+
+- **GitHub Pages:** `.github/workflows/pages.yml` builds and publishes on every push to `main`. One-time setup: repo Settings → Pages → Source: **GitHub Actions**. The workflow sets the subfolder (`/<repo>/`) automatically, and `npm run build:pages` copies `index.html` to `404.html` so deep links work.
 
 - **Vercel:** import the repo; framework preset "Vite". `vercel.json` rewrites all routes to `index.html`.
 - **Netlify:** build command `npm run build`, publish directory `dist`. `public/_redirects` handles routing.
