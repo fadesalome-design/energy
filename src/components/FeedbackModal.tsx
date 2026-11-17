@@ -2,9 +2,10 @@ import { useEffect, useMemo, useRef, useState } from 'react';
 import { createPortal } from 'react-dom';
 import { endTime, getClass, getStudio } from '../data/classes';
 import {
-  dismissFeedback, getStamps, now, pickQuestions, STAMPS_FOR_REWARD, submitFeedback,
-  type Booking, type Level, type MatchAnswer,
+  closeBooking, dismissFeedback, getStamps, now, pickQuestions, STAMPS_FOR_REWARD, submitFeedback,
+  type Booking, type Level, type MatchAnswer, type Question,
 } from '../lib/feedback';
+import { addRatingV4, CATEGORY_LABEL, pickQuestionsV4 } from '../lib/energy';
 import { logEvent } from '../lib/events';
 import { Icon } from './Icon';
 import { VoiceRecorder } from './VoiceRecorder';
@@ -21,7 +22,8 @@ import { VoiceRecorder } from './VoiceRecorder';
  * - Minimal motion; the stamp animation is off under prefers-reduced-motion.
  */
 
-type Step = 0 | 1 | 2 | 'final' | 'done';
+// Version E adds 'expected' (Was it as you expected?) between question 3 and the last step.
+type Step = 0 | 1 | 2 | 'expected' | 'final' | 'done';
 
 /** Pause after a tap so the choice is visible before moving on. */
 const ADVANCE_MS = 350;
@@ -83,10 +85,20 @@ export function dayLabel(endsAt: string) {
   return end.toLocaleDateString('en-GB', { weekday: 'long' });
 }
 
-export function FeedbackModal({ booking, onClose }: { booking: Booking; onClose: () => void }) {
+/** Version E questions in the same shape as Version B's (index 0/1/2 → low/medium/high slots). */
+function energyQuestions(c: Parameters<typeof pickQuestionsV4>[0]): Question[] {
+  return pickQuestionsV4(c).map((q) => ({
+    id: q.id, cardRow: CATEGORY_LABEL[q.category], icon: q.icon, prompt: q.prompt,
+    options: { low: q.options[0], medium: q.options[1], high: q.options[2] },
+  }));
+}
+
+export function FeedbackModal({ booking, onClose, version = 'b' }: { booking: Booking; onClose: () => void; version?: 'b' | 'e' }) {
   const c = getClass(booking.classId)!;
   const studio = getStudio(c.studioId);
-  const questions = useMemo(() => pickQuestions(c, booking.id), [c, booking.id]);
+  const isE = version === 'e';
+  const questions = useMemo(() => (isE ? energyQuestions(c) : pickQuestions(c, booking.id)), [c, booking.id, isE]);
+  const [expected, setExpected] = useState<'yes' | 'no' | null>(null);
 
   const [step, setStep] = useState<Step>(0);
   const [answers, setAnswers] = useState<Record<string, Level>>({});
@@ -105,7 +117,7 @@ export function FeedbackModal({ booking, onClose }: { booking: Booking; onClose:
     root?.setAttribute('inert', '');
     const prevOverflow = document.body.style.overflow;
     document.body.style.overflow = 'hidden';
-    logEvent('feedback_shown', { classId: c.id, classType: c.type, data: { questions: questions.map((q) => q.id) } });
+    logEvent('feedback_shown', { classId: c.id, classType: c.type, data: { version, questions: questions.map((q) => q.id) } });
     return () => {
       root?.removeAttribute('inert');
       document.body.style.overflow = prevOverflow;
@@ -142,6 +154,7 @@ export function FeedbackModal({ booking, onClose }: { booking: Booking; onClose:
   };
 
   const send = () => {
+    if (isE) return sendEnergy();
     const message =
       mode === 'record' && voiceSec ? { kind: 'voice' as const, seconds: voiceSec }
       : mode === 'write' && text.trim() ? { kind: 'text' as const, text: text.trim() }
@@ -163,13 +176,43 @@ export function FeedbackModal({ booking, onClose }: { booking: Booking; onClose:
     setStep('done');
   };
 
+  /** Version E: answers feed the card and Quiet & dim; the message stays with the team. */
+  const sendEnergy = () => {
+    const message = mode === 'record' && voiceSec ? 'voice' : mode === 'write' && text.trim() ? 'text' : 'none';
+    const idx = Object.fromEntries(Object.entries(answers).map(([k, l]) => [k, LEVELS.indexOf(l) as 0 | 1 | 2]));
+    addRatingV4({ classId: c.id, at: new Date(now()).toISOString(), expected, answers: idx });
+    const total = closeBooking(booking.id, 'submitted');
+    logEvent('feedback_submitted', {
+      classId: c.id, classType: c.type,
+      data: {
+        version: 'e', expected, message,
+        answers: Object.fromEntries(questions.map((q) => [q.id, answers[q.id] ? q.options[answers[q.id]] : null])),
+        textLength: message === 'text' ? text.trim().length : 0,
+        voiceSeconds: message === 'voice' ? voiceSec : 0,
+        stamps: total,
+      },
+    });
+    setStamps(total);
+    setStep('done');
+  };
+
   const close = () => onClose();
 
   const qIndex = typeof step === 'number' ? step : null;
-  const progress = qIndex !== null ? qIndex + 1 : step === 'final' ? 4 : null;
+  const total = isE ? 5 : 4;
+  const progress = qIndex !== null ? qIndex + 1 : step === 'expected' ? 4 : step === 'final' ? total : null;
   const goBack = () => {
     if (advance.current) return;
-    setStep(step === 'final' ? 2 : (Math.max(0, (step as number) - 1) as Step));
+    if (step === 'final') return setStep(isE ? 'expected' : 2);
+    if (step === 'expected') return setStep(2);
+    setStep(Math.max(0, (step as number) - 1) as Step);
+  };
+
+  const chooseExpected = (v: 'yes' | 'no') => {
+    if (advance.current) return;
+    setExpected(v);
+    logEvent('feedback_answered', { classId: c.id, classType: c.type, data: { question: 'expected', answer: v } });
+    advance.current = window.setTimeout(() => { advance.current = null; setStep('final'); }, ADVANCE_MS);
   };
 
   /**
@@ -186,7 +229,7 @@ export function FeedbackModal({ booking, onClose }: { booking: Booking; onClose:
     if (answers[qid] !== level) answer(qid, level);
     advance.current = window.setTimeout(() => {
       advance.current = null;
-      setStep(i < 2 ? ((i + 1) as Step) : 'final');
+      setStep(i < 2 ? ((i + 1) as Step) : isE ? 'expected' : 'final');
     }, ADVANCE_MS);
   };
 
@@ -203,7 +246,7 @@ export function FeedbackModal({ booking, onClose }: { booking: Booking; onClose:
             ) : <span />}
             {progress && (
               <p className="fb__progress">
-                {progress <= 3 ? `Question ${progress} of 3` : 'Last step · optional'}
+                {progress <= 3 ? `Question ${progress} of 3` : step === 'expected' ? 'One more question' : 'Last step · optional'}
               </p>
             )}
             <button type="button" className="fb__notnow" onClick={notNow}>Not now</button>
@@ -211,8 +254,8 @@ export function FeedbackModal({ booking, onClose }: { booking: Booking; onClose:
         )}
 
         {progress && (
-          <div className="fb__steps" aria-hidden="true">
-            {[1, 2, 3, 4].map((i) => (
+          <div className="fb__steps" aria-hidden="true" style={{ gridTemplateColumns: `repeat(${total}, 1fr)` }}>
+            {Array.from({ length: total }, (_, k) => k + 1).map((i) => (
               <span key={i} className={i <= progress ? 'fb__step fb__step--on' : 'fb__step'} />
             ))}
           </div>
@@ -277,13 +320,35 @@ export function FeedbackModal({ booking, onClose }: { booking: Booking; onClose:
           );
         })()}
 
-        {/* ---------- Final: card match + optional message ---------- */}
+        {/* ---------- Version E: Was it as you expected? (after the 3 questions) ---------- */}
+        {step === 'expected' && (
+          <div className="fb__screen">
+            <h2 id="fb-title" tabIndex={-1} ref={headingRef} className="fb__title">Was it as you expected?</h2>
+            <div className="fb__options" role="group" aria-labelledby="fb-title">
+              {([['yes', 'Yes'], ['no', 'No']] as const).map(([v, label]) => (
+                <button
+                  key={v}
+                  type="button"
+                  aria-pressed={expected === v}
+                  className={expected === v ? 'opt opt--on' : 'opt'}
+                  onClick={() => chooseExpected(v)}
+                >
+                  <span className="opt__word">{label}</span>
+                  <span className="opt__check" aria-hidden="true"><Icon name="check" size={18} /></span>
+                </button>
+              ))}
+            </div>
+            <p className="fb__later muted small">{expected ? 'Tap an answer to continue.' : 'Compared with the "What to expect" card.'}</p>
+          </div>
+        )}
+
+        {/* ---------- Final: card match (Version B) + optional message ---------- */}
         {step === 'final' && (
           <div className="fb__screen">
             <h2 id="fb-title" tabIndex={-1} ref={headingRef} className="fb__title">Anything else?</h2>
-            <p className="muted">Both are optional. You can send without them.</p>
+            <p className="muted">{isE ? 'Optional. You can send without it.' : 'Both are optional. You can send without them.'}</p>
 
-            <fieldset className="fb__match">
+            {!isE && <fieldset className="fb__match">
               <legend>Did the class match its "What to expect" card?</legend>
               <div className="seg" role="radiogroup">
                 {([['yes', 'Yes'], ['partly', 'Partly'], ['no', 'No']] as const).map(([v, label]) => (
@@ -293,7 +358,7 @@ export function FeedbackModal({ booking, onClose }: { booking: Booking; onClose:
                   </label>
                 ))}
               </div>
-            </fieldset>
+            </fieldset>}
 
             <div className="fb__msg">
               <p className="fb__msg-label" id="msg-label">Tell us more</p>
@@ -336,8 +401,9 @@ export function FeedbackModal({ booking, onClose }: { booking: Booking; onClose:
               <p className="fb__privacy small">
                 <Icon name="info" size={16} />
                 <span>
-                  Only the Urban Sports Clue team reads or hears this. It's never shown on the card.
-                  Tell us about the room. No need to share anything about your health.
+                  {isE
+                    ? "Only the Urban Sports Clue team reads or hears this. It's never shown on the card. Tell us about the class, not about other people."
+                    : "Only the Urban Sports Clue team reads or hears this. It's never shown on the card. Tell us about the room. No need to share anything about your health."}
                 </span>
               </p>
             </div>

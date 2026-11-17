@@ -57,25 +57,48 @@ const rank = (v: string) => (RANK as Record<string, number>)[v] ?? 1;
 
 export const MIN_RATINGS = 5;
 
-export type Category = 'clean' | 'crowd' | 'atmosphere' | 'senses' | 'trainer' | 'level';
+export type Category = 'level' | 'crowd' | 'clean' | 'atmosphere' | 'coaching' | 'senses';
 
+/** Names match the card sections the answers feed. */
 export const CATEGORY_LABEL: Record<Category, string> = {
-  clean: 'Cleanliness & hygiene',
-  crowd: 'Crowd & space',
+  level: 'Real level',
+  crowd: 'Crowd at this time',
+  clean: 'Cleanliness',
   atmosphere: 'Atmosphere & people',
-  senses: 'Sound, light & air',
-  trainer: 'Trainer',
-  level: 'Level & intensity',
+  coaching: 'Atmosphere & people',
+  senses: 'Sound & light',
 };
 
 /** Share of a class's answers that touch each category in the sample data. */
-const SAMPLE_SHARE: Record<Category, number> = { clean: 0.3, crowd: 0.3, atmosphere: 0.2, senses: 0.28, trainer: 0.22, level: 0.25 };
+const SAMPLE_SHARE: Record<Category, number> = { level: 0.25, crowd: 0.24, clean: 0.3, atmosphere: 0.2, coaching: 0.18, senses: 0.28 };
+
+export interface QuestionV4 {
+  id: string;
+  category: Category;
+  icon: string;
+  prompt: string;
+  /** Answers describe the class; index 0 / 1 / 2 */
+  options: [string, string, string];
+}
+
+// PRD v4 question set. Only Sound & light uses "too": it measures fit, and feeds Quiet & dim.
+export const QUESTIONS: QuestionV4[] = [
+  { id: 'level', category: 'level', icon: 'level', prompt: 'Level compared with the label', options: ['Easier than the label', 'As the label says', 'Harder than the label'] },
+  { id: 'crowd', category: 'crowd', icon: 'people', prompt: 'How full was it?', options: ['Quiet, lots of space', 'Comfortable', 'Packed'] },
+  { id: 'clean', category: 'clean', icon: 'sparkle', prompt: 'How clean was it?', options: ['Clean', 'Okay', 'Not clean'] },
+  { id: 'atmosphere', category: 'atmosphere', icon: 'calm', prompt: 'The atmosphere was', options: ['Calm', 'Balanced', 'High energy'] },
+  { id: 'coaching', category: 'coaching', icon: 'trainer', prompt: 'Coaching style', options: ['Gentle guidance', 'Balanced', 'Pushes hard'] },
+  { id: 'music', category: 'senses', icon: 'volume', prompt: 'Music was', options: ['Too quiet', 'Just right', 'Too loud'] },
+  { id: 'light', category: 'senses', icon: 'sun', prompt: 'Light was', options: ['Too dim', 'Just right', 'Too bright'] },
+];
+
+const q = (id: string) => QUESTIONS.find((x) => x.id === id)!;
 
 export interface RatingV4 {
   classId: string;
   at: string;
-  expected: 'yes' | 'partly' | 'no' | null;
-  /** question id → answer index 0 (too little) / 1 (just right) / 2 (too much) */
+  expected: 'yes' | 'no' | null;
+  /** question id → answer index 0 / 1 / 2 */
   answers: Record<string, 0 | 1 | 2>;
 }
 
@@ -88,64 +111,79 @@ export function addRatingV4(r: RatingV4) {
   emit();
 }
 
+/** A member-rated topic: the most common answer (as its words) and how many members rated it. */
+export interface Rated { answer: 0 | 1 | 2; words: string; n: number }
+
 export interface MemberView {
-  /** number of member ratings per category */
+  /** number of member ratings per category (used to pick the next questions) */
   n: Record<Category, number>;
-  clean: { avg: number | null; n: number };
-  crowd: { level: Crowd; n: number };
+  clean: Rated;
+  crowd: Rated;
+  atmosphere: Rated;
+  coaching: Rated;
   music: { level: Music; n: number };
   light: { level: Light; n: number };
   level: { harder: number; easier: number; asDescribed: number; n: number };
 }
 
-function sampleCount(c: ClassInfo, cat: Category) {
-  return Math.round(c.reports * SAMPLE_SHARE[cat]);
+const sampleCount = (c: ClassInfo, cat: Category) => Math.round(c.reports * SAMPLE_SHARE[cat]);
+
+function majority<T extends string | number>(votes: Map<T, number>, fallback: T): T {
+  let best = fallback; let bestN = -1;
+  for (const [k, v] of votes) if (v > bestN) { best = k; bestN = v; }
+  return best;
 }
 
-function majority<T extends string>(votes: Record<T, number>, fallback: T): T {
-  let best = fallback; let bestN = -1;
-  for (const [k, v] of Object.entries(votes) as [T, number][]) if (v > bestN) { best = k; bestN = v; }
-  return best;
+/** Tally a 0/1/2 question: sample votes on the studio's answer + this prototype's answers. */
+function rated(id: string, sampleAnswer: 0 | 1 | 2, sampleN: number, mine: RatingV4[]): Rated {
+  const votes = new Map<0 | 1 | 2, number>([[0, 0], [1, 0], [2, 0]]);
+  votes.set(sampleAnswer, sampleN);
+  let n = sampleN;
+  for (const r of mine) { const a = r.answers[id]; if (a !== undefined) { votes.set(a, votes.get(a)! + 1); n++; } }
+  const answer = majority(votes, sampleAnswer);
+  return { answer, words: q(id).options[answer], n };
 }
 
 export function memberView(c: ClassInfo): MemberView {
   const p = profile(c);
+  const x = c.expect;
   const mine = getRatingsV4().filter((r) => r.classId === c.id);
   const n = Object.fromEntries((Object.keys(SAMPLE_SHARE) as Category[]).map((k) => [k, sampleCount(c, k)])) as Record<Category, number>;
-  for (const r of mine) for (const q of Object.keys(r.answers)) n[QUESTIONS.find((x) => x.id === q)!.category]++;
+  for (const r of mine) for (const id of Object.keys(r.answers)) { const qq = QUESTIONS.find((x2) => x2.id === id); if (qq) n[qq.category]++; }
 
-  // Sound & light: samples agree with the studio; "too loud"/"too quiet" etc. vote a level, "just right" confirms the studio's.
+  // Sample answers follow the studio's own data, so the card starts consistent with it.
+  const cleanSample: 0 | 1 | 2 = x.clean.rating == null ? 1 : x.clean.rating >= 4.3 ? 0 : x.clean.rating >= 3.5 ? 1 : 2;
+  const crowdSample: 0 | 1 | 2 = p.crowd === 'small' ? 0 : p.crowd === 'medium' ? 1 : 2;
+  const atmoSample: 0 | 1 | 2 = p.intensity === 'low' && p.music === 'quiet' ? 0 : p.intensity === 'high' || p.music === 'loud' ? 2 : 1;
+  const coachSample: 0 | 1 | 2 = x.trainer.style <= 2 ? 0 : x.trainer.style === 3 ? 1 : 2;
+
+  // Sound & light: "Too loud" / "Too bright" vote loud / bright; "Just right" confirms the studio's level.
   const soundN = Math.round(c.reports * 0.16);
   const lightN = Math.round(c.reports * 0.12);
-  const music: Record<Music, number> = { quiet: 0, medium: 0, loud: 0 }; music[p.music] += soundN;
-  const light: Record<Light, number> = { dim: 0, normal: 0, bright: 0 }; light[p.light] += lightN;
-  const crowd: Record<Crowd, number> = { small: 0, medium: 0, large: 0 }; crowd[p.crowd] += n.crowd;
+  const music = new Map<Music, number>([['quiet', 0], ['medium', 0], ['loud', 0]]); music.set(p.music, soundN);
+  const light = new Map<Light, number>([['dim', 0], ['normal', 0], ['bright', 0]]); light.set(p.light, lightN);
   let mN = soundN, lN = lightN;
   for (const r of mine) {
     const a = r.answers;
-    if (a.music !== undefined) { music[(['quiet', p.music, 'loud'] as Music[])[a.music]]++; mN++; }
-    if (a.light !== undefined) { light[(['dim', p.light, 'bright'] as Light[])[a.light]]++; lN++; }
-    if (a.space !== undefined) crowd[(['small', p.crowd, 'large'] as Crowd[])[a.space]]++;
+    if (a.music !== undefined) { const k = (['quiet', p.music, 'loud'] as Music[])[a.music]; music.set(k, music.get(k)! + 1); mN++; }
+    if (a.light !== undefined) { const k = (['dim', p.light, 'bright'] as Light[])[a.light]; light.set(k, light.get(k)! + 1); lN++; }
   }
 
-  // Level: sample split from the existing "first-timers said the level matched" figure
+  // Real level: sample split from the existing "first-timers said the level matched" figure
   const ln = sampleCount(c, 'level');
-  const disagree = Math.round(ln * (1 - c.expect.level.firstTimerMatchPct / 100));
+  const disagree = Math.round(ln * (1 - x.level.firstTimerMatchPct / 100));
   const lvl = { harder: disagree, easier: 0, asDescribed: ln - disagree, n: ln };
   for (const r of mine) if (r.answers.level !== undefined) {
     lvl.n++;
     if (r.answers.level === 0) lvl.easier++; else if (r.answers.level === 2) lvl.harder++; else lvl.asDescribed++;
   }
 
-  // Cleanliness: sample average + prototype answers (Not great = 2, OK = 4, Very clean = 5)
-  let cleanN = c.expect.clean.rating == null ? 0 : sampleCount(c, 'clean');
-  let cleanSum = (c.expect.clean.rating ?? 0) * cleanN;
-  for (const r of mine) if (r.answers.clean !== undefined) { cleanSum += [2, 4, 5][r.answers.clean]; cleanN++; }
-
   return {
     n,
-    clean: { avg: cleanN ? cleanSum / cleanN : null, n: cleanN },
-    crowd: { level: majority(crowd, p.crowd), n: n.crowd },
+    clean: rated('clean', cleanSample, x.clean.rating == null ? 0 : sampleCount(c, 'clean'), mine),
+    crowd: rated('crowd', crowdSample, sampleCount(c, 'crowd'), mine),
+    atmosphere: rated('atmosphere', atmoSample, sampleCount(c, 'atmosphere'), mine),
+    coaching: rated('coaching', coachSample, sampleCount(c, 'coaching'), mine),
     music: { level: majority(music, p.music), n: mN },
     light: { level: majority(light, p.light), n: lN },
     level: lvl,
@@ -153,34 +191,30 @@ export function memberView(c: ClassInfo): MemberView {
 }
 
 // ---------------------------------------------------------------------------
-// Rating questions (PRD G): 3 tap questions from 3 different categories
+// Picking the 3 questions (PRD G)
 // ---------------------------------------------------------------------------
 
-export interface QuestionV4 { id: string; category: Category; prompt: string; options: [string, string, string] }
+const LAST_SET_KEY = 'rtr.rateLastCategories';
 
-export const QUESTIONS: QuestionV4[] = [
-  { id: 'clean', category: 'clean', prompt: 'The space was:', options: ['Not clean enough', 'Clean', 'Very clean'] },
-  { id: 'space', category: 'crowd', prompt: 'The room was:', options: ['Too empty', 'Just right', 'Too crowded'] },
-  { id: 'vibe', category: 'atmosphere', prompt: 'The atmosphere was:', options: ['Too sleepy', 'Just right', 'Too intense'] },
-  { id: 'music', category: 'senses', prompt: 'Music was:', options: ['Too quiet', 'Just right', 'Too loud'] },
-  { id: 'light', category: 'senses', prompt: 'Light was:', options: ['Too dim', 'Just right', 'Too bright'] },
-  { id: 'air', category: 'senses', prompt: 'The air was:', options: ['Too cold', 'Just right', 'Too warm'] },
-  { id: 'trainer', category: 'trainer', prompt: 'The trainer was:', options: ['Too relaxed', 'Just right', 'Too strict'] },
-  { id: 'level', category: 'level', prompt: 'The class felt:', options: ['Easier than described', 'As described', 'Harder than described'] },
-];
-
-/** Prefer the 3 categories with the fewest ratings for this class; one question each. */
+/**
+ * 3 questions from 3 different categories, fewest ratings first, and never the same
+ * 3 categories twice in a row in one session. Sound & light asks about music or light,
+ * whichever has fewer ratings.
+ */
 export function pickQuestionsV4(c: ClassInfo): QuestionV4[] {
   const v = memberView(c);
-  const cats = (Object.keys(CATEGORY_LABEL) as Category[]).sort((a, b) => v.n[a] - v.n[b]).slice(0, 3);
+  const ordered = (Object.keys(SAMPLE_SHARE) as Category[]).sort((a, b) => v.n[a] - v.n[b]);
+  let cats = ordered.slice(0, 3);
+  let last: string | null = null;
+  try { last = sessionStorage.getItem(LAST_SET_KEY); } catch { /* ignore */ }
+  const key = (cs: Category[]) => [...cs].sort().join(',');
+  if (last && key(cats) === last) cats = [ordered[0], ordered[1], ordered[3]];
+  try { sessionStorage.setItem(LAST_SET_KEY, key(cats)); } catch { /* ignore */ }
   return cats.map((cat) => {
-    const qs = QUESTIONS.filter((q) => q.category === cat);
-    if (qs.length === 1) return qs[0];
-    // Sound, light & air: ask about whichever has the fewest ratings
-    return v.music.n <= v.light.n ? qs.find((q) => q.id === 'music')! : qs.find((q) => q.id === 'light')!;
+    if (cat !== 'senses') return QUESTIONS.find((x) => x.category === cat)!;
+    return v.music.n <= v.light.n ? q('music') : q('light');
   });
 }
-
 // ---------------------------------------------------------------------------
 // Session state: energy + Quiet & dim (never saved after the session)
 // ---------------------------------------------------------------------------

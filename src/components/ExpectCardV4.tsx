@@ -1,7 +1,7 @@
 import type { ReactNode } from 'react';
 import type { ClassInfo, Studio } from '../data/classes';
 import { MIN_RATINGS, memberView, profile } from '../lib/energy';
-import { partnerLabel, roomSizeLabel, trainerStyleLabel } from '../lib/labels';
+import { partnerLabel, roomSizeLabel } from '../lib/labels';
 import { Icon } from './Icon';
 
 /**
@@ -30,10 +30,24 @@ function Section({ icon, title, children }: { icon: string; title: string; child
 }
 
 const words = {
-  crowd: { small: 'small group', medium: 'medium group', large: 'large group' },
   music: { quiet: 'quiet', medium: 'medium', loud: 'loud' },
   light: { dim: 'dim', normal: 'normal', bright: 'bright' },
 };
+
+/**
+ * One member-rated line: "<strong>Packed</strong> · From 9 members",
+ * or "Not enough ratings yet" under 5 ratings (never a guess).
+ */
+function MemberLine({ label, words, n }: { label?: string; words: ReactNode; n: number }) {
+  if (n < MIN_RATINGS) {
+    return <p className="src src--none">{label ? `${label}: ` : ''}Not enough ratings yet</p>;
+  }
+  return (
+    <p className="xrow__value">
+      {label ? `${label}: ` : ''}<strong>{words}</strong> <span className="src-inline">· From {n} members</span>
+    </p>
+  );
+}
 
 export function ExpectCardV4({ c, studio }: { c: ClassInfo; studio: Studio }) {
   const x = c.expect;
@@ -44,11 +58,9 @@ export function ExpectCardV4({ c, studio }: { c: ClassInfo; studio: Studio }) {
   const lv = m.level;
   const disagree = lv.harder + lv.easier;
   const harder = lv.harder >= lv.easier;
-  let levelMembers: ReactNode;
-  if (lv.n < MIN_RATINGS) levelMembers = null;
-  else if (disagree / lv.n >= 0.6)
-    levelMembers = <strong>{harder ? lv.harder : lv.easier} of {lv.n} members: {harder ? 'harder' : 'easier'} than described</strong>;
-  else levelMembers = <>{lv.asDescribed} of {lv.n} members: as described</>;
+  const levelWords = disagree / Math.max(1, lv.n) >= 0.6
+    ? <>{harder ? lv.harder : lv.easier} of {lv.n} members: {harder ? 'harder' : 'easier'} than described</>
+    : <>{lv.asDescribed} of {lv.n} members: as described</>;
 
   const soundOk = m.music.n >= MIN_RATINGS;
   const lightOk = m.light.n >= MIN_RATINGS;
@@ -65,45 +77,47 @@ export function ExpectCardV4({ c, studio }: { c: ClassInfo; studio: Studio }) {
         <Section icon="sparkle" title="Cleanliness">
           <p className="xrow__value">{x.clean.lastCleaned}{x.clean.ventilation ? ` · ${x.clean.ventilation}` : ''}</p>
           <Source />
-          {m.clean.n >= MIN_RATINGS && m.clean.avg !== null && (
-            <p className="xrow__value">Members rate it <strong>{m.clean.avg.toFixed(1)} / 5</strong></p>
-          )}
-          <Source members={m.clean.n} />
+          <MemberLine words={m.clean.words} n={m.clean.n} />
         </Section>
 
         <Section icon="people" title="Crowd at this time">
           <p className="xrow__value">Usually {x.crowd.typicalMin}–{x.crowd.typicalMax} people · {roomSizeLabel[x.crowd.roomSize]}</p>
           <Source />
-          {m.crowd.n >= MIN_RATINGS && <p className="xrow__value">Feels like a <strong>{words.crowd[m.crowd.level]}</strong></p>}
-          <Source members={m.crowd.n} />
+          <MemberLine words={m.crowd.words} n={m.crowd.n} />
         </Section>
 
         <Section icon="level" title="Real level">
           <p className="xrow__value">Studio: <strong>{p.level}</strong></p>
           <Source />
-          {levelMembers && <p className="xrow__value">{levelMembers}</p>}
-          <Source members={lv.n} />
+          {lv.n < MIN_RATINGS
+            ? <p className="src src--none">Not enough ratings yet</p>
+            : <p className="xrow__value"><strong>{levelWords}</strong></p>}
         </Section>
 
         <Section icon="trainer" title="Atmosphere & people">
           <p className="xrow__value">{c.vibe}</p>
           <p className="xrow__value">
-            Trainer {c.trainer}: {trainerStyleLabel[x.trainer.style].toLowerCase()}
-            {x.trainer.handsOn ? (x.trainer.asksBeforeTouch ? ', asks before hands-on help' : ', gives hands-on help') : ''}
-            {' · '}{partnerLabel[x.partner.work]}
+            {partnerLabel[x.partner.work]}
+            {x.trainer.handsOn ? (x.trainer.asksBeforeTouch ? ' · Asks before hands-on help' : ' · Hands-on help') : ''}
+            {' · '}{x.leaving.quietExitOk ? 'Fine to leave early' : 'Leaving early is noticeable'}
           </p>
-          <p className="xrow__value">{x.leaving.quietExitOk ? 'Fine to leave early' : 'Leaving early is noticeable'}</p>
           <Source />
+          <MemberLine label="Atmosphere" words={m.atmosphere.words} n={m.atmosphere.n} />
+          <MemberLine label="Coaching style" words={m.coaching.words} n={m.coaching.n} />
         </Section>
 
         <Section icon="volume" title="Sound & light">
-          {soundOk || lightOk ? (
+          {soundOk && lightOk ? (
             <p className="xrow__value">
-              Music: <strong>{soundOk ? words.music[m.music.level] : 'not enough ratings yet'}</strong>
-              {' · '}Light: <strong>{lightOk ? words.light[m.light.level] : 'not enough ratings yet'}</strong>
+              Music: <strong>{words.music[m.music.level]}</strong> · Light: <strong>{words.light[m.light.level]}</strong>{' '}
+              <span className="src-inline">· From {m.music.n + m.light.n} members</span>
             </p>
-          ) : null}
-          <Source members={Math.max(soundOk ? m.music.n : 0, lightOk ? m.light.n : 0) || Math.max(m.music.n, m.light.n)} />
+          ) : (
+            <>
+              <MemberLine label="Music" words={words.music[m.music.level]} n={m.music.n} />
+              <MemberLine label="Light" words={words.light[m.light.level]} n={m.light.n} />
+            </>
+          )}
           <p className="xrow__value">Studio says: music {words.music[p.music]}, light {words.light[p.light]}</p>
           <Source />
         </Section>

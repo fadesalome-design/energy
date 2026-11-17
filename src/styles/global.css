@@ -3461,3 +3461,9 @@ code {
     transition: none;
   }
 }
+
+.src-inline {
+  font-weight: 400;
+  font-size: 0.875rem;
+  color: var(--muted);
+}

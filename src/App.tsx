@@ -8,7 +8,6 @@ import { AdminPicker, AdminStudio } from './pages/Admin';
 import { DevToggle } from './components/DevToggle';
 import { LogoMark } from './components/Logo';
 import { FeedbackModal } from './components/FeedbackModal';
-import { RateClassV4 } from './components/RateClassV4';
 import { useVariant } from './lib/variant';
 import { StampCounter } from './components/StampCounter';
 import { pendingFeedback, shouldShowFeedback, useFeedbackState, type Booking } from './lib/feedback';
@@ -56,20 +55,11 @@ export default function App() {
         <Route path="/admin/:studioId" element={<AdminStudio />} />
         <Route path="*" element={<ClassList />} />
       </Routes>
-      {active && variant === 'e' && (
-        <RateClassV4
-          key={active.id}
-          booking={active}
-          onClose={() => {
-            setActive(null);
-            navigate('/', { replace: true });
-          }}
-        />
-      )}
-      {active && variant !== 'e' && (
+      {active && (
         <FeedbackModal
           key={active.id}
           booking={active}
+          version={variant === 'e' ? 'e' : 'b'}
           // A reopened app starts on home, so closing the questions lands there too,
           // not on whatever screen was open before (e.g. "Booked", which would be confusing).
           onClose={() => {
