@@ -167,8 +167,8 @@ export interface ClassInfo {
 // ---------------------------------------------------------------------------
 
 interface PlaceJson { id: string; name: string; type: PlaceType; district: string; address: string; description: string; photo: string; traits: RoomTraits; offsetKm: number }
-interface ClassJson { id: string; placeId: string; name: string; type: ClassType; start: string; durationMin: number; intensity: ClassIntensity; trainer: string; whatToExpect: string[]; touch: 'none' | 'asks-first' | 'hands-on'; description: string }
-interface RatingJson { classId: string; matchedCard: 'yes' | 'partly' | 'no'; answers: { noise: Noise; crowd: Crowd } }
+interface ClassJson { id: string; placeId: string; name: string; type: ClassType; day: string; start: string; end: string; durationMin: number; intensity: ClassIntensity; trainer: string; whatToExpect: string[]; touch: 'none' | 'asks-first' | 'hands-on'; description: string; whatToBring: string[] }
+interface RatingJson { classId: string; placeId: string; matched: 'yes' | 'partly' | 'no'; answers: { category: string; questionId: string; answer: string }[] }
 
 const PLACES = placesJson as PlaceJson[];
 const CLASSES = classesJson as ClassJson[];
@@ -186,16 +186,7 @@ const FACILITIES: Record<PlaceType, Facilities> = {
   wellness: { showers: 'shared-and-private', lockers: 'free', safeBox: true, changingRoom: { crowding: 'roomy' }, towels: 'free' },
 };
 
-const BRING: Record<PlaceType, string[]> = {
-  yoga: ['Comfortable clothes', 'Mats and towels are provided'],
-  pilates: ['Grip socks', 'Comfortable clothes', 'Towel (or rent one)'],
-  gym: ['Indoor trainers', 'Towel', 'Water bottle', 'Padlock for the locker'],
-  dance: ['Socks or bare feet', 'Comfortable clothes', 'Water bottle'],
-  boxing: ['Indoor trainers', 'Towel', 'Water bottle', 'Hand wraps (or borrow)'],
-  climbing: ['Comfortable clothes', 'Climbing shoes (or rent)', 'Water bottle'],
-  swimming: ['Swimwear', 'Swim cap', 'Goggles', 'Flip-flops', 'Towel (or rent one)'],
-  wellness: ['Two towels (or rent them)', 'Flip-flops', 'Water bottle'],
-};
+// What to bring: from d/data/classes.json (whatToBring), the same items per place type as before
 
 const PEAK: Record<ClassIntensity, Intensity> = { gentle: 2, moderate: 3, hard: 5 };
 const VOLUME: Record<Noise, Volume> = { quiet: 1, medium: 3, loud: 5 };
@@ -232,7 +223,7 @@ function toClass(j: ClassJson): ClassInfo {
       clean: { lastCleaned: 'Cleaned every day', rating: rs.length >= 5 ? Math.round((4 + (j.id.length % 8) / 10) * 10) / 10 : null, ventilation: t.noise === 'quiet' ? 'Open windows' : 'Air system', temperature: p.type === 'wellness' ? 'Warm, sauna up to 90 °C' : null },
       level: {
         official: LEVEL[j.intensity], reality: j.whatToExpect[0], priorKnowledge: j.intensity === 'hard' ? 'Some experience helps' : 'None',
-        firstTimerMatchPct: rs.length ? Math.round((rs.filter((r) => r.matchedCard === 'yes').length / rs.length) * 100) : 80,
+        firstTimerMatchPct: rs.length ? Math.round((rs.filter((r) => r.matched === 'yes').length / rs.length) * 100) : 80,
       },
       sound: { volume: VOLUME[t.noise], mic: t.noise === 'loud', note: j.whatToExpect[1] },
       light: { level: LIGHTS[t.light] },
@@ -244,7 +235,7 @@ function toClass(j: ClassJson): ClassInfo {
         { name: 'Main part', minutes: j.durationMin - 2 * third, intensity: peak },
         { name: 'Cool-down', minutes: third, intensity: 1 },
       ],
-      bring: BRING[p.type],
+      bring: j.whatToBring,
       arrival: p.type === 'swimming' ? '15 min early, shower before the pool' : '10 min early',
       leaving: { quietExitOk: t.noise !== 'loud', note: t.noise !== 'loud' ? 'Fine to step out quietly' : 'Doors at the back, fine to step out' },
       social: [],

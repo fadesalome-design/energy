@@ -35,6 +35,42 @@ const PHOTOS = {
   wellness: ['1583416750470-965b2707b355', '1600334129128-685c5582fd35', '1540555700478-4be289fbecef'],
 };
 
+// ---------- question bank (after-class rating, PRD v4: 6 categories) ----------
+// Written to questions.json and read by the app (lib/energy.ts), so app and data never drift.
+const PLACE_TYPES = ['yoga', 'pilates', 'gym', 'dance', 'boxing', 'climbing', 'swimming', 'wellness'];
+const QUESTION_BANK = [
+  { id: 'level', label: 'Real level', questions: [
+    { id: 'level', icon: 'level', prompt: 'Level compared with the label', answers: ['Easier than the label', 'As the label says', 'Harder than the label'] }] },
+  { id: 'crowd', label: 'Crowd at this time', questions: [
+    { id: 'crowd', icon: 'people', prompt: 'How full was it?', answers: ['Quiet, lots of space', 'Comfortable', 'Packed'] }] },
+  { id: 'clean', label: 'Cleanliness', questions: [
+    { id: 'clean', icon: 'sparkle', prompt: 'How clean was it?', answers: ['Clean', 'Okay', 'Not clean'] }] },
+  { id: 'atmosphere', label: 'Atmosphere & people', questions: [
+    { id: 'atmosphere', icon: 'calm', prompt: 'The atmosphere was', answers: ['Calm', 'Balanced', 'High energy'] }] },
+  { id: 'coaching', label: 'Atmosphere & people', questions: [
+    { id: 'coaching', icon: 'trainer', prompt: 'Coaching style', answers: ['Gentle guidance', 'Balanced', 'Pushes hard'] }] },
+  { id: 'senses', label: 'Sound & light', questions: [
+    { id: 'music', icon: 'volume', prompt: 'Music was', answers: ['Too quiet', 'Just right', 'Too loud'] },
+    { id: 'light', icon: 'sun', prompt: 'Light was', answers: ['Too dim', 'Just right', 'Too bright'] }] },
+].map((c) => ({ ...c, appliesTo: PLACE_TYPES }));   // every category applies to every place type (the app does not filter)
+
+// What to bring per place type (shown on the "Booked" screen)
+const BRING = {
+  yoga: ['Comfortable clothes', 'Mats and towels are provided'],
+  pilates: ['Grip socks', 'Comfortable clothes', 'Towel (or rent one)'],
+  gym: ['Indoor trainers', 'Towel', 'Water bottle', 'Padlock for the locker'],
+  dance: ['Socks or bare feet', 'Comfortable clothes', 'Water bottle'],
+  boxing: ['Indoor trainers', 'Towel', 'Water bottle', 'Hand wraps (or borrow)'],
+  climbing: ['Comfortable clothes', 'Climbing shoes (or rent)', 'Water bottle'],
+  swimming: ['Swimwear', 'Swim cap', 'Goggles', 'Flip-flops', 'Towel (or rent one)'],
+  wellness: ['Two towels (or rent them)', 'Flip-flops', 'Water bottle'],
+};
+
+// A third, separate seed for the rating category answers, so nothing generated earlier changes
+let seed3 = 4411;
+const rnd3 = () => ((seed3 = (seed3 * 1664525 + 1013904223) >>> 0) / 2 ** 32);
+const nudge = (i) => { const r = rnd3(); return Math.min(2, Math.max(0, i + (r < 0.72 ? 0 : r < 0.86 ? 1 : -1))); };
+
 // ---------- places: one of each type in each district ----------
 const DISTRICTS = ['Kreuzberg', 'Neukölln', 'Mitte', 'Prenzlauer Berg', 'Friedrichshain'];
 const STREETS = {
@@ -190,6 +226,12 @@ for (const p of places) {
   }
 }
 classes.sort((a, b) => toMin(a.start) - toMin(b.start) || a.id.localeCompare(b.id));
+for (const c of classes) {
+  const end = toMin(c.start) + c.durationMin;
+  c.day = 'today'; // the demo shows one day; every class is "today"
+  c.end = `${String(Math.floor(end / 60)).padStart(2, '0')}:${String(end % 60).padStart(2, '0')}`;
+  c.whatToBring = BRING[places.find((p) => p.id === c.placeId).type];
+}
 
 // ---------- ratings (for the AI feature later; not shown in D yet) ----------
 const COMMENTS = ['Music was louder than the card said.', 'Exactly as described, very calm.', 'More people than expected.', 'Great teacher, clear instructions.', 'The room was quite warm.', 'Lights were brighter than I thought.', 'Nice and quiet, I could switch off.', 'Harder than the label says.', 'Easier than I expected, good for a tired day.', 'Changing room was crowded.', 'Lovely space, will come back.', 'A bit too fast for a beginner.', 'Partner work was optional, which helped.', 'The card was spot on.'];
@@ -206,8 +248,34 @@ for (let i = 0; i < 500; i++) {
   };
   const diffs = (answers.noise !== tr.noise) + (answers.crowd !== tr.crowd) + (answers.intensity !== c.intensity);
   const day = new Date(Date.UTC(2026, 10, 18) - int(1, 30) * 86400000).toISOString().slice(0, 10);
-  const r = { id: `r${String(i + 1).padStart(3, '0')}`, classId: c.id, date: day, energyBefore: pick(['tired', 'stressed', 'energetic']), matchedCard: diffs === 0 ? (chance(0.9) ? 'yes' : 'partly') : diffs === 1 ? 'partly' : 'no', answers };
-  if (chance(0.2)) r.comment = pick(COMMENTS);
+  const energyBefore = pick(['tired', 'stressed', 'energetic']);
+  const matched = diffs === 0 ? (chance(0.9) ? 'yes' : 'partly') : diffs === 1 ? 'partly' : 'no';
+  const comment = chance(0.2) ? pick(COMMENTS) : null;
+  // 3 different categories (as in the app), answers consistent with the room and class
+  const cats = ['level', 'crowd', 'clean', 'atmosphere', 'coaching', 'senses'];
+  const chosen = [];
+  while (chosen.length < 3) { const k = cats.splice(Math.floor(rnd3() * cats.length), 1)[0]; chosen.push(k); }
+  const ix = { gentle: 0, moderate: 1, hard: 2 }[c.intensity];
+  const base = {
+    level: answers.intensity === c.intensity ? 1 : (answers.intensity === 'hard' || (answers.intensity === 'moderate' && c.intensity === 'gentle')) ? 2 : 0,
+    crowd: { small: 0, medium: 1, large: 2 }[answers.crowd],
+    clean: rnd3() < 0.7 ? 0 : 1,
+    atmosphere: tr.noise === 'quiet' && ix === 0 ? 0 : tr.noise === 'loud' || ix === 2 ? 2 : 1,
+    coaching: ix,
+  };
+  const categoryAnswers = chosen.map((cat) => {
+    const bank = QUESTION_BANK.find((q) => q.id === cat);
+    if (cat === 'senses') {
+      const useMusic = rnd3() < 0.5; const q = bank.questions[useMusic ? 0 : 1];
+      const i = useMusic ? (answers.noise === 'loud' ? 2 : answers.noise === 'quiet' && tr.noise !== 'quiet' ? 0 : 1) : (answers.light === 'bright' ? 2 : 1);
+      return { category: cat, questionId: q.id, question: q.prompt, answer: q.answers[i] };
+    }
+    const q = bank.questions[0];
+    const i = cat === 'clean' ? base.clean : nudge(base[cat]);
+    return { category: cat, questionId: q.id, question: q.prompt, answer: q.answers[i] };
+  });
+  const r = { id: `r${String(i + 1).padStart(3, '0')}`, classId: c.id, placeId: c.placeId, date: day, energyBefore, answers: categoryAnswers, matched };
+  if (comment) r.comment = comment;
   ratings.push(r);
 }
 
@@ -216,4 +284,5 @@ const write = (f, data) => writeFileSync(join(OUT, f), JSON.stringify(data, null
 write('places.json', places);
 write('classes.json', classes);
 write('ratings.json', ratings);
-console.log(`places ${places.length} · classes ${classes.length} · ratings ${ratings.length} · comments ${ratings.filter((r) => r.comment).length}`);
+write('questions.json', QUESTION_BANK);
+console.log(`places ${places.length} · classes ${classes.length} · ratings ${ratings.length} · comments ${ratings.filter((r) => r.comment).length} · question categories ${QUESTION_BANK.length} (${QUESTION_BANK.reduce((n, c) => n + c.questions.length, 0)} questions)`);

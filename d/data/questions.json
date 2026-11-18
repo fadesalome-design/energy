@@ -1,0 +1,168 @@
+[
+  {
+    "id": "level",
+    "label": "Real level",
+    "questions": [
+      {
+        "id": "level",
+        "icon": "level",
+        "prompt": "Level compared with the label",
+        "answers": [
+          "Easier than the label",
+          "As the label says",
+          "Harder than the label"
+        ]
+      }
+    ],
+    "appliesTo": [
+      "yoga",
+      "pilates",
+      "gym",
+      "dance",
+      "boxing",
+      "climbing",
+      "swimming",
+      "wellness"
+    ]
+  },
+  {
+    "id": "crowd",
+    "label": "Crowd at this time",
+    "questions": [
+      {
+        "id": "crowd",
+        "icon": "people",
+        "prompt": "How full was it?",
+        "answers": [
+          "Quiet, lots of space",
+          "Comfortable",
+          "Packed"
+        ]
+      }
+    ],
+    "appliesTo": [
+      "yoga",
+      "pilates",
+      "gym",
+      "dance",
+      "boxing",
+      "climbing",
+      "swimming",
+      "wellness"
+    ]
+  },
+  {
+    "id": "clean",
+    "label": "Cleanliness",
+    "questions": [
+      {
+        "id": "clean",
+        "icon": "sparkle",
+        "prompt": "How clean was it?",
+        "answers": [
+          "Clean",
+          "Okay",
+          "Not clean"
+        ]
+      }
+    ],
+    "appliesTo": [
+      "yoga",
+      "pilates",
+      "gym",
+      "dance",
+      "boxing",
+      "climbing",
+      "swimming",
+      "wellness"
+    ]
+  },
+  {
+    "id": "atmosphere",
+    "label": "Atmosphere & people",
+    "questions": [
+      {
+        "id": "atmosphere",
+        "icon": "calm",
+        "prompt": "The atmosphere was",
+        "answers": [
+          "Calm",
+          "Balanced",
+          "High energy"
+        ]
+      }
+    ],
+    "appliesTo": [
+      "yoga",
+      "pilates",
+      "gym",
+      "dance",
+      "boxing",
+      "climbing",
+      "swimming",
+      "wellness"
+    ]
+  },
+  {
+    "id": "coaching",
+    "label": "Atmosphere & people",
+    "questions": [
+      {
+        "id": "coaching",
+        "icon": "trainer",
+        "prompt": "Coaching style",
+        "answers": [
+          "Gentle guidance",
+          "Balanced",
+          "Pushes hard"
+        ]
+      }
+    ],
+    "appliesTo": [
+      "yoga",
+      "pilates",
+      "gym",
+      "dance",
+      "boxing",
+      "climbing",
+      "swimming",
+      "wellness"
+    ]
+  },
+  {
+    "id": "senses",
+    "label": "Sound & light",
+    "questions": [
+      {
+        "id": "music",
+        "icon": "volume",
+        "prompt": "Music was",
+        "answers": [
+          "Too quiet",
+          "Just right",
+          "Too loud"
+        ]
+      },
+      {
+        "id": "light",
+        "icon": "sun",
+        "prompt": "Light was",
+        "answers": [
+          "Too dim",
+          "Just right",
+          "Too bright"
+        ]
+      }
+    ],
+    "appliesTo": [
+      "yoga",
+      "pilates",
+      "gym",
+      "dance",
+      "boxing",
+      "climbing",
+      "swimming",
+      "wellness"
+    ]
+  }
+]

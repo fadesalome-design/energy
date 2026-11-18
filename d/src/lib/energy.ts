@@ -10,6 +10,7 @@
  */
 import { useSyncExternalStore } from 'react';
 import { byStart, classes, getStudio, type ClassInfo } from '../data/classes';
+import questionsJson from '../../data/questions.json';
 import { readJSON, writeJSON } from './storage';
 import { SENSORY, type SensoryId } from './filters';
 import { distanceKm } from './location';
@@ -59,15 +60,12 @@ export const MIN_RATINGS = 5;
 
 export type Category = 'level' | 'crowd' | 'clean' | 'atmosphere' | 'coaching' | 'senses';
 
-/** Names match the card sections the answers feed. */
-export const CATEGORY_LABEL: Record<Category, string> = {
-  level: 'Real level',
-  crowd: 'Crowd at this time',
-  clean: 'Cleanliness',
-  atmosphere: 'Atmosphere & people',
-  coaching: 'Atmosphere & people',
-  senses: 'Sound & light',
-};
+interface QuestionBankJson extends Array<{ id: Category; label: string; appliesTo: string[]; questions: { id: string; icon: string; prompt: string; answers: [string, string, string] }[] }> {}
+
+/** Names match the card sections the answers feed (from d/data/questions.json). */
+export const CATEGORY_LABEL = Object.fromEntries(
+  (questionsJson as QuestionBankJson).map((c) => [c.id, c.label]),
+) as Record<Category, string>;
 
 /** Share of a class's answers that touch each category in the sample data. */
 const SAMPLE_SHARE: Record<Category, number> = { level: 0.25, crowd: 0.24, clean: 0.3, atmosphere: 0.2, coaching: 0.18, senses: 0.28 };
@@ -82,15 +80,10 @@ export interface QuestionV4 {
 }
 
 // PRD v4 question set. Only Sound & light uses "too": it measures fit, and feeds Quiet & dim.
-export const QUESTIONS: QuestionV4[] = [
-  { id: 'level', category: 'level', icon: 'level', prompt: 'Level compared with the label', options: ['Easier than the label', 'As the label says', 'Harder than the label'] },
-  { id: 'crowd', category: 'crowd', icon: 'people', prompt: 'How full was it?', options: ['Quiet, lots of space', 'Comfortable', 'Packed'] },
-  { id: 'clean', category: 'clean', icon: 'sparkle', prompt: 'How clean was it?', options: ['Clean', 'Okay', 'Not clean'] },
-  { id: 'atmosphere', category: 'atmosphere', icon: 'calm', prompt: 'The atmosphere was', options: ['Calm', 'Balanced', 'High energy'] },
-  { id: 'coaching', category: 'coaching', icon: 'trainer', prompt: 'Coaching style', options: ['Gentle guidance', 'Balanced', 'Pushes hard'] },
-  { id: 'music', category: 'senses', icon: 'volume', prompt: 'Music was', options: ['Too quiet', 'Just right', 'Too loud'] },
-  { id: 'light', category: 'senses', icon: 'sun', prompt: 'Light was', options: ['Too dim', 'Just right', 'Too bright'] },
-];
+/** The question bank, read from d/data/questions.json (the same file Lovable imports). */
+export const QUESTIONS: QuestionV4[] = (questionsJson as QuestionBankJson).flatMap((c) =>
+  c.questions.map((q) => ({ id: q.id, category: c.id, icon: q.icon, prompt: q.prompt, options: q.answers })),
+);
 
 const q = (id: string) => QUESTIONS.find((x) => x.id === id)!;
 

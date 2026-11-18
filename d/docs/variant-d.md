@@ -13,6 +13,13 @@ Each line below says what's on the screen and why. "Finding" means what we saw i
 
 ## Change log
 
+- **2026-11-18: prepared for Lovable.** Demo data as JSON in `d/data/` (places, classes, ratings and
+  the new `questions.json` question bank). D reads "what to bring", the questions and the rating
+  match from these files, so app and data are the same. Classes gained `day`, `end` and
+  `whatToBring`; ratings gained `placeId`, 3 category answers and `matched`. All existing values
+  are unchanged. `d/docs/design-tokens.md` is generated from D's CSS. D's build publishes the data
+  and the tokens under `/energy/d/data/` and `/energy/d/docs/`.
+
 - **2026-11-18: rating aura and "Stamp collected" now identical to Version C** (copied 1:1 into
   D's own files; D loads nothing from `/c/`).
   - **Aura:** C's component and values: 196×220 px (150 px on "Anything else?"), 4 levels with the
@@ -322,51 +329,39 @@ Version E's Normal option, its six-section card and its sensory-filter sheet. Th
 
 ## Design tokens
 
-CSS custom properties defined in `d/src/styles/global.css` (name: value).
-
-### Colour (`:root`)
+Full list (every variable, colour, font size, weight, radius, shadow and spacing value, with where
+it is used): [design-tokens.md](design-tokens.md), also published at
+https://fadesalome-design.github.io/energy/d/docs/design-tokens.md (generated from D's CSS on every
+build). The core tokens:
 
 | Token | Value | Use |
 |---|---|---|
-| `--bg` | #f6f4ef | page background (warm off-white) |
+| `--bg` | #f6f4ef | page background |
 | `--surface` | #ffffff | cards, sheets, buttons |
 | `--ink` | #1e2a2d | headings and body text |
 | `--muted` | #55615f | secondary text |
 | `--line` | #e3ded4 | borders and dividers |
-| `--accent` | #1d6a66 | primary green: selected states, primary buttons, icons |
-| `--accent-ink` | #134b48 | dark green text (eyebrows, links, active labels) |
-| `--accent-soft` | #e4efec | mint tint: active chips, stamp pill, icon circles |
+| `--accent` | #1d6a66 | primary green: selected states, primary buttons |
+| `--accent-ink` | #134b48 | dark green text, links |
+| `--accent-soft` | #e4efec | mint tint: active chips, stamp pill |
 | `--focus` | #1d6a66 | keyboard focus ring |
-| `--calm-bg` / `--calm-ink` | #e4efec / #134b48 | "calm" status chip |
-| `--moderate-bg` / `--moderate-ink` | #f1ebdd / #5c4a1e | "moderate" status chip |
-| `--busy-bg` / `--busy-ink` | #f3e4dc / #6b3420 | "busy" status chip |
-
-### Colour (component-scoped)
-
-| Token | Value | Where |
-|---|---|---|
-| `--emd-tint` | #eaf3f0 | Energy Match card (legacy mint, now overridden to white) |
-| `--emd-shadow` | 0 1px 2px rgba(30,42,45,.05), 0 6px 20px rgba(30,42,45,.06) | Energy Match card shadow |
-| `--e-tint`, `--e-line`, `--e-shadow`, `--e-shadow-hover` | #eaf3f0, #ebe6dc, (shadows as above) | copied Version E styles (not shown in D) |
-| `--aura-a` / `--aura-b` per step | Q1 #9fe1cb / #e4e2f7 · Q2 #5dcaa5 / #d7d3f6 · Q3 #8f86e3 / #c9f0e2 · "Anything else?" #7cc47a / #cecbf6 | rating aura (same as Version C) |
-
-### Font
-
-| Token | Value |
-|---|---|
-| `--font` | ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif |
-
-Base size 16 px (17 px on desktop ≥ 1024 px).
-
-### Radius and spacing
-
-| Token | Value | Use |
-|---|---|---|
-| `--radius` | 18px | cards and class rows |
-| `--radius-sm` | 10px | small boxes and notices |
-| (pills) | 999px | chips, pills and pill buttons (not a variable) |
+| `--calm-bg` / `--calm-ink` | #e4efec / #134b48 | "calm" status |
+| `--moderate-bg` / `--moderate-ink` | #f1ebdd / #5c4a1e | "moderate" status |
+| `--busy-bg` / `--busy-ink` | #f3e4dc / #6b3420 | "busy" status |
+| `--aura-a` / `--aura-b` | Q1 #9fe1cb / #e4e2f7 · Q2 #5dcaa5 / #d7d3f6 · Q3 #8f86e3 / #c9f0e2 · last #7cc47a / #cecbf6 | rating aura |
+| `--font` | system UI stack (ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica Neue, Arial) | all text |
+| font sizes | 0.75 · 0.8125 · 0.875 · 0.9375 · 1 · 1.125 · 1.25 · 1.5 · 1.625 rem (+ a few one-offs) | body 16 px (17 px desktop) |
+| font weights | 500 · 600 · 650 · 700 | medium / semibold / bold |
+| `--radius` / `--radius-sm` | 18px / 10px | cards / small boxes; pills use 999px |
 | `--gutter` | 20px | side margins |
-| `--tap` | 48px | minimum tap height (44 px for pills, via hit areas) |
+| `--tap` | 48px | minimum tap height (pills 40 px + hit area = 44 px) |
+| spacing | 4 · 6 · 8 · 10 · 12 · 14 · 16 · 20 · 24 px (rating flow: 8 / 16 / 24) | gaps and padding |
+| shadows | cards: 0 1px 2px rgba(30,42,45,.05), 0 6px 20px rgba(30,42,45,.06) | Energy Match card, panels |
 
-Note: some screens in D still use fixed colour values directly in the CSS (for example the phone
-frame and the class card photo fallbacks). The table lists the variables only.
+## Data files (for Lovable)
+
+Published with D (copied on every build), same data the app uses:
+- https://fadesalome-design.github.io/energy/d/data/places.json (40 places)
+- https://fadesalome-design.github.io/energy/d/data/classes.json (104 classes)
+- https://fadesalome-design.github.io/energy/d/data/ratings.json (500 ratings)
+- https://fadesalome-design.github.io/energy/d/data/questions.json (6 categories, 7 questions)

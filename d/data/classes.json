@@ -14,7 +14,15 @@
       "Large group, it can get packed. Partner work is part of the class. Hands-on corrections, the trainer may touch to adjust."
     ],
     "touch": "hands-on",
-    "description": "A boxing-style workout with combinations on the bag and fitness rounds in between. No sparring. Expect to sweat: loud music and a high pace."
+    "description": "A boxing-style workout with combinations on the bag and fitness rounds in between. No sparring. Expect to sweat: loud music and a high pace.",
+    "day": "today",
+    "end": "07:45",
+    "whatToBring": [
+      "Indoor trainers",
+      "Towel",
+      "Water bottle",
+      "Hand wraps (or borrow)"
+    ]
   },
   {
     "id": "climbing-prenzlauer-berg-morning-bouldering",
@@ -31,7 +39,14 @@
       "Small group, plenty of space. No partner work. No hands-on corrections."
     ],
     "touch": "none",
-    "description": "Guided bouldering on quieter morning walls, with tips on technique and route reading. For new and returning climbers. It feels steady, with a few harder moments."
+    "description": "Guided bouldering on quieter morning walls, with tips on technique and route reading. For new and returning climbers. It feels steady, with a few harder moments.",
+    "day": "today",
+    "end": "08:00",
+    "whatToBring": [
+      "Comfortable clothes",
+      "Climbing shoes (or rent)",
+      "Water bottle"
+    ]
   },
   {
     "id": "gym-mitte-hiit-express",
@@ -48,7 +63,15 @@
       "Medium group, enough space. No partner work. No hands-on corrections."
     ],
     "touch": "none",
-    "description": "Short high-intensity intervals of bodyweight moves with quick breaks. For people who want a full workout in little time. Expect to sweat and push through the harder parts."
+    "description": "Short high-intensity intervals of bodyweight moves with quick breaks. For people who want a full workout in little time. Expect to sweat and push through the harder parts.",
+    "day": "today",
+    "end": "07:30",
+    "whatToBring": [
+      "Indoor trainers",
+      "Towel",
+      "Water bottle",
+      "Padlock for the locker"
+    ]
   },
   {
     "id": "swimming-kreuzberg-aqua-fit",
@@ -65,7 +88,16 @@
       "Medium group, enough space. No partner work. No hands-on corrections."
     ],
     "touch": "none",
-    "description": "A water workout in the shallow end with music, easy on the joints. No swimming skills needed. It feels energetic, with music pushing you along."
+    "description": "A water workout in the shallow end with music, easy on the joints. No swimming skills needed. It feels energetic, with music pushing you along.",
+    "day": "today",
+    "end": "07:45",
+    "whatToBring": [
+      "Swimwear",
+      "Swim cap",
+      "Goggles",
+      "Flip-flops",
+      "Towel (or rent one)"
+    ]
   },
   {
     "id": "yoga-mitte-power-yoga",
@@ -82,7 +114,13 @@
       "Medium group, enough space. No partner work. No hands-on corrections."
     ],
     "touch": "none",
-    "description": "Strong, sweaty yoga with strength holds, balances and fast sequences. For people who want yoga as a proper workout. It is hard work in a focused, quiet room."
+    "description": "Strong, sweaty yoga with strength holds, balances and fast sequences. For people who want yoga as a proper workout. It is hard work in a focused, quiet room.",
+    "day": "today",
+    "end": "08:00",
+    "whatToBring": [
+      "Comfortable clothes",
+      "Mats and towels are provided"
+    ]
   },
   {
     "id": "boxing-prenzlauer-berg-boxfit",
@@ -99,7 +137,15 @@
       "Medium group, enough space. Partner work is part of the class. The trainer asks before any hands-on help."
     ],
     "touch": "asks-first",
-    "description": "A boxing-style workout with combinations on the bag and fitness rounds in between. No sparring. Expect to sweat: loud music and a high pace."
+    "description": "A boxing-style workout with combinations on the bag and fitness rounds in between. No sparring. Expect to sweat: loud music and a high pace.",
+    "day": "today",
+    "end": "08:15",
+    "whatToBring": [
+      "Indoor trainers",
+      "Towel",
+      "Water bottle",
+      "Hand wraps (or borrow)"
+    ]
   },
   {
     "id": "climbing-neuk-lln-morning-bouldering",
@@ -116,7 +162,14 @@
       "Medium group, enough space. No partner work. The trainer asks before any hands-on help."
     ],
     "touch": "asks-first",
-    "description": "Guided bouldering on quieter morning walls, with tips on technique and route reading. For new and returning climbers. It feels focused and steady."
+    "description": "Guided bouldering on quieter morning walls, with tips on technique and route reading. For new and returning climbers. It feels focused and steady.",
+    "day": "today",
+    "end": "08:30",
+    "whatToBring": [
+      "Comfortable clothes",
+      "Climbing shoes (or rent)",
+      "Water bottle"
+    ]
   },
   {
     "id": "gym-friedrichshain-hiit-express",
@@ -133,7 +186,15 @@
       "Medium group, enough space. Partner work is part of the class. No hands-on corrections."
     ],
     "touch": "none",
-    "description": "Short high-intensity intervals of bodyweight moves with quick breaks. For people who want a full workout in little time. Expect to sweat: loud music and a high pace."
+    "description": "Short high-intensity intervals of bodyweight moves with quick breaks. For people who want a full workout in little time. Expect to sweat: loud music and a high pace.",
+    "day": "today",
+    "end": "08:00",
+    "whatToBring": [
+      "Indoor trainers",
+      "Towel",
+      "Water bottle",
+      "Padlock for the locker"
+    ]
   },
   {
     "id": "pilates-friedrichshain-mat-pilates-basics",
@@ -150,7 +211,14 @@
       "Medium group, enough space. No partner work. No hands-on corrections."
     ],
     "touch": "none",
-    "description": "Pilates on the mat with slow, controlled moves for core, back and posture. A good start if you are new to Pilates. It feels steady, with a few harder moments."
+    "description": "Pilates on the mat with slow, controlled moves for core, back and posture. A good start if you are new to Pilates. It feels steady, with a few harder moments.",
+    "day": "today",
+    "end": "08:20",
+    "whatToBring": [
+      "Grip socks",
+      "Comfortable clothes",
+      "Towel (or rent one)"
+    ]
   },
   {
     "id": "yoga-neuk-lln-slow-flow-yoga",
@@ -167,7 +235,13 @@
       "Small group, plenty of space. Partner work is part of the class. Hands-on corrections, the trainer may touch to adjust."
     ],
     "touch": "hands-on",
-    "description": "Slow, flowing yoga with long holds and plenty of time to breathe. Good for beginners and anyone who wants to move without rushing. It feels calm and unhurried."
+    "description": "Slow, flowing yoga with long holds and plenty of time to breathe. Good for beginners and anyone who wants to move without rushing. It feels calm and unhurried.",
+    "day": "today",
+    "end": "08:30",
+    "whatToBring": [
+      "Comfortable clothes",
+      "Mats and towels are provided"
+    ]
   },
   {
     "id": "pilates-kreuzberg-gentle-pilates",
@@ -184,7 +258,14 @@
       "Small group, plenty of space. No partner work. Hands-on corrections, the trainer may touch to adjust."
     ],
     "touch": "hands-on",
-    "description": "Calm Pilates with small movements for core and mobility, at an easy pace. Suits beginners and anyone getting back into training. It feels relaxed, with some music in the background."
+    "description": "Calm Pilates with small movements for core and mobility, at an easy pace. Suits beginners and anyone getting back into training. It feels relaxed, with some music in the background.",
+    "day": "today",
+    "end": "08:45",
+    "whatToBring": [
+      "Grip socks",
+      "Comfortable clothes",
+      "Towel (or rent one)"
+    ]
   },
   {
     "id": "pilates-mitte-mat-pilates-basics",
@@ -201,7 +282,14 @@
       "Small group, plenty of space. No partner work. The trainer asks before any hands-on help."
     ],
     "touch": "asks-first",
-    "description": "Pilates on the mat with slow, controlled moves for core, back and posture. A good start if you are new to Pilates. It feels focused and steady."
+    "description": "Pilates on the mat with slow, controlled moves for core, back and posture. A good start if you are new to Pilates. It feels focused and steady.",
+    "day": "today",
+    "end": "08:50",
+    "whatToBring": [
+      "Grip socks",
+      "Comfortable clothes",
+      "Towel (or rent one)"
+    ]
   },
   {
     "id": "pilates-neuk-lln-mat-pilates-basics",
@@ -218,7 +306,14 @@
       "Small group, plenty of space. No partner work. The trainer asks before any hands-on help."
     ],
     "touch": "asks-first",
-    "description": "Pilates on the mat with slow, controlled moves for core, back and posture. A good start if you are new to Pilates. It feels focused and steady."
+    "description": "Pilates on the mat with slow, controlled moves for core, back and posture. A good start if you are new to Pilates. It feels focused and steady.",
+    "day": "today",
+    "end": "08:50",
+    "whatToBring": [
+      "Grip socks",
+      "Comfortable clothes",
+      "Towel (or rent one)"
+    ]
   },
   {
     "id": "swimming-prenzlauer-berg-lane-swim-technique",
@@ -235,7 +330,16 @@
       "Large group, it can get packed. No partner work. No hands-on corrections."
     ],
     "touch": "none",
-    "description": "Lane swimming with a coach who helps with breathing and stroke technique. For swimmers who can do a few lengths. It feels steady, with a few harder moments."
+    "description": "Lane swimming with a coach who helps with breathing and stroke technique. For swimmers who can do a few lengths. It feels steady, with a few harder moments.",
+    "day": "today",
+    "end": "08:45",
+    "whatToBring": [
+      "Swimwear",
+      "Swim cap",
+      "Goggles",
+      "Flip-flops",
+      "Towel (or rent one)"
+    ]
   },
   {
     "id": "wellness-friedrichshain-breathwork",
@@ -252,7 +356,14 @@
       "Small group, plenty of space. No partner work. The trainer asks before any hands-on help."
     ],
     "touch": "asks-first",
-    "description": "Guided breathing exercises, sitting or lying down, to calm the body and mind. No experience needed. It feels calm and unhurried."
+    "description": "Guided breathing exercises, sitting or lying down, to calm the body and mind. No experience needed. It feels calm and unhurried.",
+    "day": "today",
+    "end": "08:45",
+    "whatToBring": [
+      "Two towels (or rent them)",
+      "Flip-flops",
+      "Water bottle"
+    ]
   },
   {
     "id": "climbing-kreuzberg-morning-bouldering",
@@ -269,7 +380,14 @@
       "Medium group, enough space. Partner work is part of the class. The trainer asks before any hands-on help."
     ],
     "touch": "asks-first",
-    "description": "Guided bouldering on quieter morning walls, with tips on technique and route reading. For new and returning climbers. It feels focused and steady."
+    "description": "Guided bouldering on quieter morning walls, with tips on technique and route reading. For new and returning climbers. It feels focused and steady.",
+    "day": "today",
+    "end": "09:30",
+    "whatToBring": [
+      "Comfortable clothes",
+      "Climbing shoes (or rent)",
+      "Water bottle"
+    ]
   },
   {
     "id": "swimming-mitte-lane-swim-technique",
@@ -286,7 +404,16 @@
       "Large group, it can get packed. No partner work. No hands-on corrections."
     ],
     "touch": "none",
-    "description": "Lane swimming with a coach who helps with breathing and stroke technique. For swimmers who can do a few lengths. It feels focused and steady."
+    "description": "Lane swimming with a coach who helps with breathing and stroke technique. For swimmers who can do a few lengths. It feels focused and steady.",
+    "day": "today",
+    "end": "09:15",
+    "whatToBring": [
+      "Swimwear",
+      "Swim cap",
+      "Goggles",
+      "Flip-flops",
+      "Towel (or rent one)"
+    ]
   },
   {
     "id": "swimming-neuk-lln-lane-swim-technique",
@@ -303,7 +430,16 @@
       "Large group, it can get packed. No partner work. The trainer asks before any hands-on help."
     ],
     "touch": "asks-first",
-    "description": "Lane swimming with a coach who helps with breathing and stroke technique. For swimmers who can do a few lengths. It feels energetic, with music pushing you along."
+    "description": "Lane swimming with a coach who helps with breathing and stroke technique. For swimmers who can do a few lengths. It feels energetic, with music pushing you along.",
+    "day": "today",
+    "end": "09:15",
+    "whatToBring": [
+      "Swimwear",
+      "Swim cap",
+      "Goggles",
+      "Flip-flops",
+      "Towel (or rent one)"
+    ]
   },
   {
     "id": "wellness-neuk-lln-breathwork",
@@ -320,7 +456,14 @@
       "Small group, plenty of space. No partner work. No hands-on corrections."
     ],
     "touch": "none",
-    "description": "Guided breathing exercises, sitting or lying down, to calm the body and mind. No experience needed. It feels calm and unhurried."
+    "description": "Guided breathing exercises, sitting or lying down, to calm the body and mind. No experience needed. It feels calm and unhurried.",
+    "day": "today",
+    "end": "09:15",
+    "whatToBring": [
+      "Two towels (or rent them)",
+      "Flip-flops",
+      "Water bottle"
+    ]
   },
   {
     "id": "yoga-prenzlauer-berg-vinyasa-flow",
@@ -337,7 +480,13 @@
       "Small group, plenty of space. Partner work is part of the class. Hands-on corrections, the trainer may touch to adjust."
     ],
     "touch": "hands-on",
-    "description": "A flowing yoga class that links breath and movement, with a few stronger standing poses. For people who know the basics and like to keep moving. It feels steady, with a few harder moments."
+    "description": "A flowing yoga class that links breath and movement, with a few stronger standing poses. For people who know the basics and like to keep moving. It feels steady, with a few harder moments.",
+    "day": "today",
+    "end": "09:45",
+    "whatToBring": [
+      "Comfortable clothes",
+      "Mats and towels are provided"
+    ]
   },
   {
     "id": "climbing-mitte-morning-bouldering",
@@ -354,7 +503,14 @@
       "Small group, plenty of space. Partner work is part of the class. The trainer asks before any hands-on help."
     ],
     "touch": "asks-first",
-    "description": "Guided bouldering on quieter morning walls, with tips on technique and route reading. For new and returning climbers. It feels focused and steady."
+    "description": "Guided bouldering on quieter morning walls, with tips on technique and route reading. For new and returning climbers. It feels focused and steady.",
+    "day": "today",
+    "end": "10:00",
+    "whatToBring": [
+      "Comfortable clothes",
+      "Climbing shoes (or rent)",
+      "Water bottle"
+    ]
   },
   {
     "id": "gym-prenzlauer-berg-sunrise-spin",
@@ -371,7 +527,15 @@
       "Medium group, enough space. No partner work. No hands-on corrections."
     ],
     "touch": "none",
-    "description": "An indoor cycling ride to wake you up, with climbs and sprints to the beat. You set your own resistance. Expect to sweat: loud music and a high pace."
+    "description": "An indoor cycling ride to wake you up, with climbs and sprints to the beat. You set your own resistance. Expect to sweat: loud music and a high pace.",
+    "day": "today",
+    "end": "09:45",
+    "whatToBring": [
+      "Indoor trainers",
+      "Towel",
+      "Water bottle",
+      "Padlock for the locker"
+    ]
   },
   {
     "id": "pilates-prenzlauer-berg-mat-pilates-basics",
@@ -388,7 +552,14 @@
       "Medium group, enough space. No partner work. The trainer asks before any hands-on help."
     ],
     "touch": "asks-first",
-    "description": "Pilates on the mat with slow, controlled moves for core, back and posture. A good start if you are new to Pilates. It feels steady, with a few harder moments."
+    "description": "Pilates on the mat with slow, controlled moves for core, back and posture. A good start if you are new to Pilates. It feels steady, with a few harder moments.",
+    "day": "today",
+    "end": "09:50",
+    "whatToBring": [
+      "Grip socks",
+      "Comfortable clothes",
+      "Towel (or rent one)"
+    ]
   },
   {
     "id": "swimming-friedrichshain-lane-swim-technique",
@@ -405,7 +576,16 @@
       "Large group, it can get packed. No partner work. The trainer asks before any hands-on help."
     ],
     "touch": "asks-first",
-    "description": "Lane swimming with a coach who helps with breathing and stroke technique. For swimmers who can do a few lengths. It feels energetic, with music pushing you along."
+    "description": "Lane swimming with a coach who helps with breathing and stroke technique. For swimmers who can do a few lengths. It feels energetic, with music pushing you along.",
+    "day": "today",
+    "end": "09:45",
+    "whatToBring": [
+      "Swimwear",
+      "Swim cap",
+      "Goggles",
+      "Flip-flops",
+      "Towel (or rent one)"
+    ]
   },
   {
     "id": "boxing-neuk-lln-boxfit",
@@ -422,7 +602,15 @@
       "Large group, it can get packed. Partner work is part of the class. The trainer asks before any hands-on help."
     ],
     "touch": "asks-first",
-    "description": "A boxing-style workout with combinations on the bag and fitness rounds in between. No sparring. Expect to sweat: loud music and a high pace."
+    "description": "A boxing-style workout with combinations on the bag and fitness rounds in between. No sparring. Expect to sweat: loud music and a high pace.",
+    "day": "today",
+    "end": "10:15",
+    "whatToBring": [
+      "Indoor trainers",
+      "Towel",
+      "Water bottle",
+      "Hand wraps (or borrow)"
+    ]
   },
   {
     "id": "swimming-mitte-aqua-fit",
@@ -439,7 +627,16 @@
       "Large group, it can get packed. No partner work. No hands-on corrections."
     ],
     "touch": "none",
-    "description": "A water workout in the shallow end with music, easy on the joints. No swimming skills needed. It feels focused and steady."
+    "description": "A water workout in the shallow end with music, easy on the joints. No swimming skills needed. It feels focused and steady.",
+    "day": "today",
+    "end": "10:15",
+    "whatToBring": [
+      "Swimwear",
+      "Swim cap",
+      "Goggles",
+      "Flip-flops",
+      "Towel (or rent one)"
+    ]
   },
   {
     "id": "swimming-prenzlauer-berg-easy-lengths",
@@ -456,7 +653,16 @@
       "Large group, it can get packed. No partner work. No hands-on corrections."
     ],
     "touch": "none",
-    "description": "Relaxed lengths at your own pace in a reserved lane. For anyone who wants calm time in the water. It feels relaxed, with some music in the background."
+    "description": "Relaxed lengths at your own pace in a reserved lane. For anyone who wants calm time in the water. It feels relaxed, with some music in the background.",
+    "day": "today",
+    "end": "10:15",
+    "whatToBring": [
+      "Swimwear",
+      "Swim cap",
+      "Goggles",
+      "Flip-flops",
+      "Towel (or rent one)"
+    ]
   },
   {
     "id": "wellness-mitte-breathwork",
@@ -473,7 +679,14 @@
       "Small group, plenty of space. No partner work. No hands-on corrections."
     ],
     "touch": "none",
-    "description": "Guided breathing exercises, sitting or lying down, to calm the body and mind. No experience needed. It feels calm and unhurried."
+    "description": "Guided breathing exercises, sitting or lying down, to calm the body and mind. No experience needed. It feels calm and unhurried.",
+    "day": "today",
+    "end": "10:15",
+    "whatToBring": [
+      "Two towels (or rent them)",
+      "Flip-flops",
+      "Water bottle"
+    ]
   },
   {
     "id": "climbing-friedrichshain-morning-bouldering",
@@ -490,7 +703,14 @@
       "Medium group, enough space. Partner work is part of the class. The trainer asks before any hands-on help."
     ],
     "touch": "asks-first",
-    "description": "Guided bouldering on quieter morning walls, with tips on technique and route reading. For new and returning climbers. It feels steady, with a few harder moments."
+    "description": "Guided bouldering on quieter morning walls, with tips on technique and route reading. For new and returning climbers. It feels steady, with a few harder moments.",
+    "day": "today",
+    "end": "11:00",
+    "whatToBring": [
+      "Comfortable clothes",
+      "Climbing shoes (or rent)",
+      "Water bottle"
+    ]
   },
   {
     "id": "pilates-neuk-lln-gentle-pilates",
@@ -507,7 +727,14 @@
       "Small group, plenty of space. No partner work. The trainer asks before any hands-on help."
     ],
     "touch": "asks-first",
-    "description": "Calm Pilates with small movements for core and mobility, at an easy pace. Suits beginners and anyone getting back into training. It feels calm and unhurried."
+    "description": "Calm Pilates with small movements for core and mobility, at an easy pace. Suits beginners and anyone getting back into training. It feels calm and unhurried.",
+    "day": "today",
+    "end": "10:45",
+    "whatToBring": [
+      "Grip socks",
+      "Comfortable clothes",
+      "Towel (or rent one)"
+    ]
   },
   {
     "id": "swimming-friedrichshain-aqua-fit",
@@ -524,7 +751,16 @@
       "Large group, it can get packed. No partner work. No hands-on corrections."
     ],
     "touch": "none",
-    "description": "A water workout in the shallow end with music, easy on the joints. No swimming skills needed. It feels energetic, with music pushing you along."
+    "description": "A water workout in the shallow end with music, easy on the joints. No swimming skills needed. It feels energetic, with music pushing you along.",
+    "day": "today",
+    "end": "10:45",
+    "whatToBring": [
+      "Swimwear",
+      "Swim cap",
+      "Goggles",
+      "Flip-flops",
+      "Towel (or rent one)"
+    ]
   },
   {
     "id": "gym-kreuzberg-strength-basics",
@@ -541,7 +777,15 @@
       "Medium group, enough space. No partner work. No hands-on corrections."
     ],
     "touch": "none",
-    "description": "Learn the main strength moves with free weights and machines, step by step. For beginners and anyone who wants good technique. It feels energetic, with music pushing you along."
+    "description": "Learn the main strength moves with free weights and machines, step by step. For beginners and anyone who wants good technique. It feels energetic, with music pushing you along.",
+    "day": "today",
+    "end": "12:45",
+    "whatToBring": [
+      "Indoor trainers",
+      "Towel",
+      "Water bottle",
+      "Padlock for the locker"
+    ]
   },
   {
     "id": "gym-prenzlauer-berg-hiit-express",
@@ -558,7 +802,15 @@
       "Medium group, enough space. No partner work. The trainer asks before any hands-on help."
     ],
     "touch": "asks-first",
-    "description": "Short high-intensity intervals of bodyweight moves with quick breaks. For people who want a full workout in little time. Expect to sweat: loud music and a high pace."
+    "description": "Short high-intensity intervals of bodyweight moves with quick breaks. For people who want a full workout in little time. Expect to sweat: loud music and a high pace.",
+    "day": "today",
+    "end": "12:30",
+    "whatToBring": [
+      "Indoor trainers",
+      "Towel",
+      "Water bottle",
+      "Padlock for the locker"
+    ]
   },
   {
     "id": "boxing-mitte-boxfit",
@@ -575,7 +827,15 @@
       "Medium group, enough space. Partner work is part of the class. Hands-on corrections, the trainer may touch to adjust."
     ],
     "touch": "hands-on",
-    "description": "A boxing-style workout with combinations on the bag and fitness rounds in between. No sparring. Expect to sweat and push through the harder parts."
+    "description": "A boxing-style workout with combinations on the bag and fitness rounds in between. No sparring. Expect to sweat and push through the harder parts.",
+    "day": "today",
+    "end": "13:15",
+    "whatToBring": [
+      "Indoor trainers",
+      "Towel",
+      "Water bottle",
+      "Hand wraps (or borrow)"
+    ]
   },
   {
     "id": "swimming-friedrichshain-easy-lengths",
@@ -592,7 +852,16 @@
       "Large group, it can get packed. No partner work. The trainer asks before any hands-on help."
     ],
     "touch": "asks-first",
-    "description": "Relaxed lengths at your own pace in a reserved lane. For anyone who wants calm time in the water. The pace is easy, though the room can be lively."
+    "description": "Relaxed lengths at your own pace in a reserved lane. For anyone who wants calm time in the water. The pace is easy, though the room can be lively.",
+    "day": "today",
+    "end": "13:15",
+    "whatToBring": [
+      "Swimwear",
+      "Swim cap",
+      "Goggles",
+      "Flip-flops",
+      "Towel (or rent one)"
+    ]
   },
   {
     "id": "yoga-friedrichshain-lunch-break-yoga",
@@ -609,7 +878,13 @@
       "Small group, plenty of space. Partner work is part of the class. The trainer asks before any hands-on help."
     ],
     "touch": "asks-first",
-    "description": "A short yoga break with easy stretches and breathing. Made for office days, no experience needed. It feels calm and unhurried."
+    "description": "A short yoga break with easy stretches and breathing. Made for office days, no experience needed. It feels calm and unhurried.",
+    "day": "today",
+    "end": "13:15",
+    "whatToBring": [
+      "Comfortable clothes",
+      "Mats and towels are provided"
+    ]
   },
   {
     "id": "yoga-kreuzberg-lunch-break-yoga",
@@ -626,7 +901,13 @@
       "Medium group, enough space. No partner work. Hands-on corrections, the trainer may touch to adjust."
     ],
     "touch": "hands-on",
-    "description": "A short yoga break with easy stretches and breathing. Made for office days, no experience needed. It feels calm and unhurried."
+    "description": "A short yoga break with easy stretches and breathing. Made for office days, no experience needed. It feels calm and unhurried.",
+    "day": "today",
+    "end": "13:45",
+    "whatToBring": [
+      "Comfortable clothes",
+      "Mats and towels are provided"
+    ]
   },
   {
     "id": "yoga-neuk-lln-lunch-break-yoga",
@@ -643,7 +924,13 @@
       "Small group, plenty of space. Partner work is part of the class. Hands-on corrections, the trainer may touch to adjust."
     ],
     "touch": "hands-on",
-    "description": "A short yoga break with easy stretches and breathing. Made for office days, no experience needed. It feels calm and unhurried."
+    "description": "A short yoga break with easy stretches and breathing. Made for office days, no experience needed. It feels calm and unhurried.",
+    "day": "today",
+    "end": "13:45",
+    "whatToBring": [
+      "Comfortable clothes",
+      "Mats and towels are provided"
+    ]
   },
   {
     "id": "pilates-kreuzberg-mat-pilates-basics",
@@ -660,7 +947,14 @@
       "Small group, plenty of space. No partner work. The trainer asks before any hands-on help."
     ],
     "touch": "asks-first",
-    "description": "Pilates on the mat with slow, controlled moves for core, back and posture. A good start if you are new to Pilates. It feels steady, with a few harder moments."
+    "description": "Pilates on the mat with slow, controlled moves for core, back and posture. A good start if you are new to Pilates. It feels steady, with a few harder moments.",
+    "day": "today",
+    "end": "14:20",
+    "whatToBring": [
+      "Grip socks",
+      "Comfortable clothes",
+      "Towel (or rent one)"
+    ]
   },
   {
     "id": "swimming-kreuzberg-easy-lengths",
@@ -677,7 +971,16 @@
       "Medium group, enough space. No partner work. The trainer asks before any hands-on help."
     ],
     "touch": "asks-first",
-    "description": "Relaxed lengths at your own pace in a reserved lane. For anyone who wants calm time in the water. The pace is easy, though the room can be lively."
+    "description": "Relaxed lengths at your own pace in a reserved lane. For anyone who wants calm time in the water. The pace is easy, though the room can be lively.",
+    "day": "today",
+    "end": "14:15",
+    "whatToBring": [
+      "Swimwear",
+      "Swim cap",
+      "Goggles",
+      "Flip-flops",
+      "Towel (or rent one)"
+    ]
   },
   {
     "id": "dance-friedrichshain-hip-hop-foundations",
@@ -694,7 +997,14 @@
       "Medium group, enough space. No partner work. Hands-on corrections, the trainer may touch to adjust."
     ],
     "touch": "hands-on",
-    "description": "Hip-hop grooves and short combinations, built up through the class. For beginners with some energy to spare. Expect to sweat: loud music and a high pace."
+    "description": "Hip-hop grooves and short combinations, built up through the class. For beginners with some energy to spare. Expect to sweat: loud music and a high pace.",
+    "day": "today",
+    "end": "17:00",
+    "whatToBring": [
+      "Socks or bare feet",
+      "Comfortable clothes",
+      "Water bottle"
+    ]
   },
   {
     "id": "dance-kreuzberg-contemporary-for-beginners",
@@ -711,7 +1021,14 @@
       "Medium group, enough space. No partner work. Hands-on corrections, the trainer may touch to adjust."
     ],
     "touch": "hands-on",
-    "description": "Learn a short contemporary dance piece, step by step, with floor work and flowing moves. No dance experience needed. It feels energetic, with music pushing you along."
+    "description": "Learn a short contemporary dance piece, step by step, with floor work and flowing moves. No dance experience needed. It feels energetic, with music pushing you along.",
+    "day": "today",
+    "end": "17:15",
+    "whatToBring": [
+      "Socks or bare feet",
+      "Comfortable clothes",
+      "Water bottle"
+    ]
   },
   {
     "id": "dance-mitte-hip-hop-foundations",
@@ -728,7 +1045,14 @@
       "Medium group, enough space. Partner work is part of the class. The trainer asks before any hands-on help."
     ],
     "touch": "asks-first",
-    "description": "Hip-hop grooves and short combinations, built up through the class. For beginners with some energy to spare. Expect to sweat: loud music and a high pace."
+    "description": "Hip-hop grooves and short combinations, built up through the class. For beginners with some energy to spare. Expect to sweat: loud music and a high pace.",
+    "day": "today",
+    "end": "17:00",
+    "whatToBring": [
+      "Socks or bare feet",
+      "Comfortable clothes",
+      "Water bottle"
+    ]
   },
   {
     "id": "pilates-friedrichshain-reformer-pilates",
@@ -745,7 +1069,14 @@
       "Medium group, enough space. No partner work. The trainer asks before any hands-on help."
     ],
     "touch": "asks-first",
-    "description": "Pilates on reformer machines with springs for resistance, focused on core strength and control. Some experience helps. Expect to sweat and push through the harder parts."
+    "description": "Pilates on reformer machines with springs for resistance, focused on core strength and control. Some experience helps. Expect to sweat and push through the harder parts.",
+    "day": "today",
+    "end": "16:55",
+    "whatToBring": [
+      "Grip socks",
+      "Comfortable clothes",
+      "Towel (or rent one)"
+    ]
   },
   {
     "id": "wellness-friedrichshain-sauna-stretch",
@@ -762,7 +1093,14 @@
       "Small group, plenty of space. No partner work. No hands-on corrections."
     ],
     "touch": "none",
-    "description": "Sauna rounds with gentle stretching and rest in between. For winding down after a busy day. It feels calm and unhurried."
+    "description": "Sauna rounds with gentle stretching and rest in between. For winding down after a busy day. It feels calm and unhurried.",
+    "day": "today",
+    "end": "17:00",
+    "whatToBring": [
+      "Two towels (or rent them)",
+      "Flip-flops",
+      "Water bottle"
+    ]
   },
   {
     "id": "gym-neuk-lln-strength-basics",
@@ -779,7 +1117,15 @@
       "Medium group, enough space. No partner work. Hands-on corrections, the trainer may touch to adjust."
     ],
     "touch": "hands-on",
-    "description": "Learn the main strength moves with free weights and machines, step by step. For beginners and anyone who wants good technique. It feels energetic, with music pushing you along."
+    "description": "Learn the main strength moves with free weights and machines, step by step. For beginners and anyone who wants good technique. It feels energetic, with music pushing you along.",
+    "day": "today",
+    "end": "17:15",
+    "whatToBring": [
+      "Indoor trainers",
+      "Towel",
+      "Water bottle",
+      "Padlock for the locker"
+    ]
   },
   {
     "id": "swimming-prenzlauer-berg-aqua-fit",
@@ -796,7 +1142,16 @@
       "Large group, it can get packed. No partner work. The trainer asks before any hands-on help."
     ],
     "touch": "asks-first",
-    "description": "A water workout in the shallow end with music, easy on the joints. No swimming skills needed. It feels steady, with a few harder moments."
+    "description": "A water workout in the shallow end with music, easy on the joints. No swimming skills needed. It feels steady, with a few harder moments.",
+    "day": "today",
+    "end": "17:15",
+    "whatToBring": [
+      "Swimwear",
+      "Swim cap",
+      "Goggles",
+      "Flip-flops",
+      "Towel (or rent one)"
+    ]
   },
   {
     "id": "wellness-kreuzberg-sauna-stretch",
@@ -813,7 +1168,14 @@
       "Small group, plenty of space. No partner work. No hands-on corrections."
     ],
     "touch": "none",
-    "description": "Sauna rounds with gentle stretching and rest in between. For winding down after a busy day. It feels calm and unhurried."
+    "description": "Sauna rounds with gentle stretching and rest in between. For winding down after a busy day. It feels calm and unhurried.",
+    "day": "today",
+    "end": "17:30",
+    "whatToBring": [
+      "Two towels (or rent them)",
+      "Flip-flops",
+      "Water bottle"
+    ]
   },
   {
     "id": "wellness-prenzlauer-berg-sauna-stretch",
@@ -830,7 +1192,14 @@
       "Medium group, enough space. No partner work. The trainer asks before any hands-on help."
     ],
     "touch": "asks-first",
-    "description": "Sauna rounds with gentle stretching and rest in between. For winding down after a busy day. It feels calm and unhurried."
+    "description": "Sauna rounds with gentle stretching and rest in between. For winding down after a busy day. It feels calm and unhurried.",
+    "day": "today",
+    "end": "17:30",
+    "whatToBring": [
+      "Two towels (or rent them)",
+      "Flip-flops",
+      "Water bottle"
+    ]
   },
   {
     "id": "boxing-prenzlauer-berg-boxing-fundamentals",
@@ -847,7 +1216,15 @@
       "Medium group, enough space. Partner work is part of the class. Hands-on corrections, the trainer may touch to adjust."
     ],
     "touch": "hands-on",
-    "description": "Learn the basic punches, footwork and defence on bags and pads. For beginners who want a hard, focused workout. Expect to sweat: loud music and a high pace."
+    "description": "Learn the basic punches, footwork and defence on bags and pads. For beginners who want a hard, focused workout. Expect to sweat: loud music and a high pace.",
+    "day": "today",
+    "end": "18:00",
+    "whatToBring": [
+      "Indoor trainers",
+      "Towel",
+      "Water bottle",
+      "Hand wraps (or borrow)"
+    ]
   },
   {
     "id": "climbing-prenzlauer-berg-bouldering-intro",
@@ -864,7 +1241,14 @@
       "Small group, plenty of space. No partner work. The trainer asks before any hands-on help."
     ],
     "touch": "asks-first",
-    "description": "An introduction to bouldering: safe falling, basic moves and easy routes on low walls. No experience needed. It feels steady, with a few harder moments."
+    "description": "An introduction to bouldering: safe falling, basic moves and easy routes on low walls. No experience needed. It feels steady, with a few harder moments.",
+    "day": "today",
+    "end": "18:30",
+    "whatToBring": [
+      "Comfortable clothes",
+      "Climbing shoes (or rent)",
+      "Water bottle"
+    ]
   },
   {
     "id": "dance-neuk-lln-hip-hop-foundations",
@@ -881,7 +1265,14 @@
       "Medium group, enough space. Partner work is part of the class. The trainer asks before any hands-on help."
     ],
     "touch": "asks-first",
-    "description": "Hip-hop grooves and short combinations, built up through the class. For beginners with some energy to spare. Expect to sweat: loud music and a high pace."
+    "description": "Hip-hop grooves and short combinations, built up through the class. For beginners with some energy to spare. Expect to sweat: loud music and a high pace.",
+    "day": "today",
+    "end": "18:00",
+    "whatToBring": [
+      "Socks or bare feet",
+      "Comfortable clothes",
+      "Water bottle"
+    ]
   },
   {
     "id": "gym-mitte-strength-basics",
@@ -898,7 +1289,15 @@
       "Medium group, enough space. No partner work. No hands-on corrections."
     ],
     "touch": "none",
-    "description": "Learn the main strength moves with free weights and machines, step by step. For beginners and anyone who wants good technique. It feels steady, with a few harder moments."
+    "description": "Learn the main strength moves with free weights and machines, step by step. For beginners and anyone who wants good technique. It feels steady, with a few harder moments.",
+    "day": "today",
+    "end": "17:45",
+    "whatToBring": [
+      "Indoor trainers",
+      "Towel",
+      "Water bottle",
+      "Padlock for the locker"
+    ]
   },
   {
     "id": "pilates-prenzlauer-berg-reformer-pilates",
@@ -915,7 +1314,14 @@
       "Medium group, enough space. No partner work. The trainer asks before any hands-on help."
     ],
     "touch": "asks-first",
-    "description": "Pilates on reformer machines with springs for resistance, focused on core strength and control. Some experience helps. Expect to sweat and push through the harder parts."
+    "description": "Pilates on reformer machines with springs for resistance, focused on core strength and control. Some experience helps. Expect to sweat and push through the harder parts.",
+    "day": "today",
+    "end": "17:55",
+    "whatToBring": [
+      "Grip socks",
+      "Comfortable clothes",
+      "Towel (or rent one)"
+    ]
   },
   {
     "id": "swimming-neuk-lln-aqua-fit",
@@ -932,7 +1338,16 @@
       "Large group, it can get packed. No partner work. No hands-on corrections."
     ],
     "touch": "none",
-    "description": "A water workout in the shallow end with music, easy on the joints. No swimming skills needed. It feels energetic, with music pushing you along."
+    "description": "A water workout in the shallow end with music, easy on the joints. No swimming skills needed. It feels energetic, with music pushing you along.",
+    "day": "today",
+    "end": "17:45",
+    "whatToBring": [
+      "Swimwear",
+      "Swim cap",
+      "Goggles",
+      "Flip-flops",
+      "Towel (or rent one)"
+    ]
   },
   {
     "id": "climbing-friedrichshain-bouldering-intro",
@@ -949,7 +1364,14 @@
       "Medium group, enough space. Partner work is part of the class. Hands-on corrections, the trainer may touch to adjust."
     ],
     "touch": "hands-on",
-    "description": "An introduction to bouldering: safe falling, basic moves and easy routes on low walls. No experience needed. It feels steady, with a few harder moments."
+    "description": "An introduction to bouldering: safe falling, basic moves and easy routes on low walls. No experience needed. It feels steady, with a few harder moments.",
+    "day": "today",
+    "end": "19:00",
+    "whatToBring": [
+      "Comfortable clothes",
+      "Climbing shoes (or rent)",
+      "Water bottle"
+    ]
   },
   {
     "id": "boxing-kreuzberg-technique-pads",
@@ -966,7 +1388,15 @@
       "Large group, it can get packed. Partner work is part of the class. Hands-on corrections, the trainer may touch to adjust."
     ],
     "touch": "hands-on",
-    "description": "Work on cleaner punches and combinations with a partner holding pads. For people who know the basics. It feels steady, with a few harder moments."
+    "description": "Work on cleaner punches and combinations with a partner holding pads. For people who know the basics. It feels steady, with a few harder moments.",
+    "day": "today",
+    "end": "19:00",
+    "whatToBring": [
+      "Indoor trainers",
+      "Towel",
+      "Water bottle",
+      "Hand wraps (or borrow)"
+    ]
   },
   {
     "id": "boxing-neuk-lln-technique-pads",
@@ -983,7 +1413,15 @@
       "Large group, it can get packed. Partner work is part of the class. Hands-on corrections, the trainer may touch to adjust."
     ],
     "touch": "hands-on",
-    "description": "Work on cleaner punches and combinations with a partner holding pads. For people who know the basics. It feels energetic, with music pushing you along."
+    "description": "Work on cleaner punches and combinations with a partner holding pads. For people who know the basics. It feels energetic, with music pushing you along.",
+    "day": "today",
+    "end": "19:00",
+    "whatToBring": [
+      "Indoor trainers",
+      "Towel",
+      "Water bottle",
+      "Hand wraps (or borrow)"
+    ]
   },
   {
     "id": "boxing-friedrichshain-technique-pads",
@@ -1000,7 +1438,15 @@
       "Large group, it can get packed. Partner work is part of the class. Hands-on corrections, the trainer may touch to adjust."
     ],
     "touch": "hands-on",
-    "description": "Work on cleaner punches and combinations with a partner holding pads. For people who know the basics. It feels energetic, with music pushing you along."
+    "description": "Work on cleaner punches and combinations with a partner holding pads. For people who know the basics. It feels energetic, with music pushing you along.",
+    "day": "today",
+    "end": "19:30",
+    "whatToBring": [
+      "Indoor trainers",
+      "Towel",
+      "Water bottle",
+      "Hand wraps (or borrow)"
+    ]
   },
   {
     "id": "dance-friedrichshain-salsa-basics",
@@ -1017,7 +1463,14 @@
       "Medium group, enough space. No partner work. The trainer asks before any hands-on help."
     ],
     "touch": "asks-first",
-    "description": "Learn salsa basic steps and simple turns, in pairs and on your own. You can come without a partner. It feels energetic, with music pushing you along."
+    "description": "Learn salsa basic steps and simple turns, in pairs and on your own. You can come without a partner. It feels energetic, with music pushing you along.",
+    "day": "today",
+    "end": "19:30",
+    "whatToBring": [
+      "Socks or bare feet",
+      "Comfortable clothes",
+      "Water bottle"
+    ]
   },
   {
     "id": "gym-kreuzberg-hiit-express",
@@ -1034,7 +1487,15 @@
       "Medium group, enough space. No partner work. Hands-on corrections, the trainer may touch to adjust."
     ],
     "touch": "hands-on",
-    "description": "Short high-intensity intervals of bodyweight moves with quick breaks. For people who want a full workout in little time. Expect to sweat: loud music and a high pace."
+    "description": "Short high-intensity intervals of bodyweight moves with quick breaks. For people who want a full workout in little time. Expect to sweat: loud music and a high pace.",
+    "day": "today",
+    "end": "19:00",
+    "whatToBring": [
+      "Indoor trainers",
+      "Towel",
+      "Water bottle",
+      "Padlock for the locker"
+    ]
   },
   {
     "id": "pilates-kreuzberg-reformer-pilates",
@@ -1051,7 +1512,14 @@
       "Small group, plenty of space. No partner work. No hands-on corrections."
     ],
     "touch": "none",
-    "description": "Pilates on reformer machines with springs for resistance, focused on core strength and control. Some experience helps. Expect to sweat and push through the harder parts."
+    "description": "Pilates on reformer machines with springs for resistance, focused on core strength and control. Some experience helps. Expect to sweat and push through the harder parts.",
+    "day": "today",
+    "end": "19:25",
+    "whatToBring": [
+      "Grip socks",
+      "Comfortable clothes",
+      "Towel (or rent one)"
+    ]
   },
   {
     "id": "swimming-mitte-easy-lengths",
@@ -1068,7 +1536,16 @@
       "Large group, it can get packed. No partner work. The trainer asks before any hands-on help."
     ],
     "touch": "asks-first",
-    "description": "Relaxed lengths at your own pace in a reserved lane. For anyone who wants calm time in the water. It feels calm and unhurried."
+    "description": "Relaxed lengths at your own pace in a reserved lane. For anyone who wants calm time in the water. It feels calm and unhurried.",
+    "day": "today",
+    "end": "19:15",
+    "whatToBring": [
+      "Swimwear",
+      "Swim cap",
+      "Goggles",
+      "Flip-flops",
+      "Towel (or rent one)"
+    ]
   },
   {
     "id": "wellness-mitte-sauna-stretch",
@@ -1085,7 +1562,14 @@
       "Small group, plenty of space. No partner work. No hands-on corrections."
     ],
     "touch": "none",
-    "description": "Sauna rounds with gentle stretching and rest in between. For winding down after a busy day. It feels calm and unhurried."
+    "description": "Sauna rounds with gentle stretching and rest in between. For winding down after a busy day. It feels calm and unhurried.",
+    "day": "today",
+    "end": "19:30",
+    "whatToBring": [
+      "Two towels (or rent them)",
+      "Flip-flops",
+      "Water bottle"
+    ]
   },
   {
     "id": "climbing-kreuzberg-climbing-technique",
@@ -1102,7 +1586,14 @@
       "Medium group, enough space. Partner work is part of the class. No hands-on corrections."
     ],
     "touch": "none",
-    "description": "Focused bouldering practice on footwork, balance and harder routes. For climbers who already know the basics. It is hard work in a focused, quiet room."
+    "description": "Focused bouldering practice on footwork, balance and harder routes. For climbers who already know the basics. It is hard work in a focused, quiet room.",
+    "day": "today",
+    "end": "20:15",
+    "whatToBring": [
+      "Comfortable clothes",
+      "Climbing shoes (or rent)",
+      "Water bottle"
+    ]
   },
   {
     "id": "climbing-neuk-lln-climbing-technique",
@@ -1119,7 +1610,14 @@
       "Medium group, enough space. No partner work. Hands-on corrections, the trainer may touch to adjust."
     ],
     "touch": "hands-on",
-    "description": "Focused bouldering practice on footwork, balance and harder routes. For climbers who already know the basics. It is hard work in a focused, quiet room."
+    "description": "Focused bouldering practice on footwork, balance and harder routes. For climbers who already know the basics. It is hard work in a focused, quiet room.",
+    "day": "today",
+    "end": "20:15",
+    "whatToBring": [
+      "Comfortable clothes",
+      "Climbing shoes (or rent)",
+      "Water bottle"
+    ]
   },
   {
     "id": "dance-kreuzberg-salsa-basics",
@@ -1136,7 +1634,14 @@
       "Medium group, enough space. No partner work. No hands-on corrections."
     ],
     "touch": "none",
-    "description": "Learn salsa basic steps and simple turns, in pairs and on your own. You can come without a partner. It feels energetic, with music pushing you along."
+    "description": "Learn salsa basic steps and simple turns, in pairs and on your own. You can come without a partner. It feels energetic, with music pushing you along.",
+    "day": "today",
+    "end": "20:00",
+    "whatToBring": [
+      "Socks or bare feet",
+      "Comfortable clothes",
+      "Water bottle"
+    ]
   },
   {
     "id": "dance-prenzlauer-berg-salsa-basics",
@@ -1153,7 +1658,14 @@
       "Large group, it can get packed. Partner work is part of the class. Hands-on corrections, the trainer may touch to adjust."
     ],
     "touch": "hands-on",
-    "description": "Learn salsa basic steps and simple turns, in pairs and on your own. You can come without a partner. It feels steady, with a few harder moments."
+    "description": "Learn salsa basic steps and simple turns, in pairs and on your own. You can come without a partner. It feels steady, with a few harder moments.",
+    "day": "today",
+    "end": "20:00",
+    "whatToBring": [
+      "Socks or bare feet",
+      "Comfortable clothes",
+      "Water bottle"
+    ]
   },
   {
     "id": "gym-mitte-functional-circuit",
@@ -1170,7 +1682,15 @@
       "Medium group, enough space. No partner work. The trainer asks before any hands-on help."
     ],
     "touch": "asks-first",
-    "description": "A circuit of stations with kettlebells, ropes and bodyweight moves. For people who like variety and a challenge. Expect to sweat and push through the harder parts."
+    "description": "A circuit of stations with kettlebells, ropes and bodyweight moves. For people who like variety and a challenge. Expect to sweat and push through the harder parts.",
+    "day": "today",
+    "end": "19:50",
+    "whatToBring": [
+      "Indoor trainers",
+      "Towel",
+      "Water bottle",
+      "Padlock for the locker"
+    ]
   },
   {
     "id": "wellness-kreuzberg-sound-bath",
@@ -1187,7 +1707,14 @@
       "Small group, plenty of space. No partner work. No hands-on corrections."
     ],
     "touch": "none",
-    "description": "Lie down and rest while bowls and gongs are played around you. A quiet, deeply relaxing session. It feels calm and unhurried."
+    "description": "Lie down and rest while bowls and gongs are played around you. A quiet, deeply relaxing session. It feels calm and unhurried.",
+    "day": "today",
+    "end": "20:00",
+    "whatToBring": [
+      "Two towels (or rent them)",
+      "Flip-flops",
+      "Water bottle"
+    ]
   },
   {
     "id": "wellness-neuk-lln-sound-bath",
@@ -1204,7 +1731,14 @@
       "Small group, plenty of space. No partner work. No hands-on corrections."
     ],
     "touch": "none",
-    "description": "Lie down and rest while bowls and gongs are played around you. A quiet, deeply relaxing session. It feels calm and unhurried."
+    "description": "Lie down and rest while bowls and gongs are played around you. A quiet, deeply relaxing session. It feels calm and unhurried.",
+    "day": "today",
+    "end": "20:00",
+    "whatToBring": [
+      "Two towels (or rent them)",
+      "Flip-flops",
+      "Water bottle"
+    ]
   },
   {
     "id": "wellness-prenzlauer-berg-breathwork",
@@ -1221,7 +1755,14 @@
       "Medium group, enough space. No partner work. No hands-on corrections."
     ],
     "touch": "none",
-    "description": "Guided breathing exercises, sitting or lying down, to calm the body and mind. No experience needed. It feels calm and unhurried."
+    "description": "Guided breathing exercises, sitting or lying down, to calm the body and mind. No experience needed. It feels calm and unhurried.",
+    "day": "today",
+    "end": "19:45",
+    "whatToBring": [
+      "Two towels (or rent them)",
+      "Flip-flops",
+      "Water bottle"
+    ]
   },
   {
     "id": "yoga-friedrichshain-vinyasa-flow",
@@ -1238,7 +1779,13 @@
       "Small group, plenty of space. Partner work is part of the class. Hands-on corrections, the trainer may touch to adjust."
     ],
     "touch": "hands-on",
-    "description": "A flowing yoga class that links breath and movement, with a few stronger standing poses. For people who know the basics and like to keep moving. It feels focused and steady."
+    "description": "A flowing yoga class that links breath and movement, with a few stronger standing poses. For people who know the basics and like to keep moving. It feels focused and steady.",
+    "day": "today",
+    "end": "20:15",
+    "whatToBring": [
+      "Comfortable clothes",
+      "Mats and towels are provided"
+    ]
   },
   {
     "id": "yoga-mitte-yin-yoga",
@@ -1255,7 +1802,13 @@
       "Medium group, enough space. No partner work. No hands-on corrections."
     ],
     "touch": "none",
-    "description": "Floor-based yoga with long, supported stretches of a few minutes each. For anyone who wants to slow down after a long day. It feels calm and unhurried."
+    "description": "Floor-based yoga with long, supported stretches of a few minutes each. For anyone who wants to slow down after a long day. It feels calm and unhurried.",
+    "day": "today",
+    "end": "20:00",
+    "whatToBring": [
+      "Comfortable clothes",
+      "Mats and towels are provided"
+    ]
   },
   {
     "id": "yoga-prenzlauer-berg-yin-yoga",
@@ -1272,7 +1825,13 @@
       "Small group, plenty of space. Partner work is part of the class. The trainer asks before any hands-on help."
     ],
     "touch": "asks-first",
-    "description": "Floor-based yoga with long, supported stretches of a few minutes each. For anyone who wants to slow down after a long day. It feels relaxed, with some music in the background."
+    "description": "Floor-based yoga with long, supported stretches of a few minutes each. For anyone who wants to slow down after a long day. It feels relaxed, with some music in the background.",
+    "day": "today",
+    "end": "20:00",
+    "whatToBring": [
+      "Comfortable clothes",
+      "Mats and towels are provided"
+    ]
   },
   {
     "id": "boxing-mitte-technique-pads",
@@ -1289,7 +1848,15 @@
       "Medium group, enough space. Partner work is part of the class. No hands-on corrections."
     ],
     "touch": "none",
-    "description": "Work on cleaner punches and combinations with a partner holding pads. For people who know the basics. It feels steady, with a few harder moments."
+    "description": "Work on cleaner punches and combinations with a partner holding pads. For people who know the basics. It feels steady, with a few harder moments.",
+    "day": "today",
+    "end": "20:30",
+    "whatToBring": [
+      "Indoor trainers",
+      "Towel",
+      "Water bottle",
+      "Hand wraps (or borrow)"
+    ]
   },
   {
     "id": "climbing-friedrichshain-climbing-technique",
@@ -1306,7 +1873,14 @@
       "Medium group, enough space. Partner work is part of the class. No hands-on corrections."
     ],
     "touch": "none",
-    "description": "Focused bouldering practice on footwork, balance and harder routes. For climbers who already know the basics. Expect to sweat and push through the harder parts."
+    "description": "Focused bouldering practice on footwork, balance and harder routes. For climbers who already know the basics. Expect to sweat and push through the harder parts.",
+    "day": "today",
+    "end": "20:45",
+    "whatToBring": [
+      "Comfortable clothes",
+      "Climbing shoes (or rent)",
+      "Water bottle"
+    ]
   },
   {
     "id": "climbing-prenzlauer-berg-climbing-technique",
@@ -1323,7 +1897,14 @@
       "Small group, plenty of space. No partner work. No hands-on corrections."
     ],
     "touch": "none",
-    "description": "Focused bouldering practice on footwork, balance and harder routes. For climbers who already know the basics. Expect to sweat and push through the harder parts."
+    "description": "Focused bouldering practice on footwork, balance and harder routes. For climbers who already know the basics. Expect to sweat and push through the harder parts.",
+    "day": "today",
+    "end": "20:45",
+    "whatToBring": [
+      "Comfortable clothes",
+      "Climbing shoes (or rent)",
+      "Water bottle"
+    ]
   },
   {
     "id": "dance-mitte-salsa-basics",
@@ -1340,7 +1921,14 @@
       "Medium group, enough space. Partner work is part of the class. No hands-on corrections."
     ],
     "touch": "none",
-    "description": "Learn salsa basic steps and simple turns, in pairs and on your own. You can come without a partner. It feels energetic, with music pushing you along."
+    "description": "Learn salsa basic steps and simple turns, in pairs and on your own. You can come without a partner. It feels energetic, with music pushing you along.",
+    "day": "today",
+    "end": "20:30",
+    "whatToBring": [
+      "Socks or bare feet",
+      "Comfortable clothes",
+      "Water bottle"
+    ]
   },
   {
     "id": "gym-kreuzberg-rhythm-ride",
@@ -1357,7 +1945,15 @@
       "Medium group, enough space. No partner work. Hands-on corrections, the trainer may touch to adjust."
     ],
     "touch": "hands-on",
-    "description": "Indoor cycling to loud, beat-driven music, with sprints and climbs. For riders who like a party feel. Expect to sweat: loud music and a high pace."
+    "description": "Indoor cycling to loud, beat-driven music, with sprints and climbs. For riders who like a party feel. Expect to sweat: loud music and a high pace.",
+    "day": "today",
+    "end": "20:15",
+    "whatToBring": [
+      "Indoor trainers",
+      "Towel",
+      "Water bottle",
+      "Padlock for the locker"
+    ]
   },
   {
     "id": "yoga-kreuzberg-yin-yoga",
@@ -1374,7 +1970,13 @@
       "Medium group, enough space. No partner work. No hands-on corrections."
     ],
     "touch": "none",
-    "description": "Floor-based yoga with long, supported stretches of a few minutes each. For anyone who wants to slow down after a long day. It feels calm and unhurried."
+    "description": "Floor-based yoga with long, supported stretches of a few minutes each. For anyone who wants to slow down after a long day. It feels calm and unhurried.",
+    "day": "today",
+    "end": "20:30",
+    "whatToBring": [
+      "Comfortable clothes",
+      "Mats and towels are provided"
+    ]
   },
   {
     "id": "boxing-neuk-lln-boxing-fundamentals",
@@ -1391,7 +1993,15 @@
       "Large group, it can get packed. Partner work is part of the class. Hands-on corrections, the trainer may touch to adjust."
     ],
     "touch": "hands-on",
-    "description": "Learn the basic punches, footwork and defence on bags and pads. For beginners who want a hard, focused workout. Expect to sweat: loud music and a high pace."
+    "description": "Learn the basic punches, footwork and defence on bags and pads. For beginners who want a hard, focused workout. Expect to sweat: loud music and a high pace.",
+    "day": "today",
+    "end": "21:00",
+    "whatToBring": [
+      "Indoor trainers",
+      "Towel",
+      "Water bottle",
+      "Hand wraps (or borrow)"
+    ]
   },
   {
     "id": "gym-neuk-lln-rhythm-ride",
@@ -1408,7 +2018,15 @@
       "Medium group, enough space. No partner work. Hands-on corrections, the trainer may touch to adjust."
     ],
     "touch": "hands-on",
-    "description": "Indoor cycling to loud, beat-driven music, with sprints and climbs. For riders who like a party feel. Expect to sweat: loud music and a high pace."
+    "description": "Indoor cycling to loud, beat-driven music, with sprints and climbs. For riders who like a party feel. Expect to sweat: loud music and a high pace.",
+    "day": "today",
+    "end": "20:45",
+    "whatToBring": [
+      "Indoor trainers",
+      "Towel",
+      "Water bottle",
+      "Padlock for the locker"
+    ]
   },
   {
     "id": "pilates-friedrichshain-gentle-pilates",
@@ -1425,7 +2043,14 @@
       "Medium group, enough space. No partner work. No hands-on corrections."
     ],
     "touch": "none",
-    "description": "Calm Pilates with small movements for core and mobility, at an easy pace. Suits beginners and anyone getting back into training. It feels relaxed, with some music in the background."
+    "description": "Calm Pilates with small movements for core and mobility, at an easy pace. Suits beginners and anyone getting back into training. It feels relaxed, with some music in the background.",
+    "day": "today",
+    "end": "20:45",
+    "whatToBring": [
+      "Grip socks",
+      "Comfortable clothes",
+      "Towel (or rent one)"
+    ]
   },
   {
     "id": "wellness-prenzlauer-berg-sound-bath",
@@ -1442,7 +2067,14 @@
       "Medium group, enough space. No partner work. No hands-on corrections."
     ],
     "touch": "none",
-    "description": "Lie down and rest while bowls and gongs are played around you. A quiet, deeply relaxing session. It feels calm and unhurried."
+    "description": "Lie down and rest while bowls and gongs are played around you. A quiet, deeply relaxing session. It feels calm and unhurried.",
+    "day": "today",
+    "end": "21:00",
+    "whatToBring": [
+      "Two towels (or rent them)",
+      "Flip-flops",
+      "Water bottle"
+    ]
   },
   {
     "id": "yoga-neuk-lln-yin-yoga",
@@ -1459,7 +2091,13 @@
       "Small group, plenty of space. Partner work is part of the class. The trainer asks before any hands-on help."
     ],
     "touch": "asks-first",
-    "description": "Floor-based yoga with long, supported stretches of a few minutes each. For anyone who wants to slow down after a long day. It feels calm and unhurried."
+    "description": "Floor-based yoga with long, supported stretches of a few minutes each. For anyone who wants to slow down after a long day. It feels calm and unhurried.",
+    "day": "today",
+    "end": "21:00",
+    "whatToBring": [
+      "Comfortable clothes",
+      "Mats and towels are provided"
+    ]
   },
   {
     "id": "boxing-friedrichshain-boxing-fundamentals",
@@ -1476,7 +2114,15 @@
       "Large group, it can get packed. Partner work is part of the class. Hands-on corrections, the trainer may touch to adjust."
     ],
     "touch": "hands-on",
-    "description": "Learn the basic punches, footwork and defence on bags and pads. For beginners who want a hard, focused workout. Expect to sweat: loud music and a high pace."
+    "description": "Learn the basic punches, footwork and defence on bags and pads. For beginners who want a hard, focused workout. Expect to sweat: loud music and a high pace.",
+    "day": "today",
+    "end": "21:30",
+    "whatToBring": [
+      "Indoor trainers",
+      "Towel",
+      "Water bottle",
+      "Hand wraps (or borrow)"
+    ]
   },
   {
     "id": "boxing-kreuzberg-boxing-fundamentals",
@@ -1493,7 +2139,15 @@
       "Large group, it can get packed. Partner work is part of the class. Hands-on corrections, the trainer may touch to adjust."
     ],
     "touch": "hands-on",
-    "description": "Learn the basic punches, footwork and defence on bags and pads. For beginners who want a hard, focused workout. Expect to sweat and push through the harder parts."
+    "description": "Learn the basic punches, footwork and defence on bags and pads. For beginners who want a hard, focused workout. Expect to sweat and push through the harder parts.",
+    "day": "today",
+    "end": "21:30",
+    "whatToBring": [
+      "Indoor trainers",
+      "Towel",
+      "Water bottle",
+      "Hand wraps (or borrow)"
+    ]
   },
   {
     "id": "dance-friedrichshain-contemporary-for-beginners",
@@ -1510,7 +2164,14 @@
       "Medium group, enough space. No partner work. The trainer asks before any hands-on help."
     ],
     "touch": "asks-first",
-    "description": "Learn a short contemporary dance piece, step by step, with floor work and flowing moves. No dance experience needed. It feels energetic, with music pushing you along."
+    "description": "Learn a short contemporary dance piece, step by step, with floor work and flowing moves. No dance experience needed. It feels energetic, with music pushing you along.",
+    "day": "today",
+    "end": "21:45",
+    "whatToBring": [
+      "Socks or bare feet",
+      "Comfortable clothes",
+      "Water bottle"
+    ]
   },
   {
     "id": "dance-kreuzberg-hip-hop-foundations",
@@ -1527,7 +2188,14 @@
       "Medium group, enough space. No partner work. The trainer asks before any hands-on help."
     ],
     "touch": "asks-first",
-    "description": "Hip-hop grooves and short combinations, built up through the class. For beginners with some energy to spare. Expect to sweat: loud music and a high pace."
+    "description": "Hip-hop grooves and short combinations, built up through the class. For beginners with some energy to spare. Expect to sweat: loud music and a high pace.",
+    "day": "today",
+    "end": "21:30",
+    "whatToBring": [
+      "Socks or bare feet",
+      "Comfortable clothes",
+      "Water bottle"
+    ]
   },
   {
     "id": "gym-friedrichshain-rhythm-ride",
@@ -1544,7 +2212,15 @@
       "Medium group, enough space. Partner work is part of the class. Hands-on corrections, the trainer may touch to adjust."
     ],
     "touch": "hands-on",
-    "description": "Indoor cycling to loud, beat-driven music, with sprints and climbs. For riders who like a party feel. Expect to sweat: loud music and a high pace."
+    "description": "Indoor cycling to loud, beat-driven music, with sprints and climbs. For riders who like a party feel. Expect to sweat: loud music and a high pace.",
+    "day": "today",
+    "end": "21:15",
+    "whatToBring": [
+      "Indoor trainers",
+      "Towel",
+      "Water bottle",
+      "Padlock for the locker"
+    ]
   },
   {
     "id": "pilates-mitte-reformer-pilates",
@@ -1561,7 +2237,14 @@
       "Small group, plenty of space. No partner work. Hands-on corrections, the trainer may touch to adjust."
     ],
     "touch": "hands-on",
-    "description": "Pilates on reformer machines with springs for resistance, focused on core strength and control. Some experience helps. It is hard work in a focused, quiet room."
+    "description": "Pilates on reformer machines with springs for resistance, focused on core strength and control. Some experience helps. It is hard work in a focused, quiet room.",
+    "day": "today",
+    "end": "21:25",
+    "whatToBring": [
+      "Grip socks",
+      "Comfortable clothes",
+      "Towel (or rent one)"
+    ]
   },
   {
     "id": "wellness-mitte-sound-bath",
@@ -1578,7 +2261,14 @@
       "Small group, plenty of space. No partner work. No hands-on corrections."
     ],
     "touch": "none",
-    "description": "Lie down and rest while bowls and gongs are played around you. A quiet, deeply relaxing session. It feels calm and unhurried."
+    "description": "Lie down and rest while bowls and gongs are played around you. A quiet, deeply relaxing session. It feels calm and unhurried.",
+    "day": "today",
+    "end": "21:30",
+    "whatToBring": [
+      "Two towels (or rent them)",
+      "Flip-flops",
+      "Water bottle"
+    ]
   },
   {
     "id": "wellness-neuk-lln-sauna-stretch",
@@ -1595,7 +2285,14 @@
       "Small group, plenty of space. No partner work. The trainer asks before any hands-on help."
     ],
     "touch": "asks-first",
-    "description": "Sauna rounds with gentle stretching and rest in between. For winding down after a busy day. It feels calm and unhurried."
+    "description": "Sauna rounds with gentle stretching and rest in between. For winding down after a busy day. It feels calm and unhurried.",
+    "day": "today",
+    "end": "21:30",
+    "whatToBring": [
+      "Two towels (or rent them)",
+      "Flip-flops",
+      "Water bottle"
+    ]
   },
   {
     "id": "yoga-mitte-slow-flow-yoga",
@@ -1612,7 +2309,13 @@
       "Medium group, enough space. No partner work. No hands-on corrections."
     ],
     "touch": "none",
-    "description": "Slow, flowing yoga with long holds and plenty of time to breathe. Good for beginners and anyone who wants to move without rushing. It feels calm and unhurried."
+    "description": "Slow, flowing yoga with long holds and plenty of time to breathe. Good for beginners and anyone who wants to move without rushing. It feels calm and unhurried.",
+    "day": "today",
+    "end": "21:30",
+    "whatToBring": [
+      "Comfortable clothes",
+      "Mats and towels are provided"
+    ]
   },
   {
     "id": "yoga-prenzlauer-berg-power-yoga",
@@ -1629,7 +2332,13 @@
       "Small group, plenty of space. Partner work is part of the class. No hands-on corrections."
     ],
     "touch": "none",
-    "description": "Strong, sweaty yoga with strength holds, balances and fast sequences. For people who want yoga as a proper workout. Expect to sweat and push through the harder parts."
+    "description": "Strong, sweaty yoga with strength holds, balances and fast sequences. For people who want yoga as a proper workout. Expect to sweat and push through the harder parts.",
+    "day": "today",
+    "end": "21:30",
+    "whatToBring": [
+      "Comfortable clothes",
+      "Mats and towels are provided"
+    ]
   },
   {
     "id": "climbing-mitte-climbing-technique",
@@ -1646,7 +2355,14 @@
       "Small group, plenty of space. Partner work is part of the class. Hands-on corrections, the trainer may touch to adjust."
     ],
     "touch": "hands-on",
-    "description": "Focused bouldering practice on footwork, balance and harder routes. For climbers who already know the basics. It is hard work in a focused, quiet room."
+    "description": "Focused bouldering practice on footwork, balance and harder routes. For climbers who already know the basics. It is hard work in a focused, quiet room.",
+    "day": "today",
+    "end": "22:15",
+    "whatToBring": [
+      "Comfortable clothes",
+      "Climbing shoes (or rent)",
+      "Water bottle"
+    ]
   },
   {
     "id": "climbing-neuk-lln-bouldering-intro",
@@ -1663,7 +2379,14 @@
       "Medium group, enough space. No partner work. Hands-on corrections, the trainer may touch to adjust."
     ],
     "touch": "hands-on",
-    "description": "An introduction to bouldering: safe falling, basic moves and easy routes on low walls. No experience needed. It feels focused and steady."
+    "description": "An introduction to bouldering: safe falling, basic moves and easy routes on low walls. No experience needed. It feels focused and steady.",
+    "day": "today",
+    "end": "22:30",
+    "whatToBring": [
+      "Comfortable clothes",
+      "Climbing shoes (or rent)",
+      "Water bottle"
+    ]
   },
   {
     "id": "dance-mitte-contemporary-for-beginners",
@@ -1680,7 +2403,14 @@
       "Medium group, enough space. Partner work is part of the class. No hands-on corrections."
     ],
     "touch": "none",
-    "description": "Learn a short contemporary dance piece, step by step, with floor work and flowing moves. No dance experience needed. It feels energetic, with music pushing you along."
+    "description": "Learn a short contemporary dance piece, step by step, with floor work and flowing moves. No dance experience needed. It feels energetic, with music pushing you along.",
+    "day": "today",
+    "end": "22:15",
+    "whatToBring": [
+      "Socks or bare feet",
+      "Comfortable clothes",
+      "Water bottle"
+    ]
   },
   {
     "id": "dance-neuk-lln-salsa-basics",
@@ -1697,7 +2427,14 @@
       "Medium group, enough space. Partner work is part of the class. The trainer asks before any hands-on help."
     ],
     "touch": "asks-first",
-    "description": "Learn salsa basic steps and simple turns, in pairs and on your own. You can come without a partner. It feels energetic, with music pushing you along."
+    "description": "Learn salsa basic steps and simple turns, in pairs and on your own. You can come without a partner. It feels energetic, with music pushing you along.",
+    "day": "today",
+    "end": "22:00",
+    "whatToBring": [
+      "Socks or bare feet",
+      "Comfortable clothes",
+      "Water bottle"
+    ]
   },
   {
     "id": "dance-prenzlauer-berg-contemporary-for-beginners",
@@ -1714,7 +2451,14 @@
       "Large group, it can get packed. Partner work is part of the class. The trainer asks before any hands-on help."
     ],
     "touch": "asks-first",
-    "description": "Learn a short contemporary dance piece, step by step, with floor work and flowing moves. No dance experience needed. It feels steady, with a few harder moments."
+    "description": "Learn a short contemporary dance piece, step by step, with floor work and flowing moves. No dance experience needed. It feels steady, with a few harder moments.",
+    "day": "today",
+    "end": "22:15",
+    "whatToBring": [
+      "Socks or bare feet",
+      "Comfortable clothes",
+      "Water bottle"
+    ]
   },
   {
     "id": "pilates-neuk-lln-reformer-pilates",
@@ -1731,7 +2475,14 @@
       "Small group, plenty of space. No partner work. The trainer asks before any hands-on help."
     ],
     "touch": "asks-first",
-    "description": "Pilates on reformer machines with springs for resistance, focused on core strength and control. Some experience helps. It is hard work in a focused, quiet room."
+    "description": "Pilates on reformer machines with springs for resistance, focused on core strength and control. Some experience helps. It is hard work in a focused, quiet room.",
+    "day": "today",
+    "end": "21:55",
+    "whatToBring": [
+      "Grip socks",
+      "Comfortable clothes",
+      "Towel (or rent one)"
+    ]
   },
   {
     "id": "wellness-kreuzberg-breathwork",
@@ -1748,7 +2499,14 @@
       "Small group, plenty of space. No partner work. No hands-on corrections."
     ],
     "touch": "none",
-    "description": "Guided breathing exercises, sitting or lying down, to calm the body and mind. No experience needed. It feels calm and unhurried."
+    "description": "Guided breathing exercises, sitting or lying down, to calm the body and mind. No experience needed. It feels calm and unhurried.",
+    "day": "today",
+    "end": "21:45",
+    "whatToBring": [
+      "Two towels (or rent them)",
+      "Flip-flops",
+      "Water bottle"
+    ]
   },
   {
     "id": "yoga-friedrichshain-yin-yoga",
@@ -1765,6 +2523,12 @@
       "Small group, plenty of space. Partner work is part of the class. The trainer asks before any hands-on help."
     ],
     "touch": "asks-first",
-    "description": "Floor-based yoga with long, supported stretches of a few minutes each. For anyone who wants to slow down after a long day. It feels calm and unhurried."
+    "description": "Floor-based yoga with long, supported stretches of a few minutes each. For anyone who wants to slow down after a long day. It feels calm and unhurried.",
+    "day": "today",
+    "end": "22:00",
+    "whatToBring": [
+      "Comfortable clothes",
+      "Mats and towels are provided"
+    ]
   }
 ]
