@@ -1,0 +1,1770 @@
+[
+  {
+    "id": "boxing-friedrichshain-boxfit",
+    "placeId": "boxing-friedrichshain",
+    "name": "Boxfit",
+    "type": "boxing",
+    "start": "07:00",
+    "durationMin": 45,
+    "intensity": "hard",
+    "trainer": "Clara",
+    "whatToExpect": [
+      "Hard parts to push through, easier options shown.",
+      "Loud music, the trainer uses a mic. Normal daylight and ceiling lights.",
+      "Large group, it can get packed. Partner work is part of the class. Hands-on corrections, the trainer may touch to adjust."
+    ],
+    "touch": "hands-on",
+    "description": "A boxing-style workout with combinations on the bag and fitness rounds in between. No sparring. Expect to sweat: loud music and a high pace."
+  },
+  {
+    "id": "climbing-prenzlauer-berg-morning-bouldering",
+    "placeId": "climbing-prenzlauer-berg",
+    "name": "Morning Bouldering",
+    "type": "climbing",
+    "start": "07:00",
+    "durationMin": 60,
+    "intensity": "moderate",
+    "trainer": "Paul",
+    "whatToExpect": [
+      "Steady pace with a few harder parts.",
+      "Music in the background, you can still talk. Normal daylight and ceiling lights.",
+      "Small group, plenty of space. No partner work. No hands-on corrections."
+    ],
+    "touch": "none",
+    "description": "Guided bouldering on quieter morning walls, with tips on technique and route reading. For new and returning climbers. It feels steady, with a few harder moments."
+  },
+  {
+    "id": "gym-mitte-hiit-express",
+    "placeId": "gym-mitte",
+    "name": "HIIT Express",
+    "type": "hiit",
+    "start": "07:00",
+    "durationMin": 30,
+    "intensity": "hard",
+    "trainer": "Ines",
+    "whatToExpect": [
+      "Hard parts to push through, easier options shown.",
+      "Music in the background, you can still talk. Bright white lights.",
+      "Medium group, enough space. No partner work. No hands-on corrections."
+    ],
+    "touch": "none",
+    "description": "Short high-intensity intervals of bodyweight moves with quick breaks. For people who want a full workout in little time. Expect to sweat and push through the harder parts."
+  },
+  {
+    "id": "swimming-kreuzberg-aqua-fit",
+    "placeId": "swimming-kreuzberg",
+    "name": "Aqua Fit",
+    "type": "swimming",
+    "start": "07:00",
+    "durationMin": 45,
+    "intensity": "moderate",
+    "trainer": "Paul",
+    "whatToExpect": [
+      "Steady pace with a few harder parts.",
+      "Loud music, the trainer uses a mic. Bright white lights.",
+      "Medium group, enough space. No partner work. No hands-on corrections."
+    ],
+    "touch": "none",
+    "description": "A water workout in the shallow end with music, easy on the joints. No swimming skills needed. It feels energetic, with music pushing you along."
+  },
+  {
+    "id": "yoga-mitte-power-yoga",
+    "placeId": "yoga-mitte",
+    "name": "Power Yoga",
+    "type": "yoga",
+    "start": "07:00",
+    "durationMin": 60,
+    "intensity": "hard",
+    "trainer": "Paul",
+    "whatToExpect": [
+      "Hard parts to push through, easier options shown.",
+      "Quiet room, soft background music. Soft, dimmed light.",
+      "Medium group, enough space. No partner work. No hands-on corrections."
+    ],
+    "touch": "none",
+    "description": "Strong, sweaty yoga with strength holds, balances and fast sequences. For people who want yoga as a proper workout. It is hard work in a focused, quiet room."
+  },
+  {
+    "id": "boxing-prenzlauer-berg-boxfit",
+    "placeId": "boxing-prenzlauer-berg",
+    "name": "Boxfit",
+    "type": "boxing",
+    "start": "07:30",
+    "durationMin": 45,
+    "intensity": "hard",
+    "trainer": "Ines",
+    "whatToExpect": [
+      "Hard parts to push through, easier options shown.",
+      "Loud music, the trainer uses a mic. Normal daylight and ceiling lights.",
+      "Medium group, enough space. Partner work is part of the class. The trainer asks before any hands-on help."
+    ],
+    "touch": "asks-first",
+    "description": "A boxing-style workout with combinations on the bag and fitness rounds in between. No sparring. Expect to sweat: loud music and a high pace."
+  },
+  {
+    "id": "climbing-neuk-lln-morning-bouldering",
+    "placeId": "climbing-neuk-lln",
+    "name": "Morning Bouldering",
+    "type": "climbing",
+    "start": "07:30",
+    "durationMin": 60,
+    "intensity": "moderate",
+    "trainer": "Lena",
+    "whatToExpect": [
+      "Steady pace with a few harder parts.",
+      "Quiet room, soft background music. Bright white lights.",
+      "Medium group, enough space. No partner work. The trainer asks before any hands-on help."
+    ],
+    "touch": "asks-first",
+    "description": "Guided bouldering on quieter morning walls, with tips on technique and route reading. For new and returning climbers. It feels focused and steady."
+  },
+  {
+    "id": "gym-friedrichshain-hiit-express",
+    "placeId": "gym-friedrichshain",
+    "name": "HIIT Express",
+    "type": "hiit",
+    "start": "07:30",
+    "durationMin": 30,
+    "intensity": "hard",
+    "trainer": "Paul",
+    "whatToExpect": [
+      "Hard parts to push through, easier options shown.",
+      "Loud music, the trainer uses a mic. Bright white lights.",
+      "Medium group, enough space. Partner work is part of the class. No hands-on corrections."
+    ],
+    "touch": "none",
+    "description": "Short high-intensity intervals of bodyweight moves with quick breaks. For people who want a full workout in little time. Expect to sweat: loud music and a high pace."
+  },
+  {
+    "id": "pilates-friedrichshain-mat-pilates-basics",
+    "placeId": "pilates-friedrichshain",
+    "name": "Mat Pilates Basics",
+    "type": "pilates",
+    "start": "07:30",
+    "durationMin": 50,
+    "intensity": "moderate",
+    "trainer": "Kenji",
+    "whatToExpect": [
+      "Steady pace with a few harder parts.",
+      "Music in the background, you can still talk. Normal daylight and ceiling lights.",
+      "Medium group, enough space. No partner work. No hands-on corrections."
+    ],
+    "touch": "none",
+    "description": "Pilates on the mat with slow, controlled moves for core, back and posture. A good start if you are new to Pilates. It feels steady, with a few harder moments."
+  },
+  {
+    "id": "yoga-neuk-lln-slow-flow-yoga",
+    "placeId": "yoga-neuk-lln",
+    "name": "Slow Flow Yoga",
+    "type": "yoga",
+    "start": "07:30",
+    "durationMin": 60,
+    "intensity": "gentle",
+    "trainer": "Tomasz",
+    "whatToExpect": [
+      "Gentle pace, nothing harder than moderate effort.",
+      "Quiet room, soft background music. Soft, dimmed light.",
+      "Small group, plenty of space. Partner work is part of the class. Hands-on corrections, the trainer may touch to adjust."
+    ],
+    "touch": "hands-on",
+    "description": "Slow, flowing yoga with long holds and plenty of time to breathe. Good for beginners and anyone who wants to move without rushing. It feels calm and unhurried."
+  },
+  {
+    "id": "pilates-kreuzberg-gentle-pilates",
+    "placeId": "pilates-kreuzberg",
+    "name": "Gentle Pilates",
+    "type": "pilates",
+    "start": "08:00",
+    "durationMin": 45,
+    "intensity": "gentle",
+    "trainer": "Ines",
+    "whatToExpect": [
+      "Gentle pace, nothing harder than moderate effort.",
+      "Music in the background, you can still talk. Soft, dimmed light.",
+      "Small group, plenty of space. No partner work. Hands-on corrections, the trainer may touch to adjust."
+    ],
+    "touch": "hands-on",
+    "description": "Calm Pilates with small movements for core and mobility, at an easy pace. Suits beginners and anyone getting back into training. It feels relaxed, with some music in the background."
+  },
+  {
+    "id": "pilates-mitte-mat-pilates-basics",
+    "placeId": "pilates-mitte",
+    "name": "Mat Pilates Basics",
+    "type": "pilates",
+    "start": "08:00",
+    "durationMin": 50,
+    "intensity": "moderate",
+    "trainer": "Marco",
+    "whatToExpect": [
+      "Steady pace with a few harder parts.",
+      "Quiet room, soft background music. Soft, dimmed light.",
+      "Small group, plenty of space. No partner work. The trainer asks before any hands-on help."
+    ],
+    "touch": "asks-first",
+    "description": "Pilates on the mat with slow, controlled moves for core, back and posture. A good start if you are new to Pilates. It feels focused and steady."
+  },
+  {
+    "id": "pilates-neuk-lln-mat-pilates-basics",
+    "placeId": "pilates-neuk-lln",
+    "name": "Mat Pilates Basics",
+    "type": "pilates",
+    "start": "08:00",
+    "durationMin": 50,
+    "intensity": "moderate",
+    "trainer": "Tomasz",
+    "whatToExpect": [
+      "Steady pace with a few harder parts.",
+      "Quiet room, soft background music. Bright white lights.",
+      "Small group, plenty of space. No partner work. The trainer asks before any hands-on help."
+    ],
+    "touch": "asks-first",
+    "description": "Pilates on the mat with slow, controlled moves for core, back and posture. A good start if you are new to Pilates. It feels focused and steady."
+  },
+  {
+    "id": "swimming-prenzlauer-berg-lane-swim-technique",
+    "placeId": "swimming-prenzlauer-berg",
+    "name": "Lane Swim & Technique",
+    "type": "swimming",
+    "start": "08:00",
+    "durationMin": 45,
+    "intensity": "moderate",
+    "trainer": "Ines",
+    "whatToExpect": [
+      "Steady pace with a few harder parts.",
+      "Music in the background, you can still talk. Normal daylight and ceiling lights.",
+      "Large group, it can get packed. No partner work. No hands-on corrections."
+    ],
+    "touch": "none",
+    "description": "Lane swimming with a coach who helps with breathing and stroke technique. For swimmers who can do a few lengths. It feels steady, with a few harder moments."
+  },
+  {
+    "id": "wellness-friedrichshain-breathwork",
+    "placeId": "wellness-friedrichshain",
+    "name": "Breathwork",
+    "type": "wellness",
+    "start": "08:00",
+    "durationMin": 45,
+    "intensity": "gentle",
+    "trainer": "Leyla",
+    "whatToExpect": [
+      "Gentle pace, nothing harder than moderate effort.",
+      "Quiet room, soft background music. Soft, dimmed light.",
+      "Small group, plenty of space. No partner work. The trainer asks before any hands-on help."
+    ],
+    "touch": "asks-first",
+    "description": "Guided breathing exercises, sitting or lying down, to calm the body and mind. No experience needed. It feels calm and unhurried."
+  },
+  {
+    "id": "climbing-kreuzberg-morning-bouldering",
+    "placeId": "climbing-kreuzberg",
+    "name": "Morning Bouldering",
+    "type": "climbing",
+    "start": "08:30",
+    "durationMin": 60,
+    "intensity": "moderate",
+    "trainer": "Mira",
+    "whatToExpect": [
+      "Steady pace with a few harder parts.",
+      "Quiet room, soft background music. Bright white lights.",
+      "Medium group, enough space. Partner work is part of the class. The trainer asks before any hands-on help."
+    ],
+    "touch": "asks-first",
+    "description": "Guided bouldering on quieter morning walls, with tips on technique and route reading. For new and returning climbers. It feels focused and steady."
+  },
+  {
+    "id": "swimming-mitte-lane-swim-technique",
+    "placeId": "swimming-mitte",
+    "name": "Lane Swim & Technique",
+    "type": "swimming",
+    "start": "08:30",
+    "durationMin": 45,
+    "intensity": "moderate",
+    "trainer": "Felix",
+    "whatToExpect": [
+      "Steady pace with a few harder parts.",
+      "Quiet room, soft background music. Bright white lights.",
+      "Large group, it can get packed. No partner work. No hands-on corrections."
+    ],
+    "touch": "none",
+    "description": "Lane swimming with a coach who helps with breathing and stroke technique. For swimmers who can do a few lengths. It feels focused and steady."
+  },
+  {
+    "id": "swimming-neuk-lln-lane-swim-technique",
+    "placeId": "swimming-neuk-lln",
+    "name": "Lane Swim & Technique",
+    "type": "swimming",
+    "start": "08:30",
+    "durationMin": 45,
+    "intensity": "moderate",
+    "trainer": "Marco",
+    "whatToExpect": [
+      "Steady pace with a few harder parts.",
+      "Loud music, the trainer uses a mic. Normal daylight and ceiling lights.",
+      "Large group, it can get packed. No partner work. The trainer asks before any hands-on help."
+    ],
+    "touch": "asks-first",
+    "description": "Lane swimming with a coach who helps with breathing and stroke technique. For swimmers who can do a few lengths. It feels energetic, with music pushing you along."
+  },
+  {
+    "id": "wellness-neuk-lln-breathwork",
+    "placeId": "wellness-neuk-lln",
+    "name": "Breathwork",
+    "type": "wellness",
+    "start": "08:30",
+    "durationMin": 45,
+    "intensity": "gentle",
+    "trainer": "David",
+    "whatToExpect": [
+      "Gentle pace, nothing harder than moderate effort.",
+      "Quiet room, soft background music. Soft, dimmed light.",
+      "Small group, plenty of space. No partner work. No hands-on corrections."
+    ],
+    "touch": "none",
+    "description": "Guided breathing exercises, sitting or lying down, to calm the body and mind. No experience needed. It feels calm and unhurried."
+  },
+  {
+    "id": "yoga-prenzlauer-berg-vinyasa-flow",
+    "placeId": "yoga-prenzlauer-berg",
+    "name": "Vinyasa Flow",
+    "type": "yoga",
+    "start": "08:30",
+    "durationMin": 75,
+    "intensity": "moderate",
+    "trainer": "Tomasz",
+    "whatToExpect": [
+      "Steady pace with a few harder parts.",
+      "Music in the background, you can still talk. Soft, dimmed light.",
+      "Small group, plenty of space. Partner work is part of the class. Hands-on corrections, the trainer may touch to adjust."
+    ],
+    "touch": "hands-on",
+    "description": "A flowing yoga class that links breath and movement, with a few stronger standing poses. For people who know the basics and like to keep moving. It feels steady, with a few harder moments."
+  },
+  {
+    "id": "climbing-mitte-morning-bouldering",
+    "placeId": "climbing-mitte",
+    "name": "Morning Bouldering",
+    "type": "climbing",
+    "start": "09:00",
+    "durationMin": 60,
+    "intensity": "moderate",
+    "trainer": "Marco",
+    "whatToExpect": [
+      "Steady pace with a few harder parts.",
+      "Quiet room, soft background music. Bright white lights.",
+      "Small group, plenty of space. Partner work is part of the class. The trainer asks before any hands-on help."
+    ],
+    "touch": "asks-first",
+    "description": "Guided bouldering on quieter morning walls, with tips on technique and route reading. For new and returning climbers. It feels focused and steady."
+  },
+  {
+    "id": "gym-prenzlauer-berg-sunrise-spin",
+    "placeId": "gym-prenzlauer-berg",
+    "name": "Sunrise Spin",
+    "type": "spinning",
+    "start": "09:00",
+    "durationMin": 45,
+    "intensity": "hard",
+    "trainer": "Tomasz",
+    "whatToExpect": [
+      "Hard parts to push through, easier options shown.",
+      "Loud music, the trainer uses a mic. Normal daylight and ceiling lights.",
+      "Medium group, enough space. No partner work. No hands-on corrections."
+    ],
+    "touch": "none",
+    "description": "An indoor cycling ride to wake you up, with climbs and sprints to the beat. You set your own resistance. Expect to sweat: loud music and a high pace."
+  },
+  {
+    "id": "pilates-prenzlauer-berg-mat-pilates-basics",
+    "placeId": "pilates-prenzlauer-berg",
+    "name": "Mat Pilates Basics",
+    "type": "pilates",
+    "start": "09:00",
+    "durationMin": 50,
+    "intensity": "moderate",
+    "trainer": "Ben",
+    "whatToExpect": [
+      "Steady pace with a few harder parts.",
+      "Music in the background, you can still talk. Bright white lights.",
+      "Medium group, enough space. No partner work. The trainer asks before any hands-on help."
+    ],
+    "touch": "asks-first",
+    "description": "Pilates on the mat with slow, controlled moves for core, back and posture. A good start if you are new to Pilates. It feels steady, with a few harder moments."
+  },
+  {
+    "id": "swimming-friedrichshain-lane-swim-technique",
+    "placeId": "swimming-friedrichshain",
+    "name": "Lane Swim & Technique",
+    "type": "swimming",
+    "start": "09:00",
+    "durationMin": 45,
+    "intensity": "moderate",
+    "trainer": "Felix",
+    "whatToExpect": [
+      "Steady pace with a few harder parts.",
+      "Loud music, the trainer uses a mic. Normal daylight and ceiling lights.",
+      "Large group, it can get packed. No partner work. The trainer asks before any hands-on help."
+    ],
+    "touch": "asks-first",
+    "description": "Lane swimming with a coach who helps with breathing and stroke technique. For swimmers who can do a few lengths. It feels energetic, with music pushing you along."
+  },
+  {
+    "id": "boxing-neuk-lln-boxfit",
+    "placeId": "boxing-neuk-lln",
+    "name": "Boxfit",
+    "type": "boxing",
+    "start": "09:30",
+    "durationMin": 45,
+    "intensity": "hard",
+    "trainer": "Ben",
+    "whatToExpect": [
+      "Hard parts to push through, easier options shown.",
+      "Loud music, the trainer uses a mic. Bright white lights.",
+      "Large group, it can get packed. Partner work is part of the class. The trainer asks before any hands-on help."
+    ],
+    "touch": "asks-first",
+    "description": "A boxing-style workout with combinations on the bag and fitness rounds in between. No sparring. Expect to sweat: loud music and a high pace."
+  },
+  {
+    "id": "swimming-mitte-aqua-fit",
+    "placeId": "swimming-mitte",
+    "name": "Aqua Fit",
+    "type": "swimming",
+    "start": "09:30",
+    "durationMin": 45,
+    "intensity": "moderate",
+    "trainer": "Aylin",
+    "whatToExpect": [
+      "Steady pace with a few harder parts.",
+      "Quiet room, soft background music. Bright white lights.",
+      "Large group, it can get packed. No partner work. No hands-on corrections."
+    ],
+    "touch": "none",
+    "description": "A water workout in the shallow end with music, easy on the joints. No swimming skills needed. It feels focused and steady."
+  },
+  {
+    "id": "swimming-prenzlauer-berg-easy-lengths",
+    "placeId": "swimming-prenzlauer-berg",
+    "name": "Easy Lengths",
+    "type": "swimming",
+    "start": "09:30",
+    "durationMin": 45,
+    "intensity": "gentle",
+    "trainer": "Clara",
+    "whatToExpect": [
+      "Gentle pace, nothing harder than moderate effort.",
+      "Music in the background, you can still talk. Normal daylight and ceiling lights.",
+      "Large group, it can get packed. No partner work. No hands-on corrections."
+    ],
+    "touch": "none",
+    "description": "Relaxed lengths at your own pace in a reserved lane. For anyone who wants calm time in the water. It feels relaxed, with some music in the background."
+  },
+  {
+    "id": "wellness-mitte-breathwork",
+    "placeId": "wellness-mitte",
+    "name": "Breathwork",
+    "type": "wellness",
+    "start": "09:30",
+    "durationMin": 45,
+    "intensity": "gentle",
+    "trainer": "Ines",
+    "whatToExpect": [
+      "Gentle pace, nothing harder than moderate effort.",
+      "Quiet room, soft background music. Soft, dimmed light.",
+      "Small group, plenty of space. No partner work. No hands-on corrections."
+    ],
+    "touch": "none",
+    "description": "Guided breathing exercises, sitting or lying down, to calm the body and mind. No experience needed. It feels calm and unhurried."
+  },
+  {
+    "id": "climbing-friedrichshain-morning-bouldering",
+    "placeId": "climbing-friedrichshain",
+    "name": "Morning Bouldering",
+    "type": "climbing",
+    "start": "10:00",
+    "durationMin": 60,
+    "intensity": "moderate",
+    "trainer": "Luca",
+    "whatToExpect": [
+      "Steady pace with a few harder parts.",
+      "Music in the background, you can still talk. Normal daylight and ceiling lights.",
+      "Medium group, enough space. Partner work is part of the class. The trainer asks before any hands-on help."
+    ],
+    "touch": "asks-first",
+    "description": "Guided bouldering on quieter morning walls, with tips on technique and route reading. For new and returning climbers. It feels steady, with a few harder moments."
+  },
+  {
+    "id": "pilates-neuk-lln-gentle-pilates",
+    "placeId": "pilates-neuk-lln",
+    "name": "Gentle Pilates",
+    "type": "pilates",
+    "start": "10:00",
+    "durationMin": 45,
+    "intensity": "gentle",
+    "trainer": "Mira",
+    "whatToExpect": [
+      "Gentle pace, nothing harder than moderate effort.",
+      "Quiet room, soft background music. Bright white lights.",
+      "Small group, plenty of space. No partner work. The trainer asks before any hands-on help."
+    ],
+    "touch": "asks-first",
+    "description": "Calm Pilates with small movements for core and mobility, at an easy pace. Suits beginners and anyone getting back into training. It feels calm and unhurried."
+  },
+  {
+    "id": "swimming-friedrichshain-aqua-fit",
+    "placeId": "swimming-friedrichshain",
+    "name": "Aqua Fit",
+    "type": "swimming",
+    "start": "10:00",
+    "durationMin": 45,
+    "intensity": "moderate",
+    "trainer": "Clara",
+    "whatToExpect": [
+      "Steady pace with a few harder parts.",
+      "Loud music, the trainer uses a mic. Normal daylight and ceiling lights.",
+      "Large group, it can get packed. No partner work. No hands-on corrections."
+    ],
+    "touch": "none",
+    "description": "A water workout in the shallow end with music, easy on the joints. No swimming skills needed. It feels energetic, with music pushing you along."
+  },
+  {
+    "id": "gym-kreuzberg-strength-basics",
+    "placeId": "gym-kreuzberg",
+    "name": "Strength Basics",
+    "type": "gym",
+    "start": "12:00",
+    "durationMin": 45,
+    "intensity": "moderate",
+    "trainer": "Hanna",
+    "whatToExpect": [
+      "Steady pace with a few harder parts.",
+      "Loud music, the trainer uses a mic. Bright white lights.",
+      "Medium group, enough space. No partner work. No hands-on corrections."
+    ],
+    "touch": "none",
+    "description": "Learn the main strength moves with free weights and machines, step by step. For beginners and anyone who wants good technique. It feels energetic, with music pushing you along."
+  },
+  {
+    "id": "gym-prenzlauer-berg-hiit-express",
+    "placeId": "gym-prenzlauer-berg",
+    "name": "HIIT Express",
+    "type": "hiit",
+    "start": "12:00",
+    "durationMin": 30,
+    "intensity": "hard",
+    "trainer": "Felix",
+    "whatToExpect": [
+      "Hard parts to push through, easier options shown.",
+      "Loud music, the trainer uses a mic. Normal daylight and ceiling lights.",
+      "Medium group, enough space. No partner work. The trainer asks before any hands-on help."
+    ],
+    "touch": "asks-first",
+    "description": "Short high-intensity intervals of bodyweight moves with quick breaks. For people who want a full workout in little time. Expect to sweat: loud music and a high pace."
+  },
+  {
+    "id": "boxing-mitte-boxfit",
+    "placeId": "boxing-mitte",
+    "name": "Boxfit",
+    "type": "boxing",
+    "start": "12:30",
+    "durationMin": 45,
+    "intensity": "hard",
+    "trainer": "Ines",
+    "whatToExpect": [
+      "Hard parts to push through, easier options shown.",
+      "Music in the background, you can still talk. Normal daylight and ceiling lights.",
+      "Medium group, enough space. Partner work is part of the class. Hands-on corrections, the trainer may touch to adjust."
+    ],
+    "touch": "hands-on",
+    "description": "A boxing-style workout with combinations on the bag and fitness rounds in between. No sparring. Expect to sweat and push through the harder parts."
+  },
+  {
+    "id": "swimming-friedrichshain-easy-lengths",
+    "placeId": "swimming-friedrichshain",
+    "name": "Easy Lengths",
+    "type": "swimming",
+    "start": "12:30",
+    "durationMin": 45,
+    "intensity": "gentle",
+    "trainer": "David",
+    "whatToExpect": [
+      "Gentle pace, nothing harder than moderate effort.",
+      "Loud music, the trainer uses a mic. Normal daylight and ceiling lights.",
+      "Large group, it can get packed. No partner work. The trainer asks before any hands-on help."
+    ],
+    "touch": "asks-first",
+    "description": "Relaxed lengths at your own pace in a reserved lane. For anyone who wants calm time in the water. The pace is easy, though the room can be lively."
+  },
+  {
+    "id": "yoga-friedrichshain-lunch-break-yoga",
+    "placeId": "yoga-friedrichshain",
+    "name": "Lunch Break Yoga",
+    "type": "yoga",
+    "start": "12:30",
+    "durationMin": 45,
+    "intensity": "gentle",
+    "trainer": "Luca",
+    "whatToExpect": [
+      "Gentle pace, nothing harder than moderate effort.",
+      "Quiet room, soft background music. Soft, dimmed light.",
+      "Small group, plenty of space. Partner work is part of the class. The trainer asks before any hands-on help."
+    ],
+    "touch": "asks-first",
+    "description": "A short yoga break with easy stretches and breathing. Made for office days, no experience needed. It feels calm and unhurried."
+  },
+  {
+    "id": "yoga-kreuzberg-lunch-break-yoga",
+    "placeId": "yoga-kreuzberg",
+    "name": "Lunch Break Yoga",
+    "type": "yoga",
+    "start": "13:00",
+    "durationMin": 45,
+    "intensity": "gentle",
+    "trainer": "Paul",
+    "whatToExpect": [
+      "Gentle pace, nothing harder than moderate effort.",
+      "Quiet room, soft background music. Normal daylight and ceiling lights.",
+      "Medium group, enough space. No partner work. Hands-on corrections, the trainer may touch to adjust."
+    ],
+    "touch": "hands-on",
+    "description": "A short yoga break with easy stretches and breathing. Made for office days, no experience needed. It feels calm and unhurried."
+  },
+  {
+    "id": "yoga-neuk-lln-lunch-break-yoga",
+    "placeId": "yoga-neuk-lln",
+    "name": "Lunch Break Yoga",
+    "type": "yoga",
+    "start": "13:00",
+    "durationMin": 45,
+    "intensity": "gentle",
+    "trainer": "David",
+    "whatToExpect": [
+      "Gentle pace, nothing harder than moderate effort.",
+      "Quiet room, soft background music. Soft, dimmed light.",
+      "Small group, plenty of space. Partner work is part of the class. Hands-on corrections, the trainer may touch to adjust."
+    ],
+    "touch": "hands-on",
+    "description": "A short yoga break with easy stretches and breathing. Made for office days, no experience needed. It feels calm and unhurried."
+  },
+  {
+    "id": "pilates-kreuzberg-mat-pilates-basics",
+    "placeId": "pilates-kreuzberg",
+    "name": "Mat Pilates Basics",
+    "type": "pilates",
+    "start": "13:30",
+    "durationMin": 50,
+    "intensity": "moderate",
+    "trainer": "Mira",
+    "whatToExpect": [
+      "Steady pace with a few harder parts.",
+      "Music in the background, you can still talk. Soft, dimmed light.",
+      "Small group, plenty of space. No partner work. The trainer asks before any hands-on help."
+    ],
+    "touch": "asks-first",
+    "description": "Pilates on the mat with slow, controlled moves for core, back and posture. A good start if you are new to Pilates. It feels steady, with a few harder moments."
+  },
+  {
+    "id": "swimming-kreuzberg-easy-lengths",
+    "placeId": "swimming-kreuzberg",
+    "name": "Easy Lengths",
+    "type": "swimming",
+    "start": "13:30",
+    "durationMin": 45,
+    "intensity": "gentle",
+    "trainer": "Ines",
+    "whatToExpect": [
+      "Gentle pace, nothing harder than moderate effort.",
+      "Loud music, the trainer uses a mic. Bright white lights.",
+      "Medium group, enough space. No partner work. The trainer asks before any hands-on help."
+    ],
+    "touch": "asks-first",
+    "description": "Relaxed lengths at your own pace in a reserved lane. For anyone who wants calm time in the water. The pace is easy, though the room can be lively."
+  },
+  {
+    "id": "dance-friedrichshain-hip-hop-foundations",
+    "placeId": "dance-friedrichshain",
+    "name": "Hip-hop Foundations",
+    "type": "dance",
+    "start": "16:00",
+    "durationMin": 60,
+    "intensity": "hard",
+    "trainer": "Ines",
+    "whatToExpect": [
+      "Hard parts to push through, easier options shown.",
+      "Loud music, the trainer uses a mic. Soft, dimmed light.",
+      "Medium group, enough space. No partner work. Hands-on corrections, the trainer may touch to adjust."
+    ],
+    "touch": "hands-on",
+    "description": "Hip-hop grooves and short combinations, built up through the class. For beginners with some energy to spare. Expect to sweat: loud music and a high pace."
+  },
+  {
+    "id": "dance-kreuzberg-contemporary-for-beginners",
+    "placeId": "dance-kreuzberg",
+    "name": "Contemporary for Beginners",
+    "type": "dance",
+    "start": "16:00",
+    "durationMin": 75,
+    "intensity": "moderate",
+    "trainer": "Aylin",
+    "whatToExpect": [
+      "Steady pace with a few harder parts.",
+      "Loud music, the trainer uses a mic. Normal daylight and ceiling lights.",
+      "Medium group, enough space. No partner work. Hands-on corrections, the trainer may touch to adjust."
+    ],
+    "touch": "hands-on",
+    "description": "Learn a short contemporary dance piece, step by step, with floor work and flowing moves. No dance experience needed. It feels energetic, with music pushing you along."
+  },
+  {
+    "id": "dance-mitte-hip-hop-foundations",
+    "placeId": "dance-mitte",
+    "name": "Hip-hop Foundations",
+    "type": "dance",
+    "start": "16:00",
+    "durationMin": 60,
+    "intensity": "hard",
+    "trainer": "Hanna",
+    "whatToExpect": [
+      "Hard parts to push through, easier options shown.",
+      "Loud music, the trainer uses a mic. Soft, dimmed light.",
+      "Medium group, enough space. Partner work is part of the class. The trainer asks before any hands-on help."
+    ],
+    "touch": "asks-first",
+    "description": "Hip-hop grooves and short combinations, built up through the class. For beginners with some energy to spare. Expect to sweat: loud music and a high pace."
+  },
+  {
+    "id": "pilates-friedrichshain-reformer-pilates",
+    "placeId": "pilates-friedrichshain",
+    "name": "Reformer Pilates",
+    "type": "pilates",
+    "start": "16:00",
+    "durationMin": 55,
+    "intensity": "hard",
+    "trainer": "Mira",
+    "whatToExpect": [
+      "Hard parts to push through, easier options shown.",
+      "Music in the background, you can still talk. Normal daylight and ceiling lights.",
+      "Medium group, enough space. No partner work. The trainer asks before any hands-on help."
+    ],
+    "touch": "asks-first",
+    "description": "Pilates on reformer machines with springs for resistance, focused on core strength and control. Some experience helps. Expect to sweat and push through the harder parts."
+  },
+  {
+    "id": "wellness-friedrichshain-sauna-stretch",
+    "placeId": "wellness-friedrichshain",
+    "name": "Sauna & Stretch",
+    "type": "wellness",
+    "start": "16:00",
+    "durationMin": 60,
+    "intensity": "gentle",
+    "trainer": "Noor",
+    "whatToExpect": [
+      "Gentle pace, nothing harder than moderate effort.",
+      "Quiet room, soft background music. Soft, dimmed light.",
+      "Small group, plenty of space. No partner work. No hands-on corrections."
+    ],
+    "touch": "none",
+    "description": "Sauna rounds with gentle stretching and rest in between. For winding down after a busy day. It feels calm and unhurried."
+  },
+  {
+    "id": "gym-neuk-lln-strength-basics",
+    "placeId": "gym-neuk-lln",
+    "name": "Strength Basics",
+    "type": "gym",
+    "start": "16:30",
+    "durationMin": 45,
+    "intensity": "moderate",
+    "trainer": "Noor",
+    "whatToExpect": [
+      "Steady pace with a few harder parts.",
+      "Loud music, the trainer uses a mic. Coloured and flashing lights in parts.",
+      "Medium group, enough space. No partner work. Hands-on corrections, the trainer may touch to adjust."
+    ],
+    "touch": "hands-on",
+    "description": "Learn the main strength moves with free weights and machines, step by step. For beginners and anyone who wants good technique. It feels energetic, with music pushing you along."
+  },
+  {
+    "id": "swimming-prenzlauer-berg-aqua-fit",
+    "placeId": "swimming-prenzlauer-berg",
+    "name": "Aqua Fit",
+    "type": "swimming",
+    "start": "16:30",
+    "durationMin": 45,
+    "intensity": "moderate",
+    "trainer": "David",
+    "whatToExpect": [
+      "Steady pace with a few harder parts.",
+      "Music in the background, you can still talk. Normal daylight and ceiling lights.",
+      "Large group, it can get packed. No partner work. The trainer asks before any hands-on help."
+    ],
+    "touch": "asks-first",
+    "description": "A water workout in the shallow end with music, easy on the joints. No swimming skills needed. It feels steady, with a few harder moments."
+  },
+  {
+    "id": "wellness-kreuzberg-sauna-stretch",
+    "placeId": "wellness-kreuzberg",
+    "name": "Sauna & Stretch",
+    "type": "wellness",
+    "start": "16:30",
+    "durationMin": 60,
+    "intensity": "gentle",
+    "trainer": "Aylin",
+    "whatToExpect": [
+      "Gentle pace, nothing harder than moderate effort.",
+      "Quiet room, soft background music. Soft, dimmed light.",
+      "Small group, plenty of space. No partner work. No hands-on corrections."
+    ],
+    "touch": "none",
+    "description": "Sauna rounds with gentle stretching and rest in between. For winding down after a busy day. It feels calm and unhurried."
+  },
+  {
+    "id": "wellness-prenzlauer-berg-sauna-stretch",
+    "placeId": "wellness-prenzlauer-berg",
+    "name": "Sauna & Stretch",
+    "type": "wellness",
+    "start": "16:30",
+    "durationMin": 60,
+    "intensity": "gentle",
+    "trainer": "Ben",
+    "whatToExpect": [
+      "Gentle pace, nothing harder than moderate effort.",
+      "Quiet room, soft background music. Soft, dimmed light.",
+      "Medium group, enough space. No partner work. The trainer asks before any hands-on help."
+    ],
+    "touch": "asks-first",
+    "description": "Sauna rounds with gentle stretching and rest in between. For winding down after a busy day. It feels calm and unhurried."
+  },
+  {
+    "id": "boxing-prenzlauer-berg-boxing-fundamentals",
+    "placeId": "boxing-prenzlauer-berg",
+    "name": "Boxing Fundamentals",
+    "type": "boxing",
+    "start": "17:00",
+    "durationMin": 60,
+    "intensity": "hard",
+    "trainer": "Leyla",
+    "whatToExpect": [
+      "Hard parts to push through, easier options shown.",
+      "Loud music, the trainer uses a mic. Normal daylight and ceiling lights.",
+      "Medium group, enough space. Partner work is part of the class. Hands-on corrections, the trainer may touch to adjust."
+    ],
+    "touch": "hands-on",
+    "description": "Learn the basic punches, footwork and defence on bags and pads. For beginners who want a hard, focused workout. Expect to sweat: loud music and a high pace."
+  },
+  {
+    "id": "climbing-prenzlauer-berg-bouldering-intro",
+    "placeId": "climbing-prenzlauer-berg",
+    "name": "Bouldering Intro",
+    "type": "climbing",
+    "start": "17:00",
+    "durationMin": 90,
+    "intensity": "moderate",
+    "trainer": "Paul",
+    "whatToExpect": [
+      "Steady pace with a few harder parts.",
+      "Music in the background, you can still talk. Normal daylight and ceiling lights.",
+      "Small group, plenty of space. No partner work. The trainer asks before any hands-on help."
+    ],
+    "touch": "asks-first",
+    "description": "An introduction to bouldering: safe falling, basic moves and easy routes on low walls. No experience needed. It feels steady, with a few harder moments."
+  },
+  {
+    "id": "dance-neuk-lln-hip-hop-foundations",
+    "placeId": "dance-neuk-lln",
+    "name": "Hip-hop Foundations",
+    "type": "dance",
+    "start": "17:00",
+    "durationMin": 60,
+    "intensity": "hard",
+    "trainer": "Mira",
+    "whatToExpect": [
+      "Hard parts to push through, easier options shown.",
+      "Loud music, the trainer uses a mic. Normal daylight and ceiling lights.",
+      "Medium group, enough space. Partner work is part of the class. The trainer asks before any hands-on help."
+    ],
+    "touch": "asks-first",
+    "description": "Hip-hop grooves and short combinations, built up through the class. For beginners with some energy to spare. Expect to sweat: loud music and a high pace."
+  },
+  {
+    "id": "gym-mitte-strength-basics",
+    "placeId": "gym-mitte",
+    "name": "Strength Basics",
+    "type": "gym",
+    "start": "17:00",
+    "durationMin": 45,
+    "intensity": "moderate",
+    "trainer": "Omar",
+    "whatToExpect": [
+      "Steady pace with a few harder parts.",
+      "Music in the background, you can still talk. Bright white lights.",
+      "Medium group, enough space. No partner work. No hands-on corrections."
+    ],
+    "touch": "none",
+    "description": "Learn the main strength moves with free weights and machines, step by step. For beginners and anyone who wants good technique. It feels steady, with a few harder moments."
+  },
+  {
+    "id": "pilates-prenzlauer-berg-reformer-pilates",
+    "placeId": "pilates-prenzlauer-berg",
+    "name": "Reformer Pilates",
+    "type": "pilates",
+    "start": "17:00",
+    "durationMin": 55,
+    "intensity": "hard",
+    "trainer": "Marco",
+    "whatToExpect": [
+      "Hard parts to push through, easier options shown.",
+      "Music in the background, you can still talk. Bright white lights.",
+      "Medium group, enough space. No partner work. The trainer asks before any hands-on help."
+    ],
+    "touch": "asks-first",
+    "description": "Pilates on reformer machines with springs for resistance, focused on core strength and control. Some experience helps. Expect to sweat and push through the harder parts."
+  },
+  {
+    "id": "swimming-neuk-lln-aqua-fit",
+    "placeId": "swimming-neuk-lln",
+    "name": "Aqua Fit",
+    "type": "swimming",
+    "start": "17:00",
+    "durationMin": 45,
+    "intensity": "moderate",
+    "trainer": "Aylin",
+    "whatToExpect": [
+      "Steady pace with a few harder parts.",
+      "Loud music, the trainer uses a mic. Normal daylight and ceiling lights.",
+      "Large group, it can get packed. No partner work. No hands-on corrections."
+    ],
+    "touch": "none",
+    "description": "A water workout in the shallow end with music, easy on the joints. No swimming skills needed. It feels energetic, with music pushing you along."
+  },
+  {
+    "id": "climbing-friedrichshain-bouldering-intro",
+    "placeId": "climbing-friedrichshain",
+    "name": "Bouldering Intro",
+    "type": "climbing",
+    "start": "17:30",
+    "durationMin": 90,
+    "intensity": "moderate",
+    "trainer": "Aylin",
+    "whatToExpect": [
+      "Steady pace with a few harder parts.",
+      "Music in the background, you can still talk. Normal daylight and ceiling lights.",
+      "Medium group, enough space. Partner work is part of the class. Hands-on corrections, the trainer may touch to adjust."
+    ],
+    "touch": "hands-on",
+    "description": "An introduction to bouldering: safe falling, basic moves and easy routes on low walls. No experience needed. It feels steady, with a few harder moments."
+  },
+  {
+    "id": "boxing-kreuzberg-technique-pads",
+    "placeId": "boxing-kreuzberg",
+    "name": "Technique & Pads",
+    "type": "boxing",
+    "start": "18:00",
+    "durationMin": 60,
+    "intensity": "moderate",
+    "trainer": "Kenji",
+    "whatToExpect": [
+      "Steady pace with a few harder parts.",
+      "Music in the background, you can still talk. Bright white lights.",
+      "Large group, it can get packed. Partner work is part of the class. Hands-on corrections, the trainer may touch to adjust."
+    ],
+    "touch": "hands-on",
+    "description": "Work on cleaner punches and combinations with a partner holding pads. For people who know the basics. It feels steady, with a few harder moments."
+  },
+  {
+    "id": "boxing-neuk-lln-technique-pads",
+    "placeId": "boxing-neuk-lln",
+    "name": "Technique & Pads",
+    "type": "boxing",
+    "start": "18:00",
+    "durationMin": 60,
+    "intensity": "moderate",
+    "trainer": "Sofia",
+    "whatToExpect": [
+      "Steady pace with a few harder parts.",
+      "Loud music, the trainer uses a mic. Bright white lights.",
+      "Large group, it can get packed. Partner work is part of the class. Hands-on corrections, the trainer may touch to adjust."
+    ],
+    "touch": "hands-on",
+    "description": "Work on cleaner punches and combinations with a partner holding pads. For people who know the basics. It feels energetic, with music pushing you along."
+  },
+  {
+    "id": "boxing-friedrichshain-technique-pads",
+    "placeId": "boxing-friedrichshain",
+    "name": "Technique & Pads",
+    "type": "boxing",
+    "start": "18:30",
+    "durationMin": 60,
+    "intensity": "moderate",
+    "trainer": "Felix",
+    "whatToExpect": [
+      "Steady pace with a few harder parts.",
+      "Loud music, the trainer uses a mic. Normal daylight and ceiling lights.",
+      "Large group, it can get packed. Partner work is part of the class. Hands-on corrections, the trainer may touch to adjust."
+    ],
+    "touch": "hands-on",
+    "description": "Work on cleaner punches and combinations with a partner holding pads. For people who know the basics. It feels energetic, with music pushing you along."
+  },
+  {
+    "id": "dance-friedrichshain-salsa-basics",
+    "placeId": "dance-friedrichshain",
+    "name": "Salsa Basics",
+    "type": "dance",
+    "start": "18:30",
+    "durationMin": 60,
+    "intensity": "moderate",
+    "trainer": "Mira",
+    "whatToExpect": [
+      "Steady pace with a few harder parts.",
+      "Loud music, the trainer uses a mic. Soft, dimmed light.",
+      "Medium group, enough space. No partner work. The trainer asks before any hands-on help."
+    ],
+    "touch": "asks-first",
+    "description": "Learn salsa basic steps and simple turns, in pairs and on your own. You can come without a partner. It feels energetic, with music pushing you along."
+  },
+  {
+    "id": "gym-kreuzberg-hiit-express",
+    "placeId": "gym-kreuzberg",
+    "name": "HIIT Express",
+    "type": "hiit",
+    "start": "18:30",
+    "durationMin": 30,
+    "intensity": "hard",
+    "trainer": "Ines",
+    "whatToExpect": [
+      "Hard parts to push through, easier options shown.",
+      "Loud music, the trainer uses a mic. Bright white lights.",
+      "Medium group, enough space. No partner work. Hands-on corrections, the trainer may touch to adjust."
+    ],
+    "touch": "hands-on",
+    "description": "Short high-intensity intervals of bodyweight moves with quick breaks. For people who want a full workout in little time. Expect to sweat: loud music and a high pace."
+  },
+  {
+    "id": "pilates-kreuzberg-reformer-pilates",
+    "placeId": "pilates-kreuzberg",
+    "name": "Reformer Pilates",
+    "type": "pilates",
+    "start": "18:30",
+    "durationMin": 55,
+    "intensity": "hard",
+    "trainer": "Paul",
+    "whatToExpect": [
+      "Hard parts to push through, easier options shown.",
+      "Music in the background, you can still talk. Soft, dimmed light.",
+      "Small group, plenty of space. No partner work. No hands-on corrections."
+    ],
+    "touch": "none",
+    "description": "Pilates on reformer machines with springs for resistance, focused on core strength and control. Some experience helps. Expect to sweat and push through the harder parts."
+  },
+  {
+    "id": "swimming-mitte-easy-lengths",
+    "placeId": "swimming-mitte",
+    "name": "Easy Lengths",
+    "type": "swimming",
+    "start": "18:30",
+    "durationMin": 45,
+    "intensity": "gentle",
+    "trainer": "Clara",
+    "whatToExpect": [
+      "Gentle pace, nothing harder than moderate effort.",
+      "Quiet room, soft background music. Bright white lights.",
+      "Large group, it can get packed. No partner work. The trainer asks before any hands-on help."
+    ],
+    "touch": "asks-first",
+    "description": "Relaxed lengths at your own pace in a reserved lane. For anyone who wants calm time in the water. It feels calm and unhurried."
+  },
+  {
+    "id": "wellness-mitte-sauna-stretch",
+    "placeId": "wellness-mitte",
+    "name": "Sauna & Stretch",
+    "type": "wellness",
+    "start": "18:30",
+    "durationMin": 60,
+    "intensity": "gentle",
+    "trainer": "Hanna",
+    "whatToExpect": [
+      "Gentle pace, nothing harder than moderate effort.",
+      "Quiet room, soft background music. Soft, dimmed light.",
+      "Small group, plenty of space. No partner work. No hands-on corrections."
+    ],
+    "touch": "none",
+    "description": "Sauna rounds with gentle stretching and rest in between. For winding down after a busy day. It feels calm and unhurried."
+  },
+  {
+    "id": "climbing-kreuzberg-climbing-technique",
+    "placeId": "climbing-kreuzberg",
+    "name": "Climbing Technique",
+    "type": "climbing",
+    "start": "19:00",
+    "durationMin": 75,
+    "intensity": "hard",
+    "trainer": "Jonas",
+    "whatToExpect": [
+      "Hard parts to push through, easier options shown.",
+      "Quiet room, soft background music. Bright white lights.",
+      "Medium group, enough space. Partner work is part of the class. No hands-on corrections."
+    ],
+    "touch": "none",
+    "description": "Focused bouldering practice on footwork, balance and harder routes. For climbers who already know the basics. It is hard work in a focused, quiet room."
+  },
+  {
+    "id": "climbing-neuk-lln-climbing-technique",
+    "placeId": "climbing-neuk-lln",
+    "name": "Climbing Technique",
+    "type": "climbing",
+    "start": "19:00",
+    "durationMin": 75,
+    "intensity": "hard",
+    "trainer": "Leyla",
+    "whatToExpect": [
+      "Hard parts to push through, easier options shown.",
+      "Quiet room, soft background music. Bright white lights.",
+      "Medium group, enough space. No partner work. Hands-on corrections, the trainer may touch to adjust."
+    ],
+    "touch": "hands-on",
+    "description": "Focused bouldering practice on footwork, balance and harder routes. For climbers who already know the basics. It is hard work in a focused, quiet room."
+  },
+  {
+    "id": "dance-kreuzberg-salsa-basics",
+    "placeId": "dance-kreuzberg",
+    "name": "Salsa Basics",
+    "type": "dance",
+    "start": "19:00",
+    "durationMin": 60,
+    "intensity": "moderate",
+    "trainer": "Ana",
+    "whatToExpect": [
+      "Steady pace with a few harder parts.",
+      "Loud music, the trainer uses a mic. Normal daylight and ceiling lights.",
+      "Medium group, enough space. No partner work. No hands-on corrections."
+    ],
+    "touch": "none",
+    "description": "Learn salsa basic steps and simple turns, in pairs and on your own. You can come without a partner. It feels energetic, with music pushing you along."
+  },
+  {
+    "id": "dance-prenzlauer-berg-salsa-basics",
+    "placeId": "dance-prenzlauer-berg",
+    "name": "Salsa Basics",
+    "type": "dance",
+    "start": "19:00",
+    "durationMin": 60,
+    "intensity": "moderate",
+    "trainer": "Noor",
+    "whatToExpect": [
+      "Steady pace with a few harder parts.",
+      "Music in the background, you can still talk. Coloured and flashing lights in parts.",
+      "Large group, it can get packed. Partner work is part of the class. Hands-on corrections, the trainer may touch to adjust."
+    ],
+    "touch": "hands-on",
+    "description": "Learn salsa basic steps and simple turns, in pairs and on your own. You can come without a partner. It feels steady, with a few harder moments."
+  },
+  {
+    "id": "gym-mitte-functional-circuit",
+    "placeId": "gym-mitte",
+    "name": "Functional Circuit",
+    "type": "gym",
+    "start": "19:00",
+    "durationMin": 50,
+    "intensity": "hard",
+    "trainer": "Kenji",
+    "whatToExpect": [
+      "Hard parts to push through, easier options shown.",
+      "Music in the background, you can still talk. Bright white lights.",
+      "Medium group, enough space. No partner work. The trainer asks before any hands-on help."
+    ],
+    "touch": "asks-first",
+    "description": "A circuit of stations with kettlebells, ropes and bodyweight moves. For people who like variety and a challenge. Expect to sweat and push through the harder parts."
+  },
+  {
+    "id": "wellness-kreuzberg-sound-bath",
+    "placeId": "wellness-kreuzberg",
+    "name": "Sound Bath",
+    "type": "wellness",
+    "start": "19:00",
+    "durationMin": 60,
+    "intensity": "gentle",
+    "trainer": "Tomasz",
+    "whatToExpect": [
+      "Gentle pace, nothing harder than moderate effort.",
+      "Quiet room, soft background music. Soft, dimmed light.",
+      "Small group, plenty of space. No partner work. No hands-on corrections."
+    ],
+    "touch": "none",
+    "description": "Lie down and rest while bowls and gongs are played around you. A quiet, deeply relaxing session. It feels calm and unhurried."
+  },
+  {
+    "id": "wellness-neuk-lln-sound-bath",
+    "placeId": "wellness-neuk-lln",
+    "name": "Sound Bath",
+    "type": "wellness",
+    "start": "19:00",
+    "durationMin": 60,
+    "intensity": "gentle",
+    "trainer": "Tomasz",
+    "whatToExpect": [
+      "Gentle pace, nothing harder than moderate effort.",
+      "Quiet room, soft background music. Soft, dimmed light.",
+      "Small group, plenty of space. No partner work. No hands-on corrections."
+    ],
+    "touch": "none",
+    "description": "Lie down and rest while bowls and gongs are played around you. A quiet, deeply relaxing session. It feels calm and unhurried."
+  },
+  {
+    "id": "wellness-prenzlauer-berg-breathwork",
+    "placeId": "wellness-prenzlauer-berg",
+    "name": "Breathwork",
+    "type": "wellness",
+    "start": "19:00",
+    "durationMin": 45,
+    "intensity": "gentle",
+    "trainer": "Paul",
+    "whatToExpect": [
+      "Gentle pace, nothing harder than moderate effort.",
+      "Quiet room, soft background music. Soft, dimmed light.",
+      "Medium group, enough space. No partner work. No hands-on corrections."
+    ],
+    "touch": "none",
+    "description": "Guided breathing exercises, sitting or lying down, to calm the body and mind. No experience needed. It feels calm and unhurried."
+  },
+  {
+    "id": "yoga-friedrichshain-vinyasa-flow",
+    "placeId": "yoga-friedrichshain",
+    "name": "Vinyasa Flow",
+    "type": "yoga",
+    "start": "19:00",
+    "durationMin": 75,
+    "intensity": "moderate",
+    "trainer": "Ben",
+    "whatToExpect": [
+      "Steady pace with a few harder parts.",
+      "Quiet room, soft background music. Soft, dimmed light.",
+      "Small group, plenty of space. Partner work is part of the class. Hands-on corrections, the trainer may touch to adjust."
+    ],
+    "touch": "hands-on",
+    "description": "A flowing yoga class that links breath and movement, with a few stronger standing poses. For people who know the basics and like to keep moving. It feels focused and steady."
+  },
+  {
+    "id": "yoga-mitte-yin-yoga",
+    "placeId": "yoga-mitte",
+    "name": "Yin Yoga",
+    "type": "yoga",
+    "start": "19:00",
+    "durationMin": 60,
+    "intensity": "gentle",
+    "trainer": "Marco",
+    "whatToExpect": [
+      "Gentle pace, nothing harder than moderate effort.",
+      "Quiet room, soft background music. Soft, dimmed light.",
+      "Medium group, enough space. No partner work. No hands-on corrections."
+    ],
+    "touch": "none",
+    "description": "Floor-based yoga with long, supported stretches of a few minutes each. For anyone who wants to slow down after a long day. It feels calm and unhurried."
+  },
+  {
+    "id": "yoga-prenzlauer-berg-yin-yoga",
+    "placeId": "yoga-prenzlauer-berg",
+    "name": "Yin Yoga",
+    "type": "yoga",
+    "start": "19:00",
+    "durationMin": 60,
+    "intensity": "gentle",
+    "trainer": "Noor",
+    "whatToExpect": [
+      "Gentle pace, nothing harder than moderate effort.",
+      "Music in the background, you can still talk. Soft, dimmed light.",
+      "Small group, plenty of space. Partner work is part of the class. The trainer asks before any hands-on help."
+    ],
+    "touch": "asks-first",
+    "description": "Floor-based yoga with long, supported stretches of a few minutes each. For anyone who wants to slow down after a long day. It feels relaxed, with some music in the background."
+  },
+  {
+    "id": "boxing-mitte-technique-pads",
+    "placeId": "boxing-mitte",
+    "name": "Technique & Pads",
+    "type": "boxing",
+    "start": "19:30",
+    "durationMin": 60,
+    "intensity": "moderate",
+    "trainer": "Kenji",
+    "whatToExpect": [
+      "Steady pace with a few harder parts.",
+      "Music in the background, you can still talk. Normal daylight and ceiling lights.",
+      "Medium group, enough space. Partner work is part of the class. No hands-on corrections."
+    ],
+    "touch": "none",
+    "description": "Work on cleaner punches and combinations with a partner holding pads. For people who know the basics. It feels steady, with a few harder moments."
+  },
+  {
+    "id": "climbing-friedrichshain-climbing-technique",
+    "placeId": "climbing-friedrichshain",
+    "name": "Climbing Technique",
+    "type": "climbing",
+    "start": "19:30",
+    "durationMin": 75,
+    "intensity": "hard",
+    "trainer": "Kenji",
+    "whatToExpect": [
+      "Hard parts to push through, easier options shown.",
+      "Music in the background, you can still talk. Normal daylight and ceiling lights.",
+      "Medium group, enough space. Partner work is part of the class. No hands-on corrections."
+    ],
+    "touch": "none",
+    "description": "Focused bouldering practice on footwork, balance and harder routes. For climbers who already know the basics. Expect to sweat and push through the harder parts."
+  },
+  {
+    "id": "climbing-prenzlauer-berg-climbing-technique",
+    "placeId": "climbing-prenzlauer-berg",
+    "name": "Climbing Technique",
+    "type": "climbing",
+    "start": "19:30",
+    "durationMin": 75,
+    "intensity": "hard",
+    "trainer": "Clara",
+    "whatToExpect": [
+      "Hard parts to push through, easier options shown.",
+      "Music in the background, you can still talk. Normal daylight and ceiling lights.",
+      "Small group, plenty of space. No partner work. No hands-on corrections."
+    ],
+    "touch": "none",
+    "description": "Focused bouldering practice on footwork, balance and harder routes. For climbers who already know the basics. Expect to sweat and push through the harder parts."
+  },
+  {
+    "id": "dance-mitte-salsa-basics",
+    "placeId": "dance-mitte",
+    "name": "Salsa Basics",
+    "type": "dance",
+    "start": "19:30",
+    "durationMin": 60,
+    "intensity": "moderate",
+    "trainer": "Ana",
+    "whatToExpect": [
+      "Steady pace with a few harder parts.",
+      "Loud music, the trainer uses a mic. Soft, dimmed light.",
+      "Medium group, enough space. Partner work is part of the class. No hands-on corrections."
+    ],
+    "touch": "none",
+    "description": "Learn salsa basic steps and simple turns, in pairs and on your own. You can come without a partner. It feels energetic, with music pushing you along."
+  },
+  {
+    "id": "gym-kreuzberg-rhythm-ride",
+    "placeId": "gym-kreuzberg",
+    "name": "Rhythm Ride",
+    "type": "spinning",
+    "start": "19:30",
+    "durationMin": 45,
+    "intensity": "hard",
+    "trainer": "Mira",
+    "whatToExpect": [
+      "Hard parts to push through, easier options shown.",
+      "Loud music, the trainer uses a mic. Bright white lights.",
+      "Medium group, enough space. No partner work. Hands-on corrections, the trainer may touch to adjust."
+    ],
+    "touch": "hands-on",
+    "description": "Indoor cycling to loud, beat-driven music, with sprints and climbs. For riders who like a party feel. Expect to sweat: loud music and a high pace."
+  },
+  {
+    "id": "yoga-kreuzberg-yin-yoga",
+    "placeId": "yoga-kreuzberg",
+    "name": "Yin Yoga",
+    "type": "yoga",
+    "start": "19:30",
+    "durationMin": 60,
+    "intensity": "gentle",
+    "trainer": "Marco",
+    "whatToExpect": [
+      "Gentle pace, nothing harder than moderate effort.",
+      "Quiet room, soft background music. Normal daylight and ceiling lights.",
+      "Medium group, enough space. No partner work. No hands-on corrections."
+    ],
+    "touch": "none",
+    "description": "Floor-based yoga with long, supported stretches of a few minutes each. For anyone who wants to slow down after a long day. It feels calm and unhurried."
+  },
+  {
+    "id": "boxing-neuk-lln-boxing-fundamentals",
+    "placeId": "boxing-neuk-lln",
+    "name": "Boxing Fundamentals",
+    "type": "boxing",
+    "start": "20:00",
+    "durationMin": 60,
+    "intensity": "hard",
+    "trainer": "Luca",
+    "whatToExpect": [
+      "Hard parts to push through, easier options shown.",
+      "Loud music, the trainer uses a mic. Bright white lights.",
+      "Large group, it can get packed. Partner work is part of the class. Hands-on corrections, the trainer may touch to adjust."
+    ],
+    "touch": "hands-on",
+    "description": "Learn the basic punches, footwork and defence on bags and pads. For beginners who want a hard, focused workout. Expect to sweat: loud music and a high pace."
+  },
+  {
+    "id": "gym-neuk-lln-rhythm-ride",
+    "placeId": "gym-neuk-lln",
+    "name": "Rhythm Ride",
+    "type": "spinning",
+    "start": "20:00",
+    "durationMin": 45,
+    "intensity": "hard",
+    "trainer": "Hanna",
+    "whatToExpect": [
+      "Hard parts to push through, easier options shown.",
+      "Loud music, the trainer uses a mic. Coloured and flashing lights in parts.",
+      "Medium group, enough space. No partner work. Hands-on corrections, the trainer may touch to adjust."
+    ],
+    "touch": "hands-on",
+    "description": "Indoor cycling to loud, beat-driven music, with sprints and climbs. For riders who like a party feel. Expect to sweat: loud music and a high pace."
+  },
+  {
+    "id": "pilates-friedrichshain-gentle-pilates",
+    "placeId": "pilates-friedrichshain",
+    "name": "Gentle Pilates",
+    "type": "pilates",
+    "start": "20:00",
+    "durationMin": 45,
+    "intensity": "gentle",
+    "trainer": "Luca",
+    "whatToExpect": [
+      "Gentle pace, nothing harder than moderate effort.",
+      "Music in the background, you can still talk. Normal daylight and ceiling lights.",
+      "Medium group, enough space. No partner work. No hands-on corrections."
+    ],
+    "touch": "none",
+    "description": "Calm Pilates with small movements for core and mobility, at an easy pace. Suits beginners and anyone getting back into training. It feels relaxed, with some music in the background."
+  },
+  {
+    "id": "wellness-prenzlauer-berg-sound-bath",
+    "placeId": "wellness-prenzlauer-berg",
+    "name": "Sound Bath",
+    "type": "wellness",
+    "start": "20:00",
+    "durationMin": 60,
+    "intensity": "gentle",
+    "trainer": "Paul",
+    "whatToExpect": [
+      "Gentle pace, nothing harder than moderate effort.",
+      "Quiet room, soft background music. Soft, dimmed light.",
+      "Medium group, enough space. No partner work. No hands-on corrections."
+    ],
+    "touch": "none",
+    "description": "Lie down and rest while bowls and gongs are played around you. A quiet, deeply relaxing session. It feels calm and unhurried."
+  },
+  {
+    "id": "yoga-neuk-lln-yin-yoga",
+    "placeId": "yoga-neuk-lln",
+    "name": "Yin Yoga",
+    "type": "yoga",
+    "start": "20:00",
+    "durationMin": 60,
+    "intensity": "gentle",
+    "trainer": "Ines",
+    "whatToExpect": [
+      "Gentle pace, nothing harder than moderate effort.",
+      "Quiet room, soft background music. Soft, dimmed light.",
+      "Small group, plenty of space. Partner work is part of the class. The trainer asks before any hands-on help."
+    ],
+    "touch": "asks-first",
+    "description": "Floor-based yoga with long, supported stretches of a few minutes each. For anyone who wants to slow down after a long day. It feels calm and unhurried."
+  },
+  {
+    "id": "boxing-friedrichshain-boxing-fundamentals",
+    "placeId": "boxing-friedrichshain",
+    "name": "Boxing Fundamentals",
+    "type": "boxing",
+    "start": "20:30",
+    "durationMin": 60,
+    "intensity": "hard",
+    "trainer": "Mira",
+    "whatToExpect": [
+      "Hard parts to push through, easier options shown.",
+      "Loud music, the trainer uses a mic. Normal daylight and ceiling lights.",
+      "Large group, it can get packed. Partner work is part of the class. Hands-on corrections, the trainer may touch to adjust."
+    ],
+    "touch": "hands-on",
+    "description": "Learn the basic punches, footwork and defence on bags and pads. For beginners who want a hard, focused workout. Expect to sweat: loud music and a high pace."
+  },
+  {
+    "id": "boxing-kreuzberg-boxing-fundamentals",
+    "placeId": "boxing-kreuzberg",
+    "name": "Boxing Fundamentals",
+    "type": "boxing",
+    "start": "20:30",
+    "durationMin": 60,
+    "intensity": "hard",
+    "trainer": "Aylin",
+    "whatToExpect": [
+      "Hard parts to push through, easier options shown.",
+      "Music in the background, you can still talk. Bright white lights.",
+      "Large group, it can get packed. Partner work is part of the class. Hands-on corrections, the trainer may touch to adjust."
+    ],
+    "touch": "hands-on",
+    "description": "Learn the basic punches, footwork and defence on bags and pads. For beginners who want a hard, focused workout. Expect to sweat and push through the harder parts."
+  },
+  {
+    "id": "dance-friedrichshain-contemporary-for-beginners",
+    "placeId": "dance-friedrichshain",
+    "name": "Contemporary for Beginners",
+    "type": "dance",
+    "start": "20:30",
+    "durationMin": 75,
+    "intensity": "moderate",
+    "trainer": "Mira",
+    "whatToExpect": [
+      "Steady pace with a few harder parts.",
+      "Loud music, the trainer uses a mic. Soft, dimmed light.",
+      "Medium group, enough space. No partner work. The trainer asks before any hands-on help."
+    ],
+    "touch": "asks-first",
+    "description": "Learn a short contemporary dance piece, step by step, with floor work and flowing moves. No dance experience needed. It feels energetic, with music pushing you along."
+  },
+  {
+    "id": "dance-kreuzberg-hip-hop-foundations",
+    "placeId": "dance-kreuzberg",
+    "name": "Hip-hop Foundations",
+    "type": "dance",
+    "start": "20:30",
+    "durationMin": 60,
+    "intensity": "hard",
+    "trainer": "Mira",
+    "whatToExpect": [
+      "Hard parts to push through, easier options shown.",
+      "Loud music, the trainer uses a mic. Normal daylight and ceiling lights.",
+      "Medium group, enough space. No partner work. The trainer asks before any hands-on help."
+    ],
+    "touch": "asks-first",
+    "description": "Hip-hop grooves and short combinations, built up through the class. For beginners with some energy to spare. Expect to sweat: loud music and a high pace."
+  },
+  {
+    "id": "gym-friedrichshain-rhythm-ride",
+    "placeId": "gym-friedrichshain",
+    "name": "Rhythm Ride",
+    "type": "spinning",
+    "start": "20:30",
+    "durationMin": 45,
+    "intensity": "hard",
+    "trainer": "Luca",
+    "whatToExpect": [
+      "Hard parts to push through, easier options shown.",
+      "Loud music, the trainer uses a mic. Bright white lights.",
+      "Medium group, enough space. Partner work is part of the class. Hands-on corrections, the trainer may touch to adjust."
+    ],
+    "touch": "hands-on",
+    "description": "Indoor cycling to loud, beat-driven music, with sprints and climbs. For riders who like a party feel. Expect to sweat: loud music and a high pace."
+  },
+  {
+    "id": "pilates-mitte-reformer-pilates",
+    "placeId": "pilates-mitte",
+    "name": "Reformer Pilates",
+    "type": "pilates",
+    "start": "20:30",
+    "durationMin": 55,
+    "intensity": "hard",
+    "trainer": "Leyla",
+    "whatToExpect": [
+      "Hard parts to push through, easier options shown.",
+      "Quiet room, soft background music. Soft, dimmed light.",
+      "Small group, plenty of space. No partner work. Hands-on corrections, the trainer may touch to adjust."
+    ],
+    "touch": "hands-on",
+    "description": "Pilates on reformer machines with springs for resistance, focused on core strength and control. Some experience helps. It is hard work in a focused, quiet room."
+  },
+  {
+    "id": "wellness-mitte-sound-bath",
+    "placeId": "wellness-mitte",
+    "name": "Sound Bath",
+    "type": "wellness",
+    "start": "20:30",
+    "durationMin": 60,
+    "intensity": "gentle",
+    "trainer": "Lena",
+    "whatToExpect": [
+      "Gentle pace, nothing harder than moderate effort.",
+      "Quiet room, soft background music. Soft, dimmed light.",
+      "Small group, plenty of space. No partner work. No hands-on corrections."
+    ],
+    "touch": "none",
+    "description": "Lie down and rest while bowls and gongs are played around you. A quiet, deeply relaxing session. It feels calm and unhurried."
+  },
+  {
+    "id": "wellness-neuk-lln-sauna-stretch",
+    "placeId": "wellness-neuk-lln",
+    "name": "Sauna & Stretch",
+    "type": "wellness",
+    "start": "20:30",
+    "durationMin": 60,
+    "intensity": "gentle",
+    "trainer": "Ana",
+    "whatToExpect": [
+      "Gentle pace, nothing harder than moderate effort.",
+      "Quiet room, soft background music. Soft, dimmed light.",
+      "Small group, plenty of space. No partner work. The trainer asks before any hands-on help."
+    ],
+    "touch": "asks-first",
+    "description": "Sauna rounds with gentle stretching and rest in between. For winding down after a busy day. It feels calm and unhurried."
+  },
+  {
+    "id": "yoga-mitte-slow-flow-yoga",
+    "placeId": "yoga-mitte",
+    "name": "Slow Flow Yoga",
+    "type": "yoga",
+    "start": "20:30",
+    "durationMin": 60,
+    "intensity": "gentle",
+    "trainer": "Tomasz",
+    "whatToExpect": [
+      "Gentle pace, nothing harder than moderate effort.",
+      "Quiet room, soft background music. Soft, dimmed light.",
+      "Medium group, enough space. No partner work. No hands-on corrections."
+    ],
+    "touch": "none",
+    "description": "Slow, flowing yoga with long holds and plenty of time to breathe. Good for beginners and anyone who wants to move without rushing. It feels calm and unhurried."
+  },
+  {
+    "id": "yoga-prenzlauer-berg-power-yoga",
+    "placeId": "yoga-prenzlauer-berg",
+    "name": "Power Yoga",
+    "type": "yoga",
+    "start": "20:30",
+    "durationMin": 60,
+    "intensity": "hard",
+    "trainer": "Sofia",
+    "whatToExpect": [
+      "Hard parts to push through, easier options shown.",
+      "Music in the background, you can still talk. Soft, dimmed light.",
+      "Small group, plenty of space. Partner work is part of the class. No hands-on corrections."
+    ],
+    "touch": "none",
+    "description": "Strong, sweaty yoga with strength holds, balances and fast sequences. For people who want yoga as a proper workout. Expect to sweat and push through the harder parts."
+  },
+  {
+    "id": "climbing-mitte-climbing-technique",
+    "placeId": "climbing-mitte",
+    "name": "Climbing Technique",
+    "type": "climbing",
+    "start": "21:00",
+    "durationMin": 75,
+    "intensity": "hard",
+    "trainer": "Omar",
+    "whatToExpect": [
+      "Hard parts to push through, easier options shown.",
+      "Quiet room, soft background music. Bright white lights.",
+      "Small group, plenty of space. Partner work is part of the class. Hands-on corrections, the trainer may touch to adjust."
+    ],
+    "touch": "hands-on",
+    "description": "Focused bouldering practice on footwork, balance and harder routes. For climbers who already know the basics. It is hard work in a focused, quiet room."
+  },
+  {
+    "id": "climbing-neuk-lln-bouldering-intro",
+    "placeId": "climbing-neuk-lln",
+    "name": "Bouldering Intro",
+    "type": "climbing",
+    "start": "21:00",
+    "durationMin": 90,
+    "intensity": "moderate",
+    "trainer": "Ana",
+    "whatToExpect": [
+      "Steady pace with a few harder parts.",
+      "Quiet room, soft background music. Bright white lights.",
+      "Medium group, enough space. No partner work. Hands-on corrections, the trainer may touch to adjust."
+    ],
+    "touch": "hands-on",
+    "description": "An introduction to bouldering: safe falling, basic moves and easy routes on low walls. No experience needed. It feels focused and steady."
+  },
+  {
+    "id": "dance-mitte-contemporary-for-beginners",
+    "placeId": "dance-mitte",
+    "name": "Contemporary for Beginners",
+    "type": "dance",
+    "start": "21:00",
+    "durationMin": 75,
+    "intensity": "moderate",
+    "trainer": "Lena",
+    "whatToExpect": [
+      "Steady pace with a few harder parts.",
+      "Loud music, the trainer uses a mic. Soft, dimmed light.",
+      "Medium group, enough space. Partner work is part of the class. No hands-on corrections."
+    ],
+    "touch": "none",
+    "description": "Learn a short contemporary dance piece, step by step, with floor work and flowing moves. No dance experience needed. It feels energetic, with music pushing you along."
+  },
+  {
+    "id": "dance-neuk-lln-salsa-basics",
+    "placeId": "dance-neuk-lln",
+    "name": "Salsa Basics",
+    "type": "dance",
+    "start": "21:00",
+    "durationMin": 60,
+    "intensity": "moderate",
+    "trainer": "Ana",
+    "whatToExpect": [
+      "Steady pace with a few harder parts.",
+      "Loud music, the trainer uses a mic. Normal daylight and ceiling lights.",
+      "Medium group, enough space. Partner work is part of the class. The trainer asks before any hands-on help."
+    ],
+    "touch": "asks-first",
+    "description": "Learn salsa basic steps and simple turns, in pairs and on your own. You can come without a partner. It feels energetic, with music pushing you along."
+  },
+  {
+    "id": "dance-prenzlauer-berg-contemporary-for-beginners",
+    "placeId": "dance-prenzlauer-berg",
+    "name": "Contemporary for Beginners",
+    "type": "dance",
+    "start": "21:00",
+    "durationMin": 75,
+    "intensity": "moderate",
+    "trainer": "Marco",
+    "whatToExpect": [
+      "Steady pace with a few harder parts.",
+      "Music in the background, you can still talk. Coloured and flashing lights in parts.",
+      "Large group, it can get packed. Partner work is part of the class. The trainer asks before any hands-on help."
+    ],
+    "touch": "asks-first",
+    "description": "Learn a short contemporary dance piece, step by step, with floor work and flowing moves. No dance experience needed. It feels steady, with a few harder moments."
+  },
+  {
+    "id": "pilates-neuk-lln-reformer-pilates",
+    "placeId": "pilates-neuk-lln",
+    "name": "Reformer Pilates",
+    "type": "pilates",
+    "start": "21:00",
+    "durationMin": 55,
+    "intensity": "hard",
+    "trainer": "David",
+    "whatToExpect": [
+      "Hard parts to push through, easier options shown.",
+      "Quiet room, soft background music. Bright white lights.",
+      "Small group, plenty of space. No partner work. The trainer asks before any hands-on help."
+    ],
+    "touch": "asks-first",
+    "description": "Pilates on reformer machines with springs for resistance, focused on core strength and control. Some experience helps. It is hard work in a focused, quiet room."
+  },
+  {
+    "id": "wellness-kreuzberg-breathwork",
+    "placeId": "wellness-kreuzberg",
+    "name": "Breathwork",
+    "type": "wellness",
+    "start": "21:00",
+    "durationMin": 45,
+    "intensity": "gentle",
+    "trainer": "Jonas",
+    "whatToExpect": [
+      "Gentle pace, nothing harder than moderate effort.",
+      "Quiet room, soft background music. Soft, dimmed light.",
+      "Small group, plenty of space. No partner work. No hands-on corrections."
+    ],
+    "touch": "none",
+    "description": "Guided breathing exercises, sitting or lying down, to calm the body and mind. No experience needed. It feels calm and unhurried."
+  },
+  {
+    "id": "yoga-friedrichshain-yin-yoga",
+    "placeId": "yoga-friedrichshain",
+    "name": "Yin Yoga",
+    "type": "yoga",
+    "start": "21:00",
+    "durationMin": 60,
+    "intensity": "gentle",
+    "trainer": "Noor",
+    "whatToExpect": [
+      "Gentle pace, nothing harder than moderate effort.",
+      "Quiet room, soft background music. Soft, dimmed light.",
+      "Small group, plenty of space. Partner work is part of the class. The trainer asks before any hands-on help."
+    ],
+    "touch": "asks-first",
+    "description": "Floor-based yoga with long, supported stretches of a few minutes each. For anyone who wants to slow down after a long day. It feels calm and unhurried."
+  }
+]
