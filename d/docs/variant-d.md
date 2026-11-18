@@ -13,6 +13,11 @@ Each line below says what's on the screen and why. "Finding" means what we saw i
 
 ## Change log
 
+- **2026-11-18: "Active filters" row in the card.** Under the "Sensory filters" chip: a thin divider,
+  then one row with "ACTIVE FILTERS" on the left and "Clear all" flush right, then the mint chips
+  with × below. Shown while an energy option or a sensory filter is on (energy only: the row
+  without chips); Clear all resets both. "Showing X of Y classes" stays under the card.
+
 - **2026-11-18: Clear all in the card; every sensory filter now works on the data.**
   - **Clear all:** a small dark-green link at the end of the active-filter chips in the Energy Match
     card, shown while an energy option or a sensory filter is on. It resets both. The row under the

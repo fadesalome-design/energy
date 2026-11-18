@@ -178,33 +178,41 @@ export function ClassFilters() {
         />
       )}
 
-      {/* Active filters as mint chips, then "Clear all" at the end of the row: shown while an
-          energy option or a sensory filter is on; resets both (like B's Clear all) */}
+      {/* Active filters: a divider, then one row "ACTIVE FILTERS" (left) + "Clear all" (flush
+          right), then the mint chips. Shown while an energy option or a sensory filter is on;
+          Clear all resets both (like B's Clear all). */}
       {(mood !== null || prefs.length > 0) && (
-        <div className="emd__active">
-          {SENSORY.filter((f) => prefs.includes(f.id)).map((f) => (
+        <div className="emd__activebox">
+          <div className="emd__activehead">
+            <p className="emd__activetitle" id="emd-active-title">Active filters</p>
             <button
-              key={f.id}
               type="button"
-              className="chip chip--remove"
-              onClick={() => togglePref(f.id)}
-              aria-label={`Remove filter: ${f.label}`}
+              className="emd__clear"
+              onClick={() => {
+                setMood(null);
+                setPrefs([]);
+                logEvent('preference_set', { data: { preference: 'all', on: false } });
+              }}
             >
-              {f.label}
-              <Icon name="x" size={14} />
+              Clear all
             </button>
-          ))}
-          <button
-            type="button"
-            className="emd__clear"
-            onClick={() => {
-              setMood(null);
-              setPrefs([]);
-              logEvent('preference_set', { data: { preference: 'all', on: false } });
-            }}
-          >
-            Clear all
-          </button>
+          </div>
+          {prefs.length > 0 && (
+            <div className="emd__active" role="group" aria-labelledby="emd-active-title">
+            {SENSORY.filter((f) => prefs.includes(f.id)).map((f) => (
+              <button
+                key={f.id}
+                type="button"
+                className="chip chip--remove"
+                onClick={() => togglePref(f.id)}
+                aria-label={`Remove filter: ${f.label}`}
+              >
+                {f.label}
+                <Icon name="x" size={14} />
+              </button>
+            ))}
+            </div>
+          )}
         </div>
       )}
     </section>

@@ -4446,3 +4446,33 @@ code {
 .filter-count--d {
   justify-content: flex-start;
 }
+
+/* D: active filters block in the card: divider, "ACTIVE FILTERS" + "Clear all" on one row,
+   Clear all flush right; mint chips below */
+.emd__activebox {
+  display: grid;
+  gap: 6px;
+  padding-top: 10px;
+  border-top: 1px solid var(--line);
+}
+
+.emd__activehead {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  min-height: 44px;
+  margin: -6px 0 -4px;
+}
+
+.emd__activetitle {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.emd__activehead .emd__clear {
+  margin-right: -4px;
+}
