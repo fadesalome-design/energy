@@ -33,11 +33,11 @@ npm run preview    # serves dist/ on http://localhost:4173
 | URL | Effect |
 | --- | --- |
 | `/?variant=a` | Version A: "What to expect" card, same for everyone (default) |
-| `/?test=r7k2` | **Version B test link (current group).** Same code as `?variant=b`. |
-| `/?test=m4q9` | **Version E test link (current group).** Same code as `?variant=e`. |
+| `/?test=r7k2` | Version B, round-2 test link. **Closed:** shows "This test has ended" while `ROUND2_LINKS_CLOSED = true` in `src/lib/variant.ts`. |
+| `/?test=m4q9` | Version E, round-2 test link. **Closed:** shows "This test has ended" while `ROUND2_LINKS_CLOSED = true` in `src/lib/variant.ts`. |
 | `/?variant=b` | Version B. **Closed:** shows "This test has ended" while `OLD_LINKS_CLOSED = true` in `src/lib/variant.ts`. |
 | `/?variant=e` | **Closed** (see `OLD_LINKS_CLOSED`); use `?test=m4q9`. **Version E: Energy Match (PRD v4 preview).** Energy check-in that re-sorts the list (Tired / Stressed → Burn it off or Calm down / Normal / Energetic, plus Skip), a reason line per class, the Quiet & dim chip, the six-section card with sources, and "Rate your class". Energy is kept for the session only. Versions A and B are unchanged. |
-| `/?tester=1` | **Tester link:** clean session for a new participant, then the full loop with no test bar: book → "I went to this class" (prototype step) → rate the class → stamp. Combine with `&test=r7k2` (B) or `&test=m4q9` (E). |
+| `/?tester=1` | **Tester link:** clean session for a new participant, then the full loop with no test bar: book → "I went to this class" (prototype step) → rate the class → stamp. Combine with `&test=r7k2` (B) or `&test=m4q9` (E) when those links are open. |
 | `/?dev=1` | Shows a thin **test-mode bar** with an A/B toggle and a link to `/debug` |
 | `/?dev=0` | Hides the test-mode bar again |
 

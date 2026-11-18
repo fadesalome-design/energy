@@ -22,17 +22,31 @@ const VARIANT_KEY = 'rtr.variant';
  */
 export const OLD_LINKS_CLOSED = true;
 
+/**
+ * ONE switch for the round-2 test links. true: ?test=r7k2 and ?test=m4q9 show only the
+ * "This test has ended" screen (no app, nothing saved). false: they open Version B / E again.
+ * The ?test= mapping below stays in place either way.
+ */
+export const ROUND2_LINKS_CLOSED = true;
+
 /** New test links for a new group of testers. Same Version B / E code as the old links. */
 const TEST_LINKS: Record<string, Variant> = {
   r7k2: 'b',
   m4q9: 'e',
 };
 
-/** True when this page was opened with a closed old link (?variant=b or ?variant=e). */
-export function isClosedOldLink(): boolean {
-  if (!OLD_LINKS_CLOSED) return false;
-  const v = new URLSearchParams(window.location.search).get('variant')?.toLowerCase();
-  return v === 'b' || v === 'e';
+/**
+ * True when this page was opened with a closed test link:
+ * round 1 (?variant=b, ?variant=e) while OLD_LINKS_CLOSED, or
+ * round 2 (?test=r7k2, ?test=m4q9) while ROUND2_LINKS_CLOSED.
+ */
+export function isClosedTestLink(): boolean {
+  const params = new URLSearchParams(window.location.search);
+  const v = params.get('variant')?.toLowerCase();
+  const test = params.get('test')?.toLowerCase() ?? '';
+  if (OLD_LINKS_CLOSED && (v === 'b' || v === 'e')) return true;
+  if (ROUND2_LINKS_CLOSED && test in TEST_LINKS) return true;
+  return false;
 }
 const DEV_KEY = 'rtr.dev';
 const listeners = new Set<() => void>();
@@ -48,7 +62,7 @@ export function initVariantFromUrl(): void {
   const test = TEST_LINKS[params.get('test')?.toLowerCase() ?? ''];
   if (test) writeJSON(VARIANT_KEY, test);
   const v = params.get('variant')?.toLowerCase();
-  if (!test && !isClosedOldLink() && (v === 'a' || v === 'b' || v === 'e')) writeJSON(VARIANT_KEY, v);
+  if (!test && !isClosedTestLink() && (v === 'a' || v === 'b' || v === 'e')) writeJSON(VARIANT_KEY, v);
   const dev = params.get('dev');
   if (dev === '1') writeJSON(DEV_KEY, true);
   if (dev === '0') writeJSON(DEV_KEY, false);

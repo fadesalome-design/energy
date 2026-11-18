@@ -1,14 +1,14 @@
 import { createRoot } from 'react-dom/client';
 import { BrowserRouter } from 'react-router-dom';
 import App from './App';
-import { initVariantFromUrl, isClosedOldLink } from './lib/variant';
+import { initVariantFromUrl, isClosedTestLink } from './lib/variant';
 import { TestEnded } from './components/TestEnded';
 import { initTesterFromUrl } from './lib/tester';
 import './styles/global.css';
 
-// Closed old test links (?variant=b / ?variant=e, see OLD_LINKS_CLOSED): only the
-// "test has ended" screen, the app doesn't start and nothing is saved.
-const closed = isClosedOldLink();
+// Closed test links (round 1: ?variant=b / e, see OLD_LINKS_CLOSED; round 2: ?test=r7k2 / m4q9,
+// see ROUND2_LINKS_CLOSED): only the "test has ended" screen, the app doesn't start, nothing saved.
+const closed = isClosedTestLink();
 if (!closed) {
   initVariantFromUrl();
   initTesterFromUrl();
