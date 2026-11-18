@@ -254,7 +254,7 @@ export function FeedbackModal({ booking, onClose, version = 'b' }: { booking: Bo
             {!progress && <span />}{/* D: keeps "Not now" on the right without a progress label */}
             {progress && (
               <p className="fb__progress">
-                {progress <= 3 ? `Question ${progress} of 3` : step === 'expected' ? 'One more question' : 'Last step · optional'}
+                {progress <= 3 ? `Question ${progress} of 3` : 'One more question'}
               </p>
             )}
             <button type="button" className="fb__notnow" onClick={notNow}>Not now</button>

@@ -18,16 +18,16 @@ const pick = (a) => a[Math.floor(rnd() * a.length)];
 const chance = (p) => rnd() < p;
 const int = (lo, hi) => lo + Math.floor(rnd() * (hi - lo + 1));
 
-// ---------- photos (checked: load, room or equipment, no close-up faces or logos) ----------
+// ---------- photos (checked by ID on a contact sheet: load, room or equipment, no close-up faces or logos) ----------
 const U = (id) => `https://images.unsplash.com/photo-${id}?w=800&q=70&auto=format&fit=crop`;
 const PHOTOS = {
   yoga: ['1599901860904-17e6ed7083a0', '1506126613408-eca07ce68773', '1591258370814-01609b341790', '1591291621164-2c6367723315'],
   pilates: ['1518310383802-640c2de311b2', '1591291621164-2c6367723315', '1591258370814-01609b341790'],
   gym: ['1534438327276-14e5300c3a48', '1571902943202-507ec2618e8f', '1540497077202-7c8a3999166f', '1517836357463-d25dfeac3438', '1583454110551-21f2fa2afe61', '1576678927484-cc907957088c', '1517963879433-6ad2b056d712', '1534258936925-c58bed479fcb'],
   dance: ['1504609813442-a8924e83f76e', '1508700929628-666bc8bd84ea'],
-  boxing: ['1594737625785-a6cbdabd333c', '1583454110551-21f2fa2afe61'],
+  boxing: ['1534258936925-c58bed479fcb', '1583454110551-21f2fa2afe61'],
   climbing: ['1564769662533-4f00a87b4056'],
-  swimming: ['1519315901367-f34ff9154487', '1530549387789-4c1017266635', '1560090995-01632a28895b'],
+  swimming: ['1519315901367-f34ff9154487', '1560090995-01632a28895b'],
   wellness: ['1583416750470-965b2707b355', '1600334129128-685c5582fd35', '1540555700478-4be289fbecef'],
 };
 

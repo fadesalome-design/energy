@@ -13,6 +13,27 @@ Each line below says what's on the screen and why. "Finding" means what we saw i
 
 ## Change log
 
+- **2026-11-18: mobile polish, desktop layout, presentation mode.**
+  - **Label:** "ENERGY MATCH" with the sparkle badge. No "optional" in the card (the rating's
+    "+ Add a comment (optional)" stays).
+  - **Settings chips:** one even dark-green border when active or open (no thicker ring, no phone
+    tap-highlight box), a pill-shaped focus ring for keyboard users only.
+  - **Filters:** they sit directly in the card (no inner box).
+  - **Photos:** every frame has a fixed aspect ratio (list 1:1, class page 16:9, desktop grid 16:10),
+    cover, centred and rounded, with a gradient + type icon if a photo fails. Photos were rechecked by
+    exact ID; two with visible faces were replaced.
+  - **Desktop (1024 px and wider; mobile unchanged):**
+    - Top bar with the app name on the left and the current place and stamps on the right.
+    - A sticky 380 px left column with the Energy Match card, and a right column with the class grid
+      (2–3 cards per row, equal photo frames).
+    - Opening a class shows "What to expect" as a side panel on the right: photo header, a × close
+      button that stays visible, Escape or a click on the list closes it, Book / Not for me at the
+      bottom of the panel.
+    - 17 px base text.
+  - **Presentation mode:** `?frame=phone` shows the mobile app in a phone frame on a calm
+    background (the real app at 390 px inside an iframe).
+  - · Finding: the study is presented on laptops and projectors as well as phones.
+
 - **2026-11-18: final D layout.** **Energy Match card:** white background (no gradient), rounded,
   soft shadow, the round dark-green sparkle badge and the label "ENERGY MATCH". There's no
   "optional" text and no Skip. "How are you today?" has Tired / Stressed / Energetic in one row,
@@ -50,8 +71,8 @@ Each line below says what's on the screen and why. "Finding" means what we saw i
 
 - **2026-11-18: one Energy Match card.** Everything is set in one place. The card takes Version E's
   style (mint gradient fading to white, soft shadow, round dark-green sparkle badge) so it stands out
-  as a new feature. The label is "ENERGY MATCH · OPTIONAL", with **no Skip** (the card is optional by
-  design and the list is always all classes). The top part is "How are you today?" with D's
+  as a new feature. The label was then "ENERGY MATCH" plus "optional" (removed later), with **no Skip**
+  (the list is always all classes). The top part is "How are you today?" with D's
   Tired / Stressed / Energetic buttons in one row (nothing selected by default; tap again to clear),
   then the one-line explanation. After a thin divider comes one settings row: **📍 Near me** (opens a
   place list inside the card: Near me (Kreuzberg), Mitte, Neukölln, Friedrichshain, Prenzlauer Berg;

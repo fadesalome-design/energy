@@ -13,18 +13,22 @@ import { Photo } from '../components/Photo';
 
 type Outcome = 'book' | 'not_for_me' | 'left';
 
-export function ClassDetail() {
+/** `panel`: D desktop side panel (no back link, no page scroll, actions inside the panel). */
+export function ClassDetail({ panel = false }: { panel?: boolean }) {
   const { id = '' } = useParams();
   const navigate = useNavigate();
   const c = getClass(id);
   const outcome = useRef<Outcome>('left');
   const variant = useVariant();
+  const titleRef = useRef<HTMLHeadingElement>(null);
+  // Side panel: move focus to the class name so screen readers start there
+  useEffect(() => { if (panel) titleRef.current?.focus(); }, [panel, id]);
 
   // Research: F-CARD (metrics: booking rate after a card view, time to decide)
   useEffect(() => {
     if (!c) return;
     document.title = `${c.name} · Urban Sports Clue`;
-    window.scrollTo(0, 0);
+    if (!panel) window.scrollTo(0, 0);
     outcome.current = 'left';
     const started = performance.now();
     let sent = false;
@@ -73,10 +77,12 @@ export function ClassDetail() {
 
   return (
     <>
-      <main className="page page--detail" id="main">
-        <Link to="/" className="back">
-          <Icon name="arrowLeft" size={20} /> Classes
-        </Link>
+      <main className={panel ? 'page page--detail page--panel' : 'page page--detail'} id={panel ? undefined : 'main'}>
+        {!panel && (
+          <Link to="/" className="back">
+            <Icon name="arrowLeft" size={20} /> Classes
+          </Link>
+        )}
 
         {/* D: photo header (stock photo of the room; gradient + icon if it doesn't load) */}
         <Photo src={studio.photo} icon={c.type} className="detail-photo" />
@@ -87,7 +93,7 @@ export function ClassDetail() {
             <Icon name={c.type} size={16} />
             {typeLabel[c.type]}
           </span>
-          <h1>{c.name}</h1>
+          <h1 tabIndex={-1} ref={titleRef}>{c.name}</h1>
           <ul className="meta">
             <li>
               <Icon name="clock" size={18} />
@@ -115,7 +121,7 @@ export function ClassDetail() {
         {variant === 'e' ? <ExpectCardV4 c={c} studio={studio} /> : <ExpectCard c={c} studio={studio} />}
       </main>
 
-      <div className="actions">
+      <div className={panel ? 'actions actions--panel' : 'actions'}>
         <div className="actions__inner">
           <button type="button" className="btn btn--primary" onClick={book}>
             Book

@@ -11,6 +11,10 @@ import { FeedbackModal } from './components/FeedbackModal';
 import { useVariant } from './lib/variant';
 import { StampCounter } from './components/StampCounter';
 import { pendingFeedback, shouldShowFeedback, useFeedbackState, type Booking } from './lib/feedback';
+import { useDesktop } from './lib/desktop';
+import { DetailPanel } from './components/DetailPanel';
+import { Icon } from './components/Icon';
+import { placeName, usePlace } from './lib/location';
 
 /**
  * Urban Sports Clue: a playful, fictional multi-studio booking app. The "clue" is knowing
@@ -23,6 +27,8 @@ export default function App() {
   const { pathname } = useLocation();
   const navigate = useNavigate();
   const variant = useVariant();
+  const desktop = useDesktop(); // D: two columns + side panel at 1024 px and wider
+  usePlace();
   // Held in state so the "Stamp collected" screen stays up after the booking is marked answered.
   const [active, setActive] = useState<Booking | null>(null);
 
@@ -36,7 +42,7 @@ export default function App() {
   }, [launchId]); // eslint-disable-line react-hooks/exhaustive-deps
 
   return (
-    <div className={isAdmin ? 'shell shell--wide' : variant === 'e' ? 'shell shell--e' : 'shell'}>
+    <div className={isAdmin ? 'shell shell--wide' : desktop ? 'shell shell--desk' : 'shell'}>
       <a href="#main" className="skip">Skip to content</a>
       <DevToggle />
       <header className="appbar">
@@ -44,11 +50,18 @@ export default function App() {
           <LogoMark />
           <span>Urban Sports <span className="brand__clue">Clue</span></span>
         </Link>
-        {isAdmin ? <span className="brand__for">for studios</span> : <StampCounter />}
+        {isAdmin ? <span className="brand__for">for studios</span> : (
+          <span className="appbar__right">
+            {/* D desktop: the current place in the top bar */}
+            {desktop && <span className="appbar__place"><Icon name="pin" size={18} />{placeName()}</span>}
+            <StampCounter />
+          </span>
+        )}
       </header>
       <Routes>
         <Route path="/" element={<ClassList />} />
-        <Route path="/class/:id" element={<ClassDetail />} />
+        {/* D desktop: the class opens as a side panel over the list */}
+        <Route path="/class/:id" element={desktop ? <><ClassList /><DetailPanel /></> : <ClassDetail />} />
         <Route path="/class/:id/booked" element={<Booked />} />
         <Route path="/debug" element={<Debug />} />
         <Route path="/admin" element={<AdminPicker />} />

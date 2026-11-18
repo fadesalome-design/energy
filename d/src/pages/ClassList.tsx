@@ -64,10 +64,16 @@ export function ClassList() {
       {/* Tester link: a booked class waiting for its "visit" */}
       {openBooking && <SimulateVisit booking={openBooking} compact />}
 
+      {/* D desktop: two columns (card left, sticky; class grid right). On mobile these
+          wrappers are display: contents, so the page is exactly the same as before. */}
+      <div className="dl">
+      <aside className="dl__side" aria-label="Energy Match">
       {variant === 'b' && <ClassFilters />}
 
       {/* D: helper line directly under the card, above the list (plain text, not a button) */}
       <p className="list-hint emd-hint">Tap a class to read the room before you go.</p>
+      </aside>
+      <section className="dl__main" aria-label="Classes today">
       {variant === 'e' && (
         <>
           <EnergyCheckIn />
@@ -120,6 +126,8 @@ export function ClassList() {
           <p className="muted">Try turning off one filter. Every class still has a "What to expect" card.</p>
         </div>
       )}
+      </section>
+      </div>
     </main>
   );
 }
