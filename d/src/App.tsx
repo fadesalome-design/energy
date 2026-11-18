@@ -16,6 +16,8 @@ import { DetailPanel } from './components/DetailPanel';
 import { SidePanel } from './components/SidePanel';
 import { ProfileButton } from './components/ProfileButton';
 import { Profile } from './pages/Profile';
+import { StampScreen } from './components/StampScreen';
+import { rememberStamp } from './lib/navBack';
 import { Icon } from './components/Icon';
 import { placeName, usePlace } from './lib/location';
 
@@ -68,6 +70,8 @@ export default function App() {
         {/* D desktop: the class opens as a side panel over the list */}
         <Route path="/class/:id" element={desktop ? <><ClassList /><DetailPanel /></> : <ClassDetail />} />
         <Route path="/class/:id/booked" element={<Booked />} />
+        {/* "Stamp collected" as a screen, so Back from the rewards returns to it */}
+        <Route path="/stamp" element={<><ClassList /><StampScreen /></>} />
         {/* D: profile. Desktop: the same right side panel as the class detail; mobile: full screen */}
         <Route path="/profile" element={desktop ? <><ClassList /><SidePanel label="Profile"><Profile panel /></SidePanel></> : <Profile />} />
         <Route path="/debug" element={<Debug />} />
@@ -87,8 +91,12 @@ export default function App() {
             navigate('/', { replace: true });
           }}
           onSeeRewards={() => {
+            // Keep "Stamp collected" in the history (#/stamp), then open the rewards on top of it,
+            // so "‹ Back" and the browser back button return to Stamp collected
+            rememberStamp({ classId: active.classId, endsAt: active.endsAt });
             setActive(null);
-            navigate('/profile', { replace: true });
+            navigate('/stamp', { replace: true });
+            navigate('/profile', { state: { to: 'rewards' } });
           }}
         />
       )}

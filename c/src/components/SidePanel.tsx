@@ -1,7 +1,7 @@
 import { useEffect, useRef, type ReactNode } from 'react';
 import { createPortal } from 'react-dom';
-import { useNavigate } from 'react-router-dom';
 import { Icon } from './Icon';
+import { useBack } from '../lib/navBack';
 
 /**
  * SANDBOX D, desktop only: ONE right-hand side panel for the class detail and the profile.
@@ -10,8 +10,7 @@ import { Icon } from './Icon';
  * on the dimmed page.
  */
 export function SidePanel({ label, children }: { label: string; children: ReactNode }) {
-  const navigate = useNavigate();
-  const close = () => navigate('/');
+  const close = useBack(); // × and Esc: back to the list underneath (real history)
   const closeRef = useRef(close);
   closeRef.current = close;
 

@@ -254,7 +254,7 @@ export function FeedbackModal({ booking, onClose, onSeeRewards, version = 'b' }:
           <div className="fb__top">
             {progress && progress > 1 ? (
               <button type="button" className="fb__back" onClick={goBack}>
-                <Icon name="arrowLeft" size={20} /> Back
+                ‹ Back
               </button>
             ) : <span />}
             {!progress && <span />}{/* D: keeps "Not now" on the right without a progress label */}

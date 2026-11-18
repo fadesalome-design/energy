@@ -210,7 +210,7 @@ export function FeedbackModal({ booking, onClose, onSeeRewards, version = 'b' }:
           <div className="fb__top fb__top--aura">
             {progress && progress > 1 || step === 'ai' ? (
               <button type="button" className="fb__back" onClick={goBack}>
-                <Icon name="arrowLeft" size={20} /> Back
+                ‹ Back
               </button>
             ) : <span />}
             <button type="button" className="fb__notnow" onClick={notNow}>Not now</button>

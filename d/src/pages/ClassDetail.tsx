@@ -9,12 +9,14 @@ import { ExpectCardV4 } from '../components/ExpectCardV4';
 import { useVariant } from '../lib/variant';
 import { km, placeName, studioKm, studioMin } from '../lib/location';
 import { Icon } from '../components/Icon';
+import { useBack } from '../lib/navBack';
 import { Photo } from '../components/Photo';
 
 type Outcome = 'book' | 'not_for_me' | 'left';
 
 /** `panel`: D desktop side panel (no back link, no page scroll, actions inside the panel). */
 export function ClassDetail({ panel = false }: { panel?: boolean }) {
+  const back = useBack(); // real history: back to where the member came from
   const { id = '' } = useParams();
   const navigate = useNavigate();
   const c = getClass(id);
@@ -79,9 +81,7 @@ export function ClassDetail({ panel = false }: { panel?: boolean }) {
     <>
       <main className={panel ? 'page page--detail page--panel' : 'page page--detail'} id={panel ? undefined : 'main'}>
         {!panel && (
-          <Link to="/" className="back">
-            <Icon name="arrowLeft" size={20} /> Classes
-          </Link>
+          <button type="button" className="back" onClick={back}>‹ Back</button>
         )}
 
         {/* D: photo header (stock photo of the room; gradient + icon if it doesn't load) */}

@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
-import { Link } from 'react-router-dom';
 import { Icon } from '../components/Icon';
+import { useBack } from '../lib/navBack';
 import { useFeedbackState } from '../lib/feedback';
 import { memberInitial, memberName } from '../lib/persona';
 import {
@@ -12,6 +12,7 @@ import {
  * a back arrow. Desktop: inside the shared right side panel (`panel`), closed with ×.
  */
 export function Profile({ panel = false }: { panel?: boolean }) {
+  const back = useBack(); // real history: back to where the member came from
   const { stamps } = useFeedbackState();
   const claims = useClaims();
   const lvl = level(stamps);
@@ -27,9 +28,7 @@ export function Profile({ panel = false }: { panel?: boolean }) {
   return (
     <main className={panel ? 'page profile profile--panel' : 'page profile'} id={panel ? undefined : 'main'}>
       {!panel && (
-        <Link to="/" className="back">
-          <Icon name="arrowLeft" size={20} /> Classes
-        </Link>
+        <button type="button" className="back" onClick={back}>‹ Back</button>
       )}
 
       <header className="profile__head">

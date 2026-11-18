@@ -5650,3 +5650,27 @@ code {
 
 /* the question heading shares .fb__title with "Anything else?": keep step line → question at 8 px */
 .fb--aura .aura-screen > .fb__title.aura-q { margin: 8px 0 0; }
+
+
+/* One back-arrow style ("‹ Back"): dark text colour (no purple), 44 px hit area */
+.back,
+.fb__back,
+.fb--aura .fb__back,
+.fb--d .fb__back {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  min-height: 44px;
+  padding: 0 4px 0 0;
+  border: 0;
+  background: none;
+  font: inherit;
+  font-weight: 600;
+  color: #04342c;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.shell .back,
+.fb .fb__back { color: var(--ink); }
+.fb--aura .fb__back { color: #04342c; }
