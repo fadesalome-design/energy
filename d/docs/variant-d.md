@@ -1,0 +1,73 @@
+# Variant D (sandbox): screens for the Lovable rebuild
+
+D is the working version. It started as a copy of Version B, then got the changes below from
+user-test findings. The frozen test versions (B, E and the default route) are separate and stay
+the same.
+
+- **Live:** https://fadesalome-design.github.io/energy/d/
+- **Tester link** (clean session, full loop): https://fadesalome-design.github.io/energy/d/?tester=1
+- **Source:** `d/src` (React + Vite). Build with `d/build.sh`, which writes to `public/d`.
+- **Storage:** keys start with `rtrD.`, so D never mixes with the test versions.
+
+Each line below says what's on the screen and why. "Finding" means what we saw in user tests.
+
+## 1. Classes today (class list)
+
+- **Header:** date, "Classes today", "You're near: Kreuzberg", plus the plain hint "Tap a class to read
+  the room before you go." · Finding: testers tapped the magnifier and hand icons as if they were
+  search, so the hint has no icon.
+- **Energy Match card:** the label "Energy Match · optional" and a small **Skip** button. · Finding: it
+  has to feel optional; Skip clears the mood and folds the card to "Energy Match is off · Set my energy".
+- **Tired / Stressed / Energetic** in one row. No "Normal". · Finding: "Normal" added nothing. Three
+  options fit on one row on a phone.
+- **The selected option shows a tick** in place of its icon, as well as the fill. · Finding: colour
+  alone wasn't a clear enough signal.
+- **Stressed → "Burn it off / Calm down"** inline, smaller, indented under Stressed. · Finding: stress
+  goes two ways, so one "Stressed" list didn't fit everyone.
+- **Calm down turns on "Quiet & dim"** automatically. It shows as a removable chip, and undoing Calm
+  down turns it off. · Finding: people who wanted to calm down also wanted soft sound and light.
+- **Filters right under the card, always visible:** Quiet & dim · Not crowded · No flashing lights ·
+  No partner work. An active chip is filled and shows "×". There's a "Clear all" link. · Finding: the
+  filters were hidden behind a button and testers missed them; 7 filters were too many.
+- **Best match first, nothing hidden:** with Energy Match or a filter on, the line "✦ Best match first
+  · N of 12" appears, then the fitting classes, then "Other classes". · Finding: hiding classes felt
+  like being told what to do; sorting keeps the choice with the member.
+- **A timeline of the day:** 07:00–21:00, one class per hour, each at a fitting time of day (HIIT and
+  spin before or after work, calm classes in the morning, at lunch and early evening). The default sort
+  is **Time**, and each group stays in time order. "Nearest" sorts by distance. · Finding: clusters
+  like 07:00 and 07:15 were confusing.
+- **Fit rules** (from the studio's class data): Tired = nothing harder than moderate · Energetic and
+  Burn it off = a hard part · Calm down = soft music, calm room, soft light · Quiet & dim = soft music
+  and dim or daylight · Not crowded = usually calm · No flashing lights · No partner work = partner work
+  is none or optional.
+
+## 2. Class detail
+
+- **"What to expect" card** with the expandable rows from Version B (same look).
+- **"What to bring" is information only:** a small icon plus text (👕 Comfortable clothes, 🧘 Mats and
+  towels are provided), with no tick boxes. "Best arrival" stays. · Finding: tick boxes looked like a
+  checklist the member had to fill in.
+- **Distance line:** "2.1 km from Kreuzberg · about 10 min".
+- **Book** and **Not for me today**, as in Version B.
+
+## 3. Booked
+
+- "Booked ✓", the class, its time and studio, and "What to bring" (icons only, no checkboxes).
+- **Prototype step "I went to this class"** (dashed frame). It stands in for scanning the QR code
+  and opening the app after class. In the real app this step doesn't exist.
+
+## 4. After-class rating (full screen, next app open)
+
+- **3 quick questions about the room**, one per screen. Tapping an answer moves on. There's a Back
+  button, progress in words ("Question 2 of 3"), and "Not now" (it asks again next time).
+- **Always asked next: "Did the class match its 'What to expect' card?"** Yes / Partly / No. ·
+  Finding: this is the one answer that tells us whether the card can be trusted.
+- **Last step:** "Thanks, that's all" with a small link **"+ Add a comment (optional)"**. Write or
+  record opens only when the link is tapped. The main button is **"Send"**. · Finding: an open text
+  box at the end felt like homework; "Send and collect my stamp" was too long.
+- **Stamp collected**; every 10th stamp shows the free-class reward.
+
+## Not in D
+
+Version E's Normal option, its six-section card and its sensory-filter sheet. The admin page and
+`/debug` are unchanged copies.
