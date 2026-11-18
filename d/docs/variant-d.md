@@ -13,6 +13,25 @@ Each line below says what's on the screen and why. "Finding" means what we saw i
 
 ## Change log
 
+- **2026-11-18: final D layout.** **Energy Match card:** white background (no gradient), rounded,
+  soft shadow, the round dark-green sparkle badge and the label "ENERGY MATCH". There's no
+  "optional" text and no Skip. "How are you today?" has Tired / Stressed / Energetic in one row,
+  nothing selected by default, tap again to clear. The one-line explanation shows only while an
+  option is selected (Tired: "Gentle classes. Nothing harder than moderate effort."). Stressed works
+  as before (Burn it off / Calm down). **Settings row** (after a thin divider): Near me (place list
+  in the card) · Time/Nearest · Sensory filters · N. One panel opens at a time, inside the card.
+  **Sensory filters are now exactly Version B's 7**, with the same names, order and icons: Soft or
+  low light · No flashing lights · Quiet or soft music · Not crowded · Touch only if I agree · No
+  required partner work · Easy to step out. Active ones show as mint chips with ×. D's own "Quiet &
+  dim" filter is gone, so Calm down now turns on "Quiet or soft music" + "Soft or low light" (as in
+  B). **List:** the helper line sits under the card, all 104 classes always show, best matches
+  first, each group in time order. **Rating (one screen):** "Did the class match its 'What to
+  expect' card?" Yes / Partly / No, then "+ Add a comment (optional)" (write or record, opens only
+  when tapped) and **Done**. Done works after one answer, with no error or reminder about the
+  comment. The 3 room questions are no longer asked in D. · Finding: members want one place to
+  set everything and the shortest possible rating; B's filter set tested well and should stay the
+  same.
+
 - **2026-11-18: realistic demo data and photos.** D now runs on generated, fully **fictional**
   data in `d/data/`: **40 places** (8 types × 5 districts: yoga, pilates, gym, dance, boxing,
   climbing, swimming, sauna & wellness) with a description, photo and room traits (noise · light ·
@@ -48,8 +67,8 @@ Each line below says what's on the screen and why. "Finding" means what we saw i
 - **Header:** date, "Classes today", "You're near: Kreuzberg", plus the plain hint "Tap a class to read
   the room before you go." · Finding: testers tapped the magnifier and hand icons as if they were
   search, so the hint has no icon.
-- **One Energy Match card** (E style: mint gradient, shadow, sparkle badge) with the label "Energy Match ·
-  optional" and no Skip. Energy on top, then place / sort / sensory filters in one settings row (see
+- **One Energy Match card** (white, rounded, soft shadow, sparkle badge) with the label "Energy Match"
+  and no Skip. Energy on top, then place / sort / sensory filters in one settings row (see
   Change log). · Finding: everything in one place, and it has to feel optional.
 - **Tired / Stressed / Energetic** in one row. No "Normal". · Finding: "Normal" added nothing. Three
   options fit on one row on a phone.
@@ -57,11 +76,11 @@ Each line below says what's on the screen and why. "Finding" means what we saw i
   alone wasn't a clear enough signal.
 - **Stressed → "Burn it off / Calm down"** inline, smaller, indented under Stressed. · Finding: stress
   goes two ways, so one "Stressed" list didn't fit everyone.
-- **Calm down turns on "Quiet & dim"** automatically. It shows as a removable chip, and undoing Calm
-  down turns it off. · Finding: people who wanted to calm down also wanted soft sound and light.
-- **4 sensory filters inside the card:** Quiet & dim · Not crowded · No flashing lights · No partner work.
-  They expand from "Sensory filters · N"; active ones show as mint chips with ×. · Finding: 7 filters
-  were too many; the filters belong with the rest of the settings.
+- **Calm down turns on "Quiet or soft music" and "Soft or low light"** automatically. They show as
+  removable chips, and undoing Calm down turns them off. · Finding: people who wanted to calm down also wanted soft sound and light.
+- **Version B's 7 sensory filters inside the card** (same names, order and icons). They expand from
+  "Sensory filters · N"; active ones show as mint chips with ×. · Finding: the filters belong with the
+  rest of the settings.
 - **Best match first, nothing hidden:** with Energy Match or a filter on, the line "✦ Best match first
   · N of 104" appears, then the fitting classes, then "Other classes". · Finding: hiding classes felt
   like being told what to do; sorting keeps the choice with the member.
@@ -90,13 +109,13 @@ Each line below says what's on the screen and why. "Finding" means what we saw i
 
 ## 4. After-class rating (full screen, next app open)
 
-- **3 quick questions about the room**, one per screen. Tapping an answer moves on. There's a Back
-  button, progress in words ("Question 2 of 3"), and "Not now" (it asks again next time).
-- **Always asked next: "Did the class match its 'What to expect' card?"** Yes / Partly / No. ·
-  Finding: this is the one answer that tells us whether the card can be trusted.
-- **Last step:** "Thanks, that's all" with a small link **"+ Add a comment (optional)"**. Write or
-  record opens only when the link is tapped. The main button is **"Send"**. · Finding: an open text
-  box at the end felt like homework; "Send and collect my stamp" was too long.
+- **One screen:** the class name and time, "One question, anonymous. You'll collect a stamp", then
+  **"Did the class match its 'What to expect' card?"** Yes / Partly / No. · Finding: this is the one
+  answer that tells us whether the card can be trusted, and members want the rating to take seconds.
+- **"+ Add a comment (optional)":** write or record opens only when the link is tapped. · Finding: an
+  open text box felt like homework.
+- **Done** finishes after one answer, with no error and no reminder about the comment. "Not now" asks
+  again next time. The 3 room questions are no longer asked in D.
 - **Stamp collected**; every 10th stamp shows the free-class reward.
 
 ## Not in D

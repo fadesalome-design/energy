@@ -4044,3 +4044,22 @@ code {
     transition: none;
   }
 }
+
+/* D: Energy Match card is white (no gradient), still rounded with a soft shadow */
+.emd {
+  background: var(--surface);
+  border-color: var(--line);
+}
+
+/* D rating: Yes / Partly / No side by side */
+.fb__options--row {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 8px;
+}
+
+.fb__options--row .opt {
+  justify-content: center;
+  gap: 6px;
+  padding: 0 8px;
+}

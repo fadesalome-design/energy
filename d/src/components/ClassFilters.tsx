@@ -11,13 +11,13 @@ import { Icon } from './Icon';
 
 /**
  * SANDBOX D: ONE Energy Match card, where the member sets everything in one place.
- * Style from Version E (mint gradient, soft shadow, round sparkle badge); buttons from D.
+ * White card with a soft shadow and the round sparkle badge; buttons from D.
  *
  * Top:    "How are you today?" Tired / Stressed / Energetic in one row (nothing selected by
  *         default; tap the selected one again to clear it), Stressed → Burn it off / Calm down,
  *         and a one-line explanation for the choice.
  * Bottom: after a thin divider, one row of 3 compact controls: place ("Near me"), sort
- *         ("Time" / "Nearest") and "Sensory filters". The place list and the filters open
+ *         ("Time" / "Nearest") and "Sensory filters" (exactly Version B's 7 filters). The place list and the filters open
  *         inside the card, one at a time; no pop-ups. Active filters show as mint chips with ×.
  * No Skip: the card is optional by design, and the list below is always all classes.
  */
@@ -60,7 +60,7 @@ export function ClassFilters() {
     <section className="emd" aria-labelledby="emd-name">
       <p className="emd__name" id="emd-name">
         <span className="emd__badge"><Icon name="sparkle" size={14} /></span>
-        Energy Match · optional
+        Energy Match
       </p>
 
       {/* ---------- Energy ---------- */}
@@ -176,7 +176,7 @@ export function ClassFilters() {
                 aria-pressed={on}
                 onClick={() => togglePref(f.id)}
               >
-                {on && <Icon name="check" size={14} />}
+                <Icon name={on ? 'check' : f.icon} size={16} />
                 {f.label}
               </button>
             );

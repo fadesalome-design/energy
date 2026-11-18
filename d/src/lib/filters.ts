@@ -31,7 +31,7 @@ export const MOODS: { id: Mood; label: string; icon: string; explain: string; te
     label: 'Tired',
     icon: 'dim',
     // Copy never shames low energy (F-ENERGY)
-    explain: 'Gentle classes first: nothing harder than moderate effort.',
+    explain: 'Gentle classes. Nothing harder than moderate effort.',
     test: (c) => peak(c) <= 3,
   },
   {
@@ -64,7 +64,7 @@ export const GOALS: { id: StressGoal; label: string; icon: string; explain: stri
     label: 'Calm down',
     icon: 'wind',
     // B has no "Quiet & dim" switch; its equivalent is these two sensory filters
-    explain: 'Calm rooms first: soft music, not crowded, soft light. Quiet & dim is on.',
+    explain: 'Calm rooms first: soft music, not crowded, soft light. Quiet music and soft light filters are on.',
     test: (c) =>
       c.expect.sound.volume <= 2 &&
       c.expect.crowd.busyness === 'calm' &&
@@ -72,15 +72,15 @@ export const GOALS: { id: StressGoal; label: string; icon: string; explain: stri
   },
 ];
 
-/** D: "Calm down" switches on the Quiet & dim filter. */
-const QUIET_DIM: SensoryId[] = ['quietDim'];
+/** D: "Calm down" switches on B's quiet-and-dim pair: quiet music + soft light (as in B). */
+const QUIET_DIM: SensoryId[] = ['quietMusic', 'softLight'];
 
 // ---------------------------------------------------------------------------
 // Sensory filters (remembered)
 // ---------------------------------------------------------------------------
 
-// D: four filters only, shown right under the Energy Match card (no sheet).
-export type SensoryId = 'quietDim' | 'notCrowded' | 'noFlashing' | 'noPartner';
+// D: exactly Version B's 7 filters (same names, order and icons), copied from B.
+export type SensoryId = 'softLight' | 'noFlashing' | 'quietMusic' | 'notCrowded' | 'touchConsent' | 'noPartner' | 'easyExit';
 
 export interface SensoryFilter {
   id: SensoryId;
@@ -92,15 +92,20 @@ export interface SensoryFilter {
 }
 
 export const SENSORY: SensoryFilter[] = [
-  // D data separates soft light from normal light, so Quiet & dim means a quiet room AND soft light
-  { id: 'quietDim', group: 'Sound & light', label: 'Quiet & dim', hint: 'Quiet room and soft light', icon: 'dim',
-    test: (c) => c.expect.sound.volume <= 2 && c.expect.light.level === 'dim' },
-  { id: 'notCrowded', group: 'Space', label: 'Not crowded', hint: 'Usually calm, with space around you', icon: 'people',
-    test: (c) => c.expect.crowd.busyness === 'calm' },
+  { id: 'softLight', group: 'Light', label: 'Soft or low light', hint: 'Dim or daylight, no bright ceiling lights', icon: 'sun',
+    test: (c) => c.expect.light.level === 'dim' || c.expect.light.level === 'natural' },
   { id: 'noFlashing', group: 'Light', label: 'No flashing lights', hint: 'No strobe or flashing effects', icon: 'flash',
     test: (c) => c.expect.light.level !== 'flashing' },
-  { id: 'noPartner', group: 'People', label: 'No partner work', hint: 'Partner work is none or optional', icon: 'partner',
+  { id: 'quietMusic', group: 'Sound', label: 'Quiet or soft music', hint: 'Background level, you can easily talk', icon: 'volume',
+    test: (c) => c.expect.sound.volume <= 2 },
+  { id: 'notCrowded', group: 'Space', label: 'Not crowded', hint: 'Usually calm, with space around you', icon: 'people',
+    test: (c) => c.expect.crowd.busyness === 'calm' },
+  { id: 'touchConsent', group: 'Touch & people', label: 'Touch only if I agree', hint: 'No hands-on corrections, or the trainer asks first', icon: 'hand',
+    test: (c) => !c.expect.trainer.handsOn || c.expect.trainer.asksBeforeTouch === true },
+  { id: 'noPartner', group: 'Touch & people', label: 'No required partner work', hint: 'Partner work is none or optional', icon: 'partner',
     test: (c) => c.expect.partner.work !== 'required' },
+  { id: 'easyExit', group: 'Leaving early', label: 'Easy to step out', hint: 'Fine to leave quietly during class', icon: 'door',
+    test: (c) => c.expect.leaving.quietExitOk },
 ];
 
 // ---------------------------------------------------------------------------

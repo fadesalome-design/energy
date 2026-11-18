@@ -22,8 +22,9 @@ import { VoiceRecorder } from './VoiceRecorder';
  * - Minimal motion; the stamp animation is off under prefers-reduced-motion.
  */
 
-// D: 'expected' ("Did the class match its What to expect card?" Yes / Partly / No) is always
-// asked after question 3; the last step folds the comment behind "+ Add a comment (optional)".
+// D: ONE screen ('final'): "Did the class match its What to expect card?" Yes / Partly / No,
+// "+ Add a comment (optional)" (folded) and Done. The 3 room questions are not asked in D;
+// the question steps below are kept only because this file is shared with the B/E copies.
 type Step = 0 | 1 | 2 | 'expected' | 'final' | 'done';
 
 /** Pause after a tap so the choice is visible before moving on. */
@@ -101,7 +102,7 @@ export function FeedbackModal({ booking, onClose, version = 'b' }: { booking: Bo
   const questions = useMemo(() => (isE ? energyQuestions(c) : pickQuestions(c, booking.id)), [c, booking.id, isE]);
   const [expected, setExpected] = useState<'yes' | 'no' | null>(null);
 
-  const [step, setStep] = useState<Step>(0);
+  const [step, setStep] = useState<Step>('final'); // D: straight to the one screen
   const [answers, setAnswers] = useState<Record<string, Level>>({});
   const [match, setMatch] = useState<MatchAnswer | null>(null);
   const [mode, setMode] = useState<MessageMode>('write');
@@ -119,7 +120,7 @@ export function FeedbackModal({ booking, onClose, version = 'b' }: { booking: Bo
     root?.setAttribute('inert', '');
     const prevOverflow = document.body.style.overflow;
     document.body.style.overflow = 'hidden';
-    logEvent('feedback_shown', { classId: c.id, classType: c.type, data: { version, questions: questions.map((q) => q.id) } });
+    logEvent('feedback_shown', { classId: c.id, classType: c.type, data: { version: 'd', questions: ['match'] } });
     return () => {
       root?.removeAttribute('inert');
       document.body.style.overflow = prevOverflow;
@@ -203,7 +204,9 @@ export function FeedbackModal({ booking, onClose, version = 'b' }: { booking: Bo
 
   const qIndex = typeof step === 'number' ? step : null;
   const total = 5; // D: 3 questions + card match + last step
-  const progress = qIndex !== null ? qIndex + 1 : step === 'expected' ? 4 : step === 'final' ? total : null;
+  // D: one screen, so no progress bar and no Back
+  const progress: number | null = qIndex !== null ? qIndex + 1 : step === 'expected' ? 4 : null;
+  void total;
   const goBack = () => {
     if (advance.current) return;
     if (step === 'final') return setStep('expected');
@@ -248,6 +251,7 @@ export function FeedbackModal({ booking, onClose, version = 'b' }: { booking: Bo
                 <Icon name="arrowLeft" size={20} /> Back
               </button>
             ) : <span />}
+            {!progress && <span />}{/* D: keeps "Not now" on the right without a progress label */}
             {progress && (
               <p className="fb__progress">
                 {progress <= 3 ? `Question ${progress} of 3` : step === 'expected' ? 'One more question' : 'Last step · optional'}
@@ -349,8 +353,28 @@ export function FeedbackModal({ booking, onClose, version = 'b' }: { booking: Bo
         {/* ---------- Final: card match (Version B) + optional message ---------- */}
         {step === 'final' && (
           <div className="fb__screen">
-            <h2 id="fb-title" tabIndex={-1} ref={headingRef} className="fb__title">Thanks, that's all</h2>
-            <p className="muted">Send your answers and collect your stamp.</p>
+            <p className="fb__intro">
+              One question, anonymous. You'll collect a stamp{' '}
+              <span className="muted">({stamps} of {STAMPS_FOR_REWARD})</span>.
+            </p>
+            <h2 id="fb-title" tabIndex={-1} ref={headingRef} className="fb__title">Did the class match its "What to expect" card?</h2>
+            <div className="fb__options fb__options--row" role="group" aria-labelledby="fb-title">
+              {([['yes', 'Yes'], ['partly', 'Partly'], ['no', 'No']] as const).map(([v, label]) => (
+                <button
+                  key={v}
+                  type="button"
+                  aria-pressed={match === v}
+                  className={match === v ? 'opt opt--on' : 'opt'}
+                  onClick={() => {
+                    setMatch(v);
+                    logEvent('feedback_answered', { classId: c.id, classType: c.type, data: { question: 'match', answer: v } });
+                  }}
+                >
+                  <span className="opt__word">{label}</span>
+                  <span className="opt__check" aria-hidden="true"><Icon name="check" size={18} /></span>
+                </button>
+              ))}
+            </div>
 
             {/* D: the comment is folded away and opens only when tapped */}
             {!showMsg && (
@@ -413,9 +437,11 @@ export function FeedbackModal({ booking, onClose, version = 'b' }: { booking: Bo
             </div>}
 
             <div className="fb__actions">
-              <button type="button" className="btn btn--primary btn--block" onClick={send}>
-                Send
+              {/* Done works as soon as the card question is answered; the comment is never required */}
+              <button type="button" className="btn btn--primary btn--block" onClick={send} disabled={!match}>
+                Done
               </button>
+              {!match && <p className="fb__later muted small">Tap Yes, Partly or No.</p>}
             </div>
           </div>
         )}
