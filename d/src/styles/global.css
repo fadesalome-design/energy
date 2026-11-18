@@ -4269,101 +4269,6 @@ code {
   right: auto;
 }
 
-/* ---------- D: presentation mode (?frame=phone) ---------- */
-
-.pframe {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 20px;
-  padding: 32px 16px;
-  background: radial-gradient(circle at 50% 30%, #eef4f1 0%, #e3ece8 60%, #dde6e2 100%);
-  box-sizing: border-box;
-}
-
-.pframe__device {
-  position: relative;
-  width: 390px;
-  height: min(844px, calc(100vh - 120px));
-  max-width: calc(100vw - 32px);
-  padding: 14px;
-  border-radius: 54px;
-  background: #1e2a2d;
-  box-shadow: 0 30px 80px rgba(30, 42, 45, 0.28), inset 0 0 0 2px #2c3a3d;
-  box-sizing: content-box;
-}
-
-.pframe__notch {
-  position: absolute;
-  top: 14px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 120px;
-  height: 28px;
-  border-radius: 0 0 18px 18px;
-  background: #1e2a2d;
-  z-index: 1;
-}
-
-.pframe__screen {
-  display: block;
-  width: 100%;
-  height: 100%;
-  border: 0;
-  border-radius: 40px;
-  background: var(--bg);
-}
-
-.pframe__caption {
-  font-size: 0.9375rem;
-  color: var(--muted);
-}
-
-@media (max-width: 440px) {
-  .pframe {
-    padding: 0;
-  }
-
-  .pframe__device {
-    width: 100vw;
-    max-width: none;
-    height: 100vh;
-    padding: 0;
-    border-radius: 0;
-    box-shadow: none;
-  }
-
-  .pframe__notch,
-  .pframe__caption {
-    display: none;
-  }
-
-  .pframe__screen {
-    border-radius: 0;
-  }
-}
-
-/* Side panel fixes: the action bar stays inside the panel (overrides the centred window bar),
-   and the close button stays visible while the panel scrolls. */
-.actions--panel {
-  left: 0;
-  right: 0;
-  width: auto;
-  transform: none;
-  padding-left: 24px;
-  padding-right: 24px;
-}
-
-.dpanel__close {
-  position: sticky;
-  top: 16px;
-  align-self: flex-end;
-  flex: 0 0 auto;
-  margin: 16px 16px -60px 0;
-}
-
 /* ---------- D: ONE Sensory filters sheet for every width (Version B's sheet) ----------
    Same component and same styles on phone, ?frame=phone and desktop. B's sheet used 88% of the
    height, so on a phone only 4 of the 7 filters showed and nothing said the list scrolls: here it
@@ -4475,4 +4380,172 @@ code {
 
 .emd__activehead .emd__clear {
   margin-right: -4px;
+}
+
+
+/* ---------- D: presentation mode (?frame=phone): 440 × 956 phone, scaled to fit ---------- */
+
+.pframe {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  background: radial-gradient(circle at 50% 30%, #eef4f1 0%, #e3ece8 60%, #dde6e2 100%);
+  overflow: hidden;
+}
+
+.pframe__box {
+  position: relative;
+  flex: 0 0 auto;
+}
+
+/* Generic modern phone: thin dark bezel, rounded corners, no logo */
+.pframe__device {
+  position: absolute;
+  top: 0;
+  left: 0;
+  box-sizing: border-box;
+  padding: 12px;
+  border-radius: 68px;
+  background: #1b2427;
+  box-shadow:
+    0 0 0 2px #2f3b3e,
+    0 40px 90px rgba(30, 42, 45, 0.28),
+    0 12px 28px rgba(30, 42, 45, 0.16);
+  transform-origin: top left;
+}
+
+.pframe__screenwrap {
+  position: relative;
+  width: 440px;
+  height: 956px;
+  border-radius: 56px;
+  overflow: hidden;
+  background: var(--bg);
+}
+
+.pframe__screen {
+  display: block;
+  width: 440px;
+  height: 956px;
+  border: 0;
+}
+
+/* Small pill-shaped camera cut-out at the top of the screen */
+.pframe__island {
+  position: absolute;
+  top: 11px;
+  left: 50%;
+  width: 124px;
+  height: 36px;
+  transform: translateX(-50%);
+  border-radius: 999px;
+  background: #0f1517;
+  pointer-events: none;
+}
+
+.pframe__caption {
+  font-size: 0.8125rem;
+  color: var(--muted);
+}
+
+/* On a real phone: no frame, the app fills the screen */
+@media (max-width: 500px) {
+  .pframe {
+    display: block;
+  }
+
+  .pframe__box,
+  .pframe__device,
+  .pframe__screenwrap,
+  .pframe__screen {
+    position: static;
+    width: 100% !important;
+    height: 100% !important;
+    transform: none !important;
+    padding: 0;
+    border-radius: 0;
+    box-shadow: none;
+  }
+
+  .pframe__island,
+  .pframe__caption {
+    display: none;
+  }
+}
+
+/* ---------- D: active-filters header row (same style as the "ENERGY MATCH" label) ---------- */
+
+.emd__activebox {
+  gap: 8px; /* 8 px from the header row to the chips */
+}
+
+.emd__activehead {
+  align-items: baseline; /* label and Clear all share one baseline */
+  min-height: 0;
+  margin: 0;
+}
+
+.emd__activetitle {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent-ink);
+}
+
+/* Clear all: right edge on the card's inner padding edge; 44 px tap target via padding */
+.emd__activehead .emd__clear {
+  min-height: 0;
+  margin: -14px 0 -14px 0;
+  padding: 14px 0 14px 12px;
+  line-height: 16px;
+}
+
+/* ---------- D: Tired / Stressed / Energetic fit from 360 px up (font size unchanged) ---------- */
+
+.emd .pills {
+  gap: 6px;
+}
+
+.emd .pills .pill {
+  gap: 4px;
+  padding: 0 4px;
+}
+
+.emd .pills .pill .icon {
+  width: 16px;
+  height: 16px;
+  flex: 0 0 auto;
+}
+
+/* Narrow phones (below 380 px): icon above the word, so all three fit with room to spare
+   (the same approach Version B uses on very small screens; font size unchanged) */
+@media (max-width: 379px) {
+  .emd .pills .pill {
+    flex-direction: column;
+    gap: 2px;
+    min-height: 56px;
+    padding: 6px 4px;
+    line-height: 1.2;
+  }
+}
+
+/* Phone frame: the app starts below a 54 px status-bar strip, so the camera pill never covers it */
+.pframe__screenwrap {
+  padding-top: 54px;
+  box-sizing: border-box;
+}
+
+.pframe__screen {
+  height: 902px;
+}
+
+@media (max-width: 500px) {
+  .pframe__screenwrap {
+    padding-top: 0;
+  }
 }

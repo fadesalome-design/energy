@@ -13,6 +13,22 @@ Each line below says what's on the screen and why. "Finding" means what we saw i
 
 ## Change log
 
+- **2026-11-18: Clear all on every view, bigger phone frame, buttons fit from 360 px.**
+  - **Why "Clear all" still showed under the card on mobile / `?frame=phone`:** cached pages. The
+    code had only the card and sheet "Clear all"s, but GitHub Pages lets browsers keep D for 10
+    minutes, and the phone frame loaded the plain `/d/` address, so it could reuse an older cached D
+    inside the frame. The frame's inner address now carries the build number, so it always loads the
+    current D.
+  - **Active filters header row:** "ACTIVE FILTERS" in the same style as "ENERGY MATCH", with "Clear
+    all" right-aligned to the card's inner edge on the same baseline. The tap target is 44 px; there's
+    8 px to the chips. Under the card there is only "Showing X of Y classes".
+  - **`?frame=phone`:** a generic modern phone (thin dark bezel, rounded screen, small camera pill, no
+    logo) with a 440 × 956 screen. The app runs below a 54 px status-bar strip, at 440 × 902, using the
+    same code as mobile. It scales to 92% of the window height, centred; content scrolls inside the
+    phone. The caption shows only when there's room. On a phone-sized window there's no frame.
+  - **Tired / Stressed / Energetic:** a smaller icon and gap inside the card (font unchanged); below
+    380 px the icon sits above the word. At least 7 px between text and button edge from 360 px up.
+
 - **2026-11-18: "Active filters" row in the card.** Under the "Sensory filters" chip: a thin divider,
   then one row with "ACTIVE FILTERS" on the left and "Clear all" flush right, then the mint chips
   with × below. Shown while an energy option or a sensory filter is on (energy only: the row

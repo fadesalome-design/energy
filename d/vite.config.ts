@@ -9,6 +9,8 @@ export default defineConfig({
   root: new URL(".", import.meta.url).pathname,
   base: './',
   plugins: [react()],
+  // Build number for ?frame=phone, so the frame never loads an older cached copy of D
+  define: { __D_BUILD__: JSON.stringify(Date.now().toString(36)) },
   build: {
     outDir: '../public/d',
     emptyOutDir: true,
