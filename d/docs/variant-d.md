@@ -13,6 +13,21 @@ Each line below says what's on the screen and why. "Finding" means what we saw i
 
 ## Change log
 
+- **2026-11-18: back to the original sheet and "Anything else?" screen** (both copied from Version B,
+  `?variant=b`; the default route has neither).
+  - **Sensory filters:** the "Sensory filters" chip in the Energy Match card opens B's original bottom
+    sheet: title, ×, "Only show classes that fit. We'll remember these for next time.", groups
+    LIGHT / SOUND / SPACE / TOUCH & PEOPLE / LEAVING EARLY, 7 filters each with an icon, a short
+    description and a toggle, and "Clear all" / "Show N classes". The inline filter list in the card
+    is gone. The chip keeps its count and one dark-green border; active filters still show as mint
+    chips with ×. (D still re-sorts and never hides classes; "Show N" counts the classes that fit.)
+  - **Rating:** opens straight on B's original "Anything else?" screen: "Both are optional. You can
+    send without them.", "Did the class match its 'What to expect' card?" with Yes / Partly / No in
+    one row, "Tell us more" with Write / Record and the text field, the note on who reads it, and
+    "Send and collect my stamp" → the existing "Stamp collected" screen. Removed: the separate card
+    question with radio circles, "Thanks, that's all" and "+ Add a comment (optional)". It's one
+    screen, so there's no progress bar.
+
 - **2026-11-18: links and a clean tester start.** Mobile: `/energy/d/?frame=phone` (phone view on any
   screen) · Desktop: `/energy/d/` on a screen 1024 px or wider · Tester: `/energy/d/?tester=1`
   (phone frame: `/energy/d/?frame=phone&tester=1`). The tester link now also clears the previous
@@ -104,9 +119,9 @@ Each line below says what's on the screen and why. "Finding" means what we saw i
   goes two ways, so one "Stressed" list didn't fit everyone.
 - **Calm down turns on "Quiet or soft music" and "Soft or low light"** automatically. They show as
   removable chips, and undoing Calm down turns them off. · Finding: people who wanted to calm down also wanted soft sound and light.
-- **Version B's 7 sensory filters inside the card** (same names, order and icons). They expand from
-  "Sensory filters · N"; active ones show as mint chips with ×. · Finding: the filters belong with the
-  rest of the settings.
+- **Sensory filters:** the chip "Sensory filters · N" opens Version B's original bottom sheet (7
+  filters in groups, icon + description + toggle, Clear all, Show N classes). Active filters show as
+  mint chips with × in the card. · Finding: testers knew and liked B's sheet.
 - **Best match first, nothing hidden:** with Energy Match or a filter on, the line "✦ Best match first
   · N of 104" appears, then the fitting classes, then "Other classes". · Finding: hiding classes felt
   like being told what to do; sorting keeps the choice with the member.
@@ -135,13 +150,10 @@ Each line below says what's on the screen and why. "Finding" means what we saw i
 
 ## 4. After-class rating (full screen, next app open)
 
-- **One screen:** the class name and time, "One question, anonymous. You'll collect a stamp", then
-  **"Did the class match its 'What to expect' card?"** Yes / Partly / No. · Finding: this is the one
-  answer that tells us whether the card can be trusted, and members want the rating to take seconds.
-- **"+ Add a comment (optional)":** write or record opens only when the link is tapped. · Finding: an
-  open text box felt like homework.
-- **Done** finishes after one answer, with no error and no reminder about the comment. "Not now" asks
-  again next time. The 3 room questions are no longer asked in D.
+- **One screen, Version B's original "Anything else?"**: "Both are optional. You can send without them.",
+  **"Did the class match its 'What to expect' card?"** Yes / Partly / No (one row), "Tell us more"
+  with Write / Record, the note on who reads it, and **"Send and collect my stamp"**. · Finding: the
+  card question tells us whether the card can be trusted; members know this screen from B.
 - **Stamp collected**; every 10th stamp shows the free-class reward.
 
 ## Not in D

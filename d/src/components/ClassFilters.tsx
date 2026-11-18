@@ -17,11 +17,12 @@ import { Icon } from './Icon';
  *         default; tap the selected one again to clear it), Stressed → Burn it off / Calm down,
  *         and a one-line explanation for the choice.
  * Bottom: after a thin divider, one row of 3 compact controls: place ("Near me"), sort
- *         ("Time" / "Nearest") and "Sensory filters" (exactly Version B's 7 filters). The place list and the filters open
+ *         ("Time" / "Nearest") and "Sensory filters", which opens Version B's ORIGINAL
+ *         bottom sheet (groups, icons, descriptions, toggles, Clear all, Show N classes). The place list and the filters open
  *         inside the card, one at a time; no pop-ups. Active filters show as mint chips with ×.
  * No Skip: the card is optional by design, and the list below is always all classes.
  */
-type Panel = 'place' | 'filters' | null;
+type Panel = 'place' | 'filters' | null; // 'filters' = Version B's original bottom sheet
 
 export function ClassFilters() {
   const { mood, goal, prefs, sort } = useFilters();
@@ -134,8 +135,7 @@ export function ClassFilters() {
         <button
           type="button"
           className={panel === 'filters' ? 'emd-set emd-set--open' : prefs.length ? 'emd-set emd-set--on' : 'emd-set'}
-          aria-expanded={panel === 'filters'}
-          aria-controls="emd-filters"
+          aria-haspopup="dialog"
           onClick={() => openPanel('filters')}
         >
           <Icon name="sliders" size={16} />
@@ -164,24 +164,18 @@ export function ClassFilters() {
         </div>
       )}
 
+      {/* D: the ORIGINAL Version B sheet (same component as B), opened from the chip */}
       {panel === 'filters' && (
-        <div className="emd__panel emd__panel--chips" id="emd-filters" role="group" aria-label="Sensory filters">
-          {SENSORY.map((f) => {
-            const on = prefs.includes(f.id);
-            return (
-              <button
-                key={f.id}
-                type="button"
-                className={on ? 'dchip dchip--on' : 'dchip'}
-                aria-pressed={on}
-                onClick={() => togglePref(f.id)}
-              >
-                <Icon name={on ? 'check' : f.icon} size={16} />
-                {f.label}
-              </button>
-            );
-          })}
-        </div>
+        <SensorySheet
+          prefs={prefs}
+          mood={mood}
+          onToggle={togglePref}
+          onClear={() => {
+            setPrefs([]);
+            logEvent('preference_set', { data: { preference: 'all', on: false } });
+          }}
+          onClose={() => setPanel(null)}
+        />
       )}
 
       {prefs.length > 0 && (

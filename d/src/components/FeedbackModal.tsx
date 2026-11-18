@@ -22,9 +22,10 @@ import { VoiceRecorder } from './VoiceRecorder';
  * - Minimal motion; the stamp animation is off under prefers-reduced-motion.
  */
 
-// D: ONE screen ('final'): "Did the class match its What to expect card?" Yes / Partly / No,
-// "+ Add a comment (optional)" (folded) and Done. The 3 room questions are not asked in D;
-// the question steps below are kept only because this file is shared with the B/E copies.
+// D: the rating opens straight on Version B's ORIGINAL "Anything else?" screen ('final'):
+// the card question (Yes / Partly / No), "Tell us more" (Write / Record) and
+// "Send and collect my stamp". The 3 room questions are not asked in D, so it is one screen
+// and there is no progress bar. The question steps below stay only for the copied B/E code.
 type Step = 0 | 1 | 2 | 'expected' | 'final' | 'done';
 
 /** Pause after a tap so the choice is visible before moving on. */
@@ -106,7 +107,6 @@ export function FeedbackModal({ booking, onClose, version = 'b' }: { booking: Bo
   const [answers, setAnswers] = useState<Record<string, Level>>({});
   const [match, setMatch] = useState<MatchAnswer | null>(null);
   const [mode, setMode] = useState<MessageMode>('write');
-  const [showMsg, setShowMsg] = useState(false); // D: comment folded until tapped
   const [text, setText] = useState('');
   const [voiceSec, setVoiceSec] = useState<number | null>(null);
   const [stamps, setStamps] = useState(getStamps);
@@ -159,8 +159,7 @@ export function FeedbackModal({ booking, onClose, version = 'b' }: { booking: Bo
   const send = () => {
     if (isE) return sendEnergy();
     const message =
-      !showMsg ? { kind: 'none' as const }
-      : mode === 'record' && voiceSec ? { kind: 'voice' as const, seconds: voiceSec }
+      mode === 'record' && voiceSec ? { kind: 'voice' as const, seconds: voiceSec }
       : mode === 'write' && text.trim() ? { kind: 'text' as const, text: text.trim() }
       : { kind: 'none' as const };
     const total = submitFeedback({
@@ -350,46 +349,26 @@ export function FeedbackModal({ booking, onClose, version = 'b' }: { booking: Bo
           </div>
         )}
 
-        {/* ---------- Final: card match (Version B) + optional message ---------- */}
+        {/* ---------- D: the ORIGINAL Version B "Anything else?" screen (copied from B) ---------- */}
         {step === 'final' && (
           <div className="fb__screen">
-            <p className="fb__intro">
-              One question, anonymous. You'll collect a stamp{' '}
-              <span className="muted">({stamps} of {STAMPS_FOR_REWARD})</span>.
-            </p>
-            <h2 id="fb-title" tabIndex={-1} ref={headingRef} className="fb__title">Did the class match its "What to expect" card?</h2>
-            <div className="fb__options fb__options--row" role="group" aria-labelledby="fb-title">
-              {([['yes', 'Yes'], ['partly', 'Partly'], ['no', 'No']] as const).map(([v, label]) => (
-                <button
-                  key={v}
-                  type="button"
-                  aria-pressed={match === v}
-                  className={match === v ? 'opt opt--on' : 'opt'}
-                  onClick={() => {
-                    setMatch(v);
-                    logEvent('feedback_answered', { classId: c.id, classType: c.type, data: { question: 'match', answer: v } });
-                  }}
-                >
-                  <span className="opt__word">{label}</span>
-                  <span className="opt__check" aria-hidden="true"><Icon name="check" size={18} /></span>
-                </button>
-              ))}
-            </div>
+            <h2 id="fb-title" tabIndex={-1} ref={headingRef} className="fb__title">Anything else?</h2>
+            <p className="muted">Both are optional. You can send without them.</p>
 
-            {/* D: the comment is folded away and opens only when tapped */}
-            {!showMsg && (
-              <button
-                type="button"
-                className="linkbtn fb__addmsg"
-                aria-expanded={false}
-                onClick={() => { setShowMsg(true); logEvent('feedback_answered', { classId: c.id, data: { question: 'comment_opened' } }); }}
-              >
-                + Add a comment (optional)
-              </button>
-            )}
+            <fieldset className="fb__match">
+              <legend>Did the class match its "What to expect" card?</legend>
+              <div className="seg" role="radiogroup">
+                {([['yes', 'Yes'], ['partly', 'Partly'], ['no', 'No']] as const).map(([v, label]) => (
+                  <label key={v} className={match === v ? 'seg__opt seg__opt--on' : 'seg__opt'}>
+                    <input type="radio" name="match" value={v} checked={match === v} onChange={() => setMatch(v)} />
+                    {label}
+                  </label>
+                ))}
+              </div>
+            </fieldset>
 
-            {showMsg && <div className="fb__msg">
-              <p className="fb__msg-label" id="msg-label">Tell us more <span className="muted">(optional)</span></p>
+            <div className="fb__msg">
+              <p className="fb__msg-label" id="msg-label">Tell us more</p>
               <div className="tabs" role="tablist" aria-labelledby="msg-label">
                 <button
                   type="button" role="tab" aria-selected={mode === 'write'}
@@ -429,19 +408,15 @@ export function FeedbackModal({ booking, onClose, version = 'b' }: { booking: Bo
               <p className="fb__privacy small">
                 <Icon name="info" size={16} />
                 <span>
-                  {isE
-                    ? "Only the Urban Sports Clue team reads or hears this. It's never shown on the card. Tell us about the class, not about other people."
-                    : "Only the Urban Sports Clue team reads or hears this. It's never shown on the card. Tell us about the room. No need to share anything about your health."}
+                  Only the Urban Sports Clue team reads or hears this. It's never shown on the card. Tell us about the room. No need to share anything about your health.
                 </span>
               </p>
-            </div>}
+            </div>
 
             <div className="fb__actions">
-              {/* Done works as soon as the card question is answered; the comment is never required */}
-              <button type="button" className="btn btn--primary btn--block" onClick={send} disabled={!match}>
-                Done
+              <button type="button" className="btn btn--primary btn--block" onClick={send}>
+                Send and collect my stamp
               </button>
-              {!match && <p className="fb__later muted small">Tap Yes, Partly or No.</p>}
             </div>
           </div>
         )}
