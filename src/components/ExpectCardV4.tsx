@@ -3,6 +3,7 @@ import type { ClassInfo, Studio } from '../data/classes';
 import { MIN_RATINGS, memberView, profile } from '../lib/energy';
 import { partnerLabel, roomSizeLabel } from '../lib/labels';
 import { Icon } from './Icon';
+import { BringList } from './BringList';
 
 /**
  * "What to expect" card, Energy Match version (PRD v4 D–F).
@@ -124,7 +125,8 @@ export function ExpectCardV4({ c, studio }: { c: ClassInfo; studio: Studio }) {
 
         <Section icon="shower" title="Facilities & what to bring">
           <p className="xrow__value">Showers: <strong>{p.showers ? 'yes' : 'no'}</strong> · Lockers: <strong>{p.lockers ? 'yes' : 'no'}</strong></p>
-          <p className="xrow__value">Bring: {p.bring.join(' · ')}</p>
+          <p className="xrow__value">What to bring:</p>
+          <BringList items={p.bring} />
           <Source />
         </Section>
       </ul>

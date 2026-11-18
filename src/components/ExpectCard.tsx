@@ -16,6 +16,8 @@ import {
 } from '../lib/labels';
 import { logEvent } from '../lib/events';
 import { Icon } from './Icon';
+import { BringList } from './BringList';
+import { useVariant } from '../lib/variant';
 import { DotScale, Spectrum } from './Scale';
 import { FlowTimeline } from './FlowTimeline';
 
@@ -114,6 +116,7 @@ const lightIcon = { dim: 'dim', natural: 'sun', bright: 'sun', flashing: 'flash'
 // ---------------------------------------------------------------------------
 
 export function ExpectCard({ c, studio }: { c: ClassInfo; studio: Studio }) {
+  const variant = useVariant();
   const x = c.expect;
   const f = studio.facilities;
   const peak = Math.max(...x.flow.map((s) => s.intensity)) as 1 | 2 | 3 | 4 | 5;
@@ -315,11 +318,16 @@ export function ExpectCard({ c, studio }: { c: ClassInfo; studio: Studio }) {
           classId={c.id}
           value={`${x.bring.length} things · arrive ${x.arrival.split(',')[0]}`}
         >
-          <ul className="facts">
-            {x.bring.map((b) => (
-              <Fact key={b} icon="check">{b}</Fact>
-            ))}
-          </ul>
+          {/* B: information only (icon + text). Version A keeps its original ticks. */}
+          {variant === 'b' ? (
+            <BringList items={x.bring} />
+          ) : (
+            <ul className="facts">
+              {x.bring.map((b) => (
+                <Fact key={b} icon="check">{b}</Fact>
+              ))}
+            </ul>
+          )}
           <p className="arrival">
             <Icon name="clock" size={18} /> <span><strong>Best arrival:</strong> {x.arrival}</span>
           </p>

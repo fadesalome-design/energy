@@ -567,6 +567,29 @@ code {
   color: var(--accent-ink);
 }
 
+/* "What to bring" in B and E: information only, not a checklist */
+.bringlist {
+  list-style: none;
+  margin: 0 0 12px;
+  padding: 0;
+  display: grid;
+  gap: 8px;
+}
+
+.bringlist li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.bringlist__icon {
+  flex: 0 0 auto;
+  width: 1.25em;
+  text-align: center;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
 .arrival {
   display: flex;
   gap: 8px;

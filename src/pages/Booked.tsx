@@ -3,10 +3,12 @@ import { Link, useParams } from 'react-router-dom';
 import { endTime, getClass, getStudio } from '../data/classes';
 import { Icon } from '../components/Icon';
 import { SimulateVisit, useOpenBooking } from '../components/SimulateVisit';
+import { BringList } from '../components/BringList';
 import { useVariant } from '../lib/variant';
 
 /**
- * Simple confirmation with a tickable "What to bring" checklist.
+ * Simple confirmation with "What to bring": information only in B and E (icon + text),
+ * a tickable checklist in Version A (unchanged).
  * Research: F-BRING (towel, shoes, swimwear; best time to arrive)
  */
 export function Booked() {
@@ -48,6 +50,7 @@ export function Booked() {
 
       <section className="card" aria-labelledby="bring-title">
         <h2 id="bring-title">What to bring</h2>
+        {variant === 'b' || variant === 'e' ? <BringList items={c.expect.bring} /> : (
         <ul className="checklist">
           {c.expect.bring.map((item) => (
             <li key={item}>
@@ -63,6 +66,7 @@ export function Booked() {
             </li>
           ))}
         </ul>
+        )}
         <p className="arrival">
           <Icon name="clock" size={18} />
           <span><strong>Best arrival:</strong> {c.expect.arrival}</span>
