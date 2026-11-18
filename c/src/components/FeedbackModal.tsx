@@ -8,6 +8,8 @@ import {
 import { addRatingV4, CATEGORY_LABEL, pickQuestionsV4, QUESTIONS } from '../lib/energy';
 import { logEvent } from '../lib/events';
 import { Icon } from './Icon';
+import { Aura, type AuraLevel } from './Aura';
+import { auraMembers, auraSentence } from '../lib/auraSummary';
 import { counterLabel, level, progressLine, rewardReachedAt } from '../lib/rewards';
 import { VoiceRecorder } from './VoiceRecorder';
 
@@ -26,7 +28,8 @@ import { VoiceRecorder } from './VoiceRecorder';
 // D: 3 questions from Version E's 6 categories (PRD v4: fewest ratings first, never the same
 // set twice in a row; descriptive answers), then Version B's "Anything else?" screen ('final'),
 // then "Stamp collected". Progress: Question 1–3 of 3, then the last step (4 steps).
-type Step = 0 | 1 | 2 | 'expected' | 'final' | 'done';
+// C: 'ai' = the AI moment after question 3 (aura + the room's summary)
+type Step = 0 | 1 | 2 | 'expected' | 'ai' | 'final' | 'done';
 
 /** Pause after a tap so the choice is visible before moving on. */
 const ADVANCE_MS = 350;
@@ -88,7 +91,7 @@ function energyQuestions(c: Parameters<typeof pickQuestionsV4>[0]): Question[] {
 
 export function FeedbackModal({ booking, onClose, onSeeRewards, version = 'b' }: { booking: Booking; onClose: () => void; onSeeRewards?: () => void; version?: 'b' | 'e' }) {
   const c = getClass(booking.classId)!;
-  const studio = getStudio(c.studioId);
+  void getStudio; // C: the soft header shows the class name and time only
   const isE = version === 'e';
   // D: always Version E's categories (pickQuestionsV4), picked once per opening
   const questions = useMemo(() => energyQuestions(c), [c]);
@@ -212,10 +215,16 @@ export function FeedbackModal({ booking, onClose, onSeeRewards, version = 'b' }:
   // D: Question 1–3 of 3, then "Anything else?" as the 4th and last step
   const progress: number | null = qIndex !== null ? qIndex + 1 : step === 'final' ? 4 : null;
   void total;
+  // C: aura state. answeredCount = how many of the 3 questions have an answer (0–3)
+  const answeredCount = questions.filter((q) => answers[q.id]).length;
+  const auraLevel: AuraLevel = step === 'ai' || step === 'final' ? 3 : (Math.min(answeredCount, 3) as AuraLevel);
+  const auraLabel: 'shown' | 'gone' = step === 'ai' || (step === 0 && answeredCount === 0) ? 'shown' : 'gone';
+  const answerIdx = Object.fromEntries(Object.entries(answers).map(([k, l]) => [k, LEVELS.indexOf(l) as 0 | 1 | 2]));
+
   const goBack = () => {
     if (advance.current) return;
-    if (step === 'final') return setStep(2);
-    if (step === 'expected') return setStep(2);
+    if (step === 'final') return setStep('ai');
+    if (step === 'ai' || step === 'expected') return setStep(2);
     setStep(Math.max(0, (step as number) - 1) as Step);
   };
 
@@ -241,48 +250,44 @@ export function FeedbackModal({ booking, onClose, onSeeRewards, version = 'b' }:
     if (answers[qid] !== level) answer(qid, level);
     advance.current = window.setTimeout(() => {
       advance.current = null;
-      setStep(i < 2 ? ((i + 1) as Step) : 'final');
+      setStep(i < 2 ? ((i + 1) as Step) : 'ai');
     }, ADVANCE_MS);
   };
 
   const body = (
-    <div className="fb" role="dialog" aria-modal="true" aria-labelledby="fb-title">
+    <div className="fb fb--aura" role="dialog" aria-modal="true" aria-labelledby="fb-title">
       <div className="fb__inner">
-        {/* Top bar: Back (from question 2 on), progress in words, Not now */}
+        {/* C: Back + Not now (small), then the class (left) and the stamp pill (right) */}
         {step !== 'done' && (
-          <div className="fb__top">
-            {progress && progress > 1 ? (
+          <div className="fb__top fb__top--aura">
+            {progress && progress > 1 || step === 'ai' ? (
               <button type="button" className="fb__back" onClick={goBack}>
                 <Icon name="arrowLeft" size={20} /> Back
               </button>
             ) : <span />}
-            {!progress && <span />}{/* D: keeps "Not now" on the right without a progress label */}
-            {progress && (
-              <p className="fb__progress">
-                {progress <= 3 ? `Question ${progress} of 3` : 'Last step'}
-              </p>
-            )}
             <button type="button" className="fb__notnow" onClick={notNow}>Not now</button>
           </div>
         )}
-
-        {progress && (
-          <div className="fb__steps" aria-hidden="true" style={{ gridTemplateColumns: `repeat(${total}, 1fr)` }}>
-            {Array.from({ length: total }, (_, k) => k + 1).map((i) => (
-              <span key={i} className={i <= progress ? 'fb__step fb__step--on' : 'fb__step'} />
-            ))}
+        {step !== 'done' && (
+          <div className="aura-head">
+            <p className="aura-head__class">
+              <span className="aura-head__name">{c.name}</span>
+              <span className="aura-head__time">{dayLabel(booking.endsAt)} {c.start}–{endTime(c)}</span>
+            </p>
+            <span className="aura-stamps" aria-label={`${stamps} stamps`}>
+              <Icon name="stamp" size={16} />{counterLabel(stamps)}
+            </span>
           </div>
         )}
 
-        {/* Which class this is about: visible on every question, not just the first */}
-        {step !== 'done' && (
-          <div className="fb__classhead">
-            <span className="fb__classicon"><Icon name={c.type} size={24} /></span>
-            <div>
-              <p className="fb__classname">{c.name}</p>
-              <p className="fb__classmeta">
-                {dayLabel(booking.endsAt)} {c.start}–{endTime(c)} · {studio.name}
-              </p>
+        {/* C: ONE aura for the whole rating flow, so its colours fade from step to step.
+            Level = answers given (0–3); full on the AI moment. The label shows at the start and
+            on the AI moment, and dissolves after the first answer and on the way to the stamp. */}
+        {step !== 'done' && step !== 'expected' && (
+          <div className={step === 'final' ? 'aura-wrap aura-wrap--small' : 'aura-wrap'}>
+            <Aura level={auraLevel} label={auraLabel} size={step === 'final' ? 'md' : 'lg'} />
+            <div className="aura-lines" aria-hidden="true">
+              {[0, 1, 2].map((i) => <span key={i} className={i < answeredCount || step === 'ai' || step === 'final' ? `aura-lines__l aura-lines__l--${i + 1} aura-lines__l--on` : 'aura-lines__l'} />)}
             </div>
           </div>
         )}
@@ -292,18 +297,10 @@ export function FeedbackModal({ booking, onClose, onSeeRewards, version = 'b' }:
           const q = questions[qIndex];
           const chosen = answers[q.id];
           return (
-            <div className="fb__screen" key={q.id}>
-              {/* One-line intro, first question only: context without a "Start" commitment */}
-              {qIndex === 0 && (
-                <p className="fb__intro">
-                  3 quick questions about the room, not about you. Anonymous, and you'll collect
-                  a stamp <span className="muted">({counterLabel(stamps).replace('/', ' of ')})</span>.
-                </p>
-              )}
-
-              <span className="fb__qicon"><Icon name={q.icon} size={28} /></span>
-              <h2 id="fb-title" tabIndex={-1} ref={headingRef} className="fb__title">{q.prompt}</h2>
-              <p className="muted small">Helps the "{q.cardRow}" part of the card.</p>
+            <div className="fb__screen aura-screen" key={q.id}>
+              <p className="aura-count">{qIndex + 1} of 3 · reading the room</p>
+              <h2 id="fb-title" tabIndex={-1} ref={headingRef} className="fb__title aura-q">{q.prompt}</h2>
+              <p className="aura-hint">Helps the "{q.cardRow}" part of the card.</p>
 
               {/* Buttons, not radios: arrow keys on a radio group would select AND jump ahead. */}
               <div className="fb__options" role="group" aria-labelledby="fb-title">
@@ -312,7 +309,7 @@ export function FeedbackModal({ booking, onClose, onSeeRewards, version = 'b' }:
                     key={lvl}
                     type="button"
                     aria-pressed={chosen === lvl}
-                    className={chosen === lvl ? 'opt opt--d opt--on' : 'opt opt--d'}
+                    className={chosen === lvl ? 'apill apill--on' : 'apill'}
                     onClick={() => choose(q.id, lvl, qIndex)}
                   >
                     {/* D: same button style as the rest of D; a tick (not a radio circle) when chosen */}
@@ -322,11 +319,11 @@ export function FeedbackModal({ booking, onClose, onSeeRewards, version = 'b' }:
                 ))}
               </div>
 
-              <p className="fb__later muted small">
+              <p className="aura-hint">
                 {chosen
                   ? 'Tap an answer to continue.'
                   : qIndex === 0
-                    ? "Not now? We'll ask again next time you open the app."
+                    ? <>3 quick questions about the room, not about you. Anonymous, and you'll collect a stamp ({counterLabel(stamps).replace('/', ' of ')}). Not now? We'll ask again next time.</>
                     : 'Tap the one that fits best.'}
               </p>
             </div>
@@ -355,9 +352,29 @@ export function FeedbackModal({ booking, onClose, onSeeRewards, version = 'b' }:
           </div>
         )}
 
+        {/* ---------- C: AI moment (after question 3) ----------
+            PLACEHOLDER – replaced by the real AI summary (CALM-8) in Lovable. In C the sentence is
+            built by simple rules from the 3 answers and the class's demo data (lib/auraSummary.ts). */}
+        {step === 'ai' && (
+          <div className="fb__screen aura-screen">
+            <div className="aicard">
+              <h2 id="fb-title" tabIndex={-1} ref={headingRef} className="aicard__title">
+                The room's aura · from {auraMembers(c)} members
+              </h2>
+              <p className="aicard__text">{auraSentence(c, answerIdx)}</p>
+              <p className="aicard__note">Your energy was added to the What to expect card.</p>
+            </div>
+            <div className="fb__actions">
+              <button type="button" className="btn btn--primary btn--block" onClick={() => setStep('final')}>
+                Continue
+              </button>
+            </div>
+          </div>
+        )}
+
         {/* ---------- D: the ORIGINAL Version B "Anything else?" screen (copied from B) ---------- */}
         {step === 'final' && (
-          <div className="fb__screen">
+          <div className="fb__screen aura-screen">
             <h2 id="fb-title" tabIndex={-1} ref={headingRef} className="fb__title">Anything else?</h2>
             <p className="muted">Both are optional. You can send without them.</p>
 
@@ -483,6 +500,7 @@ export function StampDone({
 
         {/* The full stamp card turns into a ticket (pure CSS sequence, runs once) */}
         <div className="reward">
+          <div className="aura-behind"><Aura level={0} size="md" label="none" /></div>
           <div className="reward__card" aria-hidden="true">{card}</div>
           <div className="ticket">
             <span className="ticket__shine" aria-hidden="true" />
@@ -507,7 +525,10 @@ export function StampDone({
 
   return (
     <div className="fb__screen fb__screen--done">
-      <span className="fb__stamp-new" aria-hidden="true"><Icon name="stamp" size={56} /></span>
+      <div className="aura-medal">
+        <Aura level={0} size="sm" label="none" />
+        <span className="fb__stamp-new" aria-hidden="true"><Icon name="stamp" size={56} /></span>
+      </div>
       <h2 id="fb-title" tabIndex={-1} ref={headingRef} className="fb__title">Stamp collected</h2>
       <p className="fb__lead">Thanks! Your answers will help update the card for {className}.</p>
       {card}

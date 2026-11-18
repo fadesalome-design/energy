@@ -22,3 +22,24 @@ Copy of D made on 18 Nov for experiments; D stays the stable presentation versio
   both themes; none is under 4.5:1 (lowest: violet 5.1:1, green 4.8:1). The reward ticket uses
   `--primary-dark` in violet because white on pink would be about 3.6:1. The "C · test" tag text was
   darkened to `--muted` for contrast. C has no rating bubble with a "new" dot, so none was added.
+- **18 Nov: soft aura rating flow** (replaces all earlier cloud / orb / bulb / aura / ring ideas).
+  The rating flow has a warm #FFF9F6 background. Top: the class name and time, and a white stamp
+  pill. A soft blurred aura (two blurred layers, no edge, colours via `@property`, fading over 1.8 s)
+  breathes, slowly turns, sends out soft halos, and gets stronger and changes colour with each
+  answer: peach → pink → lavender → warm mix (never stronger, no flashing). Under it, 3 thin
+  progress lines. "✦ Energy Match AI" dissolves after the first answer, is back on the AI moment,
+  and dissolves again before the stamp. Questions, answers, logic and saved data are unchanged.
+  - **AI moment** (after question 3): "The room's aura · from N members" (demo member answers +
+    ratings given in C + 1), one sentence from the answers and the class's room data, and "Your
+    energy was added to the What to expect card." **Placeholder – replaced by the real AI summary
+    (CALM-8) in Lovable.** In C it is built by simple rules in `c/src/lib/auraSummary.ts` (no AI
+    call).
+  - **Then** "Anything else?" and "Stamp collected" in the same soft style, with the calm peach aura
+    behind the medal.
+  - **Motion:** only transform, opacity and the colour variables animate (blur is static). The
+    "morph" is a slow turn plus a slight stretch of fixed organic shapes, and the label's dissolve
+    is a pre-blurred copy fading through. Under reduced motion nothing moves and every change is
+    instant. Without `@property` the colours change instantly.
+  - **Contrast (all ≥ 4.5:1):** the selected answer and buttons use #C2416D (white text 4.9:1;
+    #D4537E would be 3.9:1). The label uses #4A1B0C on the strongest (warm-mix) aura (#72243E
+    would be 4.2:1 there; it is 5.9:1 now).

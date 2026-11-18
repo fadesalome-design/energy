@@ -5171,3 +5171,466 @@ code {
 .pbar__fill { background: var(--accent); }
 .pbar__now { border-color: var(--accent); }
 .pbar__mark--on .pbar__dot { background: var(--accent); border-color: var(--accent); }
+
+/* ======================================================================
+   C: SOFT AURA RATING FLOW (rating flow only; the rest of the app is unchanged)
+   Colours of this flow are fixed by the design (warm, independent of the app theme).
+   ====================================================================== */
+
+/* The three aura colours are registered so they can fade (fallback: instant change) */
+@property --aura-c1 { syntax: '<color>'; inherits: true; initial-value: #fad0b0; }
+@property --aura-c2 { syntax: '<color>'; inherits: true; initial-value: #fcdccb; }
+@property --aura-c3 { syntax: '<color>'; inherits: true; initial-value: #f7bb7e; }
+
+.fb--aura {
+  --rf-bg: #fff9f6;
+  --rf-ink: #4a1b0c;      /* question and class name: 13.9:1 on the background */
+  --rf-text: #72243e;     /* pills, label, stamp pill: 9.9:1 */
+  --rf-sub: #993556;      /* "1 of 3 · reading the room": 6.7:1 */
+  --rf-border: #f4c0d1;
+  --rf-fill: #c2416d;     /* selected answer + buttons: white text 4.9:1 (#D4537E would be 3.9:1) */
+  --rf-fill-dark: #a8355c;
+  background: var(--rf-bg);
+}
+
+/* ---------- top: Back / Not now, then class + stamp pill ---------- */
+.fb--aura .fb__top--aura {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.fb--aura .fb__back,
+.fb--aura .fb__notnow {
+  color: var(--rf-sub);
+}
+
+.aura-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin: 4px 0 0;
+}
+
+.aura-head__class {
+  display: grid;
+  gap: 2px;
+  margin: 0;
+  color: var(--rf-ink);
+  min-width: 0;
+}
+
+.aura-head__name {
+  font-weight: 700;
+  font-size: 1rem;
+}
+
+.aura-head__time {
+  font-size: 0.875rem;
+}
+
+.aura-stamps {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  flex: 0 0 auto;
+  padding: 4px 12px;
+  border-radius: 999px;
+  background: #ffffff;
+  border: 1px solid var(--rf-border);
+  color: var(--rf-text);
+  font-weight: 650;
+  font-size: 0.875rem;
+}
+
+/* ---------- the aura ---------- */
+.aura-wrap {
+  display: grid;
+  justify-items: center;
+  gap: 10px;
+  margin: 8px 0 4px;
+}
+
+.aura {
+  --size: min(250px, 66vw);
+  position: relative;
+  width: var(--size);
+  height: var(--size);
+  display: grid;
+  place-items: center;
+  transition: --aura-c1 1.8s ease, --aura-c2 1.8s ease, --aura-c3 1.8s ease;
+}
+
+.aura--md { --size: min(170px, 46vw); }
+.aura--sm { --size: 150px; }
+
+@media (min-width: 1024px) {
+  .aura--lg { --size: 280px; }
+}
+
+/* Level 0–3: colours, pulse, halos, layer strength (never stronger than level 3) */
+.aura--l0 { --aura-c1: #fad0b0; --aura-c2: #fcdccb; --aura-c3: #f7bb7e; --pulse: 1.03;  --pulse-dur: 6.5s; --halo-reach: 1.25; --halo-op: 0.22; --base-op: 0.70; --glow-op: 0.35; }
+.aura--l1 { --aura-c1: #f4a8c0; --aura-c2: #f9ccda; --aura-c3: #ed7fa6; --pulse: 1.055; --pulse-dur: 6s;   --halo-reach: 1.45; --halo-op: 0.34; --base-op: 0.85; --glow-op: 0.60; }
+.aura--l2 { --aura-c1: #bfb5f1; --aura-c2: #ddd6f8; --aura-c3: #9f94e6; --pulse: 1.08;  --pulse-dur: 5.5s; --halo-reach: 1.65; --halo-op: 0.44; --base-op: 0.95; --glow-op: 0.78; }
+.aura--l3 { --aura-c1: #f29a78; --aura-c2: #e2b4e6; --aura-c3: #e0699a; --pulse: 1.10;  --pulse-dur: 5s;   --halo-reach: 1.85; --halo-op: 0.52; --base-op: 1;    --glow-op: 0.92; }
+
+/* the whole aura breathes */
+.aura__breath {
+  position: absolute;
+  inset: 0;
+  animation: aura-breathe var(--pulse-dur) ease-in-out infinite;
+}
+
+@keyframes aura-breathe {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(var(--pulse)); }
+}
+
+/* two blurred layers, organic shapes, no edge; they turn and stretch slowly ("morph") */
+.aura__base,
+.aura__glow,
+.aura__halo {
+  position: absolute;
+  inset: 8%;
+  filter: blur(20px);
+  transition: opacity 1.8s ease;
+}
+
+.aura__base {
+  border-radius: 47% 53% 52% 48% / 50% 46% 54% 50%;
+  background: radial-gradient(circle at 50% 50%, #fff8f2 0%, var(--aura-c1) 32%, var(--aura-c2) 56%, transparent 72%);
+  opacity: var(--base-op);
+  animation: aura-morph 12s ease-in-out infinite alternate;
+}
+
+.aura__glow {
+  inset: 14%;
+  border-radius: 54% 46% 45% 55% / 47% 55% 45% 53%;
+  background: radial-gradient(circle at 42% 40%, var(--aura-c3) 0%, var(--aura-c2) 42%, transparent 70%);
+  opacity: var(--glow-op);
+  animation: aura-morph 16s ease-in-out infinite alternate-reverse;
+}
+
+@keyframes aura-morph {
+  0% { transform: rotate(-5deg) scale(1.04, 0.97); }
+  50% { transform: rotate(2deg) scale(0.98, 1.03); }
+  100% { transform: rotate(5deg) scale(1.03, 0.98); }
+}
+
+/* soft halos that radiate out and fade (blurred, no sharp line) */
+.aura__halo {
+  inset: 18%;
+  border-radius: 50%;
+  filter: blur(14px);
+  background: radial-gradient(circle, transparent 38%, var(--aura-c2) 56%, var(--aura-c3) 64%, transparent 76%);
+  opacity: 0;
+  animation: aura-halo calc(var(--pulse-dur) * 1.6) ease-out infinite;
+}
+
+.aura__halo--2 { animation-delay: calc(var(--pulse-dur) * -0.53); }
+.aura__halo--3 { animation-delay: calc(var(--pulse-dur) * -1.06); }
+
+/* how many halos per level: 1 / 1 / 2 / 3 */
+.aura--l0 .aura__halo--2, .aura--l0 .aura__halo--3,
+.aura--l1 .aura__halo--2, .aura--l1 .aura__halo--3,
+.aura--l2 .aura__halo--3 {
+  display: none;
+}
+
+@keyframes aura-halo {
+  0% { transform: scale(0.85); opacity: var(--halo-op); }
+  100% { transform: scale(var(--halo-reach)); opacity: 0; }
+}
+
+/* ---------- the label: "✦ Energy Match AI", dissolves into the aura ---------- */
+.aura-label {
+  position: relative;
+  display: grid;
+  place-items: center;
+  pointer-events: none;
+}
+
+.aura-label__sharp,
+.aura-label__ghost {
+  grid-area: 1 / 1;
+  font-size: 1.125rem;
+  font-weight: 500;
+  color: var(--rf-text);
+  white-space: nowrap;
+}
+
+.aura-label__sharp {
+  transition: opacity 0.9s ease, transform 1.6s ease;
+}
+
+/* the ghost is a pre-blurred, wider copy (static blur): it only fades, so only opacity moves */
+.aura-label__ghost {
+  filter: blur(10px);
+  letter-spacing: 0.3em;
+  opacity: 0;
+}
+
+.aura-label--gone .aura-label__sharp {
+  opacity: 0;
+  transform: scale(1.12);
+}
+
+.aura-label--gone .aura-label__ghost {
+  animation: aura-dissolve 1.6s ease-out;
+}
+
+@keyframes aura-dissolve {
+  0% { opacity: 0; transform: scale(1); }
+  35% { opacity: 0.55; }
+  100% { opacity: 0; transform: scale(1.18); }
+}
+
+/* ---------- progress lines under the aura ---------- */
+.aura-lines {
+  display: grid;
+  grid-template-columns: repeat(3, 44px);
+  gap: 8px;
+}
+
+.aura-lines__l {
+  height: 3px;
+  border-radius: 999px;
+  background: var(--rf-border);
+  transition: background-color 0.8s ease;
+}
+
+.aura-lines__l--1.aura-lines__l--on { background: #ed93b1; }
+.aura-lines__l--2.aura-lines__l--on { background: #afa9ec; }
+.aura-lines__l--3.aura-lines__l--on { background: #d4537e; }
+
+.aura-wrap--small {
+  margin-top: 0;
+}
+
+/* ---------- questions ---------- */
+.aura-screen {
+  animation: aura-fadein 0.7s ease both;
+}
+
+@keyframes aura-fadein {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: none; }
+}
+
+.aura-count {
+  margin: 4px 0 0;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--rf-sub);
+  text-align: center;
+}
+
+.fb--aura .aura-q,
+.fb--aura .fb__title {
+  color: var(--rf-ink);
+  text-align: center;
+}
+
+.aura-q {
+  font-size: 1.5rem;
+  line-height: 1.25;
+}
+
+.aura-hint {
+  margin: 0;
+  font-size: 0.875rem;
+  color: var(--rf-text);
+  text-align: center;
+}
+
+.fb--aura .fb__options {
+  display: grid;
+  gap: 10px;
+}
+
+.apill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 52px;
+  padding: 0 18px;
+  border-radius: 999px;
+  border: 1.5px solid var(--rf-border);
+  background: #ffffff;
+  color: var(--rf-text);
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+}
+
+.apill:hover {
+  border-color: var(--rf-fill);
+}
+
+.apill--on {
+  background: var(--rf-fill);
+  border-color: var(--rf-fill);
+  color: #ffffff;
+}
+
+.apill:focus:not(:focus-visible) {
+  outline: none;
+}
+
+.apill:focus-visible {
+  outline: 3px solid var(--rf-text);
+  outline-offset: 2px;
+  border-radius: 999px;
+}
+
+/* ---------- AI moment card ---------- */
+.aicard {
+  display: grid;
+  gap: 8px;
+  padding: 18px;
+  border-radius: 20px;
+  background: #ffffff;
+  border: 1px solid var(--rf-border);
+  text-align: center;
+}
+
+.aicard__title {
+  margin: 0;
+  font-size: 0.875rem;
+  font-weight: 650;
+  color: var(--rf-sub);
+}
+
+.aicard__text {
+  margin: 0;
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: var(--rf-ink);
+}
+
+.aicard__note {
+  margin: 0;
+  font-size: 0.875rem;
+  color: var(--rf-text);
+}
+
+/* ---------- buttons and "Anything else?" in the same soft style ---------- */
+.fb--aura .btn--primary {
+  background: var(--rf-fill);
+  border-color: var(--rf-fill);
+  color: #ffffff;
+}
+
+.fb--aura .btn--primary:hover {
+  background: var(--rf-fill-dark);
+}
+
+.fb--aura .fb__match legend,
+.fb--aura .fb__msg-label {
+  color: var(--rf-ink);
+}
+
+.fb--aura .seg__opt {
+  background: #ffffff;
+  border: 1.5px solid var(--rf-border);
+  color: var(--rf-text);
+}
+
+.fb--aura .seg__opt--on {
+  background: var(--rf-fill);
+  border-color: var(--rf-fill);
+  color: #ffffff;
+}
+
+.fb--aura .tabs {
+  background: #fdeef3;
+}
+
+.fb--aura .tabs__tab {
+  color: var(--rf-text);
+}
+
+.fb--aura .tabs__tab--on {
+  background: #ffffff;
+  color: var(--rf-ink);
+}
+
+.fb--aura .fb__text {
+  background: #ffffff;
+  border-color: var(--rf-border);
+}
+
+.fb--aura .fb__privacy,
+.fb--aura .muted {
+  color: var(--rf-text);
+}
+
+.fb--aura .linkbtn {
+  color: var(--rf-text);
+}
+
+/* ---------- Stamp collected: calm peach aura behind the medal ---------- */
+.aura-medal {
+  position: relative;
+  display: grid;
+  place-items: center;
+  height: 120px;
+  margin-bottom: 4px;
+}
+
+.aura-medal .aura {
+  position: absolute;
+}
+
+.aura-medal .fb__stamp-new {
+  position: relative;
+}
+
+.reward {
+  position: relative;
+}
+
+.aura-behind {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  pointer-events: none;
+}
+
+.fb--aura .ticket,
+.fb--aura .reward__card {
+  position: relative;
+}
+
+/* ---------- reduced motion: nothing moves, every change is instant ---------- */
+@media (prefers-reduced-motion: reduce) {
+  .aura,
+  .aura *,
+  .aura-screen,
+  .aura-lines__l,
+  .apill {
+    animation: none !important;
+    transition: none !important;
+  }
+
+  .aura__halo,
+  .aura-label__ghost {
+    display: none;
+  }
+
+  .aura-label--gone .aura-label__sharp {
+    transform: none;
+  }
+}
+
+/* Contrast: at the strongest level the glow behind the label is darker, so the label uses the
+   flow's ink colour there (#72243E would be 4.2:1 against it; #4A1B0C stays above 4.5:1) */
+.aura--l3 .aura-label__sharp,
+.aura--l3 .aura-label__ghost {
+  color: var(--rf-ink);
+}
