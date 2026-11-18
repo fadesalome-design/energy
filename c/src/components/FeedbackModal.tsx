@@ -2,7 +2,7 @@ import { useEffect, useLayoutEffect, useMemo, useRef, useState } from 'react';
 import { createPortal } from 'react-dom';
 import { endTime, getClass, getStudio } from '../data/classes';
 import {
-  closeBooking, dismissFeedback, getStamps, now, pickQuestions, submitFeedback,
+  dismissFeedback, getStamps, now, pickQuestions, submitFeedback,
   type Booking, type Level, type MatchAnswer, type Question,
 } from '../lib/feedback';
 import { addRatingV4, CATEGORY_LABEL, pickQuestionsV4, QUESTIONS } from '../lib/energy';
@@ -31,7 +31,7 @@ import { VoiceRecorder } from './VoiceRecorder';
 // set twice in a row; descriptive answers), then Version B's "Anything else?" screen ('final'),
 // then "Stamp collected". Progress: Question 1–3 of 3, then the last step (4 steps).
 // C: 'ai' = the AI moment after question 3 (aura + the room's summary)
-type Step = 0 | 1 | 2 | 'expected' | 'ai' | 'final' | 'done';
+type Step = 0 | 1 | 2 | 'ai' | 'final' | 'done';
 
 /** Pause after a tap so the choice is visible before moving on. */
 const ADVANCE_MS = 350;
@@ -64,11 +64,10 @@ function energyQuestions(c: Parameters<typeof pickQuestionsV4>[0]): Question[] {
 export function FeedbackModal({ booking, onClose, onSeeRewards, version = 'b' }: { booking: Booking; onClose: () => void; onSeeRewards?: () => void; version?: 'b' | 'e' }) {
   const c = getClass(booking.classId)!;
   void getStudio; // C: the soft header shows the class name and time only
-  const isE = version === 'e';
+  void version; // C always runs the B-based rating (Version E's path was removed)
   // D: always Version E's categories (pickQuestionsV4), picked once per opening
   const questions = useMemo(() => energyQuestions(c), [c]);
   void pickQuestions;
-  const [expected, setExpected] = useState<'yes' | 'no' | null>(null);
 
   const [step, setStep] = useState<Step>(0); // D: opens on question 1
   const [answers, setAnswers] = useState<Record<string, Level>>({});
@@ -125,7 +124,6 @@ export function FeedbackModal({ booking, onClose, onSeeRewards, version = 'b' }:
   };
 
   const send = () => {
-    if (isE) return sendEnergy();
     const st = document.querySelector('.fb .aura__stage')?.getBoundingClientRect();
     if (st) setFlyFrom({ x: st.left + st.width / 2, y: st.top + st.height / 2, size: Math.min(st.width, st.height) });
     const message =
@@ -163,25 +161,6 @@ export function FeedbackModal({ booking, onClose, onSeeRewards, version = 'b' }:
     setStep('done');
   };
 
-  /** Version E: answers feed the card and Quiet & dim; the message stays with the team. */
-  const sendEnergy = () => {
-    const message = mode === 'record' && voiceSec ? 'voice' : mode === 'write' && text.trim() ? 'text' : 'none';
-    const idx = Object.fromEntries(Object.entries(answers).map(([k, l]) => [k, LEVELS.indexOf(l) as 0 | 1 | 2]));
-    addRatingV4({ classId: c.id, at: new Date(now()).toISOString(), expected, answers: idx });
-    const total = closeBooking(booking.id, 'submitted');
-    logEvent('feedback_submitted', {
-      classId: c.id, classType: c.type,
-      data: {
-        version: 'e', expected, message,
-        answers: Object.fromEntries(questions.map((q) => [q.id, answers[q.id] ? q.options[answers[q.id]] : null])),
-        textLength: message === 'text' ? text.trim().length : 0,
-        voiceSeconds: message === 'voice' ? voiceSec : 0,
-        stamps: total,
-      },
-    });
-    setStamps(total);
-    setStep('done');
-  };
 
   const close = () => onClose();
 
@@ -200,17 +179,10 @@ export function FeedbackModal({ booking, onClose, onSeeRewards, version = 'b' }:
   const goBack = () => {
     if (advance.current) return;
     if (step === 'final') return setStep('ai');
-    if (step === 'ai' || step === 'expected') return setStep(2);
+    if (step === 'ai') return setStep(2);
     setStep(Math.max(0, (step as number) - 1) as Step);
   };
 
-  const chooseExpected = (v: MatchAnswer) => {
-    if (advance.current) return;
-    setMatch(v);
-    setExpected(v === 'partly' ? null : v);
-    logEvent('feedback_answered', { classId: c.id, classType: c.type, data: { question: 'expected', answer: v } });
-    advance.current = window.setTimeout(() => { advance.current = null; setStep('final'); }, ADVANCE_MS);
-  };
 
   /**
    * Tapping an answer selects it and moves on by itself. The short pause lets people
@@ -262,7 +234,7 @@ export function FeedbackModal({ booking, onClose, onSeeRewards, version = 'b' }:
         {step === 0 && (
           <p className="aura-intro">3 quick questions about the room, not about you. Anonymous, and you'll collect a stamp.</p>
         )}
-        {step !== 'done' && step !== 'expected' && (
+        {step !== 'done' && (
           <div className={step === 'final' ? 'aura-wrap aura-wrap--small' : 'aura-wrap'}>
             <Aura level={auraLevel} label={auraLabel} size={step === 'final' ? 'md' : 'lg'} />
           </div>
@@ -300,27 +272,6 @@ export function FeedbackModal({ booking, onClose, onSeeRewards, version = 'b' }:
           );
         })()}
 
-        {/* ---------- D: Did the class match its card? (always, after the 3 questions) ---------- */}
-        {step === 'expected' && (
-          <div className="fb__screen">
-            <h2 id="fb-title" tabIndex={-1} ref={headingRef} className="fb__title">Did the class match its "What to expect" card?</h2>
-            <div className="fb__options" role="group" aria-labelledby="fb-title">
-              {([['yes', 'Yes'], ['partly', 'Partly'], ['no', 'No']] as const).map(([v, label]) => (
-                <button
-                  key={v}
-                  type="button"
-                  aria-pressed={match === v}
-                  className={match === v ? 'opt opt--on' : 'opt'}
-                  onClick={() => chooseExpected(v)}
-                >
-                  <span className="opt__word">{label}</span>
-                  <span className="opt__check" aria-hidden="true"><Icon name="check" size={18} /></span>
-                </button>
-              ))}
-            </div>
-            <p className="fb__later muted small">{match ? 'Tap an answer to continue.' : 'Helps us keep the card right.'}</p>
-          </div>
-        )}
 
         {/* ---------- C: AI moment (after question 3) ----------
             PLACEHOLDER – replaced by the real AI summary (CALM-8) in Lovable. In C the sentence is

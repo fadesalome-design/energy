@@ -69,3 +69,16 @@ Copy of D made on 18 Nov for experiments; D stays the stable presentation versio
   - **Reduced motion:** no flight, landing, breathing, wobble or specks; the stamp just appears.
   - **Contrast:** all text is at least 4.5:1 (lowest 5.5:1; the disabled Claim uses dark text on
     mint).
+- **18 Nov: rating flow consistency** (no new design; one style for all rating screens).
+  - **Removed dead code:** the old separate "Did the class match its card?" screen (full-width answer
+    buttons with radio circles) and Version E's rating path. No warm screens remain in C.
+  - **One button system:** choice buttons (answers, Yes / Partly / No, Claim) are pills 40 px high,
+    14 px medium, as wide as the text, white with #085041 text and a #9FE1CB border; selected is
+    #0F6E56. Primary actions (Continue, Send and collect my stamp, Done) are one centred pill, 44 px
+    high, at least 200 px wide, never full width. Write / Record is a pill switch; the text field has a
+    16 px radius and a #9FE1CB border. Every tappable element has at least a 44 px hit area; the focus
+    ring shows for keyboard users only.
+  - **Alignment:** everything is centred; the switch and the text field span the content width (20 px
+    side margins).
+  - **Spacing:** 8 / 16 / 24 px only. The aura area is at most 220 px high, with the label 8 px above
+    it. Question screens fit a 390×844 phone without scrolling.

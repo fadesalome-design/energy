@@ -5476,3 +5476,177 @@ code {
 .fb--aura .sdone__done::after {
   inset: -2px 0;
 }
+
+/* ======================================================================
+   C: RATING FLOW CONSISTENCY. One button system, one alignment rule, 8-point spacing,
+   for the 3 questions, the AI moment, "Anything else?" and Stamp collected.
+   (Colours, aura, texts and logic unchanged.)
+   ====================================================================== */
+
+/* ---------- layout: everything centred, 8 / 16 / 24 / 32 rhythm ---------- */
+.fb--aura .aura-screen {
+  gap: 0;
+  padding-top: 0;
+  align-items: center;
+  text-align: center;
+}
+
+.fb--aura .aura-intro { margin: 16px 0 0; }
+.fb--aura .aura-wrap { margin: 8px 0 0; }
+.fb--aura .aura { gap: 8px; }                         /* label sits 8 px above the aura */
+.fb--aura .aura--lg { --w: 196px; }                   /* aura area max ~220 px high */
+.fb--aura .aura-count { margin: 16px 0 0; }           /* aura → step line 16 */
+.fb--aura .aura-q { margin: 8px 0 0; }                /* step line → question 8 */
+.fb--aura .aura-hint { margin: 8px 0 0; }             /* question → helper 8 */
+.fb--aura .fb__options { margin: 16px 0 0; gap: 8px; }  /* helper → answers 16 */
+.fb--aura .aura-hint--bottom { margin-top: 24px; }    /* answers → bottom note 24 */
+
+/* ---------- choice buttons: one pill (answers, Yes / Partly / No, Claim) ---------- */
+.fb--aura .apill,
+.fb--aura .seg__opt,
+.medal__claim {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  height: 40px;
+  min-height: 40px;
+  padding: 0 16px;
+  border-radius: 999px;
+  border: 1px solid #9fe1cb;
+  background: #ffffff;
+  color: #085041;
+  font: inherit;
+  font-size: 0.875rem;
+  font-weight: 500;
+  line-height: 1;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.fb--aura .apill--on,
+.fb--aura .seg__opt--on {
+  background: #0f6e56;
+  border-color: #0f6e56;
+  color: #ffffff;
+}
+
+/* 44 px hit area without making the pill look bigger */
+.fb--aura .apill::after,
+.fb--aura .seg__opt::after,
+.medal__claim::after {
+  content: '';
+  position: absolute;
+  inset: -2px -2px;
+}
+
+/* focus ring for keyboard users only (not after a tap or click) */
+.fb--aura .seg__opt:has(input:focus-visible) {
+  outline: 3px solid #534ab7;
+  outline-offset: 2px;
+}
+
+/* Yes / Partly / No: pills as wide as the text, centred, 8 px apart */
+.fb--aura .seg {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+}
+
+.medal__claim { margin-top: 8px; }
+
+/* ---------- primary action: one centred pill, not full width ---------- */
+.fb--aura .fb__actions {
+  margin-top: 24px;
+  padding-top: 0;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.fb--aura .btn--primary,
+.fb--aura .sdone__done {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: auto;
+  min-width: 200px;
+  height: 44px;
+  min-height: 44px;
+  padding: 0 24px;
+  border-radius: 999px;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  line-height: 1;
+}
+
+.fb--aura .sdone__done::after { inset: 0; }
+
+/* ---------- "Anything else?" ---------- */
+.fb--aura .aura-screen > .fb__title { margin: 16px 0 0; }
+.fb--aura .aura-screen > .fb__title + .muted { margin: 8px 0 0; }   /* title → subtitle 8 */
+
+.fb--aura .fb__match {
+  width: 100%;
+  margin: 24px 0 0;                                     /* subtitle → question 24 */
+  text-align: center;
+}
+
+.fb--aura .fb__match legend {
+  width: 100%;
+  margin: 0 0 12px;                                     /* question → pills 12 */
+  padding: 0;
+  text-align: center;
+}
+
+.fb--aura .fb__msg {
+  width: 100%;
+  margin: 24px 0 0;                                     /* pills → "Tell us more" 24 */
+  gap: 0;
+}
+
+.fb--aura .fb__msg-label { margin: 0; text-align: center; }
+
+/* Write / Record: the same pill shape, full content width */
+.fb--aura .tabs {
+  margin-top: 8px;                                      /* label → switch 8 */
+  padding: 4px;
+  border-radius: 999px;
+}
+
+.fb--aura .tabs__tab {
+  min-height: 40px;
+  border-radius: 999px;
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+/* text field (and the recorder): full content width, radius 16, 12 px below the switch */
+.fb--aura .fb__text,
+.fb--aura .fb__msg > .recorder,
+.fb--aura .fb__msg > div:not(.tabs) {
+  margin-top: 12px;
+}
+
+.fb--aura .fb__text {
+  width: 100%;
+  border: 1px solid #9fe1cb;
+  border-radius: 16px;
+}
+
+.fb--aura .fb__privacy {
+  margin: 12px 0 0;                                     /* field → note 12 */
+  justify-content: center;
+  text-align: center;
+}
+
+/* ---------- AI moment and Stamp collected: same rhythm ---------- */
+.fb--aura .aicard { width: 100%; margin-top: 16px; }
+
+.fb--aura .sdone { gap: 16px; padding-top: 16px; }
+.fb--aura .sdone__actions { margin-top: 8px; gap: 8px; }
+
+/* the question heading shares .fb__title with "Anything else?": keep step line → question at 8 px */
+.fb--aura .aura-screen > .fb__title.aura-q { margin: 8px 0 0; }
