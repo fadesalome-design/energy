@@ -17,9 +17,10 @@ import { Icon } from '../components/Icon';
 
 // Chart colours (validated: diverging Yes/Partly/No with a neutral gray midpoint;
 // sequential teal for Low → High). Labels or tables always accompany them.
+// C: colours come from the theme tokens in global.css (violet / green)
 const C = {
-  yes: '#008779', partly: '#a8a39a', no: '#c2562f',
-  low: '#9ccfc6', medium: '#3f9a90', high: '#0d5c56',
+  yes: 'var(--chart-yes)', partly: 'var(--chart-partly)', no: 'var(--chart-no)',
+  low: 'var(--chart-low)', medium: 'var(--chart-medium)', high: 'var(--chart-high)',
 };
 
 const pct = (n: number, d: number) => (d ? Math.round((n / d) * 100) : 0);
@@ -34,7 +35,7 @@ function periodLabel() {
 function matchSegments(m: ClassReport['match']) {
   return [
     { key: 'yes', label: 'Matched the card', value: m.yes, color: C.yes },
-    { key: 'partly', label: 'Partly', value: m.partly, color: C.partly, ink: '#1e2a2d' },
+    { key: 'partly', label: 'Partly', value: m.partly, color: C.partly, ink: 'var(--ink)' },
     { key: 'no', label: "Didn't match", value: m.no, color: C.no },
   ];
 }
@@ -286,7 +287,7 @@ function ClassPanel({ r }: { r: ClassReport }) {
                         height={20}
                         label={t.label}
                         segments={(['low', 'medium', 'high'] as const).map((l) => ({
-                          key: l, label: `${t.words[l]} (${l})`, value: t.dist[l], color: C[l], ink: l === 'low' ? '#134b48' : '#fff',
+                          key: l, label: `${t.words[l]} (${l})`, value: t.dist[l], color: C[l], ink: l === 'low' ? 'var(--primary-dark)' : 'var(--on-primary)',
                         }))}
                       />
                       <p className="felt__words small">

@@ -28,7 +28,7 @@ export function StackedBar({
           <span
             key={s.key}
             className={`sbar__seg${i === 0 ? ' sbar__seg--first' : ''}${i === visible.length - 1 ? ' sbar__seg--last' : ''}`}
-            style={{ flexGrow: s.value, background: s.color, color: s.ink ?? '#fff' }}
+            style={{ flexGrow: s.value, background: s.color, color: s.ink ?? 'var(--on-primary)' }}
             data-tip={`${s.label}: ${s.value} (${Math.round(pct)}%)`}
             tabIndex={0}
           >
