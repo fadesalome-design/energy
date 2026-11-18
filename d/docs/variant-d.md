@@ -13,6 +13,13 @@ Each line below says what's on the screen and why. "Finding" means what we saw i
 
 ## Change log
 
+- **2026-11-18: sensory filters sheet fixed on phones.** On mobile, B's original sheet (88% height)
+  showed only 4 of the 7 filters and gave no sign that it scrolls, so "Touch only if I agree", "No
+  required partner work" and "Easy to step out" looked missing. On screens below 1024 px the sheet
+  now uses almost the full height, with slightly tighter rows and a soft shadow at the edge while
+  more filters are above or below. All 7 show at once on a typical phone (390×844); on small phones
+  the last two are one short scroll away. Content, wording and desktop are unchanged.
+
 - **2026-11-18: back to the original sheet and "Anything else?" screen** (both copied from Version B,
   `?variant=b`; the default route has neither).
   - **Sensory filters:** the "Sensory filters" chip in the Energy Match card opens B's original bottom
