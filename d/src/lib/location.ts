@@ -1,6 +1,6 @@
 /**
  * SANDBOX D: location, kept small. The member picks a place in the Energy Match card:
- * "Near me (Kreuzberg)" or one of 4 Berlin districts. Distances are DEMO data per place
+ * "Near me (Kreuzberg)" or one of 4 Berlin districts. Distances are DEMO data by district
  * (no map, no GPS, no address search). Kept for this visit only.
  */
 import { useSyncExternalStore } from 'react';
@@ -16,12 +16,18 @@ export const PLACES: { id: PlaceId; label: string; chip: string }[] = [
   { id: 'prenzlauer', label: 'Prenzlauer Berg', chip: 'Prenzlauer Berg' },
 ];
 
-/** Demo distances (km) from each place to each studio. "near" uses the studio data (Kreuzberg). */
-const KM: Record<Exclude<PlaceId, 'near'>, Record<string, number>> = {
-  mitte: { stillwerk: 5.0, hafen: 3.0, eisenhalle: 3.5, pulse: 3.2, tanzraum: 4.0, nordbad: 2.5 },
-  neukoelln: { stillwerk: 0.6, hafen: 2.0, eisenhalle: 9.0, pulse: 3.8, tanzraum: 4.2, nordbad: 7.0 },
-  friedrichshain: { stillwerk: 3.8, hafen: 2.6, eisenhalle: 6.5, pulse: 0.7, tanzraum: 6.0, nordbad: 3.0 },
-  prenzlauer: { stillwerk: 7.0, hafen: 5.0, eisenhalle: 3.2, pulse: 3.0, tanzraum: 6.8, nordbad: 0.9 },
+/** The district each place stands for. */
+const DISTRICT: Record<PlaceId, string> = {
+  near: 'Kreuzberg', mitte: 'Mitte', neukoelln: 'Neukölln', friedrichshain: 'Friedrichshain', prenzlauer: 'Prenzlauer Berg',
+};
+
+/** Demo distances (km) between district centres. Each studio adds its own small offset. */
+const BETWEEN: Record<string, Record<string, number>> = {
+  Kreuzberg: { Kreuzberg: 0.6, Neukölln: 2.2, Mitte: 3.0, Friedrichshain: 2.8, 'Prenzlauer Berg': 5.0 },
+  Neukölln: { Kreuzberg: 2.2, Neukölln: 0.6, Mitte: 5.0, Friedrichshain: 3.8, 'Prenzlauer Berg': 7.0 },
+  Mitte: { Kreuzberg: 3.0, Neukölln: 5.0, Mitte: 0.6, Friedrichshain: 3.2, 'Prenzlauer Berg': 2.5 },
+  Friedrichshain: { Kreuzberg: 2.8, Neukölln: 3.8, Mitte: 3.2, Friedrichshain: 0.6, 'Prenzlauer Berg': 3.0 },
+  'Prenzlauer Berg': { Kreuzberg: 5.0, Neukölln: 7.0, Mitte: 2.5, Friedrichshain: 3.0, 'Prenzlauer Berg': 0.6 },
 };
 
 let place: PlaceId = 'near';
@@ -40,11 +46,12 @@ export const placeInfo = (p: PlaceId = place) => PLACES.find((x) => x.id === p)!
 export const placeName = (p: PlaceId = place) => (p === 'near' ? 'Kreuzberg' : placeInfo(p).label);
 
 export function studioKm(studioId: string, p: PlaceId = place): number {
-  return p === 'near' ? getStudio(studioId).distanceKm : KM[p][studioId];
+  const s = getStudio(studioId);
+  return Math.round((BETWEEN[DISTRICT[p]][s.district] + s.offsetKm) * 10) / 10;
 }
 /** About 4 min per km by public transport, at least 3 min (demo). */
 export function studioMin(studioId: string, p: PlaceId = place): number {
-  return p === 'near' ? getStudio(studioId).travelMin : Math.max(3, Math.round(studioKm(studioId, p) * 4));
+  return Math.max(3, Math.round(studioKm(studioId, p) * 4));
 }
 
 // Kept for code shared with the copied Version E files.

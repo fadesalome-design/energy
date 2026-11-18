@@ -1,0 +1,642 @@
+[
+  {
+    "id": "yoga-kreuzberg",
+    "name": "Stillwerk Yoga",
+    "type": "yoga",
+    "district": "Kreuzberg",
+    "address": "Ufergasse 24",
+    "description": "A quiet studio in a courtyard, away from street noise. Bring a padlock for the lockers.",
+    "photo": "https://images.unsplash.com/photo-1599901860904-17e6ed7083a0?w=800&q=70&auto=format&fit=crop",
+    "traits": {
+      "noise": "quiet",
+      "light": "normal",
+      "crowd": "medium",
+      "partnerWork": "no"
+    },
+    "offsetKm": 1.1
+  },
+  {
+    "id": "pilates-kreuzberg",
+    "name": "Hafen Pilates Loft",
+    "type": "pilates",
+    "district": "Kreuzberg",
+    "address": "Lindenhof 42",
+    "description": "Bright studio with reformers and mats. Changing rooms with lockers.",
+    "photo": "https://images.unsplash.com/photo-1591291621164-2c6367723315?w=800&q=70&auto=format&fit=crop",
+    "traits": {
+      "noise": "medium",
+      "light": "soft",
+      "crowd": "small",
+      "partnerWork": "no"
+    },
+    "offsetKm": 1
+  },
+  {
+    "id": "gym-kreuzberg",
+    "name": "Eisenhalle",
+    "type": "gym",
+    "district": "Kreuzberg",
+    "address": "Kanalweg 14",
+    "description": "Busy gym with a separate studio for classes. Showers and towels for rent.",
+    "photo": "https://images.unsplash.com/photo-1540497077202-7c8a3999166f?w=800&q=70&auto=format&fit=crop",
+    "traits": {
+      "noise": "loud",
+      "light": "bright",
+      "crowd": "medium",
+      "partnerWork": "no"
+    },
+    "offsetKm": 0.2
+  },
+  {
+    "id": "dance-kreuzberg",
+    "name": "Tanzraum Schöneberg",
+    "type": "dance",
+    "district": "Kreuzberg",
+    "address": "Görlitzer Bogen 6",
+    "description": "Wooden floor, warm lights and a good sound system. Bring a padlock for the lockers.",
+    "photo": "https://images.unsplash.com/photo-1508700929628-666bc8bd84ea?w=800&q=70&auto=format&fit=crop",
+    "traits": {
+      "noise": "loud",
+      "light": "normal",
+      "crowd": "medium",
+      "partnerWork": "no"
+    },
+    "offsetKm": 0.5
+  },
+  {
+    "id": "boxing-kreuzberg",
+    "name": "Ringhof Boxing",
+    "type": "boxing",
+    "district": "Kreuzberg",
+    "address": "Wrangelhof 48",
+    "description": "Basement gym with heavy bags and pads. Lockers and showers on site.",
+    "photo": "https://images.unsplash.com/photo-1594737625785-a6cbdabd333c?w=800&q=70&auto=format&fit=crop",
+    "traits": {
+      "noise": "medium",
+      "light": "bright",
+      "crowd": "large",
+      "partnerWork": "yes"
+    },
+    "offsetKm": 0.2
+  },
+  {
+    "id": "climbing-kreuzberg",
+    "name": "Griffwerk Bouldern",
+    "type": "climbing",
+    "district": "Kreuzberg",
+    "address": "Mariannenweg 24",
+    "description": "A bouldering hall with walls for all levels. Lockers and showers on site.",
+    "photo": "https://images.unsplash.com/photo-1564769662533-4f00a87b4056?w=800&q=70&auto=format&fit=crop",
+    "traits": {
+      "noise": "quiet",
+      "light": "bright",
+      "crowd": "medium",
+      "partnerWork": "yes"
+    },
+    "offsetKm": 0.9
+  },
+  {
+    "id": "swimming-kreuzberg",
+    "name": "Nordbad Aquatics",
+    "type": "swimming",
+    "district": "Kreuzberg",
+    "address": "Spreeufer 3",
+    "description": "Public pool with lane swimming and aqua classes. Showers and towels for rent.",
+    "photo": "https://images.unsplash.com/photo-1519315901367-f34ff9154487?w=800&q=70&auto=format&fit=crop",
+    "traits": {
+      "noise": "loud",
+      "light": "bright",
+      "crowd": "medium",
+      "partnerWork": "no"
+    },
+    "offsetKm": 0.2
+  },
+  {
+    "id": "wellness-kreuzberg",
+    "name": "Dampfhaus Sauna",
+    "type": "wellness",
+    "district": "Kreuzberg",
+    "address": "Bergmannhof 33",
+    "description": "Finnish sauna, a steam room and a quiet rest area. Changing rooms with lockers.",
+    "photo": "https://images.unsplash.com/photo-1600334129128-685c5582fd35?w=800&q=70&auto=format&fit=crop",
+    "traits": {
+      "noise": "quiet",
+      "light": "soft",
+      "crowd": "small",
+      "partnerWork": "no"
+    },
+    "offsetKm": 0
+  },
+  {
+    "id": "yoga-neuk-lln",
+    "name": "Lotushof",
+    "type": "yoga",
+    "district": "Neukölln",
+    "address": "Weserhof 9",
+    "description": "Small rooms, soft light and blankets for everyone. Bring a padlock for the lockers.",
+    "photo": "https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=800&q=70&auto=format&fit=crop",
+    "traits": {
+      "noise": "quiet",
+      "light": "soft",
+      "crowd": "small",
+      "partnerWork": "yes"
+    },
+    "offsetKm": 0.2
+  },
+  {
+    "id": "pilates-neuk-lln",
+    "name": "Kernwerk Pilates",
+    "type": "pilates",
+    "district": "Neukölln",
+    "address": "Pannierweg 41",
+    "description": "Small groups on mats, with clear instructions. Lockers and showers on site.",
+    "photo": "https://images.unsplash.com/photo-1591258370814-01609b341790?w=800&q=70&auto=format&fit=crop",
+    "traits": {
+      "noise": "quiet",
+      "light": "bright",
+      "crowd": "small",
+      "partnerWork": "no"
+    },
+    "offsetKm": 0.7
+  },
+  {
+    "id": "gym-neuk-lln",
+    "name": "Pulse Cycle House",
+    "type": "gym",
+    "district": "Neukölln",
+    "address": "Schillerhof 46",
+    "description": "An industrial hall with free weights, racks and a class area. Showers and towels for rent.",
+    "photo": "https://images.unsplash.com/photo-1517836357463-d25dfeac3438?w=800&q=70&auto=format&fit=crop",
+    "traits": {
+      "noise": "loud",
+      "light": "flashing",
+      "crowd": "medium",
+      "partnerWork": "no"
+    },
+    "offsetKm": 1.1
+  },
+  {
+    "id": "dance-neuk-lln",
+    "name": "Taktwerk",
+    "type": "dance",
+    "district": "Neukölln",
+    "address": "Reuterbogen 22",
+    "description": "Wooden floor, warm lights and a good sound system. Bring a padlock for the lockers.",
+    "photo": "https://images.unsplash.com/photo-1504609813442-a8924e83f76e?w=800&q=70&auto=format&fit=crop",
+    "traits": {
+      "noise": "loud",
+      "light": "normal",
+      "crowd": "medium",
+      "partnerWork": "yes"
+    },
+    "offsetKm": 0.8
+  },
+  {
+    "id": "boxing-neuk-lln",
+    "name": "Linke Gerade",
+    "type": "boxing",
+    "district": "Neukölln",
+    "address": "Lenauweg 25",
+    "description": "Boxing studio with small groups and technique focus. Showers and towels for rent.",
+    "photo": "https://images.unsplash.com/photo-1583454110551-21f2fa2afe61?w=800&q=70&auto=format&fit=crop",
+    "traits": {
+      "noise": "loud",
+      "light": "bright",
+      "crowd": "large",
+      "partnerWork": "yes"
+    },
+    "offsetKm": 0.3
+  },
+  {
+    "id": "climbing-neuk-lln",
+    "name": "Blockhalle",
+    "type": "climbing",
+    "district": "Neukölln",
+    "address": "Hertahof 28",
+    "description": "Indoor walls, soft mats and a café corner. Showers and towels for rent.",
+    "photo": "https://images.unsplash.com/photo-1564769662533-4f00a87b4056?w=800&q=70&auto=format&fit=crop",
+    "traits": {
+      "noise": "quiet",
+      "light": "bright",
+      "crowd": "medium",
+      "partnerWork": "no"
+    },
+    "offsetKm": 0.4
+  },
+  {
+    "id": "swimming-neuk-lln",
+    "name": "Wellenbad Ost",
+    "type": "swimming",
+    "district": "Neukölln",
+    "address": "Sonnenhof 43",
+    "description": "Public pool with lane swimming and aqua classes. Changing rooms with lockers.",
+    "photo": "https://images.unsplash.com/photo-1530549387789-4c1017266635?w=800&q=70&auto=format&fit=crop",
+    "traits": {
+      "noise": "loud",
+      "light": "normal",
+      "crowd": "large",
+      "partnerWork": "no"
+    },
+    "offsetKm": 0.2
+  },
+  {
+    "id": "wellness-neuk-lln",
+    "name": "Ruhebad",
+    "type": "wellness",
+    "district": "Neukölln",
+    "address": "Elbeweg 32",
+    "description": "A small sauna house with a garden and a rest room. Changing rooms with lockers.",
+    "photo": "https://images.unsplash.com/photo-1540555700478-4be289fbecef?w=800&q=70&auto=format&fit=crop",
+    "traits": {
+      "noise": "quiet",
+      "light": "soft",
+      "crowd": "small",
+      "partnerWork": "no"
+    },
+    "offsetKm": 0.2
+  },
+  {
+    "id": "yoga-mitte",
+    "name": "Atemraum",
+    "type": "yoga",
+    "district": "Mitte",
+    "address": "Torbogen 36",
+    "description": "Small rooms, soft light and blankets for everyone. Showers and towels for rent.",
+    "photo": "https://images.unsplash.com/photo-1591258370814-01609b341790?w=800&q=70&auto=format&fit=crop",
+    "traits": {
+      "noise": "quiet",
+      "light": "soft",
+      "crowd": "medium",
+      "partnerWork": "no"
+    },
+    "offsetKm": 0.9
+  },
+  {
+    "id": "pilates-mitte",
+    "name": "Linie Pilates",
+    "type": "pilates",
+    "district": "Mitte",
+    "address": "Linienhof 45",
+    "description": "Bright studio with reformers and mats. Changing rooms with lockers.",
+    "photo": "https://images.unsplash.com/photo-1518310383802-640c2de311b2?w=800&q=70&auto=format&fit=crop",
+    "traits": {
+      "noise": "quiet",
+      "light": "soft",
+      "crowd": "small",
+      "partnerWork": "no"
+    },
+    "offsetKm": 1.2
+  },
+  {
+    "id": "gym-mitte",
+    "name": "Kraftwerk Nord",
+    "type": "gym",
+    "district": "Mitte",
+    "address": "Auguststeg 40",
+    "description": "Busy gym with a separate studio for classes. Lockers and showers on site.",
+    "photo": "https://images.unsplash.com/photo-1583454110551-21f2fa2afe61?w=800&q=70&auto=format&fit=crop",
+    "traits": {
+      "noise": "medium",
+      "light": "bright",
+      "crowd": "medium",
+      "partnerWork": "no"
+    },
+    "offsetKm": 0.9
+  },
+  {
+    "id": "dance-mitte",
+    "name": "Parkett 22",
+    "type": "dance",
+    "district": "Mitte",
+    "address": "Gartenhof 7",
+    "description": "Two rooms, one for beginners and one for party classes. Lockers and showers on site.",
+    "photo": "https://images.unsplash.com/photo-1508700929628-666bc8bd84ea?w=800&q=70&auto=format&fit=crop",
+    "traits": {
+      "noise": "loud",
+      "light": "soft",
+      "crowd": "medium",
+      "partnerWork": "yes"
+    },
+    "offsetKm": 1.1
+  },
+  {
+    "id": "boxing-mitte",
+    "name": "Boxkeller 9",
+    "type": "boxing",
+    "district": "Mitte",
+    "address": "Rosenweg 31",
+    "description": "Basement gym with heavy bags and pads. Bring a padlock for the lockers.",
+    "photo": "https://images.unsplash.com/photo-1594737625785-a6cbdabd333c?w=800&q=70&auto=format&fit=crop",
+    "traits": {
+      "noise": "medium",
+      "light": "normal",
+      "crowd": "medium",
+      "partnerWork": "yes"
+    },
+    "offsetKm": 0.5
+  },
+  {
+    "id": "climbing-mitte",
+    "name": "Kletterkiste",
+    "type": "climbing",
+    "district": "Mitte",
+    "address": "Brunnenbogen 41",
+    "description": "Bouldering gym with a quiet training room. Lockers and showers on site.",
+    "photo": "https://images.unsplash.com/photo-1564769662533-4f00a87b4056?w=800&q=70&auto=format&fit=crop",
+    "traits": {
+      "noise": "quiet",
+      "light": "bright",
+      "crowd": "small",
+      "partnerWork": "yes"
+    },
+    "offsetKm": 1.1
+  },
+  {
+    "id": "swimming-mitte",
+    "name": "Bahn 5",
+    "type": "swimming",
+    "district": "Mitte",
+    "address": "Invalidenhof 44",
+    "description": "A 25 m indoor pool with lanes for courses. Changing rooms with lockers.",
+    "photo": "https://images.unsplash.com/photo-1560090995-01632a28895b?w=800&q=70&auto=format&fit=crop",
+    "traits": {
+      "noise": "quiet",
+      "light": "bright",
+      "crowd": "large",
+      "partnerWork": "no"
+    },
+    "offsetKm": 0.6
+  },
+  {
+    "id": "wellness-mitte",
+    "name": "Wärmestube",
+    "type": "wellness",
+    "district": "Mitte",
+    "address": "Spreebogen 17",
+    "description": "Spa with sauna, salt room and relaxation sessions. Showers and towels for rent.",
+    "photo": "https://images.unsplash.com/photo-1583416750470-965b2707b355?w=800&q=70&auto=format&fit=crop",
+    "traits": {
+      "noise": "quiet",
+      "light": "soft",
+      "crowd": "small",
+      "partnerWork": "no"
+    },
+    "offsetKm": 1.2
+  },
+  {
+    "id": "yoga-prenzlauer-berg",
+    "name": "Ruhepol Yoga",
+    "type": "yoga",
+    "district": "Prenzlauer Berg",
+    "address": "Kastanienhof 10",
+    "description": "Small rooms, soft light and blankets for everyone. Showers and towels for rent.",
+    "photo": "https://images.unsplash.com/photo-1591291621164-2c6367723315?w=800&q=70&auto=format&fit=crop",
+    "traits": {
+      "noise": "medium",
+      "light": "soft",
+      "crowd": "small",
+      "partnerWork": "yes"
+    },
+    "offsetKm": 0
+  },
+  {
+    "id": "pilates-prenzlauer-berg",
+    "name": "Federhaus Pilates",
+    "type": "pilates",
+    "district": "Prenzlauer Berg",
+    "address": "Kollwitzweg 41",
+    "description": "Bright studio with reformers and mats. Showers and towels for rent.",
+    "photo": "https://images.unsplash.com/photo-1591291621164-2c6367723315?w=800&q=70&auto=format&fit=crop",
+    "traits": {
+      "noise": "medium",
+      "light": "bright",
+      "crowd": "medium",
+      "partnerWork": "no"
+    },
+    "offsetKm": 0.5
+  },
+  {
+    "id": "gym-prenzlauer-berg",
+    "name": "Stahlhof Gym",
+    "type": "gym",
+    "district": "Prenzlauer Berg",
+    "address": "Lychener Hof 20",
+    "description": "Big open floor, music on all day. Lockers and showers on site.",
+    "photo": "https://images.unsplash.com/photo-1576678927484-cc907957088c?w=800&q=70&auto=format&fit=crop",
+    "traits": {
+      "noise": "loud",
+      "light": "normal",
+      "crowd": "medium",
+      "partnerWork": "no"
+    },
+    "offsetKm": 1
+  },
+  {
+    "id": "dance-prenzlauer-berg",
+    "name": "Bewegungshaus",
+    "type": "dance",
+    "district": "Prenzlauer Berg",
+    "address": "Gleimbogen 20",
+    "description": "A dance studio with a sprung floor and a mirror wall. Bring a padlock for the lockers.",
+    "photo": "https://images.unsplash.com/photo-1504609813442-a8924e83f76e?w=800&q=70&auto=format&fit=crop",
+    "traits": {
+      "noise": "medium",
+      "light": "flashing",
+      "crowd": "large",
+      "partnerWork": "yes"
+    },
+    "offsetKm": 0.3
+  },
+  {
+    "id": "boxing-prenzlauer-berg",
+    "name": "Schlagwerk",
+    "type": "boxing",
+    "district": "Prenzlauer Berg",
+    "address": "Stargarder Weg 23",
+    "description": "Basement gym with heavy bags and pads. Bring a padlock for the lockers.",
+    "photo": "https://images.unsplash.com/photo-1583454110551-21f2fa2afe61?w=800&q=70&auto=format&fit=crop",
+    "traits": {
+      "noise": "loud",
+      "light": "normal",
+      "crowd": "medium",
+      "partnerWork": "yes"
+    },
+    "offsetKm": 0.8
+  },
+  {
+    "id": "climbing-prenzlauer-berg",
+    "name": "Wandlauf",
+    "type": "climbing",
+    "district": "Prenzlauer Berg",
+    "address": "Pappelhof 9",
+    "description": "Indoor walls, soft mats and a café corner. Lockers and showers on site.",
+    "photo": "https://images.unsplash.com/photo-1564769662533-4f00a87b4056?w=800&q=70&auto=format&fit=crop",
+    "traits": {
+      "noise": "medium",
+      "light": "normal",
+      "crowd": "small",
+      "partnerWork": "no"
+    },
+    "offsetKm": 0.5
+  },
+  {
+    "id": "swimming-prenzlauer-berg",
+    "name": "Blaues Becken",
+    "type": "swimming",
+    "district": "Prenzlauer Berg",
+    "address": "Danziger Hof 36",
+    "description": "Indoor pool with a learner area and a sauna. Changing rooms with lockers.",
+    "photo": "https://images.unsplash.com/photo-1519315901367-f34ff9154487?w=800&q=70&auto=format&fit=crop",
+    "traits": {
+      "noise": "medium",
+      "light": "normal",
+      "crowd": "large",
+      "partnerWork": "no"
+    },
+    "offsetKm": 1.2
+  },
+  {
+    "id": "wellness-prenzlauer-berg",
+    "name": "Salzgrotte Mitte",
+    "type": "wellness",
+    "district": "Prenzlauer Berg",
+    "address": "Wörther Weg 7",
+    "description": "A small sauna house with a garden and a rest room. Bring a padlock for the lockers.",
+    "photo": "https://images.unsplash.com/photo-1600334129128-685c5582fd35?w=800&q=70&auto=format&fit=crop",
+    "traits": {
+      "noise": "quiet",
+      "light": "soft",
+      "crowd": "medium",
+      "partnerWork": "no"
+    },
+    "offsetKm": 0.2
+  },
+  {
+    "id": "yoga-friedrichshain",
+    "name": "Mondsalz Yoga",
+    "type": "yoga",
+    "district": "Friedrichshain",
+    "address": "Boxhagener Hof 34",
+    "description": "Small rooms, soft light and blankets for everyone. Showers and towels for rent.",
+    "photo": "https://images.unsplash.com/photo-1599901860904-17e6ed7083a0?w=800&q=70&auto=format&fit=crop",
+    "traits": {
+      "noise": "quiet",
+      "light": "soft",
+      "crowd": "small",
+      "partnerWork": "yes"
+    },
+    "offsetKm": 0.7
+  },
+  {
+    "id": "pilates-friedrichshain",
+    "name": "Mitte Moves Pilates",
+    "type": "pilates",
+    "district": "Friedrichshain",
+    "address": "Simonweg 29",
+    "description": "Bright studio with reformers and mats. Showers and towels for rent.",
+    "photo": "https://images.unsplash.com/photo-1591258370814-01609b341790?w=800&q=70&auto=format&fit=crop",
+    "traits": {
+      "noise": "medium",
+      "light": "normal",
+      "crowd": "medium",
+      "partnerWork": "no"
+    },
+    "offsetKm": 0.6
+  },
+  {
+    "id": "gym-friedrichshain",
+    "name": "Ostblock Fitness",
+    "type": "gym",
+    "district": "Friedrichshain",
+    "address": "Wühlischhof 23",
+    "description": "Big open floor, music on all day. Showers and towels for rent.",
+    "photo": "https://images.unsplash.com/photo-1517963879433-6ad2b056d712?w=800&q=70&auto=format&fit=crop",
+    "traits": {
+      "noise": "loud",
+      "light": "bright",
+      "crowd": "medium",
+      "partnerWork": "yes"
+    },
+    "offsetKm": 0.8
+  },
+  {
+    "id": "dance-friedrichshain",
+    "name": "Studio Sprung",
+    "type": "dance",
+    "district": "Friedrichshain",
+    "address": "Revaler Bogen 42",
+    "description": "Wooden floor, warm lights and a good sound system. Changing rooms with lockers.",
+    "photo": "https://images.unsplash.com/photo-1508700929628-666bc8bd84ea?w=800&q=70&auto=format&fit=crop",
+    "traits": {
+      "noise": "loud",
+      "light": "soft",
+      "crowd": "medium",
+      "partnerWork": "no"
+    },
+    "offsetKm": 0
+  },
+  {
+    "id": "boxing-friedrichshain",
+    "name": "Fightclub Kiez",
+    "type": "boxing",
+    "district": "Friedrichshain",
+    "address": "Warschauer Weg 15",
+    "description": "Boxing studio with small groups and technique focus. Bring a padlock for the lockers.",
+    "photo": "https://images.unsplash.com/photo-1594737625785-a6cbdabd333c?w=800&q=70&auto=format&fit=crop",
+    "traits": {
+      "noise": "loud",
+      "light": "normal",
+      "crowd": "large",
+      "partnerWork": "yes"
+    },
+    "offsetKm": 0.4
+  },
+  {
+    "id": "climbing-friedrichshain",
+    "name": "Grip & Chalk",
+    "type": "climbing",
+    "district": "Friedrichshain",
+    "address": "Gärtnerhof 31",
+    "description": "Indoor walls, soft mats and a café corner. Showers and towels for rent.",
+    "photo": "https://images.unsplash.com/photo-1564769662533-4f00a87b4056?w=800&q=70&auto=format&fit=crop",
+    "traits": {
+      "noise": "medium",
+      "light": "normal",
+      "crowd": "medium",
+      "partnerWork": "yes"
+    },
+    "offsetKm": 1.2
+  },
+  {
+    "id": "swimming-friedrichshain",
+    "name": "Spreebad",
+    "type": "swimming",
+    "district": "Friedrichshain",
+    "address": "Samariterweg 14",
+    "description": "Indoor pool with a learner area and a sauna. Showers and towels for rent.",
+    "photo": "https://images.unsplash.com/photo-1530549387789-4c1017266635?w=800&q=70&auto=format&fit=crop",
+    "traits": {
+      "noise": "loud",
+      "light": "normal",
+      "crowd": "large",
+      "partnerWork": "no"
+    },
+    "offsetKm": 0.8
+  },
+  {
+    "id": "wellness-friedrichshain",
+    "name": "Kiez Spa",
+    "type": "wellness",
+    "district": "Friedrichshain",
+    "address": "Rigaer Hof 34",
+    "description": "Spa with sauna, salt room and relaxation sessions. Lockers and showers on site.",
+    "photo": "https://images.unsplash.com/photo-1540555700478-4be289fbecef?w=800&q=70&auto=format&fit=crop",
+    "traits": {
+      "noise": "quiet",
+      "light": "soft",
+      "crowd": "small",
+      "partnerWork": "no"
+    },
+    "offsetKm": 0.9
+  }
+]

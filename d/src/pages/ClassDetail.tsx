@@ -9,6 +9,7 @@ import { ExpectCardV4 } from '../components/ExpectCardV4';
 import { useVariant } from '../lib/variant';
 import { km, placeName, studioKm, studioMin } from '../lib/location';
 import { Icon } from '../components/Icon';
+import { Photo } from '../components/Photo';
 
 type Outcome = 'book' | 'not_for_me' | 'left';
 
@@ -76,6 +77,10 @@ export function ClassDetail() {
         <Link to="/" className="back">
           <Icon name="arrowLeft" size={20} /> Classes
         </Link>
+
+        {/* D: photo header (stock photo of the room; gradient + icon if it doesn't load) */}
+        <Photo src={studio.photo} icon={c.type} className="detail-photo" />
+        <p className="detail-place muted small">{studio.description}</p>
 
         <header className="detail-head">
           <span className="chip">

@@ -13,6 +13,22 @@ Each line below says what's on the screen and why. "Finding" means what we saw i
 
 ## Change log
 
+- **2026-11-18: realistic demo data and photos.** D now runs on generated, fully **fictional**
+  data in `d/data/`: **40 places** (8 types × 5 districts: yoga, pilates, gym, dance, boxing,
+  climbing, swimming, sauna & wellness) with a description, photo and room traits (noise · light ·
+  crowd · partner work); **104 classes** from 07:00 to 21:00 (:00/:30 only, at least 60 min apart in
+  the same place) with an intensity (gentle/moderate/hard) and 2–3 "What to expect" lines that match
+  the room; **500 past ratings** (energy before, "matched the card?", noise/light/crowd/intensity,
+  ~20% with a comment) for the AI feature later, not shown yet. Regenerate with
+  `node d/scripts/generate-data.mjs` (seeded, same output). **Photos** are free Unsplash stock of
+  rooms and equipment, with no close-up faces and no logos. If one fails to load, a soft mint
+  gradient with the type icon shows, never a broken image. **Class card:** photo on the left, time ·
+  duration, name, place · district · distance, then the intensity and room trait chips (information
+  only, not buttons). **Class page:** a photo header and the place description. Matching, filters,
+  sort and place work on the new data; "Quiet & dim" now means a quiet room **and** soft light,
+  since the data separates soft light from normal light. · Finding: the 12 sample classes didn't
+  feel like a real app, and testers judged a place by its look before reading anything.
+
 - **2026-11-18: one Energy Match card.** Everything is set in one place. The card takes Version E's
   style (mint gradient fading to white, soft shadow, round dark-green sparkle badge) so it stands out
   as a new feature. The label is "ENERGY MATCH · OPTIONAL", with **no Skip** (the card is optional by
@@ -47,16 +63,15 @@ Each line below says what's on the screen and why. "Finding" means what we saw i
   They expand from "Sensory filters · N"; active ones show as mint chips with ×. · Finding: 7 filters
   were too many; the filters belong with the rest of the settings.
 - **Best match first, nothing hidden:** with Energy Match or a filter on, the line "✦ Best match first
-  · N of 12" appears, then the fitting classes, then "Other classes". · Finding: hiding classes felt
+  · N of 104" appears, then the fitting classes, then "Other classes". · Finding: hiding classes felt
   like being told what to do; sorting keeps the choice with the member.
-- **A timeline of the day:** 07:00–21:00, one class per hour, each at a fitting time of day (HIIT and
-  spin before or after work, calm classes in the morning, at lunch and early evening). The default sort
+- **A timeline of the day:** 104 classes from 07:00 to 21:00, each at a fitting time of day (hard
+  classes before or after work, calm classes in the morning, at lunch and in the evening, sauna in the evening). The default sort
   is **Time**, and each group stays in time order. "Nearest" sorts by distance from the chosen place. · Finding: clusters
   like 07:00 and 07:15 were confusing.
-- **Fit rules** (from the studio's class data): Tired = nothing harder than moderate · Energetic and
-  Burn it off = a hard part · Calm down = soft music, calm room, soft light · Quiet & dim = soft music
-  and dim or daylight · Not crowded = usually calm · No flashing lights · No partner work = partner work
-  is none or optional.
+- **Fit rules** (from the room traits and class intensity): Tired = gentle or moderate · Energetic and
+  Burn it off = hard · Calm down = quiet room, small group, soft or normal light · Quiet & dim = quiet
+  room and soft light · Not crowded = small group · No flashing lights · No partner work.
 
 ## 2. Class detail
 

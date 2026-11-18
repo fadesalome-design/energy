@@ -1,0 +1,6583 @@
+[
+  {
+    "id": "r001",
+    "classId": "boxing-neuk-lln-technique-pads",
+    "date": "2026-11-13",
+    "energyBefore": "tired",
+    "matchedCard": "partly",
+    "answers": {
+      "noise": "loud",
+      "light": "bright",
+      "crowd": "large",
+      "intensity": "hard"
+    }
+  },
+  {
+    "id": "r002",
+    "classId": "pilates-kreuzberg-gentle-pilates",
+    "date": "2026-11-06",
+    "energyBefore": "energetic",
+    "matchedCard": "yes",
+    "answers": {
+      "noise": "medium",
+      "light": "soft",
+      "crowd": "small",
+      "intensity": "gentle"
+    }
+  },
+  {
+    "id": "r003",
+    "classId": "dance-mitte-hip-hop-foundations",
+    "date": "2026-11-06",
+    "energyBefore": "energetic",
+    "matchedCard": "yes",
+    "answers": {
+      "noise": "loud",
+      "light": "soft",
+      "crowd": "medium",
+      "intensity": "hard"
+    }
+  },
+  {
+    "id": "r004",
+    "classId": "climbing-neuk-lln-morning-bouldering",
+    "date": "2026-11-16",
+    "energyBefore": "tired",
+    "matchedCard": "no",
+    "answers": {
+      "noise": "quiet",
+      "light": "bright",
+      "crowd": "small",
+      "intensity": "gentle"
+    }
+  },
+  {
+    "id": "r005",
+    "classId": "pilates-kreuzberg-gentle-pilates",
+    "date": "2026-10-27",
+    "energyBefore": "tired",
+    "matchedCard": "partly",
+    "answers": {
+      "noise": "quiet",
+      "light": "normal",
+      "crowd": "small",
+      "intensity": "gentle"
+    }
+  },
+  {
+    "id": "r006",
+    "classId": "gym-friedrichshain-rhythm-ride",
+    "date": "2026-10-27",
+    "energyBefore": "tired",
+    "matchedCard": "no",
+    "answers": {
+      "noise": "medium",
+      "light": "bright",
+      "crowd": "small",
+      "intensity": "moderate"
+    }
+  },
+  {
+    "id": "r007",
+    "classId": "wellness-mitte-breathwork",
+    "date": "2026-10-31",
+    "energyBefore": "tired",
+    "matchedCard": "partly",
+    "answers": {
+      "noise": "quiet",
+      "light": "normal",
+      "crowd": "medium",
+      "intensity": "gentle"
+    }
+  },
+  {
+    "id": "r008",
+    "classId": "boxing-neuk-lln-technique-pads",
+    "date": "2026-11-01",
+    "energyBefore": "tired",
+    "matchedCard": "no",
+    "answers": {
+      "noise": "medium",
+      "light": "bright",
+      "crowd": "medium",
+      "intensity": "hard"
+    }
+  },
+  {
+    "id": "r009",
+    "classId": "pilates-friedrichshain-mat-pilates-basics",
+    "date": "2026-11-15",
+    "energyBefore": "energetic",
+    "matchedCard": "yes",
+    "answers": {
+      "noise": "medium",
+      "light": "normal",
+      "crowd": "medium",
+      "intensity": "moderate"
+    }
+  },
+  {
+    "id": "r010",
+    "classId": "swimming-kreuzberg-easy-lengths",
+    "date": "2026-11-12",
+    "energyBefore": "stressed",
+    "matchedCard": "yes",
+    "answers": {
+      "noise": "loud",
+      "light": "bright",
+      "crowd": "medium",
+      "intensity": "gentle"
+    }
+  },
+  {
+    "id": "r011",
+    "classId": "wellness-kreuzberg-sauna-stretch",
+    "date": "2026-10-21",
+    "energyBefore": "tired",
+    "matchedCard": "yes",
+    "answers": {
+      "noise": "quiet",
+      "light": "soft",
+      "crowd": "small",
+      "intensity": "gentle"
+    }
+  },
+  {
+    "id": "r012",
+    "classId": "boxing-friedrichshain-boxing-fundamentals",
+    "date": "2026-11-13",
+    "energyBefore": "stressed",
+    "matchedCard": "yes",
+    "answers": {
+      "noise": "loud",
+      "light": "soft",
+      "crowd": "large",
+      "intensity": "hard"
+    },
+    "comment": "Nice and quiet, I could switch off."
+  },
+  {
+    "id": "r013",
+    "classId": "gym-mitte-hiit-express",
+    "date": "2026-11-11",
+    "energyBefore": "stressed",
+    "matchedCard": "partly",
+    "answers": {
+      "noise": "medium",
+      "light": "bright",
+      "crowd": "medium",
+      "intensity": "hard"
+    }
+  },
+  {
+    "id": "r014",
+    "classId": "yoga-kreuzberg-lunch-break-yoga",
+    "date": "2026-11-02",
+    "energyBefore": "tired",
+    "matchedCard": "yes",
+    "answers": {
+      "noise": "quiet",
+      "light": "normal",
+      "crowd": "medium",
+      "intensity": "gentle"
+    },
+    "comment": "A bit too fast for a beginner."
+  },
+  {
+    "id": "r015",
+    "classId": "climbing-prenzlauer-berg-climbing-technique",
+    "date": "2026-11-15",
+    "energyBefore": "tired",
+    "matchedCard": "yes",
+    "answers": {
+      "noise": "medium",
+      "light": "normal",
+      "crowd": "small",
+      "intensity": "hard"
+    },
+    "comment": "The card was spot on."
+  },
+  {
+    "id": "r016",
+    "classId": "gym-neuk-lln-rhythm-ride",
+    "date": "2026-10-26",
+    "energyBefore": "tired",
+    "matchedCard": "partly",
+    "answers": {
+      "noise": "loud",
+      "light": "bright",
+      "crowd": "medium",
+      "intensity": "hard"
+    }
+  },
+  {
+    "id": "r017",
+    "classId": "swimming-mitte-easy-lengths",
+    "date": "2026-11-12",
+    "energyBefore": "energetic",
+    "matchedCard": "yes",
+    "answers": {
+      "noise": "quiet",
+      "light": "bright",
+      "crowd": "large",
+      "intensity": "gentle"
+    },
+    "comment": "Harder than the label says."
+  },
+  {
+    "id": "r018",
+    "classId": "wellness-mitte-sound-bath",
+    "date": "2026-10-31",
+    "energyBefore": "tired",
+    "matchedCard": "partly",
+    "answers": {
+      "noise": "quiet",
+      "light": "soft",
+      "crowd": "small",
+      "intensity": "gentle"
+    },
+    "comment": "Great teacher, clear instructions."
+  },
+  {
+    "id": "r019",
+    "classId": "dance-kreuzberg-salsa-basics",
+    "date": "2026-10-22",
+    "energyBefore": "tired",
+    "matchedCard": "yes",
+    "answers": {
+      "noise": "loud",
+      "light": "normal",
+      "crowd": "medium",
+      "intensity": "moderate"
+    }
+  },
+  {
+    "id": "r020",
+    "classId": "dance-kreuzberg-hip-hop-foundations",
+    "date": "2026-10-30",
+    "energyBefore": "tired",
+    "matchedCard": "partly",
+    "answers": {
+      "noise": "loud",
+      "light": "normal",
+      "crowd": "medium",
+      "intensity": "moderate"
+    }
+  },
+  {
+    "id": "r021",
+    "classId": "dance-prenzlauer-berg-salsa-basics",
+    "date": "2026-11-11",
+    "energyBefore": "stressed",
+    "matchedCard": "partly",
+    "answers": {
+      "noise": "medium",
+      "light": "bright",
+      "crowd": "large",
+      "intensity": "gentle"
+    }
+  },
+  {
+    "id": "r022",
+    "classId": "swimming-friedrichshain-easy-lengths",
+    "date": "2026-10-21",
+    "energyBefore": "stressed",
+    "matchedCard": "yes",
+    "answers": {
+      "noise": "loud",
+      "light": "normal",
+      "crowd": "large",
+      "intensity": "gentle"
+    }
+  },
+  {
+    "id": "r023",
+    "classId": "climbing-neuk-lln-morning-bouldering",
+    "date": "2026-11-15",
+    "energyBefore": "stressed",
+    "matchedCard": "partly",
+    "answers": {
+      "noise": "quiet",
+      "light": "bright",
+      "crowd": "small",
+      "intensity": "moderate"
+    }
+  },
+  {
+    "id": "r024",
+    "classId": "pilates-kreuzberg-mat-pilates-basics",
+    "date": "2026-11-17",
+    "energyBefore": "stressed",
+    "matchedCard": "yes",
+    "answers": {
+      "noise": "medium",
+      "light": "soft",
+      "crowd": "small",
+      "intensity": "moderate"
+    },
+    "comment": "Nice and quiet, I could switch off."
+  },
+  {
+    "id": "r025",
+    "classId": "climbing-kreuzberg-climbing-technique",
+    "date": "2026-11-16",
+    "energyBefore": "stressed",
+    "matchedCard": "partly",
+    "answers": {
+      "noise": "medium",
+      "light": "bright",
+      "crowd": "medium",
+      "intensity": "hard"
+    }
+  },
+  {
+    "id": "r026",
+    "classId": "swimming-neuk-lln-aqua-fit",
+    "date": "2026-11-07",
+    "energyBefore": "tired",
+    "matchedCard": "yes",
+    "answers": {
+      "noise": "loud",
+      "light": "normal",
+      "crowd": "large",
+      "intensity": "moderate"
+    },
+    "comment": "More people than expected."
+  },
+  {
+    "id": "r027",
+    "classId": "boxing-mitte-technique-pads",
+    "date": "2026-10-19",
+    "energyBefore": "energetic",
+    "matchedCard": "partly",
+    "answers": {
+      "noise": "medium",
+      "light": "normal",
+      "crowd": "small",
+      "intensity": "moderate"
+    }
+  },
+  {
+    "id": "r028",
+    "classId": "pilates-neuk-lln-gentle-pilates",
+    "date": "2026-10-23",
+    "energyBefore": "energetic",
+    "matchedCard": "partly",
+    "answers": {
+      "noise": "quiet",
+      "light": "bright",
+      "crowd": "small",
+      "intensity": "gentle"
+    }
+  },
+  {
+    "id": "r029",
+    "classId": "yoga-kreuzberg-lunch-break-yoga",
+    "date": "2026-10-30",
+    "energyBefore": "tired",
+    "matchedCard": "yes",
+    "answers": {
+      "noise": "quiet",
+      "light": "normal",
+      "crowd": "medium",
+      "intensity": "gentle"
+    },
+    "comment": "The card was spot on."
+  },
+  {
+    "id": "r030",
+    "classId": "dance-kreuzberg-contemporary-for-beginners",
+    "date": "2026-11-05",
+    "energyBefore": "stressed",
+    "matchedCard": "partly",
+    "answers": {
+      "noise": "loud",
+      "light": "normal",
+      "crowd": "medium",
+      "intensity": "moderate"
+    }
+  },
+  {
+    "id": "r031",
+    "classId": "yoga-prenzlauer-berg-yin-yoga",
+    "date": "2026-11-16",
+    "energyBefore": "stressed",
+    "matchedCard": "yes",
+    "answers": {
+      "noise": "medium",
+      "light": "soft",
+      "crowd": "small",
+      "intensity": "gentle"
+    },
+    "comment": "Easier than I expected, good for a tired day."
+  },
+  {
+    "id": "r032",
+    "classId": "boxing-mitte-boxfit",
+    "date": "2026-11-12",
+    "energyBefore": "energetic",
+    "matchedCard": "partly",
+    "answers": {
+      "noise": "medium",
+      "light": "normal",
+      "crowd": "large",
+      "intensity": "hard"
+    }
+  },
+  {
+    "id": "r033",
+    "classId": "gym-friedrichshain-hiit-express",
+    "date": "2026-10-28",
+    "energyBefore": "energetic",
+    "matchedCard": "partly",
+    "answers": {
+      "noise": "loud",
+      "light": "bright",
+      "crowd": "small",
+      "intensity": "hard"
+    }
+  },
+  {
+    "id": "r034",
+    "classId": "wellness-kreuzberg-sauna-stretch",
+    "date": "2026-10-22",
+    "energyBefore": "stressed",
+    "matchedCard": "partly",
+    "answers": {
+      "noise": "quiet",
+      "light": "soft",
+      "crowd": "small",
+      "intensity": "moderate"
+    }
+  },
+  {
+    "id": "r035",
+    "classId": "pilates-kreuzberg-mat-pilates-basics",
+    "date": "2026-11-03",
+    "energyBefore": "energetic",
+    "matchedCard": "no",
+    "answers": {
+      "noise": "medium",
+      "light": "soft",
+      "crowd": "medium",
+      "intensity": "hard"
+    }
+  },
+  {
+    "id": "r036",
+    "classId": "gym-friedrichshain-hiit-express",
+    "date": "2026-11-05",
+    "energyBefore": "tired",
+    "matchedCard": "yes",
+    "answers": {
+      "noise": "loud",
+      "light": "bright",
+      "crowd": "medium",
+      "intensity": "hard"
+    }
+  },
+  {
+    "id": "r037",
+    "classId": "wellness-kreuzberg-sauna-stretch",
+    "date": "2026-10-20",
+    "energyBefore": "tired",
+    "matchedCard": "yes",
+    "answers": {
+      "noise": "quiet",
+      "light": "soft",
+      "crowd": "small",
+      "intensity": "gentle"
+    }
+  },
+  {
+    "id": "r038",
+    "classId": "wellness-mitte-sauna-stretch",
+    "date": "2026-11-15",
+    "energyBefore": "energetic",
+    "matchedCard": "partly",
+    "answers": {
+      "noise": "quiet",
+      "light": "soft",
+      "crowd": "medium",
+      "intensity": "gentle"
+    }
+  },
+  {
+    "id": "r039",
+    "classId": "pilates-friedrichshain-gentle-pilates",
+    "date": "2026-11-01",
+    "energyBefore": "energetic",
+    "matchedCard": "partly",
+    "answers": {
+      "noise": "medium",
+      "light": "normal",
+      "crowd": "medium",
+      "intensity": "moderate"
+    }
+  },
+  {
+    "id": "r040",
+    "classId": "gym-prenzlauer-berg-hiit-express",
+    "date": "2026-11-16",
+    "energyBefore": "tired",
+    "matchedCard": "partly",
+    "answers": {
+      "noise": "medium",
+      "light": "normal",
+      "crowd": "medium",
+      "intensity": "hard"
+    }
+  },
+  {
+    "id": "r041",
+    "classId": "swimming-prenzlauer-berg-aqua-fit",
+    "date": "2026-10-19",
+    "energyBefore": "energetic",
+    "matchedCard": "yes",
+    "answers": {
+      "noise": "medium",
+      "light": "normal",
+      "crowd": "large",
+      "intensity": "moderate"
+    }
+  },
+  {
+    "id": "r042",
+    "classId": "yoga-friedrichshain-lunch-break-yoga",
+    "date": "2026-10-24",
+    "energyBefore": "stressed",
+    "matchedCard": "yes",
+    "answers": {
+      "noise": "quiet",
+      "light": "soft",
+      "crowd": "small",
+      "intensity": "gentle"
+    }
+  },
+  {
+    "id": "r043",
+    "classId": "yoga-mitte-power-yoga",
+    "date": "2026-10-25",
+    "energyBefore": "energetic",
+    "matchedCard": "partly",
+    "answers": {
+      "noise": "quiet",
+      "light": "soft",
+      "crowd": "large",
+      "intensity": "hard"
+    }
+  },
+  {
+    "id": "r044",
+    "classId": "yoga-friedrichshain-lunch-break-yoga",
+    "date": "2026-11-11",
+    "energyBefore": "tired",
+    "matchedCard": "yes",
+    "answers": {
+      "noise": "quiet",
+      "light": "soft",
+      "crowd": "small",
+      "intensity": "gentle"
+    }
+  },
+  {
+    "id": "r045",
+    "classId": "yoga-neuk-lln-yin-yoga",
+    "date": "2026-11-03",
+    "energyBefore": "energetic",
+    "matchedCard": "partly",
+    "answers": {
+      "noise": "quiet",
+      "light": "soft",
+      "crowd": "small",
+      "intensity": "gentle"
+    }
+  },
+  {
+    "id": "r046",
+    "classId": "yoga-friedrichshain-lunch-break-yoga",
+    "date": "2026-10-23",
+    "energyBefore": "stressed",
+    "matchedCard": "partly",
+    "answers": {
+      "noise": "medium",
+      "light": "soft",
+      "crowd": "small",
+      "intensity": "gentle"
+    }
+  },
+  {
+    "id": "r047",
+    "classId": "boxing-prenzlauer-berg-boxfit",
+    "date": "2026-10-20",
+    "energyBefore": "energetic",
+    "matchedCard": "partly",
+    "answers": {
+      "noise": "medium",
+      "light": "soft",
+      "crowd": "medium",
+      "intensity": "hard"
+    }
+  },
+  {
+    "id": "r048",
+    "classId": "yoga-kreuzberg-yin-yoga",
+    "date": "2026-11-04",
+    "energyBefore": "energetic",
+    "matchedCard": "yes",
+    "answers": {
+      "noise": "quiet",
+      "light": "normal",
+      "crowd": "medium",
+      "intensity": "gentle"
+    }
+  },
+  {
+    "id": "r049",
+    "classId": "yoga-neuk-lln-yin-yoga",
+    "date": "2026-11-08",
+    "energyBefore": "stressed",
+    "matchedCard": "yes",
+    "answers": {
+      "noise": "quiet",
+      "light": "soft",
+      "crowd": "small",
+      "intensity": "gentle"
+    },
+    "comment": "Exactly as described, very calm."
+  },
+  {
+    "id": "r050",
+    "classId": "climbing-prenzlauer-berg-climbing-technique",
+    "date": "2026-10-26",
+    "energyBefore": "stressed",
+    "matchedCard": "partly",
+    "answers": {
+      "noise": "quiet",
+      "light": "soft",
+      "crowd": "small",
+      "intensity": "hard"
+    }
+  },
+  {
+    "id": "r051",
+    "classId": "gym-neuk-lln-rhythm-ride",
+    "date": "2026-11-02",
+    "energyBefore": "energetic",
+    "matchedCard": "yes",
+    "answers": {
+      "noise": "loud",
+      "light": "bright",
+      "crowd": "medium",
+      "intensity": "hard"
+    }
+  },
+  {
+    "id": "r052",
+    "classId": "swimming-neuk-lln-aqua-fit",
+    "date": "2026-10-23",
+    "energyBefore": "energetic",
+    "matchedCard": "partly",
+    "answers": {
+      "noise": "loud",
+      "light": "soft",
+      "crowd": "large",
+      "intensity": "moderate"
+    }
+  },
+  {
+    "id": "r053",
+    "classId": "gym-prenzlauer-berg-hiit-express",
+    "date": "2026-11-07",
+    "energyBefore": "tired",
+    "matchedCard": "yes",
+    "answers": {
+      "noise": "loud",
+      "light": "bright",
+      "crowd": "medium",
+      "intensity": "hard"
+    }
+  },
+  {
+    "id": "r054",
+    "classId": "dance-kreuzberg-hip-hop-foundations",
+    "date": "2026-11-03",
+    "energyBefore": "energetic",
+    "matchedCard": "partly",
+    "answers": {
+      "noise": "loud",
+      "light": "normal",
+      "crowd": "large",
+      "intensity": "hard"
+    }
+  },
+  {
+    "id": "r055",
+    "classId": "boxing-mitte-technique-pads",
+    "date": "2026-10-19",
+    "energyBefore": "energetic",
+    "matchedCard": "partly",
+    "answers": {
+      "noise": "medium",
+      "light": "soft",
+      "crowd": "medium",
+      "intensity": "hard"
+    }
+  },
+  {
+    "id": "r056",
+    "classId": "boxing-neuk-lln-boxfit",
+    "date": "2026-10-25",
+    "energyBefore": "energetic",
+    "matchedCard": "partly",
+    "answers": {
+      "noise": "loud",
+      "light": "bright",
+      "crowd": "large",
+      "intensity": "hard"
+    },
+    "comment": "Easier than I expected, good for a tired day."
+  },
+  {
+    "id": "r057",
+    "classId": "yoga-kreuzberg-yin-yoga",
+    "date": "2026-11-03",
+    "energyBefore": "tired",
+    "matchedCard": "yes",
+    "answers": {
+      "noise": "quiet",
+      "light": "bright",
+      "crowd": "medium",
+      "intensity": "gentle"
+    }
+  },
+  {
+    "id": "r058",
+    "classId": "dance-prenzlauer-berg-salsa-basics",
+    "date": "2026-11-17",
+    "energyBefore": "tired",
+    "matchedCard": "no",
+    "answers": {
+      "noise": "quiet",
+      "light": "bright",
+      "crowd": "large",
+      "intensity": "gentle"
+    }
+  },
+  {
+    "id": "r059",
+    "classId": "boxing-prenzlauer-berg-boxfit",
+    "date": "2026-10-19",
+    "energyBefore": "tired",
+    "matchedCard": "yes",
+    "answers": {
+      "noise": "loud",
+      "light": "normal",
+      "crowd": "medium",
+      "intensity": "hard"
+    },
+    "comment": "Changing room was crowded."
+  },
+  {
+    "id": "r060",
+    "classId": "yoga-mitte-yin-yoga",
+    "date": "2026-10-26",
+    "energyBefore": "energetic",
+    "matchedCard": "partly",
+    "answers": {
+      "noise": "medium",
+      "light": "soft",
+      "crowd": "medium",
+      "intensity": "gentle"
+    }
+  },
+  {
+    "id": "r061",
+    "classId": "swimming-prenzlauer-berg-aqua-fit",
+    "date": "2026-10-23",
+    "energyBefore": "energetic",
+    "matchedCard": "partly",
+    "answers": {
+      "noise": "quiet",
+      "light": "soft",
+      "crowd": "large",
+      "intensity": "moderate"
+    }
+  },
+  {
+    "id": "r062",
+    "classId": "climbing-prenzlauer-berg-bouldering-intro",
+    "date": "2026-10-24",
+    "energyBefore": "tired",
+    "matchedCard": "yes",
+    "answers": {
+      "noise": "medium",
+      "light": "soft",
+      "crowd": "small",
+      "intensity": "moderate"
+    }
+  },
+  {
+    "id": "r063",
+    "classId": "boxing-neuk-lln-technique-pads",
+    "date": "2026-10-24",
+    "energyBefore": "stressed",
+    "matchedCard": "yes",
+    "answers": {
+      "noise": "loud",
+      "light": "bright",
+      "crowd": "large",
+      "intensity": "moderate"
+    },
+    "comment": "Partner work was optional, which helped."
+  },
+  {
+    "id": "r064",
+    "classId": "climbing-prenzlauer-berg-morning-bouldering",
+    "date": "2026-10-31",
+    "energyBefore": "tired",
+    "matchedCard": "no",
+    "answers": {
+      "noise": "quiet",
+      "light": "normal",
+      "crowd": "medium",
+      "intensity": "hard"
+    },
+    "comment": "Changing room was crowded."
+  },
+  {
+    "id": "r065",
+    "classId": "dance-mitte-hip-hop-foundations",
+    "date": "2026-11-06",
+    "energyBefore": "tired",
+    "matchedCard": "yes",
+    "answers": {
+      "noise": "loud",
+      "light": "soft",
+      "crowd": "medium",
+      "intensity": "hard"
+    }
+  },
+  {
+    "id": "r066",
+    "classId": "wellness-mitte-breathwork",
+    "date": "2026-11-04",
+    "energyBefore": "energetic",
+    "matchedCard": "partly",
+    "answers": {
+      "noise": "quiet",
+      "light": "normal",
+      "crowd": "small",
+      "intensity": "gentle"
+    }
+  },
+  {
+    "id": "r067",
+    "classId": "dance-kreuzberg-salsa-basics",
+    "date": "2026-11-08",
+    "energyBefore": "energetic",
+    "matchedCard": "yes",
+    "answers": {
+      "noise": "loud",
+      "light": "normal",
+      "crowd": "medium",
+      "intensity": "moderate"
+    }
+  },
+  {
+    "id": "r068",
+    "classId": "swimming-prenzlauer-berg-easy-lengths",
+    "date": "2026-10-24",
+    "energyBefore": "tired",
+    "matchedCard": "partly",
+    "answers": {
+      "noise": "medium",
+      "light": "soft",
+      "crowd": "large",
+      "intensity": "moderate"
+    }
+  },
+  {
+    "id": "r069",
+    "classId": "pilates-neuk-lln-mat-pilates-basics",
+    "date": "2026-10-20",
+    "energyBefore": "stressed",
+    "matchedCard": "partly",
+    "answers": {
+      "noise": "quiet",
+      "light": "bright",
+      "crowd": "small",
+      "intensity": "hard"
+    }
+  },
+  {
+    "id": "r070",
+    "classId": "climbing-prenzlauer-berg-bouldering-intro",
+    "date": "2026-10-24",
+    "energyBefore": "tired",
+    "matchedCard": "no",
+    "answers": {
+      "noise": "loud",
+      "light": "normal",
+      "crowd": "small",
+      "intensity": "gentle"
+    }
+  },
+  {
+    "id": "r071",
+    "classId": "wellness-mitte-sound-bath",
+    "date": "2026-10-21",
+    "energyBefore": "tired",
+    "matchedCard": "partly",
+    "answers": {
+      "noise": "medium",
+      "light": "soft",
+      "crowd": "small",
+      "intensity": "gentle"
+    }
+  },
+  {
+    "id": "r072",
+    "classId": "climbing-friedrichshain-bouldering-intro",
+    "date": "2026-10-31",
+    "energyBefore": "tired",
+    "matchedCard": "partly",
+    "answers": {
+      "noise": "quiet",
+      "light": "normal",
+      "crowd": "medium",
+      "intensity": "moderate"
+    },
+    "comment": "The room was quite warm."
+  },
+  {
+    "id": "r073",
+    "classId": "yoga-mitte-power-yoga",
+    "date": "2026-10-26",
+    "energyBefore": "energetic",
+    "matchedCard": "partly",
+    "answers": {
+      "noise": "quiet",
+      "light": "normal",
+      "crowd": "small",
+      "intensity": "hard"
+    }
+  },
+  {
+    "id": "r074",
+    "classId": "climbing-kreuzberg-morning-bouldering",
+    "date": "2026-11-12",
+    "energyBefore": "tired",
+    "matchedCard": "yes",
+    "answers": {
+      "noise": "quiet",
+      "light": "bright",
+      "crowd": "medium",
+      "intensity": "moderate"
+    },
+    "comment": "Easier than I expected, good for a tired day."
+  },
+  {
+    "id": "r075",
+    "classId": "boxing-mitte-boxfit",
+    "date": "2026-11-10",
+    "energyBefore": "energetic",
+    "matchedCard": "no",
+    "answers": {
+      "noise": "medium",
+      "light": "bright",
+      "crowd": "small",
+      "intensity": "moderate"
+    }
+  },
+  {
+    "id": "r076",
+    "classId": "dance-mitte-contemporary-for-beginners",
+    "date": "2026-10-22",
+    "energyBefore": "stressed",
+    "matchedCard": "partly",
+    "answers": {
+      "noise": "loud",
+      "light": "soft",
+      "crowd": "large",
+      "intensity": "moderate"
+    }
+  },
+  {
+    "id": "r077",
+    "classId": "yoga-kreuzberg-lunch-break-yoga",
+    "date": "2026-10-29",
+    "energyBefore": "tired",
+    "matchedCard": "yes",
+    "answers": {
+      "noise": "quiet",
+      "light": "soft",
+      "crowd": "medium",
+      "intensity": "gentle"
+    }
+  },
+  {
+    "id": "r078",
+    "classId": "dance-mitte-contemporary-for-beginners",
+    "date": "2026-10-30",
+    "energyBefore": "energetic",
+    "matchedCard": "partly",
+    "answers": {
+      "noise": "loud",
+      "light": "soft",
+      "crowd": "medium",
+      "intensity": "hard"
+    }
+  },
+  {
+    "id": "r079",
+    "classId": "swimming-neuk-lln-aqua-fit",
+    "date": "2026-11-02",
+    "energyBefore": "tired",
+    "matchedCard": "partly",
+    "answers": {
+      "noise": "medium",
+      "light": "normal",
+      "crowd": "large",
+      "intensity": "moderate"
+    }
+  },
+  {
+    "id": "r080",
+    "classId": "wellness-neuk-lln-breathwork",
+    "date": "2026-10-31",
+    "energyBefore": "stressed",
+    "matchedCard": "partly",
+    "answers": {
+      "noise": "quiet",
+      "light": "soft",
+      "crowd": "medium",
+      "intensity": "gentle"
+    }
+  },
+  {
+    "id": "r081",
+    "classId": "climbing-kreuzberg-morning-bouldering",
+    "date": "2026-10-29",
+    "energyBefore": "tired",
+    "matchedCard": "yes",
+    "answers": {
+      "noise": "quiet",
+      "light": "bright",
+      "crowd": "medium",
+      "intensity": "moderate"
+    }
+  },
+  {
+    "id": "r082",
+    "classId": "yoga-prenzlauer-berg-vinyasa-flow",
+    "date": "2026-11-15",
+    "energyBefore": "tired",
+    "matchedCard": "yes",
+    "answers": {
+      "noise": "medium",
+      "light": "soft",
+      "crowd": "small",
+      "intensity": "moderate"
+    },
+    "comment": "Easier than I expected, good for a tired day."
+  },
+  {
+    "id": "r083",
+    "classId": "pilates-kreuzberg-mat-pilates-basics",
+    "date": "2026-11-06",
+    "energyBefore": "energetic",
+    "matchedCard": "yes",
+    "answers": {
+      "noise": "medium",
+      "light": "soft",
+      "crowd": "small",
+      "intensity": "moderate"
+    }
+  },
+  {
+    "id": "r084",
+    "classId": "yoga-prenzlauer-berg-power-yoga",
+    "date": "2026-11-15",
+    "energyBefore": "energetic",
+    "matchedCard": "yes",
+    "answers": {
+      "noise": "medium",
+      "light": "soft",
+      "crowd": "small",
+      "intensity": "hard"
+    }
+  },
+  {
+    "id": "r085",
+    "classId": "climbing-friedrichshain-morning-bouldering",
+    "date": "2026-11-14",
+    "energyBefore": "stressed",
+    "matchedCard": "partly",
+    "answers": {
+      "noise": "medium",
+      "light": "normal",
+      "crowd": "medium",
+      "intensity": "gentle"
+    },
+    "comment": "The card was spot on."
+  },
+  {
+    "id": "r086",
+    "classId": "climbing-friedrichshain-morning-bouldering",
+    "date": "2026-11-14",
+    "energyBefore": "tired",
+    "matchedCard": "yes",
+    "answers": {
+      "noise": "medium",
+      "light": "normal",
+      "crowd": "medium",
+      "intensity": "moderate"
+    }
+  },
+  {
+    "id": "r087",
+    "classId": "swimming-prenzlauer-berg-aqua-fit",
+    "date": "2026-11-10",
+    "energyBefore": "stressed",
+    "matchedCard": "partly",
+    "answers": {
+      "noise": "loud",
+      "light": "normal",
+      "crowd": "large",
+      "intensity": "moderate"
+    }
+  },
+  {
+    "id": "r088",
+    "classId": "pilates-friedrichshain-gentle-pilates",
+    "date": "2026-10-20",
+    "energyBefore": "energetic",
+    "matchedCard": "partly",
+    "answers": {
+      "noise": "medium",
+      "light": "normal",
+      "crowd": "medium",
+      "intensity": "moderate"
+    }
+  },
+  {
+    "id": "r089",
+    "classId": "gym-mitte-functional-circuit",
+    "date": "2026-11-10",
+    "energyBefore": "stressed",
+    "matchedCard": "partly",
+    "answers": {
+      "noise": "medium",
+      "light": "bright",
+      "crowd": "small",
+      "intensity": "hard"
+    }
+  },
+  {
+    "id": "r090",
+    "classId": "climbing-neuk-lln-bouldering-intro",
+    "date": "2026-11-15",
+    "energyBefore": "tired",
+    "matchedCard": "partly",
+    "answers": {
+      "noise": "quiet",
+      "light": "bright",
+      "crowd": "large",
+      "intensity": "moderate"
+    }
+  },
+  {
+    "id": "r091",
+    "classId": "boxing-prenzlauer-berg-boxing-fundamentals",
+    "date": "2026-11-09",
+    "energyBefore": "tired",
+    "matchedCard": "partly",
+    "answers": {
+      "noise": "loud",
+      "light": "normal",
+      "crowd": "large",
+      "intensity": "hard"
+    }
+  },
+  {
+    "id": "r092",
+    "classId": "swimming-mitte-aqua-fit",
+    "date": "2026-11-06",
+    "energyBefore": "stressed",
+    "matchedCard": "partly",
+    "answers": {
+      "noise": "quiet",
+      "light": "bright",
+      "crowd": "large",
+      "intensity": "gentle"
+    }
+  },
+  {
+    "id": "r093",
+    "classId": "yoga-friedrichshain-lunch-break-yoga",
+    "date": "2026-10-21",
+    "energyBefore": "tired",
+    "matchedCard": "yes",
+    "answers": {
+      "noise": "quiet",
+      "light": "soft",
+      "crowd": "small",
+      "intensity": "gentle"
+    }
+  },
+  {
+    "id": "r094",
+    "classId": "yoga-neuk-lln-slow-flow-yoga",
+    "date": "2026-10-20",
+    "energyBefore": "tired",
+    "matchedCard": "yes",
+    "answers": {
+      "noise": "quiet",
+      "light": "soft",
+      "crowd": "small",
+      "intensity": "gentle"
+    }
+  },
+  {
+    "id": "r095",
+    "classId": "swimming-kreuzberg-easy-lengths",
+    "date": "2026-11-11",
+    "energyBefore": "energetic",
+    "matchedCard": "yes",
+    "answers": {
+      "noise": "loud",
+      "light": "bright",
+      "crowd": "medium",
+      "intensity": "gentle"
+    }
+  },
+  {
+    "id": "r096",
+    "classId": "swimming-prenzlauer-berg-aqua-fit",
+    "date": "2026-11-12",
+    "energyBefore": "stressed",
+    "matchedCard": "partly",
+    "answers": {
+      "noise": "quiet",
+      "light": "soft",
+      "crowd": "large",
+      "intensity": "moderate"
+    }
+  },
+  {
+    "id": "r097",
+    "classId": "climbing-prenzlauer-berg-bouldering-intro",
+    "date": "2026-11-09",
+    "energyBefore": "energetic",
+    "matchedCard": "yes",
+    "answers": {
+      "noise": "medium",
+      "light": "normal",
+      "crowd": "small",
+      "intensity": "moderate"
+    }
+  },
+  {
+    "id": "r098",
+    "classId": "boxing-prenzlauer-berg-boxing-fundamentals",
+    "date": "2026-10-28",
+    "energyBefore": "energetic",
+    "matchedCard": "no",
+    "answers": {
+      "noise": "medium",
+      "light": "normal",
+      "crowd": "large",
+      "intensity": "hard"
+    },
+    "comment": "Changing room was crowded."
+  },
+  {
+    "id": "r099",
+    "classId": "boxing-friedrichshain-technique-pads",
+    "date": "2026-11-03",
+    "energyBefore": "energetic",
+    "matchedCard": "no",
+    "answers": {
+      "noise": "medium",
+      "light": "normal",
+      "crowd": "large",
+      "intensity": "gentle"
+    }
+  },
+  {
+    "id": "r100",
+    "classId": "climbing-friedrichshain-morning-bouldering",
+    "date": "2026-10-24",
+    "energyBefore": "stressed",
+    "matchedCard": "partly",
+    "answers": {
+      "noise": "quiet",
+      "light": "normal",
+      "crowd": "medium",
+      "intensity": "moderate"
+    }
+  },
+  {
+    "id": "r101",
+    "classId": "yoga-neuk-lln-slow-flow-yoga",
+    "date": "2026-11-17",
+    "energyBefore": "tired",
+    "matchedCard": "yes",
+    "answers": {
+      "noise": "quiet",
+      "light": "soft",
+      "crowd": "small",
+      "intensity": "gentle"
+    }
+  },
+  {
+    "id": "r102",
+    "classId": "swimming-mitte-aqua-fit",
+    "date": "2026-10-26",
+    "energyBefore": "stressed",
+    "matchedCard": "partly",
+    "answers": {
+      "noise": "quiet",
+      "light": "bright",
+      "crowd": "large",
+      "intensity": "moderate"
+    }
+  },
+  {
+    "id": "r103",
+    "classId": "dance-kreuzberg-salsa-basics",
+    "date": "2026-11-10",
+    "energyBefore": "tired",
+    "matchedCard": "no",
+    "answers": {
+      "noise": "loud",
+      "light": "normal",
+      "crowd": "large",
+      "intensity": "hard"
+    }
+  },
+  {
+    "id": "r104",
+    "classId": "wellness-friedrichshain-breathwork",
+    "date": "2026-11-14",
+    "energyBefore": "stressed",
+    "matchedCard": "yes",
+    "answers": {
+      "noise": "quiet",
+      "light": "soft",
+      "crowd": "small",
+      "intensity": "gentle"
+    }
+  },
+  {
+    "id": "r105",
+    "classId": "climbing-prenzlauer-berg-climbing-technique",
+    "date": "2026-11-10",
+    "energyBefore": "tired",
+    "matchedCard": "yes",
+    "answers": {
+      "noise": "medium",
+      "light": "soft",
+      "crowd": "small",
+      "intensity": "hard"
+    },
+    "comment": "Music was louder than the card said."
+  },
+  {
+    "id": "r106",
+    "classId": "pilates-mitte-reformer-pilates",
+    "date": "2026-11-10",
+    "energyBefore": "stressed",
+    "matchedCard": "yes",
+    "answers": {
+      "noise": "quiet",
+      "light": "soft",
+      "crowd": "small",
+      "intensity": "hard"
+    },
+    "comment": "More people than expected."
+  },
+  {
+    "id": "r107",
+    "classId": "pilates-neuk-lln-gentle-pilates",
+    "date": "2026-11-01",
+    "energyBefore": "stressed",
+    "matchedCard": "yes",
+    "answers": {
+      "noise": "quiet",
+      "light": "bright",
+      "crowd": "small",
+      "intensity": "gentle"
+    }
+  },
+  {
+    "id": "r108",
+    "classId": "climbing-kreuzberg-morning-bouldering",
+    "date": "2026-11-17",
+    "energyBefore": "tired",
+    "matchedCard": "yes",
+    "answers": {
+      "noise": "quiet",
+      "light": "bright",
+      "crowd": "medium",
+      "intensity": "moderate"
+    }
+  },
+  {
+    "id": "r109",
+    "classId": "climbing-mitte-climbing-technique",
+    "date": "2026-11-12",
+    "energyBefore": "stressed",
+    "matchedCard": "yes",
+    "answers": {
+      "noise": "quiet",
+      "light": "bright",
+      "crowd": "small",
+      "intensity": "hard"
+    }
+  },
+  {
+    "id": "r110",
+    "classId": "swimming-neuk-lln-aqua-fit",
+    "date": "2026-10-28",
+    "energyBefore": "stressed",
+    "matchedCard": "partly",
+    "answers": {
+      "noise": "loud",
+      "light": "bright",
+      "crowd": "large",
+      "intensity": "moderate"
+    }
+  },
+  {
+    "id": "r111",
+    "classId": "climbing-kreuzberg-climbing-technique",
+    "date": "2026-10-23",
+    "energyBefore": "stressed",
+    "matchedCard": "partly",
+    "answers": {
+      "noise": "quiet",
+      "light": "bright",
+      "crowd": "large",
+      "intensity": "hard"
+    }
+  },
+  {
+    "id": "r112",
+    "classId": "pilates-mitte-mat-pilates-basics",
+    "date": "2026-11-09",
+    "energyBefore": "tired",
+    "matchedCard": "yes",
+    "answers": {
+      "noise": "quiet",
+      "light": "soft",
+      "crowd": "small",
+      "intensity": "moderate"
+    }
+  },
+  {
+    "id": "r113",
+    "classId": "wellness-mitte-sound-bath",
+    "date": "2026-11-02",
+    "energyBefore": "tired",
+    "matchedCard": "yes",
+    "answers": {
+      "noise": "quiet",
+      "light": "normal",
+      "crowd": "small",
+      "intensity": "gentle"
+    }
+  },
+  {
+    "id": "r114",
+    "classId": "swimming-mitte-lane-swim-technique",
+    "date": "2026-11-17",
+    "energyBefore": "tired",
+    "matchedCard": "partly",
+    "answers": {
+      "noise": "quiet",
+      "light": "bright",
+      "crowd": "large",
+      "intensity": "gentle"
+    }
+  },
+  {
+    "id": "r115",
+    "classId": "pilates-neuk-lln-mat-pilates-basics",
+    "date": "2026-10-24",
+    "energyBefore": "tired",
+    "matchedCard": "partly",
+    "answers": {
+      "noise": "medium",
+      "light": "bright",
+      "crowd": "small",
+      "intensity": "moderate"
+    }
+  },
+  {
+    "id": "r116",
+    "classId": "wellness-neuk-lln-sound-bath",
+    "date": "2026-11-06",
+    "energyBefore": "stressed",
+    "matchedCard": "no",
+    "answers": {
+      "noise": "medium",
+      "light": "soft",
+      "crowd": "medium",
+      "intensity": "gentle"
+    }
+  },
+  {
+    "id": "r117",
+    "classId": "pilates-prenzlauer-berg-reformer-pilates",
+    "date": "2026-11-07",
+    "energyBefore": "stressed",
+    "matchedCard": "yes",
+    "answers": {
+      "noise": "medium",
+      "light": "bright",
+      "crowd": "medium",
+      "intensity": "hard"
+    }
+  },
+  {
+    "id": "r118",
+    "classId": "dance-prenzlauer-berg-salsa-basics",
+    "date": "2026-11-16",
+    "energyBefore": "tired",
+    "matchedCard": "partly",
+    "answers": {
+      "noise": "quiet",
+      "light": "bright",
+      "crowd": "large",
+      "intensity": "moderate"
+    }
+  },
+  {
+    "id": "r119",
+    "classId": "wellness-kreuzberg-sauna-stretch",
+    "date": "2026-10-19",
+    "energyBefore": "energetic",
+    "matchedCard": "yes",
+    "answers": {
+      "noise": "quiet",
+      "light": "soft",
+      "crowd": "small",
+      "intensity": "gentle"
+    }
+  },
+  {
+    "id": "r120",
+    "classId": "pilates-kreuzberg-mat-pilates-basics",
+    "date": "2026-11-08",
+    "energyBefore": "energetic",
+    "matchedCard": "partly",
+    "answers": {
+      "noise": "loud",
+      "light": "soft",
+      "crowd": "small",
+      "intensity": "moderate"
+    }
+  },
+  {
+    "id": "r121",
+    "classId": "climbing-neuk-lln-bouldering-intro",
+    "date": "2026-11-06",
+    "energyBefore": "tired",
+    "matchedCard": "partly",
+    "answers": {
+      "noise": "medium",
+      "light": "bright",
+      "crowd": "medium",
+      "intensity": "moderate"
+    }
+  },
+  {
+    "id": "r122",
+    "classId": "pilates-kreuzberg-mat-pilates-basics",
+    "date": "2026-11-15",
+    "energyBefore": "stressed",
+    "matchedCard": "partly",
+    "answers": {
+      "noise": "medium",
+      "light": "normal",
+      "crowd": "small",
+      "intensity": "hard"
+    }
+  },
+  {
+    "id": "r123",
+    "classId": "wellness-friedrichshain-sauna-stretch",
+    "date": "2026-10-31",
+    "energyBefore": "tired",
+    "matchedCard": "yes",
+    "answers": {
+      "noise": "quiet",
+      "light": "soft",
+      "crowd": "small",
+      "intensity": "gentle"
+    }
+  },
+  {
+    "id": "r124",
+    "classId": "gym-mitte-functional-circuit",
+    "date": "2026-11-03",
+    "energyBefore": "tired",
+    "matchedCard": "partly",
+    "answers": {
+      "noise": "medium",
+      "light": "bright",
+      "crowd": "large",
+      "intensity": "hard"
+    }
+  },
+  {
+    "id": "r125",
+    "classId": "wellness-prenzlauer-berg-sauna-stretch",
+    "date": "2026-10-22",
+    "energyBefore": "tired",
+    "matchedCard": "partly",
+    "answers": {
+      "noise": "quiet",
+      "light": "soft",
+      "crowd": "medium",
+      "intensity": "gentle"
+    }
+  },
+  {
+    "id": "r126",
+    "classId": "pilates-neuk-lln-mat-pilates-basics",
+    "date": "2026-10-25",
+    "energyBefore": "tired",
+    "matchedCard": "yes",
+    "answers": {
+      "noise": "quiet",
+      "light": "normal",
+      "crowd": "small",
+      "intensity": "moderate"
+    }
+  },
+  {
+    "id": "r127",
+    "classId": "wellness-friedrichshain-breathwork",
+    "date": "2026-11-02",
+    "energyBefore": "tired",
+    "matchedCard": "no",
+    "answers": {
+      "noise": "medium",
+      "light": "normal",
+      "crowd": "small",
+      "intensity": "moderate"
+    },
+    "comment": "Nice and quiet, I could switch off."
+  },
+  {
+    "id": "r128",
+    "classId": "gym-mitte-functional-circuit",
+    "date": "2026-11-11",
+    "energyBefore": "stressed",
+    "matchedCard": "partly",
+    "answers": {
+      "noise": "quiet",
+      "light": "bright",
+      "crowd": "medium",
+      "intensity": "hard"
+    }
+  },
+  {
+    "id": "r129",
+    "classId": "climbing-neuk-lln-bouldering-intro",
+    "date": "2026-11-14",
+    "energyBefore": "tired",
+    "matchedCard": "partly",
+    "answers": {
+      "noise": "quiet",
+      "light": "bright",
+      "crowd": "medium",
+      "intensity": "hard"
+    },
+    "comment": "Music was louder than the card said."
+  },
+  {
+    "id": "r130",
+    "classId": "climbing-friedrichshain-climbing-technique",
+    "date": "2026-11-11",
+    "energyBefore": "stressed",
+    "matchedCard": "yes",
+    "answers": {
+      "noise": "medium",
+      "light": "normal",
+      "crowd": "medium",
+      "intensity": "hard"
+    }
+  },
+  {
+    "id": "r131",
+    "classId": "wellness-kreuzberg-sauna-stretch",
+    "date": "2026-11-05",
+    "energyBefore": "stressed",
+    "matchedCard": "partly",
+    "answers": {
+      "noise": "quiet",
+      "light": "soft",
+      "crowd": "small",
+      "intensity": "gentle"
+    },
+    "comment": "Lovely space, will come back."
+  },
+  {
+    "id": "r132",
+    "classId": "wellness-neuk-lln-sound-bath",
+    "date": "2026-11-14",
+    "energyBefore": "energetic",
+    "matchedCard": "yes",
+    "answers": {
+      "noise": "quiet",
+      "light": "soft",
+      "crowd": "small",
+      "intensity": "gentle"
+    }
+  },
+  {
+    "id": "r133",
+    "classId": "swimming-mitte-lane-swim-technique",
+    "date": "2026-11-15",
+    "energyBefore": "stressed",
+    "matchedCard": "partly",
+    "answers": {
+      "noise": "quiet",
+      "light": "bright",
+      "crowd": "large",
+      "intensity": "gentle"
+    }
+  },
+  {
+    "id": "r134",
+    "classId": "pilates-mitte-mat-pilates-basics",
+    "date": "2026-10-25",
+    "energyBefore": "energetic",
+    "matchedCard": "yes",
+    "answers": {
+      "noise": "quiet",
+      "light": "soft",
+      "crowd": "small",
+      "intensity": "moderate"
+    }
+  },
+  {
+    "id": "r135",
+    "classId": "boxing-prenzlauer-berg-boxfit",
+    "date": "2026-10-24",
+    "energyBefore": "energetic",
+    "matchedCard": "partly",
+    "answers": {
+      "noise": "loud",
+      "light": "normal",
+      "crowd": "small",
+      "intensity": "hard"
+    }
+  },
+  {
+    "id": "r136",
+    "classId": "climbing-prenzlauer-berg-climbing-technique",
+    "date": "2026-11-08",
+    "energyBefore": "stressed",
+    "matchedCard": "yes",
+    "answers": {
+      "noise": "medium",
+      "light": "normal",
+      "crowd": "small",
+      "intensity": "hard"
+    }
+  },
+  {
+    "id": "r137",
+    "classId": "wellness-neuk-lln-sound-bath",
+    "date": "2026-11-17",
+    "energyBefore": "energetic",
+    "matchedCard": "yes",
+    "answers": {
+      "noise": "quiet",
+      "light": "soft",
+      "crowd": "small",
+      "intensity": "gentle"
+    }
+  },
+  {
+    "id": "r138",
+    "classId": "wellness-mitte-sound-bath",
+    "date": "2026-11-16",
+    "energyBefore": "energetic",
+    "matchedCard": "yes",
+    "answers": {
+      "noise": "quiet",
+      "light": "soft",
+      "crowd": "small",
+      "intensity": "gentle"
+    }
+  },
+  {
+    "id": "r139",
+    "classId": "wellness-kreuzberg-sauna-stretch",
+    "date": "2026-11-11",
+    "energyBefore": "stressed",
+    "matchedCard": "yes",
+    "answers": {
+      "noise": "quiet",
+      "light": "soft",
+      "crowd": "small",
+      "intensity": "gentle"
+    }
+  },
+  {
+    "id": "r140",
+    "classId": "pilates-neuk-lln-gentle-pilates",
+    "date": "2026-10-26",
+    "energyBefore": "tired",
+    "matchedCard": "partly",
+    "answers": {
+      "noise": "quiet",
+      "light": "bright",
+      "crowd": "small",
+      "intensity": "moderate"
+    },
+    "comment": "Lovely space, will come back."
+  },
+  {
+    "id": "r141",
+    "classId": "boxing-mitte-technique-pads",
+    "date": "2026-10-31",
+    "energyBefore": "energetic",
+    "matchedCard": "yes",
+    "answers": {
+      "noise": "medium",
+      "light": "soft",
+      "crowd": "medium",
+      "intensity": "moderate"
+    }
+  },
+  {
+    "id": "r142",
+    "classId": "climbing-prenzlauer-berg-climbing-technique",
+    "date": "2026-10-24",
+    "energyBefore": "energetic",
+    "matchedCard": "partly",
+    "answers": {
+      "noise": "quiet",
+      "light": "soft",
+      "crowd": "small",
+      "intensity": "hard"
+    }
+  },
+  {
+    "id": "r143",
+    "classId": "boxing-neuk-lln-boxing-fundamentals",
+    "date": "2026-10-21",
+    "energyBefore": "tired",
+    "matchedCard": "yes",
+    "answers": {
+      "noise": "loud",
+      "light": "bright",
+      "crowd": "large",
+      "intensity": "hard"
+    },
+    "comment": "The card was spot on."
+  },
+  {
+    "id": "r144",
+    "classId": "pilates-kreuzberg-gentle-pilates",
+    "date": "2026-11-10",
+    "energyBefore": "energetic",
+    "matchedCard": "partly",
+    "answers": {
+      "noise": "medium",
+      "light": "soft",
+      "crowd": "small",
+      "intensity": "gentle"
+    }
+  },
+  {
+    "id": "r145",
+    "classId": "wellness-kreuzberg-sauna-stretch",
+    "date": "2026-11-07",
+    "energyBefore": "energetic",
+    "matchedCard": "yes",
+    "answers": {
+      "noise": "quiet",
+      "light": "normal",
+      "crowd": "small",
+      "intensity": "gentle"
+    }
+  },
+  {
+    "id": "r146",
+    "classId": "dance-mitte-hip-hop-foundations",
+    "date": "2026-11-06",
+    "energyBefore": "tired",
+    "matchedCard": "partly",
+    "answers": {
+      "noise": "medium",
+      "light": "soft",
+      "crowd": "medium",
+      "intensity": "hard"
+    }
+  },
+  {
+    "id": "r147",
+    "classId": "climbing-neuk-lln-climbing-technique",
+    "date": "2026-10-27",
+    "energyBefore": "energetic",
+    "matchedCard": "yes",
+    "answers": {
+      "noise": "quiet",
+      "light": "bright",
+      "crowd": "medium",
+      "intensity": "hard"
+    }
+  },
+  {
+    "id": "r148",
+    "classId": "swimming-friedrichshain-aqua-fit",
+    "date": "2026-10-30",
+    "energyBefore": "stressed",
+    "matchedCard": "yes",
+    "answers": {
+      "noise": "loud",
+      "light": "normal",
+      "crowd": "large",
+      "intensity": "moderate"
+    }
+  },
+  {
+    "id": "r149",
+    "classId": "pilates-friedrichshain-mat-pilates-basics",
+    "date": "2026-11-07",
+    "energyBefore": "energetic",
+    "matchedCard": "partly",
+    "answers": {
+      "noise": "medium",
+      "light": "normal",
+      "crowd": "small",
+      "intensity": "moderate"
+    }
+  },
+  {
+    "id": "r150",
+    "classId": "wellness-prenzlauer-berg-sound-bath",
+    "date": "2026-11-13",
+    "energyBefore": "tired",
+    "matchedCard": "partly",
+    "answers": {
+      "noise": "quiet",
+      "light": "soft",
+      "crowd": "medium",
+      "intensity": "gentle"
+    }
+  },
+  {
+    "id": "r151",
+    "classId": "yoga-mitte-slow-flow-yoga",
+    "date": "2026-11-06",
+    "energyBefore": "stressed",
+    "matchedCard": "partly",
+    "answers": {
+      "noise": "quiet",
+      "light": "soft",
+      "crowd": "medium",
+      "intensity": "moderate"
+    }
+  },
+  {
+    "id": "r152",
+    "classId": "climbing-kreuzberg-morning-bouldering",
+    "date": "2026-10-23",
+    "energyBefore": "energetic",
+    "matchedCard": "partly",
+    "answers": {
+      "noise": "medium",
+      "light": "normal",
+      "crowd": "medium",
+      "intensity": "moderate"
+    }
+  },
+  {
+    "id": "r153",
+    "classId": "wellness-mitte-breathwork",
+    "date": "2026-11-01",
+    "energyBefore": "energetic",
+    "matchedCard": "yes",
+    "answers": {
+      "noise": "quiet",
+      "light": "soft",
+      "crowd": "small",
+      "intensity": "gentle"
+    }
+  },
+  {
+    "id": "r154",
+    "classId": "boxing-kreuzberg-boxing-fundamentals",
+    "date": "2026-11-10",
+    "energyBefore": "tired",
+    "matchedCard": "no",
+    "answers": {
+      "noise": "quiet",
+      "light": "bright",
+      "crowd": "medium",
+      "intensity": "hard"
+    }
+  },
+  {
+    "id": "r155",
+    "classId": "yoga-mitte-power-yoga",
+    "date": "2026-10-25",
+    "energyBefore": "energetic",
+    "matchedCard": "yes",
+    "answers": {
+      "noise": "quiet",
+      "light": "soft",
+      "crowd": "medium",
+      "intensity": "hard"
+    }
+  },
+  {
+    "id": "r156",
+    "classId": "swimming-neuk-lln-aqua-fit",
+    "date": "2026-11-08",
+    "energyBefore": "stressed",
+    "matchedCard": "yes",
+    "answers": {
+      "noise": "loud",
+      "light": "normal",
+      "crowd": "large",
+      "intensity": "moderate"
+    }
+  },
+  {
+    "id": "r157",
+    "classId": "pilates-friedrichshain-reformer-pilates",
+    "date": "2026-11-12",
+    "energyBefore": "tired",
+    "matchedCard": "yes",
+    "answers": {
+      "noise": "medium",
+      "light": "normal",
+      "crowd": "medium",
+      "intensity": "hard"
+    }
+  },
+  {
+    "id": "r158",
+    "classId": "pilates-mitte-reformer-pilates",
+    "date": "2026-11-01",
+    "energyBefore": "tired",
+    "matchedCard": "yes",
+    "answers": {
+      "noise": "quiet",
+      "light": "normal",
+      "crowd": "small",
+      "intensity": "hard"
+    }
+  },
+  {
+    "id": "r159",
+    "classId": "climbing-neuk-lln-bouldering-intro",
+    "date": "2026-11-12",
+    "energyBefore": "tired",
+    "matchedCard": "yes",
+    "answers": {
+      "noise": "quiet",
+      "light": "bright",
+      "crowd": "medium",
+      "intensity": "moderate"
+    },
+    "comment": "Great teacher, clear instructions."
+  },
+  {
+    "id": "r160",
+    "classId": "yoga-neuk-lln-lunch-break-yoga",
+    "date": "2026-11-15",
+    "energyBefore": "tired",
+    "matchedCard": "yes",
+    "answers": {
+      "noise": "quiet",
+      "light": "soft",
+      "crowd": "small",
+      "intensity": "gentle"
+    }
+  },
+  {
+    "id": "r161",
+    "classId": "gym-kreuzberg-hiit-express",
+    "date": "2026-10-26",
+    "energyBefore": "stressed",
+    "matchedCard": "yes",
+    "answers": {
+      "noise": "loud",
+      "light": "bright",
+      "crowd": "medium",
+      "intensity": "hard"
+    }
+  },
+  {
+    "id": "r162",
+    "classId": "dance-mitte-hip-hop-foundations",
+    "date": "2026-11-04",
+    "energyBefore": "energetic",
+    "matchedCard": "yes",
+    "answers": {
+      "noise": "loud",
+      "light": "soft",
+      "crowd": "medium",
+      "intensity": "hard"
+    }
+  },
+  {
+    "id": "r163",
+    "classId": "climbing-mitte-morning-bouldering",
+    "date": "2026-10-23",
+    "energyBefore": "energetic",
+    "matchedCard": "partly",
+    "answers": {
+      "noise": "quiet",
+      "light": "bright",
+      "crowd": "small",
+      "intensity": "moderate"
+    },
+    "comment": "Exactly as described, very calm."
+  },
+  {
+    "id": "r164",
+    "classId": "swimming-mitte-lane-swim-technique",
+    "date": "2026-11-07",
+    "energyBefore": "tired",
+    "matchedCard": "yes",
+    "answers": {
+      "noise": "quiet",
+      "light": "bright",
+      "crowd": "large",
+      "intensity": "moderate"
+    },
+    "comment": "Lights were brighter than I thought."
+  },
+  {
+    "id": "r165",
+    "classId": "pilates-friedrichshain-reformer-pilates",
+    "date": "2026-11-08",
+    "energyBefore": "stressed",
+    "matchedCard": "partly",
+    "answers": {
+      "noise": "quiet",
+      "light": "soft",
+      "crowd": "medium",
+      "intensity": "hard"
+    }
+  },
+  {
+    "id": "r166",
+    "classId": "pilates-kreuzberg-reformer-pilates",
+    "date": "2026-11-12",
+    "energyBefore": "energetic",
+    "matchedCard": "partly",
+    "answers": {
+      "noise": "medium",
+      "light": "soft",
+      "crowd": "medium",
+      "intensity": "hard"
+    }
+  },
+  {
+    "id": "r167",
+    "classId": "pilates-friedrichshain-mat-pilates-basics",
+    "date": "2026-10-23",
+    "energyBefore": "tired",
+    "matchedCard": "yes",
+    "answers": {
+      "noise": "medium",
+      "light": "normal",
+      "crowd": "medium",
+      "intensity": "moderate"
+    }
+  },
+  {
+    "id": "r168",
+    "classId": "wellness-prenzlauer-berg-sauna-stretch",
+    "date": "2026-11-07",
+    "energyBefore": "stressed",
+    "matchedCard": "yes",
+    "answers": {
+      "noise": "quiet",
+      "light": "soft",
+      "crowd": "medium",
+      "intensity": "gentle"
+    }
+  },
+  {
+    "id": "r169",
+    "classId": "dance-friedrichshain-contemporary-for-beginners",
+    "date": "2026-11-03",
+    "energyBefore": "stressed",
+    "matchedCard": "yes",
+    "answers": {
+      "noise": "loud",
+      "light": "soft",
+      "crowd": "medium",
+      "intensity": "moderate"
+    }
+  },
+  {
+    "id": "r170",
+    "classId": "pilates-neuk-lln-mat-pilates-basics",
+    "date": "2026-10-31",
+    "energyBefore": "stressed",
+    "matchedCard": "partly",
+    "answers": {
+      "noise": "medium",
+      "light": "bright",
+      "crowd": "small",
+      "intensity": "moderate"
+    },
+    "comment": "Harder than the label says."
+  },
+  {
+    "id": "r171",
+    "classId": "climbing-neuk-lln-climbing-technique",
+    "date": "2026-10-20",
+    "energyBefore": "energetic",
+    "matchedCard": "yes",
+    "answers": {
+      "noise": "quiet",
+      "light": "bright",
+      "crowd": "medium",
+      "intensity": "hard"
+    }
+  },
+  {
+    "id": "r172",
+    "classId": "swimming-prenzlauer-berg-aqua-fit",
+    "date": "2026-11-03",
+    "energyBefore": "tired",
+    "matchedCard": "yes",
+    "answers": {
+      "noise": "medium",
+      "light": "bright",
+      "crowd": "large",
+      "intensity": "moderate"
+    },
+    "comment": "Harder than the label says."
+  },
+  {
+    "id": "r173",
+    "classId": "dance-kreuzberg-hip-hop-foundations",
+    "date": "2026-11-15",
+    "energyBefore": "tired",
+    "matchedCard": "yes",
+    "answers": {
+      "noise": "loud",
+      "light": "normal",
+      "crowd": "medium",
+      "intensity": "hard"
+    }
+  },
+  {
+    "id": "r174",
+    "classId": "pilates-neuk-lln-mat-pilates-basics",
+    "date": "2026-11-06",
+    "energyBefore": "tired",
+    "matchedCard": "partly",
+    "answers": {
+      "noise": "quiet",
+      "light": "bright",
+      "crowd": "small",
+      "intensity": "hard"
+    }
+  },
+  {
+    "id": "r175",
+    "classId": "dance-mitte-hip-hop-foundations",
+    "date": "2026-11-02",
+    "energyBefore": "tired",
+    "matchedCard": "partly",
+    "answers": {
+      "noise": "loud",
+      "light": "normal",
+      "crowd": "large",
+      "intensity": "hard"
+    }
+  },
+  {
+    "id": "r176",
+    "classId": "swimming-mitte-aqua-fit",
+    "date": "2026-10-24",
+    "energyBefore": "stressed",
+    "matchedCard": "yes",
+    "answers": {
+      "noise": "quiet",
+      "light": "bright",
+      "crowd": "large",
+      "intensity": "moderate"
+    }
+  },
+  {
+    "id": "r177",
+    "classId": "dance-mitte-salsa-basics",
+    "date": "2026-11-05",
+    "energyBefore": "stressed",
+    "matchedCard": "yes",
+    "answers": {
+      "noise": "loud",
+      "light": "soft",
+      "crowd": "medium",
+      "intensity": "moderate"
+    }
+  },
+  {
+    "id": "r178",
+    "classId": "pilates-kreuzberg-reformer-pilates",
+    "date": "2026-10-25",
+    "energyBefore": "stressed",
+    "matchedCard": "yes",
+    "answers": {
+      "noise": "medium",
+      "light": "soft",
+      "crowd": "small",
+      "intensity": "hard"
+    }
+  },
+  {
+    "id": "r179",
+    "classId": "swimming-mitte-aqua-fit",
+    "date": "2026-11-13",
+    "energyBefore": "energetic",
+    "matchedCard": "partly",
+    "answers": {
+      "noise": "medium",
+      "light": "bright",
+      "crowd": "large",
+      "intensity": "moderate"
+    }
+  },
+  {
+    "id": "r180",
+    "classId": "gym-kreuzberg-strength-basics",
+    "date": "2026-11-08",
+    "energyBefore": "tired",
+    "matchedCard": "yes",
+    "answers": {
+      "noise": "loud",
+      "light": "normal",
+      "crowd": "medium",
+      "intensity": "moderate"
+    },
+    "comment": "More people than expected."
+  },
+  {
+    "id": "r181",
+    "classId": "dance-kreuzberg-salsa-basics",
+    "date": "2026-11-16",
+    "energyBefore": "tired",
+    "matchedCard": "partly",
+    "answers": {
+      "noise": "medium",
+      "light": "normal",
+      "crowd": "medium",
+      "intensity": "moderate"
+    },
+    "comment": "Harder than the label says."
+  },
+  {
+    "id": "r182",
+    "classId": "wellness-kreuzberg-sauna-stretch",
+    "date": "2026-10-25",
+    "energyBefore": "tired",
+    "matchedCard": "yes",
+    "answers": {
+      "noise": "quiet",
+      "light": "soft",
+      "crowd": "small",
+      "intensity": "gentle"
+    }
+  },
+  {
+    "id": "r183",
+    "classId": "dance-kreuzberg-contemporary-for-beginners",
+    "date": "2026-11-16",
+    "energyBefore": "energetic",
+    "matchedCard": "partly",
+    "answers": {
+      "noise": "loud",
+      "light": "normal",
+      "crowd": "medium",
+      "intensity": "hard"
+    },
+    "comment": "More people than expected."
+  },
+  {
+    "id": "r184",
+    "classId": "pilates-kreuzberg-mat-pilates-basics",
+    "date": "2026-10-27",
+    "energyBefore": "tired",
+    "matchedCard": "no",
+    "answers": {
+      "noise": "loud",
+      "light": "soft",
+      "crowd": "small",
+      "intensity": "gentle"
+    }
+  },
+  {
+    "id": "r185",
+    "classId": "gym-kreuzberg-hiit-express",
+    "date": "2026-10-27",
+    "energyBefore": "stressed",
+    "matchedCard": "yes",
+    "answers": {
+      "noise": "loud",
+      "light": "bright",
+      "crowd": "medium",
+      "intensity": "hard"
+    }
+  },
+  {
+    "id": "r186",
+    "classId": "pilates-friedrichshain-reformer-pilates",
+    "date": "2026-11-02",
+    "energyBefore": "energetic",
+    "matchedCard": "partly",
+    "answers": {
+      "noise": "medium",
+      "light": "soft",
+      "crowd": "large",
+      "intensity": "hard"
+    }
+  },
+  {
+    "id": "r187",
+    "classId": "pilates-mitte-mat-pilates-basics",
+    "date": "2026-11-12",
+    "energyBefore": "energetic",
+    "matchedCard": "yes",
+    "answers": {
+      "noise": "quiet",
+      "light": "normal",
+      "crowd": "small",
+      "intensity": "moderate"
+    }
+  },
+  {
+    "id": "r188",
+    "classId": "dance-kreuzberg-contemporary-for-beginners",
+    "date": "2026-10-26",
+    "energyBefore": "energetic",
+    "matchedCard": "yes",
+    "answers": {
+      "noise": "loud",
+      "light": "normal",
+      "crowd": "medium",
+      "intensity": "moderate"
+    },
+    "comment": "Harder than the label says."
+  },
+  {
+    "id": "r189",
+    "classId": "gym-mitte-hiit-express",
+    "date": "2026-11-09",
+    "energyBefore": "stressed",
+    "matchedCard": "yes",
+    "answers": {
+      "noise": "medium",
+      "light": "bright",
+      "crowd": "medium",
+      "intensity": "hard"
+    }
+  },
+  {
+    "id": "r190",
+    "classId": "pilates-prenzlauer-berg-reformer-pilates",
+    "date": "2026-11-02",
+    "energyBefore": "tired",
+    "matchedCard": "partly",
+    "answers": {
+      "noise": "medium",
+      "light": "bright",
+      "crowd": "small",
+      "intensity": "hard"
+    }
+  },
+  {
+    "id": "r191",
+    "classId": "swimming-mitte-easy-lengths",
+    "date": "2026-10-31",
+    "energyBefore": "energetic",
+    "matchedCard": "partly",
+    "answers": {
+      "noise": "quiet",
+      "light": "bright",
+      "crowd": "large",
+      "intensity": "moderate"
+    }
+  },
+  {
+    "id": "r192",
+    "classId": "wellness-prenzlauer-berg-sauna-stretch",
+    "date": "2026-10-31",
+    "energyBefore": "tired",
+    "matchedCard": "yes",
+    "answers": {
+      "noise": "quiet",
+      "light": "soft",
+      "crowd": "medium",
+      "intensity": "gentle"
+    }
+  },
+  {
+    "id": "r193",
+    "classId": "yoga-friedrichshain-lunch-break-yoga",
+    "date": "2026-10-21",
+    "energyBefore": "tired",
+    "matchedCard": "partly",
+    "answers": {
+      "noise": "medium",
+      "light": "soft",
+      "crowd": "small",
+      "intensity": "gentle"
+    }
+  },
+  {
+    "id": "r194",
+    "classId": "boxing-kreuzberg-technique-pads",
+    "date": "2026-10-27",
+    "energyBefore": "stressed",
+    "matchedCard": "partly",
+    "answers": {
+      "noise": "medium",
+      "light": "bright",
+      "crowd": "large",
+      "intensity": "hard"
+    }
+  },
+  {
+    "id": "r195",
+    "classId": "yoga-kreuzberg-yin-yoga",
+    "date": "2026-11-07",
+    "energyBefore": "energetic",
+    "matchedCard": "partly",
+    "answers": {
+      "noise": "medium",
+      "light": "normal",
+      "crowd": "medium",
+      "intensity": "gentle"
+    },
+    "comment": "Nice and quiet, I could switch off."
+  },
+  {
+    "id": "r196",
+    "classId": "climbing-prenzlauer-berg-climbing-technique",
+    "date": "2026-10-31",
+    "energyBefore": "tired",
+    "matchedCard": "partly",
+    "answers": {
+      "noise": "quiet",
+      "light": "normal",
+      "crowd": "small",
+      "intensity": "hard"
+    }
+  },
+  {
+    "id": "r197",
+    "classId": "wellness-mitte-breathwork",
+    "date": "2026-11-04",
+    "energyBefore": "stressed",
+    "matchedCard": "partly",
+    "answers": {
+      "noise": "medium",
+      "light": "soft",
+      "crowd": "small",
+      "intensity": "gentle"
+    },
+    "comment": "The room was quite warm."
+  },
+  {
+    "id": "r198",
+    "classId": "yoga-kreuzberg-yin-yoga",
+    "date": "2026-11-09",
+    "energyBefore": "energetic",
+    "matchedCard": "yes",
+    "answers": {
+      "noise": "quiet",
+      "light": "normal",
+      "crowd": "medium",
+      "intensity": "gentle"
+    }
+  },
+  {
+    "id": "r199",
+    "classId": "climbing-friedrichshain-climbing-technique",
+    "date": "2026-10-24",
+    "energyBefore": "tired",
+    "matchedCard": "yes",
+    "answers": {
+      "noise": "medium",
+      "light": "soft",
+      "crowd": "medium",
+      "intensity": "hard"
+    }
+  },
+  {
+    "id": "r200",
+    "classId": "gym-prenzlauer-berg-sunrise-spin",
+    "date": "2026-11-14",
+    "energyBefore": "energetic",
+    "matchedCard": "partly",
+    "answers": {
+      "noise": "loud",
+      "light": "normal",
+      "crowd": "large",
+      "intensity": "hard"
+    },
+    "comment": "Changing room was crowded."
+  },
+  {
+    "id": "r201",
+    "classId": "boxing-friedrichshain-technique-pads",
+    "date": "2026-11-05",
+    "energyBefore": "stressed",
+    "matchedCard": "no",
+    "answers": {
+      "noise": "loud",
+      "light": "normal",
+      "crowd": "medium",
+      "intensity": "hard"
+    }
+  },
+  {
+    "id": "r202",
+    "classId": "yoga-prenzlauer-berg-yin-yoga",
+    "date": "2026-10-25",
+    "energyBefore": "stressed",
+    "matchedCard": "yes",
+    "answers": {
+      "noise": "medium",
+      "light": "normal",
+      "crowd": "small",
+      "intensity": "gentle"
+    }
+  },
+  {
+    "id": "r203",
+    "classId": "yoga-prenzlauer-berg-power-yoga",
+    "date": "2026-10-28",
+    "energyBefore": "tired",
+    "matchedCard": "partly",
+    "answers": {
+      "noise": "quiet",
+      "light": "soft",
+      "crowd": "small",
+      "intensity": "hard"
+    }
+  },
+  {
+    "id": "r204",
+    "classId": "pilates-friedrichshain-mat-pilates-basics",
+    "date": "2026-10-30",
+    "energyBefore": "tired",
+    "matchedCard": "partly",
+    "answers": {
+      "noise": "medium",
+      "light": "normal",
+      "crowd": "large",
+      "intensity": "moderate"
+    }
+  },
+  {
+    "id": "r205",
+    "classId": "swimming-prenzlauer-berg-lane-swim-technique",
+    "date": "2026-10-21",
+    "energyBefore": "tired",
+    "matchedCard": "yes",
+    "answers": {
+      "noise": "medium",
+      "light": "normal",
+      "crowd": "large",
+      "intensity": "moderate"
+    }
+  },
+  {
+    "id": "r206",
+    "classId": "pilates-prenzlauer-berg-reformer-pilates",
+    "date": "2026-10-30",
+    "energyBefore": "energetic",
+    "matchedCard": "partly",
+    "answers": {
+      "noise": "loud",
+      "light": "bright",
+      "crowd": "medium",
+      "intensity": "hard"
+    }
+  },
+  {
+    "id": "r207",
+    "classId": "gym-kreuzberg-hiit-express",
+    "date": "2026-11-09",
+    "energyBefore": "tired",
+    "matchedCard": "partly",
+    "answers": {
+      "noise": "loud",
+      "light": "bright",
+      "crowd": "small",
+      "intensity": "hard"
+    }
+  },
+  {
+    "id": "r208",
+    "classId": "pilates-kreuzberg-mat-pilates-basics",
+    "date": "2026-11-04",
+    "energyBefore": "stressed",
+    "matchedCard": "yes",
+    "answers": {
+      "noise": "medium",
+      "light": "soft",
+      "crowd": "small",
+      "intensity": "moderate"
+    }
+  },
+  {
+    "id": "r209",
+    "classId": "wellness-kreuzberg-sauna-stretch",
+    "date": "2026-10-23",
+    "energyBefore": "tired",
+    "matchedCard": "yes",
+    "answers": {
+      "noise": "quiet",
+      "light": "soft",
+      "crowd": "small",
+      "intensity": "gentle"
+    }
+  },
+  {
+    "id": "r210",
+    "classId": "boxing-friedrichshain-technique-pads",
+    "date": "2026-11-17",
+    "energyBefore": "energetic",
+    "matchedCard": "partly",
+    "answers": {
+      "noise": "loud",
+      "light": "normal",
+      "crowd": "medium",
+      "intensity": "moderate"
+    },
+    "comment": "Easier than I expected, good for a tired day."
+  },
+  {
+    "id": "r211",
+    "classId": "dance-neuk-lln-salsa-basics",
+    "date": "2026-10-29",
+    "energyBefore": "tired",
+    "matchedCard": "partly",
+    "answers": {
+      "noise": "loud",
+      "light": "normal",
+      "crowd": "medium",
+      "intensity": "moderate"
+    }
+  },
+  {
+    "id": "r212",
+    "classId": "gym-mitte-hiit-express",
+    "date": "2026-11-01",
+    "energyBefore": "tired",
+    "matchedCard": "yes",
+    "answers": {
+      "noise": "medium",
+      "light": "bright",
+      "crowd": "medium",
+      "intensity": "hard"
+    }
+  },
+  {
+    "id": "r213",
+    "classId": "swimming-mitte-aqua-fit",
+    "date": "2026-10-25",
+    "energyBefore": "energetic",
+    "matchedCard": "yes",
+    "answers": {
+      "noise": "quiet",
+      "light": "normal",
+      "crowd": "large",
+      "intensity": "moderate"
+    }
+  },
+  {
+    "id": "r214",
+    "classId": "gym-mitte-functional-circuit",
+    "date": "2026-11-16",
+    "energyBefore": "energetic",
+    "matchedCard": "partly",
+    "answers": {
+      "noise": "medium",
+      "light": "bright",
+      "crowd": "small",
+      "intensity": "hard"
+    }
+  },
+  {
+    "id": "r215",
+    "classId": "wellness-kreuzberg-sound-bath",
+    "date": "2026-10-19",
+    "energyBefore": "energetic",
+    "matchedCard": "partly",
+    "answers": {
+      "noise": "quiet",
+      "light": "soft",
+      "crowd": "small",
+      "intensity": "moderate"
+    }
+  },
+  {
+    "id": "r216",
+    "classId": "pilates-friedrichshain-reformer-pilates",
+    "date": "2026-11-14",
+    "energyBefore": "energetic",
+    "matchedCard": "partly",
+    "answers": {
+      "noise": "loud",
+      "light": "bright",
+      "crowd": "medium",
+      "intensity": "hard"
+    }
+  },
+  {
+    "id": "r217",
+    "classId": "gym-friedrichshain-rhythm-ride",
+    "date": "2026-10-31",
+    "energyBefore": "tired",
+    "matchedCard": "yes",
+    "answers": {
+      "noise": "loud",
+      "light": "bright",
+      "crowd": "medium",
+      "intensity": "hard"
+    }
+  },
+  {
+    "id": "r218",
+    "classId": "yoga-kreuzberg-yin-yoga",
+    "date": "2026-10-31",
+    "energyBefore": "energetic",
+    "matchedCard": "yes",
+    "answers": {
+      "noise": "quiet",
+      "light": "soft",
+      "crowd": "medium",
+      "intensity": "gentle"
+    }
+  },
+  {
+    "id": "r219",
+    "classId": "climbing-neuk-lln-morning-bouldering",
+    "date": "2026-11-10",
+    "energyBefore": "tired",
+    "matchedCard": "yes",
+    "answers": {
+      "noise": "quiet",
+      "light": "bright",
+      "crowd": "medium",
+      "intensity": "moderate"
+    },
+    "comment": "Harder than the label says."
+  },
+  {
+    "id": "r220",
+    "classId": "climbing-prenzlauer-berg-climbing-technique",
+    "date": "2026-11-07",
+    "energyBefore": "energetic",
+    "matchedCard": "yes",
+    "answers": {
+      "noise": "medium",
+      "light": "soft",
+      "crowd": "small",
+      "intensity": "hard"
+    }
+  },
+  {
+    "id": "r221",
+    "classId": "climbing-mitte-morning-bouldering",
+    "date": "2026-11-10",
+    "energyBefore": "tired",
+    "matchedCard": "no",
+    "answers": {
+      "noise": "quiet",
+      "light": "normal",
+      "crowd": "medium",
+      "intensity": "gentle"
+    }
+  },
+  {
+    "id": "r222",
+    "classId": "dance-mitte-salsa-basics",
+    "date": "2026-11-13",
+    "energyBefore": "energetic",
+    "matchedCard": "partly",
+    "answers": {
+      "noise": "loud",
+      "light": "soft",
+      "crowd": "medium",
+      "intensity": "gentle"
+    }
+  },
+  {
+    "id": "r223",
+    "classId": "dance-friedrichshain-hip-hop-foundations",
+    "date": "2026-11-07",
+    "energyBefore": "stressed",
+    "matchedCard": "yes",
+    "answers": {
+      "noise": "loud",
+      "light": "soft",
+      "crowd": "medium",
+      "intensity": "hard"
+    }
+  },
+  {
+    "id": "r224",
+    "classId": "yoga-kreuzberg-lunch-break-yoga",
+    "date": "2026-10-24",
+    "energyBefore": "energetic",
+    "matchedCard": "no",
+    "answers": {
+      "noise": "medium",
+      "light": "normal",
+      "crowd": "small",
+      "intensity": "gentle"
+    }
+  },
+  {
+    "id": "r225",
+    "classId": "wellness-prenzlauer-berg-breathwork",
+    "date": "2026-10-27",
+    "energyBefore": "tired",
+    "matchedCard": "yes",
+    "answers": {
+      "noise": "quiet",
+      "light": "soft",
+      "crowd": "medium",
+      "intensity": "gentle"
+    }
+  },
+  {
+    "id": "r226",
+    "classId": "yoga-kreuzberg-yin-yoga",
+    "date": "2026-10-25",
+    "energyBefore": "stressed",
+    "matchedCard": "partly",
+    "answers": {
+      "noise": "medium",
+      "light": "normal",
+      "crowd": "medium",
+      "intensity": "gentle"
+    }
+  },
+  {
+    "id": "r227",
+    "classId": "dance-friedrichshain-contemporary-for-beginners",
+    "date": "2026-10-30",
+    "energyBefore": "tired",
+    "matchedCard": "yes",
+    "answers": {
+      "noise": "loud",
+      "light": "soft",
+      "crowd": "medium",
+      "intensity": "moderate"
+    }
+  },
+  {
+    "id": "r228",
+    "classId": "wellness-kreuzberg-sauna-stretch",
+    "date": "2026-10-30",
+    "energyBefore": "energetic",
+    "matchedCard": "yes",
+    "answers": {
+      "noise": "quiet",
+      "light": "soft",
+      "crowd": "small",
+      "intensity": "gentle"
+    }
+  },
+  {
+    "id": "r229",
+    "classId": "yoga-mitte-yin-yoga",
+    "date": "2026-11-06",
+    "energyBefore": "tired",
+    "matchedCard": "partly",
+    "answers": {
+      "noise": "quiet",
+      "light": "soft",
+      "crowd": "medium",
+      "intensity": "moderate"
+    }
+  },
+  {
+    "id": "r230",
+    "classId": "swimming-mitte-aqua-fit",
+    "date": "2026-11-16",
+    "energyBefore": "energetic",
+    "matchedCard": "no",
+    "answers": {
+      "noise": "quiet",
+      "light": "bright",
+      "crowd": "medium",
+      "intensity": "hard"
+    }
+  },
+  {
+    "id": "r231",
+    "classId": "climbing-kreuzberg-morning-bouldering",
+    "date": "2026-11-04",
+    "energyBefore": "stressed",
+    "matchedCard": "yes",
+    "answers": {
+      "noise": "quiet",
+      "light": "bright",
+      "crowd": "medium",
+      "intensity": "moderate"
+    },
+    "comment": "Partner work was optional, which helped."
+  },
+  {
+    "id": "r232",
+    "classId": "dance-friedrichshain-contemporary-for-beginners",
+    "date": "2026-11-12",
+    "energyBefore": "tired",
+    "matchedCard": "no",
+    "answers": {
+      "noise": "loud",
+      "light": "soft",
+      "crowd": "small",
+      "intensity": "hard"
+    }
+  },
+  {
+    "id": "r233",
+    "classId": "yoga-mitte-slow-flow-yoga",
+    "date": "2026-11-06",
+    "energyBefore": "energetic",
+    "matchedCard": "yes",
+    "answers": {
+      "noise": "quiet",
+      "light": "soft",
+      "crowd": "medium",
+      "intensity": "gentle"
+    }
+  },
+  {
+    "id": "r234",
+    "classId": "dance-friedrichshain-contemporary-for-beginners",
+    "date": "2026-11-12",
+    "energyBefore": "energetic",
+    "matchedCard": "yes",
+    "answers": {
+      "noise": "loud",
+      "light": "soft",
+      "crowd": "medium",
+      "intensity": "moderate"
+    }
+  },
+  {
+    "id": "r235",
+    "classId": "swimming-kreuzberg-aqua-fit",
+    "date": "2026-11-11",
+    "energyBefore": "tired",
+    "matchedCard": "yes",
+    "answers": {
+      "noise": "loud",
+      "light": "bright",
+      "crowd": "medium",
+      "intensity": "moderate"
+    }
+  },
+  {
+    "id": "r236",
+    "classId": "wellness-friedrichshain-breathwork",
+    "date": "2026-10-29",
+    "energyBefore": "energetic",
+    "matchedCard": "yes",
+    "answers": {
+      "noise": "quiet",
+      "light": "soft",
+      "crowd": "small",
+      "intensity": "gentle"
+    }
+  },
+  {
+    "id": "r237",
+    "classId": "swimming-mitte-aqua-fit",
+    "date": "2026-11-06",
+    "energyBefore": "stressed",
+    "matchedCard": "yes",
+    "answers": {
+      "noise": "quiet",
+      "light": "bright",
+      "crowd": "large",
+      "intensity": "moderate"
+    }
+  },
+  {
+    "id": "r238",
+    "classId": "swimming-friedrichshain-aqua-fit",
+    "date": "2026-10-19",
+    "energyBefore": "tired",
+    "matchedCard": "no",
+    "answers": {
+      "noise": "loud",
+      "light": "normal",
+      "crowd": "medium",
+      "intensity": "hard"
+    }
+  },
+  {
+    "id": "r239",
+    "classId": "wellness-prenzlauer-berg-sound-bath",
+    "date": "2026-10-22",
+    "energyBefore": "stressed",
+    "matchedCard": "yes",
+    "answers": {
+      "noise": "quiet",
+      "light": "soft",
+      "crowd": "medium",
+      "intensity": "gentle"
+    }
+  },
+  {
+    "id": "r240",
+    "classId": "pilates-neuk-lln-mat-pilates-basics",
+    "date": "2026-11-04",
+    "energyBefore": "energetic",
+    "matchedCard": "yes",
+    "answers": {
+      "noise": "quiet",
+      "light": "bright",
+      "crowd": "small",
+      "intensity": "moderate"
+    }
+  },
+  {
+    "id": "r241",
+    "classId": "wellness-friedrichshain-breathwork",
+    "date": "2026-10-19",
+    "energyBefore": "stressed",
+    "matchedCard": "partly",
+    "answers": {
+      "noise": "medium",
+      "light": "soft",
+      "crowd": "small",
+      "intensity": "gentle"
+    }
+  },
+  {
+    "id": "r242",
+    "classId": "boxing-prenzlauer-berg-boxing-fundamentals",
+    "date": "2026-11-08",
+    "energyBefore": "stressed",
+    "matchedCard": "partly",
+    "answers": {
+      "noise": "loud",
+      "light": "normal",
+      "crowd": "medium",
+      "intensity": "moderate"
+    }
+  },
+  {
+    "id": "r243",
+    "classId": "wellness-prenzlauer-berg-sauna-stretch",
+    "date": "2026-11-11",
+    "energyBefore": "stressed",
+    "matchedCard": "yes",
+    "answers": {
+      "noise": "quiet",
+      "light": "soft",
+      "crowd": "medium",
+      "intensity": "gentle"
+    }
+  },
+  {
+    "id": "r244",
+    "classId": "dance-kreuzberg-contemporary-for-beginners",
+    "date": "2026-10-24",
+    "energyBefore": "energetic",
+    "matchedCard": "partly",
+    "answers": {
+      "noise": "loud",
+      "light": "normal",
+      "crowd": "medium",
+      "intensity": "gentle"
+    }
+  },
+  {
+    "id": "r245",
+    "classId": "climbing-friedrichshain-morning-bouldering",
+    "date": "2026-11-05",
+    "energyBefore": "energetic",
+    "matchedCard": "partly",
+    "answers": {
+      "noise": "quiet",
+      "light": "normal",
+      "crowd": "medium",
+      "intensity": "moderate"
+    }
+  },
+  {
+    "id": "r246",
+    "classId": "climbing-neuk-lln-morning-bouldering",
+    "date": "2026-11-04",
+    "energyBefore": "stressed",
+    "matchedCard": "partly",
+    "answers": {
+      "noise": "quiet",
+      "light": "bright",
+      "crowd": "medium",
+      "intensity": "gentle"
+    },
+    "comment": "Changing room was crowded."
+  },
+  {
+    "id": "r247",
+    "classId": "gym-kreuzberg-strength-basics",
+    "date": "2026-11-01",
+    "energyBefore": "tired",
+    "matchedCard": "no",
+    "answers": {
+      "noise": "loud",
+      "light": "bright",
+      "crowd": "large",
+      "intensity": "gentle"
+    },
+    "comment": "Easier than I expected, good for a tired day."
+  },
+  {
+    "id": "r248",
+    "classId": "boxing-kreuzberg-technique-pads",
+    "date": "2026-10-29",
+    "energyBefore": "stressed",
+    "matchedCard": "partly",
+    "answers": {
+      "noise": "quiet",
+      "light": "bright",
+      "crowd": "large",
+      "intensity": "moderate"
+    },
+    "comment": "Changing room was crowded."
+  },
+  {
+    "id": "r249",
+    "classId": "swimming-neuk-lln-lane-swim-technique",
+    "date": "2026-10-27",
+    "energyBefore": "stressed",
+    "matchedCard": "yes",
+    "answers": {
+      "noise": "loud",
+      "light": "normal",
+      "crowd": "large",
+      "intensity": "moderate"
+    }
+  },
+  {
+    "id": "r250",
+    "classId": "swimming-prenzlauer-berg-easy-lengths",
+    "date": "2026-11-16",
+    "energyBefore": "stressed",
+    "matchedCard": "yes",
+    "answers": {
+      "noise": "medium",
+      "light": "normal",
+      "crowd": "large",
+      "intensity": "gentle"
+    }
+  },
+  {
+    "id": "r251",
+    "classId": "yoga-mitte-yin-yoga",
+    "date": "2026-11-01",
+    "energyBefore": "tired",
+    "matchedCard": "partly",
+    "answers": {
+      "noise": "quiet",
+      "light": "soft",
+      "crowd": "small",
+      "intensity": "gentle"
+    }
+  },
+  {
+    "id": "r252",
+    "classId": "boxing-mitte-boxfit",
+    "date": "2026-10-26",
+    "energyBefore": "tired",
+    "matchedCard": "yes",
+    "answers": {
+      "noise": "medium",
+      "light": "normal",
+      "crowd": "medium",
+      "intensity": "hard"
+    }
+  },
+  {
+    "id": "r253",
+    "classId": "wellness-mitte-breathwork",
+    "date": "2026-10-31",
+    "energyBefore": "energetic",
+    "matchedCard": "partly",
+    "answers": {
+      "noise": "quiet",
+      "light": "soft",
+      "crowd": "small",
+      "intensity": "moderate"
+    }
+  },
+  {
+    "id": "r254",
+    "classId": "pilates-mitte-reformer-pilates",
+    "date": "2026-10-21",
+    "energyBefore": "energetic",
+    "matchedCard": "partly",
+    "answers": {
+      "noise": "medium",
+      "light": "soft",
+      "crowd": "small",
+      "intensity": "hard"
+    }
+  },
+  {
+    "id": "r255",
+    "classId": "gym-friedrichshain-hiit-express",
+    "date": "2026-11-11",
+    "energyBefore": "stressed",
+    "matchedCard": "partly",
+    "answers": {
+      "noise": "medium",
+      "light": "normal",
+      "crowd": "medium",
+      "intensity": "hard"
+    }
+  },
+  {
+    "id": "r256",
+    "classId": "dance-neuk-lln-salsa-basics",
+    "date": "2026-11-01",
+    "energyBefore": "tired",
+    "matchedCard": "yes",
+    "answers": {
+      "noise": "loud",
+      "light": "normal",
+      "crowd": "medium",
+      "intensity": "moderate"
+    }
+  },
+  {
+    "id": "r257",
+    "classId": "dance-mitte-hip-hop-foundations",
+    "date": "2026-11-16",
+    "energyBefore": "stressed",
+    "matchedCard": "partly",
+    "answers": {
+      "noise": "loud",
+      "light": "soft",
+      "crowd": "small",
+      "intensity": "hard"
+    }
+  },
+  {
+    "id": "r258",
+    "classId": "climbing-mitte-morning-bouldering",
+    "date": "2026-10-28",
+    "energyBefore": "stressed",
+    "matchedCard": "partly",
+    "answers": {
+      "noise": "medium",
+      "light": "normal",
+      "crowd": "small",
+      "intensity": "moderate"
+    }
+  },
+  {
+    "id": "r259",
+    "classId": "gym-neuk-lln-rhythm-ride",
+    "date": "2026-11-06",
+    "energyBefore": "tired",
+    "matchedCard": "yes",
+    "answers": {
+      "noise": "loud",
+      "light": "bright",
+      "crowd": "medium",
+      "intensity": "hard"
+    }
+  },
+  {
+    "id": "r260",
+    "classId": "climbing-prenzlauer-berg-climbing-technique",
+    "date": "2026-11-03",
+    "energyBefore": "energetic",
+    "matchedCard": "yes",
+    "answers": {
+      "noise": "medium",
+      "light": "normal",
+      "crowd": "small",
+      "intensity": "hard"
+    }
+  },
+  {
+    "id": "r261",
+    "classId": "pilates-prenzlauer-berg-reformer-pilates",
+    "date": "2026-10-31",
+    "energyBefore": "stressed",
+    "matchedCard": "yes",
+    "answers": {
+      "noise": "medium",
+      "light": "normal",
+      "crowd": "medium",
+      "intensity": "hard"
+    }
+  },
+  {
+    "id": "r262",
+    "classId": "swimming-neuk-lln-lane-swim-technique",
+    "date": "2026-11-07",
+    "energyBefore": "energetic",
+    "matchedCard": "yes",
+    "answers": {
+      "noise": "loud",
+      "light": "normal",
+      "crowd": "large",
+      "intensity": "moderate"
+    }
+  },
+  {
+    "id": "r263",
+    "classId": "pilates-prenzlauer-berg-mat-pilates-basics",
+    "date": "2026-10-25",
+    "energyBefore": "tired",
+    "matchedCard": "no",
+    "answers": {
+      "noise": "loud",
+      "light": "normal",
+      "crowd": "small",
+      "intensity": "moderate"
+    }
+  },
+  {
+    "id": "r264",
+    "classId": "swimming-mitte-aqua-fit",
+    "date": "2026-11-09",
+    "energyBefore": "energetic",
+    "matchedCard": "partly",
+    "answers": {
+      "noise": "quiet",
+      "light": "bright",
+      "crowd": "large",
+      "intensity": "moderate"
+    },
+    "comment": "Lights were brighter than I thought."
+  },
+  {
+    "id": "r265",
+    "classId": "wellness-neuk-lln-sauna-stretch",
+    "date": "2026-10-30",
+    "energyBefore": "tired",
+    "matchedCard": "partly",
+    "answers": {
+      "noise": "medium",
+      "light": "soft",
+      "crowd": "small",
+      "intensity": "gentle"
+    },
+    "comment": "Easier than I expected, good for a tired day."
+  },
+  {
+    "id": "r266",
+    "classId": "swimming-mitte-easy-lengths",
+    "date": "2026-11-06",
+    "energyBefore": "energetic",
+    "matchedCard": "yes",
+    "answers": {
+      "noise": "quiet",
+      "light": "bright",
+      "crowd": "large",
+      "intensity": "gentle"
+    }
+  },
+  {
+    "id": "r267",
+    "classId": "swimming-neuk-lln-aqua-fit",
+    "date": "2026-10-23",
+    "energyBefore": "tired",
+    "matchedCard": "partly",
+    "answers": {
+      "noise": "loud",
+      "light": "normal",
+      "crowd": "medium",
+      "intensity": "moderate"
+    }
+  },
+  {
+    "id": "r268",
+    "classId": "swimming-friedrichshain-easy-lengths",
+    "date": "2026-11-06",
+    "energyBefore": "stressed",
+    "matchedCard": "partly",
+    "answers": {
+      "noise": "medium",
+      "light": "normal",
+      "crowd": "large",
+      "intensity": "gentle"
+    }
+  },
+  {
+    "id": "r269",
+    "classId": "climbing-neuk-lln-bouldering-intro",
+    "date": "2026-11-10",
+    "energyBefore": "tired",
+    "matchedCard": "partly",
+    "answers": {
+      "noise": "quiet",
+      "light": "bright",
+      "crowd": "medium",
+      "intensity": "moderate"
+    }
+  },
+  {
+    "id": "r270",
+    "classId": "gym-mitte-hiit-express",
+    "date": "2026-11-06",
+    "energyBefore": "stressed",
+    "matchedCard": "yes",
+    "answers": {
+      "noise": "medium",
+      "light": "normal",
+      "crowd": "medium",
+      "intensity": "hard"
+    },
+    "comment": "Great teacher, clear instructions."
+  },
+  {
+    "id": "r271",
+    "classId": "climbing-neuk-lln-morning-bouldering",
+    "date": "2026-10-23",
+    "energyBefore": "tired",
+    "matchedCard": "yes",
+    "answers": {
+      "noise": "quiet",
+      "light": "bright",
+      "crowd": "medium",
+      "intensity": "moderate"
+    }
+  },
+  {
+    "id": "r272",
+    "classId": "climbing-prenzlauer-berg-morning-bouldering",
+    "date": "2026-11-12",
+    "energyBefore": "tired",
+    "matchedCard": "partly",
+    "answers": {
+      "noise": "loud",
+      "light": "normal",
+      "crowd": "small",
+      "intensity": "moderate"
+    }
+  },
+  {
+    "id": "r273",
+    "classId": "yoga-friedrichshain-lunch-break-yoga",
+    "date": "2026-10-26",
+    "energyBefore": "tired",
+    "matchedCard": "yes",
+    "answers": {
+      "noise": "quiet",
+      "light": "soft",
+      "crowd": "small",
+      "intensity": "gentle"
+    }
+  },
+  {
+    "id": "r274",
+    "classId": "yoga-friedrichshain-yin-yoga",
+    "date": "2026-10-28",
+    "energyBefore": "stressed",
+    "matchedCard": "yes",
+    "answers": {
+      "noise": "quiet",
+      "light": "soft",
+      "crowd": "small",
+      "intensity": "gentle"
+    }
+  },
+  {
+    "id": "r275",
+    "classId": "pilates-kreuzberg-reformer-pilates",
+    "date": "2026-10-21",
+    "energyBefore": "energetic",
+    "matchedCard": "partly",
+    "answers": {
+      "noise": "quiet",
+      "light": "soft",
+      "crowd": "small",
+      "intensity": "hard"
+    }
+  },
+  {
+    "id": "r276",
+    "classId": "dance-mitte-salsa-basics",
+    "date": "2026-11-04",
+    "energyBefore": "tired",
+    "matchedCard": "yes",
+    "answers": {
+      "noise": "loud",
+      "light": "soft",
+      "crowd": "medium",
+      "intensity": "moderate"
+    }
+  },
+  {
+    "id": "r277",
+    "classId": "dance-mitte-hip-hop-foundations",
+    "date": "2026-10-24",
+    "energyBefore": "stressed",
+    "matchedCard": "yes",
+    "answers": {
+      "noise": "loud",
+      "light": "soft",
+      "crowd": "medium",
+      "intensity": "hard"
+    }
+  },
+  {
+    "id": "r278",
+    "classId": "yoga-kreuzberg-yin-yoga",
+    "date": "2026-11-16",
+    "energyBefore": "energetic",
+    "matchedCard": "partly",
+    "answers": {
+      "noise": "quiet",
+      "light": "bright",
+      "crowd": "small",
+      "intensity": "gentle"
+    },
+    "comment": "Nice and quiet, I could switch off."
+  },
+  {
+    "id": "r279",
+    "classId": "pilates-kreuzberg-reformer-pilates",
+    "date": "2026-10-19",
+    "energyBefore": "energetic",
+    "matchedCard": "yes",
+    "answers": {
+      "noise": "medium",
+      "light": "soft",
+      "crowd": "small",
+      "intensity": "hard"
+    }
+  },
+  {
+    "id": "r280",
+    "classId": "yoga-mitte-power-yoga",
+    "date": "2026-10-19",
+    "energyBefore": "stressed",
+    "matchedCard": "partly",
+    "answers": {
+      "noise": "quiet",
+      "light": "soft",
+      "crowd": "small",
+      "intensity": "hard"
+    },
+    "comment": "More people than expected."
+  },
+  {
+    "id": "r281",
+    "classId": "gym-kreuzberg-rhythm-ride",
+    "date": "2026-10-27",
+    "energyBefore": "tired",
+    "matchedCard": "no",
+    "answers": {
+      "noise": "loud",
+      "light": "bright",
+      "crowd": "large",
+      "intensity": "moderate"
+    }
+  },
+  {
+    "id": "r282",
+    "classId": "gym-kreuzberg-strength-basics",
+    "date": "2026-10-21",
+    "energyBefore": "tired",
+    "matchedCard": "no",
+    "answers": {
+      "noise": "loud",
+      "light": "bright",
+      "crowd": "large",
+      "intensity": "hard"
+    }
+  },
+  {
+    "id": "r283",
+    "classId": "gym-friedrichshain-hiit-express",
+    "date": "2026-11-07",
+    "energyBefore": "tired",
+    "matchedCard": "no",
+    "answers": {
+      "noise": "loud",
+      "light": "bright",
+      "crowd": "small",
+      "intensity": "moderate"
+    }
+  },
+  {
+    "id": "r284",
+    "classId": "wellness-mitte-sound-bath",
+    "date": "2026-11-11",
+    "energyBefore": "energetic",
+    "matchedCard": "yes",
+    "answers": {
+      "noise": "quiet",
+      "light": "soft",
+      "crowd": "small",
+      "intensity": "gentle"
+    }
+  },
+  {
+    "id": "r285",
+    "classId": "dance-neuk-lln-salsa-basics",
+    "date": "2026-10-27",
+    "energyBefore": "energetic",
+    "matchedCard": "partly",
+    "answers": {
+      "noise": "loud",
+      "light": "normal",
+      "crowd": "large",
+      "intensity": "moderate"
+    }
+  },
+  {
+    "id": "r286",
+    "classId": "wellness-friedrichshain-breathwork",
+    "date": "2026-10-26",
+    "energyBefore": "energetic",
+    "matchedCard": "no",
+    "answers": {
+      "noise": "medium",
+      "light": "soft",
+      "crowd": "small",
+      "intensity": "moderate"
+    },
+    "comment": "Lights were brighter than I thought."
+  },
+  {
+    "id": "r287",
+    "classId": "pilates-kreuzberg-gentle-pilates",
+    "date": "2026-11-07",
+    "energyBefore": "energetic",
+    "matchedCard": "partly",
+    "answers": {
+      "noise": "medium",
+      "light": "soft",
+      "crowd": "medium",
+      "intensity": "gentle"
+    }
+  },
+  {
+    "id": "r288",
+    "classId": "climbing-neuk-lln-bouldering-intro",
+    "date": "2026-10-22",
+    "energyBefore": "energetic",
+    "matchedCard": "yes",
+    "answers": {
+      "noise": "quiet",
+      "light": "bright",
+      "crowd": "medium",
+      "intensity": "moderate"
+    }
+  },
+  {
+    "id": "r289",
+    "classId": "gym-prenzlauer-berg-hiit-express",
+    "date": "2026-10-29",
+    "energyBefore": "stressed",
+    "matchedCard": "partly",
+    "answers": {
+      "noise": "loud",
+      "light": "normal",
+      "crowd": "medium",
+      "intensity": "hard"
+    }
+  },
+  {
+    "id": "r290",
+    "classId": "pilates-neuk-lln-reformer-pilates",
+    "date": "2026-11-06",
+    "energyBefore": "stressed",
+    "matchedCard": "no",
+    "answers": {
+      "noise": "medium",
+      "light": "bright",
+      "crowd": "small",
+      "intensity": "moderate"
+    }
+  },
+  {
+    "id": "r291",
+    "classId": "wellness-kreuzberg-breathwork",
+    "date": "2026-11-01",
+    "energyBefore": "energetic",
+    "matchedCard": "yes",
+    "answers": {
+      "noise": "quiet",
+      "light": "soft",
+      "crowd": "small",
+      "intensity": "gentle"
+    }
+  },
+  {
+    "id": "r292",
+    "classId": "boxing-neuk-lln-boxfit",
+    "date": "2026-11-14",
+    "energyBefore": "stressed",
+    "matchedCard": "partly",
+    "answers": {
+      "noise": "loud",
+      "light": "bright",
+      "crowd": "large",
+      "intensity": "hard"
+    },
+    "comment": "Easier than I expected, good for a tired day."
+  },
+  {
+    "id": "r293",
+    "classId": "swimming-neuk-lln-lane-swim-technique",
+    "date": "2026-10-25",
+    "energyBefore": "tired",
+    "matchedCard": "partly",
+    "answers": {
+      "noise": "medium",
+      "light": "bright",
+      "crowd": "large",
+      "intensity": "moderate"
+    },
+    "comment": "Great teacher, clear instructions."
+  },
+  {
+    "id": "r294",
+    "classId": "swimming-kreuzberg-easy-lengths",
+    "date": "2026-11-16",
+    "energyBefore": "tired",
+    "matchedCard": "partly",
+    "answers": {
+      "noise": "medium",
+      "light": "bright",
+      "crowd": "medium",
+      "intensity": "gentle"
+    }
+  },
+  {
+    "id": "r295",
+    "classId": "dance-neuk-lln-salsa-basics",
+    "date": "2026-11-07",
+    "energyBefore": "tired",
+    "matchedCard": "partly",
+    "answers": {
+      "noise": "loud",
+      "light": "normal",
+      "crowd": "medium",
+      "intensity": "gentle"
+    },
+    "comment": "Lights were brighter than I thought."
+  },
+  {
+    "id": "r296",
+    "classId": "wellness-neuk-lln-sound-bath",
+    "date": "2026-11-09",
+    "energyBefore": "stressed",
+    "matchedCard": "yes",
+    "answers": {
+      "noise": "quiet",
+      "light": "soft",
+      "crowd": "small",
+      "intensity": "gentle"
+    }
+  },
+  {
+    "id": "r297",
+    "classId": "climbing-prenzlauer-berg-climbing-technique",
+    "date": "2026-10-30",
+    "energyBefore": "stressed",
+    "matchedCard": "partly",
+    "answers": {
+      "noise": "medium",
+      "light": "normal",
+      "crowd": "medium",
+      "intensity": "hard"
+    }
+  },
+  {
+    "id": "r298",
+    "classId": "swimming-kreuzberg-aqua-fit",
+    "date": "2026-11-06",
+    "energyBefore": "stressed",
+    "matchedCard": "yes",
+    "answers": {
+      "noise": "loud",
+      "light": "bright",
+      "crowd": "medium",
+      "intensity": "moderate"
+    },
+    "comment": "Lovely space, will come back."
+  },
+  {
+    "id": "r299",
+    "classId": "dance-kreuzberg-hip-hop-foundations",
+    "date": "2026-11-17",
+    "energyBefore": "stressed",
+    "matchedCard": "no",
+    "answers": {
+      "noise": "loud",
+      "light": "soft",
+      "crowd": "small",
+      "intensity": "moderate"
+    }
+  },
+  {
+    "id": "r300",
+    "classId": "yoga-neuk-lln-lunch-break-yoga",
+    "date": "2026-10-23",
+    "energyBefore": "tired",
+    "matchedCard": "yes",
+    "answers": {
+      "noise": "quiet",
+      "light": "soft",
+      "crowd": "small",
+      "intensity": "gentle"
+    }
+  },
+  {
+    "id": "r301",
+    "classId": "swimming-friedrichshain-easy-lengths",
+    "date": "2026-11-14",
+    "energyBefore": "stressed",
+    "matchedCard": "partly",
+    "answers": {
+      "noise": "loud",
+      "light": "normal",
+      "crowd": "large",
+      "intensity": "moderate"
+    },
+    "comment": "Nice and quiet, I could switch off."
+  },
+  {
+    "id": "r302",
+    "classId": "boxing-mitte-boxfit",
+    "date": "2026-11-03",
+    "energyBefore": "stressed",
+    "matchedCard": "yes",
+    "answers": {
+      "noise": "medium",
+      "light": "normal",
+      "crowd": "medium",
+      "intensity": "hard"
+    }
+  },
+  {
+    "id": "r303",
+    "classId": "wellness-neuk-lln-sauna-stretch",
+    "date": "2026-10-20",
+    "energyBefore": "tired",
+    "matchedCard": "yes",
+    "answers": {
+      "noise": "quiet",
+      "light": "normal",
+      "crowd": "small",
+      "intensity": "gentle"
+    },
+    "comment": "Music was louder than the card said."
+  },
+  {
+    "id": "r304",
+    "classId": "dance-kreuzberg-contemporary-for-beginners",
+    "date": "2026-10-20",
+    "energyBefore": "stressed",
+    "matchedCard": "yes",
+    "answers": {
+      "noise": "loud",
+      "light": "normal",
+      "crowd": "medium",
+      "intensity": "moderate"
+    }
+  },
+  {
+    "id": "r305",
+    "classId": "swimming-prenzlauer-berg-lane-swim-technique",
+    "date": "2026-10-21",
+    "energyBefore": "energetic",
+    "matchedCard": "yes",
+    "answers": {
+      "noise": "medium",
+      "light": "normal",
+      "crowd": "large",
+      "intensity": "moderate"
+    }
+  },
+  {
+    "id": "r306",
+    "classId": "dance-mitte-hip-hop-foundations",
+    "date": "2026-11-17",
+    "energyBefore": "tired",
+    "matchedCard": "yes",
+    "answers": {
+      "noise": "loud",
+      "light": "soft",
+      "crowd": "medium",
+      "intensity": "hard"
+    }
+  },
+  {
+    "id": "r307",
+    "classId": "climbing-prenzlauer-berg-morning-bouldering",
+    "date": "2026-11-09",
+    "energyBefore": "stressed",
+    "matchedCard": "partly",
+    "answers": {
+      "noise": "medium",
+      "light": "normal",
+      "crowd": "small",
+      "intensity": "hard"
+    }
+  },
+  {
+    "id": "r308",
+    "classId": "dance-neuk-lln-salsa-basics",
+    "date": "2026-10-29",
+    "energyBefore": "stressed",
+    "matchedCard": "partly",
+    "answers": {
+      "noise": "loud",
+      "light": "normal",
+      "crowd": "medium",
+      "intensity": "gentle"
+    }
+  },
+  {
+    "id": "r309",
+    "classId": "wellness-kreuzberg-breathwork",
+    "date": "2026-11-03",
+    "energyBefore": "stressed",
+    "matchedCard": "no",
+    "answers": {
+      "noise": "medium",
+      "light": "soft",
+      "crowd": "medium",
+      "intensity": "gentle"
+    },
+    "comment": "Music was louder than the card said."
+  },
+  {
+    "id": "r310",
+    "classId": "climbing-neuk-lln-climbing-technique",
+    "date": "2026-11-08",
+    "energyBefore": "stressed",
+    "matchedCard": "partly",
+    "answers": {
+      "noise": "quiet",
+      "light": "bright",
+      "crowd": "large",
+      "intensity": "hard"
+    },
+    "comment": "Changing room was crowded."
+  },
+  {
+    "id": "r311",
+    "classId": "pilates-friedrichshain-reformer-pilates",
+    "date": "2026-10-30",
+    "energyBefore": "tired",
+    "matchedCard": "yes",
+    "answers": {
+      "noise": "medium",
+      "light": "normal",
+      "crowd": "medium",
+      "intensity": "hard"
+    }
+  },
+  {
+    "id": "r312",
+    "classId": "pilates-kreuzberg-reformer-pilates",
+    "date": "2026-10-29",
+    "energyBefore": "tired",
+    "matchedCard": "partly",
+    "answers": {
+      "noise": "quiet",
+      "light": "normal",
+      "crowd": "small",
+      "intensity": "hard"
+    },
+    "comment": "Lights were brighter than I thought."
+  },
+  {
+    "id": "r313",
+    "classId": "wellness-prenzlauer-berg-sauna-stretch",
+    "date": "2026-11-05",
+    "energyBefore": "tired",
+    "matchedCard": "partly",
+    "answers": {
+      "noise": "quiet",
+      "light": "normal",
+      "crowd": "small",
+      "intensity": "gentle"
+    },
+    "comment": "Lights were brighter than I thought."
+  },
+  {
+    "id": "r314",
+    "classId": "wellness-friedrichshain-sauna-stretch",
+    "date": "2026-11-09",
+    "energyBefore": "energetic",
+    "matchedCard": "partly",
+    "answers": {
+      "noise": "medium",
+      "light": "soft",
+      "crowd": "small",
+      "intensity": "gentle"
+    }
+  },
+  {
+    "id": "r315",
+    "classId": "gym-neuk-lln-rhythm-ride",
+    "date": "2026-11-08",
+    "energyBefore": "energetic",
+    "matchedCard": "partly",
+    "answers": {
+      "noise": "loud",
+      "light": "normal",
+      "crowd": "medium",
+      "intensity": "moderate"
+    }
+  },
+  {
+    "id": "r316",
+    "classId": "wellness-kreuzberg-sound-bath",
+    "date": "2026-11-11",
+    "energyBefore": "stressed",
+    "matchedCard": "yes",
+    "answers": {
+      "noise": "quiet",
+      "light": "soft",
+      "crowd": "small",
+      "intensity": "gentle"
+    }
+  },
+  {
+    "id": "r317",
+    "classId": "climbing-kreuzberg-climbing-technique",
+    "date": "2026-11-06",
+    "energyBefore": "energetic",
+    "matchedCard": "yes",
+    "answers": {
+      "noise": "quiet",
+      "light": "bright",
+      "crowd": "medium",
+      "intensity": "hard"
+    }
+  },
+  {
+    "id": "r318",
+    "classId": "wellness-kreuzberg-breathwork",
+    "date": "2026-10-28",
+    "energyBefore": "energetic",
+    "matchedCard": "yes",
+    "answers": {
+      "noise": "quiet",
+      "light": "soft",
+      "crowd": "small",
+      "intensity": "gentle"
+    }
+  },
+  {
+    "id": "r319",
+    "classId": "climbing-neuk-lln-climbing-technique",
+    "date": "2026-11-02",
+    "energyBefore": "stressed",
+    "matchedCard": "no",
+    "answers": {
+      "noise": "quiet",
+      "light": "bright",
+      "crowd": "small",
+      "intensity": "moderate"
+    }
+  },
+  {
+    "id": "r320",
+    "classId": "yoga-friedrichshain-vinyasa-flow",
+    "date": "2026-11-02",
+    "energyBefore": "tired",
+    "matchedCard": "partly",
+    "answers": {
+      "noise": "quiet",
+      "light": "soft",
+      "crowd": "small",
+      "intensity": "gentle"
+    }
+  },
+  {
+    "id": "r321",
+    "classId": "pilates-friedrichshain-reformer-pilates",
+    "date": "2026-10-31",
+    "energyBefore": "tired",
+    "matchedCard": "yes",
+    "answers": {
+      "noise": "medium",
+      "light": "normal",
+      "crowd": "medium",
+      "intensity": "hard"
+    }
+  },
+  {
+    "id": "r322",
+    "classId": "yoga-prenzlauer-berg-power-yoga",
+    "date": "2026-11-02",
+    "energyBefore": "energetic",
+    "matchedCard": "yes",
+    "answers": {
+      "noise": "medium",
+      "light": "soft",
+      "crowd": "small",
+      "intensity": "hard"
+    }
+  },
+  {
+    "id": "r323",
+    "classId": "yoga-neuk-lln-lunch-break-yoga",
+    "date": "2026-10-29",
+    "energyBefore": "tired",
+    "matchedCard": "yes",
+    "answers": {
+      "noise": "quiet",
+      "light": "soft",
+      "crowd": "small",
+      "intensity": "gentle"
+    }
+  },
+  {
+    "id": "r324",
+    "classId": "yoga-neuk-lln-slow-flow-yoga",
+    "date": "2026-10-30",
+    "energyBefore": "energetic",
+    "matchedCard": "yes",
+    "answers": {
+      "noise": "quiet",
+      "light": "soft",
+      "crowd": "small",
+      "intensity": "gentle"
+    }
+  },
+  {
+    "id": "r325",
+    "classId": "swimming-friedrichshain-easy-lengths",
+    "date": "2026-11-11",
+    "energyBefore": "energetic",
+    "matchedCard": "yes",
+    "answers": {
+      "noise": "loud",
+      "light": "normal",
+      "crowd": "large",
+      "intensity": "gentle"
+    }
+  },
+  {
+    "id": "r326",
+    "classId": "yoga-mitte-yin-yoga",
+    "date": "2026-11-11",
+    "energyBefore": "energetic",
+    "matchedCard": "partly",
+    "answers": {
+      "noise": "quiet",
+      "light": "soft",
+      "crowd": "large",
+      "intensity": "gentle"
+    }
+  },
+  {
+    "id": "r327",
+    "classId": "yoga-kreuzberg-yin-yoga",
+    "date": "2026-10-21",
+    "energyBefore": "energetic",
+    "matchedCard": "partly",
+    "answers": {
+      "noise": "quiet",
+      "light": "soft",
+      "crowd": "small",
+      "intensity": "gentle"
+    }
+  },
+  {
+    "id": "r328",
+    "classId": "pilates-mitte-mat-pilates-basics",
+    "date": "2026-10-26",
+    "energyBefore": "energetic",
+    "matchedCard": "partly",
+    "answers": {
+      "noise": "quiet",
+      "light": "soft",
+      "crowd": "small",
+      "intensity": "moderate"
+    }
+  },
+  {
+    "id": "r329",
+    "classId": "climbing-neuk-lln-climbing-technique",
+    "date": "2026-11-11",
+    "energyBefore": "stressed",
+    "matchedCard": "yes",
+    "answers": {
+      "noise": "quiet",
+      "light": "bright",
+      "crowd": "medium",
+      "intensity": "hard"
+    }
+  },
+  {
+    "id": "r330",
+    "classId": "dance-mitte-hip-hop-foundations",
+    "date": "2026-11-01",
+    "energyBefore": "energetic",
+    "matchedCard": "yes",
+    "answers": {
+      "noise": "loud",
+      "light": "soft",
+      "crowd": "medium",
+      "intensity": "hard"
+    }
+  },
+  {
+    "id": "r331",
+    "classId": "dance-friedrichshain-contemporary-for-beginners",
+    "date": "2026-11-16",
+    "energyBefore": "stressed",
+    "matchedCard": "partly",
+    "answers": {
+      "noise": "loud",
+      "light": "soft",
+      "crowd": "medium",
+      "intensity": "moderate"
+    },
+    "comment": "The card was spot on."
+  },
+  {
+    "id": "r332",
+    "classId": "pilates-prenzlauer-berg-mat-pilates-basics",
+    "date": "2026-11-11",
+    "energyBefore": "tired",
+    "matchedCard": "partly",
+    "answers": {
+      "noise": "medium",
+      "light": "bright",
+      "crowd": "small",
+      "intensity": "moderate"
+    },
+    "comment": "Exactly as described, very calm."
+  },
+  {
+    "id": "r333",
+    "classId": "wellness-prenzlauer-berg-sound-bath",
+    "date": "2026-10-21",
+    "energyBefore": "stressed",
+    "matchedCard": "yes",
+    "answers": {
+      "noise": "quiet",
+      "light": "soft",
+      "crowd": "medium",
+      "intensity": "gentle"
+    }
+  },
+  {
+    "id": "r334",
+    "classId": "boxing-mitte-technique-pads",
+    "date": "2026-10-21",
+    "energyBefore": "stressed",
+    "matchedCard": "yes",
+    "answers": {
+      "noise": "medium",
+      "light": "normal",
+      "crowd": "medium",
+      "intensity": "moderate"
+    }
+  },
+  {
+    "id": "r335",
+    "classId": "pilates-neuk-lln-reformer-pilates",
+    "date": "2026-11-09",
+    "energyBefore": "stressed",
+    "matchedCard": "yes",
+    "answers": {
+      "noise": "quiet",
+      "light": "bright",
+      "crowd": "small",
+      "intensity": "hard"
+    }
+  },
+  {
+    "id": "r336",
+    "classId": "wellness-neuk-lln-breathwork",
+    "date": "2026-10-28",
+    "energyBefore": "energetic",
+    "matchedCard": "yes",
+    "answers": {
+      "noise": "quiet",
+      "light": "soft",
+      "crowd": "small",
+      "intensity": "gentle"
+    }
+  },
+  {
+    "id": "r337",
+    "classId": "boxing-neuk-lln-boxfit",
+    "date": "2026-11-08",
+    "energyBefore": "stressed",
+    "matchedCard": "yes",
+    "answers": {
+      "noise": "loud",
+      "light": "bright",
+      "crowd": "large",
+      "intensity": "hard"
+    }
+  },
+  {
+    "id": "r338",
+    "classId": "yoga-mitte-slow-flow-yoga",
+    "date": "2026-10-26",
+    "energyBefore": "energetic",
+    "matchedCard": "yes",
+    "answers": {
+      "noise": "quiet",
+      "light": "soft",
+      "crowd": "medium",
+      "intensity": "gentle"
+    }
+  },
+  {
+    "id": "r339",
+    "classId": "yoga-neuk-lln-slow-flow-yoga",
+    "date": "2026-10-30",
+    "energyBefore": "stressed",
+    "matchedCard": "partly",
+    "answers": {
+      "noise": "quiet",
+      "light": "soft",
+      "crowd": "small",
+      "intensity": "moderate"
+    }
+  },
+  {
+    "id": "r340",
+    "classId": "pilates-kreuzberg-mat-pilates-basics",
+    "date": "2026-11-03",
+    "energyBefore": "tired",
+    "matchedCard": "partly",
+    "answers": {
+      "noise": "medium",
+      "light": "soft",
+      "crowd": "medium",
+      "intensity": "moderate"
+    }
+  },
+  {
+    "id": "r341",
+    "classId": "swimming-mitte-easy-lengths",
+    "date": "2026-10-28",
+    "energyBefore": "tired",
+    "matchedCard": "partly",
+    "answers": {
+      "noise": "quiet",
+      "light": "normal",
+      "crowd": "medium",
+      "intensity": "gentle"
+    }
+  },
+  {
+    "id": "r342",
+    "classId": "pilates-neuk-lln-mat-pilates-basics",
+    "date": "2026-11-01",
+    "energyBefore": "energetic",
+    "matchedCard": "yes",
+    "answers": {
+      "noise": "quiet",
+      "light": "bright",
+      "crowd": "small",
+      "intensity": "moderate"
+    }
+  },
+  {
+    "id": "r343",
+    "classId": "gym-prenzlauer-berg-sunrise-spin",
+    "date": "2026-11-03",
+    "energyBefore": "tired",
+    "matchedCard": "partly",
+    "answers": {
+      "noise": "medium",
+      "light": "normal",
+      "crowd": "medium",
+      "intensity": "hard"
+    }
+  },
+  {
+    "id": "r344",
+    "classId": "wellness-mitte-sound-bath",
+    "date": "2026-10-29",
+    "energyBefore": "stressed",
+    "matchedCard": "yes",
+    "answers": {
+      "noise": "quiet",
+      "light": "soft",
+      "crowd": "small",
+      "intensity": "gentle"
+    }
+  },
+  {
+    "id": "r345",
+    "classId": "swimming-mitte-aqua-fit",
+    "date": "2026-11-07",
+    "energyBefore": "energetic",
+    "matchedCard": "yes",
+    "answers": {
+      "noise": "quiet",
+      "light": "bright",
+      "crowd": "large",
+      "intensity": "moderate"
+    }
+  },
+  {
+    "id": "r346",
+    "classId": "boxing-friedrichshain-technique-pads",
+    "date": "2026-10-30",
+    "energyBefore": "energetic",
+    "matchedCard": "yes",
+    "answers": {
+      "noise": "loud",
+      "light": "normal",
+      "crowd": "large",
+      "intensity": "moderate"
+    }
+  },
+  {
+    "id": "r347",
+    "classId": "gym-prenzlauer-berg-sunrise-spin",
+    "date": "2026-11-08",
+    "energyBefore": "tired",
+    "matchedCard": "no",
+    "answers": {
+      "noise": "medium",
+      "light": "soft",
+      "crowd": "large",
+      "intensity": "hard"
+    }
+  },
+  {
+    "id": "r348",
+    "classId": "wellness-friedrichshain-breathwork",
+    "date": "2026-10-23",
+    "energyBefore": "stressed",
+    "matchedCard": "yes",
+    "answers": {
+      "noise": "quiet",
+      "light": "soft",
+      "crowd": "small",
+      "intensity": "gentle"
+    }
+  },
+  {
+    "id": "r349",
+    "classId": "gym-kreuzberg-rhythm-ride",
+    "date": "2026-10-31",
+    "energyBefore": "energetic",
+    "matchedCard": "partly",
+    "answers": {
+      "noise": "loud",
+      "light": "bright",
+      "crowd": "small",
+      "intensity": "hard"
+    }
+  },
+  {
+    "id": "r350",
+    "classId": "dance-kreuzberg-contemporary-for-beginners",
+    "date": "2026-10-28",
+    "energyBefore": "energetic",
+    "matchedCard": "no",
+    "answers": {
+      "noise": "medium",
+      "light": "normal",
+      "crowd": "medium",
+      "intensity": "hard"
+    }
+  },
+  {
+    "id": "r351",
+    "classId": "wellness-mitte-breathwork",
+    "date": "2026-11-17",
+    "energyBefore": "energetic",
+    "matchedCard": "partly",
+    "answers": {
+      "noise": "quiet",
+      "light": "soft",
+      "crowd": "small",
+      "intensity": "moderate"
+    }
+  },
+  {
+    "id": "r352",
+    "classId": "gym-mitte-functional-circuit",
+    "date": "2026-10-27",
+    "energyBefore": "stressed",
+    "matchedCard": "yes",
+    "answers": {
+      "noise": "medium",
+      "light": "bright",
+      "crowd": "medium",
+      "intensity": "hard"
+    }
+  },
+  {
+    "id": "r353",
+    "classId": "wellness-neuk-lln-sound-bath",
+    "date": "2026-11-16",
+    "energyBefore": "energetic",
+    "matchedCard": "partly",
+    "answers": {
+      "noise": "quiet",
+      "light": "soft",
+      "crowd": "small",
+      "intensity": "moderate"
+    },
+    "comment": "A bit too fast for a beginner."
+  },
+  {
+    "id": "r354",
+    "classId": "wellness-mitte-breathwork",
+    "date": "2026-10-27",
+    "energyBefore": "energetic",
+    "matchedCard": "partly",
+    "answers": {
+      "noise": "quiet",
+      "light": "soft",
+      "crowd": "medium",
+      "intensity": "gentle"
+    }
+  },
+  {
+    "id": "r355",
+    "classId": "swimming-friedrichshain-easy-lengths",
+    "date": "2026-10-29",
+    "energyBefore": "tired",
+    "matchedCard": "partly",
+    "answers": {
+      "noise": "loud",
+      "light": "normal",
+      "crowd": "large",
+      "intensity": "gentle"
+    }
+  },
+  {
+    "id": "r356",
+    "classId": "wellness-friedrichshain-breathwork",
+    "date": "2026-10-31",
+    "energyBefore": "energetic",
+    "matchedCard": "partly",
+    "answers": {
+      "noise": "quiet",
+      "light": "soft",
+      "crowd": "medium",
+      "intensity": "gentle"
+    }
+  },
+  {
+    "id": "r357",
+    "classId": "climbing-mitte-morning-bouldering",
+    "date": "2026-11-01",
+    "energyBefore": "tired",
+    "matchedCard": "yes",
+    "answers": {
+      "noise": "quiet",
+      "light": "bright",
+      "crowd": "small",
+      "intensity": "moderate"
+    },
+    "comment": "Great teacher, clear instructions."
+  },
+  {
+    "id": "r358",
+    "classId": "pilates-mitte-reformer-pilates",
+    "date": "2026-10-22",
+    "energyBefore": "tired",
+    "matchedCard": "yes",
+    "answers": {
+      "noise": "quiet",
+      "light": "soft",
+      "crowd": "small",
+      "intensity": "hard"
+    }
+  },
+  {
+    "id": "r359",
+    "classId": "swimming-friedrichshain-easy-lengths",
+    "date": "2026-11-08",
+    "energyBefore": "tired",
+    "matchedCard": "partly",
+    "answers": {
+      "noise": "loud",
+      "light": "normal",
+      "crowd": "medium",
+      "intensity": "gentle"
+    }
+  },
+  {
+    "id": "r360",
+    "classId": "climbing-friedrichshain-morning-bouldering",
+    "date": "2026-11-01",
+    "energyBefore": "stressed",
+    "matchedCard": "no",
+    "answers": {
+      "noise": "loud",
+      "light": "bright",
+      "crowd": "small",
+      "intensity": "moderate"
+    }
+  },
+  {
+    "id": "r361",
+    "classId": "climbing-neuk-lln-morning-bouldering",
+    "date": "2026-11-01",
+    "energyBefore": "tired",
+    "matchedCard": "partly",
+    "answers": {
+      "noise": "quiet",
+      "light": "bright",
+      "crowd": "medium",
+      "intensity": "gentle"
+    }
+  },
+  {
+    "id": "r362",
+    "classId": "wellness-prenzlauer-berg-sound-bath",
+    "date": "2026-11-17",
+    "energyBefore": "energetic",
+    "matchedCard": "yes",
+    "answers": {
+      "noise": "quiet",
+      "light": "soft",
+      "crowd": "medium",
+      "intensity": "gentle"
+    }
+  },
+  {
+    "id": "r363",
+    "classId": "dance-mitte-hip-hop-foundations",
+    "date": "2026-11-02",
+    "energyBefore": "stressed",
+    "matchedCard": "yes",
+    "answers": {
+      "noise": "loud",
+      "light": "soft",
+      "crowd": "medium",
+      "intensity": "hard"
+    },
+    "comment": "Exactly as described, very calm."
+  },
+  {
+    "id": "r364",
+    "classId": "swimming-mitte-lane-swim-technique",
+    "date": "2026-10-25",
+    "energyBefore": "tired",
+    "matchedCard": "yes",
+    "answers": {
+      "noise": "quiet",
+      "light": "bright",
+      "crowd": "large",
+      "intensity": "moderate"
+    }
+  },
+  {
+    "id": "r365",
+    "classId": "yoga-prenzlauer-berg-vinyasa-flow",
+    "date": "2026-11-05",
+    "energyBefore": "stressed",
+    "matchedCard": "partly",
+    "answers": {
+      "noise": "medium",
+      "light": "soft",
+      "crowd": "medium",
+      "intensity": "moderate"
+    }
+  },
+  {
+    "id": "r366",
+    "classId": "swimming-neuk-lln-aqua-fit",
+    "date": "2026-11-14",
+    "energyBefore": "stressed",
+    "matchedCard": "yes",
+    "answers": {
+      "noise": "loud",
+      "light": "normal",
+      "crowd": "large",
+      "intensity": "moderate"
+    }
+  },
+  {
+    "id": "r367",
+    "classId": "swimming-kreuzberg-aqua-fit",
+    "date": "2026-11-10",
+    "energyBefore": "tired",
+    "matchedCard": "yes",
+    "answers": {
+      "noise": "loud",
+      "light": "bright",
+      "crowd": "medium",
+      "intensity": "moderate"
+    }
+  },
+  {
+    "id": "r368",
+    "classId": "boxing-prenzlauer-berg-boxfit",
+    "date": "2026-11-07",
+    "energyBefore": "tired",
+    "matchedCard": "yes",
+    "answers": {
+      "noise": "loud",
+      "light": "normal",
+      "crowd": "medium",
+      "intensity": "hard"
+    }
+  },
+  {
+    "id": "r369",
+    "classId": "yoga-friedrichshain-lunch-break-yoga",
+    "date": "2026-11-17",
+    "energyBefore": "stressed",
+    "matchedCard": "yes",
+    "answers": {
+      "noise": "quiet",
+      "light": "soft",
+      "crowd": "small",
+      "intensity": "gentle"
+    },
+    "comment": "Partner work was optional, which helped."
+  },
+  {
+    "id": "r370",
+    "classId": "climbing-friedrichshain-morning-bouldering",
+    "date": "2026-11-03",
+    "energyBefore": "energetic",
+    "matchedCard": "yes",
+    "answers": {
+      "noise": "medium",
+      "light": "normal",
+      "crowd": "medium",
+      "intensity": "moderate"
+    }
+  },
+  {
+    "id": "r371",
+    "classId": "swimming-mitte-easy-lengths",
+    "date": "2026-10-19",
+    "energyBefore": "stressed",
+    "matchedCard": "yes",
+    "answers": {
+      "noise": "quiet",
+      "light": "bright",
+      "crowd": "large",
+      "intensity": "gentle"
+    },
+    "comment": "The room was quite warm."
+  },
+  {
+    "id": "r372",
+    "classId": "gym-prenzlauer-berg-hiit-express",
+    "date": "2026-11-11",
+    "energyBefore": "energetic",
+    "matchedCard": "yes",
+    "answers": {
+      "noise": "loud",
+      "light": "normal",
+      "crowd": "medium",
+      "intensity": "hard"
+    },
+    "comment": "Lights were brighter than I thought."
+  },
+  {
+    "id": "r373",
+    "classId": "wellness-prenzlauer-berg-sauna-stretch",
+    "date": "2026-11-11",
+    "energyBefore": "energetic",
+    "matchedCard": "yes",
+    "answers": {
+      "noise": "quiet",
+      "light": "soft",
+      "crowd": "medium",
+      "intensity": "gentle"
+    }
+  },
+  {
+    "id": "r374",
+    "classId": "boxing-neuk-lln-boxfit",
+    "date": "2026-10-29",
+    "energyBefore": "stressed",
+    "matchedCard": "yes",
+    "answers": {
+      "noise": "loud",
+      "light": "bright",
+      "crowd": "large",
+      "intensity": "hard"
+    }
+  },
+  {
+    "id": "r375",
+    "classId": "yoga-neuk-lln-yin-yoga",
+    "date": "2026-10-30",
+    "energyBefore": "energetic",
+    "matchedCard": "partly",
+    "answers": {
+      "noise": "quiet",
+      "light": "soft",
+      "crowd": "small",
+      "intensity": "moderate"
+    }
+  },
+  {
+    "id": "r376",
+    "classId": "pilates-neuk-lln-mat-pilates-basics",
+    "date": "2026-11-07",
+    "energyBefore": "tired",
+    "matchedCard": "yes",
+    "answers": {
+      "noise": "quiet",
+      "light": "bright",
+      "crowd": "small",
+      "intensity": "moderate"
+    }
+  },
+  {
+    "id": "r377",
+    "classId": "dance-kreuzberg-hip-hop-foundations",
+    "date": "2026-11-11",
+    "energyBefore": "tired",
+    "matchedCard": "yes",
+    "answers": {
+      "noise": "loud",
+      "light": "normal",
+      "crowd": "medium",
+      "intensity": "hard"
+    }
+  },
+  {
+    "id": "r378",
+    "classId": "yoga-friedrichshain-yin-yoga",
+    "date": "2026-10-21",
+    "energyBefore": "tired",
+    "matchedCard": "yes",
+    "answers": {
+      "noise": "quiet",
+      "light": "soft",
+      "crowd": "small",
+      "intensity": "gentle"
+    }
+  },
+  {
+    "id": "r379",
+    "classId": "climbing-mitte-morning-bouldering",
+    "date": "2026-11-17",
+    "energyBefore": "energetic",
+    "matchedCard": "yes",
+    "answers": {
+      "noise": "quiet",
+      "light": "bright",
+      "crowd": "small",
+      "intensity": "moderate"
+    }
+  },
+  {
+    "id": "r380",
+    "classId": "yoga-friedrichshain-vinyasa-flow",
+    "date": "2026-11-15",
+    "energyBefore": "stressed",
+    "matchedCard": "partly",
+    "answers": {
+      "noise": "quiet",
+      "light": "soft",
+      "crowd": "small",
+      "intensity": "moderate"
+    }
+  },
+  {
+    "id": "r381",
+    "classId": "gym-prenzlauer-berg-hiit-express",
+    "date": "2026-10-23",
+    "energyBefore": "energetic",
+    "matchedCard": "partly",
+    "answers": {
+      "noise": "loud",
+      "light": "normal",
+      "crowd": "large",
+      "intensity": "hard"
+    }
+  },
+  {
+    "id": "r382",
+    "classId": "climbing-kreuzberg-climbing-technique",
+    "date": "2026-10-19",
+    "energyBefore": "energetic",
+    "matchedCard": "partly",
+    "answers": {
+      "noise": "medium",
+      "light": "bright",
+      "crowd": "medium",
+      "intensity": "hard"
+    }
+  },
+  {
+    "id": "r383",
+    "classId": "climbing-kreuzberg-morning-bouldering",
+    "date": "2026-10-24",
+    "energyBefore": "stressed",
+    "matchedCard": "yes",
+    "answers": {
+      "noise": "quiet",
+      "light": "normal",
+      "crowd": "medium",
+      "intensity": "moderate"
+    }
+  },
+  {
+    "id": "r384",
+    "classId": "boxing-neuk-lln-boxfit",
+    "date": "2026-11-15",
+    "energyBefore": "stressed",
+    "matchedCard": "partly",
+    "answers": {
+      "noise": "loud",
+      "light": "bright",
+      "crowd": "medium",
+      "intensity": "hard"
+    }
+  },
+  {
+    "id": "r385",
+    "classId": "pilates-friedrichshain-gentle-pilates",
+    "date": "2026-10-24",
+    "energyBefore": "tired",
+    "matchedCard": "partly",
+    "answers": {
+      "noise": "medium",
+      "light": "soft",
+      "crowd": "small",
+      "intensity": "gentle"
+    }
+  },
+  {
+    "id": "r386",
+    "classId": "boxing-neuk-lln-technique-pads",
+    "date": "2026-11-16",
+    "energyBefore": "energetic",
+    "matchedCard": "yes",
+    "answers": {
+      "noise": "loud",
+      "light": "bright",
+      "crowd": "large",
+      "intensity": "moderate"
+    }
+  },
+  {
+    "id": "r387",
+    "classId": "boxing-neuk-lln-technique-pads",
+    "date": "2026-11-09",
+    "energyBefore": "tired",
+    "matchedCard": "yes",
+    "answers": {
+      "noise": "loud",
+      "light": "bright",
+      "crowd": "large",
+      "intensity": "moderate"
+    }
+  },
+  {
+    "id": "r388",
+    "classId": "dance-mitte-hip-hop-foundations",
+    "date": "2026-11-11",
+    "energyBefore": "tired",
+    "matchedCard": "yes",
+    "answers": {
+      "noise": "loud",
+      "light": "soft",
+      "crowd": "medium",
+      "intensity": "hard"
+    }
+  },
+  {
+    "id": "r389",
+    "classId": "gym-mitte-functional-circuit",
+    "date": "2026-10-22",
+    "energyBefore": "tired",
+    "matchedCard": "partly",
+    "answers": {
+      "noise": "medium",
+      "light": "bright",
+      "crowd": "medium",
+      "intensity": "moderate"
+    }
+  },
+  {
+    "id": "r390",
+    "classId": "dance-mitte-contemporary-for-beginners",
+    "date": "2026-10-25",
+    "energyBefore": "stressed",
+    "matchedCard": "partly",
+    "answers": {
+      "noise": "loud",
+      "light": "soft",
+      "crowd": "large",
+      "intensity": "moderate"
+    }
+  },
+  {
+    "id": "r391",
+    "classId": "pilates-kreuzberg-gentle-pilates",
+    "date": "2026-10-19",
+    "energyBefore": "energetic",
+    "matchedCard": "partly",
+    "answers": {
+      "noise": "medium",
+      "light": "soft",
+      "crowd": "medium",
+      "intensity": "gentle"
+    }
+  },
+  {
+    "id": "r392",
+    "classId": "swimming-prenzlauer-berg-aqua-fit",
+    "date": "2026-11-14",
+    "energyBefore": "stressed",
+    "matchedCard": "partly",
+    "answers": {
+      "noise": "medium",
+      "light": "normal",
+      "crowd": "large",
+      "intensity": "moderate"
+    }
+  },
+  {
+    "id": "r393",
+    "classId": "yoga-prenzlauer-berg-yin-yoga",
+    "date": "2026-10-27",
+    "energyBefore": "tired",
+    "matchedCard": "partly",
+    "answers": {
+      "noise": "medium",
+      "light": "soft",
+      "crowd": "small",
+      "intensity": "moderate"
+    },
+    "comment": "Harder than the label says."
+  },
+  {
+    "id": "r394",
+    "classId": "yoga-prenzlauer-berg-power-yoga",
+    "date": "2026-11-13",
+    "energyBefore": "tired",
+    "matchedCard": "yes",
+    "answers": {
+      "noise": "medium",
+      "light": "soft",
+      "crowd": "small",
+      "intensity": "hard"
+    }
+  },
+  {
+    "id": "r395",
+    "classId": "swimming-mitte-aqua-fit",
+    "date": "2026-10-31",
+    "energyBefore": "stressed",
+    "matchedCard": "yes",
+    "answers": {
+      "noise": "quiet",
+      "light": "bright",
+      "crowd": "large",
+      "intensity": "moderate"
+    }
+  },
+  {
+    "id": "r396",
+    "classId": "wellness-mitte-breathwork",
+    "date": "2026-11-03",
+    "energyBefore": "tired",
+    "matchedCard": "yes",
+    "answers": {
+      "noise": "quiet",
+      "light": "soft",
+      "crowd": "small",
+      "intensity": "gentle"
+    },
+    "comment": "Lights were brighter than I thought."
+  },
+  {
+    "id": "r397",
+    "classId": "dance-friedrichshain-salsa-basics",
+    "date": "2026-11-07",
+    "energyBefore": "energetic",
+    "matchedCard": "no",
+    "answers": {
+      "noise": "loud",
+      "light": "soft",
+      "crowd": "small",
+      "intensity": "hard"
+    },
+    "comment": "Exactly as described, very calm."
+  },
+  {
+    "id": "r398",
+    "classId": "pilates-friedrichshain-mat-pilates-basics",
+    "date": "2026-11-14",
+    "energyBefore": "stressed",
+    "matchedCard": "yes",
+    "answers": {
+      "noise": "medium",
+      "light": "normal",
+      "crowd": "medium",
+      "intensity": "moderate"
+    },
+    "comment": "Lovely space, will come back."
+  },
+  {
+    "id": "r399",
+    "classId": "gym-kreuzberg-rhythm-ride",
+    "date": "2026-10-27",
+    "energyBefore": "stressed",
+    "matchedCard": "yes",
+    "answers": {
+      "noise": "loud",
+      "light": "normal",
+      "crowd": "medium",
+      "intensity": "hard"
+    }
+  },
+  {
+    "id": "r400",
+    "classId": "swimming-mitte-easy-lengths",
+    "date": "2026-10-31",
+    "energyBefore": "tired",
+    "matchedCard": "partly",
+    "answers": {
+      "noise": "quiet",
+      "light": "bright",
+      "crowd": "large",
+      "intensity": "moderate"
+    }
+  },
+  {
+    "id": "r401",
+    "classId": "boxing-kreuzberg-boxing-fundamentals",
+    "date": "2026-10-27",
+    "energyBefore": "tired",
+    "matchedCard": "yes",
+    "answers": {
+      "noise": "medium",
+      "light": "bright",
+      "crowd": "large",
+      "intensity": "hard"
+    }
+  },
+  {
+    "id": "r402",
+    "classId": "yoga-mitte-slow-flow-yoga",
+    "date": "2026-10-31",
+    "energyBefore": "energetic",
+    "matchedCard": "partly",
+    "answers": {
+      "noise": "quiet",
+      "light": "normal",
+      "crowd": "large",
+      "intensity": "gentle"
+    }
+  },
+  {
+    "id": "r403",
+    "classId": "climbing-prenzlauer-berg-morning-bouldering",
+    "date": "2026-10-21",
+    "energyBefore": "stressed",
+    "matchedCard": "yes",
+    "answers": {
+      "noise": "medium",
+      "light": "soft",
+      "crowd": "small",
+      "intensity": "moderate"
+    }
+  },
+  {
+    "id": "r404",
+    "classId": "dance-prenzlauer-berg-salsa-basics",
+    "date": "2026-11-09",
+    "energyBefore": "energetic",
+    "matchedCard": "partly",
+    "answers": {
+      "noise": "medium",
+      "light": "bright",
+      "crowd": "medium",
+      "intensity": "moderate"
+    }
+  },
+  {
+    "id": "r405",
+    "classId": "yoga-friedrichshain-yin-yoga",
+    "date": "2026-11-13",
+    "energyBefore": "stressed",
+    "matchedCard": "yes",
+    "answers": {
+      "noise": "quiet",
+      "light": "normal",
+      "crowd": "small",
+      "intensity": "gentle"
+    }
+  },
+  {
+    "id": "r406",
+    "classId": "climbing-friedrichshain-bouldering-intro",
+    "date": "2026-10-30",
+    "energyBefore": "stressed",
+    "matchedCard": "no",
+    "answers": {
+      "noise": "loud",
+      "light": "normal",
+      "crowd": "large",
+      "intensity": "moderate"
+    }
+  },
+  {
+    "id": "r407",
+    "classId": "gym-prenzlauer-berg-sunrise-spin",
+    "date": "2026-10-28",
+    "energyBefore": "tired",
+    "matchedCard": "partly",
+    "answers": {
+      "noise": "loud",
+      "light": "bright",
+      "crowd": "medium",
+      "intensity": "hard"
+    },
+    "comment": "Lights were brighter than I thought."
+  },
+  {
+    "id": "r408",
+    "classId": "pilates-prenzlauer-berg-reformer-pilates",
+    "date": "2026-10-26",
+    "energyBefore": "tired",
+    "matchedCard": "partly",
+    "answers": {
+      "noise": "quiet",
+      "light": "bright",
+      "crowd": "medium",
+      "intensity": "hard"
+    }
+  },
+  {
+    "id": "r409",
+    "classId": "climbing-prenzlauer-berg-morning-bouldering",
+    "date": "2026-11-14",
+    "energyBefore": "tired",
+    "matchedCard": "yes",
+    "answers": {
+      "noise": "medium",
+      "light": "normal",
+      "crowd": "small",
+      "intensity": "moderate"
+    }
+  },
+  {
+    "id": "r410",
+    "classId": "dance-kreuzberg-salsa-basics",
+    "date": "2026-10-21",
+    "energyBefore": "stressed",
+    "matchedCard": "yes",
+    "answers": {
+      "noise": "loud",
+      "light": "normal",
+      "crowd": "medium",
+      "intensity": "moderate"
+    }
+  },
+  {
+    "id": "r411",
+    "classId": "dance-friedrichshain-hip-hop-foundations",
+    "date": "2026-11-13",
+    "energyBefore": "tired",
+    "matchedCard": "no",
+    "answers": {
+      "noise": "medium",
+      "light": "soft",
+      "crowd": "large",
+      "intensity": "hard"
+    }
+  },
+  {
+    "id": "r412",
+    "classId": "swimming-mitte-easy-lengths",
+    "date": "2026-10-29",
+    "energyBefore": "energetic",
+    "matchedCard": "yes",
+    "answers": {
+      "noise": "quiet",
+      "light": "bright",
+      "crowd": "large",
+      "intensity": "gentle"
+    }
+  },
+  {
+    "id": "r413",
+    "classId": "dance-neuk-lln-hip-hop-foundations",
+    "date": "2026-11-16",
+    "energyBefore": "stressed",
+    "matchedCard": "partly",
+    "answers": {
+      "noise": "loud",
+      "light": "bright",
+      "crowd": "medium",
+      "intensity": "moderate"
+    }
+  },
+  {
+    "id": "r414",
+    "classId": "yoga-mitte-slow-flow-yoga",
+    "date": "2026-11-11",
+    "energyBefore": "energetic",
+    "matchedCard": "yes",
+    "answers": {
+      "noise": "quiet",
+      "light": "soft",
+      "crowd": "medium",
+      "intensity": "gentle"
+    }
+  },
+  {
+    "id": "r415",
+    "classId": "dance-mitte-hip-hop-foundations",
+    "date": "2026-10-27",
+    "energyBefore": "stressed",
+    "matchedCard": "yes",
+    "answers": {
+      "noise": "loud",
+      "light": "normal",
+      "crowd": "medium",
+      "intensity": "hard"
+    }
+  },
+  {
+    "id": "r416",
+    "classId": "pilates-kreuzberg-mat-pilates-basics",
+    "date": "2026-10-23",
+    "energyBefore": "tired",
+    "matchedCard": "partly",
+    "answers": {
+      "noise": "quiet",
+      "light": "normal",
+      "crowd": "small",
+      "intensity": "moderate"
+    }
+  },
+  {
+    "id": "r417",
+    "classId": "swimming-mitte-easy-lengths",
+    "date": "2026-10-26",
+    "energyBefore": "tired",
+    "matchedCard": "yes",
+    "answers": {
+      "noise": "quiet",
+      "light": "bright",
+      "crowd": "large",
+      "intensity": "gentle"
+    }
+  },
+  {
+    "id": "r418",
+    "classId": "pilates-mitte-mat-pilates-basics",
+    "date": "2026-11-14",
+    "energyBefore": "stressed",
+    "matchedCard": "yes",
+    "answers": {
+      "noise": "quiet",
+      "light": "soft",
+      "crowd": "small",
+      "intensity": "moderate"
+    }
+  },
+  {
+    "id": "r419",
+    "classId": "gym-mitte-strength-basics",
+    "date": "2026-10-25",
+    "energyBefore": "tired",
+    "matchedCard": "no",
+    "answers": {
+      "noise": "loud",
+      "light": "bright",
+      "crowd": "small",
+      "intensity": "moderate"
+    }
+  },
+  {
+    "id": "r420",
+    "classId": "yoga-neuk-lln-yin-yoga",
+    "date": "2026-10-24",
+    "energyBefore": "tired",
+    "matchedCard": "yes",
+    "answers": {
+      "noise": "quiet",
+      "light": "soft",
+      "crowd": "small",
+      "intensity": "gentle"
+    },
+    "comment": "Harder than the label says."
+  },
+  {
+    "id": "r421",
+    "classId": "boxing-friedrichshain-technique-pads",
+    "date": "2026-11-04",
+    "energyBefore": "stressed",
+    "matchedCard": "yes",
+    "answers": {
+      "noise": "loud",
+      "light": "normal",
+      "crowd": "large",
+      "intensity": "moderate"
+    }
+  },
+  {
+    "id": "r422",
+    "classId": "climbing-neuk-lln-bouldering-intro",
+    "date": "2026-10-29",
+    "energyBefore": "energetic",
+    "matchedCard": "yes",
+    "answers": {
+      "noise": "quiet",
+      "light": "bright",
+      "crowd": "medium",
+      "intensity": "moderate"
+    }
+  },
+  {
+    "id": "r423",
+    "classId": "boxing-neuk-lln-boxing-fundamentals",
+    "date": "2026-11-17",
+    "energyBefore": "stressed",
+    "matchedCard": "yes",
+    "answers": {
+      "noise": "loud",
+      "light": "bright",
+      "crowd": "large",
+      "intensity": "hard"
+    }
+  },
+  {
+    "id": "r424",
+    "classId": "boxing-prenzlauer-berg-boxing-fundamentals",
+    "date": "2026-11-16",
+    "energyBefore": "tired",
+    "matchedCard": "no",
+    "answers": {
+      "noise": "loud",
+      "light": "normal",
+      "crowd": "large",
+      "intensity": "moderate"
+    }
+  },
+  {
+    "id": "r425",
+    "classId": "climbing-mitte-climbing-technique",
+    "date": "2026-10-22",
+    "energyBefore": "stressed",
+    "matchedCard": "partly",
+    "answers": {
+      "noise": "quiet",
+      "light": "bright",
+      "crowd": "medium",
+      "intensity": "hard"
+    }
+  },
+  {
+    "id": "r426",
+    "classId": "wellness-friedrichshain-sauna-stretch",
+    "date": "2026-11-01",
+    "energyBefore": "energetic",
+    "matchedCard": "yes",
+    "answers": {
+      "noise": "quiet",
+      "light": "soft",
+      "crowd": "small",
+      "intensity": "gentle"
+    }
+  },
+  {
+    "id": "r427",
+    "classId": "yoga-kreuzberg-lunch-break-yoga",
+    "date": "2026-11-17",
+    "energyBefore": "tired",
+    "matchedCard": "yes",
+    "answers": {
+      "noise": "quiet",
+      "light": "soft",
+      "crowd": "medium",
+      "intensity": "gentle"
+    }
+  },
+  {
+    "id": "r428",
+    "classId": "pilates-neuk-lln-reformer-pilates",
+    "date": "2026-10-28",
+    "energyBefore": "tired",
+    "matchedCard": "yes",
+    "answers": {
+      "noise": "quiet",
+      "light": "bright",
+      "crowd": "small",
+      "intensity": "hard"
+    }
+  },
+  {
+    "id": "r429",
+    "classId": "pilates-kreuzberg-reformer-pilates",
+    "date": "2026-11-04",
+    "energyBefore": "energetic",
+    "matchedCard": "yes",
+    "answers": {
+      "noise": "medium",
+      "light": "soft",
+      "crowd": "small",
+      "intensity": "hard"
+    }
+  },
+  {
+    "id": "r430",
+    "classId": "swimming-mitte-aqua-fit",
+    "date": "2026-11-14",
+    "energyBefore": "tired",
+    "matchedCard": "yes",
+    "answers": {
+      "noise": "quiet",
+      "light": "bright",
+      "crowd": "large",
+      "intensity": "moderate"
+    }
+  },
+  {
+    "id": "r431",
+    "classId": "gym-friedrichshain-rhythm-ride",
+    "date": "2026-11-02",
+    "energyBefore": "tired",
+    "matchedCard": "partly",
+    "answers": {
+      "noise": "medium",
+      "light": "bright",
+      "crowd": "medium",
+      "intensity": "hard"
+    }
+  },
+  {
+    "id": "r432",
+    "classId": "dance-neuk-lln-salsa-basics",
+    "date": "2026-11-17",
+    "energyBefore": "stressed",
+    "matchedCard": "no",
+    "answers": {
+      "noise": "medium",
+      "light": "soft",
+      "crowd": "medium",
+      "intensity": "gentle"
+    }
+  },
+  {
+    "id": "r433",
+    "classId": "dance-kreuzberg-hip-hop-foundations",
+    "date": "2026-10-24",
+    "energyBefore": "stressed",
+    "matchedCard": "partly",
+    "answers": {
+      "noise": "loud",
+      "light": "normal",
+      "crowd": "large",
+      "intensity": "hard"
+    }
+  },
+  {
+    "id": "r434",
+    "classId": "pilates-mitte-reformer-pilates",
+    "date": "2026-11-08",
+    "energyBefore": "energetic",
+    "matchedCard": "partly",
+    "answers": {
+      "noise": "medium",
+      "light": "soft",
+      "crowd": "small",
+      "intensity": "hard"
+    }
+  },
+  {
+    "id": "r435",
+    "classId": "wellness-mitte-sauna-stretch",
+    "date": "2026-11-06",
+    "energyBefore": "tired",
+    "matchedCard": "yes",
+    "answers": {
+      "noise": "quiet",
+      "light": "soft",
+      "crowd": "small",
+      "intensity": "gentle"
+    }
+  },
+  {
+    "id": "r436",
+    "classId": "boxing-neuk-lln-boxfit",
+    "date": "2026-11-10",
+    "energyBefore": "energetic",
+    "matchedCard": "yes",
+    "answers": {
+      "noise": "loud",
+      "light": "bright",
+      "crowd": "large",
+      "intensity": "hard"
+    }
+  },
+  {
+    "id": "r437",
+    "classId": "swimming-friedrichshain-easy-lengths",
+    "date": "2026-11-03",
+    "energyBefore": "stressed",
+    "matchedCard": "yes",
+    "answers": {
+      "noise": "loud",
+      "light": "normal",
+      "crowd": "large",
+      "intensity": "gentle"
+    }
+  },
+  {
+    "id": "r438",
+    "classId": "dance-neuk-lln-hip-hop-foundations",
+    "date": "2026-10-20",
+    "energyBefore": "energetic",
+    "matchedCard": "partly",
+    "answers": {
+      "noise": "loud",
+      "light": "normal",
+      "crowd": "large",
+      "intensity": "hard"
+    },
+    "comment": "Partner work was optional, which helped."
+  },
+  {
+    "id": "r439",
+    "classId": "pilates-mitte-reformer-pilates",
+    "date": "2026-11-15",
+    "energyBefore": "stressed",
+    "matchedCard": "partly",
+    "answers": {
+      "noise": "quiet",
+      "light": "normal",
+      "crowd": "medium",
+      "intensity": "hard"
+    }
+  },
+  {
+    "id": "r440",
+    "classId": "climbing-neuk-lln-climbing-technique",
+    "date": "2026-10-27",
+    "energyBefore": "stressed",
+    "matchedCard": "yes",
+    "answers": {
+      "noise": "quiet",
+      "light": "bright",
+      "crowd": "medium",
+      "intensity": "hard"
+    }
+  },
+  {
+    "id": "r441",
+    "classId": "gym-mitte-functional-circuit",
+    "date": "2026-10-19",
+    "energyBefore": "stressed",
+    "matchedCard": "partly",
+    "answers": {
+      "noise": "medium",
+      "light": "bright",
+      "crowd": "medium",
+      "intensity": "moderate"
+    }
+  },
+  {
+    "id": "r442",
+    "classId": "boxing-neuk-lln-boxfit",
+    "date": "2026-10-29",
+    "energyBefore": "tired",
+    "matchedCard": "yes",
+    "answers": {
+      "noise": "loud",
+      "light": "bright",
+      "crowd": "large",
+      "intensity": "hard"
+    }
+  },
+  {
+    "id": "r443",
+    "classId": "climbing-mitte-climbing-technique",
+    "date": "2026-11-09",
+    "energyBefore": "energetic",
+    "matchedCard": "yes",
+    "answers": {
+      "noise": "quiet",
+      "light": "bright",
+      "crowd": "small",
+      "intensity": "hard"
+    }
+  },
+  {
+    "id": "r444",
+    "classId": "wellness-prenzlauer-berg-sound-bath",
+    "date": "2026-10-30",
+    "energyBefore": "tired",
+    "matchedCard": "partly",
+    "answers": {
+      "noise": "quiet",
+      "light": "soft",
+      "crowd": "small",
+      "intensity": "gentle"
+    },
+    "comment": "Easier than I expected, good for a tired day."
+  },
+  {
+    "id": "r445",
+    "classId": "boxing-kreuzberg-boxing-fundamentals",
+    "date": "2026-10-22",
+    "energyBefore": "stressed",
+    "matchedCard": "yes",
+    "answers": {
+      "noise": "medium",
+      "light": "bright",
+      "crowd": "large",
+      "intensity": "hard"
+    }
+  },
+  {
+    "id": "r446",
+    "classId": "wellness-mitte-sound-bath",
+    "date": "2026-10-28",
+    "energyBefore": "stressed",
+    "matchedCard": "yes",
+    "answers": {
+      "noise": "quiet",
+      "light": "soft",
+      "crowd": "small",
+      "intensity": "gentle"
+    }
+  },
+  {
+    "id": "r447",
+    "classId": "wellness-mitte-sauna-stretch",
+    "date": "2026-10-21",
+    "energyBefore": "energetic",
+    "matchedCard": "yes",
+    "answers": {
+      "noise": "quiet",
+      "light": "soft",
+      "crowd": "small",
+      "intensity": "gentle"
+    }
+  },
+  {
+    "id": "r448",
+    "classId": "wellness-friedrichshain-sauna-stretch",
+    "date": "2026-10-19",
+    "energyBefore": "stressed",
+    "matchedCard": "yes",
+    "answers": {
+      "noise": "quiet",
+      "light": "soft",
+      "crowd": "small",
+      "intensity": "gentle"
+    },
+    "comment": "Nice and quiet, I could switch off."
+  },
+  {
+    "id": "r449",
+    "classId": "gym-friedrichshain-rhythm-ride",
+    "date": "2026-11-05",
+    "energyBefore": "tired",
+    "matchedCard": "yes",
+    "answers": {
+      "noise": "loud",
+      "light": "bright",
+      "crowd": "medium",
+      "intensity": "hard"
+    },
+    "comment": "Exactly as described, very calm."
+  },
+  {
+    "id": "r450",
+    "classId": "boxing-kreuzberg-technique-pads",
+    "date": "2026-11-05",
+    "energyBefore": "energetic",
+    "matchedCard": "yes",
+    "answers": {
+      "noise": "medium",
+      "light": "bright",
+      "crowd": "large",
+      "intensity": "moderate"
+    }
+  },
+  {
+    "id": "r451",
+    "classId": "swimming-neuk-lln-lane-swim-technique",
+    "date": "2026-11-04",
+    "energyBefore": "energetic",
+    "matchedCard": "yes",
+    "answers": {
+      "noise": "loud",
+      "light": "soft",
+      "crowd": "large",
+      "intensity": "moderate"
+    }
+  },
+  {
+    "id": "r452",
+    "classId": "gym-mitte-functional-circuit",
+    "date": "2026-10-20",
+    "energyBefore": "stressed",
+    "matchedCard": "yes",
+    "answers": {
+      "noise": "medium",
+      "light": "bright",
+      "crowd": "medium",
+      "intensity": "hard"
+    }
+  },
+  {
+    "id": "r453",
+    "classId": "boxing-friedrichshain-boxing-fundamentals",
+    "date": "2026-11-10",
+    "energyBefore": "stressed",
+    "matchedCard": "partly",
+    "answers": {
+      "noise": "loud",
+      "light": "normal",
+      "crowd": "large",
+      "intensity": "moderate"
+    }
+  },
+  {
+    "id": "r454",
+    "classId": "swimming-kreuzberg-aqua-fit",
+    "date": "2026-10-24",
+    "energyBefore": "tired",
+    "matchedCard": "yes",
+    "answers": {
+      "noise": "loud",
+      "light": "bright",
+      "crowd": "medium",
+      "intensity": "moderate"
+    }
+  },
+  {
+    "id": "r455",
+    "classId": "gym-friedrichshain-rhythm-ride",
+    "date": "2026-11-08",
+    "energyBefore": "energetic",
+    "matchedCard": "yes",
+    "answers": {
+      "noise": "loud",
+      "light": "bright",
+      "crowd": "medium",
+      "intensity": "hard"
+    }
+  },
+  {
+    "id": "r456",
+    "classId": "climbing-mitte-climbing-technique",
+    "date": "2026-11-11",
+    "energyBefore": "energetic",
+    "matchedCard": "yes",
+    "answers": {
+      "noise": "quiet",
+      "light": "normal",
+      "crowd": "small",
+      "intensity": "hard"
+    }
+  },
+  {
+    "id": "r457",
+    "classId": "pilates-neuk-lln-reformer-pilates",
+    "date": "2026-11-12",
+    "energyBefore": "stressed",
+    "matchedCard": "yes",
+    "answers": {
+      "noise": "quiet",
+      "light": "bright",
+      "crowd": "small",
+      "intensity": "hard"
+    },
+    "comment": "Great teacher, clear instructions."
+  },
+  {
+    "id": "r458",
+    "classId": "climbing-prenzlauer-berg-climbing-technique",
+    "date": "2026-11-04",
+    "energyBefore": "stressed",
+    "matchedCard": "partly",
+    "answers": {
+      "noise": "quiet",
+      "light": "normal",
+      "crowd": "small",
+      "intensity": "hard"
+    }
+  },
+  {
+    "id": "r459",
+    "classId": "swimming-mitte-easy-lengths",
+    "date": "2026-11-08",
+    "energyBefore": "tired",
+    "matchedCard": "no",
+    "answers": {
+      "noise": "medium",
+      "light": "normal",
+      "crowd": "large",
+      "intensity": "moderate"
+    }
+  },
+  {
+    "id": "r460",
+    "classId": "yoga-friedrichshain-vinyasa-flow",
+    "date": "2026-10-30",
+    "energyBefore": "energetic",
+    "matchedCard": "partly",
+    "answers": {
+      "noise": "quiet",
+      "light": "soft",
+      "crowd": "small",
+      "intensity": "hard"
+    }
+  },
+  {
+    "id": "r461",
+    "classId": "gym-neuk-lln-rhythm-ride",
+    "date": "2026-10-22",
+    "energyBefore": "energetic",
+    "matchedCard": "no",
+    "answers": {
+      "noise": "medium",
+      "light": "bright",
+      "crowd": "medium",
+      "intensity": "moderate"
+    }
+  },
+  {
+    "id": "r462",
+    "classId": "boxing-neuk-lln-boxing-fundamentals",
+    "date": "2026-10-20",
+    "energyBefore": "stressed",
+    "matchedCard": "yes",
+    "answers": {
+      "noise": "loud",
+      "light": "bright",
+      "crowd": "large",
+      "intensity": "hard"
+    }
+  },
+  {
+    "id": "r463",
+    "classId": "wellness-neuk-lln-sound-bath",
+    "date": "2026-10-29",
+    "energyBefore": "tired",
+    "matchedCard": "yes",
+    "answers": {
+      "noise": "quiet",
+      "light": "soft",
+      "crowd": "small",
+      "intensity": "gentle"
+    }
+  },
+  {
+    "id": "r464",
+    "classId": "wellness-friedrichshain-sauna-stretch",
+    "date": "2026-11-08",
+    "energyBefore": "energetic",
+    "matchedCard": "no",
+    "answers": {
+      "noise": "medium",
+      "light": "soft",
+      "crowd": "medium",
+      "intensity": "gentle"
+    }
+  },
+  {
+    "id": "r465",
+    "classId": "gym-mitte-functional-circuit",
+    "date": "2026-11-10",
+    "energyBefore": "stressed",
+    "matchedCard": "partly",
+    "answers": {
+      "noise": "medium",
+      "light": "bright",
+      "crowd": "small",
+      "intensity": "hard"
+    }
+  },
+  {
+    "id": "r466",
+    "classId": "swimming-neuk-lln-lane-swim-technique",
+    "date": "2026-10-22",
+    "energyBefore": "tired",
+    "matchedCard": "yes",
+    "answers": {
+      "noise": "loud",
+      "light": "soft",
+      "crowd": "large",
+      "intensity": "moderate"
+    }
+  },
+  {
+    "id": "r467",
+    "classId": "pilates-mitte-reformer-pilates",
+    "date": "2026-10-22",
+    "energyBefore": "tired",
+    "matchedCard": "yes",
+    "answers": {
+      "noise": "quiet",
+      "light": "soft",
+      "crowd": "small",
+      "intensity": "hard"
+    }
+  },
+  {
+    "id": "r468",
+    "classId": "climbing-neuk-lln-climbing-technique",
+    "date": "2026-11-09",
+    "energyBefore": "tired",
+    "matchedCard": "yes",
+    "answers": {
+      "noise": "quiet",
+      "light": "normal",
+      "crowd": "medium",
+      "intensity": "hard"
+    }
+  },
+  {
+    "id": "r469",
+    "classId": "swimming-neuk-lln-aqua-fit",
+    "date": "2026-10-27",
+    "energyBefore": "energetic",
+    "matchedCard": "yes",
+    "answers": {
+      "noise": "loud",
+      "light": "normal",
+      "crowd": "large",
+      "intensity": "moderate"
+    },
+    "comment": "More people than expected."
+  },
+  {
+    "id": "r470",
+    "classId": "swimming-neuk-lln-aqua-fit",
+    "date": "2026-11-16",
+    "energyBefore": "energetic",
+    "matchedCard": "yes",
+    "answers": {
+      "noise": "loud",
+      "light": "normal",
+      "crowd": "large",
+      "intensity": "moderate"
+    }
+  },
+  {
+    "id": "r471",
+    "classId": "gym-kreuzberg-strength-basics",
+    "date": "2026-10-23",
+    "energyBefore": "tired",
+    "matchedCard": "yes",
+    "answers": {
+      "noise": "loud",
+      "light": "bright",
+      "crowd": "medium",
+      "intensity": "moderate"
+    }
+  },
+  {
+    "id": "r472",
+    "classId": "yoga-neuk-lln-lunch-break-yoga",
+    "date": "2026-10-22",
+    "energyBefore": "stressed",
+    "matchedCard": "partly",
+    "answers": {
+      "noise": "quiet",
+      "light": "soft",
+      "crowd": "medium",
+      "intensity": "gentle"
+    }
+  },
+  {
+    "id": "r473",
+    "classId": "yoga-friedrichshain-yin-yoga",
+    "date": "2026-11-07",
+    "energyBefore": "tired",
+    "matchedCard": "no",
+    "answers": {
+      "noise": "medium",
+      "light": "soft",
+      "crowd": "medium",
+      "intensity": "gentle"
+    }
+  },
+  {
+    "id": "r474",
+    "classId": "gym-mitte-hiit-express",
+    "date": "2026-11-02",
+    "energyBefore": "energetic",
+    "matchedCard": "yes",
+    "answers": {
+      "noise": "medium",
+      "light": "bright",
+      "crowd": "medium",
+      "intensity": "hard"
+    }
+  },
+  {
+    "id": "r475",
+    "classId": "swimming-prenzlauer-berg-lane-swim-technique",
+    "date": "2026-11-12",
+    "energyBefore": "stressed",
+    "matchedCard": "yes",
+    "answers": {
+      "noise": "medium",
+      "light": "normal",
+      "crowd": "large",
+      "intensity": "moderate"
+    }
+  },
+  {
+    "id": "r476",
+    "classId": "swimming-mitte-lane-swim-technique",
+    "date": "2026-10-31",
+    "energyBefore": "stressed",
+    "matchedCard": "yes",
+    "answers": {
+      "noise": "quiet",
+      "light": "bright",
+      "crowd": "large",
+      "intensity": "moderate"
+    }
+  },
+  {
+    "id": "r477",
+    "classId": "wellness-prenzlauer-berg-sound-bath",
+    "date": "2026-10-20",
+    "energyBefore": "stressed",
+    "matchedCard": "yes",
+    "answers": {
+      "noise": "quiet",
+      "light": "soft",
+      "crowd": "medium",
+      "intensity": "gentle"
+    }
+  },
+  {
+    "id": "r478",
+    "classId": "dance-neuk-lln-hip-hop-foundations",
+    "date": "2026-10-21",
+    "energyBefore": "stressed",
+    "matchedCard": "yes",
+    "answers": {
+      "noise": "loud",
+      "light": "normal",
+      "crowd": "medium",
+      "intensity": "hard"
+    }
+  },
+  {
+    "id": "r479",
+    "classId": "dance-prenzlauer-berg-contemporary-for-beginners",
+    "date": "2026-10-27",
+    "energyBefore": "stressed",
+    "matchedCard": "partly",
+    "answers": {
+      "noise": "medium",
+      "light": "bright",
+      "crowd": "medium",
+      "intensity": "moderate"
+    }
+  },
+  {
+    "id": "r480",
+    "classId": "boxing-friedrichshain-boxfit",
+    "date": "2026-11-15",
+    "energyBefore": "energetic",
+    "matchedCard": "partly",
+    "answers": {
+      "noise": "medium",
+      "light": "bright",
+      "crowd": "large",
+      "intensity": "hard"
+    }
+  },
+  {
+    "id": "r481",
+    "classId": "climbing-kreuzberg-climbing-technique",
+    "date": "2026-11-17",
+    "energyBefore": "stressed",
+    "matchedCard": "yes",
+    "answers": {
+      "noise": "quiet",
+      "light": "bright",
+      "crowd": "medium",
+      "intensity": "hard"
+    }
+  },
+  {
+    "id": "r482",
+    "classId": "gym-neuk-lln-strength-basics",
+    "date": "2026-11-16",
+    "energyBefore": "tired",
+    "matchedCard": "partly",
+    "answers": {
+      "noise": "loud",
+      "light": "bright",
+      "crowd": "large",
+      "intensity": "moderate"
+    }
+  },
+  {
+    "id": "r483",
+    "classId": "boxing-friedrichshain-technique-pads",
+    "date": "2026-10-23",
+    "energyBefore": "stressed",
+    "matchedCard": "yes",
+    "answers": {
+      "noise": "loud",
+      "light": "normal",
+      "crowd": "large",
+      "intensity": "moderate"
+    }
+  },
+  {
+    "id": "r484",
+    "classId": "wellness-friedrichshain-breathwork",
+    "date": "2026-11-04",
+    "energyBefore": "stressed",
+    "matchedCard": "yes",
+    "answers": {
+      "noise": "quiet",
+      "light": "soft",
+      "crowd": "small",
+      "intensity": "gentle"
+    }
+  },
+  {
+    "id": "r485",
+    "classId": "boxing-neuk-lln-boxing-fundamentals",
+    "date": "2026-10-26",
+    "energyBefore": "stressed",
+    "matchedCard": "yes",
+    "answers": {
+      "noise": "loud",
+      "light": "bright",
+      "crowd": "large",
+      "intensity": "hard"
+    }
+  },
+  {
+    "id": "r486",
+    "classId": "dance-mitte-salsa-basics",
+    "date": "2026-11-01",
+    "energyBefore": "stressed",
+    "matchedCard": "yes",
+    "answers": {
+      "noise": "loud",
+      "light": "soft",
+      "crowd": "medium",
+      "intensity": "moderate"
+    }
+  },
+  {
+    "id": "r487",
+    "classId": "boxing-mitte-boxfit",
+    "date": "2026-10-22",
+    "energyBefore": "energetic",
+    "matchedCard": "yes",
+    "answers": {
+      "noise": "medium",
+      "light": "normal",
+      "crowd": "medium",
+      "intensity": "hard"
+    }
+  },
+  {
+    "id": "r488",
+    "classId": "dance-mitte-contemporary-for-beginners",
+    "date": "2026-10-31",
+    "energyBefore": "tired",
+    "matchedCard": "partly",
+    "answers": {
+      "noise": "medium",
+      "light": "soft",
+      "crowd": "medium",
+      "intensity": "moderate"
+    }
+  },
+  {
+    "id": "r489",
+    "classId": "yoga-friedrichshain-yin-yoga",
+    "date": "2026-10-21",
+    "energyBefore": "stressed",
+    "matchedCard": "yes",
+    "answers": {
+      "noise": "quiet",
+      "light": "soft",
+      "crowd": "small",
+      "intensity": "gentle"
+    }
+  },
+  {
+    "id": "r490",
+    "classId": "dance-prenzlauer-berg-salsa-basics",
+    "date": "2026-10-25",
+    "energyBefore": "energetic",
+    "matchedCard": "yes",
+    "answers": {
+      "noise": "medium",
+      "light": "bright",
+      "crowd": "large",
+      "intensity": "moderate"
+    }
+  },
+  {
+    "id": "r491",
+    "classId": "climbing-kreuzberg-morning-bouldering",
+    "date": "2026-10-31",
+    "energyBefore": "energetic",
+    "matchedCard": "yes",
+    "answers": {
+      "noise": "quiet",
+      "light": "normal",
+      "crowd": "medium",
+      "intensity": "moderate"
+    }
+  },
+  {
+    "id": "r492",
+    "classId": "wellness-prenzlauer-berg-sauna-stretch",
+    "date": "2026-10-25",
+    "energyBefore": "energetic",
+    "matchedCard": "partly",
+    "answers": {
+      "noise": "quiet",
+      "light": "soft",
+      "crowd": "large",
+      "intensity": "gentle"
+    }
+  },
+  {
+    "id": "r493",
+    "classId": "boxing-kreuzberg-boxing-fundamentals",
+    "date": "2026-11-09",
+    "energyBefore": "tired",
+    "matchedCard": "no",
+    "answers": {
+      "noise": "loud",
+      "light": "bright",
+      "crowd": "large",
+      "intensity": "moderate"
+    }
+  },
+  {
+    "id": "r494",
+    "classId": "climbing-prenzlauer-berg-bouldering-intro",
+    "date": "2026-10-22",
+    "energyBefore": "stressed",
+    "matchedCard": "partly",
+    "answers": {
+      "noise": "loud",
+      "light": "soft",
+      "crowd": "small",
+      "intensity": "moderate"
+    }
+  },
+  {
+    "id": "r495",
+    "classId": "boxing-neuk-lln-technique-pads",
+    "date": "2026-10-21",
+    "energyBefore": "tired",
+    "matchedCard": "partly",
+    "answers": {
+      "noise": "loud",
+      "light": "bright",
+      "crowd": "medium",
+      "intensity": "moderate"
+    }
+  },
+  {
+    "id": "r496",
+    "classId": "boxing-friedrichshain-boxfit",
+    "date": "2026-10-27",
+    "energyBefore": "tired",
+    "matchedCard": "partly",
+    "answers": {
+      "noise": "loud",
+      "light": "bright",
+      "crowd": "large",
+      "intensity": "hard"
+    }
+  },
+  {
+    "id": "r497",
+    "classId": "dance-friedrichshain-contemporary-for-beginners",
+    "date": "2026-10-28",
+    "energyBefore": "tired",
+    "matchedCard": "partly",
+    "answers": {
+      "noise": "loud",
+      "light": "soft",
+      "crowd": "small",
+      "intensity": "moderate"
+    }
+  },
+  {
+    "id": "r498",
+    "classId": "wellness-prenzlauer-berg-breathwork",
+    "date": "2026-11-14",
+    "energyBefore": "stressed",
+    "matchedCard": "no",
+    "answers": {
+      "noise": "quiet",
+      "light": "soft",
+      "crowd": "small",
+      "intensity": "moderate"
+    },
+    "comment": "Partner work was optional, which helped."
+  },
+  {
+    "id": "r499",
+    "classId": "boxing-prenzlauer-berg-boxfit",
+    "date": "2026-11-05",
+    "energyBefore": "tired",
+    "matchedCard": "yes",
+    "answers": {
+      "noise": "loud",
+      "light": "normal",
+      "crowd": "medium",
+      "intensity": "hard"
+    }
+  },
+  {
+    "id": "r500",
+    "classId": "boxing-kreuzberg-technique-pads",
+    "date": "2026-11-10",
+    "energyBefore": "tired",
+    "matchedCard": "partly",
+    "answers": {
+      "noise": "medium",
+      "light": "bright",
+      "crowd": "large",
+      "intensity": "gentle"
+    }
+  }
+]

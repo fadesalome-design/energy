@@ -92,8 +92,9 @@ export interface SensoryFilter {
 }
 
 export const SENSORY: SensoryFilter[] = [
-  { id: 'quietDim', group: 'Sound & light', label: 'Quiet & dim', hint: 'Soft music and dim or daylight', icon: 'dim',
-    test: (c) => c.expect.sound.volume <= 2 && (c.expect.light.level === 'dim' || c.expect.light.level === 'natural') },
+  // D data separates soft light from normal light, so Quiet & dim means a quiet room AND soft light
+  { id: 'quietDim', group: 'Sound & light', label: 'Quiet & dim', hint: 'Quiet room and soft light', icon: 'dim',
+    test: (c) => c.expect.sound.volume <= 2 && c.expect.light.level === 'dim' },
   { id: 'notCrowded', group: 'Space', label: 'Not crowded', hint: 'Usually calm, with space around you', icon: 'people',
     test: (c) => c.expect.crowd.busyness === 'calm' },
   { id: 'noFlashing', group: 'Light', label: 'No flashing lights', hint: 'No strobe or flashing effects', icon: 'flash',

@@ -3922,3 +3922,125 @@ code {
   font-size: 0.875rem;
   color: var(--muted);
 }
+
+/* ---------- D: realistic data, photos ---------- */
+
+.photo {
+  display: block;
+  overflow: hidden;
+  background: linear-gradient(135deg, #eaf3f0 0%, #d5e8e1 100%);
+  flex: 0 0 auto;
+}
+
+.photo img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.photo__fallback {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  color: var(--accent);
+  background: linear-gradient(135deg, #eaf3f0 0%, #d5e8e1 100%);
+}
+
+.row--d {
+  align-items: flex-start;
+  gap: 12px;
+  padding: 12px;
+}
+
+.row__photo {
+  width: 84px;
+  height: 84px;
+  border-radius: 14px;
+}
+
+.row--d .row__chev {
+  align-self: center;
+}
+
+.row__when {
+  font-size: 0.875rem;
+  color: var(--muted);
+  font-variant-numeric: tabular-nums;
+}
+
+.row__when strong {
+  color: var(--ink);
+  font-size: 1rem;
+}
+
+/* Trait chips: information, not buttons (flat, no border, small) */
+.tchips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  margin-top: 4px;
+}
+
+.tchip {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  padding: 2px 8px;
+  border-radius: 999px;
+  background: var(--bg);
+  color: var(--muted);
+  font-size: 0.75rem;
+  line-height: 1.5;
+}
+
+.tchip--gentle,
+.tchip--moderate,
+.tchip--hard {
+  background: var(--accent-soft);
+  color: var(--accent-ink);
+  font-weight: 600;
+}
+
+.detail-photo {
+  width: 100%;
+  height: 200px;
+  border-radius: 20px;
+  margin: 4px 0 8px;
+}
+
+.detail-place {
+  margin: 0 0 12px;
+}
+
+@media (min-width: 700px) {
+  .detail-photo {
+    height: 260px;
+  }
+}
+
+.photo {
+  position: relative;
+}
+
+.photo__fallback {
+  position: absolute;
+  inset: 0;
+}
+
+.photo__img {
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.photo__img--on {
+  opacity: 1;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .photo__img {
+    transition: none;
+  }
+}

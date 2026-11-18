@@ -10,6 +10,7 @@ import type {
 export const typeLabel: Record<ClassType, string> = {
   yoga: 'Yoga', pilates: 'Pilates', hiit: 'HIIT', spinning: 'Spinning',
   dance: 'Dance', swimming: 'Swimming', boxing: 'Boxing', gym: 'Gym class',
+  climbing: 'Climbing', wellness: 'Sauna & wellness',
 };
 
 export const busynessLabel: Record<Busyness, string> = {

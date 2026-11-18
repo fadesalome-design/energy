@@ -162,6 +162,23 @@ const paths: Record<string, ReactElement> = {
       <circle cx="12" cy="7.8" r=".9" fill="currentColor" stroke="none" />
     </>
   ),
+  // D: climbing (wall with holds)
+  climbing: (
+    <>
+      <path d="M5 21V4l14 3v14" />
+      <circle cx="9" cy="9" r="1.2" />
+      <circle cx="14" cy="12" r="1.2" />
+      <circle cx="10" cy="15" r="1.2" />
+      <circle cx="15" cy="17.5" r="1.2" />
+    </>
+  ),
+  // D: wellness / sauna (steam above a bench)
+  wellness: (
+    <>
+      <path d="M4 18h16M6 18v3M18 18v3" />
+      <path d="M8 14c-1-1.5 1-2.5 0-4M12 14c-1-1.5 1-2.5 0-4M16 14c-1-1.5 1-2.5 0-4" />
+    </>
+  ),
   // D: sort (up and down arrows)
   sort: (
     <>
