@@ -13,6 +13,18 @@ Each line below says what's on the screen and why. "Finding" means what we saw i
 
 ## Change log
 
+- **2026-11-18: rating aura and "Stamp collected" now identical to Version C** (copied 1:1 into
+  D's own files; D loads nothing from `/c/`).
+  - **Aura:** C's component and values: 196×220 px (150 px on "Anything else?"), 4 levels with the
+    same colours (#9FE1CB / #E4E2F7, #5DCAA5 / #D7D3F6, #8F86E3 / #C9F0E2, #7CC47A / #CECBF6),
+    opacities, pulse, 5.5 s breathing, 10 s wobble, 18 px blur, the halo, the glowing dots and 2/4/6/8
+    rising specks. "Anything else?" uses C's strongest level.
+  - **Stamp collected:** C's screen and transition. The aura shrinks into a dot and lands in the next
+    stamp circle, then the texts fade in. Mini-aura stamps, soft medals, the "Done" pill and "See your
+    rewards". D's reward ticket and confetti are gone; "‹ Back" from Rewards still returns here.
+  - **Text colours:** D's own (no purple text): the label, headings, lines and links. Lavender and
+    violet appear only in the aura, the mini-aura stamps and the medals. The Done pill uses D's green.
+
 - **2026-11-18: three-dot aura in the rating questions** (adapted from Version C, D's own code and
   colours; nothing else from C).
   - **Aura:** above the question on the 3 question screens: a soft blurred aura (blur 12 px) with a
@@ -336,7 +348,7 @@ CSS custom properties defined in `d/src/styles/global.css` (name: value).
 | `--emd-tint` | #eaf3f0 | Energy Match card (legacy mint, now overridden to white) |
 | `--emd-shadow` | 0 1px 2px rgba(30,42,45,.05), 0 6px 20px rgba(30,42,45,.06) | Energy Match card shadow |
 | `--e-tint`, `--e-line`, `--e-shadow`, `--e-shadow-hover` | #eaf3f0, #ebe6dc, (shadows as above) | copied Version E styles (not shown in D) |
-| `--daura-a` / `--daura-b` per step | Q1 #cdebdf / #eceef7 · Q2 #b6e1d1 / #e8e6f6 · Q3 and "Anything else?" #9fd6c2 / #e6e3f5 | rating aura (mint → light lavender) |
+| `--aura-a` / `--aura-b` per step | Q1 #9fe1cb / #e4e2f7 · Q2 #5dcaa5 / #d7d3f6 · Q3 #8f86e3 / #c9f0e2 · "Anything else?" #7cc47a / #cecbf6 | rating aura (same as Version C) |
 
 ### Font
 

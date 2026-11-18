@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useRef, useState } from 'react';
+import { useEffect, useLayoutEffect, useMemo, useRef, useState } from 'react';
 import { createPortal } from 'react-dom';
 import { endTime, getClass, getStudio } from '../data/classes';
 import {
@@ -8,7 +8,9 @@ import {
 import { addRatingV4, CATEGORY_LABEL, pickQuestionsV4, QUESTIONS } from '../lib/energy';
 import { logEvent } from '../lib/events';
 import { Icon } from './Icon';
-import { CHOICE_DESCRIPTION, level, progressLine, rewardReachedAt } from '../lib/rewards';
+import { claim, counterLabel, progressLine, useClaims } from '../lib/rewards';
+import { StampGrid } from './StampGrid';
+import { RewardMedals } from './RewardMedals';
 import { VoiceRecorder } from './VoiceRecorder';
 import { Aura, type AuraLevel } from './Aura';
 
@@ -36,37 +38,7 @@ type MessageMode = 'write' | 'record';
 const LEVELS: Level[] = ['low', 'medium', 'high'];
 
 
-/**
- * A few slow, muted confetti pieces that fall once behind the ticket.
- * Fixed positions (no randomness between renders), no flashing, hidden for reduced motion.
- */
-const CONFETTI = Array.from({ length: 18 }, (_, i) => ({
-  left: (i * 37 + 11) % 100,
-  delay: 1.2 + ((i * 7) % 10) / 14,
-  dur: 2.6 + ((i * 5) % 7) / 6,
-  rot: ((i * 53) % 180) - 90,
-  shape: i % 3,
-  tone: i % 4,
-}));
-
-function Confetti() {
-  return (
-    <div className="confetti" aria-hidden="true">
-      {CONFETTI.map((p, i) => (
-        <span
-          key={i}
-          className={`confetti__bit confetti__bit--s${p.shape} confetti__bit--t${p.tone}`}
-          style={{
-            left: `${p.left}%`,
-            animationDelay: `${p.delay}s`,
-            animationDuration: `${p.dur}s`,
-            ['--rot' as string]: `${p.rot}deg`,
-          }}
-        />
-      ))}
-    </div>
-  );
-}
+// D: no confetti (Stamp collected now matches Version C: the aura lands as the stamp)
 
 export function dayLabel(endsAt: string) {
   const end = new Date(endsAt);
@@ -103,6 +75,7 @@ export function FeedbackModal({ booking, onClose, onSeeRewards, version = 'b' }:
   const [text, setText] = useState('');
   const [voiceSec, setVoiceSec] = useState<number | null>(null);
   const [stamps, setStamps] = useState(getStamps);
+  const [flyFrom, setFlyFrom] = useState<{ x: number; y: number; size: number } | null>(null);
   const headingRef = useRef<HTMLHeadingElement>(null);
   const advance = useRef<number | null>(null);
   const started = useRef(false);
@@ -150,6 +123,8 @@ export function FeedbackModal({ booking, onClose, onSeeRewards, version = 'b' }:
   };
 
   const send = () => {
+    const st = document.querySelector('.fb .aura__stage')?.getBoundingClientRect();
+    if (st) setFlyFrom({ x: st.left + st.width / 2, y: st.top + st.height / 2, size: Math.min(st.width, st.height) });
     if (isE) return sendEnergy();
     const message =
       mode === 'record' && voiceSec ? { kind: 'voice' as const, seconds: voiceSec }
@@ -296,9 +271,9 @@ export function FeedbackModal({ booking, onClose, onSeeRewards, version = 'b' }:
           </p>
         )}
         {(qIndex !== null || step === 'final') && (
-          <div className="daura-wrap">
+          <div className={step === 'final' ? 'aura-wrap aura-wrap--small' : 'aura-wrap'}>
             <Aura
-              level={(qIndex ?? 2) as AuraLevel}
+              level={(qIndex ?? 3) as AuraLevel}
               label={step === 0 && !answers[questions[0].id] ? 'shown' : 'gone'}
               size={step === 'final' ? 'md' : 'lg'}
             />
@@ -437,7 +412,18 @@ export function FeedbackModal({ booking, onClose, onSeeRewards, version = 'b' }:
         )}
 
         {/* ---------- Done: stamp, or the free-class reward on every 10th stamp ---------- */}
-        {step === 'done' && <StampDone stamps={stamps} className={c.name} headingRef={headingRef} onClose={close} onSeeRewards={onSeeRewards} />}
+        {step === 'done' && (
+          <div className="aura-head">
+            <p className="aura-head__class">
+              <span className="aura-head__name">{c.name}</span>
+              <span className="aura-head__time">{dayLabel(booking.endsAt)} {c.start}–{endTime(c)}</span>
+            </p>
+            <span className="aura-stamps" aria-label={`${stamps} stamps`}>
+              <Icon name="stamp" size={16} />{counterLabel(stamps)}
+            </span>
+          </div>
+        )}
+        {step === 'done' && <StampDone stamps={stamps} className={c.name} headingRef={headingRef} onClose={close} onSeeRewards={onSeeRewards} flyFrom={flyFrom} />}
       </div>
     </div>
   );
@@ -446,84 +432,77 @@ export function FeedbackModal({ booking, onClose, onSeeRewards, version = 'b' }:
 }
 
 /**
- * "Stamp collected" (D rules): the 10-circle card of the current level (1–10, 11–20, 21–30) and
- * the same "4 of 10. 6 more for your socks." line as the profile. At 10 / 20 / 30 the card turns
- * into the reward ticket (socks / guest pass or massage / hoodie). "See your rewards" opens the profile.
+ * "Stamp collected", copied 1:1 from Version C (text colours from D's palette). After "Send and collect my stamp" the
+ * AI-moment aura shrinks into a small glowing dot (~1 s), flies into the next empty circle and
+ * lands there (0.4 → 1.15 → 1 with a soft turquoise glow, ~0.6 s); then the texts fade in.
+ * Same stamp logic, counts and reward rules. Under reduced motion the new stamp simply appears.
  */
 export function StampDone({
-  stamps, className, headingRef, onClose, onSeeRewards,
-}: { stamps: number; className: string; headingRef: React.RefObject<HTMLHeadingElement>; onClose: () => void; onSeeRewards?: () => void }) {
-  const close = onClose;
-  const lvl = level(stamps);
-  const reached = rewardReachedAt(stamps);
+  stamps, className, headingRef, onClose, onSeeRewards, flyFrom,
+}: {
+  stamps: number; className: string; headingRef: React.RefObject<HTMLHeadingElement>; onClose: () => void;
+  onSeeRewards?: () => void; flyFrom?: { x: number; y: number; size: number } | null;
+}) {
+  const reduced = typeof window !== 'undefined' && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const animate = !!flyFrom && !reduced;
+  const [phase, setPhase] = useState<'fly' | 'land' | 'done'>(animate ? 'fly' : 'done');
+  const gridRef = useRef<HTMLDivElement>(null);
+  const claims = useClaims();
   const line = progressLine(stamps);
-  const onCard = Math.min(Math.max(stamps - lvl.from + 1, 0), 10);
-  const card = (
-    <div className="stampcard" role="img" aria-label={`${onCard} of 10 stamps on this card (${lvl.from}–${lvl.to})`}>
-      {Array.from({ length: 10 }, (_, i) => {
-        const n = lvl.from + i;
-        const filled = n <= stamps;
-        const isNew = n === stamps;
-        return (
-          <span key={n} className={`stampcard__slot${filled ? ' stampcard__slot--on' : ''}${isNew ? ' stampcard__slot--new' : ''}`}>
-            {filled ? <Icon name="stamp" size={26} /> : n}
-          </span>
-        );
-      })}
-    </div>
-  );
-  const seeRewards = onSeeRewards && (
-    <button type="button" className="linkbtn fb__seerewards" onClick={onSeeRewards}>See your rewards</button>
-  );
 
-  if (reached) {
-    const ticket = reached.id === 'socks'
-      ? { title: 'Socks', sub: 'Pick them up at any studio' }
-      : reached.id === 'choice'
-        ? { title: 'Guest pass or massage', sub: CHOICE_DESCRIPTION }
-        : { title: 'Urban Sports Clue hoodie', sub: 'Pick it up at any studio' };
-    return (
-      <div className="fb__screen fb__screen--done fb__screen--reward">
-        <Confetti />
-        <h2 id="fb-title" tabIndex={-1} ref={headingRef} className="fb__title">
-          {reached.id === 'choice' ? 'You\'ve earned a reward!' : `You've earned ${reached.id === 'socks' ? 'socks' : 'a hoodie'}!`}
-        </h2>
-        <p className="fb__lead">That was your {reached.at}th stamp. Thanks for helping others read the room.</p>
+  useLayoutEffect(() => {
+    if (!animate || !flyFrom) return;
+    const slot = gridRef.current?.querySelector(`[data-stamp="${stamps}"]`) as HTMLElement | null;
+    if (!slot) { setPhase('done'); return; }
+    const t = slot.getBoundingClientRect();
+    const tx = t.left + t.width / 2, ty = t.top + t.height / 2;
+    const dot = document.createElement('span');
+    dot.className = 'flydot';
+    const S = flyFrom.size;
+    Object.assign(dot.style, { width: `${S}px`, height: `${S}px`, left: `${flyFrom.x - S / 2}px`, top: `${flyFrom.y - S / 2}px` });
+    document.body.appendChild(dot);
+    const small = t.width / S;
+    const move = `translate(${tx - flyFrom.x}px, ${ty - flyFrom.y}px)`;
+    const a = dot.animate([
+      { transform: 'translate(0, 0) scale(1)', opacity: 0.95 },
+      { transform: `translate(0, 0) scale(${small})`, opacity: 1, offset: 0.62 },
+      { transform: `${move} scale(${small})`, opacity: 1 },
+    ], { duration: 1600, easing: 'cubic-bezier(.45,.05,.3,1)', fill: 'forwards' });
+    a.onfinish = () => {
+      dot.remove();
+      setPhase('land');
+      window.setTimeout(() => setPhase('done'), 650);
+    };
+    return () => { a.cancel(); dot.remove(); };
+  }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
-        {/* The full stamp card turns into a ticket (pure CSS sequence, runs once) */}
-        <div className="reward">
-          <div className="reward__card" aria-hidden="true">{card}</div>
-          <div className="ticket">
-            <span className="ticket__shine" aria-hidden="true" />
-            <span className="ticket__icon" aria-hidden="true"><Icon name={reached.icon} size={40} /></span>
-            <span className="ticket__body">
-              <span className="ticket__eyebrow">Reward unlocked</span>
-              <span className="ticket__title">{ticket.title}</span>
-              <span className="ticket__sub">{ticket.sub}</span>
-            </span>
-          </div>
-        </div>
-
-        <p className="fb__reward"><strong>{line.count}</strong> {line.rest}</p>
-        {seeRewards}
-
-        <div className="fb__actions">
-          <button type="button" className="btn btn--primary btn--block" onClick={close}>Great, thanks</button>
-        </div>
-      </div>
-    );
-  }
+  const textsIn = phase !== 'fly';
+  const claimHere = (id: 'socks' | 'choice' | 'hoodie') => {
+    // Friend OR massage is chosen in the profile; socks and the hoodie are claimed right here
+    if (id === 'choice') onSeeRewards?.(); else claim(id);
+  };
 
   return (
-    <div className="fb__screen fb__screen--done">
-      <span className="fb__stamp-new" aria-hidden="true"><Icon name="stamp" size={56} /></span>
-      <h2 id="fb-title" tabIndex={-1} ref={headingRef} className="fb__title">Stamp collected</h2>
-      <p className="fb__lead">Thanks! Your answers will help update the card for {className}.</p>
-      {card}
-      <p className="fb__reward"><strong>{line.count}</strong> {line.rest}</p>
-      {seeRewards}
-      <div className="fb__actions">
-        <button type="button" className="btn btn--primary btn--block" onClick={close}>Done</button>
+    <div className="fb__screen sdone">
+      <div className={textsIn ? 'sdone__texts sdone__texts--in' : 'sdone__texts'}>
+        <p className="sdone__eyebrow">✦ Your energy became a stamp</p>
+        <h2 id="fb-title" tabIndex={-1} ref={headingRef} className="sdone__title">Stamp collected</h2>
+        <p className="sdone__lead">Thanks! Your answers help update the card for {className}.</p>
+      </div>
+
+      <div className="sdone__card" ref={gridRef}>
+        <StampGrid stamps={stamps} pending={phase === 'fly'} landing={phase === 'land'} />
+        <p className="sdone__line"><strong>{line.count}</strong> {line.rest}</p>
+      </div>
+
+      <section className={textsIn ? 'sdone__rewards sdone__texts--in' : 'sdone__rewards sdone__texts'} aria-labelledby="sdone-rewards">
+        <h3 id="sdone-rewards" className="sdone__rtitle">Your rewards</h3>
+        <RewardMedals stamps={stamps} claims={claims} onClaim={claimHere} />
+      </section>
+
+      <div className={textsIn ? 'sdone__actions sdone__texts--in' : 'sdone__actions sdone__texts'}>
+        <button type="button" className="sdone__done" onClick={onClose}>Done</button>
+        {onSeeRewards && <button type="button" className="linkbtn sdone__link" onClick={onSeeRewards}>See your rewards</button>}
       </div>
     </div>
   );

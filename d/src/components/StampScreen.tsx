@@ -1,8 +1,10 @@
 import { useEffect, useRef } from 'react';
 import { createPortal } from 'react-dom';
 import { useNavigate } from 'react-router-dom';
-import { getClass } from '../data/classes';
-import { StampDone } from './FeedbackModal';
+import { endTime, getClass } from '../data/classes';
+import { counterLabel } from '../lib/rewards';
+import { Icon } from './Icon';
+import { dayLabel, StampDone } from './FeedbackModal';
 import { useFeedbackState } from '../lib/feedback';
 import { lastStamp } from '../lib/navBack';
 
@@ -32,12 +34,22 @@ export function StampScreen() {
   return createPortal(
     <div className="fb fb--d" role="dialog" aria-modal="true" aria-labelledby="fb-title">
       <div className="fb__inner">
+        <div className="aura-head">
+          <p className="aura-head__class">
+            <span className="aura-head__name">{c.name}</span>
+            <span className="aura-head__time">{dayLabel(last!.endsAt)} {c.start}–{endTime(c)}</span>
+          </p>
+          <span className="aura-stamps" aria-label={`${stamps} stamps`}>
+            <Icon name="stamp" size={16} />{counterLabel(stamps)}
+          </span>
+        </div>
         <StampDone
           stamps={stamps}
           className={c.name}
           headingRef={headingRef}
           onClose={() => navigate('/', { replace: true })}
           onSeeRewards={() => navigate('/profile', { state: { to: 'rewards' } })}
+          flyFrom={null}
         />
       </div>
     </div>,
