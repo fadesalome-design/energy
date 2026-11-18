@@ -90,7 +90,8 @@ export default function App() {
           }}
           onSeeRewards={() => {
             setActive(null);
-            navigate('/profile', { replace: true });
+            // C: open the profile at its rewards
+            navigate('/profile', { replace: true, state: { to: 'rewards' } });
           }}
         />
       )}

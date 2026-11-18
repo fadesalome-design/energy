@@ -43,3 +43,29 @@ Copy of D made on 18 Nov for experiments; D stays the stable presentation versio
   - **Contrast (all ≥ 4.5:1):** the selected answer and buttons use #C2416D (white text 4.9:1;
     #D4537E would be 3.9:1). The label uses #4A1B0C on the strongest (warm-mix) aura (#72243E
     would be 4.2:1 there; it is 5.9:1 now).
+- **18 Nov: three-dot energy aura (cool) + new "Stamp collected"** (replaces the warm soft aura and
+  the earlier gold / bronze / silver medal idea).
+  - **Rating flow:** background #F5F8F8, class #04342C, time #0F6E56, stamp pill white / #3C3489 /
+    #CECBF6, and the intro and bottom lines.
+  - **Aura:** a halo plus a slightly tall blurred aura (colour A in the lower centre → B), breathing
+    5.5 s, wobble about 10 s, and rising white specks. Three dots on a vertical line show the question
+    (Q1 / Q2 / Q3 / AI moment, with the exact colours, pulse, strength and specks from the spec).
+    "✦ Energy Match AI" (#26215C) sits above the aura and dissolves after the first answer.
+  - **Pills:** compact answer pills (36 px, 44 px tap area), white with #085041 text and a #9FE1CB
+    border; selected is #0F6E56. The AI card has a #9FE1CB border, and "Anything else?" uses the same
+    cool style.
+  - **Stamp collected:** the green/lavender AI-moment aura shrinks into a dot, flies into the next
+    empty circle and lands there with a turquoise glow; then the texts fade in.
+    - "✦ Your energy became a stamp" / "Stamp collected" / "Thanks! Your answers help update the card
+      for …".
+    - Mini-aura stamps in a white card.
+    - "Your rewards" as 3 soft breathing medals: socks turquoise, friend or massage violet, hoodie
+      green. The next one has a progress bar; later ones have only the medal dimmed (text keeps its
+      contrast); reached shows "Ready to claim" with a Claim pill.
+    - A normal-width "Done" (40 px) and "See your rewards", which opens the profile at its rewards.
+  - **Shared with the profile:** the same mini-aura stamps and medals (`StampGrid`, `RewardMedals`).
+    The 20-stamp choice (friend or massage) happens in the profile. In C, the reward ticket and
+    confetti are gone.
+  - **Reduced motion:** no flight, landing, breathing, wobble or specks; the stamp just appears.
+  - **Contrast:** all text is at least 4.5:1 (lowest 5.5:1; the disabled Claim uses dark text on
+    mint).

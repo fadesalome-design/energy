@@ -1,10 +1,12 @@
 import { useEffect, useRef, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
+import { StampGrid } from '../components/StampGrid';
+import { RewardMedals } from '../components/RewardMedals';
 import { Icon } from '../components/Icon';
 import { useFeedbackState } from '../lib/feedback';
 import { memberInitial, memberName } from '../lib/persona';
 import {
-  CHOICE_LABEL, claim, isClaimed, level, MAX_STAMPS, progressLine, REWARDS, useClaims, type Choice, type Reward,
+  CHOICE_LABEL, claim, MAX_STAMPS, progressLine, REWARDS, useClaims, type Choice,
 } from '../lib/rewards';
 
 /**
@@ -14,9 +16,15 @@ import {
 export function Profile({ panel = false }: { panel?: boolean }) {
   const { stamps } = useFeedbackState();
   const claims = useClaims();
-  const lvl = level(stamps);
   const line = progressLine(stamps);
   const titleRef = useRef<HTMLHeadingElement>(null);
+  const rewardsRef = useRef<HTMLElement>(null);
+  const [choosing, setChoosing] = useState(false);
+  const location = useLocation();
+  // "See your rewards" (from Stamp collected) opens the profile at the rewards
+  useEffect(() => {
+    if ((location.state as { to?: string } | null)?.to === 'rewards') rewardsRef.current?.scrollIntoView({ block: 'start' });
+  }, [location.state]);
 
   useEffect(() => {
     document.title = `${memberName}'s profile · Urban Sports Clue`;
@@ -40,17 +48,8 @@ export function Profile({ panel = false }: { panel?: boolean }) {
       {/* Your stamps: the 10 circles of the current level (1–10, 11–20, 21–30) */}
       <section className="pcard" aria-labelledby="stamps-title">
         <h2 id="stamps-title" className="pcard__title">Your stamps</h2>
-        <div className="stampcard" role="img" aria-label={`${Math.min(Math.max(stamps - lvl.from + 1, 0), 10)} of 10 stamps on this card (${lvl.from}–${lvl.to})`}>
-          {Array.from({ length: 10 }, (_, i) => {
-            const n = lvl.from + i;
-            const filled = n <= stamps;
-            return (
-              <span key={n} className={`stampcard__slot${filled ? ' stampcard__slot--on' : ''}`}>
-                {filled ? <Icon name="stamp" size={26} /> : n}
-              </span>
-            );
-          })}
-        </div>
+        {/* C: same mini-aura stamps as "Stamp collected" */}
+        <StampGrid stamps={stamps} />
         <p className="pcard__line"><strong>{line.count}</strong> {line.rest}</p>
 
         {/* Progress 0–30 with the three milestones */}
@@ -73,11 +72,12 @@ export function Profile({ panel = false }: { panel?: boolean }) {
       </section>
 
       {/* Your rewards */}
-      <section className="pcard" aria-labelledby="rewards-title">
+      <section className="pcard" aria-labelledby="rewards-title" id="rewards" ref={rewardsRef}>
         <h2 id="rewards-title" className="pcard__title">Your rewards</h2>
-        <ul className="rewards">
-          {REWARDS.map((r) => <RewardRow key={r.id} r={r} stamps={stamps} claimed={isClaimed(claims, r.id)} chosen={claims.choice} />)}
-        </ul>
+        {/* C: same soft medals as "Stamp collected" */}
+        <RewardMedals stamps={stamps} claims={claims} onClaim={(id) => (id === 'choice' ? setChoosing(true) : claim(id))} />
+        {/* the Claim pill on "Friend or massage" leads here: pick one, then Claim */}
+        {stamps >= 20 && !claims.choiceClaimed && <ChoiceRow focus={choosing} />}
       </section>
 
       <section className="pcard pcard--plain" aria-labelledby="how-title">
@@ -88,48 +88,24 @@ export function Profile({ panel = false }: { panel?: boolean }) {
   );
 }
 
-function RewardRow({ r, stamps, claimed, chosen }: { r: Reward; stamps: number; claimed: boolean; chosen?: Choice }) {
-  const ready = stamps >= r.at && !claimed;
+/** At 20 stamps: pick ONE (invite a friend OR a massage), then Claim (demo only). */
+function ChoiceRow({ focus }: { focus: boolean }) {
   const [pick, setPick] = useState<Choice | null>(null);
-  const left = r.at - stamps;
+  const ref = useRef<HTMLDivElement>(null);
+  useEffect(() => { if (focus) ref.current?.scrollIntoView({ block: 'center' }); }, [focus]);
   return (
-    <li className={ready ? 'reward-row reward-row--ready' : 'reward-row'}>
-      <span className="reward-row__icon"><Icon name={r.icon} size={22} /></span>
-      <span className="reward-row__main">
-        <span className="reward-row__title">{r.title}</span>
-        <span className="reward-row__at">At {r.at} stamps</span>
-        {claimed ? (
-          <span className="reward-row__status reward-row__status--done">
-            <Icon name="check" size={14} /> Claimed{r.id === 'choice' && chosen ? ` · ${CHOICE_LABEL[chosen]}` : ''}
-          </span>
-        ) : ready ? (
-          <span className="reward-row__status reward-row__status--ready">Ready to claim</span>
-        ) : (
-          <span className="reward-row__status">{left === 1 ? '1 stamp to go' : `${left} stamps to go`}</span>
-        )}
-
-        {/* At 20 the member picks ONE: friend or massage, then claims (demo only) */}
-        {ready && r.id === 'choice' && (
-          <span className="reward-row__choice" role="group" aria-label="Choose one">
-            {(['friend', 'massage'] as Choice[]).map((c) => (
-              <button key={c} type="button" className={pick === c ? 'pill pill--sub pill--on' : 'pill pill--sub'} aria-pressed={pick === c} onClick={() => setPick(c)}>
-                <Icon name={pick === c ? 'check' : c === 'friend' ? 'partner' : 'hand'} size={16} />
-                {c === 'friend' ? 'Invite a friend' : 'Massage'}
-              </button>
-            ))}
-          </span>
-        )}
-      </span>
-      {ready && (
-        <button
-          type="button"
-          className="btn btn--primary reward-row__claim"
-          disabled={r.id === 'choice' && !pick}
-          onClick={() => claim(r.id, pick ?? undefined)}
-        >
-          Claim
-        </button>
-      )}
-    </li>
+    <div ref={ref} className="choice-row" role="group" aria-label="Friend or massage: choose one">
+      <p className="choice-row__q">Your 20-stamp reward: choose one</p>
+      <div className="choice-row__opts">
+        {(['friend', 'massage'] as Choice[]).map((c) => (
+          <button key={c} type="button" className={pick === c ? 'apill apill--on' : 'apill'} aria-pressed={pick === c} onClick={() => setPick(c)}>
+            <Icon name={pick === c ? 'check' : c === 'friend' ? 'partner' : 'hand'} size={16} />
+            {c === 'friend' ? 'Invite a friend' : 'Massage'}
+          </button>
+        ))}
+      </div>
+      <button type="button" className="sdone__done" disabled={!pick} onClick={() => pick && claim('choice', pick)}>Claim</button>
+      <span className="sr-only">{pick ? CHOICE_LABEL[pick] : ''}</span>
+    </div>
   );
 }
