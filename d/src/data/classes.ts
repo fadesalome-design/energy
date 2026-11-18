@@ -165,7 +165,7 @@ export interface ClassInfo {
 // ---------------------------------------------------------------------------
 
 interface PlaceJson { id: string; name: string; type: PlaceType; district: string; address: string; description: string; photo: string; traits: RoomTraits; offsetKm: number }
-interface ClassJson { id: string; placeId: string; name: string; type: ClassType; start: string; durationMin: number; intensity: ClassIntensity; trainer: string; whatToExpect: string[] }
+interface ClassJson { id: string; placeId: string; name: string; type: ClassType; start: string; durationMin: number; intensity: ClassIntensity; trainer: string; whatToExpect: string[]; touch: 'none' | 'asks-first' | 'hands-on' }
 interface RatingJson { classId: string; matchedCard: 'yes' | 'partly' | 'no'; answers: { noise: Noise; crowd: Crowd } }
 
 const PLACES = placesJson as PlaceJson[];
@@ -234,7 +234,8 @@ function toClass(j: ClassJson): ClassInfo {
       },
       sound: { volume: VOLUME[t.noise], mic: t.noise === 'loud', note: j.whatToExpect[1] },
       light: { level: LIGHTS[t.light] },
-      trainer: { style: j.intensity === 'hard' ? 4 : j.intensity === 'moderate' ? 3 : 2, handsOn: p.type === 'yoga' || p.type === 'pilates', asksBeforeTouch: p.type === 'yoga' || p.type === 'pilates' ? true : null },
+      // Touch per class (d/data/classes.json): feeds "Touch only if I agree"
+      trainer: { style: j.intensity === 'hard' ? 4 : j.intensity === 'moderate' ? 3 : 2, handsOn: j.touch !== 'none', asksBeforeTouch: j.touch === 'none' ? null : j.touch === 'asks-first' },
       partner: { work: t.partnerWork === 'yes' ? 'required' : 'none' },
       flow: [
         { name: 'Warm-up', minutes: third, intensity: Math.max(1, peak - 2) as Intensity },

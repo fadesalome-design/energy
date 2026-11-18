@@ -5,10 +5,9 @@ import { ClassRow } from '../components/ClassRow';
 import { Icon } from '../components/Icon';
 import { ClassFilters } from '../components/ClassFilters';
 import { SimulateVisit, useOpenBooking } from '../components/SimulateVisit';
-import { orderD, setMood, setPrefs, useFilters } from '../lib/filters';
+import { orderD, useFilters } from '../lib/filters';
 import { useVariant } from '../lib/variant';
 import { byDistance, usePlace } from '../lib/location';
-import { logEvent } from '../lib/events';
 
 /** Today's date in English, e.g. "Sunday, 15 November" */
 function todayLabel() {
@@ -63,24 +62,12 @@ export function ClassList() {
       <aside className="dl__side" aria-label="Energy Match">
       {variant === 'b' && <ClassFilters />}
 
-      {/* Results row, copied from Version B: "Showing X of Y classes · Clear all".
-          Only while a mood or a sensory filter is on. Clear all does what it does in B:
-          clears the mood (with Burn it off / Calm down) and all sensory filters.
-          D never hides classes: X are the classes that fit, the rest follow under "Other classes". */}
+      {/* Results row (from Version B), only while a mood or a sensory filter is on.
+          "Clear all" now lives in the Energy Match card. D never hides classes: X are the
+          classes that fit, the rest follow under "Other classes". */}
       {sorting && (
-        <p className="filter-count" role="status">
+        <p className="filter-count filter-count--d" role="status">
           Showing {groups.best.length} of {sorted.length} classes
-          <button
-            type="button"
-            className="linkbtn"
-            onClick={() => {
-              setMood(null);
-              setPrefs([]);
-              logEvent('preference_set', { data: { preference: 'all', on: false } });
-            }}
-          >
-            Clear all
-          </button>
         </p>
       )}
 

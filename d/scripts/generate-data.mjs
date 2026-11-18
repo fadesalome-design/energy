@@ -17,6 +17,10 @@ const rnd = () => ((seed = (seed * 1664525 + 1013904223) >>> 0) / 2 ** 32);
 const pick = (a) => a[Math.floor(rnd() * a.length)];
 const chance = (p) => rnd() < p;
 const int = (lo, hi) => lo + Math.floor(rnd() * (hi - lo + 1));
+// A second, separate seed for fields added later (touch), so adding them doesn't change any
+// of the data generated with the first seed (places, times, trainers, ratings…).
+let seed2 = 7031;
+const rnd2 = () => ((seed2 = (seed2 * 1664525 + 1013904223) >>> 0) / 2 ** 32);
 
 // ---------- photos (checked by ID on a contact sheet: load, room or equipment, no close-up faces or logos) ----------
 const U = (id) => `https://images.unsplash.com/photo-${id}?w=800&q=70&auto=format&fit=crop`;
@@ -111,6 +115,13 @@ const CATALOG = {
 const TRAINERS = ['Mira', 'Jonas', 'Leyla', 'Tomasz', 'Ana', 'Felix', 'Noor', 'Ben', 'Sofia', 'Kenji', 'Lena', 'Marco', 'Aylin', 'Paul', 'Ines', 'David', 'Hanna', 'Omar', 'Clara', 'Luca'];
 
 const toMin = (t) => { const [h, m] = t.split(':').map(Number); return h * 60 + m; };
+// Hands-on help per place type: [no touch, trainer asks first, hands-on corrections without asking]
+const TOUCH_ODDS = {
+  yoga: [0.25, 0.45, 0.3], pilates: [0.25, 0.45, 0.3], boxing: [0.2, 0.3, 0.5], dance: [0.35, 0.3, 0.35],
+  climbing: [0.35, 0.3, 0.35], gym: [0.45, 0.25, 0.3], swimming: [0.6, 0.2, 0.2], wellness: [0.85, 0.15, 0],
+};
+const pickTouch = (type) => { const [a, b] = TOUCH_ODDS[type]; const r = rnd2(); return r < a ? 'none' : r < a + b ? 'asks-first' : 'hands-on'; };
+const TOUCH_LINE = { none: 'No hands-on corrections.', 'asks-first': 'The trainer asks before any hands-on help.', 'hands-on': 'Hands-on corrections, the trainer may touch to adjust.' };
 const NOISE = { quiet: 'Quiet room, soft background music.', medium: 'Music in the background, you can still talk.', loud: 'Loud music, the trainer uses a mic.' };
 const LIGHT = { soft: 'Soft, dimmed light.', normal: 'Normal daylight and ceiling lights.', bright: 'Bright white lights.', flashing: 'Coloured and flashing lights in parts.' };
 const CROWD = { small: 'Small group, plenty of space.', medium: 'Medium group, enough space.', large: 'Large group, it can get packed.' };
@@ -130,6 +141,8 @@ for (const p of places) {
     const tr = p.traits;
     const lines = [PACE[intensity], `${NOISE[tr.noise]} ${LIGHT[tr.light]}`, tr.partnerWork === 'yes' ? `${CROWD[tr.crowd]} Partner work is part of the class.` : `${CROWD[tr.crowd]} No partner work.`];
     const c = { id: `${p.id}-${name.toLowerCase().replace(/[^a-z]+/g, '-').replace(/-$/, '')}`, placeId: p.id, name, type: classType, start, durationMin, intensity, trainer: pick(TRAINERS), whatToExpect: lines };
+    c.touch = pickTouch(p.type); // 'none' | 'asks-first' | 'hands-on'
+    c.whatToExpect[2] = `${c.whatToExpect[2]} ${TOUCH_LINE[c.touch]}`;
     taken.push(c);
     classes.push(c);
   }

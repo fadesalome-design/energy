@@ -13,6 +13,19 @@ Each line below says what's on the screen and why. "Finding" means what we saw i
 
 ## Change log
 
+- **2026-11-18: Clear all in the card; every sensory filter now works on the data.**
+  - **Clear all:** a small dark-green link at the end of the active-filter chips in the Energy Match
+    card, shown while an energy option or a sensory filter is on. It resets both. The row under the
+    card now only says "Showing X of Y classes" (left aligned). The sheet's own Clear all stays.
+  - **Bug fix:** "Touch only if I agree" kept all 104 classes because the demo data had no touch
+    information. Each class now has `touch` in `d/data/classes.json` (no hands-on help / asks first /
+    hands-on without asking; realistic per type, e.g. common in yoga, pilates and boxing, rare in
+    sauna), plus a matching "What to expect" line. It uses a separate seed, so all other data is
+    unchanged.
+  - **Classes kept with only one filter on (of 104):** Soft or low light 70 · No flashing lights 100 ·
+    Quiet or soft music 40 · Not crowded 33 · Touch only if I agree 76 · No required partner work
+    67 · Easy to step out 69.
+
 - **2026-11-18: one filter sheet everywhere, and B's "Clear all" row.**
   - **Cause of the mobile/desktop difference:** there was only one filter component (B's sheet), but
     a phone-only CSS rule made it look different on phones, and phones could still show an older

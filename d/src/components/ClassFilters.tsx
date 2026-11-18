@@ -178,7 +178,9 @@ export function ClassFilters() {
         />
       )}
 
-      {prefs.length > 0 && (
+      {/* Active filters as mint chips, then "Clear all" at the end of the row: shown while an
+          energy option or a sensory filter is on; resets both (like B's Clear all) */}
+      {(mood !== null || prefs.length > 0) && (
         <div className="emd__active">
           {SENSORY.filter((f) => prefs.includes(f.id)).map((f) => (
             <button
@@ -192,6 +194,17 @@ export function ClassFilters() {
               <Icon name="x" size={14} />
             </button>
           ))}
+          <button
+            type="button"
+            className="emd__clear"
+            onClick={() => {
+              setMood(null);
+              setPrefs([]);
+              logEvent('preference_set', { data: { preference: 'all', on: false } });
+            }}
+          >
+            Clear all
+          </button>
         </div>
       )}
     </section>

@@ -4416,3 +4416,33 @@ code {
     padding-bottom: 16px;
   }
 }
+
+/* D: "Clear all" at the end of the active-filter row in the card: small dark-green text link,
+   still a 44 px tap target */
+.emd__active {
+  align-items: center;
+}
+
+.emd__clear {
+  min-height: 44px;
+  padding: 0 4px;
+  border: 0;
+  background: transparent;
+  color: var(--accent-ink);
+  font: inherit;
+  font-size: 0.875rem;
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.emd__clear:hover {
+  color: var(--accent);
+}
+
+/* The results row now only holds the count, left aligned */
+.filter-count--d {
+  justify-content: flex-start;
+}

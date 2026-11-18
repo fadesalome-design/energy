@@ -11,8 +11,9 @@
     "whatToExpect": [
       "Hard parts to push through, easier options shown.",
       "Loud music, the trainer uses a mic. Normal daylight and ceiling lights.",
-      "Large group, it can get packed. Partner work is part of the class."
-    ]
+      "Large group, it can get packed. Partner work is part of the class. Hands-on corrections, the trainer may touch to adjust."
+    ],
+    "touch": "hands-on"
   },
   {
     "id": "climbing-prenzlauer-berg-morning-bouldering",
@@ -26,8 +27,9 @@
     "whatToExpect": [
       "Steady pace with a few harder parts.",
       "Music in the background, you can still talk. Normal daylight and ceiling lights.",
-      "Small group, plenty of space. No partner work."
-    ]
+      "Small group, plenty of space. No partner work. No hands-on corrections."
+    ],
+    "touch": "none"
   },
   {
     "id": "gym-mitte-hiit-express",
@@ -41,8 +43,9 @@
     "whatToExpect": [
       "Hard parts to push through, easier options shown.",
       "Music in the background, you can still talk. Bright white lights.",
-      "Medium group, enough space. No partner work."
-    ]
+      "Medium group, enough space. No partner work. No hands-on corrections."
+    ],
+    "touch": "none"
   },
   {
     "id": "swimming-kreuzberg-aqua-fit",
@@ -56,8 +59,9 @@
     "whatToExpect": [
       "Steady pace with a few harder parts.",
       "Loud music, the trainer uses a mic. Bright white lights.",
-      "Medium group, enough space. No partner work."
-    ]
+      "Medium group, enough space. No partner work. No hands-on corrections."
+    ],
+    "touch": "none"
   },
   {
     "id": "yoga-mitte-power-yoga",
@@ -71,8 +75,9 @@
     "whatToExpect": [
       "Hard parts to push through, easier options shown.",
       "Quiet room, soft background music. Soft, dimmed light.",
-      "Medium group, enough space. No partner work."
-    ]
+      "Medium group, enough space. No partner work. No hands-on corrections."
+    ],
+    "touch": "none"
   },
   {
     "id": "boxing-prenzlauer-berg-boxfit",
@@ -86,8 +91,9 @@
     "whatToExpect": [
       "Hard parts to push through, easier options shown.",
       "Loud music, the trainer uses a mic. Normal daylight and ceiling lights.",
-      "Medium group, enough space. Partner work is part of the class."
-    ]
+      "Medium group, enough space. Partner work is part of the class. The trainer asks before any hands-on help."
+    ],
+    "touch": "asks-first"
   },
   {
     "id": "climbing-neuk-lln-morning-bouldering",
@@ -101,8 +107,9 @@
     "whatToExpect": [
       "Steady pace with a few harder parts.",
       "Quiet room, soft background music. Bright white lights.",
-      "Medium group, enough space. No partner work."
-    ]
+      "Medium group, enough space. No partner work. The trainer asks before any hands-on help."
+    ],
+    "touch": "asks-first"
   },
   {
     "id": "gym-friedrichshain-hiit-express",
@@ -116,8 +123,9 @@
     "whatToExpect": [
       "Hard parts to push through, easier options shown.",
       "Loud music, the trainer uses a mic. Bright white lights.",
-      "Medium group, enough space. Partner work is part of the class."
-    ]
+      "Medium group, enough space. Partner work is part of the class. No hands-on corrections."
+    ],
+    "touch": "none"
   },
   {
     "id": "pilates-friedrichshain-mat-pilates-basics",
@@ -131,8 +139,9 @@
     "whatToExpect": [
       "Steady pace with a few harder parts.",
       "Music in the background, you can still talk. Normal daylight and ceiling lights.",
-      "Medium group, enough space. No partner work."
-    ]
+      "Medium group, enough space. No partner work. No hands-on corrections."
+    ],
+    "touch": "none"
   },
   {
     "id": "yoga-neuk-lln-slow-flow-yoga",
@@ -146,8 +155,9 @@
     "whatToExpect": [
       "Gentle pace, nothing harder than moderate effort.",
       "Quiet room, soft background music. Soft, dimmed light.",
-      "Small group, plenty of space. Partner work is part of the class."
-    ]
+      "Small group, plenty of space. Partner work is part of the class. Hands-on corrections, the trainer may touch to adjust."
+    ],
+    "touch": "hands-on"
   },
   {
     "id": "pilates-kreuzberg-gentle-pilates",
@@ -161,8 +171,9 @@
     "whatToExpect": [
       "Gentle pace, nothing harder than moderate effort.",
       "Music in the background, you can still talk. Soft, dimmed light.",
-      "Small group, plenty of space. No partner work."
-    ]
+      "Small group, plenty of space. No partner work. Hands-on corrections, the trainer may touch to adjust."
+    ],
+    "touch": "hands-on"
   },
   {
     "id": "pilates-mitte-mat-pilates-basics",
@@ -176,8 +187,9 @@
     "whatToExpect": [
       "Steady pace with a few harder parts.",
       "Quiet room, soft background music. Soft, dimmed light.",
-      "Small group, plenty of space. No partner work."
-    ]
+      "Small group, plenty of space. No partner work. The trainer asks before any hands-on help."
+    ],
+    "touch": "asks-first"
   },
   {
     "id": "pilates-neuk-lln-mat-pilates-basics",
@@ -191,8 +203,9 @@
     "whatToExpect": [
       "Steady pace with a few harder parts.",
       "Quiet room, soft background music. Bright white lights.",
-      "Small group, plenty of space. No partner work."
-    ]
+      "Small group, plenty of space. No partner work. The trainer asks before any hands-on help."
+    ],
+    "touch": "asks-first"
   },
   {
     "id": "swimming-prenzlauer-berg-lane-swim-technique",
@@ -206,8 +219,9 @@
     "whatToExpect": [
       "Steady pace with a few harder parts.",
       "Music in the background, you can still talk. Normal daylight and ceiling lights.",
-      "Large group, it can get packed. No partner work."
-    ]
+      "Large group, it can get packed. No partner work. No hands-on corrections."
+    ],
+    "touch": "none"
   },
   {
     "id": "wellness-friedrichshain-breathwork",
@@ -221,8 +235,9 @@
     "whatToExpect": [
       "Gentle pace, nothing harder than moderate effort.",
       "Quiet room, soft background music. Soft, dimmed light.",
-      "Small group, plenty of space. No partner work."
-    ]
+      "Small group, plenty of space. No partner work. The trainer asks before any hands-on help."
+    ],
+    "touch": "asks-first"
   },
   {
     "id": "climbing-kreuzberg-morning-bouldering",
@@ -236,8 +251,9 @@
     "whatToExpect": [
       "Steady pace with a few harder parts.",
       "Quiet room, soft background music. Bright white lights.",
-      "Medium group, enough space. Partner work is part of the class."
-    ]
+      "Medium group, enough space. Partner work is part of the class. The trainer asks before any hands-on help."
+    ],
+    "touch": "asks-first"
   },
   {
     "id": "swimming-mitte-lane-swim-technique",
@@ -251,8 +267,9 @@
     "whatToExpect": [
       "Steady pace with a few harder parts.",
       "Quiet room, soft background music. Bright white lights.",
-      "Large group, it can get packed. No partner work."
-    ]
+      "Large group, it can get packed. No partner work. No hands-on corrections."
+    ],
+    "touch": "none"
   },
   {
     "id": "swimming-neuk-lln-lane-swim-technique",
@@ -266,8 +283,9 @@
     "whatToExpect": [
       "Steady pace with a few harder parts.",
       "Loud music, the trainer uses a mic. Normal daylight and ceiling lights.",
-      "Large group, it can get packed. No partner work."
-    ]
+      "Large group, it can get packed. No partner work. The trainer asks before any hands-on help."
+    ],
+    "touch": "asks-first"
   },
   {
     "id": "wellness-neuk-lln-breathwork",
@@ -281,8 +299,9 @@
     "whatToExpect": [
       "Gentle pace, nothing harder than moderate effort.",
       "Quiet room, soft background music. Soft, dimmed light.",
-      "Small group, plenty of space. No partner work."
-    ]
+      "Small group, plenty of space. No partner work. No hands-on corrections."
+    ],
+    "touch": "none"
   },
   {
     "id": "yoga-prenzlauer-berg-vinyasa-flow",
@@ -296,8 +315,9 @@
     "whatToExpect": [
       "Steady pace with a few harder parts.",
       "Music in the background, you can still talk. Soft, dimmed light.",
-      "Small group, plenty of space. Partner work is part of the class."
-    ]
+      "Small group, plenty of space. Partner work is part of the class. Hands-on corrections, the trainer may touch to adjust."
+    ],
+    "touch": "hands-on"
   },
   {
     "id": "climbing-mitte-morning-bouldering",
@@ -311,8 +331,9 @@
     "whatToExpect": [
       "Steady pace with a few harder parts.",
       "Quiet room, soft background music. Bright white lights.",
-      "Small group, plenty of space. Partner work is part of the class."
-    ]
+      "Small group, plenty of space. Partner work is part of the class. The trainer asks before any hands-on help."
+    ],
+    "touch": "asks-first"
   },
   {
     "id": "gym-prenzlauer-berg-sunrise-spin",
@@ -326,8 +347,9 @@
     "whatToExpect": [
       "Hard parts to push through, easier options shown.",
       "Loud music, the trainer uses a mic. Normal daylight and ceiling lights.",
-      "Medium group, enough space. No partner work."
-    ]
+      "Medium group, enough space. No partner work. No hands-on corrections."
+    ],
+    "touch": "none"
   },
   {
     "id": "pilates-prenzlauer-berg-mat-pilates-basics",
@@ -341,8 +363,9 @@
     "whatToExpect": [
       "Steady pace with a few harder parts.",
       "Music in the background, you can still talk. Bright white lights.",
-      "Medium group, enough space. No partner work."
-    ]
+      "Medium group, enough space. No partner work. The trainer asks before any hands-on help."
+    ],
+    "touch": "asks-first"
   },
   {
     "id": "swimming-friedrichshain-lane-swim-technique",
@@ -356,8 +379,9 @@
     "whatToExpect": [
       "Steady pace with a few harder parts.",
       "Loud music, the trainer uses a mic. Normal daylight and ceiling lights.",
-      "Large group, it can get packed. No partner work."
-    ]
+      "Large group, it can get packed. No partner work. The trainer asks before any hands-on help."
+    ],
+    "touch": "asks-first"
   },
   {
     "id": "boxing-neuk-lln-boxfit",
@@ -371,8 +395,9 @@
     "whatToExpect": [
       "Hard parts to push through, easier options shown.",
       "Loud music, the trainer uses a mic. Bright white lights.",
-      "Large group, it can get packed. Partner work is part of the class."
-    ]
+      "Large group, it can get packed. Partner work is part of the class. The trainer asks before any hands-on help."
+    ],
+    "touch": "asks-first"
   },
   {
     "id": "swimming-mitte-aqua-fit",
@@ -386,8 +411,9 @@
     "whatToExpect": [
       "Steady pace with a few harder parts.",
       "Quiet room, soft background music. Bright white lights.",
-      "Large group, it can get packed. No partner work."
-    ]
+      "Large group, it can get packed. No partner work. No hands-on corrections."
+    ],
+    "touch": "none"
   },
   {
     "id": "swimming-prenzlauer-berg-easy-lengths",
@@ -401,8 +427,9 @@
     "whatToExpect": [
       "Gentle pace, nothing harder than moderate effort.",
       "Music in the background, you can still talk. Normal daylight and ceiling lights.",
-      "Large group, it can get packed. No partner work."
-    ]
+      "Large group, it can get packed. No partner work. No hands-on corrections."
+    ],
+    "touch": "none"
   },
   {
     "id": "wellness-mitte-breathwork",
@@ -416,8 +443,9 @@
     "whatToExpect": [
       "Gentle pace, nothing harder than moderate effort.",
       "Quiet room, soft background music. Soft, dimmed light.",
-      "Small group, plenty of space. No partner work."
-    ]
+      "Small group, plenty of space. No partner work. No hands-on corrections."
+    ],
+    "touch": "none"
   },
   {
     "id": "climbing-friedrichshain-morning-bouldering",
@@ -431,8 +459,9 @@
     "whatToExpect": [
       "Steady pace with a few harder parts.",
       "Music in the background, you can still talk. Normal daylight and ceiling lights.",
-      "Medium group, enough space. Partner work is part of the class."
-    ]
+      "Medium group, enough space. Partner work is part of the class. The trainer asks before any hands-on help."
+    ],
+    "touch": "asks-first"
   },
   {
     "id": "pilates-neuk-lln-gentle-pilates",
@@ -446,8 +475,9 @@
     "whatToExpect": [
       "Gentle pace, nothing harder than moderate effort.",
       "Quiet room, soft background music. Bright white lights.",
-      "Small group, plenty of space. No partner work."
-    ]
+      "Small group, plenty of space. No partner work. The trainer asks before any hands-on help."
+    ],
+    "touch": "asks-first"
   },
   {
     "id": "swimming-friedrichshain-aqua-fit",
@@ -461,8 +491,9 @@
     "whatToExpect": [
       "Steady pace with a few harder parts.",
       "Loud music, the trainer uses a mic. Normal daylight and ceiling lights.",
-      "Large group, it can get packed. No partner work."
-    ]
+      "Large group, it can get packed. No partner work. No hands-on corrections."
+    ],
+    "touch": "none"
   },
   {
     "id": "gym-kreuzberg-strength-basics",
@@ -476,8 +507,9 @@
     "whatToExpect": [
       "Steady pace with a few harder parts.",
       "Loud music, the trainer uses a mic. Bright white lights.",
-      "Medium group, enough space. No partner work."
-    ]
+      "Medium group, enough space. No partner work. No hands-on corrections."
+    ],
+    "touch": "none"
   },
   {
     "id": "gym-prenzlauer-berg-hiit-express",
@@ -491,8 +523,9 @@
     "whatToExpect": [
       "Hard parts to push through, easier options shown.",
       "Loud music, the trainer uses a mic. Normal daylight and ceiling lights.",
-      "Medium group, enough space. No partner work."
-    ]
+      "Medium group, enough space. No partner work. The trainer asks before any hands-on help."
+    ],
+    "touch": "asks-first"
   },
   {
     "id": "boxing-mitte-boxfit",
@@ -506,8 +539,9 @@
     "whatToExpect": [
       "Hard parts to push through, easier options shown.",
       "Music in the background, you can still talk. Normal daylight and ceiling lights.",
-      "Medium group, enough space. Partner work is part of the class."
-    ]
+      "Medium group, enough space. Partner work is part of the class. Hands-on corrections, the trainer may touch to adjust."
+    ],
+    "touch": "hands-on"
   },
   {
     "id": "swimming-friedrichshain-easy-lengths",
@@ -521,8 +555,9 @@
     "whatToExpect": [
       "Gentle pace, nothing harder than moderate effort.",
       "Loud music, the trainer uses a mic. Normal daylight and ceiling lights.",
-      "Large group, it can get packed. No partner work."
-    ]
+      "Large group, it can get packed. No partner work. The trainer asks before any hands-on help."
+    ],
+    "touch": "asks-first"
   },
   {
     "id": "yoga-friedrichshain-lunch-break-yoga",
@@ -536,8 +571,9 @@
     "whatToExpect": [
       "Gentle pace, nothing harder than moderate effort.",
       "Quiet room, soft background music. Soft, dimmed light.",
-      "Small group, plenty of space. Partner work is part of the class."
-    ]
+      "Small group, plenty of space. Partner work is part of the class. The trainer asks before any hands-on help."
+    ],
+    "touch": "asks-first"
   },
   {
     "id": "yoga-kreuzberg-lunch-break-yoga",
@@ -551,8 +587,9 @@
     "whatToExpect": [
       "Gentle pace, nothing harder than moderate effort.",
       "Quiet room, soft background music. Normal daylight and ceiling lights.",
-      "Medium group, enough space. No partner work."
-    ]
+      "Medium group, enough space. No partner work. Hands-on corrections, the trainer may touch to adjust."
+    ],
+    "touch": "hands-on"
   },
   {
     "id": "yoga-neuk-lln-lunch-break-yoga",
@@ -566,8 +603,9 @@
     "whatToExpect": [
       "Gentle pace, nothing harder than moderate effort.",
       "Quiet room, soft background music. Soft, dimmed light.",
-      "Small group, plenty of space. Partner work is part of the class."
-    ]
+      "Small group, plenty of space. Partner work is part of the class. Hands-on corrections, the trainer may touch to adjust."
+    ],
+    "touch": "hands-on"
   },
   {
     "id": "pilates-kreuzberg-mat-pilates-basics",
@@ -581,8 +619,9 @@
     "whatToExpect": [
       "Steady pace with a few harder parts.",
       "Music in the background, you can still talk. Soft, dimmed light.",
-      "Small group, plenty of space. No partner work."
-    ]
+      "Small group, plenty of space. No partner work. The trainer asks before any hands-on help."
+    ],
+    "touch": "asks-first"
   },
   {
     "id": "swimming-kreuzberg-easy-lengths",
@@ -596,8 +635,9 @@
     "whatToExpect": [
       "Gentle pace, nothing harder than moderate effort.",
       "Loud music, the trainer uses a mic. Bright white lights.",
-      "Medium group, enough space. No partner work."
-    ]
+      "Medium group, enough space. No partner work. The trainer asks before any hands-on help."
+    ],
+    "touch": "asks-first"
   },
   {
     "id": "dance-friedrichshain-hip-hop-foundations",
@@ -611,8 +651,9 @@
     "whatToExpect": [
       "Hard parts to push through, easier options shown.",
       "Loud music, the trainer uses a mic. Soft, dimmed light.",
-      "Medium group, enough space. No partner work."
-    ]
+      "Medium group, enough space. No partner work. Hands-on corrections, the trainer may touch to adjust."
+    ],
+    "touch": "hands-on"
   },
   {
     "id": "dance-kreuzberg-contemporary-for-beginners",
@@ -626,8 +667,9 @@
     "whatToExpect": [
       "Steady pace with a few harder parts.",
       "Loud music, the trainer uses a mic. Normal daylight and ceiling lights.",
-      "Medium group, enough space. No partner work."
-    ]
+      "Medium group, enough space. No partner work. Hands-on corrections, the trainer may touch to adjust."
+    ],
+    "touch": "hands-on"
   },
   {
     "id": "dance-mitte-hip-hop-foundations",
@@ -641,8 +683,9 @@
     "whatToExpect": [
       "Hard parts to push through, easier options shown.",
       "Loud music, the trainer uses a mic. Soft, dimmed light.",
-      "Medium group, enough space. Partner work is part of the class."
-    ]
+      "Medium group, enough space. Partner work is part of the class. The trainer asks before any hands-on help."
+    ],
+    "touch": "asks-first"
   },
   {
     "id": "pilates-friedrichshain-reformer-pilates",
@@ -656,8 +699,9 @@
     "whatToExpect": [
       "Hard parts to push through, easier options shown.",
       "Music in the background, you can still talk. Normal daylight and ceiling lights.",
-      "Medium group, enough space. No partner work."
-    ]
+      "Medium group, enough space. No partner work. The trainer asks before any hands-on help."
+    ],
+    "touch": "asks-first"
   },
   {
     "id": "wellness-friedrichshain-sauna-stretch",
@@ -671,8 +715,9 @@
     "whatToExpect": [
       "Gentle pace, nothing harder than moderate effort.",
       "Quiet room, soft background music. Soft, dimmed light.",
-      "Small group, plenty of space. No partner work."
-    ]
+      "Small group, plenty of space. No partner work. No hands-on corrections."
+    ],
+    "touch": "none"
   },
   {
     "id": "gym-neuk-lln-strength-basics",
@@ -686,8 +731,9 @@
     "whatToExpect": [
       "Steady pace with a few harder parts.",
       "Loud music, the trainer uses a mic. Coloured and flashing lights in parts.",
-      "Medium group, enough space. No partner work."
-    ]
+      "Medium group, enough space. No partner work. Hands-on corrections, the trainer may touch to adjust."
+    ],
+    "touch": "hands-on"
   },
   {
     "id": "swimming-prenzlauer-berg-aqua-fit",
@@ -701,8 +747,9 @@
     "whatToExpect": [
       "Steady pace with a few harder parts.",
       "Music in the background, you can still talk. Normal daylight and ceiling lights.",
-      "Large group, it can get packed. No partner work."
-    ]
+      "Large group, it can get packed. No partner work. The trainer asks before any hands-on help."
+    ],
+    "touch": "asks-first"
   },
   {
     "id": "wellness-kreuzberg-sauna-stretch",
@@ -716,8 +763,9 @@
     "whatToExpect": [
       "Gentle pace, nothing harder than moderate effort.",
       "Quiet room, soft background music. Soft, dimmed light.",
-      "Small group, plenty of space. No partner work."
-    ]
+      "Small group, plenty of space. No partner work. No hands-on corrections."
+    ],
+    "touch": "none"
   },
   {
     "id": "wellness-prenzlauer-berg-sauna-stretch",
@@ -731,8 +779,9 @@
     "whatToExpect": [
       "Gentle pace, nothing harder than moderate effort.",
       "Quiet room, soft background music. Soft, dimmed light.",
-      "Medium group, enough space. No partner work."
-    ]
+      "Medium group, enough space. No partner work. The trainer asks before any hands-on help."
+    ],
+    "touch": "asks-first"
   },
   {
     "id": "boxing-prenzlauer-berg-boxing-fundamentals",
@@ -746,8 +795,9 @@
     "whatToExpect": [
       "Hard parts to push through, easier options shown.",
       "Loud music, the trainer uses a mic. Normal daylight and ceiling lights.",
-      "Medium group, enough space. Partner work is part of the class."
-    ]
+      "Medium group, enough space. Partner work is part of the class. Hands-on corrections, the trainer may touch to adjust."
+    ],
+    "touch": "hands-on"
   },
   {
     "id": "climbing-prenzlauer-berg-bouldering-intro",
@@ -761,8 +811,9 @@
     "whatToExpect": [
       "Steady pace with a few harder parts.",
       "Music in the background, you can still talk. Normal daylight and ceiling lights.",
-      "Small group, plenty of space. No partner work."
-    ]
+      "Small group, plenty of space. No partner work. The trainer asks before any hands-on help."
+    ],
+    "touch": "asks-first"
   },
   {
     "id": "dance-neuk-lln-hip-hop-foundations",
@@ -776,8 +827,9 @@
     "whatToExpect": [
       "Hard parts to push through, easier options shown.",
       "Loud music, the trainer uses a mic. Normal daylight and ceiling lights.",
-      "Medium group, enough space. Partner work is part of the class."
-    ]
+      "Medium group, enough space. Partner work is part of the class. The trainer asks before any hands-on help."
+    ],
+    "touch": "asks-first"
   },
   {
     "id": "gym-mitte-strength-basics",
@@ -791,8 +843,9 @@
     "whatToExpect": [
       "Steady pace with a few harder parts.",
       "Music in the background, you can still talk. Bright white lights.",
-      "Medium group, enough space. No partner work."
-    ]
+      "Medium group, enough space. No partner work. No hands-on corrections."
+    ],
+    "touch": "none"
   },
   {
     "id": "pilates-prenzlauer-berg-reformer-pilates",
@@ -806,8 +859,9 @@
     "whatToExpect": [
       "Hard parts to push through, easier options shown.",
       "Music in the background, you can still talk. Bright white lights.",
-      "Medium group, enough space. No partner work."
-    ]
+      "Medium group, enough space. No partner work. The trainer asks before any hands-on help."
+    ],
+    "touch": "asks-first"
   },
   {
     "id": "swimming-neuk-lln-aqua-fit",
@@ -821,8 +875,9 @@
     "whatToExpect": [
       "Steady pace with a few harder parts.",
       "Loud music, the trainer uses a mic. Normal daylight and ceiling lights.",
-      "Large group, it can get packed. No partner work."
-    ]
+      "Large group, it can get packed. No partner work. No hands-on corrections."
+    ],
+    "touch": "none"
   },
   {
     "id": "climbing-friedrichshain-bouldering-intro",
@@ -836,8 +891,9 @@
     "whatToExpect": [
       "Steady pace with a few harder parts.",
       "Music in the background, you can still talk. Normal daylight and ceiling lights.",
-      "Medium group, enough space. Partner work is part of the class."
-    ]
+      "Medium group, enough space. Partner work is part of the class. Hands-on corrections, the trainer may touch to adjust."
+    ],
+    "touch": "hands-on"
   },
   {
     "id": "boxing-kreuzberg-technique-pads",
@@ -851,8 +907,9 @@
     "whatToExpect": [
       "Steady pace with a few harder parts.",
       "Music in the background, you can still talk. Bright white lights.",
-      "Large group, it can get packed. Partner work is part of the class."
-    ]
+      "Large group, it can get packed. Partner work is part of the class. Hands-on corrections, the trainer may touch to adjust."
+    ],
+    "touch": "hands-on"
   },
   {
     "id": "boxing-neuk-lln-technique-pads",
@@ -866,8 +923,9 @@
     "whatToExpect": [
       "Steady pace with a few harder parts.",
       "Loud music, the trainer uses a mic. Bright white lights.",
-      "Large group, it can get packed. Partner work is part of the class."
-    ]
+      "Large group, it can get packed. Partner work is part of the class. Hands-on corrections, the trainer may touch to adjust."
+    ],
+    "touch": "hands-on"
   },
   {
     "id": "boxing-friedrichshain-technique-pads",
@@ -881,8 +939,9 @@
     "whatToExpect": [
       "Steady pace with a few harder parts.",
       "Loud music, the trainer uses a mic. Normal daylight and ceiling lights.",
-      "Large group, it can get packed. Partner work is part of the class."
-    ]
+      "Large group, it can get packed. Partner work is part of the class. Hands-on corrections, the trainer may touch to adjust."
+    ],
+    "touch": "hands-on"
   },
   {
     "id": "dance-friedrichshain-salsa-basics",
@@ -896,8 +955,9 @@
     "whatToExpect": [
       "Steady pace with a few harder parts.",
       "Loud music, the trainer uses a mic. Soft, dimmed light.",
-      "Medium group, enough space. No partner work."
-    ]
+      "Medium group, enough space. No partner work. The trainer asks before any hands-on help."
+    ],
+    "touch": "asks-first"
   },
   {
     "id": "gym-kreuzberg-hiit-express",
@@ -911,8 +971,9 @@
     "whatToExpect": [
       "Hard parts to push through, easier options shown.",
       "Loud music, the trainer uses a mic. Bright white lights.",
-      "Medium group, enough space. No partner work."
-    ]
+      "Medium group, enough space. No partner work. Hands-on corrections, the trainer may touch to adjust."
+    ],
+    "touch": "hands-on"
   },
   {
     "id": "pilates-kreuzberg-reformer-pilates",
@@ -926,8 +987,9 @@
     "whatToExpect": [
       "Hard parts to push through, easier options shown.",
       "Music in the background, you can still talk. Soft, dimmed light.",
-      "Small group, plenty of space. No partner work."
-    ]
+      "Small group, plenty of space. No partner work. No hands-on corrections."
+    ],
+    "touch": "none"
   },
   {
     "id": "swimming-mitte-easy-lengths",
@@ -941,8 +1003,9 @@
     "whatToExpect": [
       "Gentle pace, nothing harder than moderate effort.",
       "Quiet room, soft background music. Bright white lights.",
-      "Large group, it can get packed. No partner work."
-    ]
+      "Large group, it can get packed. No partner work. The trainer asks before any hands-on help."
+    ],
+    "touch": "asks-first"
   },
   {
     "id": "wellness-mitte-sauna-stretch",
@@ -956,8 +1019,9 @@
     "whatToExpect": [
       "Gentle pace, nothing harder than moderate effort.",
       "Quiet room, soft background music. Soft, dimmed light.",
-      "Small group, plenty of space. No partner work."
-    ]
+      "Small group, plenty of space. No partner work. No hands-on corrections."
+    ],
+    "touch": "none"
   },
   {
     "id": "climbing-kreuzberg-climbing-technique",
@@ -971,8 +1035,9 @@
     "whatToExpect": [
       "Hard parts to push through, easier options shown.",
       "Quiet room, soft background music. Bright white lights.",
-      "Medium group, enough space. Partner work is part of the class."
-    ]
+      "Medium group, enough space. Partner work is part of the class. No hands-on corrections."
+    ],
+    "touch": "none"
   },
   {
     "id": "climbing-neuk-lln-climbing-technique",
@@ -986,8 +1051,9 @@
     "whatToExpect": [
       "Hard parts to push through, easier options shown.",
       "Quiet room, soft background music. Bright white lights.",
-      "Medium group, enough space. No partner work."
-    ]
+      "Medium group, enough space. No partner work. Hands-on corrections, the trainer may touch to adjust."
+    ],
+    "touch": "hands-on"
   },
   {
     "id": "dance-kreuzberg-salsa-basics",
@@ -1001,8 +1067,9 @@
     "whatToExpect": [
       "Steady pace with a few harder parts.",
       "Loud music, the trainer uses a mic. Normal daylight and ceiling lights.",
-      "Medium group, enough space. No partner work."
-    ]
+      "Medium group, enough space. No partner work. No hands-on corrections."
+    ],
+    "touch": "none"
   },
   {
     "id": "dance-prenzlauer-berg-salsa-basics",
@@ -1016,8 +1083,9 @@
     "whatToExpect": [
       "Steady pace with a few harder parts.",
       "Music in the background, you can still talk. Coloured and flashing lights in parts.",
-      "Large group, it can get packed. Partner work is part of the class."
-    ]
+      "Large group, it can get packed. Partner work is part of the class. Hands-on corrections, the trainer may touch to adjust."
+    ],
+    "touch": "hands-on"
   },
   {
     "id": "gym-mitte-functional-circuit",
@@ -1031,8 +1099,9 @@
     "whatToExpect": [
       "Hard parts to push through, easier options shown.",
       "Music in the background, you can still talk. Bright white lights.",
-      "Medium group, enough space. No partner work."
-    ]
+      "Medium group, enough space. No partner work. The trainer asks before any hands-on help."
+    ],
+    "touch": "asks-first"
   },
   {
     "id": "wellness-kreuzberg-sound-bath",
@@ -1046,8 +1115,9 @@
     "whatToExpect": [
       "Gentle pace, nothing harder than moderate effort.",
       "Quiet room, soft background music. Soft, dimmed light.",
-      "Small group, plenty of space. No partner work."
-    ]
+      "Small group, plenty of space. No partner work. No hands-on corrections."
+    ],
+    "touch": "none"
   },
   {
     "id": "wellness-neuk-lln-sound-bath",
@@ -1061,8 +1131,9 @@
     "whatToExpect": [
       "Gentle pace, nothing harder than moderate effort.",
       "Quiet room, soft background music. Soft, dimmed light.",
-      "Small group, plenty of space. No partner work."
-    ]
+      "Small group, plenty of space. No partner work. No hands-on corrections."
+    ],
+    "touch": "none"
   },
   {
     "id": "wellness-prenzlauer-berg-breathwork",
@@ -1076,8 +1147,9 @@
     "whatToExpect": [
       "Gentle pace, nothing harder than moderate effort.",
       "Quiet room, soft background music. Soft, dimmed light.",
-      "Medium group, enough space. No partner work."
-    ]
+      "Medium group, enough space. No partner work. No hands-on corrections."
+    ],
+    "touch": "none"
   },
   {
     "id": "yoga-friedrichshain-vinyasa-flow",
@@ -1091,8 +1163,9 @@
     "whatToExpect": [
       "Steady pace with a few harder parts.",
       "Quiet room, soft background music. Soft, dimmed light.",
-      "Small group, plenty of space. Partner work is part of the class."
-    ]
+      "Small group, plenty of space. Partner work is part of the class. Hands-on corrections, the trainer may touch to adjust."
+    ],
+    "touch": "hands-on"
   },
   {
     "id": "yoga-mitte-yin-yoga",
@@ -1106,8 +1179,9 @@
     "whatToExpect": [
       "Gentle pace, nothing harder than moderate effort.",
       "Quiet room, soft background music. Soft, dimmed light.",
-      "Medium group, enough space. No partner work."
-    ]
+      "Medium group, enough space. No partner work. No hands-on corrections."
+    ],
+    "touch": "none"
   },
   {
     "id": "yoga-prenzlauer-berg-yin-yoga",
@@ -1121,8 +1195,9 @@
     "whatToExpect": [
       "Gentle pace, nothing harder than moderate effort.",
       "Music in the background, you can still talk. Soft, dimmed light.",
-      "Small group, plenty of space. Partner work is part of the class."
-    ]
+      "Small group, plenty of space. Partner work is part of the class. The trainer asks before any hands-on help."
+    ],
+    "touch": "asks-first"
   },
   {
     "id": "boxing-mitte-technique-pads",
@@ -1136,8 +1211,9 @@
     "whatToExpect": [
       "Steady pace with a few harder parts.",
       "Music in the background, you can still talk. Normal daylight and ceiling lights.",
-      "Medium group, enough space. Partner work is part of the class."
-    ]
+      "Medium group, enough space. Partner work is part of the class. No hands-on corrections."
+    ],
+    "touch": "none"
   },
   {
     "id": "climbing-friedrichshain-climbing-technique",
@@ -1151,8 +1227,9 @@
     "whatToExpect": [
       "Hard parts to push through, easier options shown.",
       "Music in the background, you can still talk. Normal daylight and ceiling lights.",
-      "Medium group, enough space. Partner work is part of the class."
-    ]
+      "Medium group, enough space. Partner work is part of the class. No hands-on corrections."
+    ],
+    "touch": "none"
   },
   {
     "id": "climbing-prenzlauer-berg-climbing-technique",
@@ -1166,8 +1243,9 @@
     "whatToExpect": [
       "Hard parts to push through, easier options shown.",
       "Music in the background, you can still talk. Normal daylight and ceiling lights.",
-      "Small group, plenty of space. No partner work."
-    ]
+      "Small group, plenty of space. No partner work. No hands-on corrections."
+    ],
+    "touch": "none"
   },
   {
     "id": "dance-mitte-salsa-basics",
@@ -1181,8 +1259,9 @@
     "whatToExpect": [
       "Steady pace with a few harder parts.",
       "Loud music, the trainer uses a mic. Soft, dimmed light.",
-      "Medium group, enough space. Partner work is part of the class."
-    ]
+      "Medium group, enough space. Partner work is part of the class. No hands-on corrections."
+    ],
+    "touch": "none"
   },
   {
     "id": "gym-kreuzberg-rhythm-ride",
@@ -1196,8 +1275,9 @@
     "whatToExpect": [
       "Hard parts to push through, easier options shown.",
       "Loud music, the trainer uses a mic. Bright white lights.",
-      "Medium group, enough space. No partner work."
-    ]
+      "Medium group, enough space. No partner work. Hands-on corrections, the trainer may touch to adjust."
+    ],
+    "touch": "hands-on"
   },
   {
     "id": "yoga-kreuzberg-yin-yoga",
@@ -1211,8 +1291,9 @@
     "whatToExpect": [
       "Gentle pace, nothing harder than moderate effort.",
       "Quiet room, soft background music. Normal daylight and ceiling lights.",
-      "Medium group, enough space. No partner work."
-    ]
+      "Medium group, enough space. No partner work. No hands-on corrections."
+    ],
+    "touch": "none"
   },
   {
     "id": "boxing-neuk-lln-boxing-fundamentals",
@@ -1226,8 +1307,9 @@
     "whatToExpect": [
       "Hard parts to push through, easier options shown.",
       "Loud music, the trainer uses a mic. Bright white lights.",
-      "Large group, it can get packed. Partner work is part of the class."
-    ]
+      "Large group, it can get packed. Partner work is part of the class. Hands-on corrections, the trainer may touch to adjust."
+    ],
+    "touch": "hands-on"
   },
   {
     "id": "gym-neuk-lln-rhythm-ride",
@@ -1241,8 +1323,9 @@
     "whatToExpect": [
       "Hard parts to push through, easier options shown.",
       "Loud music, the trainer uses a mic. Coloured and flashing lights in parts.",
-      "Medium group, enough space. No partner work."
-    ]
+      "Medium group, enough space. No partner work. Hands-on corrections, the trainer may touch to adjust."
+    ],
+    "touch": "hands-on"
   },
   {
     "id": "pilates-friedrichshain-gentle-pilates",
@@ -1256,8 +1339,9 @@
     "whatToExpect": [
       "Gentle pace, nothing harder than moderate effort.",
       "Music in the background, you can still talk. Normal daylight and ceiling lights.",
-      "Medium group, enough space. No partner work."
-    ]
+      "Medium group, enough space. No partner work. No hands-on corrections."
+    ],
+    "touch": "none"
   },
   {
     "id": "wellness-prenzlauer-berg-sound-bath",
@@ -1271,8 +1355,9 @@
     "whatToExpect": [
       "Gentle pace, nothing harder than moderate effort.",
       "Quiet room, soft background music. Soft, dimmed light.",
-      "Medium group, enough space. No partner work."
-    ]
+      "Medium group, enough space. No partner work. No hands-on corrections."
+    ],
+    "touch": "none"
   },
   {
     "id": "yoga-neuk-lln-yin-yoga",
@@ -1286,8 +1371,9 @@
     "whatToExpect": [
       "Gentle pace, nothing harder than moderate effort.",
       "Quiet room, soft background music. Soft, dimmed light.",
-      "Small group, plenty of space. Partner work is part of the class."
-    ]
+      "Small group, plenty of space. Partner work is part of the class. The trainer asks before any hands-on help."
+    ],
+    "touch": "asks-first"
   },
   {
     "id": "boxing-friedrichshain-boxing-fundamentals",
@@ -1301,8 +1387,9 @@
     "whatToExpect": [
       "Hard parts to push through, easier options shown.",
       "Loud music, the trainer uses a mic. Normal daylight and ceiling lights.",
-      "Large group, it can get packed. Partner work is part of the class."
-    ]
+      "Large group, it can get packed. Partner work is part of the class. Hands-on corrections, the trainer may touch to adjust."
+    ],
+    "touch": "hands-on"
   },
   {
     "id": "boxing-kreuzberg-boxing-fundamentals",
@@ -1316,8 +1403,9 @@
     "whatToExpect": [
       "Hard parts to push through, easier options shown.",
       "Music in the background, you can still talk. Bright white lights.",
-      "Large group, it can get packed. Partner work is part of the class."
-    ]
+      "Large group, it can get packed. Partner work is part of the class. Hands-on corrections, the trainer may touch to adjust."
+    ],
+    "touch": "hands-on"
   },
   {
     "id": "dance-friedrichshain-contemporary-for-beginners",
@@ -1331,8 +1419,9 @@
     "whatToExpect": [
       "Steady pace with a few harder parts.",
       "Loud music, the trainer uses a mic. Soft, dimmed light.",
-      "Medium group, enough space. No partner work."
-    ]
+      "Medium group, enough space. No partner work. The trainer asks before any hands-on help."
+    ],
+    "touch": "asks-first"
   },
   {
     "id": "dance-kreuzberg-hip-hop-foundations",
@@ -1346,8 +1435,9 @@
     "whatToExpect": [
       "Hard parts to push through, easier options shown.",
       "Loud music, the trainer uses a mic. Normal daylight and ceiling lights.",
-      "Medium group, enough space. No partner work."
-    ]
+      "Medium group, enough space. No partner work. The trainer asks before any hands-on help."
+    ],
+    "touch": "asks-first"
   },
   {
     "id": "gym-friedrichshain-rhythm-ride",
@@ -1361,8 +1451,9 @@
     "whatToExpect": [
       "Hard parts to push through, easier options shown.",
       "Loud music, the trainer uses a mic. Bright white lights.",
-      "Medium group, enough space. Partner work is part of the class."
-    ]
+      "Medium group, enough space. Partner work is part of the class. Hands-on corrections, the trainer may touch to adjust."
+    ],
+    "touch": "hands-on"
   },
   {
     "id": "pilates-mitte-reformer-pilates",
@@ -1376,8 +1467,9 @@
     "whatToExpect": [
       "Hard parts to push through, easier options shown.",
       "Quiet room, soft background music. Soft, dimmed light.",
-      "Small group, plenty of space. No partner work."
-    ]
+      "Small group, plenty of space. No partner work. Hands-on corrections, the trainer may touch to adjust."
+    ],
+    "touch": "hands-on"
   },
   {
     "id": "wellness-mitte-sound-bath",
@@ -1391,8 +1483,9 @@
     "whatToExpect": [
       "Gentle pace, nothing harder than moderate effort.",
       "Quiet room, soft background music. Soft, dimmed light.",
-      "Small group, plenty of space. No partner work."
-    ]
+      "Small group, plenty of space. No partner work. No hands-on corrections."
+    ],
+    "touch": "none"
   },
   {
     "id": "wellness-neuk-lln-sauna-stretch",
@@ -1406,8 +1499,9 @@
     "whatToExpect": [
       "Gentle pace, nothing harder than moderate effort.",
       "Quiet room, soft background music. Soft, dimmed light.",
-      "Small group, plenty of space. No partner work."
-    ]
+      "Small group, plenty of space. No partner work. The trainer asks before any hands-on help."
+    ],
+    "touch": "asks-first"
   },
   {
     "id": "yoga-mitte-slow-flow-yoga",
@@ -1421,8 +1515,9 @@
     "whatToExpect": [
       "Gentle pace, nothing harder than moderate effort.",
       "Quiet room, soft background music. Soft, dimmed light.",
-      "Medium group, enough space. No partner work."
-    ]
+      "Medium group, enough space. No partner work. No hands-on corrections."
+    ],
+    "touch": "none"
   },
   {
     "id": "yoga-prenzlauer-berg-power-yoga",
@@ -1436,8 +1531,9 @@
     "whatToExpect": [
       "Hard parts to push through, easier options shown.",
       "Music in the background, you can still talk. Soft, dimmed light.",
-      "Small group, plenty of space. Partner work is part of the class."
-    ]
+      "Small group, plenty of space. Partner work is part of the class. No hands-on corrections."
+    ],
+    "touch": "none"
   },
   {
     "id": "climbing-mitte-climbing-technique",
@@ -1451,8 +1547,9 @@
     "whatToExpect": [
       "Hard parts to push through, easier options shown.",
       "Quiet room, soft background music. Bright white lights.",
-      "Small group, plenty of space. Partner work is part of the class."
-    ]
+      "Small group, plenty of space. Partner work is part of the class. Hands-on corrections, the trainer may touch to adjust."
+    ],
+    "touch": "hands-on"
   },
   {
     "id": "climbing-neuk-lln-bouldering-intro",
@@ -1466,8 +1563,9 @@
     "whatToExpect": [
       "Steady pace with a few harder parts.",
       "Quiet room, soft background music. Bright white lights.",
-      "Medium group, enough space. No partner work."
-    ]
+      "Medium group, enough space. No partner work. Hands-on corrections, the trainer may touch to adjust."
+    ],
+    "touch": "hands-on"
   },
   {
     "id": "dance-mitte-contemporary-for-beginners",
@@ -1481,8 +1579,9 @@
     "whatToExpect": [
       "Steady pace with a few harder parts.",
       "Loud music, the trainer uses a mic. Soft, dimmed light.",
-      "Medium group, enough space. Partner work is part of the class."
-    ]
+      "Medium group, enough space. Partner work is part of the class. No hands-on corrections."
+    ],
+    "touch": "none"
   },
   {
     "id": "dance-neuk-lln-salsa-basics",
@@ -1496,8 +1595,9 @@
     "whatToExpect": [
       "Steady pace with a few harder parts.",
       "Loud music, the trainer uses a mic. Normal daylight and ceiling lights.",
-      "Medium group, enough space. Partner work is part of the class."
-    ]
+      "Medium group, enough space. Partner work is part of the class. The trainer asks before any hands-on help."
+    ],
+    "touch": "asks-first"
   },
   {
     "id": "dance-prenzlauer-berg-contemporary-for-beginners",
@@ -1511,8 +1611,9 @@
     "whatToExpect": [
       "Steady pace with a few harder parts.",
       "Music in the background, you can still talk. Coloured and flashing lights in parts.",
-      "Large group, it can get packed. Partner work is part of the class."
-    ]
+      "Large group, it can get packed. Partner work is part of the class. The trainer asks before any hands-on help."
+    ],
+    "touch": "asks-first"
   },
   {
     "id": "pilates-neuk-lln-reformer-pilates",
@@ -1526,8 +1627,9 @@
     "whatToExpect": [
       "Hard parts to push through, easier options shown.",
       "Quiet room, soft background music. Bright white lights.",
-      "Small group, plenty of space. No partner work."
-    ]
+      "Small group, plenty of space. No partner work. The trainer asks before any hands-on help."
+    ],
+    "touch": "asks-first"
   },
   {
     "id": "wellness-kreuzberg-breathwork",
@@ -1541,8 +1643,9 @@
     "whatToExpect": [
       "Gentle pace, nothing harder than moderate effort.",
       "Quiet room, soft background music. Soft, dimmed light.",
-      "Small group, plenty of space. No partner work."
-    ]
+      "Small group, plenty of space. No partner work. No hands-on corrections."
+    ],
+    "touch": "none"
   },
   {
     "id": "yoga-friedrichshain-yin-yoga",
@@ -1556,7 +1659,8 @@
     "whatToExpect": [
       "Gentle pace, nothing harder than moderate effort.",
       "Quiet room, soft background music. Soft, dimmed light.",
-      "Small group, plenty of space. Partner work is part of the class."
-    ]
+      "Small group, plenty of space. Partner work is part of the class. The trainer asks before any hands-on help."
+    ],
+    "touch": "asks-first"
   }
 ]
