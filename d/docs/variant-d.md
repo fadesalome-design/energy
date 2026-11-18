@@ -13,6 +13,18 @@ Each line below says what's on the screen and why. "Finding" means what we saw i
 
 ## Change log
 
+- **2026-11-18: desktop class side panel fixed.** Cause: the CSS that kept the panel's Book bar inside
+  the panel was accidentally deleted together with the old phone-frame styles (commit `b22832b`), so
+  the bar was centred on the window again (half outside the panel, "ok" / "ne today") and the close
+  button lost its sticky position. Now, in one protected CSS block:
+  - **Panel:** `min(520px, 40vw)` anchored right, full height, its own scroll, dim overlay (click or ×
+    closes).
+  - **Close ×:** inside the panel at top right, 16 px margin, over the photo on a white circle.
+  - **Photo:** full content width, 16:9, cover.
+  - **Book / Not for me today:** sticky at the bottom inside the panel (white, thin top border, content
+    width); the last section always ends above it.
+  - Mobile and `?frame=phone` are unchanged (full-screen detail).
+
 - **2026-11-18: the 3 rating questions are back (core AI input), using Version E's categories.**
   They were dropped in `fda679f` when the rating became "card question only". The flow is now:
   **Question 1–3 of 3 → "Anything else?" → "Stamp collected"** (4-step progress bar).
