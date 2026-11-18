@@ -7,7 +7,7 @@ import { addBooking } from '../lib/feedback';
 import { ExpectCard } from '../components/ExpectCard';
 import { ExpectCardV4 } from '../components/ExpectCardV4';
 import { useVariant } from '../lib/variant';
-import { DEMO_LOCATION, km } from '../lib/location';
+import { km, placeName, studioKm, studioMin } from '../lib/location';
 import { Icon } from '../components/Icon';
 
 type Outcome = 'book' | 'not_for_me' | 'left';
@@ -96,7 +96,7 @@ export function ClassDetail() {
             {(variant === 'b' || variant === 'e') && (
               <li>
                 <Icon name="pin" size={18} />
-                {km(studio.distanceKm)} from {DEMO_LOCATION} · about {studio.travelMin} min
+                {km(studioKm(studio.id))} from {placeName()} · about {studioMin(studio.id)} min
               </li>
             )}
             <li>

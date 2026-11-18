@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 import { type ClassInfo, getStudio } from '../data/classes';
 import { typeLabel } from '../lib/labels';
 import { Icon } from './Icon';
-import { km } from '../lib/location';
+import { km, studioKm, usePlace } from '../lib/location';
 
 /**
  * One row in the class list.
@@ -11,6 +11,7 @@ import { km } from '../lib/location';
  */
 export function ClassRow({ c, reason, distance = false }: { c: ClassInfo; reason?: string; distance?: boolean }) {
   const studio = getStudio(c.studioId);
+  usePlace(); // D: distance follows the place chosen in the Energy Match card
   return (
     <li>
       <Link to={`/class/${c.id}`} className="row">
@@ -21,7 +22,7 @@ export function ClassRow({ c, reason, distance = false }: { c: ClassInfo; reason
         <span className="row__main">
           <span className="row__name">{c.name}</span>
           <span className="row__studio">
-            {studio.name} · {studio.district}{distance && <> · {km(studio.distanceKm)}</>}
+            {studio.name} · {studio.district}{distance && <> · {km(studioKm(studio.id))}</>}
           </span>
           {reason && (
             <span className="row__reason">

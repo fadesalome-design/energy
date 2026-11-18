@@ -1,22 +1,32 @@
-import { useEffect, useRef, type ReactNode } from 'react';
+import { useEffect, useRef, useState, type ReactNode } from 'react';
 import { createPortal } from 'react-dom';
 import { classes } from '../data/classes';
 import { logEvent } from '../lib/events';
 import {
-  applyFilters, GOALS, MOODS, reopenMood, SENSORY, setGoal, setMood, setPrefs, skipMood, useFilters,
+  applyFilters, GOALS, MOODS, SENSORY, setGoal, setMood, setPrefs, setSortB, useFilters,
   type Mood, type SensoryId, type StressGoal,
 } from '../lib/filters';
+import { PLACES, placeInfo, setPlace, usePlace, type PlaceId } from '../lib/location';
 import { Icon } from './Icon';
 
 /**
- * SANDBOX D: the Energy Match card (based on Version B).
- * - Tired / Stressed / Energetic in one row; the selected one shows a tick (not colour alone).
- * - Stressed shows "Burn it off / Calm down" inline; Calm down turns on Quiet & dim.
- * - "Energy Match · optional" + a small Skip.
- * The 4 filters sit right under the card (FiltersD), always visible, no sheet.
+ * SANDBOX D: ONE Energy Match card, where the member sets everything in one place.
+ * Style from Version E (mint gradient, soft shadow, round sparkle badge); buttons from D.
+ *
+ * Top:    "How are you today?" Tired / Stressed / Energetic in one row (nothing selected by
+ *         default; tap the selected one again to clear it), Stressed → Burn it off / Calm down,
+ *         and a one-line explanation for the choice.
+ * Bottom: after a thin divider, one row of 3 compact controls: place ("Near me"), sort
+ *         ("Time" / "Nearest") and "Sensory filters". The place list and the filters open
+ *         inside the card, one at a time; no pop-ups. Active filters show as mint chips with ×.
+ * No Skip: the card is optional by design, and the list below is always all classes.
  */
+type Panel = 'place' | 'filters' | null;
+
 export function ClassFilters() {
-  const { mood, goal, skipped } = useFilters();
+  const { mood, goal, prefs, sort } = useFilters();
+  const place = usePlace();
+  const [panel, setPanel] = useState<Panel>(null);
   const moodInfo = MOODS.find((m) => m.id === mood);
   const goalInfo = GOALS.find((g) => g.id === goal);
 
@@ -25,131 +35,171 @@ export function ClassFilters() {
     setMood(next);
     logEvent('energy_selected', { data: { mood: next ?? 'cleared' } });
   };
-
   const pickGoal = (g: StressGoal) => {
     setGoal(g);
     logEvent('energy_selected', { data: { mood: 'stressed', goal: goal === g ? 'cleared' : g } });
   };
-
-  return (
-    <section className="filters" aria-label="Energy Match">
-      <div className="filters__head">
-        <p className="eyebrow">Energy Match · optional</p>
-        {!skipped && (
-          <button
-            type="button"
-            className="filters__skip"
-            onClick={() => { skipMood(); logEvent('energy_selected', { data: { mood: 'skipped' } }); }}
-          >
-            Skip
-          </button>
-        )}
-      </div>
-      {skipped ? (
-        <p className="filters__off">
-          <span>Energy Match is off.</span>
-          <button
-            type="button"
-            className="filters__skip"
-            onClick={() => { reopenMood(); logEvent('energy_selected', { data: { mood: 'reopened' } }); }}
-          >
-            Set my energy
-          </button>
-        </p>
-      ) : (<>
-        <p className="filters__q" id="mood-q">How are you today?</p>
-        <div className="pills" role="group" aria-labelledby="mood-q">
-          {MOODS.map((m) => {
-            const on = mood === m.id;
-            return (
-              <button
-                key={m.id}
-                type="button"
-                className={on ? 'pill pill--on' : 'pill'}
-                aria-pressed={on}
-                onClick={() => pickMood(m.id)}
-              >
-                {/* Selected: a tick replaces the icon, so it's never colour alone */}
-                <Icon name={on ? 'check' : m.icon} size={18} />
-                {m.label}
-              </button>
-            );
-          })}
-        </div>
-
-        {mood === 'stressed' && (
-          <div className="stressfu" role="group" aria-labelledby="goal-q">
-            <p className="stressfu__q" id="goal-q">{moodInfo?.explain}</p>
-            <div className="stressfu__opts">
-              {GOALS.map((g) => {
-                const on = goal === g.id;
-                return (
-                  <button
-                    key={g.id}
-                    type="button"
-                    className={on ? 'pill pill--sub pill--on' : 'pill pill--sub'}
-                    aria-pressed={on}
-                    onClick={() => pickGoal(g.id)}
-                  >
-                    <Icon name={on ? 'check' : g.icon} size={16} />
-                    {g.label}
-                  </button>
-                );
-              })}
-            </div>
-          </div>
-        )}
-        {mood && mood !== 'stressed' && <p className="filters__explain">{moodInfo?.explain}</p>}
-        {mood === 'stressed' && goalInfo && <p className="filters__explain" role="status">{goalInfo.explain}</p>}
-      </>)}
-    </section>
-  );
-}
-
-/**
- * SANDBOX D: the 4 filters, right under the Energy Match card and always visible.
- * Off: an outline chip. On: a filled chip with "×" (tap again to remove).
- * Filters re-sort (best match first), they never hide a class.
- */
-export function FiltersD() {
-  const { prefs } = useFilters();
-  const toggle = (id: SensoryId) => {
+  const togglePref = (id: SensoryId) => {
     const on = !prefs.includes(id);
     setPrefs(on ? [...prefs, id] : prefs.filter((p) => p !== id));
     logEvent('preference_set', { data: { preference: id, on } });
   };
+  const toggleSort = () => {
+    const next = sort === 'time' ? 'nearest' : 'time';
+    setSortB(next);
+    logEvent('sort_changed', { data: { sort: next } });
+  };
+  const pickPlace = (p: PlaceId) => {
+    setPlace(p);
+    setPanel(null);
+    logEvent('preference_set', { data: { preference: 'place', value: p } });
+  };
+  const openPanel = (p: Exclude<Panel, null>) => setPanel(panel === p ? null : p);
+
   return (
-    <section className="dfilters" aria-labelledby="dfilters-title">
-      <div className="dfilters__head">
-        <p className="dfilters__title" id="dfilters-title">Filters</p>
-        {prefs.length > 0 && (
-          <button
-            type="button"
-            className="linkbtn"
-            onClick={() => { setPrefs([]); logEvent('preference_set', { data: { preference: 'all', on: false } }); }}
-          >
-            Clear all
-          </button>
-        )}
-      </div>
-      <div className="dfilters__chips" role="group" aria-labelledby="dfilters-title">
-        {SENSORY.map((f) => {
-          const on = prefs.includes(f.id);
+    <section className="emd" aria-labelledby="emd-name">
+      <p className="emd__name" id="emd-name">
+        <span className="emd__badge"><Icon name="sparkle" size={14} /></span>
+        Energy Match · optional
+      </p>
+
+      {/* ---------- Energy ---------- */}
+      <p className="filters__q" id="mood-q">How are you today?</p>
+      <div className="pills" role="group" aria-labelledby="mood-q">
+        {MOODS.map((m) => {
+          const on = mood === m.id;
           return (
             <button
-              key={f.id}
+              key={m.id}
               type="button"
-              className={on ? 'dchip dchip--on' : 'dchip'}
+              className={on ? 'pill pill--on' : 'pill'}
               aria-pressed={on}
-              aria-label={on ? `Remove filter: ${f.label}` : `Filter: ${f.label}`}
-              onClick={() => toggle(f.id)}
+              onClick={() => pickMood(m.id)}
             >
-              {f.label}
-              {on && <Icon name="x" size={14} />}
+              {/* Selected: a tick replaces the icon, so it's never colour alone */}
+              <Icon name={on ? 'check' : m.icon} size={18} />
+              {m.label}
             </button>
           );
         })}
       </div>
+
+      {mood === 'stressed' && (
+        <div className="stressfu" role="group" aria-labelledby="goal-q">
+          <p className="stressfu__q" id="goal-q">{moodInfo?.explain}</p>
+          <div className="stressfu__opts">
+            {GOALS.map((g) => {
+              const on = goal === g.id;
+              return (
+                <button
+                  key={g.id}
+                  type="button"
+                  className={on ? 'pill pill--sub pill--on' : 'pill pill--sub'}
+                  aria-pressed={on}
+                  onClick={() => pickGoal(g.id)}
+                >
+                  <Icon name={on ? 'check' : g.icon} size={16} />
+                  {g.label}
+                </button>
+              );
+            })}
+          </div>
+        </div>
+      )}
+      {mood && mood !== 'stressed' && <p className="filters__explain" role="status">{moodInfo?.explain}</p>}
+      {mood === 'stressed' && goalInfo && <p className="filters__explain" role="status">{goalInfo.explain}</p>}
+
+      {/* ---------- Settings ---------- */}
+      <div className="emd__divider" />
+      <div className="emd__row">
+        <button
+          type="button"
+          className={panel === 'place' ? 'emd-set emd-set--open' : 'emd-set'}
+          aria-expanded={panel === 'place'}
+          aria-controls="emd-place"
+          onClick={() => openPanel('place')}
+        >
+          <Icon name="pin" size={16} />
+          {placeInfo(place).chip}
+        </button>
+        <button
+          type="button"
+          className="emd-set"
+          onClick={toggleSort}
+          aria-label={`Sort: ${sort === 'time' ? 'Time' : 'Nearest'}. Tap to sort by ${sort === 'time' ? 'nearest' : 'time'}`}
+        >
+          <Icon name="sort" size={16} />
+          {sort === 'time' ? 'Time' : 'Nearest'}
+        </button>
+        <button
+          type="button"
+          className={panel === 'filters' ? 'emd-set emd-set--open' : prefs.length ? 'emd-set emd-set--on' : 'emd-set'}
+          aria-expanded={panel === 'filters'}
+          aria-controls="emd-filters"
+          onClick={() => openPanel('filters')}
+        >
+          <Icon name="sliders" size={16} />
+          Sensory filters{prefs.length ? ` · ${prefs.length}` : ''}
+        </button>
+      </div>
+
+      {panel === 'place' && (
+        <div className="emd__panel" id="emd-place" role="group" aria-label="Where are you?">
+          {PLACES.map((p) => {
+            const on = place === p.id;
+            return (
+              <button
+                key={p.id}
+                type="button"
+                className={on ? 'emd-opt emd-opt--on' : 'emd-opt'}
+                aria-pressed={on}
+                onClick={() => pickPlace(p.id)}
+              >
+                <Icon name="pin" size={16} />
+                <span>{p.label}</span>
+                {on && <Icon name="check" size={16} className="emd-opt__check" />}
+              </button>
+            );
+          })}
+        </div>
+      )}
+
+      {panel === 'filters' && (
+        <div className="emd__panel emd__panel--chips" id="emd-filters" role="group" aria-label="Sensory filters">
+          {SENSORY.map((f) => {
+            const on = prefs.includes(f.id);
+            return (
+              <button
+                key={f.id}
+                type="button"
+                className={on ? 'dchip dchip--on' : 'dchip'}
+                aria-pressed={on}
+                onClick={() => togglePref(f.id)}
+              >
+                {on && <Icon name="check" size={14} />}
+                {f.label}
+              </button>
+            );
+          })}
+        </div>
+      )}
+
+      {prefs.length > 0 && (
+        <div className="emd__active">
+          {SENSORY.filter((f) => prefs.includes(f.id)).map((f) => (
+            <button
+              key={f.id}
+              type="button"
+              className="chip chip--remove"
+              onClick={() => togglePref(f.id)}
+              aria-label={`Remove filter: ${f.label}`}
+            >
+              {f.label}
+              <Icon name="x" size={14} />
+            </button>
+          ))}
+        </div>
+      )}
     </section>
   );
 }

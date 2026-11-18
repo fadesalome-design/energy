@@ -162,6 +162,13 @@ const paths: Record<string, ReactElement> = {
       <circle cx="12" cy="7.8" r=".9" fill="currentColor" stroke="none" />
     </>
   ),
+  // D: sort (up and down arrows)
+  sort: (
+    <>
+      <path d="M8 5v14M4.5 8.5L8 5l3.5 3.5" />
+      <path d="M16 19V5M12.5 15.5L16 19l3.5-3.5" />
+    </>
+  ),
   pin: (
     <>
       <path d="M12 21s-6.5-5.6-6.5-11a6.5 6.5 0 0113 0c0 5.4-6.5 11-6.5 11z" />

@@ -3775,3 +3775,150 @@ code {
   margin: 8px 0 4px;
   font-weight: 600;
 }
+
+/* ---------- D: one Energy Match card (style from Version E, buttons from D) ---------- */
+
+.emd {
+  --emd-tint: #eaf3f0; /* E's mint */
+  --emd-shadow: 0 1px 2px rgba(30, 42, 45, 0.05), 0 6px 20px rgba(30, 42, 45, 0.06);
+  display: grid;
+  gap: 12px;
+  margin: 0 0 8px;
+  padding: 18px 16px;
+  border-radius: 24px;
+  background: linear-gradient(180deg, var(--emd-tint) 0%, var(--surface) 85%);
+  border: 1px solid #dce8e4;
+  box-shadow: var(--emd-shadow);
+  min-width: 0;
+}
+
+.emd__name {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent-ink);
+}
+
+.emd__badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: var(--accent);
+  color: #fff;
+}
+
+.emd__divider {
+  height: 1px;
+  background: var(--line);
+  margin: 2px 0;
+}
+
+/* Settings row: 3 compact controls, same chip style and height; may wrap, never scrolls */
+.emd__row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.emd-set {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  min-height: 44px;
+  padding: 0 14px;
+  border-radius: 999px;
+  border: 1.5px solid var(--line);
+  background: var(--bg);
+  color: var(--ink);
+  font: inherit;
+  font-size: 0.875rem;
+  font-weight: 600;
+  cursor: pointer;
+  max-width: 100%;
+}
+
+.emd-set .icon {
+  color: var(--accent);
+  flex: 0 0 auto;
+}
+
+.emd-set:hover {
+  border-color: var(--accent);
+}
+
+/* Open panel or filters on: border + mint, plus the text/count, never colour alone */
+.emd-set--open,
+.emd-set--on {
+  border: 2px solid var(--accent);
+  background: var(--accent-soft);
+  color: var(--accent-ink);
+}
+
+.emd__panel {
+  display: grid;
+  gap: 6px;
+  padding: 10px;
+  border-radius: 16px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+}
+
+.emd__panel--chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.emd-opt {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 44px;
+  padding: 0 12px;
+  border-radius: 12px;
+  border: 0;
+  background: transparent;
+  color: var(--ink);
+  font: inherit;
+  font-size: 0.9375rem;
+  text-align: left;
+  cursor: pointer;
+}
+
+.emd-opt .icon {
+  color: var(--accent);
+}
+
+.emd-opt:hover {
+  background: var(--bg);
+}
+
+.emd-opt--on {
+  background: var(--accent-soft);
+  color: var(--accent-ink);
+  font-weight: 600;
+}
+
+.emd-opt__check {
+  margin-left: auto;
+}
+
+.emd__active {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.emd-hint {
+  display: block;
+  margin: 8px 0 16px;
+  font-size: 0.875rem;
+  color: var(--muted);
+}

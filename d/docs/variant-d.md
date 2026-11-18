@@ -11,13 +11,30 @@ the same.
 
 Each line below says what's on the screen and why. "Finding" means what we saw in user tests.
 
+## Change log
+
+- **2026-11-18: one Energy Match card.** Everything is set in one place. The card takes Version E's
+  style (mint gradient fading to white, soft shadow, round dark-green sparkle badge) so it stands out
+  as a new feature. The label is "ENERGY MATCH · OPTIONAL", with **no Skip** (the card is optional by
+  design and the list is always all classes). The top part is "How are you today?" with D's
+  Tired / Stressed / Energetic buttons in one row (nothing selected by default; tap again to clear),
+  then the one-line explanation. After a thin divider comes one settings row: **📍 Near me** (opens a
+  place list inside the card: Near me (Kreuzberg), Mitte, Neukölln, Friedrichshain, Prenzlauer Berg;
+  distances follow the place), **⇅ Time / Nearest** (tap to switch) and **Sensory filters · N**
+  (expands the 4 filters inside the card). One panel opens at a time, with no pop-ups. Active filters
+  show under the row as mint chips with ×. The separate "You're near" line, Sort row and filter block
+  are gone. "Tap a class to read the room before you go." sits directly under the card. · Finding:
+  the settings were spread over the screen; members want one place to say how they feel and what
+  they need.
+
 ## 1. Classes today (class list)
 
 - **Header:** date, "Classes today", "You're near: Kreuzberg", plus the plain hint "Tap a class to read
   the room before you go." · Finding: testers tapped the magnifier and hand icons as if they were
   search, so the hint has no icon.
-- **Energy Match card:** the label "Energy Match · optional" and a small **Skip** button. · Finding: it
-  has to feel optional; Skip clears the mood and folds the card to "Energy Match is off · Set my energy".
+- **One Energy Match card** (E style: mint gradient, shadow, sparkle badge) with the label "Energy Match ·
+  optional" and no Skip. Energy on top, then place / sort / sensory filters in one settings row (see
+  Change log). · Finding: everything in one place, and it has to feel optional.
 - **Tired / Stressed / Energetic** in one row. No "Normal". · Finding: "Normal" added nothing. Three
   options fit on one row on a phone.
 - **The selected option shows a tick** in place of its icon, as well as the fill. · Finding: colour
@@ -26,15 +43,15 @@ Each line below says what's on the screen and why. "Finding" means what we saw i
   goes two ways, so one "Stressed" list didn't fit everyone.
 - **Calm down turns on "Quiet & dim"** automatically. It shows as a removable chip, and undoing Calm
   down turns it off. · Finding: people who wanted to calm down also wanted soft sound and light.
-- **Filters right under the card, always visible:** Quiet & dim · Not crowded · No flashing lights ·
-  No partner work. An active chip is filled and shows "×". There's a "Clear all" link. · Finding: the
-  filters were hidden behind a button and testers missed them; 7 filters were too many.
+- **4 sensory filters inside the card:** Quiet & dim · Not crowded · No flashing lights · No partner work.
+  They expand from "Sensory filters · N"; active ones show as mint chips with ×. · Finding: 7 filters
+  were too many; the filters belong with the rest of the settings.
 - **Best match first, nothing hidden:** with Energy Match or a filter on, the line "✦ Best match first
   · N of 12" appears, then the fitting classes, then "Other classes". · Finding: hiding classes felt
   like being told what to do; sorting keeps the choice with the member.
 - **A timeline of the day:** 07:00–21:00, one class per hour, each at a fitting time of day (HIIT and
   spin before or after work, calm classes in the morning, at lunch and early evening). The default sort
-  is **Time**, and each group stays in time order. "Nearest" sorts by distance. · Finding: clusters
+  is **Time**, and each group stays in time order. "Nearest" sorts by distance from the chosen place. · Finding: clusters
   like 07:00 and 07:15 were confusing.
 - **Fit rules** (from the studio's class data): Tired = nothing harder than moderate · Energetic and
   Burn it off = a hard part · Calm down = soft music, calm room, soft light · Quiet & dim = soft music

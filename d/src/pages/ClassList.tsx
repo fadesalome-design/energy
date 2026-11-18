@@ -3,13 +3,12 @@ import { useLocation } from 'react-router-dom';
 import { byStart, classes } from '../data/classes';
 import { ClassRow } from '../components/ClassRow';
 import { Icon } from '../components/Icon';
-import { ClassFilters, FiltersD } from '../components/ClassFilters';
+import { ClassFilters } from '../components/ClassFilters';
 import { SimulateVisit, useOpenBooking } from '../components/SimulateVisit';
 import { orderD, useFilters } from '../lib/filters';
 import { useVariant } from '../lib/variant';
-import { NearLine, SortSwitch } from '../components/SortSwitch';
-import { byDistance } from '../lib/location';
-import { setSortB, type SortB } from '../lib/filters';
+import { SortSwitch } from '../components/SortSwitch';
+import { byDistance, usePlace } from '../lib/location';
 import { setSortE } from '../lib/energy';
 import { logEvent } from '../lib/events';
 import { EnergyCheckIn, SensoryFiltersE } from '../components/EnergyCheckIn';
@@ -33,6 +32,7 @@ export function ClassList() {
   const variant = useVariant();
   const openBooking = useOpenBooking();
   const { mood, goal, prefs, sort: sortB } = useFilters();
+  usePlace(); // D: Nearest follows the chosen place
   const byTime = [...classes].sort(byStart); // real times, earliest first
   // Version B: "Nearest" sorts by distance (ties keep time order). Sorting never hides.
   const sorted = variant === 'b' && sortB === 'nearest' ? byDistance(byTime) : byTime;
@@ -51,14 +51,7 @@ export function ClassList() {
       <header className={withLocation ? 'list-head list-head--plain' : 'list-head'}>
         <p className="eyebrow">Berlin · {todayLabel()}</p>
         <h1>Classes today</h1>
-        {/* Research: F-LOCATION (location stops 8/22 from booking). One fixed demo location. */}
-        {withLocation && <NearLine />}
-        {/* Playful copy on the app name. Research: F-UNSURE (tell people the clue is one tap away) */}
-        {/* B and E: plain helper text, no icon. Testers read the magnifier (and then the hand) as a
-            button and tapped it. Version A keeps its original header. */}
-        <p className="list-hint">
-          {!withLocation && <><Icon name="clue" size={18} />{' '}</>}Tap a class to read the room before you go.
-        </p>
+        {/* D: place, sort and filters all live in the Energy Match card below */}
       </header>
 
       {/* Research: F-NOT-TODAY ("not for me today" is about today, so we confirm kindly without judging) */}
@@ -71,7 +64,10 @@ export function ClassList() {
       {/* Tester link: a booked class waiting for its "visit" */}
       {openBooking && <SimulateVisit booking={openBooking} compact />}
 
-      {variant === 'b' && <><ClassFilters /><FiltersD /></>}
+      {variant === 'b' && <ClassFilters />}
+
+      {/* D: helper line directly under the card, above the list (plain text, not a button) */}
+      <p className="list-hint emd-hint">Tap a class to read the room before you go.</p>
       {variant === 'e' && (
         <>
           <EnergyCheckIn />
@@ -79,13 +75,6 @@ export function ClassList() {
         </>
       )}
 
-      {variant === 'b' && (
-        <SortSwitch<SortB>
-          options={[{ id: 'time', label: 'Time' }, { id: 'nearest', label: 'Nearest' }]}
-          value={sortB}
-          onChange={(v) => { setSortB(v); logEvent('sort_changed', { data: { sort: v } }); }}
-        />
-      )}
       {variant === 'e' && (
         <SortSwitch<'match' | 'nearest'>
           options={[{ id: 'match', label: energy.energy ? 'Energy match' : 'Time' }, { id: 'nearest', label: 'Nearest' }]}
