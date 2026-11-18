@@ -4,7 +4,7 @@ import { Icon } from '../components/Icon';
 import { useFeedbackState } from '../lib/feedback';
 import { memberInitial, memberName } from '../lib/persona';
 import {
-  CHOICE_LABEL, claim, isClaimed, level, MAX_STAMPS, progressLine, REWARDS, useClaims, type Choice, type Reward,
+  CHOICE_DESCRIPTION, CHOICE_LABEL, claim, isClaimed, level, MAX_STAMPS, progressLine, REWARDS, useClaims, type Choice, type Reward,
 } from '../lib/rewards';
 
 /**
@@ -64,12 +64,12 @@ export function Profile({ panel = false }: { panel?: boolean }) {
               <span key={r.id} className={stamps >= r.at ? 'pbar__mark pbar__mark--on' : 'pbar__mark'} style={{ left: `${r.at / MAX_STAMPS * 100}%` }}>
                 <span className="pbar__dot"><Icon name={stamps >= r.at ? 'check' : r.icon} size={14} /></span>
                 <span className="pbar__at">{r.at}</span>
-                <span className="pbar__name">{r.id === 'choice' ? 'Friend or massage' : r.id === 'socks' ? 'Socks' : 'Hoodie'}</span>
+                <span className="pbar__name">{r.id === 'choice' ? 'Guest pass or massage' : r.id === 'socks' ? 'Socks' : 'Hoodie'}</span>
               </span>
             ))}
           </div>
         </div>
-        <p className="sr-only">{stamps} of {MAX_STAMPS} stamps. Rewards at 10 (socks), 20 (invite a friend or a massage) and 30 (hoodie).</p>
+        <p className="sr-only">{stamps} of {MAX_STAMPS} stamps. Rewards at 10 (socks), 20 (guest pass or massage) and 30 (hoodie).</p>
       </section>
 
       {/* Your rewards */}
@@ -97,10 +97,11 @@ function RewardRow({ r, stamps, claimed, chosen }: { r: Reward; stamps: number; 
       <span className="reward-row__icon"><Icon name={r.icon} size={22} /></span>
       <span className="reward-row__main">
         <span className="reward-row__title">{r.title}</span>
+        {r.id === 'choice' && <span className="reward-row__at">{CHOICE_DESCRIPTION}</span>}
         <span className="reward-row__at">At {r.at} stamps</span>
         {claimed ? (
           <span className="reward-row__status reward-row__status--done">
-            <Icon name="check" size={14} /> Claimed{r.id === 'choice' && chosen ? ` · ${CHOICE_LABEL[chosen]}` : ''}
+            Claimed ✓{r.id === 'choice' && chosen ? ` · ${CHOICE_LABEL[chosen]}` : ''}
           </span>
         ) : ready ? (
           <span className="reward-row__status reward-row__status--ready">Ready to claim</span>
@@ -108,13 +109,13 @@ function RewardRow({ r, stamps, claimed, chosen }: { r: Reward; stamps: number; 
           <span className="reward-row__status">{left === 1 ? '1 stamp to go' : `${left} stamps to go`}</span>
         )}
 
-        {/* At 20 the member picks ONE: friend or massage, then claims (demo only) */}
+        {/* At 20 the member picks ONE: free class for a friend or free massage, then claims (demo only) */}
         {ready && r.id === 'choice' && (
           <span className="reward-row__choice" role="group" aria-label="Choose one">
             {(['friend', 'massage'] as Choice[]).map((c) => (
               <button key={c} type="button" className={pick === c ? 'pill pill--sub pill--on' : 'pill pill--sub'} aria-pressed={pick === c} onClick={() => setPick(c)}>
                 <Icon name={pick === c ? 'check' : c === 'friend' ? 'partner' : 'hand'} size={16} />
-                {c === 'friend' ? 'Invite a friend' : 'Massage'}
+                {CHOICE_LABEL[c]}
               </button>
             ))}
           </span>

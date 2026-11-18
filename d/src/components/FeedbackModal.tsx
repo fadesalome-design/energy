@@ -8,7 +8,7 @@ import {
 import { addRatingV4, CATEGORY_LABEL, pickQuestionsV4, QUESTIONS } from '../lib/energy';
 import { logEvent } from '../lib/events';
 import { Icon } from './Icon';
-import { counterLabel, level, progressLine, rewardReachedAt } from '../lib/rewards';
+import { CHOICE_DESCRIPTION, counterLabel, level, progressLine, rewardReachedAt } from '../lib/rewards';
 import { VoiceRecorder } from './VoiceRecorder';
 
 /**
@@ -439,7 +439,7 @@ export function FeedbackModal({ booking, onClose, onSeeRewards, version = 'b' }:
 /**
  * "Stamp collected" (D rules): the 10-circle card of the current level (1–10, 11–20, 21–30) and
  * the same "4 of 10. 6 more for your socks." line as the profile. At 10 / 20 / 30 the card turns
- * into the reward ticket (socks / friend or massage / hoodie). "See your rewards" opens the profile.
+ * into the reward ticket (socks / guest pass or massage / hoodie). "See your rewards" opens the profile.
  */
 export function StampDone({
   stamps, className, headingRef, onClose, onSeeRewards,
@@ -471,7 +471,7 @@ export function StampDone({
     const ticket = reached.id === 'socks'
       ? { title: 'Socks', sub: 'Pick them up at any studio' }
       : reached.id === 'choice'
-        ? { title: 'Invite a friend or a massage', sub: 'Choose one in your rewards' }
+        ? { title: 'Guest pass or massage', sub: CHOICE_DESCRIPTION }
         : { title: 'Urban Sports Clue hoodie', sub: 'Pick it up at any studio' };
     return (
       <div className="fb__screen fb__screen--done fb__screen--reward">

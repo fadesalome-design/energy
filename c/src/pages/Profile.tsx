@@ -6,7 +6,7 @@ import { Icon } from '../components/Icon';
 import { useFeedbackState } from '../lib/feedback';
 import { memberInitial, memberName } from '../lib/persona';
 import {
-  CHOICE_LABEL, claim, MAX_STAMPS, progressLine, REWARDS, useClaims, type Choice,
+  CHOICE_DESCRIPTION, CHOICE_LABEL, claim, MAX_STAMPS, progressLine, REWARDS, useClaims, type Choice,
 } from '../lib/rewards';
 
 /**
@@ -63,12 +63,12 @@ export function Profile({ panel = false }: { panel?: boolean }) {
               <span key={r.id} className={stamps >= r.at ? 'pbar__mark pbar__mark--on' : 'pbar__mark'} style={{ left: `${r.at / MAX_STAMPS * 100}%` }}>
                 <span className="pbar__dot"><Icon name={stamps >= r.at ? 'check' : r.icon} size={14} /></span>
                 <span className="pbar__at">{r.at}</span>
-                <span className="pbar__name">{r.id === 'choice' ? 'Friend or massage' : r.id === 'socks' ? 'Socks' : 'Hoodie'}</span>
+                <span className="pbar__name">{r.id === 'choice' ? 'Guest pass or massage' : r.id === 'socks' ? 'Socks' : 'Hoodie'}</span>
               </span>
             ))}
           </div>
         </div>
-        <p className="sr-only">{stamps} of {MAX_STAMPS} stamps. Rewards at 10 (socks), 20 (invite a friend or a massage) and 30 (hoodie).</p>
+        <p className="sr-only">{stamps} of {MAX_STAMPS} stamps. Rewards at 10 (socks), 20 (guest pass or massage) and 30 (hoodie).</p>
       </section>
 
       {/* Your rewards */}
@@ -76,7 +76,7 @@ export function Profile({ panel = false }: { panel?: boolean }) {
         <h2 id="rewards-title" className="pcard__title">Your rewards</h2>
         {/* C: same soft medals as "Stamp collected" */}
         <RewardMedals stamps={stamps} claims={claims} onClaim={(id) => (id === 'choice' ? setChoosing(true) : claim(id))} />
-        {/* the Claim pill on "Friend or massage" leads here: pick one, then Claim */}
+        {/* the Claim pill on "Guest pass or massage" leads here: pick one, then Claim */}
         {stamps >= 20 && !claims.choiceClaimed && <ChoiceRow focus={choosing} />}
       </section>
 
@@ -88,19 +88,20 @@ export function Profile({ panel = false }: { panel?: boolean }) {
   );
 }
 
-/** At 20 stamps: pick ONE (invite a friend OR a massage), then Claim (demo only). */
+/** At 20 stamps: pick ONE (free class for a friend OR free massage), then Claim (demo only). */
 function ChoiceRow({ focus }: { focus: boolean }) {
   const [pick, setPick] = useState<Choice | null>(null);
   const ref = useRef<HTMLDivElement>(null);
   useEffect(() => { if (focus) ref.current?.scrollIntoView({ block: 'center' }); }, [focus]);
   return (
-    <div ref={ref} className="choice-row" role="group" aria-label="Friend or massage: choose one">
+    <div ref={ref} className="choice-row" role="group" aria-label="Guest pass or massage: choose one">
       <p className="choice-row__q">Your 20-stamp reward: choose one</p>
+      <p className="muted small">{CHOICE_DESCRIPTION}</p>
       <div className="choice-row__opts">
         {(['friend', 'massage'] as Choice[]).map((c) => (
           <button key={c} type="button" className={pick === c ? 'apill apill--on' : 'apill'} aria-pressed={pick === c} onClick={() => setPick(c)}>
             <Icon name={pick === c ? 'check' : c === 'friend' ? 'partner' : 'hand'} size={16} />
-            {c === 'friend' ? 'Invite a friend' : 'Massage'}
+            {CHOICE_LABEL[c]}
           </button>
         ))}
       </div>

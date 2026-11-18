@@ -3,7 +3,7 @@
  *
  * Flow: member books → scans the studio's QR code on arrival (check-in) → class ends →
  * next time they open the app, a full-screen modal asks 3 questions about the ROOM.
- * Answering earns a stamp. D's rewards (lib/rewards.ts): 10 socks · 20 friend or massage · 30 hoodie.
+ * Answering earns a stamp. D's rewards (lib/rewards.ts): 10 socks · 20 guest pass or massage · 30 hoodie.
  *
  * Rules (agreed with product):
  * - Only the most recent attended class is asked about. Older ones are never asked.

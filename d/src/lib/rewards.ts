@@ -1,6 +1,6 @@
 /**
  * SANDBOX D: stamp rewards. One stamp per class rating (see lib/feedback.ts).
- *   10 stamps: socks · 20 stamps: invite a friend OR a massage (the member picks one)
+ *   10 stamps: socks · 20 stamps: guest pass OR massage (a free class for a friend, or a free massage)
  *   30 stamps: an Urban Sports Clue hoodie (the app's own name, no real logo)
  * The header counter, the profile and "Stamp collected" all read the same total and these rules.
  * Claiming is a demo only (stored in D's browser storage; the tester link resets it).
@@ -15,13 +15,15 @@ export interface Reward { id: RewardId; at: number; title: string; short: string
 
 export const REWARDS: Reward[] = [
   { id: 'socks', at: 10, title: 'Socks', short: 'your socks', icon: 'sock' },
-  { id: 'choice', at: 20, title: 'Invite a friend or a massage', short: 'a friend invite or a massage', icon: 'gift' },
+  { id: 'choice', at: 20, title: 'Guest pass or massage', short: 'a guest pass or massage', icon: 'gift' },
   { id: 'hoodie', at: 30, title: 'Urban Sports Clue hoodie', short: 'your hoodie', icon: 'hoodie' },
 ];
 export const MAX_STAMPS = 30;
 export const PER_LEVEL = 10;
 
-export const CHOICE_LABEL: Record<Choice, string> = { friend: 'Invite a friend to a class', massage: 'A massage' };
+export const CHOICE_LABEL: Record<Choice, string> = { friend: 'Free class for a friend', massage: 'Free massage' };
+/** Short description of the 20-stamp reward (shown where reward descriptions are shown) */
+export const CHOICE_DESCRIPTION = 'Bring a friend to a class, or enjoy a free massage.';
 
 /** The 10-stamp level the member is on: 1–10, 11–20 or 21–30 (stays on 21–30 after 30). */
 export function level(stamps: number) {

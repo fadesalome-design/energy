@@ -3,13 +3,13 @@ import { CHOICE_LABEL, isClaimed, nextReward, REWARDS, type Choice, type RewardI
 
 /**
  * Version C: "Your rewards" as 3 soft medals in one row (shared by "Stamp collected" and the
- * profile). Socks (turquoise) · Friend or massage (violet) · Hoodie (green). The next reward is
+ * profile). Socks (turquoise) · Guest pass or massage (violet) · Hoodie (green). The next reward is
  * fully visible with a small progress bar; later ones are dimmed (only the medal, never the
  * text, so the text keeps its contrast). Reached: "Ready to claim" + a small Claim pill.
  */
 interface Claims { socks?: boolean; choice?: Choice; choiceClaimed?: boolean; hoodie?: boolean }
 
-const NAME: Record<RewardId, string> = { socks: 'Socks', choice: 'Friend or massage', hoodie: 'Hoodie' };
+const NAME: Record<RewardId, string> = { socks: 'Socks', choice: 'Guest pass or massage', hoodie: 'Hoodie' };
 
 export function RewardMedals({ stamps, claims, onClaim }: { stamps: number; claims: Claims; onClaim: (id: RewardId) => void }) {
   const next = nextReward(stamps);
@@ -28,7 +28,7 @@ export function RewardMedals({ stamps, claims, onClaim }: { stamps: number; clai
             <span className="medal__at">{r.at}</span>
             <span className="medal__name">{NAME[r.id]}</span>
             {claimed ? (
-              <span className="medal__status">Claimed ✓{r.id === 'choice' && claims.choice ? <><br />{CHOICE_LABEL[claims.choice]}</> : ''}</span>
+              <span className="medal__status">Claimed ✓{r.id === 'choice' && claims.choice ? ` · ${CHOICE_LABEL[claims.choice]}` : ''}</span>
             ) : ready ? (
               <>
                 <span className="medal__status medal__status--ready">Ready to claim</span>
