@@ -3,7 +3,7 @@
  *
  * Flow: member books → scans the studio's QR code on arrival (check-in) → class ends →
  * next time they open the app, a full-screen modal asks 3 questions about the ROOM.
- * Answering earns a stamp; 10 stamps = a freebie (or keep collecting).
+ * Answering earns a stamp. D's rewards (lib/rewards.ts): 10 socks · 20 friend or massage · 30 hoodie.
  *
  * Rules (agreed with product):
  * - Only the most recent attended class is asked about. Older ones are never asked.
@@ -329,7 +329,8 @@ export function devSetStamps(n: number) {
 }
 
 export function devResetFeedback() {
-  [BOOKINGS_KEY, STAMPS_KEY, OFFSET_KEY, SUBMISSIONS_KEY].forEach(remove);
+  // D: reward claims ('rtrD.rewards') reset together with the stamps
+  [BOOKINGS_KEY, STAMPS_KEY, OFFSET_KEY, SUBMISSIONS_KEY, 'rtrD.rewards'].forEach(remove);
   dismissedThisLaunch = false;
   emit();
 }

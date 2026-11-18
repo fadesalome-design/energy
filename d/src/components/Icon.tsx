@@ -179,6 +179,26 @@ const paths: Record<string, ReactElement> = {
       <path d="M8 14c-1-1.5 1-2.5 0-4M12 14c-1-1.5 1-2.5 0-4M16 14c-1-1.5 1-2.5 0-4" />
     </>
   ),
+  // D rewards: socks, a gift (friend or massage), a hoodie
+  sock: (
+    <>
+      <path d="M9 3h6v9.5l3.6 2.7a2.8 2.8 0 01-1.7 5H11a4 4 0 01-4-4V3h2z" />
+      <path d="M8 7h7" />
+    </>
+  ),
+  gift: (
+    <>
+      <rect x="4" y="9" width="16" height="11" rx="1.5" />
+      <path d="M3 9h18M12 9v11M12 9c-1.5-3.5-5.5-3.5-5.5-1S10 9 12 9zM12 9c1.5-3.5 5.5-3.5 5.5-1S14 9 12 9z" />
+    </>
+  ),
+  hoodie: (
+    <>
+      <path d="M9 4c0 2 1.4 3.5 3 3.5S15 6 15 4" />
+      <path d="M9 4L4.5 7 3 14l3 1V20h12v-5l3-1-1.5-7L15 4" />
+      <path d="M10.5 12h3" />
+    </>
+  ),
   // D: sort (up and down arrows)
   sort: (
     <>

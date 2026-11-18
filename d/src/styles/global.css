@@ -4702,3 +4702,270 @@ code {
 .dpanel .actions--panel .actions__inner {
   max-width: none;
 }
+
+/* ======================================================================
+   D: avatar, profile, stamps and rewards (same look as the rest of D)
+   ====================================================================== */
+
+.avatar {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--accent);
+  color: #fff;
+  font-weight: 700;
+  font-size: 1rem;
+  flex: 0 0 auto;
+}
+
+/* Header avatar: 36 px circle, 44 px tap target */
+.avatar--btn {
+  position: relative;
+  text-decoration: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.avatar--btn::after {
+  content: '';
+  position: absolute;
+  inset: -4px;
+}
+
+.avatar--btn:hover {
+  background: var(--accent-ink);
+}
+
+.avatar--lg {
+  width: 56px;
+  height: 56px;
+  font-size: 1.5rem;
+}
+
+.profile {
+  display: grid;
+  gap: 16px;
+  align-content: start;
+}
+
+.profile--panel {
+  padding: 24px 24px 32px;
+}
+
+.profile__head {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 4px 0;
+}
+
+.profile__head h1 {
+  margin: 0;
+}
+
+.profile--panel .profile__head {
+  padding-right: 56px; /* room for the panel's × */
+}
+
+/* White cards with soft shadow, like the Energy Match card */
+.pcard {
+  display: grid;
+  gap: 12px;
+  padding: 16px;
+  border-radius: 20px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  box-shadow: 0 1px 2px rgba(30, 42, 45, 0.05), 0 6px 20px rgba(30, 42, 45, 0.06);
+}
+
+.pcard--plain {
+  box-shadow: none;
+}
+
+.pcard__title {
+  margin: 0;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent-ink);
+}
+
+.pcard__line {
+  margin: 0;
+}
+
+.pcard p {
+  margin: 0;
+}
+
+/* Progress 0–30 with milestones at 10 / 20 / 30 */
+.pbar {
+  padding: 8px 10px 0;
+}
+
+.pbar__track {
+  position: relative;
+  height: 8px;
+  border-radius: 999px;
+  background: var(--line);
+}
+
+.pbar__fill {
+  position: absolute;
+  inset: 0 auto 0 0;
+  border-radius: 999px;
+  background: var(--accent);
+}
+
+.pbar__now {
+  position: absolute;
+  top: 50%;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: #fff;
+  border: 3px solid var(--accent);
+  transform: translate(-50%, -50%);
+  box-sizing: border-box;
+}
+
+.pbar__marks {
+  position: relative;
+  height: 64px;
+}
+
+.pbar__mark {
+  position: absolute;
+  top: -20px;
+  display: grid;
+  justify-items: center;
+  gap: 2px;
+  transform: translateX(-50%);
+  text-align: center;
+  font-size: 0.75rem;
+  color: var(--muted);
+  width: 76px;
+}
+
+.pbar__mark:last-child {
+  transform: translateX(-80%);
+}
+
+.pbar__dot {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: var(--surface);
+  border: 1.5px solid var(--line);
+  color: var(--accent);
+}
+
+.pbar__mark--on .pbar__dot {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #fff;
+}
+
+.pbar__at {
+  font-weight: 700;
+  color: var(--ink);
+}
+
+.pbar__name {
+  line-height: 1.2;
+}
+
+/* Rewards list */
+.rewards {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 10px;
+}
+
+.reward-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 12px;
+  border-radius: 16px;
+  border: 1px solid var(--line);
+  background: var(--surface);
+}
+
+.reward-row--ready {
+  border-color: var(--accent);
+  background: var(--accent-soft);
+}
+
+.reward-row__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+  background: var(--bg);
+  color: var(--accent);
+  flex: 0 0 auto;
+}
+
+.reward-row__main {
+  display: grid;
+  gap: 2px;
+  flex: 1;
+  min-width: 0;
+}
+
+.reward-row__title {
+  font-weight: 650;
+}
+
+.reward-row__at {
+  font-size: 0.8125rem;
+  color: var(--muted);
+}
+
+.reward-row__status {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 0.875rem;
+  color: var(--muted);
+}
+
+.reward-row__status--ready {
+  color: var(--accent-ink);
+  font-weight: 650;
+}
+
+.reward-row__status--done {
+  color: var(--accent-ink);
+}
+
+.reward-row__choice {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 8px;
+}
+
+.reward-row__claim {
+  align-self: center;
+  min-height: 44px;
+  padding: 0 16px;
+}
+
+/* "See your rewards" on the Stamp collected screen */
+.fb__seerewards {
+  justify-self: center;
+  min-height: 44px;
+  font-weight: 600;
+}

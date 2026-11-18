@@ -7,6 +7,7 @@ import {
   type Mood, type SensoryId, type StressGoal,
 } from '../lib/filters';
 import { PLACES, placeInfo, setPlace, usePlace, type PlaceId } from '../lib/location';
+import { memberName } from '../lib/persona';
 import { Icon } from './Icon';
 
 /**
@@ -65,7 +66,8 @@ export function ClassFilters() {
       </p>
 
       {/* ---------- Energy ---------- */}
-      <p className="filters__q" id="mood-q">How are you today?</p>
+      {/* D: personal greeting (name from ?user=, default Anna) in place of the question */}
+      <p className="filters__q" id="mood-q">Hi {memberName}, how are you feeling today?</p>
       <div className="pills" role="group" aria-labelledby="mood-q">
         {MOODS.map((m) => {
           const on = mood === m.id;

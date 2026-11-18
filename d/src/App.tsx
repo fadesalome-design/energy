@@ -13,6 +13,9 @@ import { StampCounter } from './components/StampCounter';
 import { pendingFeedback, shouldShowFeedback, useFeedbackState, type Booking } from './lib/feedback';
 import { useDesktop } from './lib/desktop';
 import { DetailPanel } from './components/DetailPanel';
+import { SidePanel } from './components/SidePanel';
+import { ProfileButton } from './components/ProfileButton';
+import { Profile } from './pages/Profile';
 import { Icon } from './components/Icon';
 import { placeName, usePlace } from './lib/location';
 
@@ -55,6 +58,8 @@ export default function App() {
             {/* D desktop: the current place in the top bar */}
             {desktop && <span className="appbar__place"><Icon name="pin" size={18} />{placeName()}</span>}
             <StampCounter />
+            {/* D: round avatar → profile with stamps and rewards */}
+            <ProfileButton />
           </span>
         )}
       </header>
@@ -63,6 +68,8 @@ export default function App() {
         {/* D desktop: the class opens as a side panel over the list */}
         <Route path="/class/:id" element={desktop ? <><ClassList /><DetailPanel /></> : <ClassDetail />} />
         <Route path="/class/:id/booked" element={<Booked />} />
+        {/* D: profile. Desktop: the same right side panel as the class detail; mobile: full screen */}
+        <Route path="/profile" element={desktop ? <><ClassList /><SidePanel label="Profile"><Profile panel /></SidePanel></> : <Profile />} />
         <Route path="/debug" element={<Debug />} />
         <Route path="/admin" element={<AdminPicker />} />
         <Route path="/admin/:studioId" element={<AdminStudio />} />
@@ -78,6 +85,10 @@ export default function App() {
           onClose={() => {
             setActive(null);
             navigate('/', { replace: true });
+          }}
+          onSeeRewards={() => {
+            setActive(null);
+            navigate('/profile', { replace: true });
           }}
         />
       )}

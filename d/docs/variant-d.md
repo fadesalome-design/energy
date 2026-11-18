@@ -13,6 +13,28 @@ Each line below says what's on the screen and why. "Finding" means what we saw i
 
 ## Change log
 
+- **2026-11-18: personal greeting, member profile and new stamp rewards.**
+  - **Name:** from `?user=` (e.g. `?user=Jonas`, works with `?frame=phone`), default "Anna".
+  - **Greeting:** the Energy Match question now reads "Hi Anna, how are you feeling today?" (same
+    place and style).
+  - **Rewards** (`d/src/lib/rewards.ts`; one stamp per class rating): 10 stamps = socks · 20 = invite
+    a friend OR a massage (the member picks one) · 30 = Urban Sports Clue hoodie. Demo start value
+    is unchanged (0; the tester link resets stamps and claims).
+  - **Profile** (`#/profile`): opened from the round avatar (initial) next to the stamp counter. On
+    desktop it uses the same right side panel as the class detail (shared `SidePanel`); on mobile
+    and `?frame=phone` it's full screen with a back arrow. Contents:
+    - "Hi Anna" with the avatar.
+    - "Your stamps": the 10 circles of the current level (1–10 / 11–20 / 21–30) and "4 of 10. 6
+      more for your socks."
+    - A 0–30 progress bar with markers at 10 / 20 / 30.
+    - "Your rewards": status "N stamps to go" / "Ready to claim" / "Claimed"; at 20, pick Friend or
+      Massage, then Claim (demo).
+    - "How to collect stamps".
+  - **Stamp collected:** the same screen and badges with the new rules. At 10 / 20 / 30 the ticket
+    shows the reward, plus a "See your rewards" link to the profile.
+  - The header counter ("4/10", "14/20", "24/30"), the profile and Stamp collected always show the
+    same count.
+
 - **2026-11-18: desktop class side panel fixed.** Cause: the CSS that kept the panel's Book bar inside
   the panel was accidentally deleted together with the old phone-frame styles (commit `b22832b`), so
   the bar was centred on the window again (half outside the panel, "ok" / "ne today") and the close
@@ -244,7 +266,8 @@ Each line below says what's on the screen and why. "Finding" means what we saw i
 - **"Anything else?"** (B's original): "Did the class match its 'What to expect' card?" Yes / Partly
   / No, "Tell us more" (Write / Record), the note on who reads it, and **"Send and collect my
   stamp"**. All answers are saved in one record.
-- **Stamp collected**; every 10th stamp shows the free-class reward.
+- **Stamp collected** with the reward progress (10 socks · 20 friend or massage · 30 hoodie) and
+  "See your rewards", which opens the profile.
 
 ## Not in D
 

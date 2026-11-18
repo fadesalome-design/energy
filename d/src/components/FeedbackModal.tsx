@@ -2,12 +2,13 @@ import { useEffect, useMemo, useRef, useState } from 'react';
 import { createPortal } from 'react-dom';
 import { endTime, getClass, getStudio } from '../data/classes';
 import {
-  closeBooking, dismissFeedback, getStamps, now, pickQuestions, STAMPS_FOR_REWARD, submitFeedback,
+  closeBooking, dismissFeedback, getStamps, now, pickQuestions, submitFeedback,
   type Booking, type Level, type MatchAnswer, type Question,
 } from '../lib/feedback';
 import { addRatingV4, CATEGORY_LABEL, pickQuestionsV4, QUESTIONS } from '../lib/energy';
 import { logEvent } from '../lib/events';
 import { Icon } from './Icon';
+import { counterLabel, level, progressLine, rewardReachedAt } from '../lib/rewards';
 import { VoiceRecorder } from './VoiceRecorder';
 
 /**
@@ -85,7 +86,7 @@ function energyQuestions(c: Parameters<typeof pickQuestionsV4>[0]): Question[] {
   }));
 }
 
-export function FeedbackModal({ booking, onClose, version = 'b' }: { booking: Booking; onClose: () => void; version?: 'b' | 'e' }) {
+export function FeedbackModal({ booking, onClose, onSeeRewards, version = 'b' }: { booking: Booking; onClose: () => void; onSeeRewards?: () => void; version?: 'b' | 'e' }) {
   const c = getClass(booking.classId)!;
   const studio = getStudio(c.studioId);
   const isE = version === 'e';
@@ -296,7 +297,7 @@ export function FeedbackModal({ booking, onClose, version = 'b' }: { booking: Bo
               {qIndex === 0 && (
                 <p className="fb__intro">
                   3 quick questions about the room, not about you. Anonymous, and you'll collect
-                  a stamp <span className="muted">({stamps} of {STAMPS_FOR_REWARD})</span>.
+                  a stamp <span className="muted">({counterLabel(stamps).replace('/', ' of ')})</span>.
                 </p>
               )}
 
@@ -427,7 +428,7 @@ export function FeedbackModal({ booking, onClose, version = 'b' }: { booking: Bo
         )}
 
         {/* ---------- Done: stamp, or the free-class reward on every 10th stamp ---------- */}
-        {step === 'done' && <StampDone stamps={stamps} className={c.name} headingRef={headingRef} onClose={close} />}
+        {step === 'done' && <StampDone stamps={stamps} className={c.name} headingRef={headingRef} onClose={close} onSeeRewards={onSeeRewards} />}
       </div>
     </div>
   );
@@ -435,76 +436,86 @@ export function FeedbackModal({ booking, onClose, version = 'b' }: { booking: Bo
   return createPortal(body, document.body);
 }
 
-/** Shared by every version: "Stamp collected", or the free-class reward on every 10th stamp. */
+/**
+ * "Stamp collected" (D rules): the 10-circle card of the current level (1–10, 11–20, 21–30) and
+ * the same "4 of 10. 6 more for your socks." line as the profile. At 10 / 20 / 30 the card turns
+ * into the reward ticket (socks / friend or massage / hoodie). "See your rewards" opens the profile.
+ */
 export function StampDone({
-  stamps, className, headingRef, onClose,
-}: { stamps: number; className: string; headingRef: React.RefObject<HTMLHeadingElement>; onClose: () => void }) {
+  stamps, className, headingRef, onClose, onSeeRewards,
+}: { stamps: number; className: string; headingRef: React.RefObject<HTMLHeadingElement>; onClose: () => void; onSeeRewards?: () => void }) {
   const close = onClose;
-  const c = { name: className };
-      const reward = stamps > 0 && stamps % STAMPS_FOR_REWARD === 0;
-      const onCard = reward ? STAMPS_FOR_REWARD : stamps % STAMPS_FOR_REWARD;
-      const card = (
-        <div className="stampcard" role="img" aria-label={`${onCard} of ${STAMPS_FOR_REWARD} stamps`}>
-          {Array.from({ length: STAMPS_FOR_REWARD }, (_, i) => {
-            const filled = i < onCard;
-            const isNew = filled && i === onCard - 1;
-            return (
-              <span key={i} className={`stampcard__slot${filled ? ' stampcard__slot--on' : ''}${isNew ? ' stampcard__slot--new' : ''}`}>
-                {filled ? <Icon name="stamp" size={26} /> : i + 1}
-              </span>
-            );
-          })}
-        </div>
-      );
-
-      if (reward) {
+  const lvl = level(stamps);
+  const reached = rewardReachedAt(stamps);
+  const line = progressLine(stamps);
+  const onCard = Math.min(Math.max(stamps - lvl.from + 1, 0), 10);
+  const card = (
+    <div className="stampcard" role="img" aria-label={`${onCard} of 10 stamps on this card (${lvl.from}–${lvl.to})`}>
+      {Array.from({ length: 10 }, (_, i) => {
+        const n = lvl.from + i;
+        const filled = n <= stamps;
+        const isNew = n === stamps;
         return (
-          <div className="fb__screen fb__screen--done fb__screen--reward">
-            <Confetti />
-            <h2 id="fb-title" tabIndex={-1} ref={headingRef} className="fb__title">
-              You've earned a free class!
-            </h2>
-            <p className="fb__lead">That was your 10th stamp. Thanks for helping others read the room.</p>
-
-            {/* The full stamp card turns into a ticket (pure CSS sequence, runs once) */}
-            <div className="reward">
-              <div className="reward__card" aria-hidden="true">{card}</div>
-              <div className="ticket">
-                <span className="ticket__shine" aria-hidden="true" />
-                <span className="ticket__icon" aria-hidden="true"><Icon name="stamp" size={40} /></span>
-                <span className="ticket__body">
-                  <span className="ticket__eyebrow">Reward unlocked</span>
-                  <span className="ticket__title">1 free class</span>
-                  <span className="ticket__sub">Any class, any studio</span>
-                </span>
-              </div>
-            </div>
-
-            <p className="fb__reward">
-              Use it on your next booking, or keep collecting stamps for bigger rewards.
-            </p>
-
-            <div className="fb__actions">
-              <button type="button" className="btn btn--primary btn--block" onClick={close}>Great, thanks</button>
-            </div>
-          </div>
+          <span key={n} className={`stampcard__slot${filled ? ' stampcard__slot--on' : ''}${isNew ? ' stampcard__slot--new' : ''}`}>
+            {filled ? <Icon name="stamp" size={26} /> : n}
+          </span>
         );
-      }
+      })}
+    </div>
+  );
+  const seeRewards = onSeeRewards && (
+    <button type="button" className="linkbtn fb__seerewards" onClick={onSeeRewards}>See your rewards</button>
+  );
 
-      const left = STAMPS_FOR_REWARD - onCard;
-      return (
-        <div className="fb__screen fb__screen--done">
-          <span className="fb__stamp-new" aria-hidden="true"><Icon name="stamp" size={56} /></span>
-          <h2 id="fb-title" tabIndex={-1} ref={headingRef} className="fb__title">Stamp collected</h2>
-          <p className="fb__lead">Thanks! Your answers will help update the card for {c.name}.</p>
-          {card}
-          <p className="fb__reward">
-            <strong>{onCard} of {STAMPS_FOR_REWARD}.</strong>{' '}
-            {left === 1 ? '1 more for a free class.' : `${left} more for a free class.`}
-          </p>
-          <div className="fb__actions">
-            <button type="button" className="btn btn--primary btn--block" onClick={close}>Done</button>
+  if (reached) {
+    const ticket = reached.id === 'socks'
+      ? { title: 'Socks', sub: 'Pick them up at any studio' }
+      : reached.id === 'choice'
+        ? { title: 'Invite a friend or a massage', sub: 'Choose one in your rewards' }
+        : { title: 'Urban Sports Clue hoodie', sub: 'Pick it up at any studio' };
+    return (
+      <div className="fb__screen fb__screen--done fb__screen--reward">
+        <Confetti />
+        <h2 id="fb-title" tabIndex={-1} ref={headingRef} className="fb__title">
+          {reached.id === 'choice' ? 'You\'ve earned a reward!' : `You've earned ${reached.id === 'socks' ? 'socks' : 'a hoodie'}!`}
+        </h2>
+        <p className="fb__lead">That was your {reached.at}th stamp. Thanks for helping others read the room.</p>
+
+        {/* The full stamp card turns into a ticket (pure CSS sequence, runs once) */}
+        <div className="reward">
+          <div className="reward__card" aria-hidden="true">{card}</div>
+          <div className="ticket">
+            <span className="ticket__shine" aria-hidden="true" />
+            <span className="ticket__icon" aria-hidden="true"><Icon name={reached.icon} size={40} /></span>
+            <span className="ticket__body">
+              <span className="ticket__eyebrow">Reward unlocked</span>
+              <span className="ticket__title">{ticket.title}</span>
+              <span className="ticket__sub">{ticket.sub}</span>
+            </span>
           </div>
         </div>
-      );
+
+        <p className="fb__reward"><strong>{line.count}</strong> {line.rest}</p>
+        {seeRewards}
+
+        <div className="fb__actions">
+          <button type="button" className="btn btn--primary btn--block" onClick={close}>Great, thanks</button>
+        </div>
+      </div>
+    );
+  }
+
+  return (
+    <div className="fb__screen fb__screen--done">
+      <span className="fb__stamp-new" aria-hidden="true"><Icon name="stamp" size={56} /></span>
+      <h2 id="fb-title" tabIndex={-1} ref={headingRef} className="fb__title">Stamp collected</h2>
+      <p className="fb__lead">Thanks! Your answers will help update the card for {className}.</p>
+      {card}
+      <p className="fb__reward"><strong>{line.count}</strong> {line.rest}</p>
+      {seeRewards}
+      <div className="fb__actions">
+        <button type="button" className="btn btn--primary btn--block" onClick={close}>Done</button>
+      </div>
+    </div>
+  );
 }
