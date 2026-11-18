@@ -4969,3 +4969,39 @@ code {
   min-height: 44px;
   font-weight: 600;
 }
+
+/* ---------- D: class description, "About the studio", "What to bring" at the end ---------- */
+
+.detail-desc {
+  margin: 4px 0 16px;
+  font-size: 1rem;
+  line-height: 1.55;
+  color: var(--ink);
+}
+
+.detail-sec {
+  display: grid;
+  gap: 10px;
+  margin-top: 16px;
+  padding: 16px;
+  border-radius: 20px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+}
+
+.detail-sec p {
+  margin: 0;
+}
+
+.detail-sec__title {
+  margin: 0;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent-ink);
+}
+
+.detail-sec .bringlist {
+  margin: 0;
+}

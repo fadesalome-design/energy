@@ -10,6 +10,7 @@ import { useVariant } from '../lib/variant';
 import { km, placeName, studioKm, studioMin } from '../lib/location';
 import { Icon } from '../components/Icon';
 import { Photo } from '../components/Photo';
+import { BringList } from '../components/BringList';
 
 type Outcome = 'book' | 'not_for_me' | 'left';
 
@@ -86,7 +87,6 @@ export function ClassDetail({ panel = false }: { panel?: boolean }) {
 
         {/* D: photo header (stock photo of the room; gradient + icon if it doesn't load) */}
         <Photo src={studio.photo} icon={c.type} className="detail-photo" />
-        <p className="detail-place muted small">{studio.description}</p>
 
         <header className="detail-head">
           <span className="chip">
@@ -117,8 +117,26 @@ export function ClassDetail({ panel = false }: { panel?: boolean }) {
           </ul>
         </header>
 
+        {/* D: what the class is (what you do, for whom, how it feels) */}
+        <p className="detail-desc">{c.description}</p>
+
         {/* Research: F-PROBLEM (info must come before "Book", on the detail screen) */}
         {variant === 'e' ? <ExpectCardV4 c={c} studio={studio} /> : <ExpectCard c={c} studio={studio} />}
+
+        {/* D: the studio, clearly separate from the class */}
+        <section className="detail-sec" aria-labelledby="about-studio">
+          <h2 id="about-studio" className="detail-sec__title">About the studio</h2>
+          <p>{studio.description}</p>
+        </section>
+
+        {/* D: "What to bring" once, as the LAST section (just above the Book bar); information only */}
+        <section className="detail-sec" aria-labelledby="bring-detail">
+          <h2 id="bring-detail" className="detail-sec__title">What to bring</h2>
+          <BringList items={c.expect.bring} />
+          <p className="arrival">
+            <Icon name="clock" size={18} /> <span><strong>Best arrival:</strong> {c.expect.arrival}</span>
+          </p>
+        </section>
       </main>
 
       <div className={panel ? 'actions actions--panel' : 'actions'}>

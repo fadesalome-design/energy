@@ -120,6 +120,47 @@ const TOUCH_ODDS = {
   yoga: [0.25, 0.45, 0.3], pilates: [0.25, 0.45, 0.3], boxing: [0.2, 0.3, 0.5], dance: [0.35, 0.3, 0.35],
   climbing: [0.35, 0.3, 0.35], gym: [0.45, 0.25, 0.3], swimming: [0.6, 0.2, 0.2], wellness: [0.85, 0.15, 0],
 };
+// Class descriptions: what you do and for whom (per class), plus how it feels (from the room).
+// Fixed text, no random choices, so adding them changes nothing else in the data.
+const ABOUT = {
+  'Slow Flow Yoga': 'Slow, flowing yoga with long holds and plenty of time to breathe. Good for beginners and anyone who wants to move without rushing.',
+  'Vinyasa Flow': 'A flowing yoga class that links breath and movement, with a few stronger standing poses. For people who know the basics and like to keep moving.',
+  'Yin Yoga': 'Floor-based yoga with long, supported stretches of a few minutes each. For anyone who wants to slow down after a long day.',
+  'Power Yoga': 'Strong, sweaty yoga with strength holds, balances and fast sequences. For people who want yoga as a proper workout.',
+  'Lunch Break Yoga': 'A short yoga break with easy stretches and breathing. Made for office days, no experience needed.',
+  'Mat Pilates Basics': 'Pilates on the mat with slow, controlled moves for core, back and posture. A good start if you are new to Pilates.',
+  'Reformer Pilates': 'Pilates on reformer machines with springs for resistance, focused on core strength and control. Some experience helps.',
+  'Gentle Pilates': 'Calm Pilates with small movements for core and mobility, at an easy pace. Suits beginners and anyone getting back into training.',
+  'HIIT Express': 'Short high-intensity intervals of bodyweight moves with quick breaks. For people who want a full workout in little time.',
+  'Sunrise Spin': 'An indoor cycling ride to wake you up, with climbs and sprints to the beat. You set your own resistance.',
+  'Rhythm Ride': 'Indoor cycling to loud, beat-driven music, with sprints and climbs. For riders who like a party feel.',
+  'Strength Basics': 'Learn the main strength moves with free weights and machines, step by step. For beginners and anyone who wants good technique.',
+  'Functional Circuit': 'A circuit of stations with kettlebells, ropes and bodyweight moves. For people who like variety and a challenge.',
+  'Mobility & Stretch': 'Easy mobility drills and stretching for hips, back and shoulders. Good after a desk day or on a recovery day.',
+  'Contemporary for Beginners': 'Learn a short contemporary dance piece, step by step, with floor work and flowing moves. No dance experience needed.',
+  'Dance Cardio': 'Easy-to-follow dance routines to upbeat music that keep you moving the whole hour. For anyone who wants cardio that feels like a party.',
+  'Salsa Basics': 'Learn salsa basic steps and simple turns, in pairs and on your own. You can come without a partner.',
+  'Hip-hop Foundations': 'Hip-hop grooves and short combinations, built up through the class. For beginners with some energy to spare.',
+  'Boxing Fundamentals': 'Learn the basic punches, footwork and defence on bags and pads. For beginners who want a hard, focused workout.',
+  'Boxfit': 'A boxing-style workout with combinations on the bag and fitness rounds in between. No sparring.',
+  'Technique & Pads': 'Work on cleaner punches and combinations with a partner holding pads. For people who know the basics.',
+  'Bouldering Intro': 'An introduction to bouldering: safe falling, basic moves and easy routes on low walls. No experience needed.',
+  'Morning Bouldering': 'Guided bouldering on quieter morning walls, with tips on technique and route reading. For new and returning climbers.',
+  'Climbing Technique': 'Focused bouldering practice on footwork, balance and harder routes. For climbers who already know the basics.',
+  'Lane Swim & Technique': 'Lane swimming with a coach who helps with breathing and stroke technique. For swimmers who can do a few lengths.',
+  'Aqua Fit': 'A water workout in the shallow end with music, easy on the joints. No swimming skills needed.',
+  'Easy Lengths': 'Relaxed lengths at your own pace in a reserved lane. For anyone who wants calm time in the water.',
+  'Sauna & Stretch': 'Sauna rounds with gentle stretching and rest in between. For winding down after a busy day.',
+  'Breathwork': 'Guided breathing exercises, sitting or lying down, to calm the body and mind. No experience needed.',
+  'Sound Bath': 'Lie down and rest while bowls and gongs are played around you. A quiet, deeply relaxing session.',
+};
+const FEEL = {
+  gentle: { quiet: 'It feels calm and unhurried.', medium: 'It feels relaxed, with some music in the background.', loud: 'The pace is easy, though the room can be lively.' },
+  moderate: { quiet: 'It feels focused and steady.', medium: 'It feels steady, with a few harder moments.', loud: 'It feels energetic, with music pushing you along.' },
+  hard: { quiet: 'It is hard work in a focused, quiet room.', medium: 'Expect to sweat and push through the harder parts.', loud: 'Expect to sweat: loud music and a high pace.' },
+};
+const describe = (name, intensity, traits) => `${ABOUT[name] ?? ''} ${FEEL[intensity][traits.noise]}`.trim();
+
 const pickTouch = (type) => { const [a, b] = TOUCH_ODDS[type]; const r = rnd2(); return r < a ? 'none' : r < a + b ? 'asks-first' : 'hands-on'; };
 const TOUCH_LINE = { none: 'No hands-on corrections.', 'asks-first': 'The trainer asks before any hands-on help.', 'hands-on': 'Hands-on corrections, the trainer may touch to adjust.' };
 const NOISE = { quiet: 'Quiet room, soft background music.', medium: 'Music in the background, you can still talk.', loud: 'Loud music, the trainer uses a mic.' };
@@ -142,6 +183,7 @@ for (const p of places) {
     const lines = [PACE[intensity], `${NOISE[tr.noise]} ${LIGHT[tr.light]}`, tr.partnerWork === 'yes' ? `${CROWD[tr.crowd]} Partner work is part of the class.` : `${CROWD[tr.crowd]} No partner work.`];
     const c = { id: `${p.id}-${name.toLowerCase().replace(/[^a-z]+/g, '-').replace(/-$/, '')}`, placeId: p.id, name, type: classType, start, durationMin, intensity, trainer: pick(TRAINERS), whatToExpect: lines };
     c.touch = pickTouch(p.type); // 'none' | 'asks-first' | 'hands-on'
+    c.description = describe(name, intensity, p.traits); // what you do, for whom, how it feels
     c.whatToExpect[2] = `${c.whatToExpect[2]} ${TOUCH_LINE[c.touch]}`;
     taken.push(c);
     classes.push(c);

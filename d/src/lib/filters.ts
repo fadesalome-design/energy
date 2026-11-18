@@ -31,7 +31,7 @@ export const MOODS: { id: Mood; label: string; icon: string; explain: string; te
     label: 'Tired',
     icon: 'dim',
     // Copy never shames low energy (F-ENERGY)
-    explain: 'Gentle classes. Nothing harder than moderate effort.',
+    explain: 'Today: gentle classes. Nothing harder than moderate effort.',
     test: (c) => peak(c) <= 3,
   },
   {
@@ -46,7 +46,7 @@ export const MOODS: { id: Mood; label: string; icon: string; explain: string; te
     id: 'energetic',
     label: 'Energetic',
     icon: 'flash',
-    explain: 'Classes with a hard part to push through come first.',
+    explain: 'Today: classes with a hard part to push through come first.',
     test: (c) => peak(c) >= 4,
   },
 ];
@@ -56,7 +56,7 @@ export const GOALS: { id: StressGoal; label: string; icon: string; explain: stri
     id: 'burn',
     label: 'Burn it off',
     icon: 'flash',
-    explain: 'Classes with a hard part to push through come first.',
+    explain: 'Today: classes with a hard part to push through come first.',
     test: (c) => peak(c) >= 4,
   },
   {
@@ -64,7 +64,7 @@ export const GOALS: { id: StressGoal; label: string; icon: string; explain: stri
     label: 'Calm down',
     icon: 'wind',
     // B has no "Quiet & dim" switch; its equivalent is these two sensory filters
-    explain: 'Calm rooms first: soft music, not crowded, soft light. Quiet music and soft light filters are on.',
+    explain: 'Today: calm rooms first. Soft music, not crowded, soft light. Quiet music and soft light filters are on.',
     test: (c) =>
       c.expect.sound.volume <= 2 &&
       c.expect.crowd.busyness === 'calm' &&

@@ -157,6 +157,8 @@ export interface ClassInfo {
   /** D: plain intensity and the 2–3 "What to expect" lines from d/data/classes.json */
   intensity: ClassIntensity;
   whatToExpect: string[];
+  /** D: 2–3 sentences about the class (what you do, for whom, how it feels) */
+  description: string;
   expect: ExpectInfo;
 }
 
@@ -165,7 +167,7 @@ export interface ClassInfo {
 // ---------------------------------------------------------------------------
 
 interface PlaceJson { id: string; name: string; type: PlaceType; district: string; address: string; description: string; photo: string; traits: RoomTraits; offsetKm: number }
-interface ClassJson { id: string; placeId: string; name: string; type: ClassType; start: string; durationMin: number; intensity: ClassIntensity; trainer: string; whatToExpect: string[]; touch: 'none' | 'asks-first' | 'hands-on' }
+interface ClassJson { id: string; placeId: string; name: string; type: ClassType; start: string; durationMin: number; intensity: ClassIntensity; trainer: string; whatToExpect: string[]; touch: 'none' | 'asks-first' | 'hands-on'; description: string }
 interface RatingJson { classId: string; matchedCard: 'yes' | 'partly' | 'no'; answers: { noise: Noise; crowd: Crowd } }
 
 const PLACES = placesJson as PlaceJson[];
@@ -224,7 +226,7 @@ function toClass(j: ClassJson): ClassInfo {
   return {
     id: j.id, studioId: j.placeId, name: j.name, type: j.type, start: j.start, durationMin: j.durationMin,
     trainer: j.trainer, vibe: j.whatToExpect[0], reports: rs.length, studioChecklist: true,
-    intensity: j.intensity, whatToExpect: j.whatToExpect,
+    intensity: j.intensity, whatToExpect: j.whatToExpect, description: j.description,
     expect: {
       crowd: { ...CROWDS[t.crowd], note: j.whatToExpect[2] },
       clean: { lastCleaned: 'Cleaned every day', rating: rs.length >= 5 ? Math.round((4 + (j.id.length % 8) / 10) * 10) / 10 : null, ventilation: t.noise === 'quiet' ? 'Open windows' : 'Air system', temperature: p.type === 'wellness' ? 'Warm, sauna up to 90 °C' : null },

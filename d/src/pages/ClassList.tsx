@@ -71,8 +71,6 @@ export function ClassList() {
         </p>
       )}
 
-      {/* D: helper line directly under the card, above the list (plain text, not a button) */}
-      <p className="list-hint emd-hint">Tap a class to read the room before you go.</p>
       </aside>
       <section className="dl__main" aria-label="Classes today">
       {variant === 'b' && sorting ? (

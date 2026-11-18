@@ -13,6 +13,19 @@ Each line below says what's on the screen and why. "Finding" means what we saw i
 
 ## Change log
 
+- **2026-11-18: small fixes from user feedback.**
+  - **Class description:** every class in `d/data/classes.json` now has a `description` (2–3
+    sentences: what you do, for whom, how it feels, matching type, intensity and room; fixed text, so
+    no other data changed). It shows under the class name and time/place lines, above "Read the room
+    / What to expect". The studio text moved lower, under "About the studio".
+  - **"What to bring" once, at the end:** it was a row inside the "What to expect" card; now it's the
+    last section of the class detail (just above the Book bar), as plain information with "Best
+    arrival". The "Booked ✓" page keeps its own short "What to bring" (a separate screen).
+  - **Helper line removed:** "Tap a class to read the room before you go." is gone from D.
+  - **Energy Match is for today:** the explanation under the chosen option starts with "Today:"
+    (e.g. "Today: gentle classes. Nothing harder than moderate effort."). The question stays "Hi Anna,
+    how are you feeling today?".
+
 - **2026-11-18: personal greeting, member profile and new stamp rewards.**
   - **Name:** from `?user=` (e.g. `?user=Jonas`, works with `?frame=phone`), default "Anna".
   - **Greeting:** the Energy Match question now reads "Hi Anna, how are you feeling today?" (same
@@ -214,9 +227,7 @@ Each line below says what's on the screen and why. "Finding" means what we saw i
 
 ## 1. Classes today (class list)
 
-- **Header:** date, "Classes today", "You're near: Kreuzberg", plus the plain hint "Tap a class to read
-  the room before you go." · Finding: testers tapped the magnifier and hand icons as if they were
-  search, so the hint has no icon.
+- **Header:** date and "Classes today" (the helper line "Tap a class…" was removed after feedback).
 - **One Energy Match card** (white, rounded, soft shadow, sparkle badge) with the label "Energy Match"
   and no Skip. Energy on top, then place / sort / sensory filters in one settings row (see
   Change log). · Finding: everything in one place, and it has to feel optional.

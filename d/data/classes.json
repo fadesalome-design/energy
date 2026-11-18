@@ -13,7 +13,8 @@
       "Loud music, the trainer uses a mic. Normal daylight and ceiling lights.",
       "Large group, it can get packed. Partner work is part of the class. Hands-on corrections, the trainer may touch to adjust."
     ],
-    "touch": "hands-on"
+    "touch": "hands-on",
+    "description": "A boxing-style workout with combinations on the bag and fitness rounds in between. No sparring. Expect to sweat: loud music and a high pace."
   },
   {
     "id": "climbing-prenzlauer-berg-morning-bouldering",
@@ -29,7 +30,8 @@
       "Music in the background, you can still talk. Normal daylight and ceiling lights.",
       "Small group, plenty of space. No partner work. No hands-on corrections."
     ],
-    "touch": "none"
+    "touch": "none",
+    "description": "Guided bouldering on quieter morning walls, with tips on technique and route reading. For new and returning climbers. It feels steady, with a few harder moments."
   },
   {
     "id": "gym-mitte-hiit-express",
@@ -45,7 +47,8 @@
       "Music in the background, you can still talk. Bright white lights.",
       "Medium group, enough space. No partner work. No hands-on corrections."
     ],
-    "touch": "none"
+    "touch": "none",
+    "description": "Short high-intensity intervals of bodyweight moves with quick breaks. For people who want a full workout in little time. Expect to sweat and push through the harder parts."
   },
   {
     "id": "swimming-kreuzberg-aqua-fit",
@@ -61,7 +64,8 @@
       "Loud music, the trainer uses a mic. Bright white lights.",
       "Medium group, enough space. No partner work. No hands-on corrections."
     ],
-    "touch": "none"
+    "touch": "none",
+    "description": "A water workout in the shallow end with music, easy on the joints. No swimming skills needed. It feels energetic, with music pushing you along."
   },
   {
     "id": "yoga-mitte-power-yoga",
@@ -77,7 +81,8 @@
       "Quiet room, soft background music. Soft, dimmed light.",
       "Medium group, enough space. No partner work. No hands-on corrections."
     ],
-    "touch": "none"
+    "touch": "none",
+    "description": "Strong, sweaty yoga with strength holds, balances and fast sequences. For people who want yoga as a proper workout. It is hard work in a focused, quiet room."
   },
   {
     "id": "boxing-prenzlauer-berg-boxfit",
@@ -93,7 +98,8 @@
       "Loud music, the trainer uses a mic. Normal daylight and ceiling lights.",
       "Medium group, enough space. Partner work is part of the class. The trainer asks before any hands-on help."
     ],
-    "touch": "asks-first"
+    "touch": "asks-first",
+    "description": "A boxing-style workout with combinations on the bag and fitness rounds in between. No sparring. Expect to sweat: loud music and a high pace."
   },
   {
     "id": "climbing-neuk-lln-morning-bouldering",
@@ -109,7 +115,8 @@
       "Quiet room, soft background music. Bright white lights.",
       "Medium group, enough space. No partner work. The trainer asks before any hands-on help."
     ],
-    "touch": "asks-first"
+    "touch": "asks-first",
+    "description": "Guided bouldering on quieter morning walls, with tips on technique and route reading. For new and returning climbers. It feels focused and steady."
   },
   {
     "id": "gym-friedrichshain-hiit-express",
@@ -125,7 +132,8 @@
       "Loud music, the trainer uses a mic. Bright white lights.",
       "Medium group, enough space. Partner work is part of the class. No hands-on corrections."
     ],
-    "touch": "none"
+    "touch": "none",
+    "description": "Short high-intensity intervals of bodyweight moves with quick breaks. For people who want a full workout in little time. Expect to sweat: loud music and a high pace."
   },
   {
     "id": "pilates-friedrichshain-mat-pilates-basics",
@@ -141,7 +149,8 @@
       "Music in the background, you can still talk. Normal daylight and ceiling lights.",
       "Medium group, enough space. No partner work. No hands-on corrections."
     ],
-    "touch": "none"
+    "touch": "none",
+    "description": "Pilates on the mat with slow, controlled moves for core, back and posture. A good start if you are new to Pilates. It feels steady, with a few harder moments."
   },
   {
     "id": "yoga-neuk-lln-slow-flow-yoga",
@@ -157,7 +166,8 @@
       "Quiet room, soft background music. Soft, dimmed light.",
       "Small group, plenty of space. Partner work is part of the class. Hands-on corrections, the trainer may touch to adjust."
     ],
-    "touch": "hands-on"
+    "touch": "hands-on",
+    "description": "Slow, flowing yoga with long holds and plenty of time to breathe. Good for beginners and anyone who wants to move without rushing. It feels calm and unhurried."
   },
   {
     "id": "pilates-kreuzberg-gentle-pilates",
@@ -173,7 +183,8 @@
       "Music in the background, you can still talk. Soft, dimmed light.",
       "Small group, plenty of space. No partner work. Hands-on corrections, the trainer may touch to adjust."
     ],
-    "touch": "hands-on"
+    "touch": "hands-on",
+    "description": "Calm Pilates with small movements for core and mobility, at an easy pace. Suits beginners and anyone getting back into training. It feels relaxed, with some music in the background."
   },
   {
     "id": "pilates-mitte-mat-pilates-basics",
@@ -189,7 +200,8 @@
       "Quiet room, soft background music. Soft, dimmed light.",
       "Small group, plenty of space. No partner work. The trainer asks before any hands-on help."
     ],
-    "touch": "asks-first"
+    "touch": "asks-first",
+    "description": "Pilates on the mat with slow, controlled moves for core, back and posture. A good start if you are new to Pilates. It feels focused and steady."
   },
   {
     "id": "pilates-neuk-lln-mat-pilates-basics",
@@ -205,7 +217,8 @@
       "Quiet room, soft background music. Bright white lights.",
       "Small group, plenty of space. No partner work. The trainer asks before any hands-on help."
     ],
-    "touch": "asks-first"
+    "touch": "asks-first",
+    "description": "Pilates on the mat with slow, controlled moves for core, back and posture. A good start if you are new to Pilates. It feels focused and steady."
   },
   {
     "id": "swimming-prenzlauer-berg-lane-swim-technique",
@@ -221,7 +234,8 @@
       "Music in the background, you can still talk. Normal daylight and ceiling lights.",
       "Large group, it can get packed. No partner work. No hands-on corrections."
     ],
-    "touch": "none"
+    "touch": "none",
+    "description": "Lane swimming with a coach who helps with breathing and stroke technique. For swimmers who can do a few lengths. It feels steady, with a few harder moments."
   },
   {
     "id": "wellness-friedrichshain-breathwork",
@@ -237,7 +251,8 @@
       "Quiet room, soft background music. Soft, dimmed light.",
       "Small group, plenty of space. No partner work. The trainer asks before any hands-on help."
     ],
-    "touch": "asks-first"
+    "touch": "asks-first",
+    "description": "Guided breathing exercises, sitting or lying down, to calm the body and mind. No experience needed. It feels calm and unhurried."
   },
   {
     "id": "climbing-kreuzberg-morning-bouldering",
@@ -253,7 +268,8 @@
       "Quiet room, soft background music. Bright white lights.",
       "Medium group, enough space. Partner work is part of the class. The trainer asks before any hands-on help."
     ],
-    "touch": "asks-first"
+    "touch": "asks-first",
+    "description": "Guided bouldering on quieter morning walls, with tips on technique and route reading. For new and returning climbers. It feels focused and steady."
   },
   {
     "id": "swimming-mitte-lane-swim-technique",
@@ -269,7 +285,8 @@
       "Quiet room, soft background music. Bright white lights.",
       "Large group, it can get packed. No partner work. No hands-on corrections."
     ],
-    "touch": "none"
+    "touch": "none",
+    "description": "Lane swimming with a coach who helps with breathing and stroke technique. For swimmers who can do a few lengths. It feels focused and steady."
   },
   {
     "id": "swimming-neuk-lln-lane-swim-technique",
@@ -285,7 +302,8 @@
       "Loud music, the trainer uses a mic. Normal daylight and ceiling lights.",
       "Large group, it can get packed. No partner work. The trainer asks before any hands-on help."
     ],
-    "touch": "asks-first"
+    "touch": "asks-first",
+    "description": "Lane swimming with a coach who helps with breathing and stroke technique. For swimmers who can do a few lengths. It feels energetic, with music pushing you along."
   },
   {
     "id": "wellness-neuk-lln-breathwork",
@@ -301,7 +319,8 @@
       "Quiet room, soft background music. Soft, dimmed light.",
       "Small group, plenty of space. No partner work. No hands-on corrections."
     ],
-    "touch": "none"
+    "touch": "none",
+    "description": "Guided breathing exercises, sitting or lying down, to calm the body and mind. No experience needed. It feels calm and unhurried."
   },
   {
     "id": "yoga-prenzlauer-berg-vinyasa-flow",
@@ -317,7 +336,8 @@
       "Music in the background, you can still talk. Soft, dimmed light.",
       "Small group, plenty of space. Partner work is part of the class. Hands-on corrections, the trainer may touch to adjust."
     ],
-    "touch": "hands-on"
+    "touch": "hands-on",
+    "description": "A flowing yoga class that links breath and movement, with a few stronger standing poses. For people who know the basics and like to keep moving. It feels steady, with a few harder moments."
   },
   {
     "id": "climbing-mitte-morning-bouldering",
@@ -333,7 +353,8 @@
       "Quiet room, soft background music. Bright white lights.",
       "Small group, plenty of space. Partner work is part of the class. The trainer asks before any hands-on help."
     ],
-    "touch": "asks-first"
+    "touch": "asks-first",
+    "description": "Guided bouldering on quieter morning walls, with tips on technique and route reading. For new and returning climbers. It feels focused and steady."
   },
   {
     "id": "gym-prenzlauer-berg-sunrise-spin",
@@ -349,7 +370,8 @@
       "Loud music, the trainer uses a mic. Normal daylight and ceiling lights.",
       "Medium group, enough space. No partner work. No hands-on corrections."
     ],
-    "touch": "none"
+    "touch": "none",
+    "description": "An indoor cycling ride to wake you up, with climbs and sprints to the beat. You set your own resistance. Expect to sweat: loud music and a high pace."
   },
   {
     "id": "pilates-prenzlauer-berg-mat-pilates-basics",
@@ -365,7 +387,8 @@
       "Music in the background, you can still talk. Bright white lights.",
       "Medium group, enough space. No partner work. The trainer asks before any hands-on help."
     ],
-    "touch": "asks-first"
+    "touch": "asks-first",
+    "description": "Pilates on the mat with slow, controlled moves for core, back and posture. A good start if you are new to Pilates. It feels steady, with a few harder moments."
   },
   {
     "id": "swimming-friedrichshain-lane-swim-technique",
@@ -381,7 +404,8 @@
       "Loud music, the trainer uses a mic. Normal daylight and ceiling lights.",
       "Large group, it can get packed. No partner work. The trainer asks before any hands-on help."
     ],
-    "touch": "asks-first"
+    "touch": "asks-first",
+    "description": "Lane swimming with a coach who helps with breathing and stroke technique. For swimmers who can do a few lengths. It feels energetic, with music pushing you along."
   },
   {
     "id": "boxing-neuk-lln-boxfit",
@@ -397,7 +421,8 @@
       "Loud music, the trainer uses a mic. Bright white lights.",
       "Large group, it can get packed. Partner work is part of the class. The trainer asks before any hands-on help."
     ],
-    "touch": "asks-first"
+    "touch": "asks-first",
+    "description": "A boxing-style workout with combinations on the bag and fitness rounds in between. No sparring. Expect to sweat: loud music and a high pace."
   },
   {
     "id": "swimming-mitte-aqua-fit",
@@ -413,7 +438,8 @@
       "Quiet room, soft background music. Bright white lights.",
       "Large group, it can get packed. No partner work. No hands-on corrections."
     ],
-    "touch": "none"
+    "touch": "none",
+    "description": "A water workout in the shallow end with music, easy on the joints. No swimming skills needed. It feels focused and steady."
   },
   {
     "id": "swimming-prenzlauer-berg-easy-lengths",
@@ -429,7 +455,8 @@
       "Music in the background, you can still talk. Normal daylight and ceiling lights.",
       "Large group, it can get packed. No partner work. No hands-on corrections."
     ],
-    "touch": "none"
+    "touch": "none",
+    "description": "Relaxed lengths at your own pace in a reserved lane. For anyone who wants calm time in the water. It feels relaxed, with some music in the background."
   },
   {
     "id": "wellness-mitte-breathwork",
@@ -445,7 +472,8 @@
       "Quiet room, soft background music. Soft, dimmed light.",
       "Small group, plenty of space. No partner work. No hands-on corrections."
     ],
-    "touch": "none"
+    "touch": "none",
+    "description": "Guided breathing exercises, sitting or lying down, to calm the body and mind. No experience needed. It feels calm and unhurried."
   },
   {
     "id": "climbing-friedrichshain-morning-bouldering",
@@ -461,7 +489,8 @@
       "Music in the background, you can still talk. Normal daylight and ceiling lights.",
       "Medium group, enough space. Partner work is part of the class. The trainer asks before any hands-on help."
     ],
-    "touch": "asks-first"
+    "touch": "asks-first",
+    "description": "Guided bouldering on quieter morning walls, with tips on technique and route reading. For new and returning climbers. It feels steady, with a few harder moments."
   },
   {
     "id": "pilates-neuk-lln-gentle-pilates",
@@ -477,7 +506,8 @@
       "Quiet room, soft background music. Bright white lights.",
       "Small group, plenty of space. No partner work. The trainer asks before any hands-on help."
     ],
-    "touch": "asks-first"
+    "touch": "asks-first",
+    "description": "Calm Pilates with small movements for core and mobility, at an easy pace. Suits beginners and anyone getting back into training. It feels calm and unhurried."
   },
   {
     "id": "swimming-friedrichshain-aqua-fit",
@@ -493,7 +523,8 @@
       "Loud music, the trainer uses a mic. Normal daylight and ceiling lights.",
       "Large group, it can get packed. No partner work. No hands-on corrections."
     ],
-    "touch": "none"
+    "touch": "none",
+    "description": "A water workout in the shallow end with music, easy on the joints. No swimming skills needed. It feels energetic, with music pushing you along."
   },
   {
     "id": "gym-kreuzberg-strength-basics",
@@ -509,7 +540,8 @@
       "Loud music, the trainer uses a mic. Bright white lights.",
       "Medium group, enough space. No partner work. No hands-on corrections."
     ],
-    "touch": "none"
+    "touch": "none",
+    "description": "Learn the main strength moves with free weights and machines, step by step. For beginners and anyone who wants good technique. It feels energetic, with music pushing you along."
   },
   {
     "id": "gym-prenzlauer-berg-hiit-express",
@@ -525,7 +557,8 @@
       "Loud music, the trainer uses a mic. Normal daylight and ceiling lights.",
       "Medium group, enough space. No partner work. The trainer asks before any hands-on help."
     ],
-    "touch": "asks-first"
+    "touch": "asks-first",
+    "description": "Short high-intensity intervals of bodyweight moves with quick breaks. For people who want a full workout in little time. Expect to sweat: loud music and a high pace."
   },
   {
     "id": "boxing-mitte-boxfit",
@@ -541,7 +574,8 @@
       "Music in the background, you can still talk. Normal daylight and ceiling lights.",
       "Medium group, enough space. Partner work is part of the class. Hands-on corrections, the trainer may touch to adjust."
     ],
-    "touch": "hands-on"
+    "touch": "hands-on",
+    "description": "A boxing-style workout with combinations on the bag and fitness rounds in between. No sparring. Expect to sweat and push through the harder parts."
   },
   {
     "id": "swimming-friedrichshain-easy-lengths",
@@ -557,7 +591,8 @@
       "Loud music, the trainer uses a mic. Normal daylight and ceiling lights.",
       "Large group, it can get packed. No partner work. The trainer asks before any hands-on help."
     ],
-    "touch": "asks-first"
+    "touch": "asks-first",
+    "description": "Relaxed lengths at your own pace in a reserved lane. For anyone who wants calm time in the water. The pace is easy, though the room can be lively."
   },
   {
     "id": "yoga-friedrichshain-lunch-break-yoga",
@@ -573,7 +608,8 @@
       "Quiet room, soft background music. Soft, dimmed light.",
       "Small group, plenty of space. Partner work is part of the class. The trainer asks before any hands-on help."
     ],
-    "touch": "asks-first"
+    "touch": "asks-first",
+    "description": "A short yoga break with easy stretches and breathing. Made for office days, no experience needed. It feels calm and unhurried."
   },
   {
     "id": "yoga-kreuzberg-lunch-break-yoga",
@@ -589,7 +625,8 @@
       "Quiet room, soft background music. Normal daylight and ceiling lights.",
       "Medium group, enough space. No partner work. Hands-on corrections, the trainer may touch to adjust."
     ],
-    "touch": "hands-on"
+    "touch": "hands-on",
+    "description": "A short yoga break with easy stretches and breathing. Made for office days, no experience needed. It feels calm and unhurried."
   },
   {
     "id": "yoga-neuk-lln-lunch-break-yoga",
@@ -605,7 +642,8 @@
       "Quiet room, soft background music. Soft, dimmed light.",
       "Small group, plenty of space. Partner work is part of the class. Hands-on corrections, the trainer may touch to adjust."
     ],
-    "touch": "hands-on"
+    "touch": "hands-on",
+    "description": "A short yoga break with easy stretches and breathing. Made for office days, no experience needed. It feels calm and unhurried."
   },
   {
     "id": "pilates-kreuzberg-mat-pilates-basics",
@@ -621,7 +659,8 @@
       "Music in the background, you can still talk. Soft, dimmed light.",
       "Small group, plenty of space. No partner work. The trainer asks before any hands-on help."
     ],
-    "touch": "asks-first"
+    "touch": "asks-first",
+    "description": "Pilates on the mat with slow, controlled moves for core, back and posture. A good start if you are new to Pilates. It feels steady, with a few harder moments."
   },
   {
     "id": "swimming-kreuzberg-easy-lengths",
@@ -637,7 +676,8 @@
       "Loud music, the trainer uses a mic. Bright white lights.",
       "Medium group, enough space. No partner work. The trainer asks before any hands-on help."
     ],
-    "touch": "asks-first"
+    "touch": "asks-first",
+    "description": "Relaxed lengths at your own pace in a reserved lane. For anyone who wants calm time in the water. The pace is easy, though the room can be lively."
   },
   {
     "id": "dance-friedrichshain-hip-hop-foundations",
@@ -653,7 +693,8 @@
       "Loud music, the trainer uses a mic. Soft, dimmed light.",
       "Medium group, enough space. No partner work. Hands-on corrections, the trainer may touch to adjust."
     ],
-    "touch": "hands-on"
+    "touch": "hands-on",
+    "description": "Hip-hop grooves and short combinations, built up through the class. For beginners with some energy to spare. Expect to sweat: loud music and a high pace."
   },
   {
     "id": "dance-kreuzberg-contemporary-for-beginners",
@@ -669,7 +710,8 @@
       "Loud music, the trainer uses a mic. Normal daylight and ceiling lights.",
       "Medium group, enough space. No partner work. Hands-on corrections, the trainer may touch to adjust."
     ],
-    "touch": "hands-on"
+    "touch": "hands-on",
+    "description": "Learn a short contemporary dance piece, step by step, with floor work and flowing moves. No dance experience needed. It feels energetic, with music pushing you along."
   },
   {
     "id": "dance-mitte-hip-hop-foundations",
@@ -685,7 +727,8 @@
       "Loud music, the trainer uses a mic. Soft, dimmed light.",
       "Medium group, enough space. Partner work is part of the class. The trainer asks before any hands-on help."
     ],
-    "touch": "asks-first"
+    "touch": "asks-first",
+    "description": "Hip-hop grooves and short combinations, built up through the class. For beginners with some energy to spare. Expect to sweat: loud music and a high pace."
   },
   {
     "id": "pilates-friedrichshain-reformer-pilates",
@@ -701,7 +744,8 @@
       "Music in the background, you can still talk. Normal daylight and ceiling lights.",
       "Medium group, enough space. No partner work. The trainer asks before any hands-on help."
     ],
-    "touch": "asks-first"
+    "touch": "asks-first",
+    "description": "Pilates on reformer machines with springs for resistance, focused on core strength and control. Some experience helps. Expect to sweat and push through the harder parts."
   },
   {
     "id": "wellness-friedrichshain-sauna-stretch",
@@ -717,7 +761,8 @@
       "Quiet room, soft background music. Soft, dimmed light.",
       "Small group, plenty of space. No partner work. No hands-on corrections."
     ],
-    "touch": "none"
+    "touch": "none",
+    "description": "Sauna rounds with gentle stretching and rest in between. For winding down after a busy day. It feels calm and unhurried."
   },
   {
     "id": "gym-neuk-lln-strength-basics",
@@ -733,7 +778,8 @@
       "Loud music, the trainer uses a mic. Coloured and flashing lights in parts.",
       "Medium group, enough space. No partner work. Hands-on corrections, the trainer may touch to adjust."
     ],
-    "touch": "hands-on"
+    "touch": "hands-on",
+    "description": "Learn the main strength moves with free weights and machines, step by step. For beginners and anyone who wants good technique. It feels energetic, with music pushing you along."
   },
   {
     "id": "swimming-prenzlauer-berg-aqua-fit",
@@ -749,7 +795,8 @@
       "Music in the background, you can still talk. Normal daylight and ceiling lights.",
       "Large group, it can get packed. No partner work. The trainer asks before any hands-on help."
     ],
-    "touch": "asks-first"
+    "touch": "asks-first",
+    "description": "A water workout in the shallow end with music, easy on the joints. No swimming skills needed. It feels steady, with a few harder moments."
   },
   {
     "id": "wellness-kreuzberg-sauna-stretch",
@@ -765,7 +812,8 @@
       "Quiet room, soft background music. Soft, dimmed light.",
       "Small group, plenty of space. No partner work. No hands-on corrections."
     ],
-    "touch": "none"
+    "touch": "none",
+    "description": "Sauna rounds with gentle stretching and rest in between. For winding down after a busy day. It feels calm and unhurried."
   },
   {
     "id": "wellness-prenzlauer-berg-sauna-stretch",
@@ -781,7 +829,8 @@
       "Quiet room, soft background music. Soft, dimmed light.",
       "Medium group, enough space. No partner work. The trainer asks before any hands-on help."
     ],
-    "touch": "asks-first"
+    "touch": "asks-first",
+    "description": "Sauna rounds with gentle stretching and rest in between. For winding down after a busy day. It feels calm and unhurried."
   },
   {
     "id": "boxing-prenzlauer-berg-boxing-fundamentals",
@@ -797,7 +846,8 @@
       "Loud music, the trainer uses a mic. Normal daylight and ceiling lights.",
       "Medium group, enough space. Partner work is part of the class. Hands-on corrections, the trainer may touch to adjust."
     ],
-    "touch": "hands-on"
+    "touch": "hands-on",
+    "description": "Learn the basic punches, footwork and defence on bags and pads. For beginners who want a hard, focused workout. Expect to sweat: loud music and a high pace."
   },
   {
     "id": "climbing-prenzlauer-berg-bouldering-intro",
@@ -813,7 +863,8 @@
       "Music in the background, you can still talk. Normal daylight and ceiling lights.",
       "Small group, plenty of space. No partner work. The trainer asks before any hands-on help."
     ],
-    "touch": "asks-first"
+    "touch": "asks-first",
+    "description": "An introduction to bouldering: safe falling, basic moves and easy routes on low walls. No experience needed. It feels steady, with a few harder moments."
   },
   {
     "id": "dance-neuk-lln-hip-hop-foundations",
@@ -829,7 +880,8 @@
       "Loud music, the trainer uses a mic. Normal daylight and ceiling lights.",
       "Medium group, enough space. Partner work is part of the class. The trainer asks before any hands-on help."
     ],
-    "touch": "asks-first"
+    "touch": "asks-first",
+    "description": "Hip-hop grooves and short combinations, built up through the class. For beginners with some energy to spare. Expect to sweat: loud music and a high pace."
   },
   {
     "id": "gym-mitte-strength-basics",
@@ -845,7 +897,8 @@
       "Music in the background, you can still talk. Bright white lights.",
       "Medium group, enough space. No partner work. No hands-on corrections."
     ],
-    "touch": "none"
+    "touch": "none",
+    "description": "Learn the main strength moves with free weights and machines, step by step. For beginners and anyone who wants good technique. It feels steady, with a few harder moments."
   },
   {
     "id": "pilates-prenzlauer-berg-reformer-pilates",
@@ -861,7 +914,8 @@
       "Music in the background, you can still talk. Bright white lights.",
       "Medium group, enough space. No partner work. The trainer asks before any hands-on help."
     ],
-    "touch": "asks-first"
+    "touch": "asks-first",
+    "description": "Pilates on reformer machines with springs for resistance, focused on core strength and control. Some experience helps. Expect to sweat and push through the harder parts."
   },
   {
     "id": "swimming-neuk-lln-aqua-fit",
@@ -877,7 +931,8 @@
       "Loud music, the trainer uses a mic. Normal daylight and ceiling lights.",
       "Large group, it can get packed. No partner work. No hands-on corrections."
     ],
-    "touch": "none"
+    "touch": "none",
+    "description": "A water workout in the shallow end with music, easy on the joints. No swimming skills needed. It feels energetic, with music pushing you along."
   },
   {
     "id": "climbing-friedrichshain-bouldering-intro",
@@ -893,7 +948,8 @@
       "Music in the background, you can still talk. Normal daylight and ceiling lights.",
       "Medium group, enough space. Partner work is part of the class. Hands-on corrections, the trainer may touch to adjust."
     ],
-    "touch": "hands-on"
+    "touch": "hands-on",
+    "description": "An introduction to bouldering: safe falling, basic moves and easy routes on low walls. No experience needed. It feels steady, with a few harder moments."
   },
   {
     "id": "boxing-kreuzberg-technique-pads",
@@ -909,7 +965,8 @@
       "Music in the background, you can still talk. Bright white lights.",
       "Large group, it can get packed. Partner work is part of the class. Hands-on corrections, the trainer may touch to adjust."
     ],
-    "touch": "hands-on"
+    "touch": "hands-on",
+    "description": "Work on cleaner punches and combinations with a partner holding pads. For people who know the basics. It feels steady, with a few harder moments."
   },
   {
     "id": "boxing-neuk-lln-technique-pads",
@@ -925,7 +982,8 @@
       "Loud music, the trainer uses a mic. Bright white lights.",
       "Large group, it can get packed. Partner work is part of the class. Hands-on corrections, the trainer may touch to adjust."
     ],
-    "touch": "hands-on"
+    "touch": "hands-on",
+    "description": "Work on cleaner punches and combinations with a partner holding pads. For people who know the basics. It feels energetic, with music pushing you along."
   },
   {
     "id": "boxing-friedrichshain-technique-pads",
@@ -941,7 +999,8 @@
       "Loud music, the trainer uses a mic. Normal daylight and ceiling lights.",
       "Large group, it can get packed. Partner work is part of the class. Hands-on corrections, the trainer may touch to adjust."
     ],
-    "touch": "hands-on"
+    "touch": "hands-on",
+    "description": "Work on cleaner punches and combinations with a partner holding pads. For people who know the basics. It feels energetic, with music pushing you along."
   },
   {
     "id": "dance-friedrichshain-salsa-basics",
@@ -957,7 +1016,8 @@
       "Loud music, the trainer uses a mic. Soft, dimmed light.",
       "Medium group, enough space. No partner work. The trainer asks before any hands-on help."
     ],
-    "touch": "asks-first"
+    "touch": "asks-first",
+    "description": "Learn salsa basic steps and simple turns, in pairs and on your own. You can come without a partner. It feels energetic, with music pushing you along."
   },
   {
     "id": "gym-kreuzberg-hiit-express",
@@ -973,7 +1033,8 @@
       "Loud music, the trainer uses a mic. Bright white lights.",
       "Medium group, enough space. No partner work. Hands-on corrections, the trainer may touch to adjust."
     ],
-    "touch": "hands-on"
+    "touch": "hands-on",
+    "description": "Short high-intensity intervals of bodyweight moves with quick breaks. For people who want a full workout in little time. Expect to sweat: loud music and a high pace."
   },
   {
     "id": "pilates-kreuzberg-reformer-pilates",
@@ -989,7 +1050,8 @@
       "Music in the background, you can still talk. Soft, dimmed light.",
       "Small group, plenty of space. No partner work. No hands-on corrections."
     ],
-    "touch": "none"
+    "touch": "none",
+    "description": "Pilates on reformer machines with springs for resistance, focused on core strength and control. Some experience helps. Expect to sweat and push through the harder parts."
   },
   {
     "id": "swimming-mitte-easy-lengths",
@@ -1005,7 +1067,8 @@
       "Quiet room, soft background music. Bright white lights.",
       "Large group, it can get packed. No partner work. The trainer asks before any hands-on help."
     ],
-    "touch": "asks-first"
+    "touch": "asks-first",
+    "description": "Relaxed lengths at your own pace in a reserved lane. For anyone who wants calm time in the water. It feels calm and unhurried."
   },
   {
     "id": "wellness-mitte-sauna-stretch",
@@ -1021,7 +1084,8 @@
       "Quiet room, soft background music. Soft, dimmed light.",
       "Small group, plenty of space. No partner work. No hands-on corrections."
     ],
-    "touch": "none"
+    "touch": "none",
+    "description": "Sauna rounds with gentle stretching and rest in between. For winding down after a busy day. It feels calm and unhurried."
   },
   {
     "id": "climbing-kreuzberg-climbing-technique",
@@ -1037,7 +1101,8 @@
       "Quiet room, soft background music. Bright white lights.",
       "Medium group, enough space. Partner work is part of the class. No hands-on corrections."
     ],
-    "touch": "none"
+    "touch": "none",
+    "description": "Focused bouldering practice on footwork, balance and harder routes. For climbers who already know the basics. It is hard work in a focused, quiet room."
   },
   {
     "id": "climbing-neuk-lln-climbing-technique",
@@ -1053,7 +1118,8 @@
       "Quiet room, soft background music. Bright white lights.",
       "Medium group, enough space. No partner work. Hands-on corrections, the trainer may touch to adjust."
     ],
-    "touch": "hands-on"
+    "touch": "hands-on",
+    "description": "Focused bouldering practice on footwork, balance and harder routes. For climbers who already know the basics. It is hard work in a focused, quiet room."
   },
   {
     "id": "dance-kreuzberg-salsa-basics",
@@ -1069,7 +1135,8 @@
       "Loud music, the trainer uses a mic. Normal daylight and ceiling lights.",
       "Medium group, enough space. No partner work. No hands-on corrections."
     ],
-    "touch": "none"
+    "touch": "none",
+    "description": "Learn salsa basic steps and simple turns, in pairs and on your own. You can come without a partner. It feels energetic, with music pushing you along."
   },
   {
     "id": "dance-prenzlauer-berg-salsa-basics",
@@ -1085,7 +1152,8 @@
       "Music in the background, you can still talk. Coloured and flashing lights in parts.",
       "Large group, it can get packed. Partner work is part of the class. Hands-on corrections, the trainer may touch to adjust."
     ],
-    "touch": "hands-on"
+    "touch": "hands-on",
+    "description": "Learn salsa basic steps and simple turns, in pairs and on your own. You can come without a partner. It feels steady, with a few harder moments."
   },
   {
     "id": "gym-mitte-functional-circuit",
@@ -1101,7 +1169,8 @@
       "Music in the background, you can still talk. Bright white lights.",
       "Medium group, enough space. No partner work. The trainer asks before any hands-on help."
     ],
-    "touch": "asks-first"
+    "touch": "asks-first",
+    "description": "A circuit of stations with kettlebells, ropes and bodyweight moves. For people who like variety and a challenge. Expect to sweat and push through the harder parts."
   },
   {
     "id": "wellness-kreuzberg-sound-bath",
@@ -1117,7 +1186,8 @@
       "Quiet room, soft background music. Soft, dimmed light.",
       "Small group, plenty of space. No partner work. No hands-on corrections."
     ],
-    "touch": "none"
+    "touch": "none",
+    "description": "Lie down and rest while bowls and gongs are played around you. A quiet, deeply relaxing session. It feels calm and unhurried."
   },
   {
     "id": "wellness-neuk-lln-sound-bath",
@@ -1133,7 +1203,8 @@
       "Quiet room, soft background music. Soft, dimmed light.",
       "Small group, plenty of space. No partner work. No hands-on corrections."
     ],
-    "touch": "none"
+    "touch": "none",
+    "description": "Lie down and rest while bowls and gongs are played around you. A quiet, deeply relaxing session. It feels calm and unhurried."
   },
   {
     "id": "wellness-prenzlauer-berg-breathwork",
@@ -1149,7 +1220,8 @@
       "Quiet room, soft background music. Soft, dimmed light.",
       "Medium group, enough space. No partner work. No hands-on corrections."
     ],
-    "touch": "none"
+    "touch": "none",
+    "description": "Guided breathing exercises, sitting or lying down, to calm the body and mind. No experience needed. It feels calm and unhurried."
   },
   {
     "id": "yoga-friedrichshain-vinyasa-flow",
@@ -1165,7 +1237,8 @@
       "Quiet room, soft background music. Soft, dimmed light.",
       "Small group, plenty of space. Partner work is part of the class. Hands-on corrections, the trainer may touch to adjust."
     ],
-    "touch": "hands-on"
+    "touch": "hands-on",
+    "description": "A flowing yoga class that links breath and movement, with a few stronger standing poses. For people who know the basics and like to keep moving. It feels focused and steady."
   },
   {
     "id": "yoga-mitte-yin-yoga",
@@ -1181,7 +1254,8 @@
       "Quiet room, soft background music. Soft, dimmed light.",
       "Medium group, enough space. No partner work. No hands-on corrections."
     ],
-    "touch": "none"
+    "touch": "none",
+    "description": "Floor-based yoga with long, supported stretches of a few minutes each. For anyone who wants to slow down after a long day. It feels calm and unhurried."
   },
   {
     "id": "yoga-prenzlauer-berg-yin-yoga",
@@ -1197,7 +1271,8 @@
       "Music in the background, you can still talk. Soft, dimmed light.",
       "Small group, plenty of space. Partner work is part of the class. The trainer asks before any hands-on help."
     ],
-    "touch": "asks-first"
+    "touch": "asks-first",
+    "description": "Floor-based yoga with long, supported stretches of a few minutes each. For anyone who wants to slow down after a long day. It feels relaxed, with some music in the background."
   },
   {
     "id": "boxing-mitte-technique-pads",
@@ -1213,7 +1288,8 @@
       "Music in the background, you can still talk. Normal daylight and ceiling lights.",
       "Medium group, enough space. Partner work is part of the class. No hands-on corrections."
     ],
-    "touch": "none"
+    "touch": "none",
+    "description": "Work on cleaner punches and combinations with a partner holding pads. For people who know the basics. It feels steady, with a few harder moments."
   },
   {
     "id": "climbing-friedrichshain-climbing-technique",
@@ -1229,7 +1305,8 @@
       "Music in the background, you can still talk. Normal daylight and ceiling lights.",
       "Medium group, enough space. Partner work is part of the class. No hands-on corrections."
     ],
-    "touch": "none"
+    "touch": "none",
+    "description": "Focused bouldering practice on footwork, balance and harder routes. For climbers who already know the basics. Expect to sweat and push through the harder parts."
   },
   {
     "id": "climbing-prenzlauer-berg-climbing-technique",
@@ -1245,7 +1322,8 @@
       "Music in the background, you can still talk. Normal daylight and ceiling lights.",
       "Small group, plenty of space. No partner work. No hands-on corrections."
     ],
-    "touch": "none"
+    "touch": "none",
+    "description": "Focused bouldering practice on footwork, balance and harder routes. For climbers who already know the basics. Expect to sweat and push through the harder parts."
   },
   {
     "id": "dance-mitte-salsa-basics",
@@ -1261,7 +1339,8 @@
       "Loud music, the trainer uses a mic. Soft, dimmed light.",
       "Medium group, enough space. Partner work is part of the class. No hands-on corrections."
     ],
-    "touch": "none"
+    "touch": "none",
+    "description": "Learn salsa basic steps and simple turns, in pairs and on your own. You can come without a partner. It feels energetic, with music pushing you along."
   },
   {
     "id": "gym-kreuzberg-rhythm-ride",
@@ -1277,7 +1356,8 @@
       "Loud music, the trainer uses a mic. Bright white lights.",
       "Medium group, enough space. No partner work. Hands-on corrections, the trainer may touch to adjust."
     ],
-    "touch": "hands-on"
+    "touch": "hands-on",
+    "description": "Indoor cycling to loud, beat-driven music, with sprints and climbs. For riders who like a party feel. Expect to sweat: loud music and a high pace."
   },
   {
     "id": "yoga-kreuzberg-yin-yoga",
@@ -1293,7 +1373,8 @@
       "Quiet room, soft background music. Normal daylight and ceiling lights.",
       "Medium group, enough space. No partner work. No hands-on corrections."
     ],
-    "touch": "none"
+    "touch": "none",
+    "description": "Floor-based yoga with long, supported stretches of a few minutes each. For anyone who wants to slow down after a long day. It feels calm and unhurried."
   },
   {
     "id": "boxing-neuk-lln-boxing-fundamentals",
@@ -1309,7 +1390,8 @@
       "Loud music, the trainer uses a mic. Bright white lights.",
       "Large group, it can get packed. Partner work is part of the class. Hands-on corrections, the trainer may touch to adjust."
     ],
-    "touch": "hands-on"
+    "touch": "hands-on",
+    "description": "Learn the basic punches, footwork and defence on bags and pads. For beginners who want a hard, focused workout. Expect to sweat: loud music and a high pace."
   },
   {
     "id": "gym-neuk-lln-rhythm-ride",
@@ -1325,7 +1407,8 @@
       "Loud music, the trainer uses a mic. Coloured and flashing lights in parts.",
       "Medium group, enough space. No partner work. Hands-on corrections, the trainer may touch to adjust."
     ],
-    "touch": "hands-on"
+    "touch": "hands-on",
+    "description": "Indoor cycling to loud, beat-driven music, with sprints and climbs. For riders who like a party feel. Expect to sweat: loud music and a high pace."
   },
   {
     "id": "pilates-friedrichshain-gentle-pilates",
@@ -1341,7 +1424,8 @@
       "Music in the background, you can still talk. Normal daylight and ceiling lights.",
       "Medium group, enough space. No partner work. No hands-on corrections."
     ],
-    "touch": "none"
+    "touch": "none",
+    "description": "Calm Pilates with small movements for core and mobility, at an easy pace. Suits beginners and anyone getting back into training. It feels relaxed, with some music in the background."
   },
   {
     "id": "wellness-prenzlauer-berg-sound-bath",
@@ -1357,7 +1441,8 @@
       "Quiet room, soft background music. Soft, dimmed light.",
       "Medium group, enough space. No partner work. No hands-on corrections."
     ],
-    "touch": "none"
+    "touch": "none",
+    "description": "Lie down and rest while bowls and gongs are played around you. A quiet, deeply relaxing session. It feels calm and unhurried."
   },
   {
     "id": "yoga-neuk-lln-yin-yoga",
@@ -1373,7 +1458,8 @@
       "Quiet room, soft background music. Soft, dimmed light.",
       "Small group, plenty of space. Partner work is part of the class. The trainer asks before any hands-on help."
     ],
-    "touch": "asks-first"
+    "touch": "asks-first",
+    "description": "Floor-based yoga with long, supported stretches of a few minutes each. For anyone who wants to slow down after a long day. It feels calm and unhurried."
   },
   {
     "id": "boxing-friedrichshain-boxing-fundamentals",
@@ -1389,7 +1475,8 @@
       "Loud music, the trainer uses a mic. Normal daylight and ceiling lights.",
       "Large group, it can get packed. Partner work is part of the class. Hands-on corrections, the trainer may touch to adjust."
     ],
-    "touch": "hands-on"
+    "touch": "hands-on",
+    "description": "Learn the basic punches, footwork and defence on bags and pads. For beginners who want a hard, focused workout. Expect to sweat: loud music and a high pace."
   },
   {
     "id": "boxing-kreuzberg-boxing-fundamentals",
@@ -1405,7 +1492,8 @@
       "Music in the background, you can still talk. Bright white lights.",
       "Large group, it can get packed. Partner work is part of the class. Hands-on corrections, the trainer may touch to adjust."
     ],
-    "touch": "hands-on"
+    "touch": "hands-on",
+    "description": "Learn the basic punches, footwork and defence on bags and pads. For beginners who want a hard, focused workout. Expect to sweat and push through the harder parts."
   },
   {
     "id": "dance-friedrichshain-contemporary-for-beginners",
@@ -1421,7 +1509,8 @@
       "Loud music, the trainer uses a mic. Soft, dimmed light.",
       "Medium group, enough space. No partner work. The trainer asks before any hands-on help."
     ],
-    "touch": "asks-first"
+    "touch": "asks-first",
+    "description": "Learn a short contemporary dance piece, step by step, with floor work and flowing moves. No dance experience needed. It feels energetic, with music pushing you along."
   },
   {
     "id": "dance-kreuzberg-hip-hop-foundations",
@@ -1437,7 +1526,8 @@
       "Loud music, the trainer uses a mic. Normal daylight and ceiling lights.",
       "Medium group, enough space. No partner work. The trainer asks before any hands-on help."
     ],
-    "touch": "asks-first"
+    "touch": "asks-first",
+    "description": "Hip-hop grooves and short combinations, built up through the class. For beginners with some energy to spare. Expect to sweat: loud music and a high pace."
   },
   {
     "id": "gym-friedrichshain-rhythm-ride",
@@ -1453,7 +1543,8 @@
       "Loud music, the trainer uses a mic. Bright white lights.",
       "Medium group, enough space. Partner work is part of the class. Hands-on corrections, the trainer may touch to adjust."
     ],
-    "touch": "hands-on"
+    "touch": "hands-on",
+    "description": "Indoor cycling to loud, beat-driven music, with sprints and climbs. For riders who like a party feel. Expect to sweat: loud music and a high pace."
   },
   {
     "id": "pilates-mitte-reformer-pilates",
@@ -1469,7 +1560,8 @@
       "Quiet room, soft background music. Soft, dimmed light.",
       "Small group, plenty of space. No partner work. Hands-on corrections, the trainer may touch to adjust."
     ],
-    "touch": "hands-on"
+    "touch": "hands-on",
+    "description": "Pilates on reformer machines with springs for resistance, focused on core strength and control. Some experience helps. It is hard work in a focused, quiet room."
   },
   {
     "id": "wellness-mitte-sound-bath",
@@ -1485,7 +1577,8 @@
       "Quiet room, soft background music. Soft, dimmed light.",
       "Small group, plenty of space. No partner work. No hands-on corrections."
     ],
-    "touch": "none"
+    "touch": "none",
+    "description": "Lie down and rest while bowls and gongs are played around you. A quiet, deeply relaxing session. It feels calm and unhurried."
   },
   {
     "id": "wellness-neuk-lln-sauna-stretch",
@@ -1501,7 +1594,8 @@
       "Quiet room, soft background music. Soft, dimmed light.",
       "Small group, plenty of space. No partner work. The trainer asks before any hands-on help."
     ],
-    "touch": "asks-first"
+    "touch": "asks-first",
+    "description": "Sauna rounds with gentle stretching and rest in between. For winding down after a busy day. It feels calm and unhurried."
   },
   {
     "id": "yoga-mitte-slow-flow-yoga",
@@ -1517,7 +1611,8 @@
       "Quiet room, soft background music. Soft, dimmed light.",
       "Medium group, enough space. No partner work. No hands-on corrections."
     ],
-    "touch": "none"
+    "touch": "none",
+    "description": "Slow, flowing yoga with long holds and plenty of time to breathe. Good for beginners and anyone who wants to move without rushing. It feels calm and unhurried."
   },
   {
     "id": "yoga-prenzlauer-berg-power-yoga",
@@ -1533,7 +1628,8 @@
       "Music in the background, you can still talk. Soft, dimmed light.",
       "Small group, plenty of space. Partner work is part of the class. No hands-on corrections."
     ],
-    "touch": "none"
+    "touch": "none",
+    "description": "Strong, sweaty yoga with strength holds, balances and fast sequences. For people who want yoga as a proper workout. Expect to sweat and push through the harder parts."
   },
   {
     "id": "climbing-mitte-climbing-technique",
@@ -1549,7 +1645,8 @@
       "Quiet room, soft background music. Bright white lights.",
       "Small group, plenty of space. Partner work is part of the class. Hands-on corrections, the trainer may touch to adjust."
     ],
-    "touch": "hands-on"
+    "touch": "hands-on",
+    "description": "Focused bouldering practice on footwork, balance and harder routes. For climbers who already know the basics. It is hard work in a focused, quiet room."
   },
   {
     "id": "climbing-neuk-lln-bouldering-intro",
@@ -1565,7 +1662,8 @@
       "Quiet room, soft background music. Bright white lights.",
       "Medium group, enough space. No partner work. Hands-on corrections, the trainer may touch to adjust."
     ],
-    "touch": "hands-on"
+    "touch": "hands-on",
+    "description": "An introduction to bouldering: safe falling, basic moves and easy routes on low walls. No experience needed. It feels focused and steady."
   },
   {
     "id": "dance-mitte-contemporary-for-beginners",
@@ -1581,7 +1679,8 @@
       "Loud music, the trainer uses a mic. Soft, dimmed light.",
       "Medium group, enough space. Partner work is part of the class. No hands-on corrections."
     ],
-    "touch": "none"
+    "touch": "none",
+    "description": "Learn a short contemporary dance piece, step by step, with floor work and flowing moves. No dance experience needed. It feels energetic, with music pushing you along."
   },
   {
     "id": "dance-neuk-lln-salsa-basics",
@@ -1597,7 +1696,8 @@
       "Loud music, the trainer uses a mic. Normal daylight and ceiling lights.",
       "Medium group, enough space. Partner work is part of the class. The trainer asks before any hands-on help."
     ],
-    "touch": "asks-first"
+    "touch": "asks-first",
+    "description": "Learn salsa basic steps and simple turns, in pairs and on your own. You can come without a partner. It feels energetic, with music pushing you along."
   },
   {
     "id": "dance-prenzlauer-berg-contemporary-for-beginners",
@@ -1613,7 +1713,8 @@
       "Music in the background, you can still talk. Coloured and flashing lights in parts.",
       "Large group, it can get packed. Partner work is part of the class. The trainer asks before any hands-on help."
     ],
-    "touch": "asks-first"
+    "touch": "asks-first",
+    "description": "Learn a short contemporary dance piece, step by step, with floor work and flowing moves. No dance experience needed. It feels steady, with a few harder moments."
   },
   {
     "id": "pilates-neuk-lln-reformer-pilates",
@@ -1629,7 +1730,8 @@
       "Quiet room, soft background music. Bright white lights.",
       "Small group, plenty of space. No partner work. The trainer asks before any hands-on help."
     ],
-    "touch": "asks-first"
+    "touch": "asks-first",
+    "description": "Pilates on reformer machines with springs for resistance, focused on core strength and control. Some experience helps. It is hard work in a focused, quiet room."
   },
   {
     "id": "wellness-kreuzberg-breathwork",
@@ -1645,7 +1747,8 @@
       "Quiet room, soft background music. Soft, dimmed light.",
       "Small group, plenty of space. No partner work. No hands-on corrections."
     ],
-    "touch": "none"
+    "touch": "none",
+    "description": "Guided breathing exercises, sitting or lying down, to calm the body and mind. No experience needed. It feels calm and unhurried."
   },
   {
     "id": "yoga-friedrichshain-yin-yoga",
@@ -1661,6 +1764,7 @@
       "Quiet room, soft background music. Soft, dimmed light.",
       "Small group, plenty of space. Partner work is part of the class. The trainer asks before any hands-on help."
     ],
-    "touch": "asks-first"
+    "touch": "asks-first",
+    "description": "Floor-based yoga with long, supported stretches of a few minutes each. For anyone who wants to slow down after a long day. It feels calm and unhurried."
   }
 ]
