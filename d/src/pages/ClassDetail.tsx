@@ -10,7 +10,6 @@ import { useVariant } from '../lib/variant';
 import { km, placeName, studioKm, studioMin } from '../lib/location';
 import { Icon } from '../components/Icon';
 import { Photo } from '../components/Photo';
-import { BringList } from '../components/BringList';
 
 type Outcome = 'book' | 'not_for_me' | 'left';
 
@@ -129,14 +128,7 @@ export function ClassDetail({ panel = false }: { panel?: boolean }) {
           <p>{studio.description}</p>
         </section>
 
-        {/* D: "What to bring" once, as the LAST section (just above the Book bar); information only */}
-        <section className="detail-sec" aria-labelledby="bring-detail">
-          <h2 id="bring-detail" className="detail-sec__title">What to bring</h2>
-          <BringList items={c.expect.bring} />
-          <p className="arrival">
-            <Icon name="clock" size={18} /> <span><strong>Best arrival:</strong> {c.expect.arrival}</span>
-          </p>
-        </section>
+        {/* D: no "What to bring" before booking; it is shown on the "Booked ✓" screen only */}
       </main>
 
       <div className={panel ? 'actions actions--panel' : 'actions'}>

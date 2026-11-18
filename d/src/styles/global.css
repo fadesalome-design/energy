@@ -4970,7 +4970,7 @@ code {
   font-weight: 600;
 }
 
-/* ---------- D: class description, "About the studio", "What to bring" at the end ---------- */
+/* ---------- D: class description and "About the studio" (the last section above the Book bar) ---------- */
 
 .detail-desc {
   margin: 4px 0 16px;
@@ -5004,4 +5004,9 @@ code {
 
 .detail-sec .bringlist {
   margin: 0;
+}
+
+/* D: room between the last section ("About the studio") and the Book bar */
+.page--detail .detail-sec:last-of-type {
+  margin-bottom: 24px;
 }

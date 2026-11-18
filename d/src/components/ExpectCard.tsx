@@ -308,7 +308,7 @@ export function ExpectCard({ c, studio }: { c: ClassInfo; studio: Studio }) {
           </ul>
         </ExpandRow>
 
-        {/* D: "What to bring" is the last section of the class detail (ClassDetail), not a row here */}
+        {/* D: "What to bring" is shown only on the "Booked ✓" screen, not in the class detail */}
 
         {/* Research: F-SOCIAL (felt out of place made 4 leave; leaving quietly, filming, being stared at) */}
         <ExpandRow

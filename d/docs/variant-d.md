@@ -13,6 +13,11 @@ Each line below says what's on the screen and why. "Finding" means what we saw i
 
 ## Change log
 
+- **2026-11-18: "What to bring" only after booking.** Removed from the class detail and side panel
+  (no "What to bring" or "Best arrival" before booking). It stays only on the "Booked ✓" screen: items
+  with icons and "Best arrival", information only. The class detail ends with "About the studio",
+  with room above the Book bar.
+
 - **2026-11-18: small fixes from user feedback.**
   - **Class description:** every class in `d/data/classes.json` now has a `description` (2–3
     sentences: what you do, for whom, how it feels, matching type, intensity and room; fixed text, so
@@ -257,8 +262,8 @@ Each line below says what's on the screen and why. "Finding" means what we saw i
 ## 2. Class detail
 
 - **"What to expect" card** with the expandable rows from Version B (same look).
-- **"What to bring" is information only:** a small icon plus text (👕 Comfortable clothes, 🧘 Mats and
-  towels are provided), with no tick boxes. "Best arrival" stays. · Finding: tick boxes looked like a
+- **No "What to bring" here:** it is shown after booking, on the "Booked ✓" screen (icons + text, no
+  tick boxes, "Best arrival"). · Finding: tick boxes looked like a
   checklist the member had to fill in.
 - **Distance line:** "2.1 km from Kreuzberg · about 10 min".
 - **Book** and **Not for me today**, as in Version B.
