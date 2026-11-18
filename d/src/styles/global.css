@@ -3689,62 +3689,6 @@ code {
 
 /* ---------- SANDBOX D ---------- */
 
-/* Filters right under the Energy Match card: always visible chips, "×" when on */
-.dfilters {
-  display: grid;
-  gap: 8px;
-  margin: 0 0 16px;
-}
-
-.dfilters__head {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 8px;
-  min-height: 24px;
-}
-
-.dfilters__title {
-  font-size: 0.8125rem;
-  font-weight: 600;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-  color: var(--accent-ink);
-}
-
-.dfilters__chips {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-}
-
-.dchip {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  min-height: 44px;
-  padding: 0 14px;
-  border-radius: 999px;
-  border: 1.5px solid var(--line);
-  background: var(--surface);
-  color: var(--ink);
-  font: inherit;
-  font-size: 0.9375rem;
-  cursor: pointer;
-}
-
-.dchip:hover {
-  border-color: var(--accent);
-}
-
-/* On: filled + "×" + label for screen readers ("Remove filter"), never colour alone */
-.dchip--on {
-  background: var(--accent-soft);
-  border: 2px solid var(--accent);
-  color: var(--accent-ink);
-  font-weight: 600;
-}
-
 .bestfirst {
   display: flex;
   align-items: center;
@@ -4087,13 +4031,11 @@ code {
 
 .emd-set:focus-visible,
 .pill:focus-visible,
-.dchip:focus-visible,
 .chip--remove:focus-visible {
   border-radius: 999px;
 }
 
 .pill,
-.dchip,
 .chip--remove,
 .emd-opt {
   -webkit-tap-highlight-color: transparent;
@@ -4422,40 +4364,55 @@ code {
   margin: 16px 16px -60px 0;
 }
 
-/* ---------- D: Sensory filters sheet on phones (below 1024 px; desktop unchanged) ----------
-   B's original sheet used 88% of the height, so on a phone only 4 of the 7 filters showed and
-   nothing said the list scrolls. Here: almost full height, slightly tighter rows, and a soft
-   shadow at the bottom of the list while more filters are below (CSS-only scroll shadow). */
-@media (max-width: 1023px) {
+/* ---------- D: ONE Sensory filters sheet for every width (Version B's sheet) ----------
+   Same component and same styles on phone, ?frame=phone and desktop. B's sheet used 88% of the
+   height, so on a phone only 4 of the 7 filters showed and nothing said the list scrolls: here it
+   uses almost the full height, slightly tighter rows and a soft scroll shadow. On desktop the same
+   sheet opens as a centred dialog. */
+.sheet__panel {
+  max-height: calc(100vh - 16px);
+  max-height: calc(100dvh - 16px);
+  padding-top: 14px;
+}
+
+.sheet__body {
+  padding: 4px 0 8px;
+  background:
+    linear-gradient(var(--bg) 30%, rgba(246, 244, 239, 0)) top / 100% 32px no-repeat local,
+    linear-gradient(rgba(246, 244, 239, 0), var(--bg) 70%) bottom / 100% 32px no-repeat local,
+    radial-gradient(farthest-side at 50% 0, rgba(30, 42, 45, 0.14), transparent) top / 100% 12px no-repeat scroll,
+    radial-gradient(farthest-side at 50% 100%, rgba(30, 42, 45, 0.18), transparent) bottom / 100% 14px no-repeat scroll;
+}
+
+.sgroup {
+  margin-bottom: 2px;
+}
+
+.sgroup legend {
+  padding: 6px 0 2px;
+}
+
+.toggle {
+  min-height: 52px;
+  padding: 6px 0;
+}
+
+.sheet__foot {
+  padding-top: 10px;
+}
+@media (min-width: 1024px) {
+  .sheet {
+    align-items: center;
+  }
+
   .sheet__panel {
-    max-height: calc(100vh - 16px);
-    max-height: calc(100dvh - 16px);
-    padding-top: 14px;
-  }
-
-  .sheet__body {
-    padding: 4px 0 8px;
-    background:
-      linear-gradient(var(--bg) 30%, rgba(246, 244, 239, 0)) top / 100% 32px no-repeat local,
-      linear-gradient(rgba(246, 244, 239, 0), var(--bg) 70%) bottom / 100% 32px no-repeat local,
-      radial-gradient(farthest-side at 50% 0, rgba(30, 42, 45, 0.14), transparent) top / 100% 12px no-repeat scroll,
-      radial-gradient(farthest-side at 50% 100%, rgba(30, 42, 45, 0.18), transparent) bottom / 100% 14px no-repeat scroll;
-  }
-
-  .sgroup {
-    margin-bottom: 2px;
-  }
-
-  .sgroup legend {
-    padding: 6px 0 2px;
-  }
-
-  .toggle {
-    min-height: 52px;
-    padding: 6px 0;
+    max-width: 520px;
+    max-height: min(760px, calc(100vh - 64px));
+    border-radius: 22px;
+    box-shadow: 0 24px 64px rgba(30, 42, 45, 0.25);
   }
 
   .sheet__foot {
-    padding-top: 10px;
+    padding-bottom: 16px;
   }
 }

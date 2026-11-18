@@ -13,6 +13,20 @@ Each line below says what's on the screen and why. "Finding" means what we saw i
 
 ## Change log
 
+- **2026-11-18: one filter sheet everywhere, and B's "Clear all" row.**
+  - **Cause of the mobile/desktop difference:** there was only one filter component (B's sheet), but
+    a phone-only CSS rule made it look different on phones, and phones could still show an older
+    cached D for up to 10 minutes after a publish. Version E's unused filter UI and the old 4-filter
+    styles were also still in D's code.
+  - **Fix:** now one sheet with one set of styles on every width. It's a bottom sheet on phones and
+    `?frame=phone`, and the same component as a centred dialog on desktop. E's leftover filter UI
+    and the dead 4-filter styles were removed from D.
+  - **Results row from Version B:** "Showing X of Y classes · Clear all" directly under the Energy
+    Match card, only while an energy option or a sensory filter is on. Clear all does what it does in
+    B: clears the energy option (with Burn it off / Calm down) and all sensory filters. Sort and place
+    stay. D never hides classes, so X is the number that fit; the rest follow under "Other classes".
+    The sheet's own "Clear all" stays. The "Best match first" label no longer repeats the count.
+
 - **2026-11-18: sensory filters sheet fixed on phones.** On mobile, B's original sheet (88% height)
   showed only 4 of the 7 filters and gave no sign that it scrolls, so "Touch only if I agree", "No
   required partner work" and "Easy to step out" looked missing. On screens below 1024 px the sheet
@@ -129,8 +143,9 @@ Each line below says what's on the screen and why. "Finding" means what we saw i
 - **Sensory filters:** the chip "Sensory filters · N" opens Version B's original bottom sheet (7
   filters in groups, icon + description + toggle, Clear all, Show N classes). Active filters show as
   mint chips with × in the card. · Finding: testers knew and liked B's sheet.
-- **Best match first, nothing hidden:** with Energy Match or a filter on, the line "✦ Best match first
-  · N of 104" appears, then the fitting classes, then "Other classes". · Finding: hiding classes felt
+- **Best match first, nothing hidden:** with Energy Match or a filter on, B's row "Showing X of Y
+  classes · Clear all" appears under the card, then "✦ Best match first", the fitting classes, and
+  "Other classes". · Finding: hiding classes felt
   like being told what to do; sorting keeps the choice with the member.
 - **A timeline of the day:** 104 classes from 07:00 to 21:00, each at a fitting time of day (hard
   classes before or after work, calm classes in the morning, at lunch and in the evening, sauna in the evening). The default sort

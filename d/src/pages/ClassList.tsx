@@ -5,14 +5,10 @@ import { ClassRow } from '../components/ClassRow';
 import { Icon } from '../components/Icon';
 import { ClassFilters } from '../components/ClassFilters';
 import { SimulateVisit, useOpenBooking } from '../components/SimulateVisit';
-import { orderD, useFilters } from '../lib/filters';
+import { orderD, setMood, setPrefs, useFilters } from '../lib/filters';
 import { useVariant } from '../lib/variant';
-import { SortSwitch } from '../components/SortSwitch';
 import { byDistance, usePlace } from '../lib/location';
-import { setSortE } from '../lib/energy';
 import { logEvent } from '../lib/events';
-import { EnergyCheckIn, SensoryFiltersE } from '../components/EnergyCheckIn';
-import { energyList, reasonLine, useEnergy } from '../lib/energy';
 
 /** Today's date in English, e.g. "Sunday, 15 November" */
 function todayLabel() {
@@ -36,15 +32,12 @@ export function ClassList() {
   const byTime = [...classes].sort(byStart); // real times, earliest first
   // Version B: "Nearest" sorts by distance (ties keep time order). Sorting never hides.
   const sorted = variant === 'b' && sortB === 'nearest' ? byDistance(byTime) : byTime;
-  const withLocation = variant === 'b' || variant === 'e';
+  const withLocation = true; // D: distances always shown
   // D: mood + filters re-sort (best match first, then the rest; each group in time or
   // distance order). Nothing is hidden.
   const sorting = mood !== null || prefs.length > 0;
   const groups = orderD(sorted, mood, goal, prefs);
-  // Version E (Energy Match): the check-in re-sorts (never hides); only Quiet & dim leaves classes out.
-  const energy = useEnergy();
-  const e = variant === 'e' ? energyList(energy, energy.sensory) : null;
-  const shown = e ? e.shown : sorted;
+  const shown = sorted;
 
   return (
     <main className="page" id="main">
@@ -70,35 +63,37 @@ export function ClassList() {
       <aside className="dl__side" aria-label="Energy Match">
       {variant === 'b' && <ClassFilters />}
 
+      {/* Results row, copied from Version B: "Showing X of Y classes · Clear all".
+          Only while a mood or a sensory filter is on. Clear all does what it does in B:
+          clears the mood (with Burn it off / Calm down) and all sensory filters.
+          D never hides classes: X are the classes that fit, the rest follow under "Other classes". */}
+      {sorting && (
+        <p className="filter-count" role="status">
+          Showing {groups.best.length} of {sorted.length} classes
+          <button
+            type="button"
+            className="linkbtn"
+            onClick={() => {
+              setMood(null);
+              setPrefs([]);
+              logEvent('preference_set', { data: { preference: 'all', on: false } });
+            }}
+          >
+            Clear all
+          </button>
+        </p>
+      )}
+
       {/* D: helper line directly under the card, above the list (plain text, not a button) */}
       <p className="list-hint emd-hint">Tap a class to read the room before you go.</p>
       </aside>
       <section className="dl__main" aria-label="Classes today">
-      {variant === 'e' && (
-        <>
-          <EnergyCheckIn />
-          <SensoryFiltersE shown={e!.shown.length} hidden={e!.hidden} matchAll={e!.matchAll} />
-        </>
-      )}
-
-      {variant === 'e' && (
-        <SortSwitch<'match' | 'nearest'>
-          options={[{ id: 'match', label: energy.energy ? 'Energy match' : 'Time' }, { id: 'nearest', label: 'Nearest' }]}
-          value={energy.sort}
-          onChange={(v) => {
-            setSortE(v);
-            logEvent('sort_changed', { data: { sort: v === 'match' ? (energy.energy ? 'energy_match' : 'time') : 'nearest' } });
-          }}
-        />
-      )}
-
       {variant === 'b' && sorting ? (
         <>
           {/* D: shown while Energy Match or a filter is on. Nothing is hidden. */}
           <p className="bestfirst" role="status">
             <Icon name="sparkle" size={16} />
             {mood ? 'Best match first' : 'Matching your filters first'}
-            <span className="muted"> · {groups.best.length} of {sorted.length}</span>
           </p>
           {groups.best.length > 0 && (
             <ul className="rows" aria-label="Best match">
@@ -117,7 +112,7 @@ export function ClassList() {
       ) : shown.length > 0 ? (
         <ul className="rows" aria-label="Classes">
           {shown.map((c) => (
-            <ClassRow key={c.id} c={c} reason={e ? reasonLine(c, energy, energy.sensory) : undefined} distance={withLocation} />
+            <ClassRow key={c.id} c={c} distance={withLocation} />
           ))}
         </ul>
       ) : (
