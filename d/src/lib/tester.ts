@@ -4,7 +4,8 @@
  *   class list → book → "I went to this class" (simulated QR check-in + class end)
  *   → app reopens on home → rate the class → stamp → home.
  *
- *   ?tester=1  start a clean participant session (bookings, stamps, ratings cleared;
+ *   ?tester=1  start a clean participant session (bookings, stamps, ratings, energy choice
+ *              and sensory filters cleared;
  *              older events kept for export) and remember tester mode
  *   ?tester=0  turn tester mode off
  * The parameter is removed from the address bar right away, so reloading
@@ -22,6 +23,12 @@ export function initTesterFromUrl(): void {
   if (t === null) return;
   if (t === '1') {
     devResetFeedback();
+    // D: a new participant also starts with no energy choice, no filters and no Skip,
+    // so nothing from the previous person shows up
+    try {
+      ['rtrD.mood', 'rtrD.sensoryPrefs'].forEach((k) => localStorage.removeItem(k));
+      sessionStorage.removeItem('rtrD.moodSkipped');
+    } catch { /* storage blocked: nothing to clear */ }
     startNewSession();
     writeJSON(TESTER_KEY, true);
   } else if (t === '0') {

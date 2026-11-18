@@ -13,6 +13,11 @@ Each line below says what's on the screen and why. "Finding" means what we saw i
 
 ## Change log
 
+- **2026-11-18: links and a clean tester start.** Mobile: `/energy/d/?frame=phone` (phone view on any
+  screen) · Desktop: `/energy/d/` on a screen 1024 px or wider · Tester: `/energy/d/?tester=1`
+  (phone frame: `/energy/d/?frame=phone&tester=1`). The tester link now also clears the previous
+  person's energy choice and sensory filters, not only bookings, stamps and ratings.
+
 - **2026-11-18: mobile polish, desktop layout, presentation mode.**
   - **Label:** "ENERGY MATCH" with the sparkle badge. No "optional" in the card (the rating's
     "+ Add a comment (optional)" stays).
