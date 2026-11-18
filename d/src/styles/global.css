@@ -4549,3 +4549,45 @@ code {
     padding-top: 0;
   }
 }
+
+/* ---------- D: ?frame=phone as a product shot (bigger, bottom may be cropped) ----------
+   --phone-scale is set by PhoneFrame (1.3 × the old "fits the window" size, or ?scale=…). */
+.pframe {
+  --phone-scale: 1;
+  display: block;
+  overflow: hidden;
+  padding: 0;
+}
+
+.pframe__device {
+  position: absolute;
+  top: 24px;
+  left: 50%;
+  width: 464px;
+  height: 980px;
+  transform: translateX(-50%) scale(var(--phone-scale));
+  transform-origin: top center;
+}
+
+/* the app fills the visible part of the screen; the rest of the (cropped) screen is background */
+.pframe__screen {
+  height: auto;
+}
+
+.pframe__caption,
+.pframe__box {
+  display: none;
+}
+
+/* On a phone-sized window: still no frame, the app fills the screen */
+@media (max-width: 500px) {
+  .pframe {
+    position: fixed;
+  }
+
+  .pframe__device {
+    position: static;
+    top: auto;
+    left: auto;
+  }
+}

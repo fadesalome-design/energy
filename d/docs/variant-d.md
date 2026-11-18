@@ -13,6 +13,12 @@ Each line below says what's on the screen and why. "Finding" means what we saw i
 
 ## Change log
 
+- **2026-11-18: bigger phone frame (product shot).** `?frame=phone` now shows the phone at 1.3 × its
+  previous size (wider, bigger text), centred, with the top and camera pill fully visible and a small
+  margin; the bottom runs past the window edge (cropped). The page doesn't scroll; the app scrolls
+  inside the visible part of the screen. No caption. Change the size with `?scale=`, e.g.
+  `?frame=phone&scale=1.4` (applied via the CSS variable `--phone-scale`). Normal `/d/` unchanged.
+
 - **2026-11-18: Clear all on every view, bigger phone frame, buttons fit from 360 px.**
   - **Why "Clear all" still showed under the card on mobile / `?frame=phone`:** cached pages. The
     code had only the card and sheet "Clear all"s, but GitHub Pages lets browsers keep D for 10
