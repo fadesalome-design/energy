@@ -130,6 +130,11 @@ export interface Submission {
   answers: Record<string, Level>;
   match: MatchAnswer | null;
   message: { kind: 'none' } | { kind: 'text'; text: string } | { kind: 'voice'; seconds: number };
+  /**
+   * D: the 3 rating questions (PRD v4 categories) with their descriptive answers, saved in the
+   * SAME record as the card answer and the message, so the AI feature can read one record.
+   */
+  questions?: { id: string; category: string; cardSection: string; prompt: string; answer: string; answerIndex: 0 | 1 | 2 }[];
 }
 
 const BOOKINGS_KEY = 'rtrD.bookings';

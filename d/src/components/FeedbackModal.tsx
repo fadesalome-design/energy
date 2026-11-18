@@ -5,7 +5,7 @@ import {
   closeBooking, dismissFeedback, getStamps, now, pickQuestions, STAMPS_FOR_REWARD, submitFeedback,
   type Booking, type Level, type MatchAnswer, type Question,
 } from '../lib/feedback';
-import { addRatingV4, CATEGORY_LABEL, pickQuestionsV4 } from '../lib/energy';
+import { addRatingV4, CATEGORY_LABEL, pickQuestionsV4, QUESTIONS } from '../lib/energy';
 import { logEvent } from '../lib/events';
 import { Icon } from './Icon';
 import { VoiceRecorder } from './VoiceRecorder';
@@ -22,10 +22,9 @@ import { VoiceRecorder } from './VoiceRecorder';
  * - Minimal motion; the stamp animation is off under prefers-reduced-motion.
  */
 
-// D: the rating opens straight on Version B's ORIGINAL "Anything else?" screen ('final'):
-// the card question (Yes / Partly / No), "Tell us more" (Write / Record) and
-// "Send and collect my stamp". The 3 room questions are not asked in D, so it is one screen
-// and there is no progress bar. The question steps below stay only for the copied B/E code.
+// D: 3 questions from Version E's 6 categories (PRD v4: fewest ratings first, never the same
+// set twice in a row; descriptive answers), then Version B's "Anything else?" screen ('final'),
+// then "Stamp collected". Progress: Question 1–3 of 3, then the last step (4 steps).
 type Step = 0 | 1 | 2 | 'expected' | 'final' | 'done';
 
 /** Pause after a tap so the choice is visible before moving on. */
@@ -34,16 +33,6 @@ type MessageMode = 'write' | 'record';
 
 const LEVELS: Level[] = ['low', 'medium', 'high'];
 
-function LevelBars({ level }: { level: Level }) {
-  const n = LEVELS.indexOf(level) + 1;
-  return (
-    <span className="lvl" aria-hidden="true">
-      {[1, 2, 3].map((i) => (
-        <span key={i} className={i <= n ? 'lvl__bar lvl__bar--on' : 'lvl__bar'} style={{ height: `${6 + i * 5}px` }} />
-      ))}
-    </span>
-  );
-}
 
 /**
  * A few slow, muted confetti pieces that fall once behind the ticket.
@@ -100,10 +89,12 @@ export function FeedbackModal({ booking, onClose, version = 'b' }: { booking: Bo
   const c = getClass(booking.classId)!;
   const studio = getStudio(c.studioId);
   const isE = version === 'e';
-  const questions = useMemo(() => (isE ? energyQuestions(c) : pickQuestions(c, booking.id)), [c, booking.id, isE]);
+  // D: always Version E's categories (pickQuestionsV4), picked once per opening
+  const questions = useMemo(() => energyQuestions(c), [c]);
+  void pickQuestions;
   const [expected, setExpected] = useState<'yes' | 'no' | null>(null);
 
-  const [step, setStep] = useState<Step>('final'); // D: straight to the one screen
+  const [step, setStep] = useState<Step>(0); // D: opens on question 1
   const [answers, setAnswers] = useState<Record<string, Level>>({});
   const [match, setMatch] = useState<MatchAnswer | null>(null);
   const [mode, setMode] = useState<MessageMode>('write');
@@ -120,7 +111,7 @@ export function FeedbackModal({ booking, onClose, version = 'b' }: { booking: Bo
     root?.setAttribute('inert', '');
     const prevOverflow = document.body.style.overflow;
     document.body.style.overflow = 'hidden';
-    logEvent('feedback_shown', { classId: c.id, classType: c.type, data: { version: 'd', questions: ['match'] } });
+    logEvent('feedback_shown', { classId: c.id, classType: c.type, data: { version: 'd', questions: questions.map((q) => q.id) } });
     return () => {
       root?.removeAttribute('inert');
       document.body.style.overflow = prevOverflow;
@@ -162,14 +153,28 @@ export function FeedbackModal({ booking, onClose, version = 'b' }: { booking: Bo
       mode === 'record' && voiceSec ? { kind: 'voice' as const, seconds: voiceSec }
       : mode === 'write' && text.trim() ? { kind: 'text' as const, text: text.trim() }
       : { kind: 'none' as const };
+    // D: one record with the 3 answers, the card answer and the message …
+    const asked = questions.map((q) => {
+      const lvl = answers[q.id];
+      // category = the PRD v4 category id (level, crowd, clean, atmosphere, coaching, senses);
+      // cardSection = the card section it feeds (atmosphere and coaching share one)
+      const category = QUESTIONS.find((x) => x.id === q.id)?.category ?? q.id;
+      return { id: q.id, category, cardSection: q.cardRow, prompt: q.prompt, answer: lvl ? q.options[lvl] : '', answerIndex: (lvl ? LEVELS.indexOf(lvl) : 1) as 0 | 1 | 2 };
+    }).filter((x) => x.answer);
     const total = submitFeedback({
       bookingId: booking.id, classId: c.id, submittedAt: new Date(now()).toISOString(),
-      answers, match, message,
+      answers, match, message, questions: asked,
+    });
+    // … and the same answers feed the member data behind the card (as in Version E)
+    addRatingV4({
+      classId: c.id, at: new Date(now()).toISOString(),
+      expected: match === 'yes' ? 'yes' : match === 'no' ? 'no' : null,
+      answers: Object.fromEntries(asked.map((x) => [x.id, x.answerIndex])),
     });
     logEvent('feedback_submitted', {
       classId: c.id, classType: c.type,
       data: {
-        answers, match, message: message.kind,
+        version: 'd', answers: Object.fromEntries(asked.map((x) => [x.id, x.answer])), match, message: message.kind,
         textLength: message.kind === 'text' ? message.text.length : 0,
         voiceSeconds: message.kind === 'voice' ? message.seconds : 0,
         stamps: total,
@@ -202,13 +207,13 @@ export function FeedbackModal({ booking, onClose, version = 'b' }: { booking: Bo
   const close = () => onClose();
 
   const qIndex = typeof step === 'number' ? step : null;
-  const total = 5; // D: 3 questions + card match + last step
-  // D: one screen, so no progress bar and no Back
-  const progress: number | null = qIndex !== null ? qIndex + 1 : step === 'expected' ? 4 : null;
+  const total = 4; // D: 3 questions + "Anything else?"
+  // D: Question 1–3 of 3, then "Anything else?" as the 4th and last step
+  const progress: number | null = qIndex !== null ? qIndex + 1 : step === 'final' ? 4 : null;
   void total;
   const goBack = () => {
     if (advance.current) return;
-    if (step === 'final') return setStep('expected');
+    if (step === 'final') return setStep(2);
     if (step === 'expected') return setStep(2);
     setStep(Math.max(0, (step as number) - 1) as Step);
   };
@@ -235,7 +240,7 @@ export function FeedbackModal({ booking, onClose, version = 'b' }: { booking: Bo
     if (answers[qid] !== level) answer(qid, level);
     advance.current = window.setTimeout(() => {
       advance.current = null;
-      setStep(i < 2 ? ((i + 1) as Step) : 'expected');
+      setStep(i < 2 ? ((i + 1) as Step) : 'final');
     }, ADVANCE_MS);
   };
 
@@ -253,7 +258,7 @@ export function FeedbackModal({ booking, onClose, version = 'b' }: { booking: Bo
             {!progress && <span />}{/* D: keeps "Not now" on the right without a progress label */}
             {progress && (
               <p className="fb__progress">
-                {progress <= 3 ? `Question ${progress} of 3` : 'One more question'}
+                {progress <= 3 ? `Question ${progress} of 3` : 'Last step'}
               </p>
             )}
             <button type="button" className="fb__notnow" onClick={notNow}>Not now</button>
@@ -306,12 +311,12 @@ export function FeedbackModal({ booking, onClose, version = 'b' }: { booking: Bo
                     key={lvl}
                     type="button"
                     aria-pressed={chosen === lvl}
-                    className={chosen === lvl ? 'opt opt--on' : 'opt'}
+                    className={chosen === lvl ? 'opt opt--d opt--on' : 'opt opt--d'}
                     onClick={() => choose(q.id, lvl, qIndex)}
                   >
-                    <LevelBars level={lvl} />
+                    {/* D: same button style as the rest of D; a tick (not a radio circle) when chosen */}
+                    {chosen === lvl && <Icon name="check" size={18} className="opt__tick" />}
                     <span className="opt__word">{q.options[lvl]}</span>
-                    <span className="opt__check" aria-hidden="true"><Icon name="check" size={18} /></span>
                   </button>
                 ))}
               </div>

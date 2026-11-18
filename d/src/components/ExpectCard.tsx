@@ -15,6 +15,7 @@ import {
   showersLabel, towelsLabel, trainerStyleLabel, volumeLabel, intensityLabel,
 } from '../lib/labels';
 import { logEvent } from '../lib/events';
+import { getRatingsV4 } from '../lib/energy'; // D: ratings given in the prototype count too
 import { Icon } from './Icon';
 import { BringList } from './BringList';
 import { useVariant } from '../lib/variant';
@@ -132,7 +133,7 @@ export function ExpectCard({ c, studio }: { c: ClassInfo; studio: Studio }) {
         {/* PRD (Responsible AI: transparent): name the sources */}
         <p className="muted small">
           From {c.studioChecklist ? "the studio's checklist and " : ''}
-          {c.reports} member answers (last 30 days)
+          {c.reports + getRatingsV4().filter((r) => r.classId === c.id).length} member answers (last 30 days)
         </p>
       </header>
 

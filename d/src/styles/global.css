@@ -4591,3 +4591,45 @@ code {
     left: auto;
   }
 }
+
+/* ---------- D: rating answers in D's button style ----------
+   White, rounded, one line border; chosen = filled dark green, white text, a tick (no radio
+   circle, no second ring). */
+.opt--d {
+  justify-content: flex-start;
+  gap: 10px;
+  min-height: 56px;
+  padding: 0 18px;
+  border-radius: 999px;
+  border: 1.5px solid var(--line);
+  background: var(--surface);
+  box-shadow: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.opt--d:hover {
+  border-color: var(--accent);
+}
+
+.opt--d.opt--on {
+  background: var(--accent);
+  border: 1.5px solid var(--accent);
+  color: #fff;
+  box-shadow: none;
+}
+
+.opt--d.opt--on .opt__word {
+  color: #fff;
+}
+
+.opt--d .opt__tick {
+  flex: 0 0 auto;
+}
+
+.opt--d:focus:not(:focus-visible) {
+  outline: none;
+}
+
+.opt--d:focus-visible {
+  border-radius: 999px;
+}

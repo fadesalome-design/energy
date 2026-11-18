@@ -13,6 +13,20 @@ Each line below says what's on the screen and why. "Finding" means what we saw i
 
 ## Change log
 
+- **2026-11-18: the 3 rating questions are back (core AI input), using Version E's categories.**
+  They were dropped in `fda679f` when the rating became "card question only". The flow is now:
+  **Question 1–3 of 3 → "Anything else?" → "Stamp collected"** (4-step progress bar).
+  - **Questions:** PRD v4 / Version E's 6 categories: Real level · Crowd · Cleanliness · Atmosphere
+    · Coaching style · Sound & light (music or light). The 3 categories with the fewest ratings for
+    the class are asked, never the same 3 twice in a row in one session. Descriptive answers (e.g.
+    "Quiet, lots of space / Comfortable / Packed"). One tap moves on, with Back and "Not now".
+  - **Look:** D's button style (white, rounded, one border; chosen = filled dark green with a tick, no
+    radio circle, no second ring). "Anything else?" and "Stamp collected" are unchanged.
+  - **Data (one record per rating, `rtrD.feedback`):** `answers` (B's structure) plus `questions`
+    [{id, category, cardSection, prompt, answer, answerIndex}], `match` (Yes/Partly/No) and
+    `message` (text or voice). The same answers also go into the member data behind the card
+    (`rtrD.ratingsV4`), and the card's "N member answers" count goes up.
+
 - **2026-11-18: bigger phone frame (product shot).** `?frame=phone` now shows the phone at 1.3 × its
   previous size (wider, bigger text), centred, with the top and camera pill fully visible and a small
   margin; the bottom runs past the window edge (cropped). The page doesn't scroll; the app scrolls
@@ -212,10 +226,12 @@ Each line below says what's on the screen and why. "Finding" means what we saw i
 
 ## 4. After-class rating (full screen, next app open)
 
-- **One screen, Version B's original "Anything else?"**: "Both are optional. You can send without them.",
-  **"Did the class match its 'What to expect' card?"** Yes / Partly / No (one row), "Tell us more"
-  with Write / Record, the note on who reads it, and **"Send and collect my stamp"**. · Finding: the
-  card question tells us whether the card can be trusted; members know this screen from B.
+- **3 quick questions** (Question 1–3 of 3), picked from PRD v4's 6 categories: fewest ratings
+  first, never the same set twice in a row. Descriptive answers, one tap moves on, with Back and
+  "Not now". · Finding: these answers keep the card honest and are the input for the AI feature.
+- **"Anything else?"** (B's original): "Did the class match its 'What to expect' card?" Yes / Partly
+  / No, "Tell us more" (Write / Record), the note on who reads it, and **"Send and collect my
+  stamp"**. All answers are saved in one record.
 - **Stamp collected**; every 10th stamp shows the free-class reward.
 
 ## Not in D
