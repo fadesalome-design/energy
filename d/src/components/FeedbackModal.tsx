@@ -8,8 +8,9 @@ import {
 import { addRatingV4, CATEGORY_LABEL, pickQuestionsV4, QUESTIONS } from '../lib/energy';
 import { logEvent } from '../lib/events';
 import { Icon } from './Icon';
-import { CHOICE_DESCRIPTION, counterLabel, level, progressLine, rewardReachedAt } from '../lib/rewards';
+import { CHOICE_DESCRIPTION, level, progressLine, rewardReachedAt } from '../lib/rewards';
 import { VoiceRecorder } from './VoiceRecorder';
+import { Aura, type AuraLevel } from './Aura';
 
 /**
  * Full-screen "How was the room?" check after an attended class.
@@ -246,7 +247,7 @@ export function FeedbackModal({ booking, onClose, onSeeRewards, version = 'b' }:
   };
 
   const body = (
-    <div className="fb" role="dialog" aria-modal="true" aria-labelledby="fb-title">
+    <div className="fb fb--d" role="dialog" aria-modal="true" aria-labelledby="fb-title">
       <div className="fb__inner">
         {/* Top bar: Back (from question 2 on), progress in words, Not now */}
         {step !== 'done' && (
@@ -287,21 +288,29 @@ export function FeedbackModal({ booking, onClose, onSeeRewards, version = 'b' }:
           </div>
         )}
 
+        {/* D: intro (question 1), then ONE aura above the question for questions 1–3 and
+            "Anything else?" (it stays, so its strength and colours fade from step to step) */}
+        {step === 0 && (
+          <p className="fb__intro daura-intro">
+            3 quick questions about the room, not about you. Anonymous, and you'll collect a stamp.
+          </p>
+        )}
+        {(qIndex !== null || step === 'final') && (
+          <div className="daura-wrap">
+            <Aura
+              level={(qIndex ?? 2) as AuraLevel}
+              label={step === 0 && !answers[questions[0].id] ? 'shown' : 'gone'}
+              size={step === 'final' ? 'md' : 'lg'}
+            />
+          </div>
+        )}
+
         {/* ---------- Questions (the first one opens straight away) ---------- */}
         {qIndex !== null && (() => {
           const q = questions[qIndex];
           const chosen = answers[q.id];
           return (
             <div className="fb__screen" key={q.id}>
-              {/* One-line intro, first question only: context without a "Start" commitment */}
-              {qIndex === 0 && (
-                <p className="fb__intro">
-                  3 quick questions about the room, not about you. Anonymous, and you'll collect
-                  a stamp <span className="muted">({counterLabel(stamps).replace('/', ' of ')})</span>.
-                </p>
-              )}
-
-              <span className="fb__qicon"><Icon name={q.icon} size={28} /></span>
               <h2 id="fb-title" tabIndex={-1} ref={headingRef} className="fb__title">{q.prompt}</h2>
               <p className="muted small">Helps the "{q.cardRow}" part of the card.</p>
 

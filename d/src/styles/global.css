@@ -5010,3 +5010,153 @@ code {
 .page--detail .detail-sec:last-of-type {
   margin-bottom: 24px;
 }
+
+/* ======================================================================
+   D: THREE-DOT AURA in the rating questions (adapted from Version C, D's palette)
+   + D's pill button system, centred layout and 8-point spacing for the rating flow.
+   ====================================================================== */
+
+@property --daura-a { syntax: '<color>'; inherits: true; initial-value: #cdebdf; }
+@property --daura-b { syntax: '<color>'; inherits: true; initial-value: #eceef7; }
+
+.fb--d .daura-intro { margin: 16px 0 0; text-align: center; }
+.daura-wrap { display: grid; justify-items: center; margin: 8px 0 0; }
+
+.daura {
+  --w: 176px;
+  --h: calc(var(--w) * 1.12);
+  display: grid;
+  justify-items: center;
+  gap: 8px;
+  transition: --daura-a 1.8s ease, --daura-b 1.8s ease;
+}
+.daura--md { --w: 120px; }
+
+/* question 1 → 2 → 3 (and "Anything else?"): a little stronger each time; light mint → light lavender */
+.daura--l0 { --daura-a: #cdebdf; --daura-b: #eceef7; --pulse: 1.025; --body-op: 0.90; --halo-op: 0.60; }
+.daura--l1 { --daura-a: #b6e1d1; --daura-b: #e8e6f6; --pulse: 1.04;  --body-op: 0.95; --halo-op: 0.70; }
+.daura--l2 { --daura-a: #9fd6c2; --daura-b: #e6e3f5; --pulse: 1.055; --body-op: 1;    --halo-op: 0.80; }
+
+.daura__stage { position: relative; width: var(--w); height: var(--h); }
+.daura__breath { position: absolute; inset: 0; animation: daura-breathe 6s ease-in-out infinite; }
+@keyframes daura-breathe { 0%, 100% { transform: scale(1); } 50% { transform: scale(var(--pulse)); } }
+
+.daura__halo, .daura__body { position: absolute; transition: opacity 1.8s ease; }
+.daura__halo {
+  inset: -6%;
+  border-radius: 50%;
+  background: radial-gradient(ellipse at 50% 58%, var(--daura-b) 0%, transparent 66%);
+  filter: blur(16px);
+  opacity: var(--halo-op);
+}
+.daura__body {
+  inset: 8%;
+  border-radius: 48% 52% 50% 50% / 46% 46% 54% 54%;
+  background: radial-gradient(ellipse 60% 62% at 50% 62%, var(--daura-a) 0%, var(--daura-b) 54%, transparent 78%);
+  filter: blur(12px);
+  opacity: var(--body-op);
+}
+
+/* a few tiny white specks rising (2 / 3 / 4) */
+.daura__specks { position: absolute; inset: 0; pointer-events: none; }
+.daura__speck {
+  position: absolute; bottom: 28%; width: 3px; height: 3px; border-radius: 50%;
+  background: #ffffff; opacity: 0;
+  animation: daura-speck 6.4s ease-in infinite;
+}
+.daura__speck--1 { left: 44%; animation-delay: 0s; }
+.daura__speck--2 { left: 57%; animation-delay: -3.2s; }
+.daura__speck--3 { left: 38%; animation-delay: -1.6s; }
+.daura__speck--4 { left: 62%; animation-delay: -4.8s; }
+.daura--l0 .daura__speck:nth-child(n+3), .daura--l1 .daura__speck:nth-child(n+4) { display: none; }
+@keyframes daura-speck {
+  0% { transform: translateY(0); opacity: 0; }
+  25% { opacity: 0.9; }
+  100% { transform: translateY(calc(var(--h) * -0.45)); opacity: 0; }
+}
+
+/* three small white dots on a vertical line (bottom = question 1) */
+.daura__dots {
+  position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%);
+  display: grid; justify-items: center; gap: 16px;
+}
+.daura__line {
+  position: absolute; left: 50%; top: 4px; bottom: 4px; width: 2px; transform: translateX(-50%);
+  border-radius: 2px; background: rgba(255, 255, 255, 0.6);
+}
+.daura__dot {
+  position: relative; width: 9px; height: 9px; border-radius: 50%;
+  background: rgba(255, 255, 255, 0.5);
+  transition: background-color 0.8s ease, box-shadow 0.8s ease;
+}
+.daura__dot--on { background: #ffffff; box-shadow: 0 0 8px 2px rgba(255, 255, 255, 0.9); }
+
+/* "✦ Energy Match AI" just above the aura, in D's dark text colour; dissolves after the first answer */
+.daura-label { position: relative; display: grid; place-items: center; min-height: 24px; pointer-events: none; }
+.daura-label__sharp, .daura-label__ghost {
+  grid-area: 1 / 1; font-size: 1rem; font-weight: 500; color: var(--ink); white-space: nowrap;
+}
+.daura-label__sharp { transition: opacity 0.9s ease, transform 1.6s ease; }
+.daura-label__ghost { filter: blur(8px); letter-spacing: 0.25em; opacity: 0; }
+.daura-label--gone .daura-label__sharp { opacity: 0; transform: scale(1.1); }
+.daura-label--gone .daura-label__ghost { animation: daura-dissolve 1.6s ease-out; }
+@keyframes daura-dissolve { 0% { opacity: 0; } 35% { opacity: 0.5; } 100% { opacity: 0; transform: scale(1.15); } }
+
+/* ---------- D's button system in the rating flow ---------- */
+.fb--d .fb__screen { gap: 0; padding-top: 0; align-items: center; text-align: center; }
+.fb--d .fb__screen > .fb__title { margin: 16px 0 0; text-align: center; }
+.fb--d .fb__screen > .fb__title + .muted { margin: 8px 0 0; }
+.fb--d .fb__later { margin: 24px 0 0; text-align: center; }
+
+/* answers: 40 px pills as wide as their text, centred */
+.fb--d .fb__options { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; margin: 16px 0 0; }
+.fb--d .opt.opt--d {
+  width: auto;
+  height: 40px;
+  min-height: 40px;
+  padding: 0 16px;
+  gap: 6px;
+  border-radius: 999px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  justify-content: center;
+}
+.fb--d .opt.opt--d::after, .fb--d .seg__opt::after { content: ''; position: absolute; inset: -2px -2px; }
+
+/* Yes / Partly / No as pills */
+.fb--d .fb__match { width: 100%; margin: 24px 0 0; text-align: center; }
+.fb--d .fb__match legend { width: 100%; margin: 0 0 12px; padding: 0; text-align: center; }
+.fb--d .seg { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; }
+.fb--d .seg__opt {
+  height: 40px; min-height: 40px; padding: 0 16px; border-radius: 999px;
+  border-width: 1.5px; font-size: 0.875rem; font-weight: 500;
+}
+.fb--d .seg__opt:focus-within { outline: none; }
+.fb--d .seg__opt:has(input:focus-visible) { outline: 3px solid var(--focus); outline-offset: 2px; }
+
+/* Tell us more: label centred, switch and field full width */
+.fb--d .fb__msg { width: 100%; margin: 24px 0 0; gap: 0; }
+.fb--d .fb__msg-label { margin: 0; text-align: center; }
+.fb--d .tabs { margin-top: 8px; border-radius: 999px; }
+.fb--d .tabs__tab { border-radius: 999px; min-height: 40px; }
+.fb--d .fb__text, .fb--d .fb__msg > div:not(.tabs) { margin-top: 12px; }
+.fb--d .fb__text { border-radius: 16px; }
+.fb--d .fb__privacy { margin: 12px 0 0; justify-content: center; text-align: center; }
+
+/* one primary pill per screen, centred, not full width */
+.fb--d .fb__actions { margin-top: 24px; padding-top: 0; display: flex; justify-content: center; width: 100%; }
+.fb--d .btn--primary {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: auto; min-width: 200px; height: 44px; min-height: 44px; padding: 0 24px;
+  border-radius: 999px;
+}
+
+/* Stamp collected: same rhythm, centred */
+.fb--d .fb__screen--done .fb__lead, .fb--d .fb__screen--done .fb__reward { text-align: center; }
+
+/* reduced motion: nothing moves; only the dots and the strength change */
+@media (prefers-reduced-motion: reduce) {
+  .daura, .daura * { animation: none !important; transition: none !important; }
+  .daura__speck, .daura-label__ghost { display: none; }
+  .daura-label--gone .daura-label__sharp { transform: none; }
+}

@@ -13,6 +13,23 @@ Each line below says what's on the screen and why. "Finding" means what we saw i
 
 ## Change log
 
+- **2026-11-18: three-dot aura in the rating questions** (adapted from Version C, D's own code and
+  colours; nothing else from C).
+  - **Aura:** above the question on the 3 question screens: a soft blurred aura (blur 12 px) with a
+    pale halo, from light mint to very light lavender (the only lavender in D). Three small white dots
+    on a vertical line (question 1: bottom dot; question 2: two dots and a little stronger; question 3:
+    all three and strongest). All three stay lit, smaller, on "Anything else?". It breathes slowly
+    (6 s), a few tiny white specks rise, and it never flashes.
+  - **Label:** "✦ Energy Match AI" sits 8 px above the aura in D's dark text colour and dissolves
+    after the first answer. The intro line ("…and you'll collect a stamp.") sits above it on
+    question 1; "Not now? We'll ask again…" stays at the bottom. The question icon was replaced by
+    the aura.
+  - **Buttons and layout:** D's button system in the rating flow. Answers and Yes / Partly / No are
+    40 px pills as wide as their text, centred; one primary pill per screen (44 px, at least 200 px,
+    not full width); hit areas are at least 44 px. Everything is centred, with 8-point spacing.
+  - **Unchanged:** questions, logic, "Anything else?", "Stamp collected" and the rewards.
+  - **Reduced motion:** nothing moves; only the dots and the strength change.
+
 - **2026-11-18: "What to bring" only after booking.** Removed from the class detail and side panel
   (no "What to bring" or "Best arrival" before booking). It stays only on the "Booked ✓" screen: items
   with icons and "Best arrival", information only. The class detail ends with "About the studio",
@@ -289,3 +306,55 @@ Each line below says what's on the screen and why. "Finding" means what we saw i
 
 Version E's Normal option, its six-section card and its sensory-filter sheet. The admin page and
 `/debug` are unchanged copies.
+
+
+## Design tokens
+
+CSS custom properties defined in `d/src/styles/global.css` (name: value).
+
+### Colour (`:root`)
+
+| Token | Value | Use |
+|---|---|---|
+| `--bg` | #f6f4ef | page background (warm off-white) |
+| `--surface` | #ffffff | cards, sheets, buttons |
+| `--ink` | #1e2a2d | headings and body text |
+| `--muted` | #55615f | secondary text |
+| `--line` | #e3ded4 | borders and dividers |
+| `--accent` | #1d6a66 | primary green: selected states, primary buttons, icons |
+| `--accent-ink` | #134b48 | dark green text (eyebrows, links, active labels) |
+| `--accent-soft` | #e4efec | mint tint: active chips, stamp pill, icon circles |
+| `--focus` | #1d6a66 | keyboard focus ring |
+| `--calm-bg` / `--calm-ink` | #e4efec / #134b48 | "calm" status chip |
+| `--moderate-bg` / `--moderate-ink` | #f1ebdd / #5c4a1e | "moderate" status chip |
+| `--busy-bg` / `--busy-ink` | #f3e4dc / #6b3420 | "busy" status chip |
+
+### Colour (component-scoped)
+
+| Token | Value | Where |
+|---|---|---|
+| `--emd-tint` | #eaf3f0 | Energy Match card (legacy mint, now overridden to white) |
+| `--emd-shadow` | 0 1px 2px rgba(30,42,45,.05), 0 6px 20px rgba(30,42,45,.06) | Energy Match card shadow |
+| `--e-tint`, `--e-line`, `--e-shadow`, `--e-shadow-hover` | #eaf3f0, #ebe6dc, (shadows as above) | copied Version E styles (not shown in D) |
+| `--daura-a` / `--daura-b` per step | Q1 #cdebdf / #eceef7 · Q2 #b6e1d1 / #e8e6f6 · Q3 and "Anything else?" #9fd6c2 / #e6e3f5 | rating aura (mint → light lavender) |
+
+### Font
+
+| Token | Value |
+|---|---|
+| `--font` | ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif |
+
+Base size 16 px (17 px on desktop ≥ 1024 px).
+
+### Radius and spacing
+
+| Token | Value | Use |
+|---|---|---|
+| `--radius` | 18px | cards and class rows |
+| `--radius-sm` | 10px | small boxes and notices |
+| (pills) | 999px | chips, pills and pill buttons (not a variable) |
+| `--gutter` | 20px | side margins |
+| `--tap` | 48px | minimum tap height (44 px for pills, via hit areas) |
+
+Note: some screens in D still use fixed colour values directly in the CSS (for example the phone
+frame and the class card photo fallbacks). The table lists the variables only.
