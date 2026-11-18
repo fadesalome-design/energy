@@ -1,3 +1,4 @@
+import { getVariant } from '../lib/variant';
 /**
  * Mock data for the Urban Sports Clue / Read the Room prototype.
  *
@@ -616,8 +617,46 @@ export const classes: ClassInfo[] = [
 ];
 
 // ---------------------------------------------------------------------------
+// Versions B and E: an evenly spread day (07:00–21:00, round times, ≥ 60 min apart),
+// each class at a fitting time of day. Only the start time changes; Version A (the
+// default route) keeps the original times above.
+// ---------------------------------------------------------------------------
+
+const DAY_PLAN: Record<string, string> = {
+  'hiit-express': '07:00', // before work
+  'sunrise-spin': '08:00', // morning ride before work
+  'slow-flow': '09:00', // "easing into the day"
+  'mat-pilates': '10:00', // calm morning
+  'lane-swim': '12:00', // lunchtime
+  'strength-basics': '13:00', // "quiet at lunchtime"
+  'vinyasa-open': '16:00', // afternoon
+  'boxing-fundamentals': '17:00', // "gets packed after work"
+  'contemporary-beginners': '18:00', // gentle after-work option
+  'reformer-open': '19:00', // "changing room gets tight before 19:00"
+  'dance-cardio': '20:00', // evening
+  'rhythm-ride': '21:00', // "club night on a bike"
+};
+
+for (const c of classes) {
+  const original = c.start;
+  Object.defineProperty(c, 'start', {
+    enumerable: true,
+    get: () => (getVariant() === 'a' ? original : DAY_PLAN[c.id] ?? original),
+  });
+}
+
+// ---------------------------------------------------------------------------
 // Helpers
 // ---------------------------------------------------------------------------
+
+/** "07:30" → 450. Times are compared as real times, not as text. */
+export function toMinutes(t: string): number {
+  const [h, m] = t.split(':').map(Number);
+  return h * 60 + m;
+}
+
+/** Earliest start first. */
+export const byStart = (a: ClassInfo, b: ClassInfo) => toMinutes(a.start) - toMinutes(b.start);
 
 export function getClass(id: string): ClassInfo | undefined {
   return classes.find((c) => c.id === id);

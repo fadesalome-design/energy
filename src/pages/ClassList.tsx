@@ -1,6 +1,6 @@
 import { useEffect, useRef } from 'react';
 import { useLocation } from 'react-router-dom';
-import { classes } from '../data/classes';
+import { byStart, classes } from '../data/classes';
 import { ClassRow } from '../components/ClassRow';
 import { Icon } from '../components/Icon';
 import { ClassFilters } from '../components/ClassFilters';
@@ -33,7 +33,7 @@ export function ClassList() {
   const variant = useVariant();
   const openBooking = useOpenBooking();
   const { mood, prefs, sort: sortB } = useFilters();
-  const byTime = [...classes].sort((a, b) => a.start.localeCompare(b.start));
+  const byTime = [...classes].sort(byStart); // real times, earliest first
   // Version B: "Nearest" sorts by distance (ties keep time order). Sorting never hides.
   const sorted = variant === 'b' && sortB === 'nearest' ? byDistance(byTime) : byTime;
   const withLocation = variant === 'b' || variant === 'e';

@@ -1,4 +1,4 @@
-# Energy Match: PRD v4.2
+# Energy Match: PRD v4.3
 
 Ironhack AI Product Management capstone. Energy Match is an unofficial, **optional** new feature
 concept for the Urban Sports Club app. In the prototype it is **Version E** (`?variant=e`).
@@ -7,7 +7,7 @@ concept for the Urban Sports Club app. In the prototype it is **Version E** (`?v
 - Tester link (clean session, full loop): https://fadesalome-design.github.io/energy/?tester=1&variant=e
 - Admin: https://fadesalome-design.github.io/energy/admin
 
-v4 final: 2026-11-17 · v4.1 · **v4.2: 2026-11-17** (see the change log at the end).
+v4 final: 2026-11-17 · v4.1 · v4.2 · **v4.3: 2026-11-18** (see the change log at the end).
 
 ## Product summary
 
@@ -115,6 +115,15 @@ use sensory filters to move fitting classes up → open a new studio's card → 
 Works at 375 px (phone) and on desktop.
 
 ## Change log
+
+**v4.3 (2026-11-18)**
+- Versions B and E show an evenly spread day (07:00–21:00, round times, 60 min apart); each class
+  at a fitting time of day. Version A keeps the original times.
+- The list reads as a timeline: times compared as real times. E: classes that fit the energy first
+  in time order, then the rest in time order (Tired: not high intensity · Calm down: quiet and not
+  high intensity · Burn it off / Energetic: high intensity). With sensory filters, full matches
+  first; classes that miss a filter follow in time order.
+- "Sort: Time" (E: "Energy match") is selected every time the page opens; Nearest is unchanged.
 
 **v4.2 (2026-11-17)**
 - Energy labels match Version B: "Drained" → **Tired**, "Energized" → **Energetic**.

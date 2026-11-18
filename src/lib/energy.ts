@@ -9,7 +9,7 @@
  * studios and copy stay the same as in Versions A and B.
  */
 import { useSyncExternalStore } from 'react';
-import { classes, getStudio, type ClassInfo } from '../data/classes';
+import { byStart, classes, getStudio, type ClassInfo } from '../data/classes';
 import { readJSON, writeJSON } from './storage';
 import { SENSORY, type SensoryId } from './filters';
 import { distanceKm } from './location';
@@ -50,8 +50,6 @@ export function profile(c: ClassInfo): Profile {
   };
 }
 
-const RANK = { low: 0, medium: 1, high: 2, quiet: 0, loud: 2, small: 0, large: 2 } as const;
-const rank = (v: string) => (RANK as Record<string, number>)[v] ?? 1;
 
 // ---------------------------------------------------------------------------
 // Member ratings: sample counts + ratings given in this prototype (feeds card + filter)
@@ -237,7 +235,8 @@ function readSession(): EnergyState {
     return EMPTY;
   }
 }
-let state: EnergyState = readSession();
+// The sort ("Energy match" / "Time") is the default every time the page opens.
+let state: EnergyState = { ...readSession(), sort: 'match' };
 let version = 0;
 const listeners = new Set<() => void>();
 function emit() { version++; listeners.forEach((l) => l()); }
@@ -300,22 +299,23 @@ export function sortMode(s: EnergyState): Mode {
   return 'default';
 }
 
-const byTime = (a: ClassInfo, b: ClassInfo) => a.start.localeCompare(b.start);
+/**
+ * Does this class fit the chosen energy? Two groups, each in time order: classes that fit
+ * first, then the rest, so the list still reads as a timeline of the day.
+ * Tired: not high intensity · Calm down: quiet music and not high intensity ·
+ * Burn it off / Energetic: high intensity · Normal, Stressed (no follow-up yet): all.
+ */
+export function fitsEnergy(c: ClassInfo, s: EnergyState): boolean {
+  const p = profile(c);
+  const mode = sortMode(s);
+  if (mode === 'gentle') return p.intensity !== 'high';
+  if (mode === 'calm') return p.music === 'quiet' && p.intensity !== 'high';
+  if (mode === 'high') return p.intensity === 'high';
+  return true;
+}
 
 export function sortClasses(list: ClassInfo[], s: EnergyState): ClassInfo[] {
-  const mode = sortMode(s);
-  const key = (c: ClassInfo): number[] => {
-    const p = profile(c);
-    if (mode === 'gentle') return [rank(p.intensity), rank(p.music), rank(p.crowd)];
-    if (mode === 'calm') return [rank(p.music), rank(p.intensity), rank(p.crowd)];
-    if (mode === 'high') return [-rank(p.intensity)];
-    return [];
-  };
-  return [...list].sort((a, b) => {
-    const ka = key(a), kb = key(b);
-    for (let i = 0; i < ka.length; i++) if (ka[i] !== kb[i]) return ka[i] - kb[i];
-    return byTime(a, b);
-  });
+  return [...list].sort((a, b) => Number(!fitsEnergy(a, s)) - Number(!fitsEnergy(b, s)) || byStart(a, b));
 }
 
 const WORD = {
@@ -353,13 +353,15 @@ export function reasonLine(c: ClassInfo, s: EnergyState, prefs: SensoryId[] = []
     if (want.crowd?.includes(p.crowd)) fits.push(WORD.crowd[p.crowd]);
     return fits;
   };
+  // Matches the grouping above, so a class below the fitting group never says "Fits".
+  if (mode !== 'default' && !fitsEnergy(c, s)) return `Less of a match: ${WORD.intensity[p.intensity]}, ${WORD.music[p.music]}`;
   let fits: string[] = [];
   if (mode === 'gentle') fits = traits({ intensity: ['low'], music: ['quiet'], crowd: ['small'] });
   if (mode === 'calm') fits = traits({ music: ['quiet'], intensity: ['low'], crowd: ['small'] });
   if (mode === 'high') fits = traits({ intensity: ['high'] });
   if (mode === 'default') return `${cap(WORD.intensity[p.intensity])} · ${WORD.music[p.music]} · ${WORD.crowd[p.crowd]}`;
   if (fits.length) return `Fits: ${fits.slice(0, 2).join(', ')}`;
-  return `Less of a match: ${WORD.intensity[p.intensity]}, ${WORD.music[p.music]}`;
+  return `Fits: ${WORD.intensity[p.intensity]}`;
 }
 const cap = (t: string) => t[0].toUpperCase() + t.slice(1);
 
@@ -381,11 +383,16 @@ export function energyList(s: EnergyState, prefs: SensoryId[] = []) {
   // "Nearest": by distance; ties keep the energy order (stable sort). Sensory filters still
   // bring fully matching classes first. Sorting never hides anything.
   const nearest = s.sort === 'nearest';
-  const sorted = prefs.length || nearest
-    ? [...byEnergy].sort((a, b) =>
-        (sensoryMisses(a, prefs).length - sensoryMisses(b, prefs).length)
-        || (nearest ? distanceKm(a) - distanceKm(b) : 0))
-    : byEnergy;
+  // Time order: classes that miss a filter say so in their reason line, so that group is
+  // plain time order (fewest misses first); the energy grouping applies to the rest.
+  const misses = (c: ClassInfo) => sensoryMisses(c, prefs).length;
+  const sorted = nearest
+    ? [...byEnergy].sort((a, b) => (misses(a) - misses(b)) || (distanceKm(a) - distanceKm(b)))
+    : prefs.length
+      ? [...byEnergy].sort((a, b) =>
+          (misses(a) - misses(b))
+          || (misses(a) > 0 ? byStart(a, b) : 0)) // misses: time order; matches keep fit → time
+      : byEnergy;
   const shown = s.quietDim ? sorted.filter((c) => !quietDimHides(c)) : sorted;
   const matchAll = shown.filter((c) => sensoryMisses(c, prefs).length === 0).length;
   return { shown, hidden: sorted.length - shown.length, matchAll };

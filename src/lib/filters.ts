@@ -176,14 +176,15 @@ export function setPrefs(p: SensoryId[]) {
   emit();
 }
 
-// Version B sort ("Sort: Time · Nearest"), remembered like the other B filters.
+// Version B sort ("Sort: Time · Nearest"). "Time" is selected every time the page opens,
+// so it is kept in memory only.
 export type SortB = 'time' | 'nearest';
-const SORT_KEY = 'rtr.sortB';
+let sortB: SortB = 'time';
 export function getSortB(): SortB {
-  return readJSON<SortB>(SORT_KEY, 'time') === 'nearest' ? 'nearest' : 'time';
+  return sortB;
 }
 export function setSortB(v: SortB) {
-  writeJSON(SORT_KEY, v);
+  sortB = v;
   emit();
 }
 
